@@ -117,7 +117,7 @@ func init() {
 			SelectionFunc: func() types.Selection {
 				out := make(types.Selection)
 				for _, lang := range i18n.Langs {
-					l := i18n.GetLangParameters(lang)
+					l := i18n.GetLocale(lang)
 					out[lang] = l.Name
 				}
 				return out
