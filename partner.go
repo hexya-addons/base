@@ -25,8 +25,8 @@ import (
 	"github.com/hexya-erp/hexya/src/models/fieldtype"
 	"github.com/hexya-erp/hexya/src/models/operator"
 	"github.com/hexya-erp/hexya/src/models/types"
+	"github.com/hexya-erp/hexya/src/server"
 	"github.com/hexya-erp/hexya/src/tools/b64image"
-	"github.com/hexya-erp/hexya/src/tools/generate"
 	"github.com/hexya-erp/hexya/src/tools/typesutils"
 	"github.com/hexya-erp/hexya/src/views"
 	"github.com/hexya-erp/pool/h"
@@ -328,7 +328,7 @@ Use this field anywhere a small image is required.`},
 					imgFileName = "avatar.png"
 					colorize = true
 				}
-				path := filepath.Join(generate.HexyaDir, "hexya", "server", "static", "base", "src", "img", imgFileName)
+				path := filepath.Join(server.ResourceDir, "static", "base", "src", "img", imgFileName)
 				content, err := ioutil.ReadFile(path)
 				if err != nil {
 					log.Warn("Missing ressource", "image", path)
