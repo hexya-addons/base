@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hexya>
+    <data>
+        <!-- Attachment -->
+        <view id="base_view_attachment_form" model="Attachment">
+            <form>
+                <sheet>
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="type"/>
+                            <field name="datas" filename="datas_fname" attrs="{'invisible':[('type','=','url')]}"/>
+                            <field name="datas_fname" invisible="1" attrs="{'invisible':[('type','=','url')]}"
+                                   class="oe_inline oe_right"/>
+                            <field name="url" widget="url" attrs="{'invisible':[('type','=','binary')]}"/>
+                            <field name="mime_type" groups="base_group_no_one"/>
+                        </group>
+                        <group string="Attached To" groups="base_group_no_one">
+                            <field name="res_model"/>
+                            <field name="res_field"/>
+                            <field name="res_id"/>
+                            <field name="res_name"/>
+                            <field name="company_id" groups="base_group_multi_company"
+                                   options="{'no_create': True}"/>
+                            <field name="public"/>
+                        </group>
+                        <group string="History" groups="base_group_no_one">
+                            <label for="create_uid" string="Creation"/>
+                            <div name="creation_div">
+                                <field name="create_uid" readonly="1" class="oe_inline"/>
+                                on
+                                <field name="create_date" readonly="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group name="description_group" string="Description" groups="base_group_no_one" colspan="4">
+                            <field name="description" nolabel="1"/>
+                        </group>
+                        <group groups="base_group_no_one" string="Indexed Content" colspan="4">
+                            <field name="index_content" nolabel="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </view>
+
+        <view id="base_view_attachment_tree" model="Attachment">
+            <tree>
+                <field name="name"/>
+                <field name="datas_fname"/>
+                <field name="res_model"/>
+                <field name="res_field"/>
+                <field name="res_id"/>
+                <field name="type"/>
+                <field name="company_id" groups="base_group_multi_company"/>
+                <field name="create_uid"/>
+                <field name="create_date"/>
+            </tree>
+        </view>
+
+        <view id="base_view_attachment_search" model="Attachment">
+            <search>
+                <field name="name" filter_domain="['|', ('name','ilike',self), ('datas_fname','ilike',self)]"
+                       string="Attachment"/>
+                <field name="create_date"/>
+                <filter string="URL" domain="[('type','=','url')]"/>
+                <filter string="Binary" domain="[('type','=','binary')]"/>
+                <separator/>
+                <filter name="my_documents_filter"
+                        string="My Document(s)"
+                        domain="[('create_uid','=',uid)]"
+                        help="Filter on my documents"/>
+                <field name="create_uid"/>
+                <field name="type"/>
+                <group expand="0" string="Group By">
+                    <filter name="owner" string="Owner" domain="[]" context="{'group_by':'create_uid'}"/>
+                    <filter string="Type" domain="[]" context="{'group_by':'type'}" groups="base_group_no_one"/>
+                    <filter string="Company" domain="[]" context="{'group_by':'company_id'}"
+                            groups="base_group_multi_company"/>
+                    <filter string="Creation Month" domain="[]" context="{'group_by':'create_date'}"/>
+                </group>
+            </search>
+        </view>
+
+        <action id="base_action_attachment" type="ir.actions.act_window" model="Attachment" name="Attachment"
+                view_mode="tree,form" search_view_id="base_view_attachment_search">
+            <help>
+                <p class="oe_view_nocontent_create">
+                    Click here to create new documents.
+                </p>
+                <p>
+                    Also you will find here all the related documents and download it by clicking on any individual
+                    document.
+                </p>
+            </help>
+        </action>
+
+        <menuitem action="base_action_attachment" id="base_menu_action_attachment"
+                  parent="base_menu_database_structure"/>
+
+    </data>
+</hexya>

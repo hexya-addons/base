@@ -1,0 +1,4 @@
+ID,Active,BIC,Name
+base_bank_cbc,True,CREGBEBB,CBC
+base_bank_crelan,True,NICABEBB,Crelan
+base_bank_ing,True,BBRUBEBB,ING

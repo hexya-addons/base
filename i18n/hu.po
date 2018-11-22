@@ -1,0 +1,1575 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. code:
+#. code:
+#. code:
+msgid "%s (copy)"
+msgstr "%s (másolat)"
+
+#. resource:base_view_partner_form
+msgid "(edit)"
+msgstr "(szerkesztés)"
+
+#. field:PartnerTitle.Shortcut
+msgid "Abbreviation"
+msgstr "Rövidítés"
+
+#. field:Company.Users
+msgid "Accepted Users"
+msgstr "Engedélyezett felhasználók"
+
+#. resource:base_view_users_form
+msgid "Access Rights"
+msgstr "Hozzáférési jogok"
+
+#. field:BankAccount.Partner
+msgid "Account Holder"
+msgstr "Számla birtokosa"
+
+#. field:BankAccount.Name
+msgid "Account Number"
+msgstr "Bankszámlaszám"
+
+#. field:BankAccount.AccountType
+msgid "Account Type"
+msgstr "Főkönyvi számla típus"
+
+#. resource:base_view_company_form
+msgid "Accounting"
+msgstr "Könyvelés"
+
+#. field:Lang.Active
+#. field:Partner.Active
+#. field:Bank.Active
+#. field:Currency.Active
+#. field:PartnerCategory.Active
+#. field:Sequence.Active
+#. resource:base_view_currency_search
+#. resource:base_res_lang_search
+msgid "Active"
+msgstr "Aktív"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_address_form
+msgid "Address"
+msgstr "Cím"
+
+#. field:Country.AddressFormat
+msgid "Address Format"
+msgstr ""
+
+#. resource:base_view_country_form
+msgid "Address format..."
+msgstr "Címzés formátuma..."
+
+#. help:CountryState.Name
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "Egy ország adminisztrációs megyoszlása. Pl. Szöv. állam, Tagozat, Kanton"
+
+#. selection:Currency.Position
+msgid "After Amount"
+msgstr "Összeg után"
+
+#. resource:base_view_users_form
+msgid "Allowed Companies"
+msgstr "Engedélyezett vállalatok"
+
+#. resource:base_menu_translation_app
+msgid "Application Terms"
+msgstr "Alkalmazás feltételek"
+
+#. resource:base_view_res_partner_filter
+msgid "Archived"
+msgstr "Archivált"
+
+#. resource:base_view_attachment_form
+msgid "Attached To"
+msgstr "Csatolva a következőhöz"
+
+#. resource:base_view_attachment_search
+#. resource:base_action_attachment
+msgid "Attachment"
+msgstr "Melléklet"
+
+#. field:Attachment.Name
+msgid "Attachment Name"
+msgstr "Csatolmány neve"
+
+#. field:BankAccount.Bank
+#. resource:base_view_res_bank_form
+msgid "Bank"
+msgstr "Bank"
+
+#. field:Partner.Banks
+#. resource:base_view_partner_bank_tree
+#. resource:base_view_partner_bank_search
+#. resource:base_action_res_partner_bank_account_form
+msgid "Bank Accounts"
+msgstr "Bankszámlák"
+
+#. field:BankAccount.BankBIC
+msgid "Bank BIC"
+msgstr ""
+
+#. field:Bank.BIC
+msgid "Bank Identifier Cord"
+msgstr ""
+
+#. field:BankAccount.BankName
+#. resource:base_view_partner_bank_search
+msgid "Bank Name"
+msgstr "Bank Neve"
+
+#. resource:base_view_partner_bank_form
+msgid "Bank account"
+msgstr "Bankszámla"
+
+#. resource:base_view_res_bank_tree
+#. resource:base_action_res_bank_form
+msgid "Banks"
+msgstr "Bankok"
+
+#. field:Partner.Barcode
+msgid "Barcode"
+msgstr "Vonalkód"
+
+#. selection:Currency.Position
+msgid "Before Amount"
+msgstr "Összeg előtt"
+
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Binary"
+msgstr "Bináris"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form_simple_modif
+msgid "Cancel"
+msgstr "Mégsem"
+
+#. code:
+msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. resource:base_action_res_users_my
+msgid "Change My Preferences"
+msgstr "Változtassa meg a beállításaimat"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form
+#. resource:base_change_password_wizard_action
+msgid "Change Password"
+msgstr "Jelszó megváltoztatása"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Change password"
+msgstr "Jelszó változtatás"
+
+#. resource:base_view_users_form
+msgid "Change the user password."
+msgstr "Változtassa meg a felhasználói jelszót."
+
+#. help:Partner.IsCompany
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Jelölje be ha a kapcsolat egy vállalat, egyéb esetben egy személy"
+
+#. help:Partner.Customer
+msgid "Check this box if this contact is a customer."
+msgstr "Jelölje be ezt a négyzetet, ha a kapcsolat egyben vevő is"
+
+#. help:Partner.Supplier
+msgid ""
+"Check this box if this contact is a vendor.\n"
+"If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr ""
+
+#. help:Partner.Employee
+msgid "Check this box if this contact is an Employee."
+msgstr "Jelölje be a négyzetet ha ez a kapcsolat egy alkalmazott."
+
+#. field:Attachment.CheckSum
+msgid "Checksum/SHA1"
+msgstr "Checksum/SHA1"
+
+#. field:Company.Children
+msgid "Child Companies"
+msgstr "Leányvállalatok"
+
+#. field:Partner.Children
+msgid "Children"
+msgstr "Alárendelt"
+
+#. field:PartnerCategory.Children
+msgid "Children Tags"
+msgstr ""
+
+#. field:Partner.City
+#. field:Bank.City
+#. field:Company.City
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_address_form
+msgid "City"
+msgstr "Város"
+
+#. field:Partner.Color
+msgid "Color"
+msgstr "Szín"
+
+#. field:PartnerCategory.Color
+msgid "Color Index"
+msgstr "Szín jegyzék"
+
+#. field:Partner.CommercialCompanyName
+msgid "Commercial Company Name"
+msgstr ""
+
+#. field:Partner.CommercialPartner
+msgid "Commercial Entity"
+msgstr "Értékesítő személy"
+
+#. resource:base_view_res_bank_form
+msgid "Communication"
+msgstr "Kommunikáció"
+
+#. field:User.Companies
+#. resource:base_view_company_tree
+#. resource:base_company_normal_action_tree
+#. resource:base_action_res_company_form
+#. resource:base_view_res_partner_filter
+msgid "Companies"
+msgstr "Vállalatok"
+
+#. selection:Partner.CompanyType
+#. field:Partner.Company
+#. field:CurrencyRate.Company
+#. field:Sequence.Company
+#. field:Attachment.Company
+#. field:BankAccount.Company
+#. field:User.Company
+#. resource:base_view_attachment_search
+#. resource:base_view_company_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_simple_form
+#. resource:base_view_res_partner_filter
+#. resource:base_view_users_search
+msgid "Company"
+msgstr "Vállalat"
+
+#. field:Partner.CompanyName
+#. field:Company.Name
+msgid "Company Name"
+msgstr "Cég neve"
+
+#. field:Company.CompanyRegistry
+msgid "Company Registry"
+msgstr ""
+
+#. field:Partner.CompanyType
+msgid "Company Type"
+msgstr "Vállalat típus"
+
+#. field:Partner.ContactAddress
+msgid "Complete Address"
+msgstr "Teljes cím"
+
+#. resource:base_view_company_form
+#. resource:base_menu_reporting_config
+msgid "Configuration"
+msgstr "Beállítások"
+
+#. selection:Partner.Type
+#. resource:base_view_partner_simple_form
+msgid "Contact"
+msgstr "Kapcsolat"
+
+#. resource:base_view_partner_form
+msgid "Contact / Address"
+msgstr "Kapcsolat / Cím"
+
+#. resource:base_view_partner_form
+msgid "Contact Name"
+msgstr "Kapcsolat neve"
+
+#. resource:base_view_partner_category_form
+msgid "Contact Tag"
+msgstr "Kapcsolat címke"
+
+#. resource:base_view_partner_category_list
+msgid "Contact Tags"
+msgstr "Kapcsolat címkék"
+
+#. resource:base_action_partner_title_contact
+msgid "Contact Titles"
+msgstr "Kapcsolattartó megszólítások"
+
+#. resource:base_view_partner_tree
+msgid "Contacts"
+msgstr "Kapcsolatok"
+
+#. resource:base_view_partner_form
+msgid "Contacts & Addresses"
+msgstr "Kapcsolatok & Címek"
+
+#. code:
+msgid "Couldn't create contact without email address!"
+msgstr "Nem hozható létre kapcsolat e-mail cím nélkül!"
+
+#. field:CountryGroup.Countries
+#. resource:base_action_country
+msgid "Countries"
+msgstr "Országok"
+
+#. field:Partner.Country
+#. field:Bank.Country
+#. field:Company.Country
+#. field:CountryState.Country
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_tree
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_res_partner_filter
+msgid "Country"
+msgstr "Ország"
+
+#. field:Country.PhoneCode
+msgid "Country Calling Code"
+msgstr "Ország előhívó szám"
+
+#. field:Country.Code
+msgid "Country Code"
+msgstr "Országkód"
+
+#. resource:base_view_country_group_tree
+#. resource:base_view_country_group_form
+msgid "Country Group"
+msgstr "Ország csoport"
+
+#. field:Country.CountryGroups
+#. resource:base_action_country_group
+msgid "Country Groups"
+msgstr "Országcsoportok"
+
+#. field:Country.Name
+msgid "Country Name"
+msgstr "Országnév"
+
+#. resource:base_view_partner_form
+msgid "Create company"
+msgstr "Vállalat létrehozás"
+
+#. resource:base_view_attachment_form
+msgid "Creation"
+msgstr "Létrehozás"
+
+#. resource:base_view_attachment_search
+msgid "Creation Month"
+msgstr "Hónap létrehozás"
+
+#. field:Partner.CreditLimit
+msgid "Credit Limit"
+msgstr "Hitelkeret"
+
+#. resource:base_view_currency_search
+#. resource:base_view_currency_tree
+#. resource:base_action_currency_form
+msgid "Currencies"
+msgstr "Valuták"
+
+#. field:Country.Currency
+#. field:Company.Currency
+#. field:CurrencyRate.Currency
+#. field:Currency.Name
+#. field:BankAccount.Currency
+#. resource:base_view_currency_search
+#. resource:base_view_currency_form
+msgid "Currency"
+msgstr "Pénznem"
+
+#. help:Currency.Name
+msgid "Currency Code [ISO 4217]"
+msgstr ""
+
+#. resource:base_view_currency_rate_form
+msgid "Currency Rate"
+msgstr "Valuta árfolyam"
+
+#. resource:base_view_currency_rate_search
+#. resource:base_view_currency_rate_tree
+#. resource:base_act_view_currency_rates
+msgid "Currency Rates"
+msgstr "Árfolyamok"
+
+#. help:Currency.Symbol
+msgid "Currency sign, to be used when printing amounts"
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Current Company"
+msgstr "Jelenlegi vállalat"
+
+#. field:Currency.Rate
+msgid "Current Rate"
+msgstr "Aktuális Árfolyam"
+
+#. resource:base_sequence_view
+msgid "Current Year with Century: %(year)s"
+msgstr "Aktuális év századdal: %(year)s"
+
+#. resource:base_sequence_view
+msgid "Current Year without Century: %(y)s"
+msgstr "Aktuális év század nélkül: %(y)s"
+
+#. resource:base_menu_administration_shortcut
+msgid "Custom Shortcuts"
+msgstr "Egyéni gyorsbillentyűk"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_form
+#. resource:base_action_partner_customer_form
+msgid "Customers"
+msgstr "Vásárlók"
+
+#. resource:base_menu_board_root
+#. resource:base_menu_reporting_dashboard
+msgid "Dashboards"
+msgstr "Vezérlőpultok"
+
+#. field:Attachment.DBDatas
+msgid "Database Data"
+msgstr "Adatbázis adat"
+
+#. resource:base_menu_database_structure
+msgid "Database Structure"
+msgstr "Adatbázis struktúra"
+
+#. field:Partner.Date
+#. field:CurrencyRate.Name
+#. field:Currency.Date
+#. resource:base_view_currency_rate_search
+msgid "Date"
+msgstr "Dátum"
+
+#. field:Lang.DateFormat
+msgid "Date Format"
+msgstr "Dátum Formátum"
+
+#. resource:base_sequence_view
+msgid "Day of the Week (0:Monday): %(weekday)s"
+msgstr "A hét napja (0:Hétfő): %(weekday)s"
+
+#. resource:base_sequence_view
+msgid "Day of the Year: %(doy)s"
+msgstr "Az év napja: %(doy)s"
+
+#. resource:base_sequence_view
+msgid "Day: %(day)s"
+msgstr "Nap: %(day)s"
+
+#. field:Currency.DecimalPlaces
+msgid "Decimal Places"
+msgstr ""
+
+#. field:Lang.DecimalPoint
+msgid "Decimal Separator"
+msgstr "Tizedes elválasztó"
+
+#. field:Attachment.Description
+#. resource:base_view_attachment_form
+msgid "Description"
+msgstr "Leírás"
+
+#. help:Currency.Position
+msgid "Determines where the currency symbol should be placed after or before the amount."
+msgstr "Megállapítja hogy a deviza szimbólumot az összeg elé vagy mögé helyezze."
+
+#. field:Lang.Direction
+msgid "Direction"
+msgstr "Irány"
+
+#. resource:base_view_currency_form
+msgid "Display"
+msgstr "Megjelenítés"
+
+#. help:Partner.PartnerShare
+msgid ""
+"Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
+"access or with a limited access created for sharing data."
+msgstr ""
+
+#. field:Partner.Email
+#. field:Bank.Email
+#. field:Company.Email
+msgid "Email"
+msgstr "E-mail"
+
+#. resource:base_view_users_form
+msgid "Email Address"
+msgstr "E-mail cím"
+
+#. field:Partner.EmailFormatted
+msgid "Email Formatted"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Email Preferences"
+msgstr "Email kiválasztások"
+
+#. field:Partner.Employee
+msgid "Employee"
+msgstr "Alkalmazott"
+
+#. resource:base_action_partner_employee_form
+msgid "Employees"
+msgstr "Alkalmazottak"
+
+#. code:
+msgid "Error ! You can not create recursive tags."
+msgstr "Hiba! Nem hozhat létre rekurzív címkék."
+
+#. resource:base_res_lang_form
+msgid "Examples"
+msgstr "Példák"
+
+#. help:User.Share
+msgid "External user with limited access, created only for the purpose of sharing data."
+msgstr "Külső felhasználó korlátozott hozzáféréssel, az adat megosztás céljából létrehozva."
+
+#. field:Partner.Fax
+#. field:Bank.Fax
+#. field:Company.Fax
+msgid "Fax"
+msgstr "Fax"
+
+#. field:Bank.State
+msgid "Fed. State"
+msgstr "Szöv. állam"
+
+#. resource:base_action_country_state
+msgid "Fed. States"
+msgstr "Szövetségi Államok"
+
+#. field:Attachment.Datas
+msgid "File Content"
+msgstr "Fájltartalom"
+
+#. field:Attachment.DatasFname
+msgid "File Name"
+msgstr "Fájl Név"
+
+#. field:Attachment.FileSize
+msgid "File Size"
+msgstr "A fájl mérete"
+
+#. resource:base_view_attachment_search
+msgid "Filter on my documents"
+msgstr "Szűrő a dokumentumaimon"
+
+#. help:Partner.EmailFormatted
+msgid "Formatted email address 'Name <email@domain>'"
+msgstr ""
+
+#. field:SequenceDateRange.DateFrom
+msgid "From"
+msgstr "Kezdő dátum"
+
+#. resource:base_view_company_form
+msgid "General Information"
+msgstr "Általános információk"
+
+#. resource:base_view_groups_search
+msgid "Group"
+msgstr "Csoport"
+
+#. resource:base_view_attachment_search
+#. resource:base_view_res_partner_filter
+msgid "Group By"
+msgstr "Csoportosítás"
+
+#. field:Group.GroupID
+msgid "Group ID"
+msgstr ""
+
+#. resource:base_view_country_group_form
+msgid "Group name"
+msgstr "Csoport név"
+
+#. field:ConfigParameter.Groups
+#. field:User.Groups
+#. resource:base_view_groups_search
+#. resource:base_view_groups_tree
+#. resource:base_menu_action_groups
+#. resource:base_action_res_groups
+msgid "Groups"
+msgstr "Csoportok"
+
+#. help:Sequence.Padding
+msgid "Hexya will automatically adds some '0' on the left of the 'Next Number' to get the required padding size."
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "History"
+msgstr "Előzmények"
+
+#. field:User.ActionID
+msgid "Home Action"
+msgstr "Kezdő művelet"
+
+#. resource:base_sequence_view
+msgid "Hour 00->12: %(h12)s"
+msgstr "Óra 00->12: %(h12)s"
+
+#. resource:base_sequence_view
+msgid "Hour 00->24: %(h24)s"
+msgstr "Óra 00->24: %(h24)s"
+
+#. field:Lang.ID
+#. field:ModelMixin.ID
+#. field:PartnerTitle.ID
+#. field:SequenceDateRange.ID
+#. field:UserLog.ID
+#. field:ConfigParameter.ID
+#. field:CountryGroup.ID
+#. field:Country.ID
+#. field:Partner.ID
+#. field:UserChangePasswordWizardLine.ID
+#. field:Bank.ID
+#. field:Company.ID
+#. field:Group.ID
+#. field:UserChangePasswordWizard.ID
+#. field:CurrencyRate.ID
+#. field:Currency.ID
+#. field:PartnerCategory.ID
+#. field:Sequence.ID
+#. field:Attachment.ID
+#. field:BankAccount.ID
+#. field:ConfigSettings.ID
+#. field:CountryState.ID
+#. field:Translation.ID
+#. field:User.ID
+msgid "ID"
+msgstr "Azonosító ID"
+
+#. field:Lang.ISOCode
+msgid "ISO Code"
+msgstr "ISO Kód"
+
+#. help:User.ActionID
+msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+msgstr "Ha meg van határozva, ez a művelet meg lesz nyitva a felhasználó naplójában, továbbá az alapértelmezett menüben."
+
+#. help:Partner.Lang
+msgid ""
+"If the selected language is loaded in the system, all documents related to\n"
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+
+#. field:Country.Image
+#. field:Partner.Image
+msgid "Image"
+msgstr "Kép"
+
+#. field:Partner.ImageMedium
+msgid "Image Medium"
+msgstr ""
+
+#. field:Partner.ImageSmall
+msgid "Image Small"
+msgstr ""
+
+#. field:Sequence.Implementation
+msgid "Implementation"
+msgstr "Végrehajtás"
+
+#. resource:base_menu_translation_export
+msgid "Import / Export"
+msgstr "Importálás / Exportálás"
+
+#. resource:base_view_currency_search
+msgid "Inactive"
+msgstr "Inaktív"
+
+#. field:Attachment.IndexContent
+#. resource:base_view_attachment_form
+msgid "Indexed Content"
+msgstr "Indexált tartalom"
+
+#. selection:Partner.CompanyType
+msgid "Individual"
+msgstr "Egyén"
+
+#. resource:base_view_partner_form
+msgid "Internal Notes"
+msgstr "Belső jegyzetek"
+
+#. field:Partner.Ref
+msgid "Internal Reference"
+msgstr "Belső hivatkozás"
+
+#. resource:base_view_partner_form
+msgid "Internal note..."
+msgstr "Belső jegyzet..."
+
+#. code:
+msgid "Invalid search criterion: password"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Invoice Address"
+msgstr "Számlázási cím"
+
+#. field:Partner.IsCompany
+msgid "Is Company"
+msgstr "Ez vállalkozás"
+
+#. field:Partner.Customer
+msgid "Is a Customer"
+msgstr "Vevő"
+
+#. field:Partner.Supplier
+msgid "Is a Vendor"
+msgstr "Ő egy Beszállító"
+
+#. field:Attachment.Public
+msgid "Is a public document"
+msgstr ""
+
+#. field:Partner.Function
+msgid "Job Position"
+msgstr "Állás pozíció"
+
+#. help:User.Password
+msgid "Keep empty if you don't want the user to be able to connect on the system."
+msgstr "Hagyja üresen, ha nem akarja, hogy a felhasználó a rendszerhez kapcsolódhasson."
+
+#. field:ConfigParameter.Key
+msgid "Key"
+msgstr "Kulcs"
+
+#. field:Partner.Lang
+#. resource:base_res_lang_search
+msgid "Language"
+msgstr "Nyelv"
+
+#. resource:base_res_lang_tree
+#. resource:base_res_lang_form
+#. resource:base_res_lang_search
+#. resource:base_res_lang_act_window
+msgid "Languages"
+msgstr "Nyelvek"
+
+#. field:User.LoginDate
+msgid "Latest Connection"
+msgstr "Legutoló csatlakozás"
+
+#. selection:Lang.Direction
+msgid "Left-to-Right"
+msgstr "Balról-jobbra"
+
+#. resource:base_sequence_view
+msgid "Legend (for prefix, suffix)"
+msgstr "Útmutató (az elő- és utótagban használható kódokhoz)"
+
+#. resource:base_res_lang_form
+msgid "Legends for supported Date and Time Formats"
+msgstr "Útmutató a támogatott Dátum és Idő formátumokhoz"
+
+#. field:Lang.Code
+msgid "Locale Code"
+msgstr "Lokális kód"
+
+#. resource:base_view_users_form
+msgid "Localization"
+msgstr "Lokalizáció"
+
+#. field:User.Login
+msgid "Login"
+msgstr "Bejelentkezés"
+
+#. field:Company.Logo
+msgid "Logo"
+msgstr "Logó"
+
+#. field:Company.LogoWeb
+msgid "Logo Web"
+msgstr ""
+
+#. field:SequenceDateRange.Sequence
+msgid "Main Sequence"
+msgstr "Fő sorrend"
+
+#. help:Partner.ImageMedium
+msgid ""
+"Medium-sized image of this contact. It is automatically\n"
+"resized as a 128x128px image, with aspect ratio preserved.\n"
+"Use this field in form views or some kanban views."
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Menus Customization"
+msgstr "Menük testre szabása"
+
+#. resource:base_view_users_form
+msgid "Messaging and Social"
+msgstr "Üzenetkezelés és szociális"
+
+#. field:Attachment.MimeType
+msgid "Mime Type"
+msgstr "MIME-típus"
+
+#. resource:base_sequence_view
+msgid "Minute: %(min)s"
+msgstr "Perc: %(min)s"
+
+#. resource:base_view_partner_form
+msgid "Misc"
+msgstr "Vegyes"
+
+#. field:Partner.Mobile
+msgid "Mobile"
+msgstr "Mobilszám"
+
+#. resource:base_sequence_view
+msgid "Month: %(month)s"
+msgstr "Hónap: %(month)s"
+
+#. resource:base_view_users_form
+msgid "Multi Companies"
+msgstr "Többcéges"
+
+#. resource:base_view_attachment_search
+msgid "My Document(s)"
+msgstr "Dokumentum(ai)m"
+
+#. resource:base_view_res_partner_filter
+msgid "My Partners"
+msgstr "Partnereim"
+
+#. field:Lang.Name
+#. field:CountryGroup.Name
+#. field:Partner.Name
+#. field:Bank.Name
+#. field:Group.Name
+#. field:Sequence.Name
+#. resource:base_view_partner_form
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_tree
+msgid "Name"
+msgstr "Név"
+
+#. field:UserChangePasswordWizardLine.NewPassword
+msgid "New Password"
+msgstr "Új jelszó"
+
+#. field:SequenceDateRange.NumberNext
+#. field:SequenceDateRange.NumberNextActual
+#. field:Sequence.NumberNext
+#. field:Sequence.NumberNextActual
+msgid "Next Number"
+msgstr "Köv. szám"
+
+#. help:SequenceDateRange.NumberNext
+#. help:Sequence.NumberNext
+msgid "Next number of this sequence"
+msgstr "A számsorozat következő száma"
+
+#. help:SequenceDateRange.NumberNextActual
+#. help:Sequence.NumberNextActual
+msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
+msgstr "A legközelebb használni kívánt szám. Ez a szám többször növekedhet, így a kijelzett szám elavult lehet"
+
+#. selection:Sequence.Implementation
+msgid "No Gap"
+msgstr ""
+
+#. field:Partner.Comment
+msgid "Notes"
+msgstr "Megjegyzések"
+
+#. field:User.CompaniesCount
+msgid "Number of Companies"
+msgstr "Vállalatok száma"
+
+#. code:
+msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
+msgstr ""
+
+#. code:
+msgid "Only administrators can change the settings"
+msgstr "Kizárólag a rendszergazda tudja megváltoztatni a beállításokat"
+
+#. code:
+msgid "Only administrators can execute this action."
+msgstr "Kizárólag a rendszergazdák futtathatják ezt a műveletet."
+
+#. selection:Partner.Type
+msgid "Other Address"
+msgstr ""
+
+#. resource:base_action_partner_other_form
+msgid "Other Partners"
+msgstr "Egyéb partnerek"
+
+#. resource:base_view_attachment_search
+msgid "Owner"
+msgstr "Tulajdonos"
+
+#. field:Partner.Parent
+msgid "Parent"
+msgstr "Szülő"
+
+#. field:Company.Parent
+msgid "Parent Company"
+msgstr "Anyavállalat"
+
+#. field:Partner.ParentName
+msgid "Parent Name"
+msgstr ""
+
+#. field:PartnerCategory.Parent
+msgid "Parent Tag"
+msgstr ""
+
+#. field:Company.Partner
+#. resource:base_view_partner_address_form
+msgid "Partner"
+msgstr "Partner"
+
+#. resource:base_view_partner_title_form
+#. resource:base_view_partner_title_tree
+msgid "Partner Titles"
+msgstr "Partnercímek"
+
+#. help:User.Partner
+msgid "Partner-related data of the user"
+msgstr "A felhasználó partner-kapcsolati adatai"
+
+#. field:PartnerCategory.Partners
+#. resource:base_view_partner_form
+msgid "Partners"
+msgstr "Partnerek"
+
+#. field:User.Password
+msgid "Password"
+msgstr "Jelszó"
+
+#. resource:base_view_res_partner_filter
+msgid "Persons"
+msgstr "Személyek"
+
+#. field:Partner.Phone
+#. field:Bank.Phone
+#. field:Company.Phone
+msgid "Phone"
+msgstr "Telefon"
+
+#. code:
+msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
+msgstr "Kérem, válassza a jelszóváltoztató varázslót (a felhasználói beállításokban vagy a felhasználói menüben), hogy megváltoztassa a jelszavát."
+
+#. resource:base_view_users_form
+msgid "Preferences"
+msgstr "Preferenciák"
+
+#. field:Sequence.Prefix
+msgid "Prefix"
+msgstr "Előtag"
+
+#. help:Sequence.Prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "Előtag érték, az adatbázis rekord bejegyzés sorrendjénél"
+
+#. resource:base_view_currency_form
+msgid "Price Accuracy"
+msgstr "Ár pontosság"
+
+#. resource:base_view_partner_form
+msgid "Purchase"
+msgstr "Beszerzés"
+
+#. field:CurrencyRate.Rate
+msgid "Rate"
+msgstr "Árfolyam"
+
+#. field:Currency.Rates
+msgid "Rates"
+msgstr "Árfolyamok"
+
+#. field:User.Partner
+msgid "Related Partner"
+msgstr "Kapcsolódó partner"
+
+#. resource:base_menu_action_reload_groups
+#. resource:base_action_server_reload_groups
+msgid "Reload Groups"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "Report Configuration"
+msgstr "Kimutatás beállítás"
+
+#. field:Attachment.ResField
+msgid "Resource Field"
+msgstr "Erőforrásmező"
+
+#. field:Attachment.ResID
+msgid "Resource ID"
+msgstr "Erőforrás ID azonosító"
+
+#. field:Attachment.ResModel
+msgid "Resource Model"
+msgstr "Erőforrásmodell"
+
+#. field:Attachment.ResName
+msgid "Resource Name"
+msgstr "Erőforrás neve"
+
+#. selection:Lang.Direction
+msgid "Right-to-left"
+msgstr ""
+
+#. field:Currency.Rounding
+msgid "Rounding Factor"
+msgstr "Kerekítési tényező"
+
+#. resource:base_view_partner_form
+msgid "Sale"
+msgstr "Értékesítés"
+
+#. resource:base_view_partner_form
+msgid "Sales & Purchases"
+msgstr "Értékesítések & Beszerzések"
+
+#. field:Partner.User
+#. resource:base_view_res_partner_filter
+msgid "Salesperson"
+msgstr "Értékesítő"
+
+#. field:BankAccount.SanitizedAccountNumber
+msgid "Sanitized Account Number"
+msgstr "Letisztított bankszámla szám"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Save"
+msgstr "Mentés"
+
+#. resource:base_view_res_partner_filter
+msgid "Search Partner"
+msgstr "Partner keresése"
+
+#. resource:base_sequence_view
+msgid "Second: %(sec)s"
+msgstr "Másodperc: %(sec)s"
+
+#. field:Lang.Grouping
+msgid "Separator Format"
+msgstr "Elválasztó formátum"
+
+#. field:BankAccount.Sequence
+#. resource:base_view_sequence_search
+#. resource:base_sequence_view
+msgid "Sequence"
+msgstr "Sorszám"
+
+#. field:Sequence.Code
+msgid "Sequence Code"
+msgstr "Sorszám kódo"
+
+#. field:Sequence.Padding
+msgid "Sequence Size"
+msgstr "Sorszám méret"
+
+#. resource:base_sequence_view_tree
+#. resource:base_view_sequence_search
+#. resource:base_sequence_date_range_tree
+#. resource:base_sequence_view
+#. resource:base_ir_sequence_form
+msgid "Sequences"
+msgstr "Sorszámok"
+
+#. resource:base_menu_sequences_identifiers
+msgid "Sequences & Identifiers"
+msgstr "Sorrendek & Azonosítók"
+
+#. field:User.NewPassword
+msgid "Set Password"
+msgstr "Jelszó beállítás"
+
+#. resource:base_menu_administration
+msgid "Settings"
+msgstr "Beállítások"
+
+#. field:Partner.PartnerShare
+msgid "Share Partner"
+msgstr "Partner megosztás"
+
+#. field:User.Share
+msgid "Share User"
+msgstr "Felhasználó megosztás"
+
+#. selection:Partner.Type
+msgid "Shipping Address"
+msgstr ""
+
+#. resource:base_view_currency_search
+msgid "Show active currencies"
+msgstr "Aktív pénznemek mutatása"
+
+#. resource:base_view_currency_search
+msgid "Show inactive currencies"
+msgstr "Inaktív pénznemek mutatása"
+
+#. field:User.Signature
+msgid "Signature"
+msgstr "Aláírás"
+
+#. help:Partner.ImageSmall
+msgid ""
+"Small-sized image of this contact. It is automatically\n"
+"resized as a 64x64px image, with aspect ratio preserved.\n"
+"Use this field anywhere a small image is required."
+msgstr ""
+
+#. help:Bank.BIC
+msgid "Sometimes called BIC or Swift."
+msgstr "Van, amikor BIC-nek, vagy Swift-nek nevezik."
+
+#. code:
+msgid "Sorry, you are not allowed to access this document."
+msgstr "Bocsánat, nincs jogosultsága ehhez a dokumentumhoz."
+
+#. help:User.NewPassword
+msgid ""
+"Specify a value only when creating a user or if you're\n"
+"changing the user's password, otherwise leave empty. After\n"
+"a change of password, the user has to login again."
+msgstr ""
+
+#. selection:Sequence.Implementation
+msgid "Standard"
+msgstr "Általános"
+
+#. field:Partner.State
+#. field:Company.State
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_state_tree
+#. resource:base_view_country_state_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_address_form
+msgid "State"
+msgstr "Állapot"
+
+#. field:CountryState.Code
+msgid "State Code"
+msgstr "Állam kód"
+
+#. field:CountryState.Name
+msgid "State Name"
+msgstr "Állam neve"
+
+#. field:Country.States
+msgid "States"
+msgstr "Állapotok"
+
+#. field:Sequence.NumberIncrement
+msgid "Step"
+msgstr "Lépés"
+
+#. field:Attachment.StoreFname
+msgid "Stored Filename"
+msgstr "Tárolt fájlnév"
+
+#. field:Partner.Street
+#. field:Bank.Street
+#. field:Company.Street
+msgid "Street"
+msgstr "Utca"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_address_form
+msgid "Street 2..."
+msgstr "2. utca..."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_address_form
+msgid "Street..."
+msgstr "Utca..."
+
+#. field:Partner.Street2
+#. field:Bank.Street2
+#. field:Company.Street2
+msgid "Street2"
+msgstr "Utca2"
+
+#. field:Sequence.DateRanges
+msgid "Subsequences"
+msgstr "Al-sorszámok"
+
+#. field:Sequence.Suffix
+msgid "Suffix"
+msgstr "Utótag"
+
+#. help:Sequence.Suffix
+msgid "Suffix value of the record for the sequence"
+msgstr "A rekord toldalékértéke a számsorhoz"
+
+#. field:Currency.Symbol
+msgid "Symbol"
+msgstr "Szimbólum"
+
+#. field:Currency.Position
+msgid "Symbol Position"
+msgstr "Szimbólum pozíció"
+
+#. field:Partner.VAT
+msgid "TIN"
+msgstr "TIN"
+
+#. resource:base_view_res_partner_filter
+msgid "Tag"
+msgstr "Címke"
+
+#. field:PartnerCategory.Name
+msgid "Tag Name"
+msgstr "Címke neve"
+
+#. field:Company.Tagline
+msgid "Tagline"
+msgstr ""
+
+#. field:Partner.Categories
+msgid "Tags"
+msgstr "Címkék"
+
+#. resource:base_view_partner_form
+msgid "Tags..."
+msgstr "Címkék..."
+
+#. help:Partner.VAT
+msgid ""
+"Tax Identification Number.\n"
+"Fill it if the company is subjected to taxes.\n"
+"Used by the some of the legal statements."
+msgstr ""
+
+#. resource:base_menu_custom
+msgid "Technical"
+msgstr "Technikai"
+
+#. help:Country.Code
+msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
+msgstr ""
+
+#. help:Lang.Grouping
+msgid ""
+"The Separator Format should be like [,n] where 0 < n :starting from Unit digit.\"\n"
+"-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
+"[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
+"Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. help:PartnerCategory.Active
+msgid "The active field allows you to hide the category without removing it."
+msgstr "Az aktív mező lehetővé teszi a kategória elrejtését törlés nélkül."
+
+#. code:
+msgid "The chosen company is not in the allowed companies for this user"
+msgstr "A kiválasztott vállalat nincs a felhasználó számára engedélyezett vállalatok között."
+
+#. help:User.Company
+msgid "The company this user is currently working for."
+msgstr "A cég, amelynek a jelenlegi felhasználó dolgozik."
+
+#. help:Attachment.ResModel
+msgid "The database object this attachment will be attached to"
+msgstr ""
+
+#. help:Country.Name
+msgid "The full name of the country."
+msgstr "Az ország teljes neve."
+
+#. help:Partner.User
+msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr "A belső felhasználó aki a megbízott ehhez a kapcsolathoz, ha van ilyen."
+
+#. help:Sequence.NumberIncrement
+msgid "The next number of the sequence will be incremented by this number"
+msgstr "A következő számot a sorban ezzel a számmal fogjuk növelni"
+
+#. help:Partner.TZ
+msgid ""
+"The partner's timezone, used to output proper date and time values\n"
+"inside printed reports. It is important to set a value for this field.\n"
+"You should use the same timezone that is otherwise used to pick and\n"
+"render date and time values: your computer's timezone."
+msgstr ""
+
+#. help:CurrencyRate.Rate
+#. help:Currency.Rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "Átváltási árfolyam az 1 árfolyamához."
+
+#. help:Attachment.ResID
+msgid "The record id this is attached to"
+msgstr ""
+
+#. help:CountryState.Code
+msgid "The state code in max. three chars."
+msgstr ""
+
+#. help:Lang.ISOCode
+msgid "This ISO code is the name of PO files to use for translations"
+msgstr ""
+
+#. help:Partner.Image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "Ez a mező tartalmazza a kapcsolattartó avatárjaként szolgáló képet, amelynek maximális mérete 1024x1024px"
+
+#. help:Lang.Code
+msgid "This field is used to set/get locales for user"
+msgstr "Ez a mező használatos a helyszínek felhasználóhoz való beállításához/csatolásához"
+
+#. field:Lang.ThousandsSep
+msgid "Thousands Separator"
+msgstr "Ezres elválasztó"
+
+#. field:Lang.TimeFormat
+msgid "Time Format"
+msgstr "Idő Formátum"
+
+#. field:Partner.TZ
+msgid "Timezone"
+msgstr "Időzóna"
+
+#. field:Partner.TZOffset
+msgid "Timezone Offset"
+msgstr ""
+
+#. field:PartnerTitle.Name
+#. field:Partner.Title
+msgid "Title"
+msgstr "Megsz."
+
+#. field:SequenceDateRange.DateTo
+msgid "To"
+msgstr "Címzett"
+
+#. field:Lang.Translatable
+#. resource:base_res_lang_search
+msgid "Translatable"
+msgstr "Fordítható"
+
+#. code:
+msgid "Translate"
+msgstr "Fordítás"
+
+#. resource:base_menu_translation
+msgid "Translations"
+msgstr "Fordítások"
+
+#. code:
+msgid "Trying to create a security group"
+msgstr ""
+
+#. code:
+msgid "Trying to modify a security group"
+msgstr ""
+
+#. help:Sequence.Implementation
+msgid ""
+"Two sequence object implementations are offered: Standard and 'No gap'.\n"
+"The latter is slower than the former but forbids any\n"
+"gap in the sequence (while they are possible in the former)."
+msgstr ""
+
+#. field:Partner.Type
+#. field:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Type"
+msgstr "Típus"
+
+#. field:Attachment.URL
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "URL"
+msgstr "URL"
+
+#. resource:base_res_lang_tree
+msgid "Update Language Terms"
+msgstr "Nyelvi kifejezések frissítése"
+
+#. resource:base_res_lang_tree
+msgid "Update Terms"
+msgstr "Feltételek frissítése"
+
+#. field:Sequence.UseDateRange
+msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:User.Login
+msgid "Used to log into the system"
+msgstr "A rendszerbe történő bejelentkezésre szolgál"
+
+#. help:Partner.Type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "A beszerzési és értékesítési dokumentumokban a megfelelő cím kiválasztásához használja a rendszer."
+
+#. field:UserChangePasswordWizardLine.User
+#. resource:base_view_users_search
+msgid "User"
+msgstr "Felhasználó"
+
+#. resource:base_menu_user_interface
+msgid "User Interface"
+msgstr "Felhasználói felület"
+
+#. field:UserChangePasswordWizardLine.UserLogin
+msgid "User Login"
+msgstr "Felhasználói belépés"
+
+#. field:User.Logs
+msgid "User log entries"
+msgstr "Felhasználói napló tételek"
+
+#. field:Partner.Users
+#. field:UserChangePasswordWizard.Users
+#. resource:base_menu_users
+#. resource:base_change_password_wizard_user_tree_view
+#. resource:base_view_users_tree
+#. resource:base_view_users_form
+#. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
+#. resource:base_menu_action_users
+#. resource:base_action_res_users
+msgid "Users"
+msgstr "Felhasználók"
+
+#. field:Company.VAT
+msgid "VAT"
+msgstr "ÁFA"
+
+#. field:ConfigParameter.Value
+msgid "Value"
+msgstr "Érték"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_supplier_form
+msgid "Vendors"
+msgstr "Beszállítók"
+
+#. resource:base_view_currency_form
+msgid "View Rates"
+msgstr "Árfolyamok megtekintése"
+
+#. field:Partner.Website
+#. field:Company.Website
+msgid "Website"
+msgstr "Weboldal"
+
+#. help:Partner.Website
+msgid "Website of Partner or Company"
+msgstr "Partner vagy cég weboldala"
+
+#. resource:base_sequence_view
+msgid "Week of the Year: %(woy)s"
+msgstr "Az év hete: %(woy)s"
+
+#. field:UserChangePasswordWizardLine.Wizard
+msgid "Wizard"
+msgstr "Varázsló"
+
+#. help:Attachment.Type
+msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
+msgstr "Fel tudja a számítógépéről tölteni a fájlt vagy másolja/illessze be  a fájl internet linkjét, elérési útját."
+
+#. code:
+msgid "You can not change the company as the partner/user has multiple users linked with different companies."
+msgstr ""
+
+#. code:
+msgid "You can not remove the admin user as it is used internally for resources created by Hexya"
+msgstr ""
+
+#. help:Country.AddressFormat
+msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgstr ""
+
+#. code:
+msgid "You cannot create recursive Partner hierarchies."
+msgstr "Nem hozhat létre rekurzív partner hierarchiákat."
+
+#. code:
+msgid "You cannot deactivate the admin user."
+msgstr "Nem lehet kiiktatni a rendszergazda admin felhasználót."
+
+#. code:
+msgid "You cannot deactivate the user you're currently logged in as."
+msgstr "Nem lehet kiiktatni a felhasználót, mert ezzel jelentkezett be."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_address_form
+msgid "ZIP"
+msgstr "Irányítószám"
+
+#. field:Partner.Zip
+#. field:Bank.Zip
+#. field:Company.Zip
+msgid "Zip"
+msgstr "Irsz."
+
+#. resource:base_view_company_form
+msgid "e.g. Global Business Solutions"
+msgstr "pl. Átfogó Üzleti Megoldások"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mr."
+msgstr "e.g. Úr."
+
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_simple_form
+msgid "e.g. Sales Director"
+msgstr "pl. Értékesítési vezető"
+
+#. resource:base_view_company_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_address_form
+msgid "e.g. www.hexya.io"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "internal note..."
+msgstr "belső jegyzet..."
+

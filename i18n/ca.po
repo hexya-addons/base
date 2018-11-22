@@ -1,0 +1,1575 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. code:
+#. code:
+#. code:
+msgid "%s (copy)"
+msgstr "%s (còpia)"
+
+#. resource:base_view_partner_form
+msgid "(edit)"
+msgstr "(editar)"
+
+#. field:PartnerTitle.Shortcut
+msgid "Abbreviation"
+msgstr "Abreviatura  "
+
+#. field:Company.Users
+msgid "Accepted Users"
+msgstr "Usuaris acceptats"
+
+#. resource:base_view_users_form
+msgid "Access Rights"
+msgstr "Permisos d'accés"
+
+#. field:BankAccount.Partner
+msgid "Account Holder"
+msgstr "Titular"
+
+#. field:BankAccount.Name
+msgid "Account Number"
+msgstr "Número de compte"
+
+#. field:BankAccount.AccountType
+msgid "Account Type"
+msgstr "Tipus de compte"
+
+#. resource:base_view_company_form
+msgid "Accounting"
+msgstr "Comptabilitat"
+
+#. field:Lang.Active
+#. field:Partner.Active
+#. field:Bank.Active
+#. field:PartnerCategory.Active
+#. field:Sequence.Active
+#. field:Currency.Active
+#. resource:base_view_currency_search
+#. resource:base_res_lang_search
+msgid "Active"
+msgstr "Actiu"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Address"
+msgstr "Adreça"
+
+#. field:Country.AddressFormat
+msgid "Address Format"
+msgstr ""
+
+#. resource:base_view_country_form
+msgid "Address format..."
+msgstr "Format de l'adreça..."
+
+#. help:CountryState.Name
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "Divisions administratives d'un país. Ex. Departament, Comunitat Autònoma, Provincia"
+
+#. selection:Currency.Position
+msgid "After Amount"
+msgstr "Quantitat Posterior"
+
+#. resource:base_view_users_form
+msgid "Allowed Companies"
+msgstr "Companyies permeses"
+
+#. resource:base_menu_translation_app
+msgid "Application Terms"
+msgstr "Termes de l'aplicació"
+
+#. resource:base_view_res_partner_filter
+msgid "Archived"
+msgstr "Arxivat"
+
+#. resource:base_view_attachment_form
+msgid "Attached To"
+msgstr "Adjuntat a"
+
+#. resource:base_view_attachment_search
+#. resource:base_action_attachment
+msgid "Attachment"
+msgstr "Adjunt"
+
+#. field:Attachment.Name
+msgid "Attachment Name"
+msgstr "Nom del document adjunt"
+
+#. field:BankAccount.Bank
+#. resource:base_view_res_bank_form
+msgid "Bank"
+msgstr "Banc"
+
+#. field:Partner.Banks
+#. resource:base_view_partner_bank_tree
+#. resource:base_view_partner_bank_search
+#. resource:base_action_res_partner_bank_account_form
+msgid "Bank Accounts"
+msgstr "Comptes bancaris"
+
+#. field:BankAccount.BankBIC
+msgid "Bank BIC"
+msgstr ""
+
+#. field:Bank.BIC
+msgid "Bank Identifier Cord"
+msgstr ""
+
+#. field:BankAccount.BankName
+#. resource:base_view_partner_bank_search
+msgid "Bank Name"
+msgstr "Nom del Banc "
+
+#. resource:base_view_partner_bank_form
+msgid "Bank account"
+msgstr "compte bancari"
+
+#. resource:base_view_res_bank_tree
+#. resource:base_action_res_bank_form
+msgid "Banks"
+msgstr "Bancs"
+
+#. field:Partner.Barcode
+msgid "Barcode"
+msgstr "Codi de barres"
+
+#. selection:Currency.Position
+msgid "Before Amount"
+msgstr "Abans de la quantitat"
+
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Binary"
+msgstr "Binari"
+
+#. resource:base_view_users_form_simple_modif
+#. resource:base_change_password_wizard_view
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#. code:
+msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. resource:base_action_res_users_my
+msgid "Change My Preferences"
+msgstr "Canvia les preferències"
+
+#. resource:base_view_users_form
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_action
+msgid "Change Password"
+msgstr "Canvia contrasenya"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Change password"
+msgstr "Canvia contrasenya"
+
+#. resource:base_view_users_form
+msgid "Change the user password."
+msgstr "Canvia la contrasenya del usuari"
+
+#. help:Partner.IsCompany
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Marqui aquesta casella si el contacte és una companyia. En cas contrari, serà una persona."
+
+#. help:Partner.Customer
+msgid "Check this box if this contact is a customer."
+msgstr "Marqueu aquesta casella si aquest contacte és un client. "
+
+#. help:Partner.Supplier
+msgid ""
+"Check this box if this contact is a vendor.\n"
+"If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr ""
+
+#. help:Partner.Employee
+msgid "Check this box if this contact is an Employee."
+msgstr "Marqueu aquesta casella si aquest contacte és un empleat."
+
+#. field:Attachment.CheckSum
+msgid "Checksum/SHA1"
+msgstr "Suma verificació/SHA1"
+
+#. field:Company.Children
+msgid "Child Companies"
+msgstr "Companyies filles"
+
+#. field:Partner.Children
+msgid "Children"
+msgstr "Fills"
+
+#. field:PartnerCategory.Children
+msgid "Children Tags"
+msgstr ""
+
+#. field:Partner.City
+#. field:Bank.City
+#. field:Company.City
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "City"
+msgstr "Ciutat"
+
+#. field:Partner.Color
+msgid "Color"
+msgstr "Color"
+
+#. field:PartnerCategory.Color
+msgid "Color Index"
+msgstr "Índex de color"
+
+#. field:Partner.CommercialCompanyName
+msgid "Commercial Company Name"
+msgstr ""
+
+#. field:Partner.CommercialPartner
+msgid "Commercial Entity"
+msgstr "Entitat Comercial"
+
+#. resource:base_view_res_bank_form
+msgid "Communication"
+msgstr "Comunicació"
+
+#. field:User.Companies
+#. resource:base_view_company_tree
+#. resource:base_company_normal_action_tree
+#. resource:base_action_res_company_form
+#. resource:base_view_res_partner_filter
+msgid "Companies"
+msgstr "Empreses"
+
+#. field:Partner.Company
+#. selection:Partner.CompanyType
+#. field:Sequence.Company
+#. field:Attachment.Company
+#. field:BankAccount.Company
+#. field:CurrencyRate.Company
+#. field:User.Company
+#. resource:base_view_attachment_search
+#. resource:base_view_company_form
+#. resource:base_view_partner_simple_form
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_form
+#. resource:base_view_users_search
+msgid "Company"
+msgstr "Companyia"
+
+#. field:Partner.CompanyName
+#. field:Company.Name
+msgid "Company Name"
+msgstr "Nom d'empresa"
+
+#. field:Company.CompanyRegistry
+msgid "Company Registry"
+msgstr ""
+
+#. field:Partner.CompanyType
+msgid "Company Type"
+msgstr "Tipus d'empresa"
+
+#. field:Partner.ContactAddress
+msgid "Complete Address"
+msgstr "Direcció complerta"
+
+#. resource:base_view_company_form
+#. resource:base_menu_reporting_config
+msgid "Configuration"
+msgstr "Configuració"
+
+#. selection:Partner.Type
+#. resource:base_view_partner_simple_form
+msgid "Contact"
+msgstr "Contacte"
+
+#. resource:base_view_partner_form
+msgid "Contact / Address"
+msgstr "Contactes / Direccions"
+
+#. resource:base_view_partner_form
+msgid "Contact Name"
+msgstr "Nom del contacte"
+
+#. resource:base_view_partner_category_form
+msgid "Contact Tag"
+msgstr "Etiqueta de contacte"
+
+#. resource:base_view_partner_category_list
+msgid "Contact Tags"
+msgstr "Etiquetes de contacte"
+
+#. resource:base_action_partner_title_contact
+msgid "Contact Titles"
+msgstr "Títols de contacto"
+
+#. resource:base_view_partner_tree
+msgid "Contacts"
+msgstr "Contactes"
+
+#. resource:base_view_partner_form
+msgid "Contacts & Addresses"
+msgstr "Contactes i Direccions"
+
+#. code:
+msgid "Couldn't create contact without email address!"
+msgstr "No puc crear un contacte sense la direcció de correu electrònic!"
+
+#. field:CountryGroup.Countries
+#. resource:base_action_country
+msgid "Countries"
+msgstr "Països"
+
+#. field:Partner.Country
+#. field:Bank.Country
+#. field:Company.Country
+#. field:CountryState.Country
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_tree
+#. resource:base_view_partner_address_form
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Country"
+msgstr "País"
+
+#. field:Country.PhoneCode
+msgid "Country Calling Code"
+msgstr "Prefix telefònic de país"
+
+#. field:Country.Code
+msgid "Country Code"
+msgstr "Codi de país"
+
+#. resource:base_view_country_group_tree
+#. resource:base_view_country_group_form
+msgid "Country Group"
+msgstr "Grup de paisos "
+
+#. field:Country.CountryGroups
+#. resource:base_action_country_group
+msgid "Country Groups"
+msgstr "Grups de paisos "
+
+#. field:Country.Name
+msgid "Country Name"
+msgstr "Nom de país"
+
+#. resource:base_view_partner_form
+msgid "Create company"
+msgstr "Crear companyia"
+
+#. resource:base_view_attachment_form
+msgid "Creation"
+msgstr "Creació"
+
+#. resource:base_view_attachment_search
+msgid "Creation Month"
+msgstr "Mes de creació"
+
+#. field:Partner.CreditLimit
+msgid "Credit Limit"
+msgstr "Crèdit concedit"
+
+#. resource:base_view_currency_search
+#. resource:base_view_currency_tree
+#. resource:base_action_currency_form
+msgid "Currencies"
+msgstr "Monedes"
+
+#. field:Country.Currency
+#. field:Company.Currency
+#. field:BankAccount.Currency
+#. field:CurrencyRate.Currency
+#. field:Currency.Name
+#. resource:base_view_currency_search
+#. resource:base_view_currency_form
+msgid "Currency"
+msgstr "Moneda"
+
+#. help:Currency.Name
+msgid "Currency Code [ISO 4217]"
+msgstr ""
+
+#. resource:base_view_currency_rate_form
+msgid "Currency Rate"
+msgstr "Taxa monetària"
+
+#. resource:base_view_currency_rate_search
+#. resource:base_view_currency_rate_tree
+#. resource:base_act_view_currency_rates
+msgid "Currency Rates"
+msgstr "Taxes monetària"
+
+#. help:Currency.Symbol
+msgid "Currency sign, to be used when printing amounts"
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Current Company"
+msgstr "Moneda de l'Empresa"
+
+#. field:Currency.Rate
+msgid "Current Rate"
+msgstr "Taxa"
+
+#. resource:base_sequence_view
+msgid "Current Year with Century: %(year)s"
+msgstr "Any actual amb centúria: %(year)s"
+
+#. resource:base_sequence_view
+msgid "Current Year without Century: %(y)s"
+msgstr "Any actual sense centúria: %(y)s"
+
+#. resource:base_menu_administration_shortcut
+msgid "Custom Shortcuts"
+msgstr "Dreceres personalitzades"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_form
+#. resource:base_action_partner_customer_form
+msgid "Customers"
+msgstr "Clients"
+
+#. resource:base_menu_reporting_dashboard
+#. resource:base_menu_board_root
+msgid "Dashboards"
+msgstr "Taulers"
+
+#. field:Attachment.DBDatas
+msgid "Database Data"
+msgstr "Dades de la Base de Dades"
+
+#. resource:base_menu_database_structure
+msgid "Database Structure"
+msgstr "Estructura de les bases de dades"
+
+#. field:Partner.Date
+#. field:CurrencyRate.Name
+#. field:Currency.Date
+#. resource:base_view_currency_rate_search
+msgid "Date"
+msgstr "Data"
+
+#. field:Lang.DateFormat
+msgid "Date Format"
+msgstr "Format de data"
+
+#. resource:base_sequence_view
+msgid "Day of the Week (0:Monday): %(weekday)s"
+msgstr "Dia de la setmana (0:Dilluns): %(weekday)s"
+
+#. resource:base_sequence_view
+msgid "Day of the Year: %(doy)s"
+msgstr "Dia de l'Any: %(doy)s"
+
+#. resource:base_sequence_view
+msgid "Day: %(day)s"
+msgstr "Dia: %(day)s"
+
+#. field:Currency.DecimalPlaces
+msgid "Decimal Places"
+msgstr ""
+
+#. field:Lang.DecimalPoint
+msgid "Decimal Separator"
+msgstr "Separador de decimals"
+
+#. field:Attachment.Description
+#. resource:base_view_attachment_form
+msgid "Description"
+msgstr "Descripció"
+
+#. help:Currency.Position
+msgid "Determines where the currency symbol should be placed after or before the amount."
+msgstr "Determinar si el símbol de moneda ha de situar-se abans o després de la quantitat."
+
+#. field:Lang.Direction
+msgid "Direction"
+msgstr "Direcció"
+
+#. resource:base_view_currency_form
+msgid "Display"
+msgstr "Mostrar "
+
+#. help:Partner.PartnerShare
+msgid ""
+"Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
+"access or with a limited access created for sharing data."
+msgstr ""
+
+#. field:Partner.Email
+#. field:Bank.Email
+#. field:Company.Email
+msgid "Email"
+msgstr "Correu electrònic"
+
+#. resource:base_view_users_form
+msgid "Email Address"
+msgstr "Adreça correu electrònic"
+
+#. field:Partner.EmailFormatted
+msgid "Email Formatted"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Email Preferences"
+msgstr "Preferències del correu electrònic"
+
+#. field:Partner.Employee
+msgid "Employee"
+msgstr "Empleat"
+
+#. resource:base_action_partner_employee_form
+msgid "Employees"
+msgstr "Empleats"
+
+#. code:
+msgid "Error ! You can not create recursive tags."
+msgstr "Error! No podeu crear etiquetes recursives."
+
+#. resource:base_res_lang_form
+msgid "Examples"
+msgstr "Exemples"
+
+#. help:User.Share
+msgid "External user with limited access, created only for the purpose of sharing data."
+msgstr "Usuari extern amb accés limitat, creat només amb el propòsit de compartir dades."
+
+#. field:Partner.Fax
+#. field:Bank.Fax
+#. field:Company.Fax
+msgid "Fax"
+msgstr "Fax"
+
+#. field:Bank.State
+msgid "Fed. State"
+msgstr "Província"
+
+#. resource:base_action_country_state
+msgid "Fed. States"
+msgstr "Províncies "
+
+#. field:Attachment.Datas
+msgid "File Content"
+msgstr "Contingut del fitxer"
+
+#. field:Attachment.DatasFname
+msgid "File Name"
+msgstr "Nom del fitxer"
+
+#. field:Attachment.FileSize
+msgid "File Size"
+msgstr "Mida del fitxer"
+
+#. resource:base_view_attachment_search
+msgid "Filter on my documents"
+msgstr "Filtra els meus documents"
+
+#. help:Partner.EmailFormatted
+msgid "Formatted email address 'Name <email@domain>'"
+msgstr ""
+
+#. field:SequenceDateRange.DateFrom
+msgid "From"
+msgstr "De"
+
+#. resource:base_view_company_form
+msgid "General Information"
+msgstr "Informació general"
+
+#. resource:base_view_groups_search
+msgid "Group"
+msgstr "Grup"
+
+#. resource:base_view_attachment_search
+#. resource:base_view_res_partner_filter
+msgid "Group By"
+msgstr "Agrupar per"
+
+#. field:Group.GroupID
+msgid "Group ID"
+msgstr ""
+
+#. resource:base_view_country_group_form
+msgid "Group name"
+msgstr "Nom del grup"
+
+#. field:ConfigParameter.Groups
+#. field:User.Groups
+#. resource:base_view_groups_search
+#. resource:base_view_groups_tree
+#. resource:base_menu_action_groups
+#. resource:base_action_res_groups
+msgid "Groups"
+msgstr "Grups"
+
+#. help:Sequence.Padding
+msgid "Hexya will automatically adds some '0' on the left of the 'Next Number' to get the required padding size."
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "History"
+msgstr "Historial"
+
+#. field:User.ActionID
+msgid "Home Action"
+msgstr "Acció inicial"
+
+#. resource:base_sequence_view
+msgid "Hour 00->12: %(h12)s"
+msgstr "Hora 00->12: %(h12)s"
+
+#. resource:base_sequence_view
+msgid "Hour 00->24: %(h24)s"
+msgstr "Hora 00->24: %(h24)s"
+
+#. field:Lang.ID
+#. field:ModelMixin.ID
+#. field:PartnerTitle.ID
+#. field:ConfigParameter.ID
+#. field:CountryGroup.ID
+#. field:Country.ID
+#. field:Partner.ID
+#. field:SequenceDateRange.ID
+#. field:UserLog.ID
+#. field:Bank.ID
+#. field:Company.ID
+#. field:Group.ID
+#. field:UserChangePasswordWizard.ID
+#. field:UserChangePasswordWizardLine.ID
+#. field:PartnerCategory.ID
+#. field:Sequence.ID
+#. field:Attachment.ID
+#. field:BankAccount.ID
+#. field:ConfigSettings.ID
+#. field:CountryState.ID
+#. field:CurrencyRate.ID
+#. field:Currency.ID
+#. field:Translation.ID
+#. field:User.ID
+msgid "ID"
+msgstr "ID"
+
+#. field:Lang.ISOCode
+msgid "ISO Code"
+msgstr "Codi ISO"
+
+#. help:User.ActionID
+msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+msgstr "Si s'especifica, aquesta acció s'obrirà als registres per aquest usuari, en afegit al menú estàndard."
+
+#. help:Partner.Lang
+msgid ""
+"If the selected language is loaded in the system, all documents related to\n"
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+
+#. field:Country.Image
+#. field:Partner.Image
+msgid "Image"
+msgstr "Imatge"
+
+#. field:Partner.ImageMedium
+msgid "Image Medium"
+msgstr ""
+
+#. field:Partner.ImageSmall
+msgid "Image Small"
+msgstr ""
+
+#. field:Sequence.Implementation
+msgid "Implementation"
+msgstr "Implementació "
+
+#. resource:base_menu_translation_export
+msgid "Import / Export"
+msgstr "Importar / Exportar  "
+
+#. resource:base_view_currency_search
+msgid "Inactive"
+msgstr "Inactiu"
+
+#. field:Attachment.IndexContent
+#. resource:base_view_attachment_form
+msgid "Indexed Content"
+msgstr "Contingut indexat"
+
+#. selection:Partner.CompanyType
+msgid "Individual"
+msgstr "Individual"
+
+#. resource:base_view_partner_form
+msgid "Internal Notes"
+msgstr "Notes internes"
+
+#. field:Partner.Ref
+msgid "Internal Reference"
+msgstr "Referència interna"
+
+#. resource:base_view_partner_form
+msgid "Internal note..."
+msgstr "Nota interna..."
+
+#. code:
+msgid "Invalid search criterion: password"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Invoice Address"
+msgstr "Adreça de factura"
+
+#. field:Partner.IsCompany
+msgid "Is Company"
+msgstr "Es empresa"
+
+#. field:Partner.Customer
+msgid "Is a Customer"
+msgstr "És un Client "
+
+#. field:Partner.Supplier
+msgid "Is a Vendor"
+msgstr "És un proveïdor "
+
+#. field:Attachment.Public
+msgid "Is a public document"
+msgstr ""
+
+#. field:Partner.Function
+msgid "Job Position"
+msgstr "Lloc de treball"
+
+#. help:User.Password
+msgid "Keep empty if you don't want the user to be able to connect on the system."
+msgstr "Mantingui buit si no vols que l'usuari sigui capaç de connectar-se al sistema."
+
+#. field:ConfigParameter.Key
+msgid "Key"
+msgstr "Clau"
+
+#. field:Partner.Lang
+#. resource:base_res_lang_search
+msgid "Language"
+msgstr "Idioma"
+
+#. resource:base_res_lang_tree
+#. resource:base_res_lang_form
+#. resource:base_res_lang_search
+#. resource:base_res_lang_act_window
+msgid "Languages"
+msgstr "Idiomes"
+
+#. field:User.LoginDate
+msgid "Latest Connection"
+msgstr "Última connexió "
+
+#. selection:Lang.Direction
+msgid "Left-to-Right"
+msgstr "Esquerra-a-Dreta"
+
+#. resource:base_sequence_view
+msgid "Legend (for prefix, suffix)"
+msgstr "Llegenda (per prefix, sufix)"
+
+#. resource:base_res_lang_form
+msgid "Legends for supported Date and Time Formats"
+msgstr "Llegenda per a formats suportats de data i hora"
+
+#. field:Lang.Code
+msgid "Locale Code"
+msgstr "Codi Local"
+
+#. resource:base_view_users_form
+msgid "Localization"
+msgstr "Ubicació"
+
+#. field:User.Login
+msgid "Login"
+msgstr "Entrada"
+
+#. field:Company.Logo
+msgid "Logo"
+msgstr "Logo"
+
+#. field:Company.LogoWeb
+msgid "Logo Web"
+msgstr ""
+
+#. field:SequenceDateRange.Sequence
+msgid "Main Sequence"
+msgstr "Seqüència inicial "
+
+#. help:Partner.ImageMedium
+msgid ""
+"Medium-sized image of this contact. It is automatically\n"
+"resized as a 128x128px image, with aspect ratio preserved.\n"
+"Use this field in form views or some kanban views."
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Menus Customization"
+msgstr "Personalització dels menús"
+
+#. resource:base_view_users_form
+msgid "Messaging and Social"
+msgstr "Missatgeria i comunicació social"
+
+#. field:Attachment.MimeType
+msgid "Mime Type"
+msgstr "Tipus MIME"
+
+#. resource:base_sequence_view
+msgid "Minute: %(min)s"
+msgstr "Minut: %(min)s"
+
+#. resource:base_view_partner_form
+msgid "Misc"
+msgstr "Varis"
+
+#. field:Partner.Mobile
+msgid "Mobile"
+msgstr "Mòbil"
+
+#. resource:base_sequence_view
+msgid "Month: %(month)s"
+msgstr "Mes: %(month)s"
+
+#. resource:base_view_users_form
+msgid "Multi Companies"
+msgstr "Multi companyies"
+
+#. resource:base_view_attachment_search
+msgid "My Document(s)"
+msgstr "Els meus documents"
+
+#. resource:base_view_res_partner_filter
+msgid "My Partners"
+msgstr "Les meves empreses"
+
+#. field:Lang.Name
+#. field:CountryGroup.Name
+#. field:Partner.Name
+#. field:Bank.Name
+#. field:Group.Name
+#. field:Sequence.Name
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_tree
+#. resource:base_view_partner_form
+msgid "Name"
+msgstr "Nom"
+
+#. field:UserChangePasswordWizardLine.NewPassword
+msgid "New Password"
+msgstr "Nova Contrasenya"
+
+#. field:SequenceDateRange.NumberNext
+#. field:SequenceDateRange.NumberNextActual
+#. field:Sequence.NumberNextActual
+#. field:Sequence.NumberNext
+msgid "Next Number"
+msgstr "Pròxim número"
+
+#. help:SequenceDateRange.NumberNext
+#. help:Sequence.NumberNext
+msgid "Next number of this sequence"
+msgstr "Pròxim número d'aquesta seqüència"
+
+#. help:SequenceDateRange.NumberNextActual
+#. help:Sequence.NumberNextActual
+msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
+msgstr "Pròxim número que s'utilitzarà. Aquest número pot incrementar-se freqüentment, pel qual el valor mostrat pot estar ja obsolet."
+
+#. selection:Sequence.Implementation
+msgid "No Gap"
+msgstr ""
+
+#. field:Partner.Comment
+msgid "Notes"
+msgstr "Notes"
+
+#. field:User.CompaniesCount
+msgid "Number of Companies"
+msgstr "Nombre de companyies"
+
+#. code:
+msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
+msgstr ""
+
+#. code:
+msgid "Only administrators can change the settings"
+msgstr "Només els administradors poden canviar les configuracions"
+
+#. code:
+msgid "Only administrators can execute this action."
+msgstr "Només els administradors pot executar aquesta acció."
+
+#. selection:Partner.Type
+msgid "Other Address"
+msgstr ""
+
+#. resource:base_action_partner_other_form
+msgid "Other Partners"
+msgstr "Altres empreses"
+
+#. resource:base_view_attachment_search
+msgid "Owner"
+msgstr "Propietari"
+
+#. field:Partner.Parent
+msgid "Parent"
+msgstr "Pare"
+
+#. field:Company.Parent
+msgid "Parent Company"
+msgstr "Empresa Principal"
+
+#. field:Partner.ParentName
+msgid "Parent Name"
+msgstr ""
+
+#. field:PartnerCategory.Parent
+msgid "Parent Tag"
+msgstr ""
+
+#. field:Company.Partner
+#. resource:base_view_partner_address_form
+msgid "Partner"
+msgstr "Empresa"
+
+#. resource:base_view_partner_title_form
+#. resource:base_view_partner_title_tree
+msgid "Partner Titles"
+msgstr "Títols d'empresa"
+
+#. help:User.Partner
+msgid "Partner-related data of the user"
+msgstr "Dades de l'empresa relacionada de l'usuari"
+
+#. field:PartnerCategory.Partners
+#. resource:base_view_partner_form
+msgid "Partners"
+msgstr "Empreses"
+
+#. field:User.Password
+msgid "Password"
+msgstr "Contrasenya"
+
+#. resource:base_view_res_partner_filter
+msgid "Persons"
+msgstr "Persones"
+
+#. field:Partner.Phone
+#. field:Bank.Phone
+#. field:Company.Phone
+msgid "Phone"
+msgstr "Telèfon"
+
+#. code:
+msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
+msgstr "Utilitzeu l'assistent de canvi de contrasenya (a Preferències d'usuari o menú Usuari) per canviar la vostra pròpia contrasenya."
+
+#. resource:base_view_users_form
+msgid "Preferences"
+msgstr "Preferències"
+
+#. field:Sequence.Prefix
+msgid "Prefix"
+msgstr "Prefix"
+
+#. help:Sequence.Prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "Valor del prefix del registre per a la seqüència."
+
+#. resource:base_view_currency_form
+msgid "Price Accuracy"
+msgstr "Precisió del preu"
+
+#. resource:base_view_partner_form
+msgid "Purchase"
+msgstr "Compra"
+
+#. field:CurrencyRate.Rate
+msgid "Rate"
+msgstr "Taxa"
+
+#. field:Currency.Rates
+msgid "Rates"
+msgstr "Taxes"
+
+#. field:User.Partner
+msgid "Related Partner"
+msgstr "Empresa relacionada"
+
+#. resource:base_menu_action_reload_groups
+#. resource:base_action_server_reload_groups
+msgid "Reload Groups"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "Report Configuration"
+msgstr "Paràmetres de l'informe"
+
+#. field:Attachment.ResField
+msgid "Resource Field"
+msgstr "Camp del recurs "
+
+#. field:Attachment.ResID
+msgid "Resource ID"
+msgstr "ID del recurs "
+
+#. field:Attachment.ResModel
+msgid "Resource Model"
+msgstr "Model del Recurs"
+
+#. field:Attachment.ResName
+msgid "Resource Name"
+msgstr "Nom del Recurs"
+
+#. selection:Lang.Direction
+msgid "Right-to-left"
+msgstr ""
+
+#. field:Currency.Rounding
+msgid "Rounding Factor"
+msgstr "Factor d'arrodoniment "
+
+#. resource:base_view_partner_form
+msgid "Sale"
+msgstr "Venda"
+
+#. resource:base_view_partner_form
+msgid "Sales & Purchases"
+msgstr "Vendes i Compres"
+
+#. field:Partner.User
+#. resource:base_view_res_partner_filter
+msgid "Salesperson"
+msgstr "Comercial"
+
+#. field:BankAccount.SanitizedAccountNumber
+msgid "Sanitized Account Number"
+msgstr "Número del compte desinfectat"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Save"
+msgstr "Desar"
+
+#. resource:base_view_res_partner_filter
+msgid "Search Partner"
+msgstr "Cerca empresa"
+
+#. resource:base_sequence_view
+msgid "Second: %(sec)s"
+msgstr "Segons: %(sec)s"
+
+#. field:Lang.Grouping
+msgid "Separator Format"
+msgstr "Format Separador"
+
+#. field:BankAccount.Sequence
+#. resource:base_view_sequence_search
+#. resource:base_sequence_view
+msgid "Sequence"
+msgstr "Seqüència"
+
+#. field:Sequence.Code
+msgid "Sequence Code"
+msgstr "Codi de seqüència "
+
+#. field:Sequence.Padding
+msgid "Sequence Size"
+msgstr "Mida de Seqüència"
+
+#. resource:base_sequence_view_tree
+#. resource:base_view_sequence_search
+#. resource:base_sequence_date_range_tree
+#. resource:base_sequence_view
+#. resource:base_ir_sequence_form
+msgid "Sequences"
+msgstr "Seqüències"
+
+#. resource:base_menu_sequences_identifiers
+msgid "Sequences & Identifiers"
+msgstr "Seqüència i identificadors"
+
+#. field:User.NewPassword
+msgid "Set Password"
+msgstr "Establir contrasenya"
+
+#. resource:base_menu_administration
+msgid "Settings"
+msgstr "Configuració"
+
+#. field:Partner.PartnerShare
+msgid "Share Partner"
+msgstr "Compartir empresa"
+
+#. field:User.Share
+msgid "Share User"
+msgstr "Comparteix Usuari "
+
+#. selection:Partner.Type
+msgid "Shipping Address"
+msgstr "Direcció d'enviament"
+
+#. resource:base_view_currency_search
+msgid "Show active currencies"
+msgstr "Mostrar monedes actives"
+
+#. resource:base_view_currency_search
+msgid "Show inactive currencies"
+msgstr "Mostrar monedes inactives"
+
+#. field:User.Signature
+msgid "Signature"
+msgstr "Signatura"
+
+#. help:Partner.ImageSmall
+msgid ""
+"Small-sized image of this contact. It is automatically\n"
+"resized as a 64x64px image, with aspect ratio preserved.\n"
+"Use this field anywhere a small image is required."
+msgstr ""
+
+#. help:Bank.BIC
+msgid "Sometimes called BIC or Swift."
+msgstr "Algun cop anomenat BIC o Swift."
+
+#. code:
+msgid "Sorry, you are not allowed to access this document."
+msgstr "Ho sento, no té permís per accedir amb aquest document."
+
+#. help:User.NewPassword
+msgid ""
+"Specify a value only when creating a user or if you're\n"
+"changing the user's password, otherwise leave empty. After\n"
+"a change of password, the user has to login again."
+msgstr ""
+
+#. selection:Sequence.Implementation
+msgid "Standard"
+msgstr "Estàndard "
+
+#. field:Partner.State
+#. field:Company.State
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_state_form
+#. resource:base_view_country_state_tree
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "State"
+msgstr "Estat"
+
+#. field:CountryState.Code
+msgid "State Code"
+msgstr "Codi de província"
+
+#. field:CountryState.Name
+msgid "State Name"
+msgstr "Nom província"
+
+#. field:Country.States
+msgid "States"
+msgstr "Estats"
+
+#. field:Sequence.NumberIncrement
+msgid "Step"
+msgstr "Pas"
+
+#. field:Attachment.StoreFname
+msgid "Stored Filename"
+msgstr "Nom de l'arxiu emmagatzemat"
+
+#. field:Partner.Street
+#. field:Bank.Street
+#. field:Company.Street
+msgid "Street"
+msgstr "Carrer"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street 2..."
+msgstr "2a adreça"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street..."
+msgstr "Carrer..."
+
+#. field:Partner.Street2
+#. field:Bank.Street2
+#. field:Company.Street2
+msgid "Street2"
+msgstr "2a adreça"
+
+#. field:Sequence.DateRanges
+msgid "Subsequences"
+msgstr "Subseqüències"
+
+#. field:Sequence.Suffix
+msgid "Suffix"
+msgstr "Sufix "
+
+#. help:Sequence.Suffix
+msgid "Suffix value of the record for the sequence"
+msgstr "Valor del sufix del registre per a la seqüència."
+
+#. field:Currency.Symbol
+msgid "Symbol"
+msgstr "Símbol"
+
+#. field:Currency.Position
+msgid "Symbol Position"
+msgstr "Posició del símbol"
+
+#. field:Partner.VAT
+msgid "TIN"
+msgstr "TIN"
+
+#. resource:base_view_res_partner_filter
+msgid "Tag"
+msgstr "Etiqueta"
+
+#. field:PartnerCategory.Name
+msgid "Tag Name"
+msgstr "Nom de l'etiqueta"
+
+#. field:Company.Tagline
+msgid "Tagline"
+msgstr ""
+
+#. field:Partner.Categories
+msgid "Tags"
+msgstr "Etiquetes"
+
+#. resource:base_view_partner_form
+msgid "Tags..."
+msgstr "Etiquetes..."
+
+#. help:Partner.VAT
+msgid ""
+"Tax Identification Number.\n"
+"Fill it if the company is subjected to taxes.\n"
+"Used by the some of the legal statements."
+msgstr ""
+
+#. resource:base_menu_custom
+msgid "Technical"
+msgstr "Tècnic"
+
+#. help:Country.Code
+msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
+msgstr ""
+
+#. help:Lang.Grouping
+msgid ""
+"The Separator Format should be like [,n] where 0 < n :starting from Unit digit.\"\n"
+"-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
+"[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
+"Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. help:PartnerCategory.Active
+msgid "The active field allows you to hide the category without removing it."
+msgstr "El camp actiu us permet amagar la categoria sense haver d'eliminar-la."
+
+#. code:
+msgid "The chosen company is not in the allowed companies for this user"
+msgstr "La companyia seleccionada no està en les companyies permeses per aquest usuari"
+
+#. help:User.Company
+msgid "The company this user is currently working for."
+msgstr "La companyia per a la qual treballa aquest usuari actualment."
+
+#. help:Attachment.ResModel
+msgid "The database object this attachment will be attached to"
+msgstr ""
+
+#. help:Country.Name
+msgid "The full name of the country."
+msgstr "El nom complert del país."
+
+#. help:Partner.User
+msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr "Si n'hi ha, usuari intern que s'encarrega de la comunicació amb aquest contacte."
+
+#. help:Sequence.NumberIncrement
+msgid "The next number of the sequence will be incremented by this number"
+msgstr "El pròxim número d'aquesta seqüència serà incrementat per aquest número."
+
+#. help:Partner.TZ
+msgid ""
+"The partner's timezone, used to output proper date and time values\n"
+"inside printed reports. It is important to set a value for this field.\n"
+"You should use the same timezone that is otherwise used to pick and\n"
+"render date and time values: your computer's timezone."
+msgstr ""
+
+#. help:CurrencyRate.Rate
+#. help:Currency.Rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "La taxa de canvi de la moneda a la moneda de taxa 1"
+
+#. help:Attachment.ResID
+msgid "The record id this is attached to"
+msgstr ""
+
+#. help:CountryState.Code
+msgid "The state code in max. three chars."
+msgstr ""
+
+#. help:Lang.ISOCode
+msgid "This ISO code is the name of PO files to use for translations"
+msgstr ""
+
+#. help:Partner.Image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "Aquest camp conte la imatge utilitzada com avatar per aquest contacte, limitat a 1024x1024 px"
+
+#. help:Lang.Code
+msgid "This field is used to set/get locales for user"
+msgstr "Aquest camp s'utilitza per establir/obtenir los locals per l'usuari."
+
+#. field:Lang.ThousandsSep
+msgid "Thousands Separator"
+msgstr "Separador de milers"
+
+#. field:Lang.TimeFormat
+msgid "Time Format"
+msgstr "Format d'hora"
+
+#. field:Partner.TZ
+msgid "Timezone"
+msgstr "Zona horària"
+
+#. field:Partner.TZOffset
+msgid "Timezone Offset"
+msgstr ""
+
+#. field:PartnerTitle.Name
+#. field:Partner.Title
+msgid "Title"
+msgstr "Títol"
+
+#. field:SequenceDateRange.DateTo
+msgid "To"
+msgstr "Per"
+
+#. field:Lang.Translatable
+#. resource:base_res_lang_search
+msgid "Translatable"
+msgstr "Traduïble"
+
+#. code:
+msgid "Translate"
+msgstr "Traduir "
+
+#. resource:base_menu_translation
+msgid "Translations"
+msgstr "Traduccions"
+
+#. code:
+msgid "Trying to create a security group"
+msgstr ""
+
+#. code:
+msgid "Trying to modify a security group"
+msgstr ""
+
+#. help:Sequence.Implementation
+msgid ""
+"Two sequence object implementations are offered: Standard and 'No gap'.\n"
+"The latter is slower than the former but forbids any\n"
+"gap in the sequence (while they are possible in the former)."
+msgstr ""
+
+#. field:Partner.Type
+#. field:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Type"
+msgstr "Tipus"
+
+#. selection:Attachment.Type
+#. field:Attachment.URL
+#. resource:base_view_attachment_search
+msgid "URL"
+msgstr "URL"
+
+#. resource:base_res_lang_tree
+msgid "Update Language Terms"
+msgstr "Actualitzar els termes del llenguatge"
+
+#. resource:base_res_lang_tree
+msgid "Update Terms"
+msgstr "Actualitzar termes"
+
+#. field:Sequence.UseDateRange
+msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:User.Login
+msgid "Used to log into the system"
+msgstr "Utilitzat per connectar-se al sistema."
+
+#. help:Partner.Type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "﻿Utilitzat per seleccionar automàticament l'adreça correcta segons el context en documents de vendes i compres."
+
+#. field:UserChangePasswordWizardLine.User
+#. resource:base_view_users_search
+msgid "User"
+msgstr "Usuari"
+
+#. resource:base_menu_user_interface
+msgid "User Interface"
+msgstr "Interfície d'usuari"
+
+#. field:UserChangePasswordWizardLine.UserLogin
+msgid "User Login"
+msgstr "Entrada d'usuari"
+
+#. field:User.Logs
+msgid "User log entries"
+msgstr "Registre d'entrades de l'usuari"
+
+#. field:Partner.Users
+#. field:UserChangePasswordWizard.Users
+#. resource:base_menu_users
+#. resource:base_change_password_wizard_user_tree_view
+#. resource:base_view_users_tree
+#. resource:base_view_users_form
+#. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
+#. resource:base_menu_action_users
+#. resource:base_action_res_users
+msgid "Users"
+msgstr "Usuaris"
+
+#. field:Company.VAT
+msgid "VAT"
+msgstr "CIF/NIF"
+
+#. field:ConfigParameter.Value
+msgid "Value"
+msgstr "Valor"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_supplier_form
+msgid "Vendors"
+msgstr "Proveïdors "
+
+#. resource:base_view_currency_form
+msgid "View Rates"
+msgstr "Veure tarifes"
+
+#. field:Partner.Website
+#. field:Company.Website
+msgid "Website"
+msgstr "Lloc web"
+
+#. help:Partner.Website
+msgid "Website of Partner or Company"
+msgstr "Pàgina web de l'empresa o companyia"
+
+#. resource:base_sequence_view
+msgid "Week of the Year: %(woy)s"
+msgstr "Setmana de l'any: %(woy)s"
+
+#. field:UserChangePasswordWizardLine.Wizard
+msgid "Wizard"
+msgstr "Assistent"
+
+#. help:Attachment.Type
+msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
+msgstr "Pots pujar tant un fitxer del teu ordinador com copiar/pegar un enllaç d'internet al teu fitxer."
+
+#. code:
+msgid "You can not change the company as the partner/user has multiple users linked with different companies."
+msgstr ""
+
+#. code:
+msgid "You can not remove the admin user as it is used internally for resources created by Hexya"
+msgstr ""
+
+#. help:Country.AddressFormat
+msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgstr ""
+
+#. code:
+msgid "You cannot create recursive Partner hierarchies."
+msgstr "No pot crear jerarquies d'empreses recursives."
+
+#. code:
+msgid "You cannot deactivate the admin user."
+msgstr "No podeu desactivar l'usuari d'administració."
+
+#. code:
+msgid "You cannot deactivate the user you're currently logged in as."
+msgstr "No pots desactivar l'usuari amb el que estas loguejat."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "ZIP"
+msgstr "C.P."
+
+#. field:Partner.Zip
+#. field:Bank.Zip
+#. field:Company.Zip
+msgid "Zip"
+msgstr "Codi Postal"
+
+#. resource:base_view_company_form
+msgid "e.g. Global Business Solutions"
+msgstr "ex. Solucions de Negoci Globals"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mr."
+msgstr "ex. Sr."
+
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "e.g. Sales Director"
+msgstr "ex. Director de vendes "
+
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+msgid "e.g. www.hexya.io"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "internal note..."
+msgstr "nota interna..."
+

@@ -1,0 +1,1014 @@
+"id","address_format","phone_code","code",CountryGroups,"name",currency_id,image
+"base_af","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","93","AF","","Afghanistan, Islamic State of","base_AFN",country_flags/af.png
+"base_ax","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","AX","","Åland Islands","base_EUR",country_flags/ax.png
+"base_al","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","355","AL","","Albania","base_ALL",country_flags/al.png
+"base_dz","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","213","DZ","","Algeria","base_DZD",country_flags/dz.png
+"base_as","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","AS","","American Samoa","base_USD",country_flags/as.png
+"base_ad","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","376","AD","","Andorra, Principality of","base_EUR",country_flags/ad.png
+"base_ao","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","244","AO","","Angola","base_AOA",country_flags/ao.png
+"base_ai","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","AI","","Anguilla","base_XCD",country_flags/ai.png
+"base_aq","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","AQ","","Antarctica","base_XCD",
+"base_ag","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","AG","","Antigua and Barbuda","base_XCD",country_flags/ag.png
+"base_ar","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","54","AR","","Argentina","base_ARS",country_flags/ar.png
+"base_am","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","374","AM","","Armenia","base_AMD",country_flags/am.png
+"base_aw","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","297","AW","","Aruba","base_AWG",country_flags/aw.png
+"base_au","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","61","AU","","Australia","base_AUD",country_flags/au.png
+"base_at","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","43","AT","base_europe","Austria","base_EUR",country_flags/at.png
+"base_az","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","994","AZ","","Azerbaijan","base_AZN",country_flags/az.png
+"base_bs","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","BS","","Bahamas","base_BSD",country_flags/bs.png
+"base_bh","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","973","BH","","Bahrain","base_BHD",country_flags/bh.png
+"base_bd","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","880","BD","","Bangladesh","base_BDT",country_flags/bd.png
+"base_bb","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","BB","","Barbados","base_BBD",country_flags/bb.png
+"base_by","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","BY","","Belarus","base_BYR",country_flags/by.png
+"base_be","{{ .Street }}
+{{ .Street2 }}
+{{ .Zip }} {{ .City }}
+{{ .CountryName }}","32","BE","base_europe","Belgium","base_EUR",country_flags/be.png
+"base_bz","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","501","BZ","","Belize","base_BZD",country_flags/bz.png
+"base_bj","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","229","BJ","","Benin","base_XOF",country_flags/bj.png
+"base_bm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","BM","","Bermuda","base_BMD",country_flags/bm.png
+"base_bt","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","975","BT","","Bhutan","base_BTN",country_flags/bt.png
+"base_bo","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","591","BO","","Bolivia","base_BOB",country_flags/bo.png
+"base_bq","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","BQ","","Bonaire, Sint Eustatius and Saba","base_USD",
+"base_ba","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","387","BA","","Bosnia-Herzegovina","base_BAM",country_flags/ba.png
+"base_bw","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","267","BW","","Botswana","base_BWP",country_flags/bw.png
+"base_bv","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","BV","","Bouvet Island","base_NOK",
+"base_br","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }}
+{{ .Zip }}
+{{ .CountryName }}","55","BR","","Brazil","base_BRL",country_flags/br.png
+"base_io","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","IO","","British Indian Ocean Territory","base_USD",country_flags/io.png
+"base_bn","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","673","BN","","Brunei Darussalam","base_BND",country_flags/bn.png
+"base_bg","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","359","BG","base_europe","Bulgaria","base_BGN",country_flags/bg.png
+"base_bf","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","226","BF","","Burkina Faso","base_XOF",country_flags/bf.png
+"base_bi","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","257","BI","","Burundi","base_BIF",country_flags/bi.png
+"base_kh","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","855","KH","","Cambodia, Kingdom of","base_KHR",country_flags/kh.png
+"base_cm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","237","CM","","Cameroon","base_XAF",country_flags/cm.png
+"base_ca","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","1","CA","","Canada","base_CAD",country_flags/ca.png
+"base_cv","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","238","CV","","Cape Verde","base_CVE",country_flags/cv.png
+"base_ky","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","KY","","Cayman Islands","base_KYD",country_flags/ky.png
+"base_cf","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","236","CF","","Central African Republic","base_XAF",country_flags/cf.png
+"base_td","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","235","TD","","Chad","base_XAF",country_flags/td.png
+"base_cl","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","56","CL","","Chile","base_CLP",country_flags/cl.png
+"base_cn","{{ .CountryName }}{{ .StateName }}s{{ .City }}{{ .Street }}{{ .Street2 }} {{ .Zip }}","86","CN","","China","base_CNY",country_flags/cn.png
+"base_cx","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","CX","","Christmas Island","base_AUD",country_flags/cx.png
+"base_cc","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","CC","","Cocos (Keeling) Islands","base_AUD",country_flags/cc.png
+"base_co","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateName }}s {{ .Zip }}
+{{ .CountryName }}","57","CO","","Colombia","base_COP",country_flags/co.png
+"base_km","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","269","KM","","Comoros","base_KMF",country_flags/km.png
+"base_cg","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","243","CG","","Congo","base_XAF",country_flags/cg.png
+"base_cd","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","242","CD","","Congo, Democratic Republic of the","base_CDF",country_flags/cd.png
+"base_ck","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","682","CK","","Cook Islands","base_NZD",country_flags/ck.png
+"base_cr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","506","CR","","Costa Rica","base_CRC",country_flags/cr.png
+"base_hr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","385","HR","base_europe","Croatia","base_HRK",country_flags/hr.png
+"base_cu","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","53","CU","","Cuba","base_CUP",country_flags/cu.png
+"base_cw","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","CW","","Curaçao","base_ANG",country_flags/cw.png
+"base_cy","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","357","CY","base_europe","Cyprus","base_CYP",country_flags/cy.png
+"base_cz","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","420","CZ","base_europe","Czech Republic","base_CZK",country_flags/cz.png
+"base_dk","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","45","DK","base_europe","Denmark","base_DKK",country_flags/dk.png
+"base_dj","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","253","DJ","","Djibouti","base_DJF",country_flags/dj.png
+"base_dm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","DM","","Dominica","base_XCD",country_flags/dm.png
+"base_do","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","DO","","Dominican Republic","base_DOP",country_flags/do.png
+"base_tp","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","TP","","East Timor","base_TPE",country_flags/tp.png
+"base_ec","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","593","EC","","Ecuador","base_ECS",country_flags/ec.png
+"base_eg","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","20","EG","","Egypt","base_EGP",country_flags/eg.png
+"base_sv","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","503","SV","","El Salvador","base_SVC",country_flags/sv.png
+"base_gq","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","240","GQ","","Equatorial Guinea","base_XAF",country_flags/gq.png
+"base_er","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","291","ER","","Eritrea","base_ERN",country_flags/er.png
+"base_ee","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","372","EE","base_europe","Estonia","base_EUR",country_flags/ee.png
+"base_et","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","251","ET","","Ethiopia","base_ETB",country_flags/et.png
+"base_fk","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","FK","","Falkland Islands","base_FKP",country_flags/fk.png
+"base_fo","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","298","FO","","Faroe Islands","base_DKK",country_flags/fo.png
+"base_fj","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","679","FJ","","Fiji","base_FJD",country_flags/fj.png
+"base_fi","{{ .Street }}
+{{ .Street2 }}
+{{ .Zip }} {{ .City }}
+{{ .CountryName }}","358","FI","base_europe","Finland","base_EUR",country_flags/fi.png
+"base_fr","{{ .Street }}
+{{ .Street2 }}
+{{ .Zip }} {{ .City }}
+{{ .CountryName }}","33","FR","base_europe","France","base_EUR",country_flags/fr.png
+"base_gf","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","594","GF","","French Guyana","base_EUR",
+"base_tf","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","TF","","French Southern Territories","base_EUR",country_flags/tf.png
+"base_ga","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","241","GA","","Gabon","base_XAF",country_flags/ga.png
+"base_gm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","220","GM","","Gambia","base_GMD",country_flags/gm.png
+"base_ge","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","995","GE","","Georgia","base_GEL",country_flags/ge.png
+"base_de","{{ .Street }}
+{{ .Street2 }}
+{{ .Zip }} {{ .City }}
+{{ .CountryName }}","49","DE","base_europe","Germany","base_EUR",country_flags/de.png
+"base_gh","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","233","GH","","Ghana","base_GHS",country_flags/gh.png
+"base_gi","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","350","GI","","Gibraltar","base_GIP",country_flags/gi.png
+"base_gr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","30","GR","base_europe","Greece","base_EUR",country_flags/gr.png
+"base_gl","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","299","GL","","Greenland","base_DKK",country_flags/gl.png
+"base_gd","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","GD","","Grenada","base_XCD",country_flags/gd.png
+"base_gp","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","590","GP","","Guadeloupe (French)","base_EUR",
+"base_gu","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","GU","","Guam (USA)","base_USD",country_flags/gu.png
+"base_gt","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","502","GT","","Guatemala","base_QTQ",country_flags/gt.png
+"base_gg","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","GG","","Guernsey","base_GBP",country_flags/gg.png
+"base_gn","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","224","GN","","Guinea","base_GNF",country_flags/gn.png
+"base_gw","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","245","GW","","Guinea Bissau","base_GWP",country_flags/gw.png
+"base_gy","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","592","GY","","Guyana","base_GYD",country_flags/gy.png
+"base_ht","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","509","HT","","Haiti","base_HTG",country_flags/ht.png
+"base_hm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","HM","","Heard and McDonald Islands","base_AUD",
+"base_va","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","379","VA","","Holy See (Vatican City State)","base_EUR",country_flags/va.png
+"base_hn","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","504","HN","","Honduras","base_HNL",country_flags/hn.png
+"base_hk","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","852","HK","","Hong Kong","base_HKD",country_flags/hk.png
+"base_hu","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","36","HU","base_europe","Hungary","base_HUF",country_flags/hu.png
+"base_is","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","354","IS","","Iceland","base_ISK",country_flags/is.png
+"base_in","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .Zip }}
+{{ .StateName }}s
+{{ .CountryName }}","91","IN","","India","base_INR",country_flags/in.png
+"base_id","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","62","ID","","Indonesia","base_IDR",country_flags/id.png
+"base_ir","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","98","IR","","Iran","base_IRR",country_flags/ir.png
+"base_iq","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","964","IQ","","Iraq","base_IQD",country_flags/iq.png
+"base_ie","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","353","IE","base_europe","Ireland","base_EUR",country_flags/ie.png
+"base_im","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","IM","","Isle of Man","base_GBP",country_flags/im.png
+"base_il","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","972","IL","","Israel","base_ILS",country_flags/il.png
+"base_it","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","39","IT","base_europe","Italy","base_EUR",country_flags/it.png
+"base_ci","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","225","CI","","Ivory Coast (Cote D'Ivoire)","base_XOF",country_flags/ci.png
+"base_jm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","JM","","Jamaica","base_JMD",country_flags/jm.png
+"base_jp","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","81","JP","","Japan","base_JPY",country_flags/jp.png
+"base_je","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","JE","","Jersey","base_GBP",country_flags/je.png
+"base_jo","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","962","JO","","Jordan","base_JOD",country_flags/jo.png
+"base_kz","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","7","KZ","","Kazakhstan","base_KZT",country_flags/kz.png
+"base_ke","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","254","KE","","Kenya","base_KES",country_flags/ke.png
+"base_ki","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","686","KI","","Kiribati","base_AUD",country_flags/ki.png
+"base_kw","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","965","KW","","Kuwait","base_KWD",country_flags/kw.png
+"base_kg","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","996","KG","","Kyrgyz Republic (Kyrgyzstan)","base_KGS",country_flags/kg.png
+"base_la","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","856","LA","","Laos","base_LAK",country_flags/la.png
+"base_lv","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","371","LV","base_europe","Latvia","base_EUR",country_flags/lv.png
+"base_lb","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","961","LB","","Lebanon","base_LBP",country_flags/lb.png
+"base_ls","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","266","LS","","Lesotho","base_LSL",country_flags/ls.png
+"base_lr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","231","LR","","Liberia","base_LRD",country_flags/lr.png
+"base_ly","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","218","LY","","Libya","base_LYD",country_flags/ly.png
+"base_li","{{ .Street }}
+{{ .Street2 }}
+{{ .Zip }} {{ .City }}
+{{ .CountryName }}","423","LI","","Liechtenstein","base_CHF",country_flags/li.png
+"base_lt","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","370","LT","base_europe","Lithuania","base_EUR",country_flags/lt.png
+"base_lu","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","352","LU","base_europe","Luxembourg","base_EUR",country_flags/lu.png
+"base_mo","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","853","MO","","Macau","base_MOP",country_flags/mo.png
+"base_mk","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","389","MK","","Macedonia, the former Yugoslav Republic of","base_MKD",country_flags/mk.png
+"base_mg","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","261","MG","","Madagascar","base_MGA",country_flags/mg.png
+"base_mw","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","265","MW","","Malawi","base_MWK",country_flags/mw.png
+"base_my","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","60","MY","","Malaysia","base_MYR",country_flags/my.png
+"base_mv","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","960","MV","","Maldives","base_MVR",country_flags/mv.png
+"base_ml","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","223","ML","","Mali","base_XOF",country_flags/ml.png
+"base_mt","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","356","MT","base_europe","Malta","base_EUR",country_flags/mt.png
+"base_mh","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","692","MH","","Marshall Islands","base_USD",country_flags/mh.png
+"base_mq","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","596","MQ","","Martinique (French)","base_EUR",country_flags/mq.png
+"base_mr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","222","MR","","Mauritania","base_MRO",country_flags/mr.png
+"base_mu","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","230","MU","","Mauritius","base_MUR",country_flags/mu.png
+"base_yt","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","262","YT","","Mayotte","base_EUR",
+"base_mx","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","52","MX","","Mexico","base_MXN",country_flags/mx.png
+"base_fm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","691","FM","","Micronesia","base_USD",country_flags/fm.png
+"base_md","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","373","MD","","Moldavia","base_MDL",country_flags/md.png
+"base_mc","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","377","MC","","Monaco","base_EUR",country_flags/mc.png
+"base_mn","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","976","MN","","Mongolia","base_MNT",country_flags/mn.png
+"base_me","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","382","ME","","Montenegro","base_LYD",country_flags/me.png
+"base_ms","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","MS","","Montserrat","base_XCD",country_flags/ms.png
+"base_ma","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","212","MA","","Morocco","base_MAD",country_flags/ma.png
+"base_mz","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","258","MZ","","Mozambique","base_MZN",country_flags/mz.png
+"base_mm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","95","MM","","Myanmar","base_MMK",country_flags/mm.png
+"base_na","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","264","NA","","Namibia","base_NAD",country_flags/na.png
+"base_nr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","674","NR","","Nauru","base_AUD",country_flags/nr.png
+"base_np","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","977","NP","","Nepal","base_NPR",country_flags/np.png
+"base_nl","{{ .Street }}
+{{ .Street2 }}
+{{ .Zip }} {{ .City }}
+{{ .CountryName }}","31","NL","base_europe","Netherlands","base_EUR",country_flags/nl.png
+"base_an","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","599","AN","","Netherlands Antilles","base_NOK",country_flags/an.png
+"base_nt","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","NT","","Neutral Zone","base_IQD",
+"base_nc","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","687","NC","","New Caledonia (French)","base_XPF",country_flags/nc.png
+"base_nz","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","64","NZ","","New Zealand","base_NZD",country_flags/nz.png
+"base_ni","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","505","NI","","Nicaragua","base_NIO",country_flags/ni.png
+"base_ne","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","227","NE","","Niger","base_XOF",country_flags/ne.png
+"base_ng","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","234","NG","","Nigeria","base_NGN",country_flags/ng.png
+"base_nu","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","683","NU","","Niue","base_NZD",country_flags/nu.png
+"base_nf","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","NF","","Norfolk Island","base_AUD",country_flags/nf.png
+"base_mp","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","MP","","Northern Mariana Islands","base_USD",country_flags/mp.png
+"base_kp","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","850","KP","","North Korea","base_KPW",country_flags/kp.png
+"base_no","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","47","NO","","Norway","base_NOK",country_flags/no.png
+"base_om","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","968","OM","","Oman","base_OMR",country_flags/om.png
+"base_pk","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","92","PK","","Pakistan","base_PKR",country_flags/pk.png
+"base_pw","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","680","PW","","Palau","base_USD",country_flags/pw.png
+"base_ps","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","PS","","Palestinian Territory, Occupied","base_ILS",
+"base_pa","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","507","PA","","Panama","base_PAB",country_flags/pa.png
+"base_pg","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","675","PG","","Papua New Guinea","base_PGK",country_flags/pg.png
+"base_py","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","595","PY","","Paraguay","base_PYG",country_flags/py.png
+"base_pe","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","51","PE","","Peru","base_PEN",country_flags/pe.png
+"base_ph","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","63","PH","","Philippines","base_PHP",country_flags/ph.png
+"base_pn","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","PN","","Pitcairn Island","base_NZD",country_flags/pn.png
+"base_pl","{{ .Street }}
+{{ .Street2 }}
+{{ .Zip }} {{ .City }}
+{{ .CountryName }}","48","PL","base_europe","Poland","base_PLN",country_flags/pl.png
+"base_pf","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","689","PF","","Polynesia (French)","base_XPF",country_flags/pf.png
+"base_pt","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","351","PT","base_europe","Portugal","base_EUR",country_flags/pt.png
+"base_pr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","PR","","Puerto Rico","base_USD",country_flags/pr.png
+"base_qa","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","974","QA","","Qatar","base_QAR",country_flags/qa.png
+"base_re","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","262","RE","","Reunion (French)","base_EUR",
+"base_ro","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","40","RO","base_europe","Romania","base_RON",country_flags/ro.png
+"base_ru","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","7","RU","","Russian Federation","base_RUB",country_flags/ru.png
+"base_rw","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","250","RW","","Rwanda","base_RWF",country_flags/rw.png
+"base_bl","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","BL","","Saint Barthélémy","base_EUR",country_flags/bl.png
+"base_sh","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","SH","","Saint Helena","base_SHP",country_flags/sh.png
+"base_kn","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","KN","","Saint Kitts & Nevis Anguilla","base_XCD",country_flags/kn.png
+"base_lc","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","LC","","Saint Lucia","base_XCD",country_flags/lc.png
+"base_mf","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","MF","","Saint Martin (French part)","base_EUR",
+"base_pm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","508","PM","","Saint Pierre and Miquelon","base_EUR",country_flags/pm.png
+"base_st","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","239","ST","","Saint Tome (Sao Tome) and Principe","base_STD",country_flags/st.png
+"base_vc","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","VC","","Saint Vincent & Grenadines","base_XCD",country_flags/vc.png
+"base_ws","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","685","WS","","Samoa","base_WST",country_flags/ws.png
+"base_sm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","378","SM","","San Marino","base_ITL",country_flags/sm.png
+"base_sa","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","966","SA","","Saudi Arabia","base_SAR",country_flags/sa.png
+"base_sn","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","221","SN","","Senegal","base_XOF",country_flags/sn.png
+"base_rs","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","381","RS","","Serbia","base_RSD",country_flags/rs.png
+"base_sc","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","248","SC","","Seychelles","base_SCR",country_flags/sc.png
+"base_sl","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","232","SL","","Sierra Leone","base_SLL",country_flags/sl.png
+"base_sg","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","65","SG","","Singapore","base_SGD",country_flags/sg.png
+"base_sx","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","SX","","Sint Maarten (Dutch part)","base_ANG",country_flags/sx.png
+"base_sk","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","421","SK","base_europe","Slovakia","base_SKK",country_flags/sk.png
+"base_si","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","386","SI","base_europe","Slovenia","base_EUR",country_flags/si.png
+"base_sb","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","677","SB","","Solomon Islands","base_SBD",country_flags/sb.png
+"base_so","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","252","SO","","Somalia","base_SOD",country_flags/so.png
+"base_za","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","27","ZA","","South Africa","base_ZAR",country_flags/za.png
+"base_gs","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","GS","","South Georgia and the South Sandwich Islands","base_GBP",country_flags/gs.png
+"base_kr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","82","KR","","South Korea","base_KRW",country_flags/kr.png
+"base_ss","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","SS","","South Sudan","base_SSP",country_flags/ss.png
+"base_es","{{ .Street }}
+{{ .Street2 }}
+{{ .Zip }} {{ .City }}
+{{ .CountryName }}","34","ES","base_europe","Spain","base_EUR",country_flags/es.png
+"base_lk","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","94","LK","","Sri Lanka","base_LKR",country_flags/lk.png
+"base_sd","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","249","SD","","Sudan","base_SDD",country_flags/sd.png
+"base_sr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","597","SR","","Suriname","base_SRG",country_flags/sr.png
+"base_sj","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","SJ","","Svalbard and Jan Mayen Islands","base_NOK",
+"base_sz","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","268","SZ","","Swaziland","base_SZL",country_flags/sz.png
+"base_se","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","46","SE","base_europe","Sweden","base_SEK",country_flags/se.png
+"base_ch","{{ .Street }}
+{{ .Street2 }}
+{{ .Zip }} {{ .City }}
+{{ .CountryName }}","41","CH","","Switzerland","base_CHF",country_flags/ch.png
+"base_sy","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","963","SY","","Syria","base_SYP",country_flags/sy.png
+"base_tw","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","886","TW","","Taiwan","base_TWD",
+"base_tj","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","992","TJ","","Tajikistan","base_TJR",country_flags/tj.png
+"base_tz","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","255","TZ","","Tanzania","base_TZS",country_flags/tz.png
+"base_th","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","66","TH","","Thailand","base_THB",country_flags/th.png
+"base_tg","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","228","TG","","Togo","base_XOF",country_flags/tg.png
+"base_tk","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","690","TK","","Tokelau","base_NZD",country_flags/tk.png
+"base_to","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","676","TO","","Tonga","base_TOP",country_flags/to.png
+"base_tt","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","TT","","Trinidad and Tobago","base_TTD",country_flags/tt.png
+"base_tn","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","216","TN","","Tunisia","base_TND",country_flags/tn.png
+"base_tr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","90","TR","","Turkey","base_TRY",country_flags/tr.png
+"base_tm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","993","TM","","Turkmenistan","base_TMM",country_flags/tm.png
+"base_tc","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","TC","","Turks and Caicos Islands","base_USD",country_flags/tc.png
+"base_tv","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","688","TV","","Tuvalu","base_AUD",country_flags/tv.png
+"base_ug","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","256","UG","","Uganda","base_UGX",country_flags/ug.png
+"base_ua","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","380","UA","","Ukraine","base_UAH",country_flags/ua.png
+"base_ae","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","971","AE","","United Arab Emirates","base_AED",country_flags/ae.png
+"base_uk","{{ .Street }}
+{{ .Street2 }}
+{{ .City }}
+{{ .StateName }}s
+{{ .Zip }}
+{{ .CountryName }}","0","GB","base_europe","United Kingdom","base_GBP",country_flags/gb.png
+"base_us","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","1","US","","United States","base_USD",country_flags/us.png
+"base_uy","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","598","UY","","Uruguay","base_UYU",country_flags/uy.png
+"base_um","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","UM","","USA Minor Outlying Islands","base_USD",
+"base_uz","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","998","UZ","","Uzbekistan","base_UZS",country_flags/uz.png
+"base_vu","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","678","VU","","Vanuatu","base_VUV",country_flags/vu.png
+"base_ve","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","58","VE","","Venezuela","base_VEF",country_flags/ve.png
+"base_vn","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","84","VN","","Vietnam","base_VND",country_flags/vn.png
+"base_vg","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","VG","","Virgin Islands (British)","base_USD",country_flags/vg.png
+"base_vi","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","VI","","Virgin Islands (USA)","base_USD",country_flags/vi.png
+"base_wf","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","681","WF","","Wallis and Futuna Islands","base_XPF",
+"base_eh","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","EH","","Western Sahara","base_MAD",
+"base_ye","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","967","YE","","Yemen","base_YER",country_flags/ye.png
+"base_yu","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","YU","","Yugoslavia","base_YUM",
+"base_zr","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","0","ZR","","Zaire","base_ZRZ",
+"base_zm","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","260","ZM","","Zambia","base_ZMK",country_flags/zm.png
+"base_zw","{{ .Street }}
+{{ .Street2 }}
+{{ .City }} {{ .StateCode }} {{ .Zip }}
+{{ .CountryName }}","263","ZW","","Zimbabwe","base_ZWD",country_flags/zw.png

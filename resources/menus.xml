@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hexya>
+    <data>
+
+        <!-- Top menu item -->
+        <menuitem id="base_menu_board_root" name="Dashboards" sequence="305"
+                  web_icon="/static/base/description/board.png" groups="base_group_user"/>
+        <menuitem id="base_menu_reporting_dashboard" name="Dashboards" parent="base_menu_board_root" sequence="0"/>
+        <menuitem id="base_menu_reporting_config" name="Configuration" parent="base_menu_board_root" sequence="100"
+                  groups="base_group_configuration"/>
+
+        <!-- Top menu item -->
+        <menuitem name="Settings"
+                  id="base_menu_administration"
+                  icon="fa-cog"
+                  web_icon="/static/base/description/settings.png"
+                  sequence="500"
+                  groups="base_group_system"/>
+        <menuitem id="base_menu_administration_shortcut" parent="base_menu_administration" name="Custom Shortcuts"
+                  sequence="50"/>
+        <menuitem id="base_menu_users" name="Users" parent="base_menu_administration" sequence="0"/>
+        <menuitem id="base_menu_translation" name="Translations" parent="base_menu_administration" sequence="7"/>
+        <menuitem id="base_menu_translation_app" name="Application Terms" parent="base_menu_translation" sequence="4"
+                  groups="base_group_no_one"/>
+        <menuitem id="base_menu_translation_export" name="Import / Export" parent="base_menu_translation" sequence="3"
+                  groups="base_group_no_one"/>
+
+        <menuitem id="base_menu_custom" name="Technical" parent="base_menu_administration" sequence="110"
+                  groups="base.group_no_one"/>
+        <menuitem id="base_menu_user_interface" name="User Interface" parent="base_menu_custom"/>
+        <menuitem id="base_menu_database_structure" name="Database Structure" parent="base_menu_custom"/>
+
+    </data>
+</hexya>

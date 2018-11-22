@@ -1,0 +1,1575 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. code:
+#. code:
+#. code:
+msgid "%s (copy)"
+msgstr "%s (bản sao)"
+
+#. resource:base_view_partner_form
+msgid "(edit)"
+msgstr "(chỉnh sửa)"
+
+#. field:PartnerTitle.Shortcut
+msgid "Abbreviation"
+msgstr "Viết tắt"
+
+#. field:Company.Users
+msgid "Accepted Users"
+msgstr "Người dùng được chấp nhận"
+
+#. resource:base_view_users_form
+msgid "Access Rights"
+msgstr "Quyền truy cập"
+
+#. field:BankAccount.Partner
+msgid "Account Holder"
+msgstr "Chủ tài khoản"
+
+#. field:BankAccount.Name
+msgid "Account Number"
+msgstr "Số tài khoản"
+
+#. field:BankAccount.AccountType
+msgid "Account Type"
+msgstr "Loại tài khoản"
+
+#. resource:base_view_company_form
+msgid "Accounting"
+msgstr "Kế toán"
+
+#. field:Currency.Active
+#. field:PartnerCategory.Active
+#. field:Sequence.Active
+#. field:Lang.Active
+#. field:Partner.Active
+#. field:Bank.Active
+#. resource:base_view_currency_search
+#. resource:base_res_lang_search
+msgid "Active"
+msgstr "Có hiệu lực"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Address"
+msgstr "Địa chỉ"
+
+#. field:Country.AddressFormat
+msgid "Address Format"
+msgstr ""
+
+#. resource:base_view_country_form
+msgid "Address format..."
+msgstr "Định dạng địa chỉ..."
+
+#. help:CountryState.Name
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+
+#. selection:Currency.Position
+msgid "After Amount"
+msgstr "Sau giá trị"
+
+#. resource:base_view_users_form
+msgid "Allowed Companies"
+msgstr "Công ty được cho phép"
+
+#. resource:base_menu_translation_app
+msgid "Application Terms"
+msgstr "Thuật ngữ ứng dụng"
+
+#. resource:base_view_res_partner_filter
+msgid "Archived"
+msgstr "Đã lưu "
+
+#. resource:base_view_attachment_form
+msgid "Attached To"
+msgstr "Đính kèm tới"
+
+#. resource:base_view_attachment_search
+#. resource:base_action_attachment
+msgid "Attachment"
+msgstr "Đính kèm"
+
+#. field:Attachment.Name
+msgid "Attachment Name"
+msgstr "Tên đính kèm"
+
+#. field:BankAccount.Bank
+#. resource:base_view_res_bank_form
+msgid "Bank"
+msgstr "Ngân hàng"
+
+#. field:Partner.Banks
+#. resource:base_view_partner_bank_tree
+#. resource:base_view_partner_bank_search
+#. resource:base_action_res_partner_bank_account_form
+msgid "Bank Accounts"
+msgstr "Tài khoản ngân hàng"
+
+#. field:BankAccount.BankBIC
+msgid "Bank BIC"
+msgstr ""
+
+#. field:Bank.BIC
+msgid "Bank Identifier Cord"
+msgstr ""
+
+#. field:BankAccount.BankName
+#. resource:base_view_partner_bank_search
+msgid "Bank Name"
+msgstr "Tên ngân hàng"
+
+#. resource:base_view_partner_bank_form
+msgid "Bank account"
+msgstr "Tài khoản ngân hàng"
+
+#. resource:base_view_res_bank_tree
+#. resource:base_action_res_bank_form
+msgid "Banks"
+msgstr "Ngân hàng"
+
+#. field:Partner.Barcode
+msgid "Barcode"
+msgstr "Mã vạch"
+
+#. selection:Currency.Position
+msgid "Before Amount"
+msgstr "Trước giá trị"
+
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Binary"
+msgstr "Nhị phân"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form_simple_modif
+msgid "Cancel"
+msgstr "Hủy"
+
+#. code:
+msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. resource:base_action_res_users_my
+msgid "Change My Preferences"
+msgstr "Thay đổi tùy chọn cá nhân"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form
+#. resource:base_change_password_wizard_action
+msgid "Change Password"
+msgstr "Thay đổi mật khẩu"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Change password"
+msgstr "Thay đổi mật khẩu"
+
+#. resource:base_view_users_form
+msgid "Change the user password."
+msgstr "Thay đổi mật khẩu người dùng"
+
+#. help:Partner.IsCompany
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Đánh dấu nếu liên hệ này là một công ty, bỏ tích nếu là cá nhân"
+
+#. help:Partner.Customer
+msgid "Check this box if this contact is a customer."
+msgstr "Đánh dấu nếu liên hệ này là một khách hàng."
+
+#. help:Partner.Supplier
+msgid ""
+"Check this box if this contact is a vendor.\n"
+"If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr ""
+
+#. help:Partner.Employee
+msgid "Check this box if this contact is an Employee."
+msgstr "Đánh dấu nếu liên hệ là một nhân viên."
+
+#. field:Attachment.CheckSum
+msgid "Checksum/SHA1"
+msgstr "Checksum/SHA1"
+
+#. field:Company.Children
+msgid "Child Companies"
+msgstr "Công ty con"
+
+#. field:Partner.Children
+msgid "Children"
+msgstr "Children"
+
+#. field:PartnerCategory.Children
+msgid "Children Tags"
+msgstr ""
+
+#. field:Partner.City
+#. field:Bank.City
+#. field:Company.City
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "City"
+msgstr "Thành phố"
+
+#. field:Partner.Color
+msgid "Color"
+msgstr "Màu sắc"
+
+#. field:PartnerCategory.Color
+msgid "Color Index"
+msgstr "Mã màu"
+
+#. field:Partner.CommercialCompanyName
+msgid "Commercial Company Name"
+msgstr ""
+
+#. field:Partner.CommercialPartner
+msgid "Commercial Entity"
+msgstr "Tổ chức thương mại"
+
+#. resource:base_view_res_bank_form
+msgid "Communication"
+msgstr "Thông tin trao đổi"
+
+#. field:User.Companies
+#. resource:base_view_company_tree
+#. resource:base_company_normal_action_tree
+#. resource:base_action_res_company_form
+#. resource:base_view_res_partner_filter
+msgid "Companies"
+msgstr "Công ty"
+
+#. field:CurrencyRate.Company
+#. field:Sequence.Company
+#. field:Attachment.Company
+#. field:BankAccount.Company
+#. field:User.Company
+#. field:Partner.Company
+#. selection:Partner.CompanyType
+#. resource:base_view_attachment_search
+#. resource:base_view_company_form
+#. resource:base_view_partner_form
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_simple_form
+#. resource:base_view_users_search
+msgid "Company"
+msgstr "Công ty"
+
+#. field:Partner.CompanyName
+#. field:Company.Name
+msgid "Company Name"
+msgstr "Tên Công ty"
+
+#. field:Company.CompanyRegistry
+msgid "Company Registry"
+msgstr ""
+
+#. field:Partner.CompanyType
+msgid "Company Type"
+msgstr "Kiểu Công ty"
+
+#. field:Partner.ContactAddress
+msgid "Complete Address"
+msgstr "Địa chỉ đầy đủ"
+
+#. resource:base_view_company_form
+#. resource:base_menu_reporting_config
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. selection:Partner.Type
+#. resource:base_view_partner_simple_form
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. resource:base_view_partner_form
+msgid "Contact / Address"
+msgstr "Liên hệ / Địa chỉ"
+
+#. resource:base_view_partner_form
+msgid "Contact Name"
+msgstr "Tên liên hệ"
+
+#. resource:base_view_partner_category_form
+msgid "Contact Tag"
+msgstr "Thẻ Liên hệ"
+
+#. resource:base_view_partner_category_list
+msgid "Contact Tags"
+msgstr "Loại Đối tác"
+
+#. resource:base_action_partner_title_contact
+msgid "Contact Titles"
+msgstr "Danh xưng"
+
+#. resource:base_view_partner_tree
+msgid "Contacts"
+msgstr "Liên hệ"
+
+#. resource:base_view_partner_form
+msgid "Contacts & Addresses"
+msgstr "Các liên lạc & Địa chỉ"
+
+#. code:
+msgid "Couldn't create contact without email address!"
+msgstr "Không thể tạo liên hệ mà không có địa chỉ email!"
+
+#. field:CountryGroup.Countries
+#. resource:base_action_country
+msgid "Countries"
+msgstr "Quốc gia"
+
+#. field:CountryState.Country
+#. field:Partner.Country
+#. field:Bank.Country
+#. field:Company.Country
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_tree
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_res_partner_filter
+msgid "Country"
+msgstr "Quốc gia"
+
+#. field:Country.PhoneCode
+msgid "Country Calling Code"
+msgstr "Mã Gọi Quốc gia"
+
+#. field:Country.Code
+msgid "Country Code"
+msgstr "Mã quốc gia"
+
+#. resource:base_view_country_group_form
+#. resource:base_view_country_group_tree
+msgid "Country Group"
+msgstr "Nhóm quốc gia"
+
+#. field:Country.CountryGroups
+#. resource:base_action_country_group
+msgid "Country Groups"
+msgstr "Nhóm Quốc gia"
+
+#. field:Country.Name
+msgid "Country Name"
+msgstr "Tên nước"
+
+#. resource:base_view_partner_form
+msgid "Create company"
+msgstr "Tạo công ty"
+
+#. resource:base_view_attachment_form
+msgid "Creation"
+msgstr "Tạo"
+
+#. resource:base_view_attachment_search
+msgid "Creation Month"
+msgstr "Tháng tạo"
+
+#. field:Partner.CreditLimit
+msgid "Credit Limit"
+msgstr "Hạn mức tín dụng"
+
+#. resource:base_view_currency_search
+#. resource:base_view_currency_tree
+#. resource:base_action_currency_form
+msgid "Currencies"
+msgstr "Tiền tệ"
+
+#. field:CurrencyRate.Currency
+#. field:Currency.Name
+#. field:BankAccount.Currency
+#. field:Country.Currency
+#. field:Company.Currency
+#. resource:base_view_currency_search
+#. resource:base_view_currency_form
+msgid "Currency"
+msgstr "Tiền tệ"
+
+#. help:Currency.Name
+msgid "Currency Code [ISO 4217]"
+msgstr ""
+
+#. resource:base_view_currency_rate_form
+msgid "Currency Rate"
+msgstr "Tỷ giá"
+
+#. resource:base_view_currency_rate_search
+#. resource:base_view_currency_rate_tree
+#. resource:base_act_view_currency_rates
+msgid "Currency Rates"
+msgstr "Tỷ giá"
+
+#. help:Currency.Symbol
+msgid "Currency sign, to be used when printing amounts"
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Current Company"
+msgstr "Công ty Hiện hành"
+
+#. field:Currency.Rate
+msgid "Current Rate"
+msgstr "Tỷ giá hiện tại"
+
+#. resource:base_sequence_view
+msgid "Current Year with Century: %(year)s"
+msgstr "Năm hiện tại với thế kỷ: %(year)s"
+
+#. resource:base_sequence_view
+msgid "Current Year without Century: %(y)s"
+msgstr "Năm hiện tại không có thế kỷ: %(y)s"
+
+#. resource:base_menu_administration_shortcut
+msgid "Custom Shortcuts"
+msgstr "Phím tắt tùy chọn"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_form
+#. resource:base_action_partner_customer_form
+msgid "Customers"
+msgstr "Khách hàng"
+
+#. resource:base_menu_board_root
+#. resource:base_menu_reporting_dashboard
+msgid "Dashboards"
+msgstr "Bảng điều khiển"
+
+#. field:Attachment.DBDatas
+msgid "Database Data"
+msgstr "Database Data"
+
+#. resource:base_menu_database_structure
+msgid "Database Structure"
+msgstr "Cấu trúc Cơ sở dữ liệu"
+
+#. field:CurrencyRate.Name
+#. field:Currency.Date
+#. field:Partner.Date
+#. resource:base_view_currency_rate_search
+msgid "Date"
+msgstr "Ngày tháng"
+
+#. field:Lang.DateFormat
+msgid "Date Format"
+msgstr "Định dạng ngày"
+
+#. resource:base_sequence_view
+msgid "Day of the Week (0:Monday): %(weekday)s"
+msgstr "Ngày trong tuần (0:Thứ hai): %(weekday)s"
+
+#. resource:base_sequence_view
+msgid "Day of the Year: %(doy)s"
+msgstr "Ngày trong năm: %(doy)s"
+
+#. resource:base_sequence_view
+msgid "Day: %(day)s"
+msgstr "Ngày: %(day)s"
+
+#. field:Currency.DecimalPlaces
+msgid "Decimal Places"
+msgstr ""
+
+#. field:Lang.DecimalPoint
+msgid "Decimal Separator"
+msgstr "Phân cách thập phân"
+
+#. field:Attachment.Description
+#. resource:base_view_attachment_form
+msgid "Description"
+msgstr "Miêu tả"
+
+#. help:Currency.Position
+msgid "Determines where the currency symbol should be placed after or before the amount."
+msgstr "Xác định ký hiệu tiền tệ được đặt trước hoặc sau tổng tiền"
+
+#. field:Lang.Direction
+msgid "Direction"
+msgstr "Hướng"
+
+#. resource:base_view_currency_form
+msgid "Display"
+msgstr "Hiển thị"
+
+#. help:Partner.PartnerShare
+msgid ""
+"Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
+"access or with a limited access created for sharing data."
+msgstr ""
+
+#. field:Partner.Email
+#. field:Bank.Email
+#. field:Company.Email
+msgid "Email"
+msgstr "Tên đăng nhập / Email"
+
+#. resource:base_view_users_form
+msgid "Email Address"
+msgstr "Địa chỉ thư điện tử"
+
+#. field:Partner.EmailFormatted
+msgid "Email Formatted"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Email Preferences"
+msgstr "Thông tin Email"
+
+#. field:Partner.Employee
+msgid "Employee"
+msgstr "Người lao động"
+
+#. resource:base_action_partner_employee_form
+msgid "Employees"
+msgstr "Nhân viên"
+
+#. code:
+msgid "Error ! You can not create recursive tags."
+msgstr "Lỗi! Bạn không thể tạo thẻ đệ quy."
+
+#. resource:base_res_lang_form
+msgid "Examples"
+msgstr "Ví dụ"
+
+#. help:User.Share
+msgid "External user with limited access, created only for the purpose of sharing data."
+msgstr ""
+
+#. field:Partner.Fax
+#. field:Bank.Fax
+#. field:Company.Fax
+msgid "Fax"
+msgstr "Fax"
+
+#. field:Bank.State
+msgid "Fed. State"
+msgstr "Bang"
+
+#. resource:base_action_country_state
+msgid "Fed. States"
+msgstr "Bang"
+
+#. field:Attachment.Datas
+msgid "File Content"
+msgstr "Nội dung tập tin"
+
+#. field:Attachment.DatasFname
+msgid "File Name"
+msgstr "Tên tập tin"
+
+#. field:Attachment.FileSize
+msgid "File Size"
+msgstr "Dung lượng file"
+
+#. resource:base_view_attachment_search
+msgid "Filter on my documents"
+msgstr "Filter on my documents"
+
+#. help:Partner.EmailFormatted
+msgid "Formatted email address 'Name <email@domain>'"
+msgstr ""
+
+#. field:SequenceDateRange.DateFrom
+msgid "From"
+msgstr "Từ"
+
+#. resource:base_view_company_form
+msgid "General Information"
+msgstr "Thông tin chung"
+
+#. resource:base_view_groups_search
+msgid "Group"
+msgstr "Nhóm"
+
+#. resource:base_view_attachment_search
+#. resource:base_view_res_partner_filter
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. field:Group.GroupID
+msgid "Group ID"
+msgstr ""
+
+#. resource:base_view_country_group_form
+msgid "Group name"
+msgstr "Tên nhóm"
+
+#. field:User.Groups
+#. field:ConfigParameter.Groups
+#. resource:base_view_groups_search
+#. resource:base_view_groups_tree
+#. resource:base_menu_action_groups
+#. resource:base_action_res_groups
+msgid "Groups"
+msgstr "Nhóm"
+
+#. help:Sequence.Padding
+msgid "Hexya will automatically adds some '0' on the left of the 'Next Number' to get the required padding size."
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "History"
+msgstr "Lịch sử"
+
+#. field:User.ActionID
+msgid "Home Action"
+msgstr "Home Action"
+
+#. resource:base_sequence_view
+msgid "Hour 00->12: %(h12)s"
+msgstr "Giờ 00->12: %(h12)s"
+
+#. resource:base_sequence_view
+msgid "Hour 00->24: %(h24)s"
+msgstr "Giờ 00->24: %(h24)s"
+
+#. field:CurrencyRate.ID
+#. field:Currency.ID
+#. field:PartnerCategory.ID
+#. field:Sequence.ID
+#. field:Attachment.ID
+#. field:BankAccount.ID
+#. field:ConfigSettings.ID
+#. field:CountryState.ID
+#. field:Translation.ID
+#. field:User.ID
+#. field:Lang.ID
+#. field:ModelMixin.ID
+#. field:PartnerTitle.ID
+#. field:SequenceDateRange.ID
+#. field:UserLog.ID
+#. field:ConfigParameter.ID
+#. field:CountryGroup.ID
+#. field:Country.ID
+#. field:Partner.ID
+#. field:UserChangePasswordWizardLine.ID
+#. field:Bank.ID
+#. field:Company.ID
+#. field:Group.ID
+#. field:UserChangePasswordWizard.ID
+msgid "ID"
+msgstr "ID"
+
+#. field:Lang.ISOCode
+msgid "ISO Code"
+msgstr "ISO Code"
+
+#. help:User.ActionID
+msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+msgstr "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+
+#. help:Partner.Lang
+msgid ""
+"If the selected language is loaded in the system, all documents related to\n"
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+
+#. field:Country.Image
+#. field:Partner.Image
+msgid "Image"
+msgstr "Hình ảnh"
+
+#. field:Partner.ImageMedium
+msgid "Image Medium"
+msgstr ""
+
+#. field:Partner.ImageSmall
+msgid "Image Small"
+msgstr ""
+
+#. field:Sequence.Implementation
+msgid "Implementation"
+msgstr "Thực hiện"
+
+#. resource:base_menu_translation_export
+msgid "Import / Export"
+msgstr "Nhập / Xuất"
+
+#. resource:base_view_currency_search
+msgid "Inactive"
+msgstr "Không hiệu lực"
+
+#. field:Attachment.IndexContent
+#. resource:base_view_attachment_form
+msgid "Indexed Content"
+msgstr "Nội dung được đánh chỉ mục"
+
+#. selection:Partner.CompanyType
+msgid "Individual"
+msgstr "Cá nhân"
+
+#. resource:base_view_partner_form
+msgid "Internal Notes"
+msgstr "Ghi chú nội bộ"
+
+#. field:Partner.Ref
+msgid "Internal Reference"
+msgstr "Tham chiếu nội bộ"
+
+#. resource:base_view_partner_form
+msgid "Internal note..."
+msgstr "Ghi chú nội bộ..."
+
+#. code:
+msgid "Invalid search criterion: password"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Invoice Address"
+msgstr "Địa chỉ xuất hóa đơn"
+
+#. field:Partner.IsCompany
+msgid "Is Company"
+msgstr "Là công ty"
+
+#. field:Partner.Customer
+msgid "Is a Customer"
+msgstr "Là Khách hàng"
+
+#. field:Partner.Supplier
+msgid "Is a Vendor"
+msgstr "Là Nhà cung cấp"
+
+#. field:Attachment.Public
+msgid "Is a public document"
+msgstr ""
+
+#. field:Partner.Function
+msgid "Job Position"
+msgstr "Chức vụ"
+
+#. help:User.Password
+msgid "Keep empty if you don't want the user to be able to connect on the system."
+msgstr "Để trống nếu bạn không muốn người dùng có thể kết nối trên hệ thống."
+
+#. field:ConfigParameter.Key
+msgid "Key"
+msgstr "Khóa"
+
+#. field:Partner.Lang
+#. resource:base_res_lang_search
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#. resource:base_res_lang_tree
+#. resource:base_res_lang_form
+#. resource:base_res_lang_search
+#. resource:base_res_lang_act_window
+msgid "Languages"
+msgstr "Ngôn ngữ"
+
+#. field:User.LoginDate
+msgid "Latest Connection"
+msgstr "Lần truy cập gần nhất"
+
+#. selection:Lang.Direction
+msgid "Left-to-Right"
+msgstr "Trái sang Phải"
+
+#. resource:base_sequence_view
+msgid "Legend (for prefix, suffix)"
+msgstr "Legend (for prefix, suffix)"
+
+#. resource:base_res_lang_form
+msgid "Legends for supported Date and Time Formats"
+msgstr ""
+
+#. field:Lang.Code
+msgid "Locale Code"
+msgstr "Mã địa phương hóa"
+
+#. resource:base_view_users_form
+msgid "Localization"
+msgstr "Địa phương"
+
+#. field:User.Login
+msgid "Login"
+msgstr "Đăng nhập"
+
+#. field:Company.Logo
+msgid "Logo"
+msgstr "Biểu tượng"
+
+#. field:Company.LogoWeb
+msgid "Logo Web"
+msgstr ""
+
+#. field:SequenceDateRange.Sequence
+msgid "Main Sequence"
+msgstr "Trình tự chính"
+
+#. help:Partner.ImageMedium
+msgid ""
+"Medium-sized image of this contact. It is automatically\n"
+"resized as a 128x128px image, with aspect ratio preserved.\n"
+"Use this field in form views or some kanban views."
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Menus Customization"
+msgstr "Menus Customization"
+
+#. resource:base_view_users_form
+msgid "Messaging and Social"
+msgstr "Thông điệp và Xã hội"
+
+#. field:Attachment.MimeType
+msgid "Mime Type"
+msgstr "Loại kịch bản"
+
+#. resource:base_sequence_view
+msgid "Minute: %(min)s"
+msgstr "Phút: %(min)s"
+
+#. resource:base_view_partner_form
+msgid "Misc"
+msgstr "Các thứ khác"
+
+#. field:Partner.Mobile
+msgid "Mobile"
+msgstr "Số di động"
+
+#. resource:base_sequence_view
+msgid "Month: %(month)s"
+msgstr "Tháng: %(month)s"
+
+#. resource:base_view_users_form
+msgid "Multi Companies"
+msgstr "Đa công ty"
+
+#. resource:base_view_attachment_search
+msgid "My Document(s)"
+msgstr "Tài liệu của tôi"
+
+#. resource:base_view_res_partner_filter
+msgid "My Partners"
+msgstr "Đối tác của tôi"
+
+#. field:Sequence.Name
+#. field:Lang.Name
+#. field:CountryGroup.Name
+#. field:Partner.Name
+#. field:Bank.Name
+#. field:Group.Name
+#. resource:base_view_partner_form
+#. resource:base_view_partner_tree
+#. resource:base_view_partner_simple_form
+msgid "Name"
+msgstr "Tên"
+
+#. field:UserChangePasswordWizardLine.NewPassword
+msgid "New Password"
+msgstr "Mật khẩu mới"
+
+#. field:Sequence.NumberNextActual
+#. field:Sequence.NumberNext
+#. field:SequenceDateRange.NumberNext
+#. field:SequenceDateRange.NumberNextActual
+msgid "Next Number"
+msgstr "Số tiếp theo"
+
+#. help:Sequence.NumberNext
+#. help:SequenceDateRange.NumberNext
+msgid "Next number of this sequence"
+msgstr "Số tiếp theo trong dãy"
+
+#. help:Sequence.NumberNextActual
+#. help:SequenceDateRange.NumberNextActual
+msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
+msgstr "Sô tiếp theo sẽ được sử dụng. Số này có thể tự tăng thường xuyên, do đó giá trị được hiển thị có thể đã bị lỗi thời"
+
+#. selection:Sequence.Implementation
+msgid "No Gap"
+msgstr ""
+
+#. field:Partner.Comment
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. field:User.CompaniesCount
+msgid "Number of Companies"
+msgstr "Số lượng công ty"
+
+#. code:
+msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
+msgstr ""
+
+#. code:
+msgid "Only administrators can change the settings"
+msgstr "Chỉ Quản trị viên mới có thể thay đổi thiết lập"
+
+#. code:
+msgid "Only administrators can execute this action."
+msgstr "Chỉ quản trị viên mới có thể chạy hành động này."
+
+#. selection:Partner.Type
+msgid "Other Address"
+msgstr ""
+
+#. resource:base_action_partner_other_form
+msgid "Other Partners"
+msgstr "Đối tác khác"
+
+#. resource:base_view_attachment_search
+msgid "Owner"
+msgstr "Chủ sở hữu"
+
+#. field:Partner.Parent
+msgid "Parent"
+msgstr "Dự án cha"
+
+#. field:Company.Parent
+msgid "Parent Company"
+msgstr "Công ty mẹ"
+
+#. field:Partner.ParentName
+msgid "Parent Name"
+msgstr ""
+
+#. field:PartnerCategory.Parent
+msgid "Parent Tag"
+msgstr ""
+
+#. field:Company.Partner
+#. resource:base_view_partner_address_form
+msgid "Partner"
+msgstr "Đối tác"
+
+#. resource:base_view_partner_title_tree
+#. resource:base_view_partner_title_form
+msgid "Partner Titles"
+msgstr "Partner Titles"
+
+#. help:User.Partner
+msgid "Partner-related data of the user"
+msgstr "Partner-related data of the user"
+
+#. field:PartnerCategory.Partners
+#. resource:base_view_partner_form
+msgid "Partners"
+msgstr "Đối tác"
+
+#. field:User.Password
+msgid "Password"
+msgstr "Mật khẩu"
+
+#. resource:base_view_res_partner_filter
+msgid "Persons"
+msgstr "Persons"
+
+#. field:Partner.Phone
+#. field:Bank.Phone
+#. field:Company.Phone
+msgid "Phone"
+msgstr "Điện thoại"
+
+#. code:
+msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
+msgstr "Xin hãy sử dụng chức năng thay đổi mật khẩu (trong Tùy chọn hoặc Quản lý người dùng) để thay đổi mật khẩu của bạn."
+
+#. resource:base_view_users_form
+msgid "Preferences"
+msgstr "Tùy chọn cá nhân"
+
+#. field:Sequence.Prefix
+msgid "Prefix"
+msgstr "Tiền tố"
+
+#. help:Sequence.Prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "Prefix value of the record for the sequence"
+
+#. resource:base_view_currency_form
+msgid "Price Accuracy"
+msgstr "Độ chính xác của giá"
+
+#. resource:base_view_partner_form
+msgid "Purchase"
+msgstr "Mua hàng"
+
+#. field:CurrencyRate.Rate
+msgid "Rate"
+msgstr "Tỷ giá"
+
+#. field:Currency.Rates
+msgid "Rates"
+msgstr "Tỷ giá"
+
+#. field:User.Partner
+msgid "Related Partner"
+msgstr "Đối tác liên quan"
+
+#. resource:base_menu_action_reload_groups
+#. resource:base_action_server_reload_groups
+msgid "Reload Groups"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "Report Configuration"
+msgstr "Cấu hình danh mục bố cục"
+
+#. field:Attachment.ResField
+msgid "Resource Field"
+msgstr "Biến Nguồn lực"
+
+#. field:Attachment.ResID
+msgid "Resource ID"
+msgstr "ID Nguồn"
+
+#. field:Attachment.ResModel
+msgid "Resource Model"
+msgstr "Resource Model"
+
+#. field:Attachment.ResName
+msgid "Resource Name"
+msgstr "Tên Tài nguyên"
+
+#. selection:Lang.Direction
+msgid "Right-to-left"
+msgstr ""
+
+#. field:Currency.Rounding
+msgid "Rounding Factor"
+msgstr "Hệ số làm tròn"
+
+#. resource:base_view_partner_form
+msgid "Sale"
+msgstr "Bán"
+
+#. resource:base_view_partner_form
+msgid "Sales & Purchases"
+msgstr "Bán hàng & Mua hàng"
+
+#. field:Partner.User
+#. resource:base_view_res_partner_filter
+msgid "Salesperson"
+msgstr "Nhân viên bán hàng"
+
+#. field:BankAccount.SanitizedAccountNumber
+msgid "Sanitized Account Number"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Save"
+msgstr "Lưu"
+
+#. resource:base_view_res_partner_filter
+msgid "Search Partner"
+msgstr "Tìm kiếm Đối tác"
+
+#. resource:base_sequence_view
+msgid "Second: %(sec)s"
+msgstr "Giây: %(sec)s"
+
+#. field:Lang.Grouping
+msgid "Separator Format"
+msgstr "Định dạng phân cách"
+
+#. field:BankAccount.Sequence
+#. resource:base_sequence_view
+#. resource:base_view_sequence_search
+msgid "Sequence"
+msgstr "Trình tự"
+
+#. field:Sequence.Code
+msgid "Sequence Code"
+msgstr "Mã trình tự"
+
+#. field:Sequence.Padding
+msgid "Sequence Size"
+msgstr "Kích thước trình tự"
+
+#. resource:base_sequence_date_range_tree
+#. resource:base_sequence_view
+#. resource:base_sequence_view_tree
+#. resource:base_view_sequence_search
+#. resource:base_ir_sequence_form
+msgid "Sequences"
+msgstr "Trình tự"
+
+#. resource:base_menu_sequences_identifiers
+msgid "Sequences & Identifiers"
+msgstr "Sequences & Identifiers"
+
+#. field:User.NewPassword
+msgid "Set Password"
+msgstr "Đặt mật khẩu"
+
+#. resource:base_menu_administration
+msgid "Settings"
+msgstr "Thiết lập"
+
+#. field:Partner.PartnerShare
+msgid "Share Partner"
+msgstr ""
+
+#. field:User.Share
+msgid "Share User"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Shipping Address"
+msgstr "Địa chỉ Giao hàng"
+
+#. resource:base_view_currency_search
+msgid "Show active currencies"
+msgstr ""
+
+#. resource:base_view_currency_search
+msgid "Show inactive currencies"
+msgstr ""
+
+#. field:User.Signature
+msgid "Signature"
+msgstr "Chữ ký"
+
+#. help:Partner.ImageSmall
+msgid ""
+"Small-sized image of this contact. It is automatically\n"
+"resized as a 64x64px image, with aspect ratio preserved.\n"
+"Use this field anywhere a small image is required."
+msgstr ""
+
+#. help:Bank.BIC
+msgid "Sometimes called BIC or Swift."
+msgstr "Sometimes called BIC or Swift."
+
+#. code:
+msgid "Sorry, you are not allowed to access this document."
+msgstr "Rất tiếc, bạn không được phép truy cập tài liệu này."
+
+#. help:User.NewPassword
+msgid ""
+"Specify a value only when creating a user or if you're\n"
+"changing the user's password, otherwise leave empty. After\n"
+"a change of password, the user has to login again."
+msgstr ""
+
+#. selection:Sequence.Implementation
+msgid "Standard"
+msgstr "Standard"
+
+#. field:Partner.State
+#. field:Company.State
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_state_tree
+#. resource:base_view_country_state_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "State"
+msgstr "Giai đoạn"
+
+#. field:CountryState.Code
+msgid "State Code"
+msgstr "Mã Bang"
+
+#. field:CountryState.Name
+msgid "State Name"
+msgstr "Tên Bang"
+
+#. field:Country.States
+msgid "States"
+msgstr "Trạng thái"
+
+#. field:Sequence.NumberIncrement
+msgid "Step"
+msgstr "Bước"
+
+#. field:Attachment.StoreFname
+msgid "Stored Filename"
+msgstr "Tên tệp tin được lưu trữ"
+
+#. field:Partner.Street
+#. field:Bank.Street
+#. field:Company.Street
+msgid "Street"
+msgstr "Địa chỉ"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street 2..."
+msgstr "Địa chỉ dòng 2..."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street..."
+msgstr "Địa chỉ..."
+
+#. field:Partner.Street2
+#. field:Bank.Street2
+#. field:Company.Street2
+msgid "Street2"
+msgstr "Địa chỉ"
+
+#. field:Sequence.DateRanges
+msgid "Subsequences"
+msgstr "Hậu quả"
+
+#. field:Sequence.Suffix
+msgid "Suffix"
+msgstr "Hậu tố"
+
+#. help:Sequence.Suffix
+msgid "Suffix value of the record for the sequence"
+msgstr "Suffix value of the record for the sequence"
+
+#. field:Currency.Symbol
+msgid "Symbol"
+msgstr "Biểu tượng"
+
+#. field:Currency.Position
+msgid "Symbol Position"
+msgstr "Vị trí biểu tượng"
+
+#. field:Partner.VAT
+msgid "TIN"
+msgstr "TIN"
+
+#. resource:base_view_res_partner_filter
+msgid "Tag"
+msgstr "Từ khóa"
+
+#. field:PartnerCategory.Name
+msgid "Tag Name"
+msgstr "Tên Tag"
+
+#. field:Company.Tagline
+msgid "Tagline"
+msgstr ""
+
+#. field:Partner.Categories
+msgid "Tags"
+msgstr "Tags"
+
+#. resource:base_view_partner_form
+msgid "Tags..."
+msgstr "Từ khóa..."
+
+#. help:Partner.VAT
+msgid ""
+"Tax Identification Number.\n"
+"Fill it if the company is subjected to taxes.\n"
+"Used by the some of the legal statements."
+msgstr ""
+
+#. resource:base_menu_custom
+msgid "Technical"
+msgstr "Kỹ thuật"
+
+#. help:Country.Code
+msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
+msgstr ""
+
+#. help:Lang.Grouping
+msgid ""
+"The Separator Format should be like [,n] where 0 < n :starting from Unit digit.\"\n"
+"-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
+"[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
+"Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. help:PartnerCategory.Active
+msgid "The active field allows you to hide the category without removing it."
+msgstr "The active field allows you to hide the category without removing it."
+
+#. code:
+msgid "The chosen company is not in the allowed companies for this user"
+msgstr "Người dùng này không thuộc công ty được chọn"
+
+#. help:User.Company
+msgid "The company this user is currently working for."
+msgstr "Công ty mà người dùng này đang làm việc."
+
+#. help:Attachment.ResModel
+msgid "The database object this attachment will be attached to"
+msgstr ""
+
+#. help:Country.Name
+msgid "The full name of the country."
+msgstr "Tên đầy đủ của quốc gia."
+
+#. help:Partner.User
+msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr "The internal user that is in charge of communicating with this contact if any."
+
+#. help:Sequence.NumberIncrement
+msgid "The next number of the sequence will be incremented by this number"
+msgstr "Số tiếp theo của dãy thứ tự sẽ được tăng bằng số này"
+
+#. help:Partner.TZ
+msgid ""
+"The partner's timezone, used to output proper date and time values\n"
+"inside printed reports. It is important to set a value for this field.\n"
+"You should use the same timezone that is otherwise used to pick and\n"
+"render date and time values: your computer's timezone."
+msgstr ""
+
+#. help:CurrencyRate.Rate
+#. help:Currency.Rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "The rate of the currency to the currency of rate 1"
+
+#. help:Attachment.ResID
+msgid "The record id this is attached to"
+msgstr ""
+
+#. help:CountryState.Code
+msgid "The state code in max. three chars."
+msgstr ""
+
+#. help:Lang.ISOCode
+msgid "This ISO code is the name of PO files to use for translations"
+msgstr ""
+
+#. help:Partner.Image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+
+#. help:Lang.Code
+msgid "This field is used to set/get locales for user"
+msgstr "This field is used to set/get locales for user"
+
+#. field:Lang.ThousandsSep
+msgid "Thousands Separator"
+msgstr "Dấu phân cách ngàn"
+
+#. field:Lang.TimeFormat
+msgid "Time Format"
+msgstr "Định dạng thời gian"
+
+#. field:Partner.TZ
+msgid "Timezone"
+msgstr "Múi giờ"
+
+#. field:Partner.TZOffset
+msgid "Timezone Offset"
+msgstr ""
+
+#. field:PartnerTitle.Name
+#. field:Partner.Title
+msgid "Title"
+msgstr "Tiêu đề"
+
+#. field:SequenceDateRange.DateTo
+msgid "To"
+msgstr "Đến"
+
+#. field:Lang.Translatable
+#. resource:base_res_lang_search
+msgid "Translatable"
+msgstr "Có thể dịch"
+
+#. code:
+msgid "Translate"
+msgstr "Dịch"
+
+#. resource:base_menu_translation
+msgid "Translations"
+msgstr "Dịch thuật"
+
+#. code:
+msgid "Trying to create a security group"
+msgstr ""
+
+#. code:
+msgid "Trying to modify a security group"
+msgstr ""
+
+#. help:Sequence.Implementation
+msgid ""
+"Two sequence object implementations are offered: Standard and 'No gap'.\n"
+"The latter is slower than the former but forbids any\n"
+"gap in the sequence (while they are possible in the former)."
+msgstr ""
+
+#. field:Attachment.Type
+#. field:Partner.Type
+#. resource:base_view_attachment_search
+msgid "Type"
+msgstr "Loại"
+
+#. field:Attachment.URL
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "URL"
+msgstr "URL"
+
+#. resource:base_res_lang_tree
+msgid "Update Language Terms"
+msgstr "Cập nhật Thuật ngữ Ngôn ngữ"
+
+#. resource:base_res_lang_tree
+msgid "Update Terms"
+msgstr "Cập nhật các điều khoản"
+
+#. field:Sequence.UseDateRange
+msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:User.Login
+msgid "Used to log into the system"
+msgstr "Used to log into the system"
+
+#. help:Partner.Type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "Used to select automatically the right address according to the context in sales and purchases documents."
+
+#. field:UserChangePasswordWizardLine.User
+#. resource:base_view_users_search
+msgid "User"
+msgstr "Người dùng"
+
+#. resource:base_menu_user_interface
+msgid "User Interface"
+msgstr "Giao diện người sử dụng"
+
+#. field:UserChangePasswordWizardLine.UserLogin
+msgid "User Login"
+msgstr "Người dùng đăng nhập"
+
+#. field:User.Logs
+msgid "User log entries"
+msgstr ""
+
+#. field:Partner.Users
+#. field:UserChangePasswordWizard.Users
+#. resource:base_menu_users
+#. resource:base_change_password_wizard_user_tree_view
+#. resource:base_view_users_tree
+#. resource:base_view_users_form
+#. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
+#. resource:base_menu_action_users
+#. resource:base_action_res_users
+msgid "Users"
+msgstr "Người dùng"
+
+#. field:Company.VAT
+msgid "VAT"
+msgstr "Thuế GTGT"
+
+#. field:ConfigParameter.Value
+msgid "Value"
+msgstr "Giá trị"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_supplier_form
+msgid "Vendors"
+msgstr "Nhà cung cấp"
+
+#. resource:base_view_currency_form
+msgid "View Rates"
+msgstr ""
+
+#. field:Partner.Website
+#. field:Company.Website
+msgid "Website"
+msgstr "Trang web"
+
+#. help:Partner.Website
+msgid "Website of Partner or Company"
+msgstr "Website of Partner or Company"
+
+#. resource:base_sequence_view
+msgid "Week of the Year: %(woy)s"
+msgstr "Tuần trong năm: %(woy)s"
+
+#. field:UserChangePasswordWizardLine.Wizard
+msgid "Wizard"
+msgstr "Wizard"
+
+#. help:Attachment.Type
+msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
+msgstr "Bạn có thể tải lên một tập tin từ máy tính hoặc sao chép/ dán từ một liên kết trên internet đến file của bạn"
+
+#. code:
+msgid "You can not change the company as the partner/user has multiple users linked with different companies."
+msgstr ""
+
+#. code:
+msgid "You can not remove the admin user as it is used internally for resources created by Hexya"
+msgstr ""
+
+#. help:Country.AddressFormat
+msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgstr ""
+
+#. code:
+msgid "You cannot create recursive Partner hierarchies."
+msgstr "Bạn không thể tạo cấu trúc Đối tác lặp đi lặp lại."
+
+#. code:
+msgid "You cannot deactivate the admin user."
+msgstr "Bạn không thể vô hiệu hóa tài khoản ADMIN"
+
+#. code:
+msgid "You cannot deactivate the user you're currently logged in as."
+msgstr "Bạn không thể vô hiệu hóa tài khoản người dùng đang đăng nhập."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "ZIP"
+msgstr "ZIP"
+
+#. field:Partner.Zip
+#. field:Bank.Zip
+#. field:Company.Zip
+msgid "Zip"
+msgstr "Mã bưu chính"
+
+#. resource:base_view_company_form
+msgid "e.g. Global Business Solutions"
+msgstr "e.g. Global Business Solutions"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mr."
+msgstr "ví dụ: Ông"
+
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_simple_form
+msgid "e.g. Sales Director"
+msgstr "e.g. Sales Director"
+
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+msgid "e.g. www.hexya.io"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "internal note..."
+msgstr "ghi chú nội bộ..."
+

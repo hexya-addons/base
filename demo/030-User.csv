@@ -1,0 +1,2 @@
+ID,Partner,Login,Password,Signature,Company,Image,Groups
+base_user_demo,base_partner_demo,demo,demo,<span>-- <br/>+Mr Demo</span>,base_main_company,img/user_demo-image.jpg,base_group_user|base_group_partner_manager

@@ -1,0 +1,1575 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. code:
+#. code:
+#. code:
+msgid "%s (copy)"
+msgstr "%s (kopya)"
+
+#. resource:base_view_partner_form
+msgid "(edit)"
+msgstr "(düzenle)"
+
+#. field:PartnerTitle.Shortcut
+msgid "Abbreviation"
+msgstr "Kısaltma"
+
+#. field:Company.Users
+msgid "Accepted Users"
+msgstr "Kabul Edilen Kullanıcılar"
+
+#. resource:base_view_users_form
+msgid "Access Rights"
+msgstr "Erişim Hakları"
+
+#. field:BankAccount.Partner
+msgid "Account Holder"
+msgstr "Hesap Saklayıcı"
+
+#. field:BankAccount.Name
+msgid "Account Number"
+msgstr "Hesap Numarası"
+
+#. field:BankAccount.AccountType
+msgid "Account Type"
+msgstr "Hesap Tipi"
+
+#. resource:base_view_company_form
+msgid "Accounting"
+msgstr "Muhasebe"
+
+#. field:Lang.Active
+#. field:Partner.Active
+#. field:Bank.Active
+#. field:PartnerCategory.Active
+#. field:Sequence.Active
+#. field:Currency.Active
+#. resource:base_view_currency_search
+#. resource:base_res_lang_search
+msgid "Active"
+msgstr "Etkin"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Address"
+msgstr "Adres"
+
+#. field:Country.AddressFormat
+msgid "Address Format"
+msgstr ""
+
+#. resource:base_view_country_form
+msgid "Address format..."
+msgstr "Adres formatı..."
+
+#. help:CountryState.Name
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "Bir ülkenin idari bölümleri. örn. Eyalet, Bölge, Kanton"
+
+#. selection:Currency.Position
+msgid "After Amount"
+msgstr "Tutardan Sonra"
+
+#. resource:base_view_users_form
+msgid "Allowed Companies"
+msgstr "İzin Verilmiş Firma"
+
+#. resource:base_menu_translation_app
+msgid "Application Terms"
+msgstr "Uygulama Terimleri"
+
+#. resource:base_view_res_partner_filter
+msgid "Archived"
+msgstr "Arşiv"
+
+#. resource:base_view_attachment_form
+msgid "Attached To"
+msgstr "Ekli Olduğu"
+
+#. resource:base_view_attachment_search
+#. resource:base_action_attachment
+msgid "Attachment"
+msgstr "Ek"
+
+#. field:Attachment.Name
+msgid "Attachment Name"
+msgstr "Ek Adı"
+
+#. field:BankAccount.Bank
+#. resource:base_view_res_bank_form
+msgid "Bank"
+msgstr "Banka"
+
+#. field:Partner.Banks
+#. resource:base_view_partner_bank_tree
+#. resource:base_view_partner_bank_search
+#. resource:base_action_res_partner_bank_account_form
+msgid "Bank Accounts"
+msgstr "Banka Hesapları"
+
+#. field:BankAccount.BankBIC
+msgid "Bank BIC"
+msgstr ""
+
+#. field:Bank.BIC
+msgid "Bank Identifier Cord"
+msgstr ""
+
+#. field:BankAccount.BankName
+#. resource:base_view_partner_bank_search
+msgid "Bank Name"
+msgstr "Banka Adı"
+
+#. resource:base_view_partner_bank_form
+msgid "Bank account"
+msgstr "Banka hesabı"
+
+#. resource:base_view_res_bank_tree
+#. resource:base_action_res_bank_form
+msgid "Banks"
+msgstr "Bankalar"
+
+#. field:Partner.Barcode
+msgid "Barcode"
+msgstr "Barkod"
+
+#. selection:Currency.Position
+msgid "Before Amount"
+msgstr "Tutar Önce"
+
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Binary"
+msgstr "İkili"
+
+#. resource:base_view_users_form_simple_modif
+#. resource:base_change_password_wizard_view
+msgid "Cancel"
+msgstr "İptal"
+
+#. code:
+msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. resource:base_action_res_users_my
+msgid "Change My Preferences"
+msgstr "Tercihlerimi Değiştir"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form
+#. resource:base_change_password_wizard_action
+msgid "Change Password"
+msgstr "Parolayı Değiştir"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Change password"
+msgstr "Parolayı değiştir"
+
+#. resource:base_view_users_form
+msgid "Change the user password."
+msgstr "Kullanıcı şifresini değiştirin."
+
+#. help:Partner.IsCompany
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Kontak bir şirket olup olmadığını kontrol edin, aksi takdirde bir personeldir"
+
+#. help:Partner.Customer
+msgid "Check this box if this contact is a customer."
+msgstr "Bu kişi bir müşteriyse bu kutuyu işaretle"
+
+#. help:Partner.Supplier
+msgid ""
+"Check this box if this contact is a vendor.\n"
+"If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr ""
+
+#. help:Partner.Employee
+msgid "Check this box if this contact is an Employee."
+msgstr "Bu kontak bir çalışan ise bu kutuyu işaretleyin"
+
+#. field:Attachment.CheckSum
+msgid "Checksum/SHA1"
+msgstr "Checksum/SHA1"
+
+#. field:Company.Children
+msgid "Child Companies"
+msgstr "Alt Firmalar"
+
+#. field:Partner.Children
+msgid "Children"
+msgstr "Alt"
+
+#. field:PartnerCategory.Children
+msgid "Children Tags"
+msgstr ""
+
+#. field:Partner.City
+#. field:Bank.City
+#. field:Company.City
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "City"
+msgstr "Semt/İlçe"
+
+#. field:Partner.Color
+msgid "Color"
+msgstr "Renk"
+
+#. field:PartnerCategory.Color
+msgid "Color Index"
+msgstr "Renk İndeksi"
+
+#. field:Partner.CommercialCompanyName
+msgid "Commercial Company Name"
+msgstr ""
+
+#. field:Partner.CommercialPartner
+msgid "Commercial Entity"
+msgstr "Ticari Varlık"
+
+#. resource:base_view_res_bank_form
+msgid "Communication"
+msgstr "İletişim"
+
+#. field:User.Companies
+#. resource:base_view_company_tree
+#. resource:base_company_normal_action_tree
+#. resource:base_action_res_company_form
+#. resource:base_view_res_partner_filter
+msgid "Companies"
+msgstr "Firmalar"
+
+#. field:Partner.Company
+#. selection:Partner.CompanyType
+#. field:Sequence.Company
+#. field:Attachment.Company
+#. field:BankAccount.Company
+#. field:CurrencyRate.Company
+#. field:User.Company
+#. resource:base_view_attachment_search
+#. resource:base_view_company_form
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_users_search
+msgid "Company"
+msgstr "Firma"
+
+#. field:Partner.CompanyName
+#. field:Company.Name
+msgid "Company Name"
+msgstr "Firma Adı"
+
+#. field:Company.CompanyRegistry
+msgid "Company Registry"
+msgstr ""
+
+#. field:Partner.CompanyType
+msgid "Company Type"
+msgstr "Firma Türü"
+
+#. field:Partner.ContactAddress
+msgid "Complete Address"
+msgstr "Tam Adres"
+
+#. resource:base_view_company_form
+#. resource:base_menu_reporting_config
+msgid "Configuration"
+msgstr "Yapılandırma"
+
+#. selection:Partner.Type
+#. resource:base_view_partner_simple_form
+msgid "Contact"
+msgstr "Kontak"
+
+#. resource:base_view_partner_form
+msgid "Contact / Address"
+msgstr "Kontak / Adres"
+
+#. resource:base_view_partner_form
+msgid "Contact Name"
+msgstr "İlgili Adı"
+
+#. resource:base_view_partner_category_form
+msgid "Contact Tag"
+msgstr "Kontak Etiketi"
+
+#. resource:base_view_partner_category_list
+msgid "Contact Tags"
+msgstr "Kontak Etiketleri"
+
+#. resource:base_action_partner_title_contact
+msgid "Contact Titles"
+msgstr "Kontak Ünvanları"
+
+#. resource:base_view_partner_tree
+msgid "Contacts"
+msgstr "Kontaklar"
+
+#. resource:base_view_partner_form
+msgid "Contacts & Addresses"
+msgstr "Kontaklar & Adresler"
+
+#. code:
+msgid "Couldn't create contact without email address!"
+msgstr "E-posta adresi olmayan kişi oluşturulamadı!"
+
+#. field:CountryGroup.Countries
+#. resource:base_action_country
+msgid "Countries"
+msgstr "Ülkeler"
+
+#. field:Partner.Country
+#. field:Bank.Country
+#. field:Company.Country
+#. field:CountryState.Country
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_tree
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Country"
+msgstr "Ülke"
+
+#. field:Country.PhoneCode
+msgid "Country Calling Code"
+msgstr "Ülke Telefon Kodu"
+
+#. field:Country.Code
+msgid "Country Code"
+msgstr "Ülke Kodu"
+
+#. resource:base_view_country_group_tree
+#. resource:base_view_country_group_form
+msgid "Country Group"
+msgstr "Ülke Grubu"
+
+#. field:Country.CountryGroups
+#. resource:base_action_country_group
+msgid "Country Groups"
+msgstr "Ülke Grupları"
+
+#. field:Country.Name
+msgid "Country Name"
+msgstr "Ülke Adı"
+
+#. resource:base_view_partner_form
+msgid "Create company"
+msgstr "Firma oluştur"
+
+#. resource:base_view_attachment_form
+msgid "Creation"
+msgstr "Oluşturma"
+
+#. resource:base_view_attachment_search
+msgid "Creation Month"
+msgstr "Oluşturma Ayı"
+
+#. field:Partner.CreditLimit
+msgid "Credit Limit"
+msgstr "Kredi Limiti"
+
+#. resource:base_view_currency_search
+#. resource:base_view_currency_tree
+#. resource:base_action_currency_form
+msgid "Currencies"
+msgstr "ParaBirimleri"
+
+#. field:Country.Currency
+#. field:Company.Currency
+#. field:BankAccount.Currency
+#. field:CurrencyRate.Currency
+#. field:Currency.Name
+#. resource:base_view_currency_search
+#. resource:base_view_currency_form
+msgid "Currency"
+msgstr "Para Birimi"
+
+#. help:Currency.Name
+msgid "Currency Code [ISO 4217]"
+msgstr ""
+
+#. resource:base_view_currency_rate_form
+msgid "Currency Rate"
+msgstr "Para Birimi Kuru"
+
+#. resource:base_view_currency_rate_search
+#. resource:base_view_currency_rate_tree
+#. resource:base_act_view_currency_rates
+msgid "Currency Rates"
+msgstr "Kur Değerleri"
+
+#. help:Currency.Symbol
+msgid "Currency sign, to be used when printing amounts"
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Current Company"
+msgstr "Geçerli Firma"
+
+#. field:Currency.Rate
+msgid "Current Rate"
+msgstr "Geçerli Kur"
+
+#. resource:base_sequence_view
+msgid "Current Year with Century: %(year)s"
+msgstr "Yüzyıl ile birlikte şimdiki yıl : %(year)s"
+
+#. resource:base_sequence_view
+msgid "Current Year without Century: %(y)s"
+msgstr "Yüzyıl olmadan şimdiki yıl: %(y)s"
+
+#. resource:base_menu_administration_shortcut
+msgid "Custom Shortcuts"
+msgstr "Özel Kısayollar"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_form
+#. resource:base_action_partner_customer_form
+msgid "Customers"
+msgstr "Müşteriler"
+
+#. resource:base_menu_board_root
+#. resource:base_menu_reporting_dashboard
+msgid "Dashboards"
+msgstr "Yönetim Panelleri"
+
+#. field:Attachment.DBDatas
+msgid "Database Data"
+msgstr "Veritabanı Veri"
+
+#. resource:base_menu_database_structure
+msgid "Database Structure"
+msgstr "Veritaban Yapısı"
+
+#. field:Partner.Date
+#. field:CurrencyRate.Name
+#. field:Currency.Date
+#. resource:base_view_currency_rate_search
+msgid "Date"
+msgstr "Tarih"
+
+#. field:Lang.DateFormat
+msgid "Date Format"
+msgstr "Tarih Biçimi"
+
+#. resource:base_sequence_view
+msgid "Day of the Week (0:Monday): %(weekday)s"
+msgstr "Haftanın Günü (0:Pazartesi): %(weekday)s"
+
+#. resource:base_sequence_view
+msgid "Day of the Year: %(doy)s"
+msgstr "Yılın Günü: %(doy)s"
+
+#. resource:base_sequence_view
+msgid "Day: %(day)s"
+msgstr "Gün: %(day)s"
+
+#. field:Currency.DecimalPlaces
+msgid "Decimal Places"
+msgstr ""
+
+#. field:Lang.DecimalPoint
+msgid "Decimal Separator"
+msgstr "Ondalık Ayırıcı"
+
+#. field:Attachment.Description
+#. resource:base_view_attachment_form
+msgid "Description"
+msgstr "Açıklama"
+
+#. help:Currency.Position
+msgid "Determines where the currency symbol should be placed after or before the amount."
+msgstr "Para birimi simgesi sonra veya önce konulmalıdır belirlemetutar"
+
+#. field:Lang.Direction
+msgid "Direction"
+msgstr "Yön"
+
+#. resource:base_view_currency_form
+msgid "Display"
+msgstr "Ekran"
+
+#. help:Partner.PartnerShare
+msgid ""
+"Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
+"access or with a limited access created for sharing data."
+msgstr ""
+
+#. field:Partner.Email
+#. field:Bank.Email
+#. field:Company.Email
+msgid "Email"
+msgstr "E-Posta"
+
+#. resource:base_view_users_form
+msgid "Email Address"
+msgstr "E-Posta Adresi"
+
+#. field:Partner.EmailFormatted
+msgid "Email Formatted"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Email Preferences"
+msgstr "E-posta Tercihleri"
+
+#. field:Partner.Employee
+msgid "Employee"
+msgstr "Personel"
+
+#. resource:base_action_partner_employee_form
+msgid "Employees"
+msgstr "Personeller"
+
+#. code:
+msgid "Error ! You can not create recursive tags."
+msgstr "Hata ! Tekrarlanan etiketler oluşturamazsınız."
+
+#. resource:base_res_lang_form
+msgid "Examples"
+msgstr "Örnekler"
+
+#. help:User.Share
+msgid "External user with limited access, created only for the purpose of sharing data."
+msgstr "Sadece veri paylaşımı amaçlı, kısıtlı erişimi olan dış kullanıcı,"
+
+#. field:Partner.Fax
+#. field:Bank.Fax
+#. field:Company.Fax
+msgid "Fax"
+msgstr "Fax"
+
+#. field:Bank.State
+msgid "Fed. State"
+msgstr "İl/Eyalet"
+
+#. resource:base_action_country_state
+msgid "Fed. States"
+msgstr "İller/Eyaletler"
+
+#. field:Attachment.Datas
+msgid "File Content"
+msgstr "Dosya İçeriği"
+
+#. field:Attachment.DatasFname
+msgid "File Name"
+msgstr "Dosya Adı"
+
+#. field:Attachment.FileSize
+msgid "File Size"
+msgstr "Dosya Boyutu"
+
+#. resource:base_view_attachment_search
+msgid "Filter on my documents"
+msgstr "Belgelerimdeki süzgeçler"
+
+#. help:Partner.EmailFormatted
+msgid "Formatted email address 'Name <email@domain>'"
+msgstr ""
+
+#. field:SequenceDateRange.DateFrom
+msgid "From"
+msgstr "Kimden:"
+
+#. resource:base_view_company_form
+msgid "General Information"
+msgstr "Genel Bilgi"
+
+#. resource:base_view_groups_search
+msgid "Group"
+msgstr "Grup"
+
+#. resource:base_view_attachment_search
+#. resource:base_view_res_partner_filter
+msgid "Group By"
+msgstr "Grupla"
+
+#. field:Group.GroupID
+msgid "Group ID"
+msgstr ""
+
+#. resource:base_view_country_group_form
+msgid "Group name"
+msgstr "Grup adı"
+
+#. field:ConfigParameter.Groups
+#. field:User.Groups
+#. resource:base_view_groups_search
+#. resource:base_view_groups_tree
+#. resource:base_menu_action_groups
+#. resource:base_action_res_groups
+msgid "Groups"
+msgstr "Gruplar"
+
+#. help:Sequence.Padding
+msgid "Hexya will automatically adds some '0' on the left of the 'Next Number' to get the required padding size."
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "History"
+msgstr "Geçmiş"
+
+#. field:User.ActionID
+msgid "Home Action"
+msgstr "Öncelik İşlemi"
+
+#. resource:base_sequence_view
+msgid "Hour 00->12: %(h12)s"
+msgstr "Saat 00->12: %(h12)s"
+
+#. resource:base_sequence_view
+msgid "Hour 00->24: %(h24)s"
+msgstr "Saat 00->24: %(h24)s"
+
+#. field:Lang.ID
+#. field:ModelMixin.ID
+#. field:PartnerTitle.ID
+#. field:ConfigParameter.ID
+#. field:CountryGroup.ID
+#. field:Country.ID
+#. field:Partner.ID
+#. field:SequenceDateRange.ID
+#. field:UserLog.ID
+#. field:Bank.ID
+#. field:Company.ID
+#. field:Group.ID
+#. field:UserChangePasswordWizard.ID
+#. field:UserChangePasswordWizardLine.ID
+#. field:PartnerCategory.ID
+#. field:Sequence.ID
+#. field:Attachment.ID
+#. field:BankAccount.ID
+#. field:ConfigSettings.ID
+#. field:CountryState.ID
+#. field:CurrencyRate.ID
+#. field:Currency.ID
+#. field:Translation.ID
+#. field:User.ID
+msgid "ID"
+msgstr "ID"
+
+#. field:Lang.ISOCode
+msgid "ISO Code"
+msgstr "ISO Kodu"
+
+#. help:User.ActionID
+msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+msgstr "Belirtilirse, bu eylem standart menü ilaveten, bu kullanıcı için oturum açma açılacak."
+
+#. help:Partner.Lang
+msgid ""
+"If the selected language is loaded in the system, all documents related to\n"
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+
+#. field:Country.Image
+#. field:Partner.Image
+msgid "Image"
+msgstr "Resim"
+
+#. field:Partner.ImageMedium
+msgid "Image Medium"
+msgstr ""
+
+#. field:Partner.ImageSmall
+msgid "Image Small"
+msgstr ""
+
+#. field:Sequence.Implementation
+msgid "Implementation"
+msgstr "Uygulama"
+
+#. resource:base_menu_translation_export
+msgid "Import / Export"
+msgstr "İçe Aktar / Dışa Aktar"
+
+#. resource:base_view_currency_search
+msgid "Inactive"
+msgstr "Pasif"
+
+#. field:Attachment.IndexContent
+#. resource:base_view_attachment_form
+msgid "Indexed Content"
+msgstr "İndekslenen İçerik"
+
+#. selection:Partner.CompanyType
+msgid "Individual"
+msgstr "Bireysel"
+
+#. resource:base_view_partner_form
+msgid "Internal Notes"
+msgstr "İç Notlar"
+
+#. field:Partner.Ref
+msgid "Internal Reference"
+msgstr "İç Referan"
+
+#. resource:base_view_partner_form
+msgid "Internal note..."
+msgstr "İç not..."
+
+#. code:
+msgid "Invalid search criterion: password"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Invoice Address"
+msgstr "Fatura Adresi"
+
+#. field:Partner.IsCompany
+msgid "Is Company"
+msgstr "Bir Firmadır"
+
+#. field:Partner.Customer
+msgid "Is a Customer"
+msgstr "Müşteri"
+
+#. field:Partner.Supplier
+msgid "Is a Vendor"
+msgstr "Tedarikçi"
+
+#. field:Attachment.Public
+msgid "Is a public document"
+msgstr ""
+
+#. field:Partner.Function
+msgid "Job Position"
+msgstr "İş Pozisyonu"
+
+#. help:User.Password
+msgid "Keep empty if you don't want the user to be able to connect on the system."
+msgstr "Kullanıcının sisteme bağlanmasını istemiyorsanız boş tutun."
+
+#. field:ConfigParameter.Key
+msgid "Key"
+msgstr "Anahtar"
+
+#. field:Partner.Lang
+#. resource:base_res_lang_search
+msgid "Language"
+msgstr "Dil"
+
+#. resource:base_res_lang_tree
+#. resource:base_res_lang_form
+#. resource:base_res_lang_search
+#. resource:base_res_lang_act_window
+msgid "Languages"
+msgstr "Diller"
+
+#. field:User.LoginDate
+msgid "Latest Connection"
+msgstr "Son Bağlantı"
+
+#. selection:Lang.Direction
+msgid "Left-to-Right"
+msgstr "Soldan Sağa"
+
+#. resource:base_sequence_view
+msgid "Legend (for prefix, suffix)"
+msgstr "Gösterge (Ön ve Son ekler için)"
+
+#. resource:base_res_lang_form
+msgid "Legends for supported Date and Time Formats"
+msgstr "Desteklenen Tarih ve Saat Biçimleri"
+
+#. field:Lang.Code
+msgid "Locale Code"
+msgstr "Yerel Kodu"
+
+#. resource:base_view_users_form
+msgid "Localization"
+msgstr "Konumlama"
+
+#. field:User.Login
+msgid "Login"
+msgstr "Giriş"
+
+#. field:Company.Logo
+msgid "Logo"
+msgstr "Logo"
+
+#. field:Company.LogoWeb
+msgid "Logo Web"
+msgstr ""
+
+#. field:SequenceDateRange.Sequence
+msgid "Main Sequence"
+msgstr "Ana Sıra"
+
+#. help:Partner.ImageMedium
+msgid ""
+"Medium-sized image of this contact. It is automatically\n"
+"resized as a 128x128px image, with aspect ratio preserved.\n"
+"Use this field in form views or some kanban views."
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Menus Customization"
+msgstr "Menüleri özelleştirme"
+
+#. resource:base_view_users_form
+msgid "Messaging and Social"
+msgstr "Mesajlaşma ve Sosyal"
+
+#. field:Attachment.MimeType
+msgid "Mime Type"
+msgstr "Mime Türü"
+
+#. resource:base_sequence_view
+msgid "Minute: %(min)s"
+msgstr "Dakika: %(min)s"
+
+#. resource:base_view_partner_form
+msgid "Misc"
+msgstr "Diğer"
+
+#. field:Partner.Mobile
+msgid "Mobile"
+msgstr "Mobil"
+
+#. resource:base_sequence_view
+msgid "Month: %(month)s"
+msgstr "Ay: %(month)s"
+
+#. resource:base_view_users_form
+msgid "Multi Companies"
+msgstr "Çok Firma"
+
+#. resource:base_view_attachment_search
+msgid "My Document(s)"
+msgstr "Belgelerim"
+
+#. resource:base_view_res_partner_filter
+msgid "My Partners"
+msgstr "İş Ortaklarım"
+
+#. field:Lang.Name
+#. field:CountryGroup.Name
+#. field:Partner.Name
+#. field:Bank.Name
+#. field:Group.Name
+#. field:Sequence.Name
+#. resource:base_view_partner_tree
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+msgid "Name"
+msgstr "Adı"
+
+#. field:UserChangePasswordWizardLine.NewPassword
+msgid "New Password"
+msgstr "Yeni Parola"
+
+#. field:SequenceDateRange.NumberNext
+#. field:SequenceDateRange.NumberNextActual
+#. field:Sequence.NumberNextActual
+#. field:Sequence.NumberNext
+msgid "Next Number"
+msgstr "Sonraki Sayı"
+
+#. help:SequenceDateRange.NumberNext
+#. help:Sequence.NumberNext
+msgid "Next number of this sequence"
+msgstr "Bu dizinin bir sonraki sayısı"
+
+#. help:SequenceDateRange.NumberNextActual
+#. help:Sequence.NumberNextActual
+msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
+msgstr "Kullanılacak sonraki sayı. Görüntülenen değer zaten eskimiş olabilir bu yüzden Bu sayı sık artırılır edilebilir"
+
+#. selection:Sequence.Implementation
+msgid "No Gap"
+msgstr ""
+
+#. field:Partner.Comment
+msgid "Notes"
+msgstr "Notlar"
+
+#. field:User.CompaniesCount
+msgid "Number of Companies"
+msgstr "Şirket Sayısı"
+
+#. code:
+msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
+msgstr ""
+
+#. code:
+msgid "Only administrators can change the settings"
+msgstr "Yalnızca yöneticiler bu ayarları değiştirebilir"
+
+#. code:
+msgid "Only administrators can execute this action."
+msgstr "Bu eylemi yalnızca yöneticiler yürütür."
+
+#. selection:Partner.Type
+msgid "Other Address"
+msgstr ""
+
+#. resource:base_action_partner_other_form
+msgid "Other Partners"
+msgstr "Diğer İş Ortakları"
+
+#. resource:base_view_attachment_search
+msgid "Owner"
+msgstr "Sahibi"
+
+#. field:Partner.Parent
+msgid "Parent"
+msgstr "Üst"
+
+#. field:Company.Parent
+msgid "Parent Company"
+msgstr "Üst Firma"
+
+#. field:Partner.ParentName
+msgid "Parent Name"
+msgstr ""
+
+#. field:PartnerCategory.Parent
+msgid "Parent Tag"
+msgstr ""
+
+#. field:Company.Partner
+#. resource:base_view_partner_address_form
+msgid "Partner"
+msgstr "İş Ortağı"
+
+#. resource:base_view_partner_title_form
+#. resource:base_view_partner_title_tree
+msgid "Partner Titles"
+msgstr "İş Ortağı Ünvanları"
+
+#. help:User.Partner
+msgid "Partner-related data of the user"
+msgstr "Kullanıcının İş Ortağı ilgili veriler"
+
+#. field:PartnerCategory.Partners
+#. resource:base_view_partner_form
+msgid "Partners"
+msgstr "İş Ortakları"
+
+#. field:User.Password
+msgid "Password"
+msgstr "Parola"
+
+#. resource:base_view_res_partner_filter
+msgid "Persons"
+msgstr "Kişiler"
+
+#. field:Partner.Phone
+#. field:Bank.Phone
+#. field:Company.Phone
+msgid "Phone"
+msgstr "Telefon"
+
+#. code:
+msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
+msgstr "Lütfen kendi şifrenizi değiştirmek için şifre değiştirme sihirbazını kullanın (Kullanıcı ayarlarında ya da Kullanıcı menüsünde)"
+
+#. resource:base_view_users_form
+msgid "Preferences"
+msgstr "Tercihler"
+
+#. field:Sequence.Prefix
+msgid "Prefix"
+msgstr "Önek"
+
+#. help:Sequence.Prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "Dizi için önek değeri"
+
+#. resource:base_view_currency_form
+msgid "Price Accuracy"
+msgstr "Fiyat Hassasiyeti"
+
+#. resource:base_view_partner_form
+msgid "Purchase"
+msgstr "Satınalma"
+
+#. field:CurrencyRate.Rate
+msgid "Rate"
+msgstr "Oran"
+
+#. field:Currency.Rates
+msgid "Rates"
+msgstr "Oranlar"
+
+#. field:User.Partner
+msgid "Related Partner"
+msgstr "İlişkili İş Ortağı"
+
+#. resource:base_menu_action_reload_groups
+#. resource:base_action_server_reload_groups
+msgid "Reload Groups"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "Report Configuration"
+msgstr "Rapor Yapılandırma"
+
+#. field:Attachment.ResField
+msgid "Resource Field"
+msgstr "Kaynak Alan"
+
+#. field:Attachment.ResID
+msgid "Resource ID"
+msgstr "Kaynak ID"
+
+#. field:Attachment.ResModel
+msgid "Resource Model"
+msgstr "Kaynak Model"
+
+#. field:Attachment.ResName
+msgid "Resource Name"
+msgstr "Kaynak Adı"
+
+#. selection:Lang.Direction
+msgid "Right-to-left"
+msgstr ""
+
+#. field:Currency.Rounding
+msgid "Rounding Factor"
+msgstr "Yuvarlama Faktörü"
+
+#. resource:base_view_partner_form
+msgid "Sale"
+msgstr "Satış"
+
+#. resource:base_view_partner_form
+msgid "Sales & Purchases"
+msgstr "Satış & Satınalma"
+
+#. field:Partner.User
+#. resource:base_view_res_partner_filter
+msgid "Salesperson"
+msgstr "Satış Personeli"
+
+#. field:BankAccount.SanitizedAccountNumber
+msgid "Sanitized Account Number"
+msgstr "Arındırılmış Hesap Numarası"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Save"
+msgstr "Kaydet"
+
+#. resource:base_view_res_partner_filter
+msgid "Search Partner"
+msgstr "İş Ortağı Arama"
+
+#. resource:base_sequence_view
+msgid "Second: %(sec)s"
+msgstr "Saniye: %(sec)s"
+
+#. field:Lang.Grouping
+msgid "Separator Format"
+msgstr "Ayırıcı Biçimi"
+
+#. field:BankAccount.Sequence
+#. resource:base_view_sequence_search
+#. resource:base_sequence_view
+msgid "Sequence"
+msgstr "Sıra"
+
+#. field:Sequence.Code
+msgid "Sequence Code"
+msgstr "Sıra Kodu"
+
+#. field:Sequence.Padding
+msgid "Sequence Size"
+msgstr "Sıra Boyutu"
+
+#. resource:base_sequence_view_tree
+#. resource:base_view_sequence_search
+#. resource:base_sequence_date_range_tree
+#. resource:base_sequence_view
+#. resource:base_ir_sequence_form
+msgid "Sequences"
+msgstr "Sıralamalar"
+
+#. resource:base_menu_sequences_identifiers
+msgid "Sequences & Identifiers"
+msgstr "Sıralamalar & Tanımlayıcılar"
+
+#. field:User.NewPassword
+msgid "Set Password"
+msgstr "Parola Ayarla"
+
+#. resource:base_menu_administration
+msgid "Settings"
+msgstr "Ayarlar"
+
+#. field:Partner.PartnerShare
+msgid "Share Partner"
+msgstr "Paylaşım İş Ortağı"
+
+#. field:User.Share
+msgid "Share User"
+msgstr "Paylaşım Kullanıcısı"
+
+#. selection:Partner.Type
+msgid "Shipping Address"
+msgstr "Gönderi Adresi"
+
+#. resource:base_view_currency_search
+msgid "Show active currencies"
+msgstr "Etkin para birimlerini göster"
+
+#. resource:base_view_currency_search
+msgid "Show inactive currencies"
+msgstr "Etkin olmayan para birimlerini göster"
+
+#. field:User.Signature
+msgid "Signature"
+msgstr "İmza"
+
+#. help:Partner.ImageSmall
+msgid ""
+"Small-sized image of this contact. It is automatically\n"
+"resized as a 64x64px image, with aspect ratio preserved.\n"
+"Use this field anywhere a small image is required."
+msgstr ""
+
+#. help:Bank.BIC
+msgid "Sometimes called BIC or Swift."
+msgstr "Bazen BIC ya da SWIFT olarak geçer."
+
+#. code:
+msgid "Sorry, you are not allowed to access this document."
+msgstr "Maalesef, bu dokümana erişim izniniz yok."
+
+#. help:User.NewPassword
+msgid ""
+"Specify a value only when creating a user or if you're\n"
+"changing the user's password, otherwise leave empty. After\n"
+"a change of password, the user has to login again."
+msgstr ""
+
+#. selection:Sequence.Implementation
+msgid "Standard"
+msgstr "Standart"
+
+#. field:Partner.State
+#. field:Company.State
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_state_tree
+#. resource:base_view_country_state_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "State"
+msgstr "Durumu"
+
+#. field:CountryState.Code
+msgid "State Code"
+msgstr "İl/Eyalet Kodu"
+
+#. field:CountryState.Name
+msgid "State Name"
+msgstr "İl/Eyalet Adı"
+
+#. field:Country.States
+msgid "States"
+msgstr "Durumu"
+
+#. field:Sequence.NumberIncrement
+msgid "Step"
+msgstr "Adım"
+
+#. field:Attachment.StoreFname
+msgid "Stored Filename"
+msgstr "Saklanan Dosya adı"
+
+#. field:Partner.Street
+#. field:Bank.Street
+#. field:Company.Street
+msgid "Street"
+msgstr "adres"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street 2..."
+msgstr "Adres 2..."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street..."
+msgstr "Adres..."
+
+#. field:Partner.Street2
+#. field:Bank.Street2
+#. field:Company.Street2
+msgid "Street2"
+msgstr "Adres2"
+
+#. field:Sequence.DateRanges
+msgid "Subsequences"
+msgstr "Alt Diziler"
+
+#. field:Sequence.Suffix
+msgid "Suffix"
+msgstr "Sonek"
+
+#. help:Sequence.Suffix
+msgid "Suffix value of the record for the sequence"
+msgstr "Dizi için kaydın sonek değeri"
+
+#. field:Currency.Symbol
+msgid "Symbol"
+msgstr "Sembol"
+
+#. field:Currency.Position
+msgid "Symbol Position"
+msgstr "Sembol Pozisyonu"
+
+#. field:Partner.VAT
+msgid "TIN"
+msgstr "Vergi N°"
+
+#. resource:base_view_res_partner_filter
+msgid "Tag"
+msgstr "Etiket"
+
+#. field:PartnerCategory.Name
+msgid "Tag Name"
+msgstr "Başlık Adı"
+
+#. field:Company.Tagline
+msgid "Tagline"
+msgstr ""
+
+#. field:Partner.Categories
+msgid "Tags"
+msgstr "Etiketler"
+
+#. resource:base_view_partner_form
+msgid "Tags..."
+msgstr "Etiketler..."
+
+#. help:Partner.VAT
+msgid ""
+"Tax Identification Number.\n"
+"Fill it if the company is subjected to taxes.\n"
+"Used by the some of the legal statements."
+msgstr ""
+
+#. resource:base_menu_custom
+msgid "Technical"
+msgstr "Teknik"
+
+#. help:Country.Code
+msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
+msgstr ""
+
+#. help:Lang.Grouping
+msgid ""
+"The Separator Format should be like [,n] where 0 < n :starting from Unit digit.\"\n"
+"-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
+"[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
+"Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. help:PartnerCategory.Active
+msgid "The active field allows you to hide the category without removing it."
+msgstr "\"Etkin\" alanı sınıfı silmeden saklamanıza yarar."
+
+#. code:
+msgid "The chosen company is not in the allowed companies for this user"
+msgstr "Bu kullanıcının seçilen şirkete erişim hakkı yok"
+
+#. help:User.Company
+msgid "The company this user is currently working for."
+msgstr "Kullanıcının halihazırda çalıştığı şirket"
+
+#. help:Attachment.ResModel
+msgid "The database object this attachment will be attached to"
+msgstr ""
+
+#. help:Country.Name
+msgid "The full name of the country."
+msgstr "Ülkenin tam adı."
+
+#. help:Partner.User
+msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr "Eğer varsa, bu kişi ile iletişime görevlendirilmiş iç kullanıcı."
+
+#. help:Sequence.NumberIncrement
+msgid "The next number of the sequence will be incremented by this number"
+msgstr "Bu diziye ait bir sonraki sayı bu rakam arttırılarak oluşur."
+
+#. help:Partner.TZ
+msgid ""
+"The partner's timezone, used to output proper date and time values\n"
+"inside printed reports. It is important to set a value for this field.\n"
+"You should use the same timezone that is otherwise used to pick and\n"
+"render date and time values: your computer's timezone."
+msgstr ""
+
+#. help:CurrencyRate.Rate
+#. help:Currency.Rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "Para birimi kur oranı (kur oranı 1 e göre)"
+
+#. help:Attachment.ResID
+msgid "The record id this is attached to"
+msgstr ""
+
+#. help:CountryState.Code
+msgid "The state code in max. three chars."
+msgstr ""
+
+#. help:Lang.ISOCode
+msgid "This ISO code is the name of PO files to use for translations"
+msgstr ""
+
+#. help:Partner.Image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "Bu alan kontak resimleri için kullandığı çözünürlük sınırı 1024x1024px"
+
+#. help:Lang.Code
+msgid "This field is used to set/get locales for user"
+msgstr "This field is used to set/get locales for user"
+
+#. field:Lang.ThousandsSep
+msgid "Thousands Separator"
+msgstr "Bin Ayraçı"
+
+#. field:Lang.TimeFormat
+msgid "Time Format"
+msgstr "Saat Biçimi"
+
+#. field:Partner.TZ
+msgid "Timezone"
+msgstr "Saat Dilimi"
+
+#. field:Partner.TZOffset
+msgid "Timezone Offset"
+msgstr ""
+
+#. field:PartnerTitle.Name
+#. field:Partner.Title
+msgid "Title"
+msgstr "Ünvan"
+
+#. field:SequenceDateRange.DateTo
+msgid "To"
+msgstr "Alıcı"
+
+#. field:Lang.Translatable
+#. resource:base_res_lang_search
+msgid "Translatable"
+msgstr "Çevirilebilir"
+
+#. code:
+msgid "Translate"
+msgstr "Çevir"
+
+#. resource:base_menu_translation
+msgid "Translations"
+msgstr "Çeviriler"
+
+#. code:
+msgid "Trying to create a security group"
+msgstr ""
+
+#. code:
+msgid "Trying to modify a security group"
+msgstr ""
+
+#. help:Sequence.Implementation
+msgid ""
+"Two sequence object implementations are offered: Standard and 'No gap'.\n"
+"The latter is slower than the former but forbids any\n"
+"gap in the sequence (while they are possible in the former)."
+msgstr ""
+
+#. field:Partner.Type
+#. field:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Type"
+msgstr "tip"
+
+#. field:Attachment.URL
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "URL"
+msgstr "URL"
+
+#. resource:base_res_lang_tree
+msgid "Update Language Terms"
+msgstr "Dil Terimlerini Güncelle"
+
+#. resource:base_res_lang_tree
+msgid "Update Terms"
+msgstr "Güncelleştirme Şartları"
+
+#. field:Sequence.UseDateRange
+msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:User.Login
+msgid "Used to log into the system"
+msgstr "Sisteme giriş için kullanılmış"
+
+#. help:Partner.Type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "Satış ve Satınalma belgeleri bağlamında doğru adresi kendiliğinden seçmek için kullanılır."
+
+#. field:UserChangePasswordWizardLine.User
+#. resource:base_view_users_search
+msgid "User"
+msgstr "Kullanıcı"
+
+#. resource:base_menu_user_interface
+msgid "User Interface"
+msgstr "Kullanıcı Arayüzü"
+
+#. field:UserChangePasswordWizardLine.UserLogin
+msgid "User Login"
+msgstr "Kullanıcı Girişi"
+
+#. field:User.Logs
+msgid "User log entries"
+msgstr "Kullanıcı log girişleri"
+
+#. field:Partner.Users
+#. field:UserChangePasswordWizard.Users
+#. resource:base_menu_users
+#. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
+#. resource:base_change_password_wizard_user_tree_view
+#. resource:base_view_users_tree
+#. resource:base_view_users_form
+#. resource:base_menu_action_users
+#. resource:base_action_res_users
+msgid "Users"
+msgstr "Kullanıcılar"
+
+#. field:Company.VAT
+msgid "VAT"
+msgstr "KDV"
+
+#. field:ConfigParameter.Value
+msgid "Value"
+msgstr "Değer"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_supplier_form
+msgid "Vendors"
+msgstr "Tedarikçiler"
+
+#. resource:base_view_currency_form
+msgid "View Rates"
+msgstr ""
+
+#. field:Partner.Website
+#. field:Company.Website
+msgid "Website"
+msgstr "Web Sitesi"
+
+#. help:Partner.Website
+msgid "Website of Partner or Company"
+msgstr "Web Sitesi Partner veya Firma"
+
+#. resource:base_sequence_view
+msgid "Week of the Year: %(woy)s"
+msgstr "Yılın Haftası: %(woy)s"
+
+#. field:UserChangePasswordWizardLine.Wizard
+msgid "Wizard"
+msgstr "Sihirbaz"
+
+#. help:Attachment.Type
+msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
+msgstr "Bilgisayarınızdan bir dosya yükleyebilir ya da dosyanıza internet bağlantınızı kopyalayıp yapıştırabilirsiniz."
+
+#. code:
+msgid "You can not change the company as the partner/user has multiple users linked with different companies."
+msgstr ""
+
+#. code:
+msgid "You can not remove the admin user as it is used internally for resources created by Hexya"
+msgstr ""
+
+#. help:Country.AddressFormat
+msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgstr ""
+
+#. code:
+msgid "You cannot create recursive Partner hierarchies."
+msgstr "Özyinelemeli Partner hiyerarşileri oluşturamazsınız."
+
+#. code:
+msgid "You cannot deactivate the admin user."
+msgstr "Yönetici kullanıcısını devre dışı bırakamazsınız."
+
+#. code:
+msgid "You cannot deactivate the user you're currently logged in as."
+msgstr "Şu anda oturum açtığınız kullanıcıyı devre dışı bırakamazsınız."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "ZIP"
+msgstr "PK"
+
+#. field:Partner.Zip
+#. field:Bank.Zip
+#. field:Company.Zip
+msgid "Zip"
+msgstr "PK"
+
+#. resource:base_view_company_form
+msgid "e.g. Global Business Solutions"
+msgstr "örn. Global İş Çözümleri"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mr."
+msgstr "örn. Bay"
+
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "e.g. Sales Director"
+msgstr "örn. Satış Yöneticisi"
+
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+msgid "e.g. www.hexya.io"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "internal note..."
+msgstr "iç not....."
+

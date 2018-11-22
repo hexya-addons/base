@@ -1,0 +1,1575 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. code:
+#. code:
+#. code:
+msgid "%s (copy)"
+msgstr "%s (副本)"
+
+#. resource:base_view_partner_form
+msgid "(edit)"
+msgstr "(编辑)"
+
+#. field:PartnerTitle.Shortcut
+msgid "Abbreviation"
+msgstr "简称"
+
+#. field:Company.Users
+msgid "Accepted Users"
+msgstr "接受的用户"
+
+#. resource:base_view_users_form
+msgid "Access Rights"
+msgstr "访问权"
+
+#. field:BankAccount.Partner
+msgid "Account Holder"
+msgstr "账户持有人"
+
+#. field:BankAccount.Name
+msgid "Account Number"
+msgstr "账户号码"
+
+#. field:BankAccount.AccountType
+msgid "Account Type"
+msgstr "科目类型"
+
+#. resource:base_view_company_form
+msgid "Accounting"
+msgstr "会计"
+
+#. field:Partner.Active
+#. field:Bank.Active
+#. field:Currency.Active
+#. field:PartnerCategory.Active
+#. field:Sequence.Active
+#. field:Lang.Active
+#. resource:base_view_currency_search
+#. resource:base_res_lang_search
+msgid "Active"
+msgstr "有效"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Address"
+msgstr "地址"
+
+#. field:Country.AddressFormat
+msgid "Address Format"
+msgstr ""
+
+#. resource:base_view_country_form
+msgid "Address format..."
+msgstr "地址格式..."
+
+#. help:CountryState.Name
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "管理国家或地区的分类。"
+
+#. selection:Currency.Position
+msgid "After Amount"
+msgstr "金额后面"
+
+#. resource:base_view_users_form
+msgid "Allowed Companies"
+msgstr "允许的公司"
+
+#. resource:base_menu_translation_app
+msgid "Application Terms"
+msgstr "应用程序术语"
+
+#. resource:base_view_res_partner_filter
+msgid "Archived"
+msgstr "归档"
+
+#. resource:base_view_attachment_form
+msgid "Attached To"
+msgstr "附加于"
+
+#. resource:base_view_attachment_search
+#. resource:base_action_attachment
+msgid "Attachment"
+msgstr "附件"
+
+#. field:Attachment.Name
+msgid "Attachment Name"
+msgstr "附件名称"
+
+#. field:BankAccount.Bank
+#. resource:base_view_res_bank_form
+msgid "Bank"
+msgstr "银行"
+
+#. field:Partner.Banks
+#. resource:base_view_partner_bank_tree
+#. resource:base_view_partner_bank_search
+#. resource:base_action_res_partner_bank_account_form
+msgid "Bank Accounts"
+msgstr "银行帐户"
+
+#. field:BankAccount.BankBIC
+msgid "Bank BIC"
+msgstr ""
+
+#. field:Bank.BIC
+msgid "Bank Identifier Cord"
+msgstr ""
+
+#. field:BankAccount.BankName
+#. resource:base_view_partner_bank_search
+msgid "Bank Name"
+msgstr "银行名称"
+
+#. resource:base_view_partner_bank_form
+msgid "Bank account"
+msgstr "银行账户"
+
+#. resource:base_view_res_bank_tree
+#. resource:base_action_res_bank_form
+msgid "Banks"
+msgstr "银行"
+
+#. field:Partner.Barcode
+msgid "Barcode"
+msgstr "条码"
+
+#. selection:Currency.Position
+msgid "Before Amount"
+msgstr "金额前面"
+
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Binary"
+msgstr "二进制数据"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form_simple_modif
+msgid "Cancel"
+msgstr "取消"
+
+#. code:
+msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. resource:base_action_res_users_my
+msgid "Change My Preferences"
+msgstr "更改我的个人资料"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form
+#. resource:base_change_password_wizard_action
+msgid "Change Password"
+msgstr "更改密码"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Change password"
+msgstr "更改密码"
+
+#. resource:base_view_users_form
+msgid "Change the user password."
+msgstr "修改用户密码。"
+
+#. help:Partner.IsCompany
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "若客户性质属公司客户请打勾，个人客户请勿勾选。"
+
+#. help:Partner.Customer
+msgid "Check this box if this contact is a customer."
+msgstr "如果该联系人是客户就选择这个框"
+
+#. help:Partner.Supplier
+msgid ""
+"Check this box if this contact is a vendor.\n"
+"If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr ""
+
+#. help:Partner.Employee
+msgid "Check this box if this contact is an Employee."
+msgstr "勾选此项 如果 这个 联系人 是 一个 员工."
+
+#. field:Attachment.CheckSum
+msgid "Checksum/SHA1"
+msgstr "校验和/SHA1"
+
+#. field:Company.Children
+msgid "Child Companies"
+msgstr "下级公司"
+
+#. field:Partner.Children
+msgid "Children"
+msgstr "下级"
+
+#. field:PartnerCategory.Children
+msgid "Children Tags"
+msgstr ""
+
+#. field:Partner.City
+#. field:Bank.City
+#. field:Company.City
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "City"
+msgstr "城市"
+
+#. field:Partner.Color
+msgid "Color"
+msgstr "颜色"
+
+#. field:PartnerCategory.Color
+msgid "Color Index"
+msgstr "颜色索引"
+
+#. field:Partner.CommercialCompanyName
+msgid "Commercial Company Name"
+msgstr ""
+
+#. field:Partner.CommercialPartner
+msgid "Commercial Entity"
+msgstr "商业实体"
+
+#. resource:base_view_res_bank_form
+msgid "Communication"
+msgstr "联络方式"
+
+#. field:User.Companies
+#. resource:base_view_company_tree
+#. resource:base_company_normal_action_tree
+#. resource:base_action_res_company_form
+#. resource:base_view_res_partner_filter
+msgid "Companies"
+msgstr "公司"
+
+#. field:Partner.Company
+#. selection:Partner.CompanyType
+#. field:Sequence.Company
+#. field:Attachment.Company
+#. field:BankAccount.Company
+#. field:CurrencyRate.Company
+#. field:User.Company
+#. resource:base_view_attachment_search
+#. resource:base_view_company_form
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_res_partner_filter
+#. resource:base_view_users_search
+msgid "Company"
+msgstr "公司"
+
+#. field:Partner.CompanyName
+#. field:Company.Name
+msgid "Company Name"
+msgstr "公司名称"
+
+#. field:Company.CompanyRegistry
+msgid "Company Registry"
+msgstr ""
+
+#. field:Partner.CompanyType
+msgid "Company Type"
+msgstr "公司类别"
+
+#. field:Partner.ContactAddress
+msgid "Complete Address"
+msgstr "完整地址"
+
+#. resource:base_view_company_form
+#. resource:base_menu_reporting_config
+msgid "Configuration"
+msgstr "配置"
+
+#. selection:Partner.Type
+#. resource:base_view_partner_simple_form
+msgid "Contact"
+msgstr "联系人"
+
+#. resource:base_view_partner_form
+msgid "Contact / Address"
+msgstr "联系人/地址"
+
+#. resource:base_view_partner_form
+msgid "Contact Name"
+msgstr "联系人姓名"
+
+#. resource:base_view_partner_category_form
+msgid "Contact Tag"
+msgstr "联系人标签"
+
+#. resource:base_view_partner_category_list
+msgid "Contact Tags"
+msgstr "联系人标签"
+
+#. resource:base_action_partner_title_contact
+msgid "Contact Titles"
+msgstr "联系人称谓"
+
+#. resource:base_view_partner_tree
+msgid "Contacts"
+msgstr "联系人"
+
+#. resource:base_view_partner_form
+msgid "Contacts & Addresses"
+msgstr "联系人 & 地址"
+
+#. code:
+msgid "Couldn't create contact without email address!"
+msgstr "不能建立没有电子邮件地址的联系人！"
+
+#. field:CountryGroup.Countries
+#. resource:base_action_country
+msgid "Countries"
+msgstr "国家"
+
+#. field:Partner.Country
+#. field:Bank.Country
+#. field:Company.Country
+#. field:CountryState.Country
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_tree
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_res_partner_filter
+msgid "Country"
+msgstr "国家"
+
+#. field:Country.PhoneCode
+msgid "Country Calling Code"
+msgstr "国家长途区号"
+
+#. field:Country.Code
+msgid "Country Code"
+msgstr "国家代码"
+
+#. resource:base_view_country_group_form
+#. resource:base_view_country_group_tree
+msgid "Country Group"
+msgstr "国家群组"
+
+#. field:Country.CountryGroups
+#. resource:base_action_country_group
+msgid "Country Groups"
+msgstr "国家分组"
+
+#. field:Country.Name
+msgid "Country Name"
+msgstr "国家名称"
+
+#. resource:base_view_partner_form
+msgid "Create company"
+msgstr "创建公司"
+
+#. resource:base_view_attachment_form
+msgid "Creation"
+msgstr "创建"
+
+#. resource:base_view_attachment_search
+msgid "Creation Month"
+msgstr "创建月份"
+
+#. field:Partner.CreditLimit
+msgid "Credit Limit"
+msgstr "信用额度"
+
+#. resource:base_view_currency_search
+#. resource:base_view_currency_tree
+#. resource:base_action_currency_form
+msgid "Currencies"
+msgstr "币种"
+
+#. field:Country.Currency
+#. field:Company.Currency
+#. field:Currency.Name
+#. field:BankAccount.Currency
+#. field:CurrencyRate.Currency
+#. resource:base_view_currency_search
+#. resource:base_view_currency_form
+msgid "Currency"
+msgstr "币种"
+
+#. help:Currency.Name
+msgid "Currency Code [ISO 4217]"
+msgstr ""
+
+#. resource:base_view_currency_rate_form
+msgid "Currency Rate"
+msgstr "货币比率"
+
+#. resource:base_view_currency_rate_search
+#. resource:base_view_currency_rate_tree
+#. resource:base_act_view_currency_rates
+msgid "Currency Rates"
+msgstr "货币比率"
+
+#. help:Currency.Symbol
+msgid "Currency sign, to be used when printing amounts"
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Current Company"
+msgstr "当前公司"
+
+#. field:Currency.Rate
+msgid "Current Rate"
+msgstr "当前比率"
+
+#. resource:base_sequence_view
+msgid "Current Year with Century: %(year)s"
+msgstr "4 位数字表示的当前年份：%(year)s"
+
+#. resource:base_sequence_view
+msgid "Current Year without Century: %(y)s"
+msgstr "两位数的当前年份：%(y)s"
+
+#. resource:base_menu_administration_shortcut
+msgid "Custom Shortcuts"
+msgstr "自定义快捷方式"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_form
+#. resource:base_action_partner_customer_form
+msgid "Customers"
+msgstr "客户"
+
+#. resource:base_menu_board_root
+#. resource:base_menu_reporting_dashboard
+msgid "Dashboards"
+msgstr "仪表板"
+
+#. field:Attachment.DBDatas
+msgid "Database Data"
+msgstr "数据库数据"
+
+#. resource:base_menu_database_structure
+msgid "Database Structure"
+msgstr "数据库结构"
+
+#. field:Partner.Date
+#. field:Currency.Date
+#. field:CurrencyRate.Name
+#. resource:base_view_currency_rate_search
+msgid "Date"
+msgstr "日期"
+
+#. field:Lang.DateFormat
+msgid "Date Format"
+msgstr "日期格式"
+
+#. resource:base_sequence_view
+msgid "Day of the Week (0:Monday): %(weekday)s"
+msgstr "一周的第几天 (0:星期一):%(weekday)s"
+
+#. resource:base_sequence_view
+msgid "Day of the Year: %(doy)s"
+msgstr "年内天数：%(doy)s"
+
+#. resource:base_sequence_view
+msgid "Day: %(day)s"
+msgstr "日：%(day)s"
+
+#. field:Currency.DecimalPlaces
+msgid "Decimal Places"
+msgstr ""
+
+#. field:Lang.DecimalPoint
+msgid "Decimal Separator"
+msgstr "小数分割符"
+
+#. field:Attachment.Description
+#. resource:base_view_attachment_form
+msgid "Description"
+msgstr "说明"
+
+#. help:Currency.Position
+msgid "Determines where the currency symbol should be placed after or before the amount."
+msgstr "指定货币符的位置，放在总额的前面还是后面"
+
+#. field:Lang.Direction
+msgid "Direction"
+msgstr "方向"
+
+#. resource:base_view_currency_form
+msgid "Display"
+msgstr "显示"
+
+#. help:Partner.PartnerShare
+msgid ""
+"Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
+"access or with a limited access created for sharing data."
+msgstr ""
+
+#. field:Partner.Email
+#. field:Bank.Email
+#. field:Company.Email
+msgid "Email"
+msgstr "Email"
+
+#. resource:base_view_users_form
+msgid "Email Address"
+msgstr "Email地址"
+
+#. field:Partner.EmailFormatted
+msgid "Email Formatted"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Email Preferences"
+msgstr "Email首选项"
+
+#. field:Partner.Employee
+msgid "Employee"
+msgstr "员工"
+
+#. resource:base_action_partner_employee_form
+msgid "Employees"
+msgstr "员工列表"
+
+#. code:
+msgid "Error ! You can not create recursive tags."
+msgstr "错误！不可以创建递归菜单"
+
+#. resource:base_res_lang_form
+msgid "Examples"
+msgstr "例子"
+
+#. help:User.Share
+msgid "External user with limited access, created only for the purpose of sharing data."
+msgstr "创建你只用来共享数据的有限访问外部用户。"
+
+#. field:Partner.Fax
+#. field:Bank.Fax
+#. field:Company.Fax
+msgid "Fax"
+msgstr "传真"
+
+#. field:Bank.State
+msgid "Fed. State"
+msgstr "状态"
+
+#. resource:base_action_country_state
+msgid "Fed. States"
+msgstr "州/省"
+
+#. field:Attachment.Datas
+msgid "File Content"
+msgstr "文件内容"
+
+#. field:Attachment.DatasFname
+msgid "File Name"
+msgstr "文件名"
+
+#. field:Attachment.FileSize
+msgid "File Size"
+msgstr "文件大小"
+
+#. resource:base_view_attachment_search
+msgid "Filter on my documents"
+msgstr "筛选我的文档"
+
+#. help:Partner.EmailFormatted
+msgid "Formatted email address 'Name <email@domain>'"
+msgstr ""
+
+#. field:SequenceDateRange.DateFrom
+msgid "From"
+msgstr "从"
+
+#. resource:base_view_company_form
+msgid "General Information"
+msgstr "通用信息"
+
+#. resource:base_view_groups_search
+msgid "Group"
+msgstr "群组"
+
+#. resource:base_view_attachment_search
+#. resource:base_view_res_partner_filter
+msgid "Group By"
+msgstr "分组"
+
+#. field:Group.GroupID
+msgid "Group ID"
+msgstr ""
+
+#. resource:base_view_country_group_form
+msgid "Group name"
+msgstr "组名"
+
+#. field:ConfigParameter.Groups
+#. field:User.Groups
+#. resource:base_view_groups_search
+#. resource:base_view_groups_tree
+#. resource:base_menu_action_groups
+#. resource:base_action_res_groups
+msgid "Groups"
+msgstr "群组"
+
+#. help:Sequence.Padding
+msgid "Hexya will automatically adds some '0' on the left of the 'Next Number' to get the required padding size."
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "History"
+msgstr "历史"
+
+#. field:User.ActionID
+msgid "Home Action"
+msgstr "主页动作"
+
+#. resource:base_sequence_view
+msgid "Hour 00->12: %(h12)s"
+msgstr "小时 00->12: %(h12)s"
+
+#. resource:base_sequence_view
+msgid "Hour 00->24: %(h24)s"
+msgstr "小时 00->24: %(h24)s"
+
+#. field:UserLog.ID
+#. field:ConfigParameter.ID
+#. field:CountryGroup.ID
+#. field:Country.ID
+#. field:Partner.ID
+#. field:SequenceDateRange.ID
+#. field:Bank.ID
+#. field:Company.ID
+#. field:Group.ID
+#. field:UserChangePasswordWizard.ID
+#. field:UserChangePasswordWizardLine.ID
+#. field:Currency.ID
+#. field:PartnerCategory.ID
+#. field:Sequence.ID
+#. field:Attachment.ID
+#. field:BankAccount.ID
+#. field:ConfigSettings.ID
+#. field:CountryState.ID
+#. field:CurrencyRate.ID
+#. field:Translation.ID
+#. field:User.ID
+#. field:Lang.ID
+#. field:ModelMixin.ID
+#. field:PartnerTitle.ID
+msgid "ID"
+msgstr "ID"
+
+#. field:Lang.ISOCode
+msgid "ISO Code"
+msgstr "ISO 代号"
+
+#. help:User.ActionID
+msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+msgstr "如果指定的话，这个动作将在该用户账号登录后与标准的菜单一起执行。就是说登录第一画面将看到指定的菜单页面。"
+
+#. help:Partner.Lang
+msgid ""
+"If the selected language is loaded in the system, all documents related to\n"
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+
+#. field:Country.Image
+#. field:Partner.Image
+msgid "Image"
+msgstr "图像"
+
+#. field:Partner.ImageMedium
+msgid "Image Medium"
+msgstr ""
+
+#. field:Partner.ImageSmall
+msgid "Image Small"
+msgstr ""
+
+#. field:Sequence.Implementation
+msgid "Implementation"
+msgstr "实现"
+
+#. resource:base_menu_translation_export
+msgid "Import / Export"
+msgstr "导入/导出"
+
+#. resource:base_view_currency_search
+msgid "Inactive"
+msgstr "无效"
+
+#. field:Attachment.IndexContent
+#. resource:base_view_attachment_form
+msgid "Indexed Content"
+msgstr "已索引的内容"
+
+#. selection:Partner.CompanyType
+msgid "Individual"
+msgstr "个人"
+
+#. resource:base_view_partner_form
+msgid "Internal Notes"
+msgstr "内部备注"
+
+#. field:Partner.Ref
+msgid "Internal Reference"
+msgstr "内部参照"
+
+#. resource:base_view_partner_form
+msgid "Internal note..."
+msgstr "内部备注"
+
+#. code:
+msgid "Invalid search criterion: password"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Invoice Address"
+msgstr "发票地址"
+
+#. field:Partner.IsCompany
+msgid "Is Company"
+msgstr "是公司"
+
+#. field:Partner.Customer
+msgid "Is a Customer"
+msgstr "是客户"
+
+#. field:Partner.Supplier
+msgid "Is a Vendor"
+msgstr "供应商"
+
+#. field:Attachment.Public
+msgid "Is a public document"
+msgstr ""
+
+#. field:Partner.Function
+msgid "Job Position"
+msgstr "工作岗位"
+
+#. help:User.Password
+msgid "Keep empty if you don't want the user to be able to connect on the system."
+msgstr "如果不希望用户连接到系统，则不勾选"
+
+#. field:ConfigParameter.Key
+msgid "Key"
+msgstr "键"
+
+#. field:Partner.Lang
+#. resource:base_res_lang_search
+msgid "Language"
+msgstr "语言"
+
+#. resource:base_res_lang_tree
+#. resource:base_res_lang_form
+#. resource:base_res_lang_search
+#. resource:base_res_lang_act_window
+msgid "Languages"
+msgstr "语言"
+
+#. field:User.LoginDate
+msgid "Latest Connection"
+msgstr "最近连接时间"
+
+#. selection:Lang.Direction
+msgid "Left-to-Right"
+msgstr "从左到右"
+
+#. resource:base_sequence_view
+msgid "Legend (for prefix, suffix)"
+msgstr "图例（前缀，后缀）"
+
+#. resource:base_res_lang_form
+msgid "Legends for supported Date and Time Formats"
+msgstr "日期与时间格式图例"
+
+#. field:Lang.Code
+msgid "Locale Code"
+msgstr "地区代码"
+
+#. resource:base_view_users_form
+msgid "Localization"
+msgstr "定位"
+
+#. field:User.Login
+msgid "Login"
+msgstr "登录"
+
+#. field:Company.Logo
+msgid "Logo"
+msgstr "徽标"
+
+#. field:Company.LogoWeb
+msgid "Logo Web"
+msgstr ""
+
+#. field:SequenceDateRange.Sequence
+msgid "Main Sequence"
+msgstr "主序列"
+
+#. help:Partner.ImageMedium
+msgid ""
+"Medium-sized image of this contact. It is automatically\n"
+"resized as a 128x128px image, with aspect ratio preserved.\n"
+"Use this field in form views or some kanban views."
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Menus Customization"
+msgstr "菜单定制"
+
+#. resource:base_view_users_form
+msgid "Messaging and Social"
+msgstr "消息与社交"
+
+#. field:Attachment.MimeType
+msgid "Mime Type"
+msgstr "MIME 类型"
+
+#. resource:base_sequence_view
+msgid "Minute: %(min)s"
+msgstr "分钟: %(min)s"
+
+#. resource:base_view_partner_form
+msgid "Misc"
+msgstr "杂项"
+
+#. field:Partner.Mobile
+msgid "Mobile"
+msgstr "手机"
+
+#. resource:base_sequence_view
+msgid "Month: %(month)s"
+msgstr "月：%(month)s"
+
+#. resource:base_view_users_form
+msgid "Multi Companies"
+msgstr "多公司"
+
+#. resource:base_view_attachment_search
+msgid "My Document(s)"
+msgstr "我的单据"
+
+#. resource:base_view_res_partner_filter
+msgid "My Partners"
+msgstr "我的业务伙伴"
+
+#. field:CountryGroup.Name
+#. field:Partner.Name
+#. field:Bank.Name
+#. field:Group.Name
+#. field:Sequence.Name
+#. field:Lang.Name
+#. resource:base_view_partner_tree
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+msgid "Name"
+msgstr "名字"
+
+#. field:UserChangePasswordWizardLine.NewPassword
+msgid "New Password"
+msgstr "新密码"
+
+#. field:SequenceDateRange.NumberNext
+#. field:SequenceDateRange.NumberNextActual
+#. field:Sequence.NumberNextActual
+#. field:Sequence.NumberNext
+msgid "Next Number"
+msgstr "下一号码"
+
+#. help:SequenceDateRange.NumberNext
+#. help:Sequence.NumberNext
+msgid "Next number of this sequence"
+msgstr "本序列的下一号码"
+
+#. help:SequenceDateRange.NumberNextActual
+#. help:Sequence.NumberNextActual
+msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
+msgstr "下一个编号将被使用。这个编号经常增加，所以显示的值可能已经被废弃"
+
+#. selection:Sequence.Implementation
+msgid "No Gap"
+msgstr ""
+
+#. field:Partner.Comment
+msgid "Notes"
+msgstr "备注"
+
+#. field:User.CompaniesCount
+msgid "Number of Companies"
+msgstr "公司数量"
+
+#. code:
+msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
+msgstr ""
+
+#. code:
+msgid "Only administrators can change the settings"
+msgstr "只有管理员能改变设置"
+
+#. code:
+msgid "Only administrators can execute this action."
+msgstr "只有系统管理员可以执行此动作"
+
+#. selection:Partner.Type
+msgid "Other Address"
+msgstr ""
+
+#. resource:base_action_partner_other_form
+msgid "Other Partners"
+msgstr "其它业务伙伴"
+
+#. resource:base_view_attachment_search
+msgid "Owner"
+msgstr "所有者"
+
+#. field:Partner.Parent
+msgid "Parent"
+msgstr "上级"
+
+#. field:Company.Parent
+msgid "Parent Company"
+msgstr "上级公司"
+
+#. field:Partner.ParentName
+msgid "Parent Name"
+msgstr ""
+
+#. field:PartnerCategory.Parent
+msgid "Parent Tag"
+msgstr ""
+
+#. field:Company.Partner
+#. resource:base_view_partner_address_form
+msgid "Partner"
+msgstr "合作伙伴"
+
+#. resource:base_view_partner_title_form
+#. resource:base_view_partner_title_tree
+msgid "Partner Titles"
+msgstr "业务伙伴称谓"
+
+#. help:User.Partner
+msgid "Partner-related data of the user"
+msgstr "用户的业务伙伴相关数据。"
+
+#. field:PartnerCategory.Partners
+#. resource:base_view_partner_form
+msgid "Partners"
+msgstr "合作伙伴"
+
+#. field:User.Password
+msgid "Password"
+msgstr "密码"
+
+#. resource:base_view_res_partner_filter
+msgid "Persons"
+msgstr "个人"
+
+#. field:Partner.Phone
+#. field:Bank.Phone
+#. field:Company.Phone
+msgid "Phone"
+msgstr "电话"
+
+#. code:
+msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
+msgstr "请使用更改密码向导（在用户个人资料或用户菜单中）来更改你的密码。"
+
+#. resource:base_view_users_form
+msgid "Preferences"
+msgstr "首选项"
+
+#. field:Sequence.Prefix
+msgid "Prefix"
+msgstr "前缀"
+
+#. help:Sequence.Prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "序列记录的前缀"
+
+#. resource:base_view_currency_form
+msgid "Price Accuracy"
+msgstr "价格准确性"
+
+#. resource:base_view_partner_form
+msgid "Purchase"
+msgstr "采购"
+
+#. field:CurrencyRate.Rate
+msgid "Rate"
+msgstr "比率"
+
+#. field:Currency.Rates
+msgid "Rates"
+msgstr "比率"
+
+#. field:User.Partner
+msgid "Related Partner"
+msgstr "相关的业务伙伴"
+
+#. resource:base_menu_action_reload_groups
+#. resource:base_action_server_reload_groups
+msgid "Reload Groups"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "Report Configuration"
+msgstr "报表配置"
+
+#. field:Attachment.ResField
+msgid "Resource Field"
+msgstr "资源字段"
+
+#. field:Attachment.ResID
+msgid "Resource ID"
+msgstr "资源ID"
+
+#. field:Attachment.ResModel
+msgid "Resource Model"
+msgstr "资源模型"
+
+#. field:Attachment.ResName
+msgid "Resource Name"
+msgstr "资源名称"
+
+#. selection:Lang.Direction
+msgid "Right-to-left"
+msgstr ""
+
+#. field:Currency.Rounding
+msgid "Rounding Factor"
+msgstr "舍入系数"
+
+#. resource:base_view_partner_form
+msgid "Sale"
+msgstr "销售"
+
+#. resource:base_view_partner_form
+msgid "Sales & Purchases"
+msgstr "销售与采购"
+
+#. field:Partner.User
+#. resource:base_view_res_partner_filter
+msgid "Salesperson"
+msgstr "销售员"
+
+#. field:BankAccount.SanitizedAccountNumber
+msgid "Sanitized Account Number"
+msgstr "核对银行账号"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Save"
+msgstr "保存"
+
+#. resource:base_view_res_partner_filter
+msgid "Search Partner"
+msgstr "搜索业务伙伴"
+
+#. resource:base_sequence_view
+msgid "Second: %(sec)s"
+msgstr "秒：%(sec)s"
+
+#. field:Lang.Grouping
+msgid "Separator Format"
+msgstr "分割符格式"
+
+#. field:BankAccount.Sequence
+#. resource:base_sequence_view
+#. resource:base_view_sequence_search
+msgid "Sequence"
+msgstr "序号"
+
+#. field:Sequence.Code
+msgid "Sequence Code"
+msgstr "序列代码"
+
+#. field:Sequence.Padding
+msgid "Sequence Size"
+msgstr "序列大小 "
+
+#. resource:base_sequence_date_range_tree
+#. resource:base_sequence_view
+#. resource:base_sequence_view_tree
+#. resource:base_view_sequence_search
+#. resource:base_ir_sequence_form
+msgid "Sequences"
+msgstr "序号"
+
+#. resource:base_menu_sequences_identifiers
+msgid "Sequences & Identifiers"
+msgstr "序列与标识符"
+
+#. field:User.NewPassword
+msgid "Set Password"
+msgstr "设置密码"
+
+#. resource:base_menu_administration
+msgid "Settings"
+msgstr "设置"
+
+#. field:Partner.PartnerShare
+msgid "Share Partner"
+msgstr "共享合作伙伴"
+
+#. field:User.Share
+msgid "Share User"
+msgstr "共享用户"
+
+#. selection:Partner.Type
+msgid "Shipping Address"
+msgstr "送货地址"
+
+#. resource:base_view_currency_search
+msgid "Show active currencies"
+msgstr "显示有效的货币"
+
+#. resource:base_view_currency_search
+msgid "Show inactive currencies"
+msgstr "显示无效的货币"
+
+#. field:User.Signature
+msgid "Signature"
+msgstr "签名"
+
+#. help:Partner.ImageSmall
+msgid ""
+"Small-sized image of this contact. It is automatically\n"
+"resized as a 64x64px image, with aspect ratio preserved.\n"
+"Use this field anywhere a small image is required."
+msgstr ""
+
+#. help:Bank.BIC
+msgid "Sometimes called BIC or Swift."
+msgstr "有时也叫 BIC 或 Swift。"
+
+#. code:
+msgid "Sorry, you are not allowed to access this document."
+msgstr "对不起，您没有访问此文档的权限。"
+
+#. help:User.NewPassword
+msgid ""
+"Specify a value only when creating a user or if you're\n"
+"changing the user's password, otherwise leave empty. After\n"
+"a change of password, the user has to login again."
+msgstr ""
+
+#. selection:Sequence.Implementation
+msgid "Standard"
+msgstr "标准"
+
+#. field:Partner.State
+#. field:Company.State
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_state_tree
+#. resource:base_view_country_state_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "State"
+msgstr "状态"
+
+#. field:CountryState.Code
+msgid "State Code"
+msgstr "州/省代码"
+
+#. field:CountryState.Name
+msgid "State Name"
+msgstr "州/省名称"
+
+#. field:Country.States
+msgid "States"
+msgstr "状态"
+
+#. field:Sequence.NumberIncrement
+msgid "Step"
+msgstr "步"
+
+#. field:Attachment.StoreFname
+msgid "Stored Filename"
+msgstr "存储的文件名"
+
+#. field:Partner.Street
+#. field:Bank.Street
+#. field:Company.Street
+msgid "Street"
+msgstr "街道"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street 2..."
+msgstr "街道2..."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street..."
+msgstr "街道..."
+
+#. field:Partner.Street2
+#. field:Bank.Street2
+#. field:Company.Street2
+msgid "Street2"
+msgstr "街道 2"
+
+#. field:Sequence.DateRanges
+msgid "Subsequences"
+msgstr "子序列"
+
+#. field:Sequence.Suffix
+msgid "Suffix"
+msgstr "后缀"
+
+#. help:Sequence.Suffix
+msgid "Suffix value of the record for the sequence"
+msgstr "序列号的后缀"
+
+#. field:Currency.Symbol
+msgid "Symbol"
+msgstr "货币符号"
+
+#. field:Currency.Position
+msgid "Symbol Position"
+msgstr "符号位置"
+
+#. field:Partner.VAT
+msgid "TIN"
+msgstr "税务登记证号码"
+
+#. resource:base_view_res_partner_filter
+msgid "Tag"
+msgstr "标签"
+
+#. field:PartnerCategory.Name
+msgid "Tag Name"
+msgstr "标签名"
+
+#. field:Company.Tagline
+msgid "Tagline"
+msgstr ""
+
+#. field:Partner.Categories
+msgid "Tags"
+msgstr "标签"
+
+#. resource:base_view_partner_form
+msgid "Tags..."
+msgstr "标签..."
+
+#. help:Partner.VAT
+msgid ""
+"Tax Identification Number.\n"
+"Fill it if the company is subjected to taxes.\n"
+"Used by the some of the legal statements."
+msgstr ""
+
+#. resource:base_menu_custom
+msgid "Technical"
+msgstr "技术"
+
+#. help:Country.Code
+msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
+msgstr ""
+
+#. help:Lang.Grouping
+msgid ""
+"The Separator Format should be like [,n] where 0 < n :starting from Unit digit.\"\n"
+"-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
+"[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
+"Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. help:PartnerCategory.Active
+msgid "The active field allows you to hide the category without removing it."
+msgstr "有效字段允许你隐藏该类别而不是删除它。"
+
+#. code:
+msgid "The chosen company is not in the allowed companies for this user"
+msgstr "选择的公司不属于此用户允许访问的公司。"
+
+#. help:User.Company
+msgid "The company this user is currently working for."
+msgstr "该用户当前工作的公司"
+
+#. help:Attachment.ResModel
+msgid "The database object this attachment will be attached to"
+msgstr ""
+
+#. help:Country.Name
+msgid "The full name of the country."
+msgstr "国家全名。"
+
+#. help:Partner.User
+msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr "如果存在此销售员，则通过该人员内部账号与该客户沟通对话沟通。"
+
+#. help:Sequence.NumberIncrement
+msgid "The next number of the sequence will be incremented by this number"
+msgstr "下一序列将以此数增加"
+
+#. help:Partner.TZ
+msgid ""
+"The partner's timezone, used to output proper date and time values\n"
+"inside printed reports. It is important to set a value for this field.\n"
+"You should use the same timezone that is otherwise used to pick and\n"
+"render date and time values: your computer's timezone."
+msgstr ""
+
+#. help:Currency.Rate
+#. help:CurrencyRate.Rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "币别到其他币别的比率为 1"
+
+#. help:Attachment.ResID
+msgid "The record id this is attached to"
+msgstr ""
+
+#. help:CountryState.Code
+msgid "The state code in max. three chars."
+msgstr ""
+
+#. help:Lang.ISOCode
+msgid "This ISO code is the name of PO files to use for translations"
+msgstr ""
+
+#. help:Partner.Image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "该字段保存的图像用作联系人的头像，限制为1024x1024px"
+
+#. help:Lang.Code
+msgid "This field is used to set/get locales for user"
+msgstr "此字段用于设定或获取地区设置"
+
+#. field:Lang.ThousandsSep
+msgid "Thousands Separator"
+msgstr "千位分隔符"
+
+#. field:Lang.TimeFormat
+msgid "Time Format"
+msgstr "时间格式"
+
+#. field:Partner.TZ
+msgid "Timezone"
+msgstr "时区"
+
+#. field:Partner.TZOffset
+msgid "Timezone Offset"
+msgstr ""
+
+#. field:Partner.Title
+#. field:PartnerTitle.Name
+msgid "Title"
+msgstr "称谓"
+
+#. field:SequenceDateRange.DateTo
+msgid "To"
+msgstr "至"
+
+#. field:Lang.Translatable
+#. resource:base_res_lang_search
+msgid "Translatable"
+msgstr "可翻译"
+
+#. code:
+msgid "Translate"
+msgstr "翻译"
+
+#. resource:base_menu_translation
+msgid "Translations"
+msgstr "翻译"
+
+#. code:
+msgid "Trying to create a security group"
+msgstr ""
+
+#. code:
+msgid "Trying to modify a security group"
+msgstr ""
+
+#. help:Sequence.Implementation
+msgid ""
+"Two sequence object implementations are offered: Standard and 'No gap'.\n"
+"The latter is slower than the former but forbids any\n"
+"gap in the sequence (while they are possible in the former)."
+msgstr ""
+
+#. field:Partner.Type
+#. field:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Type"
+msgstr "类型"
+
+#. field:Attachment.URL
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "URL"
+msgstr "URL"
+
+#. resource:base_res_lang_tree
+msgid "Update Language Terms"
+msgstr "更新语言术语"
+
+#. resource:base_res_lang_tree
+msgid "Update Terms"
+msgstr "更新术语"
+
+#. field:Sequence.UseDateRange
+msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:User.Login
+msgid "Used to log into the system"
+msgstr "用户登录入系统"
+
+#. help:Partner.Type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "用于通过销售与采购单据上下文来自动选择正确的地址。"
+
+#. field:UserChangePasswordWizardLine.User
+#. resource:base_view_users_search
+msgid "User"
+msgstr "用户"
+
+#. resource:base_menu_user_interface
+msgid "User Interface"
+msgstr "用户界面"
+
+#. field:UserChangePasswordWizardLine.UserLogin
+msgid "User Login"
+msgstr "用户 登录"
+
+#. field:User.Logs
+msgid "User log entries"
+msgstr "用户登录记录"
+
+#. field:Partner.Users
+#. field:UserChangePasswordWizard.Users
+#. resource:base_menu_users
+#. resource:base_change_password_wizard_user_tree_view
+#. resource:base_view_users_tree
+#. resource:base_view_users_form
+#. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
+#. resource:base_menu_action_users
+#. resource:base_action_res_users
+msgid "Users"
+msgstr "用户"
+
+#. field:Company.VAT
+msgid "VAT"
+msgstr "增值税"
+
+#. field:ConfigParameter.Value
+msgid "Value"
+msgstr "值"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_supplier_form
+msgid "Vendors"
+msgstr "供应商"
+
+#. resource:base_view_currency_form
+msgid "View Rates"
+msgstr "查看比率"
+
+#. field:Partner.Website
+#. field:Company.Website
+msgid "Website"
+msgstr "网站"
+
+#. help:Partner.Website
+msgid "Website of Partner or Company"
+msgstr "业务伙伴或公司的网站"
+
+#. resource:base_sequence_view
+msgid "Week of the Year: %(woy)s"
+msgstr "本年第%(woy)s周"
+
+#. field:UserChangePasswordWizardLine.Wizard
+msgid "Wizard"
+msgstr "向导"
+
+#. help:Attachment.Type
+msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
+msgstr "你可以从你的电脑上传一个文件或者复制/粘贴一个 Internet 链接到你的文件."
+
+#. code:
+msgid "You can not change the company as the partner/user has multiple users linked with different companies."
+msgstr ""
+
+#. code:
+msgid "You can not remove the admin user as it is used internally for resources created by Hexya"
+msgstr ""
+
+#. help:Country.AddressFormat
+msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgstr ""
+
+#. code:
+msgid "You cannot create recursive Partner hierarchies."
+msgstr "你不能创建递归的合作伙伴层级。"
+
+#. code:
+msgid "You cannot deactivate the admin user."
+msgstr "不能禁用admin用户。"
+
+#. code:
+msgid "You cannot deactivate the user you're currently logged in as."
+msgstr "不能禁用你当前正在使用的用户。"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "ZIP"
+msgstr "ZIP"
+
+#. field:Partner.Zip
+#. field:Bank.Zip
+#. field:Company.Zip
+msgid "Zip"
+msgstr "邮政编码"
+
+#. resource:base_view_company_form
+msgid "e.g. Global Business Solutions"
+msgstr "例如：全球商业解决方案"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mr."
+msgstr "例如：先生"
+
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "e.g. Sales Director"
+msgstr "例如：销售总监"
+
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+msgid "e.g. www.hexya.io"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "internal note..."
+msgstr "内部备注..."
+

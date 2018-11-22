@@ -1,0 +1,1575 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. code:
+#. code:
+#. code:
+msgid "%s (copy)"
+msgstr "%s (αντίγραφο)"
+
+#. resource:base_view_partner_form
+msgid "(edit)"
+msgstr "(επεξεργασία)"
+
+#. field:PartnerTitle.Shortcut
+msgid "Abbreviation"
+msgstr "Συντομογραφία"
+
+#. field:Company.Users
+msgid "Accepted Users"
+msgstr "Εγγεκριμένοι Χρήστες"
+
+#. resource:base_view_users_form
+msgid "Access Rights"
+msgstr "Δικαιώματα Πρόσβασης"
+
+#. field:BankAccount.Partner
+msgid "Account Holder"
+msgstr "Κάτοχος λογαριασμού"
+
+#. field:BankAccount.Name
+msgid "Account Number"
+msgstr "Αριθμός Λογαριασμού"
+
+#. field:BankAccount.AccountType
+msgid "Account Type"
+msgstr "Τύπος Λογαριασμού"
+
+#. resource:base_view_company_form
+msgid "Accounting"
+msgstr "Λογιστική"
+
+#. field:Lang.Active
+#. field:Partner.Active
+#. field:Bank.Active
+#. field:Currency.Active
+#. field:PartnerCategory.Active
+#. field:Sequence.Active
+#. resource:base_view_currency_search
+#. resource:base_res_lang_search
+msgid "Active"
+msgstr "Ενεργή"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Address"
+msgstr "Διεύθυνση"
+
+#. field:Country.AddressFormat
+msgid "Address Format"
+msgstr ""
+
+#. resource:base_view_country_form
+msgid "Address format..."
+msgstr "Μορφή διεύθυνσης..."
+
+#. help:CountryState.Name
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "Διαχειριστικές περιοχές μιας χώρας. Π.χ. Ομοσπονδιακή Πολιτεία, Καντόνι, Περιφέρεια"
+
+#. selection:Currency.Position
+msgid "After Amount"
+msgstr "Μετά Ποσού"
+
+#. resource:base_view_users_form
+msgid "Allowed Companies"
+msgstr "Επιτρεπόμενες Εταιρίες"
+
+#. resource:base_menu_translation_app
+msgid "Application Terms"
+msgstr "Ορολογία Εφαρμογής"
+
+#. resource:base_view_res_partner_filter
+msgid "Archived"
+msgstr "Αρχειοθετημένα"
+
+#. resource:base_view_attachment_form
+msgid "Attached To"
+msgstr "Συνημμένο με"
+
+#. resource:base_view_attachment_search
+#. resource:base_action_attachment
+msgid "Attachment"
+msgstr "Συνημμένο"
+
+#. field:Attachment.Name
+msgid "Attachment Name"
+msgstr "Όνομα Συνημμένου"
+
+#. field:BankAccount.Bank
+#. resource:base_view_res_bank_form
+msgid "Bank"
+msgstr "Τράπεζα"
+
+#. field:Partner.Banks
+#. resource:base_view_partner_bank_search
+#. resource:base_view_partner_bank_tree
+#. resource:base_action_res_partner_bank_account_form
+msgid "Bank Accounts"
+msgstr "Τραπεζικοί Λογαριασμοί"
+
+#. field:BankAccount.BankBIC
+msgid "Bank BIC"
+msgstr ""
+
+#. field:Bank.BIC
+msgid "Bank Identifier Cord"
+msgstr ""
+
+#. field:BankAccount.BankName
+#. resource:base_view_partner_bank_search
+msgid "Bank Name"
+msgstr "Όνομα Τράπεζας"
+
+#. resource:base_view_partner_bank_form
+msgid "Bank account"
+msgstr "Τραπεζικός λογαριασμός"
+
+#. resource:base_view_res_bank_tree
+#. resource:base_action_res_bank_form
+msgid "Banks"
+msgstr "Τράπεζες"
+
+#. field:Partner.Barcode
+msgid "Barcode"
+msgstr "Barcode"
+
+#. selection:Currency.Position
+msgid "Before Amount"
+msgstr "Πριν το Ποσό"
+
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Binary"
+msgstr "Δυαδικό"
+
+#. resource:base_view_users_form_simple_modif
+#. resource:base_change_password_wizard_view
+msgid "Cancel"
+msgstr "Άκυρο"
+
+#. code:
+msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. resource:base_action_res_users_my
+msgid "Change My Preferences"
+msgstr "Αλλαγή Προτιμήσεων"
+
+#. resource:base_view_users_form
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_action
+msgid "Change Password"
+msgstr "Αλλαγή Κωδικού Πρόσβασης"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Change password"
+msgstr "Αλλαγή Κωδικού Πρόσβασης"
+
+#. resource:base_view_users_form
+msgid "Change the user password."
+msgstr "Αλλαγή του Κωδικού Πρόσβασης του χρήστη"
+
+#. help:Partner.IsCompany
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Επιλέξτε εάν η επαφή είναι μια εταιρία, αλλιώς είναι ένα άτομο"
+
+#. help:Partner.Customer
+msgid "Check this box if this contact is a customer."
+msgstr "Επιλέξτε εάν  αυτή η επαφή είναι ένας πελάτης"
+
+#. help:Partner.Supplier
+msgid ""
+"Check this box if this contact is a vendor.\n"
+"If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr ""
+
+#. help:Partner.Employee
+msgid "Check this box if this contact is an Employee."
+msgstr "Τσεκάρετε το κουτί αν αυτή η επαφή αποτελεί εργαζόμενο"
+
+#. field:Attachment.CheckSum
+msgid "Checksum/SHA1"
+msgstr ""
+
+#. field:Company.Children
+msgid "Child Companies"
+msgstr "Θυγατρικές Εταιρείες"
+
+#. field:Partner.Children
+msgid "Children"
+msgstr "Υποκατηγορίες"
+
+#. field:PartnerCategory.Children
+msgid "Children Tags"
+msgstr ""
+
+#. field:Partner.City
+#. field:Bank.City
+#. field:Company.City
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "City"
+msgstr "Πόλη"
+
+#. field:Partner.Color
+msgid "Color"
+msgstr "Χρώμα"
+
+#. field:PartnerCategory.Color
+msgid "Color Index"
+msgstr "Χρωματισμός Ευρετήριου"
+
+#. field:Partner.CommercialCompanyName
+msgid "Commercial Company Name"
+msgstr ""
+
+#. field:Partner.CommercialPartner
+msgid "Commercial Entity"
+msgstr "Επιχειρηματική Οντότητα"
+
+#. resource:base_view_res_bank_form
+msgid "Communication"
+msgstr "Επικοινωνία"
+
+#. field:User.Companies
+#. resource:base_view_company_tree
+#. resource:base_company_normal_action_tree
+#. resource:base_action_res_company_form
+#. resource:base_view_res_partner_filter
+msgid "Companies"
+msgstr "Εταιρίες"
+
+#. selection:Partner.CompanyType
+#. field:Partner.Company
+#. field:CurrencyRate.Company
+#. field:Sequence.Company
+#. field:Attachment.Company
+#. field:BankAccount.Company
+#. field:User.Company
+#. resource:base_view_attachment_search
+#. resource:base_view_company_form
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_users_search
+msgid "Company"
+msgstr "Εταιρία"
+
+#. field:Partner.CompanyName
+#. field:Company.Name
+msgid "Company Name"
+msgstr "Επωνυμία Εταιρίας"
+
+#. field:Company.CompanyRegistry
+msgid "Company Registry"
+msgstr ""
+
+#. field:Partner.CompanyType
+msgid "Company Type"
+msgstr ""
+
+#. field:Partner.ContactAddress
+msgid "Complete Address"
+msgstr "Πλήρης Διεύθυνση"
+
+#. resource:base_view_company_form
+#. resource:base_menu_reporting_config
+msgid "Configuration"
+msgstr "Διαμόρφωση"
+
+#. selection:Partner.Type
+#. resource:base_view_partner_simple_form
+msgid "Contact"
+msgstr "Επαφή"
+
+#. resource:base_view_partner_form
+msgid "Contact / Address"
+msgstr "Επαφή / Διεύθυνση"
+
+#. resource:base_view_partner_form
+msgid "Contact Name"
+msgstr "Όνομα Επαφής"
+
+#. resource:base_view_partner_category_form
+msgid "Contact Tag"
+msgstr ""
+
+#. resource:base_view_partner_category_list
+msgid "Contact Tags"
+msgstr "Ετικέτες Επαφών"
+
+#. resource:base_action_partner_title_contact
+msgid "Contact Titles"
+msgstr "Τίτλοι Επαφής"
+
+#. resource:base_view_partner_tree
+msgid "Contacts"
+msgstr "Επαφές"
+
+#. resource:base_view_partner_form
+msgid "Contacts & Addresses"
+msgstr "Επαφές & Διευθύνσεις"
+
+#. code:
+msgid "Couldn't create contact without email address!"
+msgstr "Δεν μπορεί να δημιουργηθεί επαφή χωρίς διεύθυνση email!"
+
+#. field:CountryGroup.Countries
+#. resource:base_action_country
+msgid "Countries"
+msgstr "Χώρες"
+
+#. field:Partner.Country
+#. field:Bank.Country
+#. field:Company.Country
+#. field:CountryState.Country
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_tree
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Country"
+msgstr "Χώρα"
+
+#. field:Country.PhoneCode
+msgid "Country Calling Code"
+msgstr ""
+
+#. field:Country.Code
+msgid "Country Code"
+msgstr "Κωδικός Χώρας"
+
+#. resource:base_view_country_group_tree
+#. resource:base_view_country_group_form
+msgid "Country Group"
+msgstr "Ομάδα Κράτους"
+
+#. field:Country.CountryGroups
+#. resource:base_action_country_group
+msgid "Country Groups"
+msgstr "Ομάδες Χωρών"
+
+#. field:Country.Name
+msgid "Country Name"
+msgstr "Όνομα Χώρας"
+
+#. resource:base_view_partner_form
+msgid "Create company"
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "Creation"
+msgstr "Δημιουργία"
+
+#. resource:base_view_attachment_search
+msgid "Creation Month"
+msgstr "Μήνας Δημιουργίας"
+
+#. field:Partner.CreditLimit
+msgid "Credit Limit"
+msgstr "Πιστωτικό Όριο"
+
+#. resource:base_view_currency_search
+#. resource:base_view_currency_tree
+#. resource:base_action_currency_form
+msgid "Currencies"
+msgstr "Νομίσματα"
+
+#. field:Country.Currency
+#. field:Company.Currency
+#. field:CurrencyRate.Currency
+#. field:Currency.Name
+#. field:BankAccount.Currency
+#. resource:base_view_currency_form
+#. resource:base_view_currency_search
+msgid "Currency"
+msgstr "Νόμισμα"
+
+#. help:Currency.Name
+msgid "Currency Code [ISO 4217]"
+msgstr ""
+
+#. resource:base_view_currency_rate_form
+msgid "Currency Rate"
+msgstr "Ισοτιμία"
+
+#. resource:base_view_currency_rate_search
+#. resource:base_view_currency_rate_tree
+#. resource:base_act_view_currency_rates
+msgid "Currency Rates"
+msgstr ""
+
+#. help:Currency.Symbol
+msgid "Currency sign, to be used when printing amounts"
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Current Company"
+msgstr ""
+
+#. field:Currency.Rate
+msgid "Current Rate"
+msgstr "Τρέχουσα Ισοτιμία"
+
+#. resource:base_sequence_view
+msgid "Current Year with Century: %(year)s"
+msgstr "Τρέχον Έτος με τον Αιώνα: %(year)s"
+
+#. resource:base_sequence_view
+msgid "Current Year without Century: %(y)s"
+msgstr "Τρέχον έτος χωρίς τον αιώνα: %(y)s"
+
+#. resource:base_menu_administration_shortcut
+msgid "Custom Shortcuts"
+msgstr "Προσαρμοσμένες συντομεύσεις"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_form
+#. resource:base_action_partner_customer_form
+msgid "Customers"
+msgstr "Πελάτες"
+
+#. resource:base_menu_board_root
+#. resource:base_menu_reporting_dashboard
+msgid "Dashboards"
+msgstr "Ταμπλό"
+
+#. field:Attachment.DBDatas
+msgid "Database Data"
+msgstr "Δεδομένα Βάσης"
+
+#. resource:base_menu_database_structure
+msgid "Database Structure"
+msgstr "Αρχιτεκτονική Βάσης Δεδομένων"
+
+#. field:Partner.Date
+#. field:CurrencyRate.Name
+#. field:Currency.Date
+#. resource:base_view_currency_rate_search
+msgid "Date"
+msgstr "Ημερομηνία"
+
+#. field:Lang.DateFormat
+msgid "Date Format"
+msgstr "Μορφή Ημερομηνίας"
+
+#. resource:base_sequence_view
+msgid "Day of the Week (0:Monday): %(weekday)s"
+msgstr "Ημέρα της Εβδομάδας (0:Monday): %(weekday)s"
+
+#. resource:base_sequence_view
+msgid "Day of the Year: %(doy)s"
+msgstr "Ημέρα του Έτους: %(doy)s"
+
+#. resource:base_sequence_view
+msgid "Day: %(day)s"
+msgstr "Ημέρα: %(day)s"
+
+#. field:Currency.DecimalPlaces
+msgid "Decimal Places"
+msgstr ""
+
+#. field:Lang.DecimalPoint
+msgid "Decimal Separator"
+msgstr "Διαχωριστικό Δεκαδικών"
+
+#. field:Attachment.Description
+#. resource:base_view_attachment_form
+msgid "Description"
+msgstr "Περιγραφή"
+
+#. help:Currency.Position
+msgid "Determines where the currency symbol should be placed after or before the amount."
+msgstr "Καθορίζει πότε το σύμβολο του νομίσματος πρέπει να μπει μετά ή πριν το ποσό."
+
+#. field:Lang.Direction
+msgid "Direction"
+msgstr "Κατεύθυνση"
+
+#. resource:base_view_currency_form
+msgid "Display"
+msgstr "Εμφάνιση"
+
+#. help:Partner.PartnerShare
+msgid ""
+"Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
+"access or with a limited access created for sharing data."
+msgstr ""
+
+#. field:Partner.Email
+#. field:Bank.Email
+#. field:Company.Email
+msgid "Email"
+msgstr "Email"
+
+#. resource:base_view_users_form
+msgid "Email Address"
+msgstr "Email Address"
+
+#. field:Partner.EmailFormatted
+msgid "Email Formatted"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Email Preferences"
+msgstr "Προτιμήσεις Email"
+
+#. field:Partner.Employee
+msgid "Employee"
+msgstr "Υπάλληλος"
+
+#. resource:base_action_partner_employee_form
+msgid "Employees"
+msgstr "Υπάλληλοι"
+
+#. code:
+msgid "Error ! You can not create recursive tags."
+msgstr "Σφάλμα ! Δεν μπορείτε να δημιουργήσετε αναδρομική ετικέτες."
+
+#. resource:base_res_lang_form
+msgid "Examples"
+msgstr "Παραδείγματα"
+
+#. help:User.Share
+msgid "External user with limited access, created only for the purpose of sharing data."
+msgstr "Εξωτερικός χρήστης με περιορισμένη πρόσβαση, που δημιουργήθηκε αποκλειστικά για την ανταλλαγή δεδομένων."
+
+#. field:Partner.Fax
+#. field:Bank.Fax
+#. field:Company.Fax
+msgid "Fax"
+msgstr "Fax"
+
+#. field:Bank.State
+msgid "Fed. State"
+msgstr "Νομός/Πολιτεία"
+
+#. resource:base_action_country_state
+msgid "Fed. States"
+msgstr "Νομοί/Πολιτείες"
+
+#. field:Attachment.Datas
+msgid "File Content"
+msgstr "Περιεχόμενα Φακέλου"
+
+#. field:Attachment.DatasFname
+msgid "File Name"
+msgstr "Όνομα Αρχείου"
+
+#. field:Attachment.FileSize
+msgid "File Size"
+msgstr "Μέγεθος Αρχείου"
+
+#. resource:base_view_attachment_search
+msgid "Filter on my documents"
+msgstr "Φίλτρα στα έγγραφά μου"
+
+#. help:Partner.EmailFormatted
+msgid "Formatted email address 'Name <email@domain>'"
+msgstr ""
+
+#. field:SequenceDateRange.DateFrom
+msgid "From"
+msgstr "Από"
+
+#. resource:base_view_company_form
+msgid "General Information"
+msgstr "Γενικές Πληροφορίες"
+
+#. resource:base_view_groups_search
+msgid "Group"
+msgstr "Ομάδα"
+
+#. resource:base_view_attachment_search
+#. resource:base_view_res_partner_filter
+msgid "Group By"
+msgstr "Ομαδοποίηση Κατά"
+
+#. field:Group.GroupID
+msgid "Group ID"
+msgstr ""
+
+#. resource:base_view_country_group_form
+msgid "Group name"
+msgstr "Όνομα oμάδας"
+
+#. field:ConfigParameter.Groups
+#. field:User.Groups
+#. resource:base_view_groups_search
+#. resource:base_view_groups_tree
+#. resource:base_menu_action_groups
+#. resource:base_action_res_groups
+msgid "Groups"
+msgstr "Ομάδες"
+
+#. help:Sequence.Padding
+msgid "Hexya will automatically adds some '0' on the left of the 'Next Number' to get the required padding size."
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "History"
+msgstr "Ιστορικό"
+
+#. field:User.ActionID
+msgid "Home Action"
+msgstr "Αρχική Ενέργεια"
+
+#. resource:base_sequence_view
+msgid "Hour 00->12: %(h12)s"
+msgstr "Ώρα 00->12: %(h12)s"
+
+#. resource:base_sequence_view
+msgid "Hour 00->24: %(h24)s"
+msgstr "Ώρα 00->24: %(h24)s"
+
+#. field:Lang.ID
+#. field:ModelMixin.ID
+#. field:PartnerTitle.ID
+#. field:Partner.ID
+#. field:SequenceDateRange.ID
+#. field:UserLog.ID
+#. field:ConfigParameter.ID
+#. field:CountryGroup.ID
+#. field:Country.ID
+#. field:UserChangePasswordWizard.ID
+#. field:UserChangePasswordWizardLine.ID
+#. field:Bank.ID
+#. field:Company.ID
+#. field:Group.ID
+#. field:CountryState.ID
+#. field:CurrencyRate.ID
+#. field:Currency.ID
+#. field:PartnerCategory.ID
+#. field:Sequence.ID
+#. field:Attachment.ID
+#. field:BankAccount.ID
+#. field:ConfigSettings.ID
+#. field:Translation.ID
+#. field:User.ID
+msgid "ID"
+msgstr "Κωδικός"
+
+#. field:Lang.ISOCode
+msgid "ISO Code"
+msgstr "Κωδικός ISO"
+
+#. help:User.ActionID
+msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+msgstr "Εάν καθοριστεί, αυτή η ενέργεια θα ανοίξει μια αρχειοθέτηση για αυτόν τον χρήστη, πρόσθετα στο τυπικό μενού."
+
+#. help:Partner.Lang
+msgid ""
+"If the selected language is loaded in the system, all documents related to\n"
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+
+#. field:Partner.Image
+#. field:Country.Image
+msgid "Image"
+msgstr "Εικόνα"
+
+#. field:Partner.ImageMedium
+msgid "Image Medium"
+msgstr ""
+
+#. field:Partner.ImageSmall
+msgid "Image Small"
+msgstr ""
+
+#. field:Sequence.Implementation
+msgid "Implementation"
+msgstr "Εκτέλεση"
+
+#. resource:base_menu_translation_export
+msgid "Import / Export"
+msgstr "Εισαγωγές / Εξαγωγές"
+
+#. resource:base_view_currency_search
+msgid "Inactive"
+msgstr "Ανενεργή"
+
+#. field:Attachment.IndexContent
+#. resource:base_view_attachment_form
+msgid "Indexed Content"
+msgstr "Αρχειοθετημένα Περιεχόμενα"
+
+#. selection:Partner.CompanyType
+msgid "Individual"
+msgstr "Ιδιώτης"
+
+#. resource:base_view_partner_form
+msgid "Internal Notes"
+msgstr "Εσωτερικά Σημειώματα"
+
+#. field:Partner.Ref
+msgid "Internal Reference"
+msgstr "Εσωτερικός Κωδικός"
+
+#. resource:base_view_partner_form
+msgid "Internal note..."
+msgstr "Εσωτερική σημείωση ..."
+
+#. code:
+msgid "Invalid search criterion: password"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Invoice Address"
+msgstr "Διεύθυνση Τιμολόγησης"
+
+#. field:Partner.IsCompany
+msgid "Is Company"
+msgstr "Είναι Εταιρεία"
+
+#. field:Partner.Customer
+msgid "Is a Customer"
+msgstr "Είναι Πελάτης"
+
+#. field:Partner.Supplier
+msgid "Is a Vendor"
+msgstr "Είναι Προμηθευτής"
+
+#. field:Attachment.Public
+msgid "Is a public document"
+msgstr ""
+
+#. field:Partner.Function
+msgid "Job Position"
+msgstr "Θέση Εργασίας"
+
+#. help:User.Password
+msgid "Keep empty if you don't want the user to be able to connect on the system."
+msgstr ""
+
+#. field:ConfigParameter.Key
+msgid "Key"
+msgstr "Κλειδί"
+
+#. field:Partner.Lang
+#. resource:base_res_lang_search
+msgid "Language"
+msgstr "Γλώσσα"
+
+#. resource:base_res_lang_tree
+#. resource:base_res_lang_form
+#. resource:base_res_lang_search
+#. resource:base_res_lang_act_window
+msgid "Languages"
+msgstr "Γλώσσες"
+
+#. field:User.LoginDate
+msgid "Latest Connection"
+msgstr "Η Τελευταία Σύνδεση"
+
+#. selection:Lang.Direction
+msgid "Left-to-Right"
+msgstr "Left-to-Right"
+
+#. resource:base_sequence_view
+msgid "Legend (for prefix, suffix)"
+msgstr "Υπόμνημα (για προθέματα, επιθήματα)"
+
+#. resource:base_res_lang_form
+msgid "Legends for supported Date and Time Formats"
+msgstr ""
+
+#. field:Lang.Code
+msgid "Locale Code"
+msgstr "Κωδικός τοπικών ρυθμίσεων"
+
+#. resource:base_view_users_form
+msgid "Localization"
+msgstr "Τοπική Προσαρμογή"
+
+#. field:User.Login
+msgid "Login"
+msgstr "Σύνδεση"
+
+#. field:Company.Logo
+msgid "Logo"
+msgstr "Λογότυπο"
+
+#. field:Company.LogoWeb
+msgid "Logo Web"
+msgstr ""
+
+#. field:SequenceDateRange.Sequence
+msgid "Main Sequence"
+msgstr "Κύρια Ακολουθία"
+
+#. help:Partner.ImageMedium
+msgid ""
+"Medium-sized image of this contact. It is automatically\n"
+"resized as a 128x128px image, with aspect ratio preserved.\n"
+"Use this field in form views or some kanban views."
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Menus Customization"
+msgstr "Προσωποποίηση Μενού"
+
+#. resource:base_view_users_form
+msgid "Messaging and Social"
+msgstr "Μηνύματα και Κοινωνικά"
+
+#. field:Attachment.MimeType
+msgid "Mime Type"
+msgstr "Τύπος MIME"
+
+#. resource:base_sequence_view
+msgid "Minute: %(min)s"
+msgstr "Λεπτά: %(min)s"
+
+#. resource:base_view_partner_form
+msgid "Misc"
+msgstr "Διάφορα"
+
+#. field:Partner.Mobile
+msgid "Mobile"
+msgstr "Κινητό"
+
+#. resource:base_sequence_view
+msgid "Month: %(month)s"
+msgstr "Μήνας: %(month)s"
+
+#. resource:base_view_users_form
+msgid "Multi Companies"
+msgstr "Πολυ Εταιρικές"
+
+#. resource:base_view_attachment_search
+msgid "My Document(s)"
+msgstr "Τα Έγγραφά μου"
+
+#. resource:base_view_res_partner_filter
+msgid "My Partners"
+msgstr "Οι Συνεργάτες μου"
+
+#. field:Lang.Name
+#. field:Partner.Name
+#. field:CountryGroup.Name
+#. field:Bank.Name
+#. field:Group.Name
+#. field:Sequence.Name
+#. resource:base_view_partner_tree
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+msgid "Name"
+msgstr "Περιγραφή"
+
+#. field:UserChangePasswordWizardLine.NewPassword
+msgid "New Password"
+msgstr "Νέος Κωδικός Πρόσβασης"
+
+#. field:SequenceDateRange.NumberNext
+#. field:SequenceDateRange.NumberNextActual
+#. field:Sequence.NumberNextActual
+#. field:Sequence.NumberNext
+msgid "Next Number"
+msgstr "Επόμενος Αριθμός"
+
+#. help:SequenceDateRange.NumberNext
+#. help:Sequence.NumberNext
+msgid "Next number of this sequence"
+msgstr "Επόμενος αριθμός αυτής της ακολουθίας"
+
+#. help:SequenceDateRange.NumberNextActual
+#. help:Sequence.NumberNextActual
+msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
+msgstr "Ο επόμενος αριθμός που θα χρησιμοποιηθεί. Αυτό το νούμερο μπορεί αυξάνεται συχνά έτσι ώστε η εμφανιζόμενη αξία μπορεί να είναι ίδια με την απόλυτη"
+
+#. selection:Sequence.Implementation
+msgid "No Gap"
+msgstr ""
+
+#. field:Partner.Comment
+msgid "Notes"
+msgstr "Σημειώσεις"
+
+#. field:User.CompaniesCount
+msgid "Number of Companies"
+msgstr ""
+
+#. code:
+msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
+msgstr ""
+
+#. code:
+msgid "Only administrators can change the settings"
+msgstr "Μόνο ο διαχειριστές μπορούν να αλλάξουν τις ρυθμίσεις"
+
+#. code:
+msgid "Only administrators can execute this action."
+msgstr "Μόνο διαχιεριστές μπορούν να εκτελέσουν αυτήν την λειτουργία."
+
+#. selection:Partner.Type
+msgid "Other Address"
+msgstr ""
+
+#. resource:base_action_partner_other_form
+msgid "Other Partners"
+msgstr "Άλλοι Συνεργάτες"
+
+#. resource:base_view_attachment_search
+msgid "Owner"
+msgstr "Ιδιοκτήτης"
+
+#. field:Partner.Parent
+msgid "Parent"
+msgstr "Μητρικός"
+
+#. field:Company.Parent
+msgid "Parent Company"
+msgstr "Μητρική Εταιρεία"
+
+#. field:Partner.ParentName
+msgid "Parent Name"
+msgstr ""
+
+#. field:PartnerCategory.Parent
+msgid "Parent Tag"
+msgstr ""
+
+#. field:Company.Partner
+#. resource:base_view_partner_address_form
+msgid "Partner"
+msgstr "Συναλλασόμενος"
+
+#. resource:base_view_partner_title_form
+#. resource:base_view_partner_title_tree
+msgid "Partner Titles"
+msgstr "Τίτλοι Συνεργάτη"
+
+#. help:User.Partner
+msgid "Partner-related data of the user"
+msgstr "Τα δεδομένα του χρήστη σε σχέση με τον συνεργάτη"
+
+#. field:PartnerCategory.Partners
+#. resource:base_view_partner_form
+msgid "Partners"
+msgstr "Συνεργάτες"
+
+#. field:User.Password
+msgid "Password"
+msgstr "Κωδικός Πρόσβασης"
+
+#. resource:base_view_res_partner_filter
+msgid "Persons"
+msgstr "Άτομα"
+
+#. field:Partner.Phone
+#. field:Bank.Phone
+#. field:Company.Phone
+msgid "Phone"
+msgstr "Τηλέφωνο"
+
+#. code:
+msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
+msgstr "Παρακαλούμε χρησιμοποιήστε τον οδηγό αλλαγής του κωδικού πρόσβασης (από το Προτιμήσεις Χρήστη ή το μενού Χρήστη) για να αλλάξετε το δικό σας κωδικό πρόσβασης."
+
+#. resource:base_view_users_form
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#. field:Sequence.Prefix
+msgid "Prefix"
+msgstr "Πρόθεμα"
+
+#. help:Sequence.Prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "Τιμή προθέματος της εγγραφής για την ακολουθία"
+
+#. resource:base_view_currency_form
+msgid "Price Accuracy"
+msgstr "Ακρίβεια τιμών"
+
+#. resource:base_view_partner_form
+msgid "Purchase"
+msgstr "Αγορά"
+
+#. field:CurrencyRate.Rate
+msgid "Rate"
+msgstr "Ισοτιμία"
+
+#. field:Currency.Rates
+msgid "Rates"
+msgstr "Ισοτιμίες"
+
+#. field:User.Partner
+msgid "Related Partner"
+msgstr "Σχετικός Συνεργάτης"
+
+#. resource:base_menu_action_reload_groups
+#. resource:base_action_server_reload_groups
+msgid "Reload Groups"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "Report Configuration"
+msgstr "Διαμόρφωση Εκθέσεων"
+
+#. field:Attachment.ResField
+msgid "Resource Field"
+msgstr "Πεδίο πόρων"
+
+#. field:Attachment.ResID
+msgid "Resource ID"
+msgstr "Αριθμός Πόρου"
+
+#. field:Attachment.ResModel
+msgid "Resource Model"
+msgstr "Μοντέλο πόρων"
+
+#. field:Attachment.ResName
+msgid "Resource Name"
+msgstr "Όνομα Πόρου"
+
+#. selection:Lang.Direction
+msgid "Right-to-left"
+msgstr ""
+
+#. field:Currency.Rounding
+msgid "Rounding Factor"
+msgstr "Παράγοντας Στρογγυλοποίησης"
+
+#. resource:base_view_partner_form
+msgid "Sale"
+msgstr "Πώληση"
+
+#. resource:base_view_partner_form
+msgid "Sales & Purchases"
+msgstr "Πωλήσεις & Αγορές"
+
+#. field:Partner.User
+#. resource:base_view_res_partner_filter
+msgid "Salesperson"
+msgstr "Πωλητής"
+
+#. field:BankAccount.SanitizedAccountNumber
+msgid "Sanitized Account Number"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Save"
+msgstr "Αποθήκευση"
+
+#. resource:base_view_res_partner_filter
+msgid "Search Partner"
+msgstr "Αναζήτηση συνεργάτη"
+
+#. resource:base_sequence_view
+msgid "Second: %(sec)s"
+msgstr "Δευτερόλεπτο: %(sec)s"
+
+#. field:Lang.Grouping
+msgid "Separator Format"
+msgstr "Μορφή Διαχωριστή"
+
+#. field:BankAccount.Sequence
+#. resource:base_sequence_view
+#. resource:base_view_sequence_search
+msgid "Sequence"
+msgstr "Ακολουθία"
+
+#. field:Sequence.Code
+msgid "Sequence Code"
+msgstr ""
+
+#. field:Sequence.Padding
+msgid "Sequence Size"
+msgstr ""
+
+#. resource:base_sequence_date_range_tree
+#. resource:base_sequence_view
+#. resource:base_sequence_view_tree
+#. resource:base_view_sequence_search
+#. resource:base_ir_sequence_form
+msgid "Sequences"
+msgstr "Ιεραρχήσεις"
+
+#. resource:base_menu_sequences_identifiers
+msgid "Sequences & Identifiers"
+msgstr "Ακολουθίες και Ταυτοποιητές"
+
+#. field:User.NewPassword
+msgid "Set Password"
+msgstr "Ορισμός Κωδικού Πρόσβασης"
+
+#. resource:base_menu_administration
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#. field:Partner.PartnerShare
+msgid "Share Partner"
+msgstr ""
+
+#. field:User.Share
+msgid "Share User"
+msgstr "Κοινοποίηση Χρήστη"
+
+#. selection:Partner.Type
+msgid "Shipping Address"
+msgstr "Διεύθυνση Παράδοσης"
+
+#. resource:base_view_currency_search
+msgid "Show active currencies"
+msgstr ""
+
+#. resource:base_view_currency_search
+msgid "Show inactive currencies"
+msgstr ""
+
+#. field:User.Signature
+msgid "Signature"
+msgstr "Υπογραφή"
+
+#. help:Partner.ImageSmall
+msgid ""
+"Small-sized image of this contact. It is automatically\n"
+"resized as a 64x64px image, with aspect ratio preserved.\n"
+"Use this field anywhere a small image is required."
+msgstr ""
+
+#. help:Bank.BIC
+msgid "Sometimes called BIC or Swift."
+msgstr "Μερικές φορές ονομάζονται BIC ή SWIFT"
+
+#. code:
+msgid "Sorry, you are not allowed to access this document."
+msgstr "Συγνώμη , δεν επιτρέπεται η πρόσβαση σε αυτό το έγγραφο"
+
+#. help:User.NewPassword
+msgid ""
+"Specify a value only when creating a user or if you're\n"
+"changing the user's password, otherwise leave empty. After\n"
+"a change of password, the user has to login again."
+msgstr ""
+
+#. selection:Sequence.Implementation
+msgid "Standard"
+msgstr "Τυπικό"
+
+#. field:Partner.State
+#. field:Company.State
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_state_form
+#. resource:base_view_country_state_tree
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "State"
+msgstr "Νομός/Πολιτεία"
+
+#. field:CountryState.Code
+msgid "State Code"
+msgstr "Κωδικός Νομού/Πολιτείας"
+
+#. field:CountryState.Name
+msgid "State Name"
+msgstr "Όνομα Νομού/Πολιτείας"
+
+#. field:Country.States
+msgid "States"
+msgstr "Νομοί/Πολιτείες"
+
+#. field:Sequence.NumberIncrement
+msgid "Step"
+msgstr "Βήμα"
+
+#. field:Attachment.StoreFname
+msgid "Stored Filename"
+msgstr "Αποθηκευμένο Όνομα Αρχείου"
+
+#. field:Partner.Street
+#. field:Bank.Street
+#. field:Company.Street
+msgid "Street"
+msgstr "Οδός"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street 2..."
+msgstr "Οδός 2..."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street..."
+msgstr "Οδός..."
+
+#. field:Partner.Street2
+#. field:Bank.Street2
+#. field:Company.Street2
+msgid "Street2"
+msgstr "Οδός 2"
+
+#. field:Sequence.DateRanges
+msgid "Subsequences"
+msgstr ""
+
+#. field:Sequence.Suffix
+msgid "Suffix"
+msgstr "Επίθημα"
+
+#. help:Sequence.Suffix
+msgid "Suffix value of the record for the sequence"
+msgstr "Τιμή κατάληξης της εγγραφής για την αλληλουχία"
+
+#. field:Currency.Symbol
+msgid "Symbol"
+msgstr "Σύμβολο"
+
+#. field:Currency.Position
+msgid "Symbol Position"
+msgstr "Θέση Συμβόλου"
+
+#. field:Partner.VAT
+msgid "TIN"
+msgstr "ΑΦΜ"
+
+#. resource:base_view_res_partner_filter
+msgid "Tag"
+msgstr "Εικέτα"
+
+#. field:PartnerCategory.Name
+msgid "Tag Name"
+msgstr "Όνομα Ετικέτας"
+
+#. field:Company.Tagline
+msgid "Tagline"
+msgstr ""
+
+#. field:Partner.Categories
+msgid "Tags"
+msgstr "Ετικέτες"
+
+#. resource:base_view_partner_form
+msgid "Tags..."
+msgstr "Ετικέτες..."
+
+#. help:Partner.VAT
+msgid ""
+"Tax Identification Number.\n"
+"Fill it if the company is subjected to taxes.\n"
+"Used by the some of the legal statements."
+msgstr ""
+
+#. resource:base_menu_custom
+msgid "Technical"
+msgstr "Τεχνικό"
+
+#. help:Country.Code
+msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
+msgstr ""
+
+#. help:Lang.Grouping
+msgid ""
+"The Separator Format should be like [,n] where 0 < n :starting from Unit digit.\"\n"
+"-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
+"[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
+"Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. help:PartnerCategory.Active
+msgid "The active field allows you to hide the category without removing it."
+msgstr "Το ενεργό πεδίο σας επιτρέπει να κρύψετε την κατηγορία χωρίς να την διαγράψετε."
+
+#. code:
+msgid "The chosen company is not in the allowed companies for this user"
+msgstr "Η επιλεγμένη εταιρία δεν είναι στις επιτρεπόμενες εταιρίες για αυτόν τον χρήστη"
+
+#. help:User.Company
+msgid "The company this user is currently working for."
+msgstr "Η εταιρεία για την οποία εργάζεται τώρα ο χρήστης."
+
+#. help:Attachment.ResModel
+msgid "The database object this attachment will be attached to"
+msgstr ""
+
+#. help:Country.Name
+msgid "The full name of the country."
+msgstr "Πλήρες όνομα χώρας."
+
+#. help:Partner.User
+msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr "Ο εσωτερικός χρήστης που είναι υπέυθυνος να επικοινωνήσει με αυτή την επαφή (εάν υπάρχει κάποιος)"
+
+#. help:Sequence.NumberIncrement
+msgid "The next number of the sequence will be incremented by this number"
+msgstr "Το επόμενο νούμερο της ακολουθίας θα αυξηθεί από αυτόν τον αριθμό"
+
+#. help:Partner.TZ
+msgid ""
+"The partner's timezone, used to output proper date and time values\n"
+"inside printed reports. It is important to set a value for this field.\n"
+"You should use the same timezone that is otherwise used to pick and\n"
+"render date and time values: your computer's timezone."
+msgstr ""
+
+#. help:CurrencyRate.Rate
+#. help:Currency.Rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "Ισοτιμία νομίσματος"
+
+#. help:Attachment.ResID
+msgid "The record id this is attached to"
+msgstr ""
+
+#. help:CountryState.Code
+msgid "The state code in max. three chars."
+msgstr ""
+
+#. help:Lang.ISOCode
+msgid "This ISO code is the name of PO files to use for translations"
+msgstr ""
+
+#. help:Partner.Image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "Το πεδίο αυτό αποθηκεύει την φωτογραφία που χρησιμοποιείται ως άβαταρ για την επαφή, με μέγιστο μέγεθος τα 1024x1024 εικονοστοιχεία."
+
+#. help:Lang.Code
+msgid "This field is used to set/get locales for user"
+msgstr "Αυτό το πεδίο χρησιμοποιείται για να θέσει/λάβει τις τοπικές ρυθμίσεις του χρήστη"
+
+#. field:Lang.ThousandsSep
+msgid "Thousands Separator"
+msgstr "Διαχωριστικό Χιλιάδων"
+
+#. field:Lang.TimeFormat
+msgid "Time Format"
+msgstr "Μορφή Ώρας"
+
+#. field:Partner.TZ
+msgid "Timezone"
+msgstr "Ζώνη Ώρας"
+
+#. field:Partner.TZOffset
+msgid "Timezone Offset"
+msgstr ""
+
+#. field:PartnerTitle.Name
+#. field:Partner.Title
+msgid "Title"
+msgstr "Τίτλος"
+
+#. field:SequenceDateRange.DateTo
+msgid "To"
+msgstr "Σε"
+
+#. field:Lang.Translatable
+#. resource:base_res_lang_search
+msgid "Translatable"
+msgstr "Translatable"
+
+#. code:
+msgid "Translate"
+msgstr "Μετάφραση"
+
+#. resource:base_menu_translation
+msgid "Translations"
+msgstr "Μεταφράσεις"
+
+#. code:
+msgid "Trying to create a security group"
+msgstr ""
+
+#. code:
+msgid "Trying to modify a security group"
+msgstr ""
+
+#. help:Sequence.Implementation
+msgid ""
+"Two sequence object implementations are offered: Standard and 'No gap'.\n"
+"The latter is slower than the former but forbids any\n"
+"gap in the sequence (while they are possible in the former)."
+msgstr ""
+
+#. field:Partner.Type
+#. field:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Type"
+msgstr "Τύπος"
+
+#. field:Attachment.URL
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "URL"
+msgstr "URL"
+
+#. resource:base_res_lang_tree
+msgid "Update Language Terms"
+msgstr ""
+
+#. resource:base_res_lang_tree
+msgid "Update Terms"
+msgstr "Όροι Ενημέρωσης"
+
+#. field:Sequence.UseDateRange
+msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:User.Login
+msgid "Used to log into the system"
+msgstr "Χρησιμοποιείται για να συνδεθείτε στο σύστημα"
+
+#. help:Partner.Type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "Χρησιμοποιείται για την αυτόματη επιλογή της σωστής διεύθυνσης με βάση τις ρυθμίσεις στα έγγραφα αγορών και πωλήσεων"
+
+#. field:UserChangePasswordWizardLine.User
+#. resource:base_view_users_search
+msgid "User"
+msgstr "Χρήστης"
+
+#. resource:base_menu_user_interface
+msgid "User Interface"
+msgstr "Χρηστική Διεπιφάνεια"
+
+#. field:UserChangePasswordWizardLine.UserLogin
+msgid "User Login"
+msgstr "Σύνδεση Χρήστη"
+
+#. field:User.Logs
+msgid "User log entries"
+msgstr ""
+
+#. field:Partner.Users
+#. field:UserChangePasswordWizard.Users
+#. resource:base_menu_users
+#. resource:base_change_password_wizard_user_tree_view
+#. resource:base_view_users_tree
+#. resource:base_view_users_form
+#. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
+#. resource:base_menu_action_users
+#. resource:base_action_res_users
+msgid "Users"
+msgstr "Χρήστες"
+
+#. field:Company.VAT
+msgid "VAT"
+msgstr "ΦΠΑ"
+
+#. field:ConfigParameter.Value
+msgid "Value"
+msgstr "Τιμή"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_supplier_form
+msgid "Vendors"
+msgstr "Προμηθευτές"
+
+#. resource:base_view_currency_form
+msgid "View Rates"
+msgstr ""
+
+#. field:Partner.Website
+#. field:Company.Website
+msgid "Website"
+msgstr "Ιστότοπος"
+
+#. help:Partner.Website
+msgid "Website of Partner or Company"
+msgstr "Ιστότοπος Συνεργάτη ή Εταιρίας"
+
+#. resource:base_sequence_view
+msgid "Week of the Year: %(woy)s"
+msgstr "Εβδομάδα του Έτους: %(woy)s"
+
+#. field:UserChangePasswordWizardLine.Wizard
+msgid "Wizard"
+msgstr "Αυτόματος Οδηγός"
+
+#. help:Attachment.Type
+msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
+msgstr ""
+
+#. code:
+msgid "You can not change the company as the partner/user has multiple users linked with different companies."
+msgstr ""
+
+#. code:
+msgid "You can not remove the admin user as it is used internally for resources created by Hexya"
+msgstr ""
+
+#. help:Country.AddressFormat
+msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgstr ""
+
+#. code:
+msgid "You cannot create recursive Partner hierarchies."
+msgstr "Δεν μπορείτε να δημιουργήσετε διαδοχικές ιεραρχίες Συνεργάτη."
+
+#. code:
+msgid "You cannot deactivate the admin user."
+msgstr ""
+
+#. code:
+msgid "You cannot deactivate the user you're currently logged in as."
+msgstr ""
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "ZIP"
+msgstr "ΤΚ"
+
+#. field:Partner.Zip
+#. field:Bank.Zip
+#. field:Company.Zip
+msgid "Zip"
+msgstr "Τ.Κ."
+
+#. resource:base_view_company_form
+msgid "e.g. Global Business Solutions"
+msgstr "π.χ. Global Business Solutions"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mr."
+msgstr "π.χ. Κος"
+
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "e.g. Sales Director"
+msgstr "π.χ. Διευθυντής πωλήσεων"
+
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+msgid "e.g. www.hexya.io"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "internal note..."
+msgstr "εσωτερική σημείωση..."
+

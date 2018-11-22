@@ -1,0 +1,1575 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. code:
+#. code:
+#. code:
+msgid "%s (copy)"
+msgstr "(สำเนา) %s"
+
+#. resource:base_view_partner_form
+msgid "(edit)"
+msgstr "(แก้ไข)"
+
+#. field:PartnerTitle.Shortcut
+msgid "Abbreviation"
+msgstr "คำย่อ"
+
+#. field:Company.Users
+msgid "Accepted Users"
+msgstr "Accepted Users"
+
+#. resource:base_view_users_form
+msgid "Access Rights"
+msgstr "สิทธิ์การเข้าใช้งาน"
+
+#. field:BankAccount.Partner
+msgid "Account Holder"
+msgstr "ผู้ถือบัญชี"
+
+#. field:BankAccount.Name
+msgid "Account Number"
+msgstr "หมายเลขบัญชี"
+
+#. field:BankAccount.AccountType
+msgid "Account Type"
+msgstr "ประเภทบัญชี"
+
+#. resource:base_view_company_form
+msgid "Accounting"
+msgstr "การบัญชี"
+
+#. field:Currency.Active
+#. field:PartnerCategory.Active
+#. field:Sequence.Active
+#. field:Lang.Active
+#. field:Partner.Active
+#. field:Bank.Active
+#. resource:base_view_currency_search
+#. resource:base_res_lang_search
+msgid "Active"
+msgstr "เปิดใช้งาน"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Address"
+msgstr "ที่อยู่"
+
+#. field:Country.AddressFormat
+msgid "Address Format"
+msgstr ""
+
+#. resource:base_view_country_form
+msgid "Address format..."
+msgstr "รูปแบบที่อยู่"
+
+#. help:CountryState.Name
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+
+#. selection:Currency.Position
+msgid "After Amount"
+msgstr "จำนวนก่อน"
+
+#. resource:base_view_users_form
+msgid "Allowed Companies"
+msgstr "อนุญาตให้ใช้ บริษัท"
+
+#. resource:base_menu_translation_app
+msgid "Application Terms"
+msgstr "ศัพท์แอพพลิเคชัน"
+
+#. resource:base_view_res_partner_filter
+msgid "Archived"
+msgstr "ถูกเก็บ"
+
+#. resource:base_view_attachment_form
+msgid "Attached To"
+msgstr "Attached To"
+
+#. resource:base_view_attachment_search
+#. resource:base_action_attachment
+msgid "Attachment"
+msgstr "แนบ"
+
+#. field:Attachment.Name
+msgid "Attachment Name"
+msgstr "ชื่อที่แนบมาด้วย"
+
+#. field:BankAccount.Bank
+#. resource:base_view_res_bank_form
+msgid "Bank"
+msgstr "ธนาคาร"
+
+#. field:Partner.Banks
+#. resource:base_view_partner_bank_tree
+#. resource:base_view_partner_bank_search
+#. resource:base_action_res_partner_bank_account_form
+msgid "Bank Accounts"
+msgstr "บัญชีธนาคาร"
+
+#. field:BankAccount.BankBIC
+msgid "Bank BIC"
+msgstr ""
+
+#. field:Bank.BIC
+msgid "Bank Identifier Cord"
+msgstr ""
+
+#. field:BankAccount.BankName
+#. resource:base_view_partner_bank_search
+msgid "Bank Name"
+msgstr "ชื่อธนาคาร"
+
+#. resource:base_view_partner_bank_form
+msgid "Bank account"
+msgstr "บัญชีธนาคาร"
+
+#. resource:base_view_res_bank_tree
+#. resource:base_action_res_bank_form
+msgid "Banks"
+msgstr "ธนาคาร"
+
+#. field:Partner.Barcode
+msgid "Barcode"
+msgstr "บาร์โค้ด"
+
+#. selection:Currency.Position
+msgid "Before Amount"
+msgstr "จำนวนก่อน"
+
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Binary"
+msgstr "Binary"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form_simple_modif
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#. code:
+msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. resource:base_action_res_users_my
+msgid "Change My Preferences"
+msgstr "เปลี่ยนการตั้งค่าส่วนตัว"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form
+#. resource:base_change_password_wizard_action
+msgid "Change Password"
+msgstr "เปลี่ยนรหัสผ่าน"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Change password"
+msgstr "เปลี่ยนรหัสผ่าน"
+
+#. resource:base_view_users_form
+msgid "Change the user password."
+msgstr "เปลี่ยนรหัสผ่านของผู้ใช้"
+
+#. help:Partner.IsCompany
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Check if the contact is a company, otherwise it is a person"
+
+#. help:Partner.Customer
+msgid "Check this box if this contact is a customer."
+msgstr "Check this box if this contact is a customer."
+
+#. help:Partner.Supplier
+msgid ""
+"Check this box if this contact is a vendor.\n"
+"If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr ""
+
+#. help:Partner.Employee
+msgid "Check this box if this contact is an Employee."
+msgstr "เลือกช่องนี้ถ้ารายชื่อนี้เป็นบุคลากร"
+
+#. field:Attachment.CheckSum
+msgid "Checksum/SHA1"
+msgstr ""
+
+#. field:Company.Children
+msgid "Child Companies"
+msgstr "บริษัทในเครือ"
+
+#. field:Partner.Children
+msgid "Children"
+msgstr "ลูก"
+
+#. field:PartnerCategory.Children
+msgid "Children Tags"
+msgstr ""
+
+#. field:Partner.City
+#. field:Bank.City
+#. field:Company.City
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "City"
+msgstr "จังหวัด"
+
+#. field:Partner.Color
+msgid "Color"
+msgstr "สี"
+
+#. field:PartnerCategory.Color
+msgid "Color Index"
+msgstr "ดัชนีสี"
+
+#. field:Partner.CommercialCompanyName
+msgid "Commercial Company Name"
+msgstr ""
+
+#. field:Partner.CommercialPartner
+msgid "Commercial Entity"
+msgstr "Commercial Entity"
+
+#. resource:base_view_res_bank_form
+msgid "Communication"
+msgstr "การติดต่อสื่อสาร"
+
+#. field:User.Companies
+#. resource:base_view_company_tree
+#. resource:base_company_normal_action_tree
+#. resource:base_action_res_company_form
+#. resource:base_view_res_partner_filter
+msgid "Companies"
+msgstr "บริษัท"
+
+#. field:Attachment.Company
+#. field:BankAccount.Company
+#. field:CurrencyRate.Company
+#. field:Sequence.Company
+#. field:User.Company
+#. selection:Partner.CompanyType
+#. field:Partner.Company
+#. resource:base_view_attachment_search
+#. resource:base_view_company_form
+#. resource:base_view_partner_form
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_simple_form
+#. resource:base_view_users_search
+msgid "Company"
+msgstr "บริษัท"
+
+#. field:Partner.CompanyName
+#. field:Company.Name
+msgid "Company Name"
+msgstr "ชื่อบริษัท"
+
+#. field:Company.CompanyRegistry
+msgid "Company Registry"
+msgstr ""
+
+#. field:Partner.CompanyType
+msgid "Company Type"
+msgstr ""
+
+#. field:Partner.ContactAddress
+msgid "Complete Address"
+msgstr "ที่อยู่แบบเต็ม"
+
+#. resource:base_view_company_form
+#. resource:base_menu_reporting_config
+msgid "Configuration"
+msgstr "การกำหนดค่า"
+
+#. selection:Partner.Type
+#. resource:base_view_partner_simple_form
+msgid "Contact"
+msgstr "ผู้ติดต่อ"
+
+#. resource:base_view_partner_form
+msgid "Contact / Address"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "Contact Name"
+msgstr "ชื่อผู้ติดต่อ"
+
+#. resource:base_view_partner_category_form
+msgid "Contact Tag"
+msgstr ""
+
+#. resource:base_view_partner_category_list
+msgid "Contact Tags"
+msgstr ""
+
+#. resource:base_action_partner_title_contact
+msgid "Contact Titles"
+msgstr "คำนำหน้าชื่อผู้ติดต่อ"
+
+#. resource:base_view_partner_tree
+msgid "Contacts"
+msgstr "รายชื่อ"
+
+#. resource:base_view_partner_form
+msgid "Contacts & Addresses"
+msgstr "รายชื่อและที่อยู่"
+
+#. code:
+msgid "Couldn't create contact without email address!"
+msgstr "Couldn't create contact without email address!"
+
+#. field:CountryGroup.Countries
+#. resource:base_action_country
+msgid "Countries"
+msgstr "ประเทศ"
+
+#. field:CountryState.Country
+#. field:Partner.Country
+#. field:Bank.Country
+#. field:Company.Country
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_tree
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_res_partner_filter
+msgid "Country"
+msgstr "ประเทศ"
+
+#. field:Country.PhoneCode
+msgid "Country Calling Code"
+msgstr ""
+
+#. field:Country.Code
+msgid "Country Code"
+msgstr "รหัสประเทศ"
+
+#. resource:base_view_country_group_tree
+#. resource:base_view_country_group_form
+msgid "Country Group"
+msgstr "กลุ่มประเทศ"
+
+#. field:Country.CountryGroups
+#. resource:base_action_country_group
+msgid "Country Groups"
+msgstr "กลุ่มประเทศ"
+
+#. field:Country.Name
+msgid "Country Name"
+msgstr "ชื่อประเทศ"
+
+#. resource:base_view_partner_form
+msgid "Create company"
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "Creation"
+msgstr "การสร้าง"
+
+#. resource:base_view_attachment_search
+msgid "Creation Month"
+msgstr "เดือนที่สร้าง"
+
+#. field:Partner.CreditLimit
+msgid "Credit Limit"
+msgstr "วงเงินเครดิต"
+
+#. resource:base_view_currency_tree
+#. resource:base_view_currency_search
+#. resource:base_action_currency_form
+msgid "Currencies"
+msgstr "สกุลเงิน"
+
+#. field:BankAccount.Currency
+#. field:CurrencyRate.Currency
+#. field:Currency.Name
+#. field:Country.Currency
+#. field:Company.Currency
+#. resource:base_view_currency_form
+#. resource:base_view_currency_search
+msgid "Currency"
+msgstr "สกุลเงิน"
+
+#. help:Currency.Name
+msgid "Currency Code [ISO 4217]"
+msgstr ""
+
+#. resource:base_view_currency_rate_form
+msgid "Currency Rate"
+msgstr "อัตราแลกเปลี่ยน"
+
+#. resource:base_view_currency_rate_search
+#. resource:base_view_currency_rate_tree
+#. resource:base_act_view_currency_rates
+msgid "Currency Rates"
+msgstr ""
+
+#. help:Currency.Symbol
+msgid "Currency sign, to be used when printing amounts"
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Current Company"
+msgstr ""
+
+#. field:Currency.Rate
+msgid "Current Rate"
+msgstr "อัตราแลกเปลี่ยนปัจจุบัน"
+
+#. resource:base_sequence_view
+msgid "Current Year with Century: %(year)s"
+msgstr "Current Year with Century: %(year)s"
+
+#. resource:base_sequence_view
+msgid "Current Year without Century: %(y)s"
+msgstr "Current Year without Century: %(y)s"
+
+#. resource:base_menu_administration_shortcut
+msgid "Custom Shortcuts"
+msgstr "ทางลัดกำหนดเอง"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_customer_form
+#. resource:base_action_partner_form
+msgid "Customers"
+msgstr "ลูกค้า"
+
+#. resource:base_menu_board_root
+#. resource:base_menu_reporting_dashboard
+msgid "Dashboards"
+msgstr "Dashboards"
+
+#. field:Attachment.DBDatas
+msgid "Database Data"
+msgstr "ข้อมูลฐานข้อมูล"
+
+#. resource:base_menu_database_structure
+msgid "Database Structure"
+msgstr "โครงสร้างฐานข้อมูล"
+
+#. field:CurrencyRate.Name
+#. field:Currency.Date
+#. field:Partner.Date
+#. resource:base_view_currency_rate_search
+msgid "Date"
+msgstr "วันที่"
+
+#. field:Lang.DateFormat
+msgid "Date Format"
+msgstr "รูปแบบวันที่"
+
+#. resource:base_sequence_view
+msgid "Day of the Week (0:Monday): %(weekday)s"
+msgstr "วันของสัปดาห์ (0:Monday): %(weekday)s"
+
+#. resource:base_sequence_view
+msgid "Day of the Year: %(doy)s"
+msgstr "วันของปี: %(doy)"
+
+#. resource:base_sequence_view
+msgid "Day: %(day)s"
+msgstr "วัน: %(day)"
+
+#. field:Currency.DecimalPlaces
+msgid "Decimal Places"
+msgstr ""
+
+#. field:Lang.DecimalPoint
+msgid "Decimal Separator"
+msgstr "อักษรแบ่งคั่นเลขทศนิยม"
+
+#. field:Attachment.Description
+#. resource:base_view_attachment_form
+msgid "Description"
+msgstr "คำอธิบาย"
+
+#. help:Currency.Position
+msgid "Determines where the currency symbol should be placed after or before the amount."
+msgstr "Determines where the currency symbol should be placed after or before the amount."
+
+#. field:Lang.Direction
+msgid "Direction"
+msgstr "ทิศทาง"
+
+#. resource:base_view_currency_form
+msgid "Display"
+msgstr "แสดงผล"
+
+#. help:Partner.PartnerShare
+msgid ""
+"Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
+"access or with a limited access created for sharing data."
+msgstr ""
+
+#. field:Partner.Email
+#. field:Bank.Email
+#. field:Company.Email
+msgid "Email"
+msgstr "อีเมล"
+
+#. resource:base_view_users_form
+msgid "Email Address"
+msgstr "ที่อยู่อีเมล"
+
+#. field:Partner.EmailFormatted
+msgid "Email Formatted"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Email Preferences"
+msgstr "ตั้งค่าอีเมล"
+
+#. field:Partner.Employee
+msgid "Employee"
+msgstr "บุคลากร"
+
+#. resource:base_action_partner_employee_form
+msgid "Employees"
+msgstr "บุคลากร"
+
+#. code:
+msgid "Error ! You can not create recursive tags."
+msgstr ""
+
+#. resource:base_res_lang_form
+msgid "Examples"
+msgstr "ตัวอย่าง"
+
+#. help:User.Share
+msgid "External user with limited access, created only for the purpose of sharing data."
+msgstr ""
+
+#. field:Partner.Fax
+#. field:Bank.Fax
+#. field:Company.Fax
+msgid "Fax"
+msgstr "แฟกซ์"
+
+#. field:Bank.State
+msgid "Fed. State"
+msgstr "จังหวัด"
+
+#. resource:base_action_country_state
+msgid "Fed. States"
+msgstr "จังหวัด"
+
+#. field:Attachment.Datas
+msgid "File Content"
+msgstr "เนื้อหาไฟล์"
+
+#. field:Attachment.DatasFname
+msgid "File Name"
+msgstr "ชื่อแฟ้ม"
+
+#. field:Attachment.FileSize
+msgid "File Size"
+msgstr "ขนาดไฟล์"
+
+#. resource:base_view_attachment_search
+msgid "Filter on my documents"
+msgstr "กรองเอกสารของฉัน"
+
+#. help:Partner.EmailFormatted
+msgid "Formatted email address 'Name <email@domain>'"
+msgstr ""
+
+#. field:SequenceDateRange.DateFrom
+msgid "From"
+msgstr "จาก"
+
+#. resource:base_view_company_form
+msgid "General Information"
+msgstr "ข้อมูลทั่วไป"
+
+#. resource:base_view_groups_search
+msgid "Group"
+msgstr "กลุ่ม"
+
+#. resource:base_view_attachment_search
+#. resource:base_view_res_partner_filter
+msgid "Group By"
+msgstr "จัดกลุ่มตาม"
+
+#. field:Group.GroupID
+msgid "Group ID"
+msgstr ""
+
+#. resource:base_view_country_group_form
+msgid "Group name"
+msgstr "ชื่อกลุ่ม"
+
+#. field:User.Groups
+#. field:ConfigParameter.Groups
+#. resource:base_view_groups_search
+#. resource:base_view_groups_tree
+#. resource:base_menu_action_groups
+#. resource:base_action_res_groups
+msgid "Groups"
+msgstr "กลุ่ม"
+
+#. help:Sequence.Padding
+msgid "Hexya will automatically adds some '0' on the left of the 'Next Number' to get the required padding size."
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "History"
+msgstr "ประวัติ"
+
+#. field:User.ActionID
+msgid "Home Action"
+msgstr "หน้าแรก"
+
+#. resource:base_sequence_view
+msgid "Hour 00->12: %(h12)s"
+msgstr "ชัวโมง 00->12: %(h12)s"
+
+#. resource:base_sequence_view
+msgid "Hour 00->24: %(h24)s"
+msgstr "ชั่วโมง 00->24: %(h24)s"
+
+#. field:Attachment.ID
+#. field:BankAccount.ID
+#. field:ConfigSettings.ID
+#. field:CountryState.ID
+#. field:CurrencyRate.ID
+#. field:Currency.ID
+#. field:PartnerCategory.ID
+#. field:Sequence.ID
+#. field:Translation.ID
+#. field:User.ID
+#. field:Lang.ID
+#. field:ModelMixin.ID
+#. field:PartnerTitle.ID
+#. field:ConfigParameter.ID
+#. field:CountryGroup.ID
+#. field:Country.ID
+#. field:Partner.ID
+#. field:SequenceDateRange.ID
+#. field:UserLog.ID
+#. field:Bank.ID
+#. field:Company.ID
+#. field:Group.ID
+#. field:UserChangePasswordWizard.ID
+#. field:UserChangePasswordWizardLine.ID
+msgid "ID"
+msgstr "ID"
+
+#. field:Lang.ISOCode
+msgid "ISO Code"
+msgstr "รหัส ISO"
+
+#. help:User.ActionID
+msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+msgstr "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+
+#. help:Partner.Lang
+msgid ""
+"If the selected language is loaded in the system, all documents related to\n"
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+
+#. field:Country.Image
+#. field:Partner.Image
+msgid "Image"
+msgstr "รูปภาพ"
+
+#. field:Partner.ImageMedium
+msgid "Image Medium"
+msgstr ""
+
+#. field:Partner.ImageSmall
+msgid "Image Small"
+msgstr ""
+
+#. field:Sequence.Implementation
+msgid "Implementation"
+msgstr "การดำเนินการ"
+
+#. resource:base_menu_translation_export
+msgid "Import / Export"
+msgstr "นำเข้า / ส่งออก"
+
+#. resource:base_view_currency_search
+msgid "Inactive"
+msgstr "ไม่เปิดใช้งาน"
+
+#. field:Attachment.IndexContent
+#. resource:base_view_attachment_form
+msgid "Indexed Content"
+msgstr ""
+
+#. selection:Partner.CompanyType
+msgid "Individual"
+msgstr "บุคคล"
+
+#. resource:base_view_partner_form
+msgid "Internal Notes"
+msgstr "โน้ตภายใน"
+
+#. field:Partner.Ref
+msgid "Internal Reference"
+msgstr "อ้างอิงภายใน"
+
+#. resource:base_view_partner_form
+msgid "Internal note..."
+msgstr "โน้ตภายใน..."
+
+#. code:
+msgid "Invalid search criterion: password"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Invoice Address"
+msgstr "ที่อยู่ใบแจ้งหนี้"
+
+#. field:Partner.IsCompany
+msgid "Is Company"
+msgstr ""
+
+#. field:Partner.Customer
+msgid "Is a Customer"
+msgstr "เป็นลูกค้า"
+
+#. field:Partner.Supplier
+msgid "Is a Vendor"
+msgstr "เป็นผู้จำหน่าย"
+
+#. field:Attachment.Public
+msgid "Is a public document"
+msgstr ""
+
+#. field:Partner.Function
+msgid "Job Position"
+msgstr "ตำแหน่ง"
+
+#. help:User.Password
+msgid "Keep empty if you don't want the user to be able to connect on the system."
+msgstr ""
+
+#. field:ConfigParameter.Key
+msgid "Key"
+msgstr "กุญแจ"
+
+#. field:Partner.Lang
+#. resource:base_res_lang_search
+msgid "Language"
+msgstr "ภาษา"
+
+#. resource:base_res_lang_search
+#. resource:base_res_lang_tree
+#. resource:base_res_lang_form
+#. resource:base_res_lang_act_window
+msgid "Languages"
+msgstr "ภาษา"
+
+#. field:User.LoginDate
+msgid "Latest Connection"
+msgstr "เข้าใช้งานครั้งสุดท้าย"
+
+#. selection:Lang.Direction
+msgid "Left-to-Right"
+msgstr "จากซ้ายไปขวา"
+
+#. resource:base_sequence_view
+msgid "Legend (for prefix, suffix)"
+msgstr "Legend (for prefix, suffix)"
+
+#. resource:base_res_lang_form
+msgid "Legends for supported Date and Time Formats"
+msgstr "รหัสสำหรับรูปแบบวันและเวลาที่รองรับ"
+
+#. field:Lang.Code
+msgid "Locale Code"
+msgstr "รหัสประเทศ"
+
+#. resource:base_view_users_form
+msgid "Localization"
+msgstr "การปรับเข้ากับท้องถิ่น"
+
+#. field:User.Login
+msgid "Login"
+msgstr "เข้าสู่ระบบ"
+
+#. field:Company.Logo
+msgid "Logo"
+msgstr "โลโก้"
+
+#. field:Company.LogoWeb
+msgid "Logo Web"
+msgstr ""
+
+#. field:SequenceDateRange.Sequence
+msgid "Main Sequence"
+msgstr ""
+
+#. help:Partner.ImageMedium
+msgid ""
+"Medium-sized image of this contact. It is automatically\n"
+"resized as a 128x128px image, with aspect ratio preserved.\n"
+"Use this field in form views or some kanban views."
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Menus Customization"
+msgstr "การปรับแต่งเมนู"
+
+#. resource:base_view_users_form
+msgid "Messaging and Social"
+msgstr "ข้อความและสังคม"
+
+#. field:Attachment.MimeType
+msgid "Mime Type"
+msgstr ""
+
+#. resource:base_sequence_view
+msgid "Minute: %(min)s"
+msgstr "นาที: %(min)"
+
+#. resource:base_view_partner_form
+msgid "Misc"
+msgstr "เบ็ดเตล็ด"
+
+#. field:Partner.Mobile
+msgid "Mobile"
+msgstr "มือถือ"
+
+#. resource:base_sequence_view
+msgid "Month: %(month)s"
+msgstr "เดือน: %(month)s"
+
+#. resource:base_view_users_form
+msgid "Multi Companies"
+msgstr "หลายบริษัท"
+
+#. resource:base_view_attachment_search
+msgid "My Document(s)"
+msgstr "เอกสารของฉัน"
+
+#. resource:base_view_res_partner_filter
+msgid "My Partners"
+msgstr "คู่ค้าของฉัน"
+
+#. field:Sequence.Name
+#. field:Lang.Name
+#. field:CountryGroup.Name
+#. field:Partner.Name
+#. field:Bank.Name
+#. field:Group.Name
+#. resource:base_view_partner_tree
+#. resource:base_view_partner_form
+#. resource:base_view_partner_simple_form
+msgid "Name"
+msgstr "ชื่อ"
+
+#. field:UserChangePasswordWizardLine.NewPassword
+msgid "New Password"
+msgstr "รหัสผ่านใหม่"
+
+#. field:Sequence.NumberNextActual
+#. field:Sequence.NumberNext
+#. field:SequenceDateRange.NumberNext
+#. field:SequenceDateRange.NumberNextActual
+msgid "Next Number"
+msgstr "หมายเลขต่อไป"
+
+#. help:Sequence.NumberNext
+#. help:SequenceDateRange.NumberNext
+msgid "Next number of this sequence"
+msgstr "หมายเลขต่อไปของลำดับนี้"
+
+#. help:Sequence.NumberNextActual
+#. help:SequenceDateRange.NumberNextActual
+msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
+msgstr "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
+
+#. selection:Sequence.Implementation
+msgid "No Gap"
+msgstr ""
+
+#. field:Partner.Comment
+msgid "Notes"
+msgstr "โน้ต"
+
+#. field:User.CompaniesCount
+msgid "Number of Companies"
+msgstr ""
+
+#. code:
+msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
+msgstr ""
+
+#. code:
+msgid "Only administrators can change the settings"
+msgstr "เฉพาะผู้ดูแลระบบเท่านั้นที่สามารถแก้ไขการตั้งค่าได้"
+
+#. code:
+msgid "Only administrators can execute this action."
+msgstr "Only administrators can execute this action."
+
+#. selection:Partner.Type
+msgid "Other Address"
+msgstr ""
+
+#. resource:base_action_partner_other_form
+msgid "Other Partners"
+msgstr "คู่ค้าอื่นๆ"
+
+#. resource:base_view_attachment_search
+msgid "Owner"
+msgstr "เจ้าของ"
+
+#. field:Partner.Parent
+msgid "Parent"
+msgstr "แม่"
+
+#. field:Company.Parent
+msgid "Parent Company"
+msgstr "บริษัทแม่"
+
+#. field:Partner.ParentName
+msgid "Parent Name"
+msgstr ""
+
+#. field:PartnerCategory.Parent
+msgid "Parent Tag"
+msgstr ""
+
+#. field:Company.Partner
+#. resource:base_view_partner_address_form
+msgid "Partner"
+msgstr "คู่ค้า"
+
+#. resource:base_view_partner_title_tree
+#. resource:base_view_partner_title_form
+msgid "Partner Titles"
+msgstr "คำนำหน้าชื่อคู่ค้า"
+
+#. help:User.Partner
+msgid "Partner-related data of the user"
+msgstr "Partner-related data of the user"
+
+#. field:PartnerCategory.Partners
+#. resource:base_view_partner_form
+msgid "Partners"
+msgstr "คู่ค้า"
+
+#. field:User.Password
+msgid "Password"
+msgstr "รหัสผ่าน"
+
+#. resource:base_view_res_partner_filter
+msgid "Persons"
+msgstr "บุคคล"
+
+#. field:Partner.Phone
+#. field:Bank.Phone
+#. field:Company.Phone
+msgid "Phone"
+msgstr "โทรศัพท์"
+
+#. code:
+msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
+msgstr "Please use the change password wizard (in User Preferences or User menu) to change your own password."
+
+#. resource:base_view_users_form
+msgid "Preferences"
+msgstr "การตั้งค่า"
+
+#. field:Sequence.Prefix
+msgid "Prefix"
+msgstr "อักษรนำ"
+
+#. help:Sequence.Prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "ค่า"
+
+#. resource:base_view_currency_form
+msgid "Price Accuracy"
+msgstr "Price Accuracy"
+
+#. resource:base_view_partner_form
+msgid "Purchase"
+msgstr "การซื้อ"
+
+#. field:CurrencyRate.Rate
+msgid "Rate"
+msgstr "อัตรา"
+
+#. field:Currency.Rates
+msgid "Rates"
+msgstr "Rates"
+
+#. field:User.Partner
+msgid "Related Partner"
+msgstr "คู่ค้าที่เกี่ยวข้อง"
+
+#. resource:base_menu_action_reload_groups
+#. resource:base_action_server_reload_groups
+msgid "Reload Groups"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "Report Configuration"
+msgstr "การตั้งค่ารายงาน"
+
+#. field:Attachment.ResField
+msgid "Resource Field"
+msgstr ""
+
+#. field:Attachment.ResID
+msgid "Resource ID"
+msgstr "ID ทรัพยากร"
+
+#. field:Attachment.ResModel
+msgid "Resource Model"
+msgstr "Resource Model"
+
+#. field:Attachment.ResName
+msgid "Resource Name"
+msgstr "ทรัพยากรชื่อ"
+
+#. selection:Lang.Direction
+msgid "Right-to-left"
+msgstr ""
+
+#. field:Currency.Rounding
+msgid "Rounding Factor"
+msgstr "Rounding Factor"
+
+#. resource:base_view_partner_form
+msgid "Sale"
+msgstr "ขาย"
+
+#. resource:base_view_partner_form
+msgid "Sales & Purchases"
+msgstr "การขายและการซื้อ"
+
+#. field:Partner.User
+#. resource:base_view_res_partner_filter
+msgid "Salesperson"
+msgstr "พนักงานขาย"
+
+#. field:BankAccount.SanitizedAccountNumber
+msgid "Sanitized Account Number"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Save"
+msgstr "บันทึก"
+
+#. resource:base_view_res_partner_filter
+msgid "Search Partner"
+msgstr "ค้นหาคู่ค้า"
+
+#. resource:base_sequence_view
+msgid "Second: %(sec)s"
+msgstr "วินาที: %(sec)"
+
+#. field:Lang.Grouping
+msgid "Separator Format"
+msgstr "รูปแบบการคั่น"
+
+#. field:BankAccount.Sequence
+#. resource:base_sequence_view
+#. resource:base_view_sequence_search
+msgid "Sequence"
+msgstr "ลำดับ"
+
+#. field:Sequence.Code
+msgid "Sequence Code"
+msgstr ""
+
+#. field:Sequence.Padding
+msgid "Sequence Size"
+msgstr ""
+
+#. resource:base_sequence_date_range_tree
+#. resource:base_sequence_view
+#. resource:base_sequence_view_tree
+#. resource:base_view_sequence_search
+#. resource:base_ir_sequence_form
+msgid "Sequences"
+msgstr "ลำดับ"
+
+#. resource:base_menu_sequences_identifiers
+msgid "Sequences & Identifiers"
+msgstr "ลำดับและตัวบ่งชี้"
+
+#. field:User.NewPassword
+msgid "Set Password"
+msgstr "ตั้งรหัสผ่าน"
+
+#. resource:base_menu_administration
+msgid "Settings"
+msgstr "ตั้งค่า"
+
+#. field:Partner.PartnerShare
+msgid "Share Partner"
+msgstr ""
+
+#. field:User.Share
+msgid "Share User"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Shipping Address"
+msgstr ""
+
+#. resource:base_view_currency_search
+msgid "Show active currencies"
+msgstr ""
+
+#. resource:base_view_currency_search
+msgid "Show inactive currencies"
+msgstr ""
+
+#. field:User.Signature
+msgid "Signature"
+msgstr "ลายเซ็นต์"
+
+#. help:Partner.ImageSmall
+msgid ""
+"Small-sized image of this contact. It is automatically\n"
+"resized as a 64x64px image, with aspect ratio preserved.\n"
+"Use this field anywhere a small image is required."
+msgstr ""
+
+#. help:Bank.BIC
+msgid "Sometimes called BIC or Swift."
+msgstr "Sometimes called BIC or Swift."
+
+#. code:
+msgid "Sorry, you are not allowed to access this document."
+msgstr "ขออภัย ท่านไม่มีสิทธิเข้าถึงเอกสารนี้"
+
+#. help:User.NewPassword
+msgid ""
+"Specify a value only when creating a user or if you're\n"
+"changing the user's password, otherwise leave empty. After\n"
+"a change of password, the user has to login again."
+msgstr ""
+
+#. selection:Sequence.Implementation
+msgid "Standard"
+msgstr "มาตรฐาน"
+
+#. field:Partner.State
+#. field:Company.State
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_state_tree
+#. resource:base_view_country_state_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "State"
+msgstr "สถานะ"
+
+#. field:CountryState.Code
+msgid "State Code"
+msgstr "รหัสจังหวัด"
+
+#. field:CountryState.Name
+msgid "State Name"
+msgstr "ชื่อจังหวัด"
+
+#. field:Country.States
+msgid "States"
+msgstr "สถานะ"
+
+#. field:Sequence.NumberIncrement
+msgid "Step"
+msgstr "ขั้นตอน"
+
+#. field:Attachment.StoreFname
+msgid "Stored Filename"
+msgstr "ชื่อไฟล์ที่จัดเก็บ"
+
+#. field:Partner.Street
+#. field:Bank.Street
+#. field:Company.Street
+msgid "Street"
+msgstr "ที่อยู่"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street 2..."
+msgstr "ที่อยู่บรรทัดที่ 2"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street..."
+msgstr "ที่อยู่..."
+
+#. field:Partner.Street2
+#. field:Bank.Street2
+#. field:Company.Street2
+msgid "Street2"
+msgstr "ที่อยู่ บรรทัดที่ 2"
+
+#. field:Sequence.DateRanges
+msgid "Subsequences"
+msgstr "ลำดับย่อย"
+
+#. field:Sequence.Suffix
+msgid "Suffix"
+msgstr "คำลงท้าย"
+
+#. help:Sequence.Suffix
+msgid "Suffix value of the record for the sequence"
+msgstr "Suffix value of the record for the sequence"
+
+#. field:Currency.Symbol
+msgid "Symbol"
+msgstr "สัญลักษณ์"
+
+#. field:Currency.Position
+msgid "Symbol Position"
+msgstr "ตำแหน่งสัญลักษณ์"
+
+#. field:Partner.VAT
+msgid "TIN"
+msgstr "เลขประจำตัวผู้เสียภาษี"
+
+#. resource:base_view_res_partner_filter
+msgid "Tag"
+msgstr "ป้ายกำกับ"
+
+#. field:PartnerCategory.Name
+msgid "Tag Name"
+msgstr "ชื่อป้ายกำกับ"
+
+#. field:Company.Tagline
+msgid "Tagline"
+msgstr ""
+
+#. field:Partner.Categories
+msgid "Tags"
+msgstr "ป้ายกำกับ"
+
+#. resource:base_view_partner_form
+msgid "Tags..."
+msgstr "ป้ายกำกับ..."
+
+#. help:Partner.VAT
+msgid ""
+"Tax Identification Number.\n"
+"Fill it if the company is subjected to taxes.\n"
+"Used by the some of the legal statements."
+msgstr ""
+
+#. resource:base_menu_custom
+msgid "Technical"
+msgstr "ทางเทคนิค"
+
+#. help:Country.Code
+msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
+msgstr ""
+
+#. help:Lang.Grouping
+msgid ""
+"The Separator Format should be like [,n] where 0 < n :starting from Unit digit.\"\n"
+"-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
+"[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
+"Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. help:PartnerCategory.Active
+msgid "The active field allows you to hide the category without removing it."
+msgstr "The active field allows you to hide the category without removing it."
+
+#. code:
+msgid "The chosen company is not in the allowed companies for this user"
+msgstr "บริษัทที่เลือกไม่ได้อยู่ใน บริษัทที่ได้รับอนุญาตสำหรับผู้ใช้นี้"
+
+#. help:User.Company
+msgid "The company this user is currently working for."
+msgstr "The company this user is currently working for."
+
+#. help:Attachment.ResModel
+msgid "The database object this attachment will be attached to"
+msgstr ""
+
+#. help:Country.Name
+msgid "The full name of the country."
+msgstr "ชื่อเต็มของประเทศ"
+
+#. help:Partner.User
+msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr "The internal user that is in charge of communicating with this contact if any."
+
+#. help:Sequence.NumberIncrement
+msgid "The next number of the sequence will be incremented by this number"
+msgstr "The next number of the sequence will be incremented by this number"
+
+#. help:Partner.TZ
+msgid ""
+"The partner's timezone, used to output proper date and time values\n"
+"inside printed reports. It is important to set a value for this field.\n"
+"You should use the same timezone that is otherwise used to pick and\n"
+"render date and time values: your computer's timezone."
+msgstr ""
+
+#. help:CurrencyRate.Rate
+#. help:Currency.Rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "The rate of the currency to the currency of rate 1"
+
+#. help:Attachment.ResID
+msgid "The record id this is attached to"
+msgstr ""
+
+#. help:CountryState.Code
+msgid "The state code in max. three chars."
+msgstr ""
+
+#. help:Lang.ISOCode
+msgid "This ISO code is the name of PO files to use for translations"
+msgstr ""
+
+#. help:Partner.Image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "สนามนี้ถือเป็นภาพที่ใช้เป็นสัญลักษณ์สำหรับการติดต่อนี้ จำกัด 1024x1024px"
+
+#. help:Lang.Code
+msgid "This field is used to set/get locales for user"
+msgstr "This field is used to set/get locales for user"
+
+#. field:Lang.ThousandsSep
+msgid "Thousands Separator"
+msgstr "อักษรคั่นหลักพัน"
+
+#. field:Lang.TimeFormat
+msgid "Time Format"
+msgstr "รูปแบบเวลา"
+
+#. field:Partner.TZ
+msgid "Timezone"
+msgstr "เขตเวลา"
+
+#. field:Partner.TZOffset
+msgid "Timezone Offset"
+msgstr ""
+
+#. field:PartnerTitle.Name
+#. field:Partner.Title
+msgid "Title"
+msgstr "คำนำหน้าชื่อ"
+
+#. field:SequenceDateRange.DateTo
+msgid "To"
+msgstr "ถึง"
+
+#. field:Lang.Translatable
+#. resource:base_res_lang_search
+msgid "Translatable"
+msgstr "สามารถแปลได้"
+
+#. code:
+msgid "Translate"
+msgstr "แปล"
+
+#. resource:base_menu_translation
+msgid "Translations"
+msgstr "การแปล"
+
+#. code:
+msgid "Trying to create a security group"
+msgstr ""
+
+#. code:
+msgid "Trying to modify a security group"
+msgstr ""
+
+#. help:Sequence.Implementation
+msgid ""
+"Two sequence object implementations are offered: Standard and 'No gap'.\n"
+"The latter is slower than the former but forbids any\n"
+"gap in the sequence (while they are possible in the former)."
+msgstr ""
+
+#. field:Attachment.Type
+#. field:Partner.Type
+#. resource:base_view_attachment_search
+msgid "Type"
+msgstr "ประเภท"
+
+#. field:Attachment.URL
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "URL"
+msgstr "URL"
+
+#. resource:base_res_lang_tree
+msgid "Update Language Terms"
+msgstr ""
+
+#. resource:base_res_lang_tree
+msgid "Update Terms"
+msgstr "อัพเดทคำศัพท์"
+
+#. field:Sequence.UseDateRange
+msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:User.Login
+msgid "Used to log into the system"
+msgstr "นำมาใช้ในการเข้าสู่ระบบ"
+
+#. help:Partner.Type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "Used to select automatically the right address according to the context in sales and purchases documents."
+
+#. field:UserChangePasswordWizardLine.User
+#. resource:base_view_users_search
+msgid "User"
+msgstr "ผู้ใช้"
+
+#. resource:base_menu_user_interface
+msgid "User Interface"
+msgstr "ส่วนติดต่อผู้ใช้"
+
+#. field:UserChangePasswordWizardLine.UserLogin
+msgid "User Login"
+msgstr "ชื่อผู้ใช้"
+
+#. field:User.Logs
+msgid "User log entries"
+msgstr ""
+
+#. field:Partner.Users
+#. field:UserChangePasswordWizard.Users
+#. resource:base_menu_users
+#. resource:base_change_password_wizard_user_tree_view
+#. resource:base_view_users_tree
+#. resource:base_view_users_form
+#. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
+#. resource:base_menu_action_users
+#. resource:base_action_res_users
+msgid "Users"
+msgstr "ผู้ใช้"
+
+#. field:Company.VAT
+msgid "VAT"
+msgstr "ภาษีมูลค่าเพิ่ม (VAT)"
+
+#. field:ConfigParameter.Value
+msgid "Value"
+msgstr "ค่า"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_supplier_form
+msgid "Vendors"
+msgstr "ผู้ขาย"
+
+#. resource:base_view_currency_form
+msgid "View Rates"
+msgstr ""
+
+#. field:Partner.Website
+#. field:Company.Website
+msgid "Website"
+msgstr "เว็บไซต์"
+
+#. help:Partner.Website
+msgid "Website of Partner or Company"
+msgstr "เว็บไซต์ของ Partner หรือ บริษัท"
+
+#. resource:base_sequence_view
+msgid "Week of the Year: %(woy)s"
+msgstr "Week of the Year: %(woy)s"
+
+#. field:UserChangePasswordWizardLine.Wizard
+msgid "Wizard"
+msgstr "Wizard"
+
+#. help:Attachment.Type
+msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
+msgstr ""
+
+#. code:
+msgid "You can not change the company as the partner/user has multiple users linked with different companies."
+msgstr ""
+
+#. code:
+msgid "You can not remove the admin user as it is used internally for resources created by Hexya"
+msgstr ""
+
+#. help:Country.AddressFormat
+msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgstr ""
+
+#. code:
+msgid "You cannot create recursive Partner hierarchies."
+msgstr "You cannot create recursive Partner hierarchies."
+
+#. code:
+msgid "You cannot deactivate the admin user."
+msgstr ""
+
+#. code:
+msgid "You cannot deactivate the user you're currently logged in as."
+msgstr ""
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "ZIP"
+msgstr "รหัสไปรษณีย์"
+
+#. field:Partner.Zip
+#. field:Bank.Zip
+#. field:Company.Zip
+msgid "Zip"
+msgstr "รหัสไปรษณีย์"
+
+#. resource:base_view_company_form
+msgid "e.g. Global Business Solutions"
+msgstr "ต.ย. Global Business Solutions"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mr."
+msgstr "เช่น นาย"
+
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_simple_form
+msgid "e.g. Sales Director"
+msgstr "เช่น ผู้จัดการการขาย"
+
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+msgid "e.g. www.hexya.io"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "internal note..."
+msgstr "โน้ตภายใน..."
+

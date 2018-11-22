@@ -1,0 +1,1575 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. code:
+#. code:
+#. code:
+msgid "%s (copy)"
+msgstr "%s (копія)"
+
+#. resource:base_view_partner_form
+msgid "(edit)"
+msgstr "(редагувати)"
+
+#. field:PartnerTitle.Shortcut
+msgid "Abbreviation"
+msgstr "Призначення"
+
+#. field:Company.Users
+msgid "Accepted Users"
+msgstr "Прийнятні посилання у запитах"
+
+#. resource:base_view_users_form
+msgid "Access Rights"
+msgstr "Права доступу"
+
+#. field:BankAccount.Partner
+msgid "Account Holder"
+msgstr "Власник рахунку"
+
+#. field:BankAccount.Name
+msgid "Account Number"
+msgstr "Номер рахунку"
+
+#. field:BankAccount.AccountType
+msgid "Account Type"
+msgstr "Тип рахунку"
+
+#. resource:base_view_company_form
+msgid "Accounting"
+msgstr "Бухоблік"
+
+#. field:Bank.Active
+#. field:Currency.Active
+#. field:PartnerCategory.Active
+#. field:Sequence.Active
+#. field:Lang.Active
+#. field:Partner.Active
+#. resource:base_view_currency_search
+#. resource:base_res_lang_search
+msgid "Active"
+msgstr "Активно"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Address"
+msgstr "Адреса"
+
+#. field:Country.AddressFormat
+msgid "Address Format"
+msgstr ""
+
+#. resource:base_view_country_form
+msgid "Address format..."
+msgstr "Формат адреси..."
+
+#. help:CountryState.Name
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "Адміністративні підрозділи країни. Наприклад, ФРС Штат, кантон"
+
+#. selection:Currency.Position
+msgid "After Amount"
+msgstr "Після суми"
+
+#. resource:base_view_users_form
+msgid "Allowed Companies"
+msgstr "Компанії"
+
+#. resource:base_menu_translation_app
+msgid "Application Terms"
+msgstr "Переклад фраз додатків"
+
+#. resource:base_view_res_partner_filter
+msgid "Archived"
+msgstr "Заархівовано"
+
+#. resource:base_view_attachment_form
+msgid "Attached To"
+msgstr "Приєднано До"
+
+#. resource:base_view_attachment_search
+#. resource:base_action_attachment
+msgid "Attachment"
+msgstr "Вкладення"
+
+#. field:Attachment.Name
+msgid "Attachment Name"
+msgstr "Назва додатку"
+
+#. field:BankAccount.Bank
+#. resource:base_view_res_bank_form
+msgid "Bank"
+msgstr "Банк"
+
+#. field:Partner.Banks
+#. resource:base_view_partner_bank_tree
+#. resource:base_view_partner_bank_search
+#. resource:base_action_res_partner_bank_account_form
+msgid "Bank Accounts"
+msgstr "Банківські рахунки"
+
+#. field:BankAccount.BankBIC
+msgid "Bank BIC"
+msgstr ""
+
+#. field:Bank.BIC
+msgid "Bank Identifier Cord"
+msgstr ""
+
+#. field:BankAccount.BankName
+#. resource:base_view_partner_bank_search
+msgid "Bank Name"
+msgstr "Назва банку"
+
+#. resource:base_view_partner_bank_form
+msgid "Bank account"
+msgstr "Банківський рахунок"
+
+#. resource:base_view_res_bank_tree
+#. resource:base_action_res_bank_form
+msgid "Banks"
+msgstr "Банки"
+
+#. field:Partner.Barcode
+msgid "Barcode"
+msgstr "Штрихкод"
+
+#. selection:Currency.Position
+msgid "Before Amount"
+msgstr "Перед сумою"
+
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Binary"
+msgstr "Двійковий"
+
+#. resource:base_view_users_form_simple_modif
+#. resource:base_change_password_wizard_view
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. code:
+msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. resource:base_action_res_users_my
+msgid "Change My Preferences"
+msgstr "Змінити мої налаштування"
+
+#. resource:base_view_users_form
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_action
+msgid "Change Password"
+msgstr "Змінити пароль"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Change password"
+msgstr "Пароль"
+
+#. resource:base_view_users_form
+msgid "Change the user password."
+msgstr "Зміна пароля користувача."
+
+#. help:Partner.IsCompany
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Перевірте, чи контакт є компанією, інакше це людина"
+
+#. help:Partner.Customer
+msgid "Check this box if this contact is a customer."
+msgstr "Позначте це, якщо цей контакт є клієнтом."
+
+#. help:Partner.Supplier
+msgid ""
+"Check this box if this contact is a vendor.\n"
+"If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr ""
+
+#. help:Partner.Employee
+msgid "Check this box if this contact is an Employee."
+msgstr "Позначте цей бокс, якщо цей контакт є Сповробітником"
+
+#. field:Attachment.CheckSum
+msgid "Checksum/SHA1"
+msgstr "Checksum/SHA1"
+
+#. field:Company.Children
+msgid "Child Companies"
+msgstr "Дочірні Компанії"
+
+#. field:Partner.Children
+msgid "Children"
+msgstr "Дочірній"
+
+#. field:PartnerCategory.Children
+msgid "Children Tags"
+msgstr ""
+
+#. field:Company.City
+#. field:Bank.City
+#. field:Partner.City
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "City"
+msgstr "Місто"
+
+#. field:Partner.Color
+msgid "Color"
+msgstr "Колір"
+
+#. field:PartnerCategory.Color
+msgid "Color Index"
+msgstr "Індекс кольору"
+
+#. field:Partner.CommercialCompanyName
+msgid "Commercial Company Name"
+msgstr ""
+
+#. field:Partner.CommercialPartner
+msgid "Commercial Entity"
+msgstr "Перспективний"
+
+#. resource:base_view_res_bank_form
+msgid "Communication"
+msgstr "Умова"
+
+#. field:User.Companies
+#. resource:base_view_company_tree
+#. resource:base_action_res_company_form
+#. resource:base_company_normal_action_tree
+#. resource:base_view_res_partner_filter
+msgid "Companies"
+msgstr "Компанії"
+
+#. field:BankAccount.Company
+#. field:CurrencyRate.Company
+#. field:Sequence.Company
+#. field:Attachment.Company
+#. field:User.Company
+#. selection:Partner.CompanyType
+#. field:Partner.Company
+#. resource:base_view_attachment_search
+#. resource:base_view_company_form
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_users_search
+msgid "Company"
+msgstr "Компанія"
+
+#. field:Company.Name
+#. field:Partner.CompanyName
+msgid "Company Name"
+msgstr "Назва компанії"
+
+#. field:Company.CompanyRegistry
+msgid "Company Registry"
+msgstr ""
+
+#. field:Partner.CompanyType
+msgid "Company Type"
+msgstr "Тип компанії"
+
+#. field:Partner.ContactAddress
+msgid "Complete Address"
+msgstr "Повна адреса"
+
+#. resource:base_view_company_form
+#. resource:base_menu_reporting_config
+msgid "Configuration"
+msgstr "Налаштування"
+
+#. selection:Partner.Type
+#. resource:base_view_partner_simple_form
+msgid "Contact"
+msgstr "Контакт"
+
+#. resource:base_view_partner_form
+msgid "Contact / Address"
+msgstr "Контакт / Адреса"
+
+#. resource:base_view_partner_form
+msgid "Contact Name"
+msgstr "Назва контакту"
+
+#. resource:base_view_partner_category_form
+msgid "Contact Tag"
+msgstr "Тег контакту"
+
+#. resource:base_view_partner_category_list
+msgid "Contact Tags"
+msgstr "Теги контакту"
+
+#. resource:base_action_partner_title_contact
+msgid "Contact Titles"
+msgstr "Звернення Контакту"
+
+#. resource:base_view_partner_tree
+msgid "Contacts"
+msgstr "Контакти"
+
+#. resource:base_view_partner_form
+msgid "Contacts & Addresses"
+msgstr "Контакти та адреси"
+
+#. code:
+msgid "Couldn't create contact without email address!"
+msgstr "Не вдалося створити контакт без Е-mail адреси!"
+
+#. field:CountryGroup.Countries
+#. resource:base_action_country
+msgid "Countries"
+msgstr "Країни"
+
+#. field:Company.Country
+#. field:Bank.Country
+#. field:CountryState.Country
+#. field:Partner.Country
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_tree
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Country"
+msgstr "Країна"
+
+#. field:Country.PhoneCode
+msgid "Country Calling Code"
+msgstr "Телефонний код країни"
+
+#. field:Country.Code
+msgid "Country Code"
+msgstr "Код країни"
+
+#. resource:base_view_country_group_tree
+#. resource:base_view_country_group_form
+msgid "Country Group"
+msgstr "Група країн"
+
+#. field:Country.CountryGroups
+#. resource:base_action_country_group
+msgid "Country Groups"
+msgstr "Групи країн"
+
+#. field:Country.Name
+msgid "Country Name"
+msgstr "Назва країни"
+
+#. resource:base_view_partner_form
+msgid "Create company"
+msgstr "Створіть компанію"
+
+#. resource:base_view_attachment_form
+msgid "Creation"
+msgstr "Зв'язок"
+
+#. resource:base_view_attachment_search
+msgid "Creation Month"
+msgstr "Місяць створення"
+
+#. field:Partner.CreditLimit
+msgid "Credit Limit"
+msgstr "Кредитний Ліміт"
+
+#. resource:base_view_currency_search
+#. resource:base_view_currency_tree
+#. resource:base_action_currency_form
+msgid "Currencies"
+msgstr "Валюти"
+
+#. field:Company.Currency
+#. field:BankAccount.Currency
+#. field:CurrencyRate.Currency
+#. field:Currency.Name
+#. field:Country.Currency
+#. resource:base_view_currency_search
+#. resource:base_view_currency_form
+msgid "Currency"
+msgstr "Валюта"
+
+#. help:Currency.Name
+msgid "Currency Code [ISO 4217]"
+msgstr ""
+
+#. resource:base_view_currency_rate_form
+msgid "Currency Rate"
+msgstr "Курс валюти"
+
+#. resource:base_view_currency_rate_search
+#. resource:base_view_currency_rate_tree
+#. resource:base_act_view_currency_rates
+msgid "Currency Rates"
+msgstr "Курс валют"
+
+#. help:Currency.Symbol
+msgid "Currency sign, to be used when printing amounts"
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Current Company"
+msgstr "Поточна компанія"
+
+#. field:Currency.Rate
+msgid "Current Rate"
+msgstr "Поточний Курс"
+
+#. resource:base_sequence_view
+msgid "Current Year with Century: %(year)s"
+msgstr "Поточний рік повністю: %(year)s"
+
+#. resource:base_sequence_view
+msgid "Current Year without Century: %(y)s"
+msgstr "Поточний рік без століття: %(y)s"
+
+#. resource:base_menu_administration_shortcut
+msgid "Custom Shortcuts"
+msgstr "Звіт користувача"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_form
+#. resource:base_action_partner_customer_form
+msgid "Customers"
+msgstr "Клієнти"
+
+#. resource:base_menu_board_root
+#. resource:base_menu_reporting_dashboard
+msgid "Dashboards"
+msgstr "Панелі приладів"
+
+#. field:Attachment.DBDatas
+msgid "Database Data"
+msgstr "Структура бази даних"
+
+#. resource:base_menu_database_structure
+msgid "Database Structure"
+msgstr "Структура бази даних"
+
+#. field:CurrencyRate.Name
+#. field:Currency.Date
+#. field:Partner.Date
+#. resource:base_view_currency_rate_search
+msgid "Date"
+msgstr "Дата"
+
+#. field:Lang.DateFormat
+msgid "Date Format"
+msgstr "Формат дати"
+
+#. resource:base_sequence_view
+msgid "Day of the Week (0:Monday): %(weekday)s"
+msgstr "День тижня (0:Понеділок): %(weekday)s"
+
+#. resource:base_sequence_view
+msgid "Day of the Year: %(doy)s"
+msgstr "День року: %(doy)s"
+
+#. resource:base_sequence_view
+msgid "Day: %(day)s"
+msgstr "День: %(day)s"
+
+#. field:Currency.DecimalPlaces
+msgid "Decimal Places"
+msgstr ""
+
+#. field:Lang.DecimalPoint
+msgid "Decimal Separator"
+msgstr "Десятковий Роздільник"
+
+#. field:Attachment.Description
+#. resource:base_view_attachment_form
+msgid "Description"
+msgstr "Опис"
+
+#. help:Currency.Position
+msgid "Determines where the currency symbol should be placed after or before the amount."
+msgstr "Визначає, де слід розміщувати символ валюти після або перед цією сумою."
+
+#. field:Lang.Direction
+msgid "Direction"
+msgstr "Напрямок"
+
+#. resource:base_view_currency_form
+msgid "Display"
+msgstr "Відображати"
+
+#. help:Partner.PartnerShare
+msgid ""
+"Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
+"access or with a limited access created for sharing data."
+msgstr ""
+
+#. field:Company.Email
+#. field:Bank.Email
+#. field:Partner.Email
+msgid "Email"
+msgstr "Ел. пошта"
+
+#. resource:base_view_users_form
+msgid "Email Address"
+msgstr "Адреса ел. пошти"
+
+#. field:Partner.EmailFormatted
+msgid "Email Formatted"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Email Preferences"
+msgstr "Налаштування Email"
+
+#. field:Partner.Employee
+msgid "Employee"
+msgstr "Співробітник"
+
+#. resource:base_action_partner_employee_form
+msgid "Employees"
+msgstr "Співробітники"
+
+#. code:
+msgid "Error ! You can not create recursive tags."
+msgstr "Помилка! Не можна створювати багаторазові теги."
+
+#. resource:base_res_lang_form
+msgid "Examples"
+msgstr "Приклади"
+
+#. help:User.Share
+msgid "External user with limited access, created only for the purpose of sharing data."
+msgstr "Зовнішній користувач із обмеженим доступом, створений лише з метою обміну даними."
+
+#. field:Company.Fax
+#. field:Bank.Fax
+#. field:Partner.Fax
+msgid "Fax"
+msgstr "Факс"
+
+#. field:Bank.State
+msgid "Fed. State"
+msgstr "Область"
+
+#. resource:base_action_country_state
+msgid "Fed. States"
+msgstr "Області"
+
+#. field:Attachment.Datas
+msgid "File Content"
+msgstr "Вміст файлу"
+
+#. field:Attachment.DatasFname
+msgid "File Name"
+msgstr "File Name"
+
+#. field:Attachment.FileSize
+msgid "File Size"
+msgstr "Розмір файлу"
+
+#. resource:base_view_attachment_search
+msgid "Filter on my documents"
+msgstr "Фільтр моїх документів"
+
+#. help:Partner.EmailFormatted
+msgid "Formatted email address 'Name <email@domain>'"
+msgstr ""
+
+#. field:SequenceDateRange.DateFrom
+msgid "From"
+msgstr "Від"
+
+#. resource:base_view_company_form
+msgid "General Information"
+msgstr "Загальна інформація"
+
+#. resource:base_view_groups_search
+msgid "Group"
+msgstr "Група"
+
+#. resource:base_view_attachment_search
+#. resource:base_view_res_partner_filter
+msgid "Group By"
+msgstr "Групувати за"
+
+#. field:Group.GroupID
+msgid "Group ID"
+msgstr ""
+
+#. resource:base_view_country_group_form
+msgid "Group name"
+msgstr "Назва групи"
+
+#. field:User.Groups
+#. field:ConfigParameter.Groups
+#. resource:base_view_groups_search
+#. resource:base_view_groups_tree
+#. resource:base_menu_action_groups
+#. resource:base_action_res_groups
+msgid "Groups"
+msgstr "Групи"
+
+#. help:Sequence.Padding
+msgid "Hexya will automatically adds some '0' on the left of the 'Next Number' to get the required padding size."
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "History"
+msgstr "Історія"
+
+#. field:User.ActionID
+msgid "Home Action"
+msgstr "Дія при вході"
+
+#. resource:base_sequence_view
+msgid "Hour 00->12: %(h12)s"
+msgstr "Година 00->12: %(h12)s"
+
+#. resource:base_sequence_view
+msgid "Hour 00->24: %(h24)s"
+msgstr "Година 00->24: %(h24)s"
+
+#. field:Company.ID
+#. field:Group.ID
+#. field:UserChangePasswordWizard.ID
+#. field:UserChangePasswordWizardLine.ID
+#. field:Bank.ID
+#. field:BankAccount.ID
+#. field:ConfigSettings.ID
+#. field:CountryState.ID
+#. field:CurrencyRate.ID
+#. field:Currency.ID
+#. field:PartnerCategory.ID
+#. field:Sequence.ID
+#. field:Attachment.ID
+#. field:User.ID
+#. field:Translation.ID
+#. field:ModelMixin.ID
+#. field:PartnerTitle.ID
+#. field:Lang.ID
+#. field:CountryGroup.ID
+#. field:Country.ID
+#. field:Partner.ID
+#. field:SequenceDateRange.ID
+#. field:UserLog.ID
+#. field:ConfigParameter.ID
+msgid "ID"
+msgstr "ІД"
+
+#. field:Lang.ISOCode
+msgid "ISO Code"
+msgstr "Код ISO"
+
+#. help:User.ActionID
+msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+msgstr "Якщо вказано, ця дія буде відкрита при вході в систему для цього користувача, крім стандартного меню."
+
+#. help:Partner.Lang
+msgid ""
+"If the selected language is loaded in the system, all documents related to\n"
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+
+#. field:Country.Image
+#. field:Partner.Image
+msgid "Image"
+msgstr "Зображення"
+
+#. field:Partner.ImageMedium
+msgid "Image Medium"
+msgstr ""
+
+#. field:Partner.ImageSmall
+msgid "Image Small"
+msgstr ""
+
+#. field:Sequence.Implementation
+msgid "Implementation"
+msgstr "Реалізація"
+
+#. resource:base_menu_translation_export
+msgid "Import / Export"
+msgstr "Імпорт / експорт"
+
+#. resource:base_view_currency_search
+msgid "Inactive"
+msgstr "Неактивний"
+
+#. field:Attachment.IndexContent
+#. resource:base_view_attachment_form
+msgid "Indexed Content"
+msgstr "Проіндексований контент"
+
+#. selection:Partner.CompanyType
+msgid "Individual"
+msgstr "Фізична Особа"
+
+#. resource:base_view_partner_form
+msgid "Internal Notes"
+msgstr "Внутрішні примітки"
+
+#. field:Partner.Ref
+msgid "Internal Reference"
+msgstr "Внутрішні посилання"
+
+#. resource:base_view_partner_form
+msgid "Internal note..."
+msgstr "Внутрішня примітка..."
+
+#. code:
+msgid "Invalid search criterion: password"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Invoice Address"
+msgstr "Адреса рахунка"
+
+#. field:Partner.IsCompany
+msgid "Is Company"
+msgstr "Є компанією"
+
+#. field:Partner.Customer
+msgid "Is a Customer"
+msgstr "Це клієнт"
+
+#. field:Partner.Supplier
+msgid "Is a Vendor"
+msgstr "Це постачальник"
+
+#. field:Attachment.Public
+msgid "Is a public document"
+msgstr ""
+
+#. field:Partner.Function
+msgid "Job Position"
+msgstr "Вакансія"
+
+#. help:User.Password
+msgid "Keep empty if you don't want the user to be able to connect on the system."
+msgstr "Залиште порожнім, якщо ви не хочете, щоб користувач міг підключитися до системи."
+
+#. field:ConfigParameter.Key
+msgid "Key"
+msgstr "Ключ"
+
+#. field:Partner.Lang
+#. resource:base_res_lang_search
+msgid "Language"
+msgstr "Мова"
+
+#. resource:base_res_lang_form
+#. resource:base_res_lang_search
+#. resource:base_res_lang_tree
+#. resource:base_res_lang_act_window
+msgid "Languages"
+msgstr "Мови"
+
+#. field:User.LoginDate
+msgid "Latest Connection"
+msgstr "Останнє з'єднання"
+
+#. selection:Lang.Direction
+msgid "Left-to-Right"
+msgstr "Зліва-на-Право"
+
+#. resource:base_sequence_view
+msgid "Legend (for prefix, suffix)"
+msgstr "Скорочення (для префіксу, суфіксу)"
+
+#. resource:base_res_lang_form
+msgid "Legends for supported Date and Time Formats"
+msgstr "Легенди для підтримуваних форматів дати та часу"
+
+#. field:Lang.Code
+msgid "Locale Code"
+msgstr "Код області"
+
+#. resource:base_view_users_form
+msgid "Localization"
+msgstr "Локалізація"
+
+#. field:User.Login
+msgid "Login"
+msgstr "Логін"
+
+#. field:Company.Logo
+msgid "Logo"
+msgstr "Логотип"
+
+#. field:Company.LogoWeb
+msgid "Logo Web"
+msgstr ""
+
+#. field:SequenceDateRange.Sequence
+msgid "Main Sequence"
+msgstr "Основна послідовність"
+
+#. help:Partner.ImageMedium
+msgid ""
+"Medium-sized image of this contact. It is automatically\n"
+"resized as a 128x128px image, with aspect ratio preserved.\n"
+"Use this field in form views or some kanban views."
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Menus Customization"
+msgstr "Налаштування меню"
+
+#. resource:base_view_users_form
+msgid "Messaging and Social"
+msgstr "Соціальна мережа та листи"
+
+#. field:Attachment.MimeType
+msgid "Mime Type"
+msgstr "Тип Mime"
+
+#. resource:base_sequence_view
+msgid "Minute: %(min)s"
+msgstr "Хвилина: %(min)s"
+
+#. resource:base_view_partner_form
+msgid "Misc"
+msgstr "Різне"
+
+#. field:Partner.Mobile
+msgid "Mobile"
+msgstr "Мобільний"
+
+#. resource:base_sequence_view
+msgid "Month: %(month)s"
+msgstr "Місяць: %(month)s"
+
+#. resource:base_view_users_form
+msgid "Multi Companies"
+msgstr "Декілька компаній"
+
+#. resource:base_view_attachment_search
+msgid "My Document(s)"
+msgstr "Мої документи"
+
+#. resource:base_view_res_partner_filter
+msgid "My Partners"
+msgstr "Мої партнери"
+
+#. field:Group.Name
+#. field:Bank.Name
+#. field:Sequence.Name
+#. field:Lang.Name
+#. field:CountryGroup.Name
+#. field:Partner.Name
+#. resource:base_view_partner_tree
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+msgid "Name"
+msgstr "Назва"
+
+#. field:UserChangePasswordWizardLine.NewPassword
+msgid "New Password"
+msgstr "Новий пароль"
+
+#. field:Sequence.NumberNextActual
+#. field:Sequence.NumberNext
+#. field:SequenceDateRange.NumberNext
+#. field:SequenceDateRange.NumberNextActual
+msgid "Next Number"
+msgstr "Наступний номер"
+
+#. help:Sequence.NumberNext
+#. help:SequenceDateRange.NumberNext
+msgid "Next number of this sequence"
+msgstr "Наступний номер цієї послідовності"
+
+#. help:Sequence.NumberNextActual
+#. help:SequenceDateRange.NumberNextActual
+msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
+msgstr "Наступний номер, який буде використаний. Цей номер може часто збільшуватися, тому показуване значення може бути застарілим"
+
+#. selection:Sequence.Implementation
+msgid "No Gap"
+msgstr ""
+
+#. field:Partner.Comment
+msgid "Notes"
+msgstr "Примітки"
+
+#. field:User.CompaniesCount
+msgid "Number of Companies"
+msgstr "Кількість компаній"
+
+#. code:
+msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
+msgstr ""
+
+#. code:
+msgid "Only administrators can change the settings"
+msgstr "Тільки адміністратор може змінювати налаштування"
+
+#. code:
+msgid "Only administrators can execute this action."
+msgstr "Тільки адміністратор може виконувати цю дію."
+
+#. selection:Partner.Type
+msgid "Other Address"
+msgstr ""
+
+#. resource:base_action_partner_other_form
+msgid "Other Partners"
+msgstr "Інші партнери"
+
+#. resource:base_view_attachment_search
+msgid "Owner"
+msgstr "Власник"
+
+#. field:Partner.Parent
+msgid "Parent"
+msgstr "Батьківський"
+
+#. field:Company.Parent
+msgid "Parent Company"
+msgstr "Батьківська компанія"
+
+#. field:Partner.ParentName
+msgid "Parent Name"
+msgstr ""
+
+#. field:PartnerCategory.Parent
+msgid "Parent Tag"
+msgstr ""
+
+#. field:Company.Partner
+#. resource:base_view_partner_address_form
+msgid "Partner"
+msgstr "Партнер"
+
+#. resource:base_view_partner_title_tree
+#. resource:base_view_partner_title_form
+msgid "Partner Titles"
+msgstr "Титули партнера"
+
+#. help:User.Partner
+msgid "Partner-related data of the user"
+msgstr "Дані про користувача, пов'язані з партнером"
+
+#. field:PartnerCategory.Partners
+#. resource:base_view_partner_form
+msgid "Partners"
+msgstr "Партнери"
+
+#. field:User.Password
+msgid "Password"
+msgstr "Пароль"
+
+#. resource:base_view_res_partner_filter
+msgid "Persons"
+msgstr "Особи"
+
+#. field:Company.Phone
+#. field:Bank.Phone
+#. field:Partner.Phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. code:
+msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
+msgstr "Будь-ласка, використовуйте майстер зміни пароля (в меню \"Користувацькі налаштування\" або \"Користувач\"), щоб змінити свій пароль."
+
+#. resource:base_view_users_form
+msgid "Preferences"
+msgstr "Налаштування"
+
+#. field:Sequence.Prefix
+msgid "Prefix"
+msgstr "Префікс"
+
+#. help:Sequence.Prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "Значення префікса запису для послідовності"
+
+#. resource:base_view_currency_form
+msgid "Price Accuracy"
+msgstr "Округлення ціни"
+
+#. resource:base_view_partner_form
+msgid "Purchase"
+msgstr "Купівля"
+
+#. field:CurrencyRate.Rate
+msgid "Rate"
+msgstr "Ставка"
+
+#. field:Currency.Rates
+msgid "Rates"
+msgstr "Ставки"
+
+#. field:User.Partner
+msgid "Related Partner"
+msgstr "Пов'язані партнери"
+
+#. resource:base_menu_action_reload_groups
+#. resource:base_action_server_reload_groups
+msgid "Reload Groups"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "Report Configuration"
+msgstr "Налаштування звітів"
+
+#. field:Attachment.ResField
+msgid "Resource Field"
+msgstr "Поле ресурсу"
+
+#. field:Attachment.ResID
+msgid "Resource ID"
+msgstr "ID ресурсу"
+
+#. field:Attachment.ResModel
+msgid "Resource Model"
+msgstr "Модель ресурсу"
+
+#. field:Attachment.ResName
+msgid "Resource Name"
+msgstr "Назва ресурсу"
+
+#. selection:Lang.Direction
+msgid "Right-to-left"
+msgstr ""
+
+#. field:Currency.Rounding
+msgid "Rounding Factor"
+msgstr "Коефіцієнт округлення"
+
+#. resource:base_view_partner_form
+msgid "Sale"
+msgstr "Знижка"
+
+#. resource:base_view_partner_form
+msgid "Sales & Purchases"
+msgstr "Продаж та закупівля"
+
+#. field:Partner.User
+#. resource:base_view_res_partner_filter
+msgid "Salesperson"
+msgstr "Продавець"
+
+#. field:BankAccount.SanitizedAccountNumber
+msgid "Sanitized Account Number"
+msgstr "Очищений номер рахунку"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Save"
+msgstr "Зберегти"
+
+#. resource:base_view_res_partner_filter
+msgid "Search Partner"
+msgstr "Знайти Партнера"
+
+#. resource:base_sequence_view
+msgid "Second: %(sec)s"
+msgstr "Секунда: %(sec)s"
+
+#. field:Lang.Grouping
+msgid "Separator Format"
+msgstr "Формат роздільника"
+
+#. field:BankAccount.Sequence
+#. resource:base_sequence_view
+#. resource:base_view_sequence_search
+msgid "Sequence"
+msgstr "Послідовність"
+
+#. field:Sequence.Code
+msgid "Sequence Code"
+msgstr "Код послідовності"
+
+#. field:Sequence.Padding
+msgid "Sequence Size"
+msgstr "Розмір послідовності"
+
+#. resource:base_sequence_view
+#. resource:base_sequence_view_tree
+#. resource:base_view_sequence_search
+#. resource:base_sequence_date_range_tree
+#. resource:base_ir_sequence_form
+msgid "Sequences"
+msgstr "Послідовності"
+
+#. resource:base_menu_sequences_identifiers
+msgid "Sequences & Identifiers"
+msgstr "Послідовності та ідентифікатори"
+
+#. field:User.NewPassword
+msgid "Set Password"
+msgstr "Встановити пароль"
+
+#. resource:base_menu_administration
+msgid "Settings"
+msgstr "Налаштування"
+
+#. field:Partner.PartnerShare
+msgid "Share Partner"
+msgstr "Спільний Партнер"
+
+#. field:User.Share
+msgid "Share User"
+msgstr "Користувач"
+
+#. selection:Partner.Type
+msgid "Shipping Address"
+msgstr "Адреса доставки"
+
+#. resource:base_view_currency_search
+msgid "Show active currencies"
+msgstr "Показати активні валюти"
+
+#. resource:base_view_currency_search
+msgid "Show inactive currencies"
+msgstr "Показати неактивні валюти"
+
+#. field:User.Signature
+msgid "Signature"
+msgstr "Підпис"
+
+#. help:Partner.ImageSmall
+msgid ""
+"Small-sized image of this contact. It is automatically\n"
+"resized as a 64x64px image, with aspect ratio preserved.\n"
+"Use this field anywhere a small image is required."
+msgstr ""
+
+#. help:Bank.BIC
+msgid "Sometimes called BIC or Swift."
+msgstr "Інколи називається BIC або Swift."
+
+#. code:
+msgid "Sorry, you are not allowed to access this document."
+msgstr "Вибачте, у вас немає доступу до цього документа."
+
+#. help:User.NewPassword
+msgid ""
+"Specify a value only when creating a user or if you're\n"
+"changing the user's password, otherwise leave empty. After\n"
+"a change of password, the user has to login again."
+msgstr ""
+
+#. selection:Sequence.Implementation
+msgid "Standard"
+msgstr "Standard"
+
+#. field:Company.State
+#. field:Partner.State
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_state_tree
+#. resource:base_view_country_state_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "State"
+msgstr "Область"
+
+#. field:CountryState.Code
+msgid "State Code"
+msgstr "Код області"
+
+#. field:CountryState.Name
+msgid "State Name"
+msgstr "Назва області"
+
+#. field:Country.States
+msgid "States"
+msgstr "Області"
+
+#. field:Sequence.NumberIncrement
+msgid "Step"
+msgstr "Крок"
+
+#. field:Attachment.StoreFname
+msgid "Stored Filename"
+msgstr "Назва файлу збереження"
+
+#. field:Company.Street
+#. field:Bank.Street
+#. field:Partner.Street
+msgid "Street"
+msgstr "Вулиця"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street 2..."
+msgstr "Вулиця 2..."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street..."
+msgstr "Вулиця..."
+
+#. field:Company.Street2
+#. field:Bank.Street2
+#. field:Partner.Street2
+msgid "Street2"
+msgstr "Вулиця 2"
+
+#. field:Sequence.DateRanges
+msgid "Subsequences"
+msgstr "Підпослідовності"
+
+#. field:Sequence.Suffix
+msgid "Suffix"
+msgstr "Суфікс"
+
+#. help:Sequence.Suffix
+msgid "Suffix value of the record for the sequence"
+msgstr "Суфікс значення запису для послідовності"
+
+#. field:Currency.Symbol
+msgid "Symbol"
+msgstr "Символ"
+
+#. field:Currency.Position
+msgid "Symbol Position"
+msgstr "Розміщення символу"
+
+#. field:Partner.VAT
+msgid "TIN"
+msgstr "ІПН"
+
+#. resource:base_view_res_partner_filter
+msgid "Tag"
+msgstr "Мітка"
+
+#. field:PartnerCategory.Name
+msgid "Tag Name"
+msgstr "Назва тегу"
+
+#. field:Company.Tagline
+msgid "Tagline"
+msgstr ""
+
+#. field:Partner.Categories
+msgid "Tags"
+msgstr "Мітки"
+
+#. resource:base_view_partner_form
+msgid "Tags..."
+msgstr "Мітки..."
+
+#. help:Partner.VAT
+msgid ""
+"Tax Identification Number.\n"
+"Fill it if the company is subjected to taxes.\n"
+"Used by the some of the legal statements."
+msgstr ""
+
+#. resource:base_menu_custom
+msgid "Technical"
+msgstr "Технічний"
+
+#. help:Country.Code
+msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
+msgstr ""
+
+#. help:Lang.Grouping
+msgid ""
+"The Separator Format should be like [,n] where 0 < n :starting from Unit digit.\"\n"
+"-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
+"[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
+"Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. help:PartnerCategory.Active
+msgid "The active field allows you to hide the category without removing it."
+msgstr "Активне поле дозволяє приховати категорію, не видаляючи її."
+
+#. code:
+msgid "The chosen company is not in the allowed companies for this user"
+msgstr "Вибрана компанія закрита для даного користувача"
+
+#. help:User.Company
+msgid "The company this user is currently working for."
+msgstr "Компанія, на яку зараз працює цей користувач."
+
+#. help:Attachment.ResModel
+msgid "The database object this attachment will be attached to"
+msgstr ""
+
+#. help:Country.Name
+msgid "The full name of the country."
+msgstr "Повна назва країни."
+
+#. help:Partner.User
+msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr "Внутрішній користувач, який відповідає за зв'язок з цим партнером, якщо такий існує."
+
+#. help:Sequence.NumberIncrement
+msgid "The next number of the sequence will be incremented by this number"
+msgstr "Наступне число послідовності буде збільшено на це число"
+
+#. help:Partner.TZ
+msgid ""
+"The partner's timezone, used to output proper date and time values\n"
+"inside printed reports. It is important to set a value for this field.\n"
+"You should use the same timezone that is otherwise used to pick and\n"
+"render date and time values: your computer's timezone."
+msgstr ""
+
+#. help:CurrencyRate.Rate
+#. help:Currency.Rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "Курс валюти до валюти з курсом 1"
+
+#. help:Attachment.ResID
+msgid "The record id this is attached to"
+msgstr ""
+
+#. help:CountryState.Code
+msgid "The state code in max. three chars."
+msgstr ""
+
+#. help:Lang.ISOCode
+msgid "This ISO code is the name of PO files to use for translations"
+msgstr ""
+
+#. help:Partner.Image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "Це поле містить зображення, що використовується як аватар контакту. Максимальні розміри: 1024x1024px."
+
+#. help:Lang.Code
+msgid "This field is used to set/get locales for user"
+msgstr "Це поле використовується встановлення/отримання  налаштувань мови і регіону користувача"
+
+#. field:Lang.ThousandsSep
+msgid "Thousands Separator"
+msgstr "Роздільник тисяч"
+
+#. field:Lang.TimeFormat
+msgid "Time Format"
+msgstr "Формат Часу"
+
+#. field:Partner.TZ
+msgid "Timezone"
+msgstr "Часовий пояс"
+
+#. field:Partner.TZOffset
+msgid "Timezone Offset"
+msgstr ""
+
+#. field:PartnerTitle.Name
+#. field:Partner.Title
+msgid "Title"
+msgstr "Заголовок"
+
+#. field:SequenceDateRange.DateTo
+msgid "To"
+msgstr "По"
+
+#. field:Lang.Translatable
+#. resource:base_res_lang_search
+msgid "Translatable"
+msgstr "Перекладається"
+
+#. code:
+msgid "Translate"
+msgstr "Перекласти"
+
+#. resource:base_menu_translation
+msgid "Translations"
+msgstr "Переклади"
+
+#. code:
+msgid "Trying to create a security group"
+msgstr ""
+
+#. code:
+msgid "Trying to modify a security group"
+msgstr ""
+
+#. help:Sequence.Implementation
+msgid ""
+"Two sequence object implementations are offered: Standard and 'No gap'.\n"
+"The latter is slower than the former but forbids any\n"
+"gap in the sequence (while they are possible in the former)."
+msgstr ""
+
+#. field:Attachment.Type
+#. field:Partner.Type
+#. resource:base_view_attachment_search
+msgid "Type"
+msgstr "Тип"
+
+#. field:Attachment.URL
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "URL"
+msgstr "URL"
+
+#. resource:base_res_lang_tree
+msgid "Update Language Terms"
+msgstr "Оновити умови мови"
+
+#. resource:base_res_lang_tree
+msgid "Update Terms"
+msgstr "Оновити терміни"
+
+#. field:Sequence.UseDateRange
+msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:User.Login
+msgid "Used to log into the system"
+msgstr "Використовується для входу в систему"
+
+#. help:Partner.Type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "Використовується для автоматичного вибору потрібної адреси відповідно до контексту у документах продажу та придбання."
+
+#. field:UserChangePasswordWizardLine.User
+#. resource:base_view_users_search
+msgid "User"
+msgstr "Користувач"
+
+#. resource:base_menu_user_interface
+msgid "User Interface"
+msgstr "Інтерфейс Користувача"
+
+#. field:UserChangePasswordWizardLine.UserLogin
+msgid "User Login"
+msgstr "Логін"
+
+#. field:User.Logs
+msgid "User log entries"
+msgstr "Записи входу користувача"
+
+#. field:UserChangePasswordWizard.Users
+#. field:Partner.Users
+#. resource:base_menu_users
+#. resource:base_view_users_form
+#. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
+#. resource:base_change_password_wizard_user_tree_view
+#. resource:base_view_users_tree
+#. resource:base_menu_action_users
+#. resource:base_action_res_users
+msgid "Users"
+msgstr "Користувачі"
+
+#. field:Company.VAT
+msgid "VAT"
+msgstr "VAT"
+
+#. field:ConfigParameter.Value
+msgid "Value"
+msgstr "Значення"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_supplier_form
+msgid "Vendors"
+msgstr "Постачальники"
+
+#. resource:base_view_currency_form
+msgid "View Rates"
+msgstr "Переглянути ціни"
+
+#. field:Company.Website
+#. field:Partner.Website
+msgid "Website"
+msgstr "Вебсайт"
+
+#. help:Partner.Website
+msgid "Website of Partner or Company"
+msgstr "Веб-сайт партнера чи компанії"
+
+#. resource:base_sequence_view
+msgid "Week of the Year: %(woy)s"
+msgstr "Тиждень року: %(woy)s"
+
+#. field:UserChangePasswordWizardLine.Wizard
+msgid "Wizard"
+msgstr "Майстер"
+
+#. help:Attachment.Type
+msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
+msgstr "Ви можете завантажити файл з комп'ютера або скопіювати / вставити посилання  у ваш файл."
+
+#. code:
+msgid "You can not change the company as the partner/user has multiple users linked with different companies."
+msgstr ""
+
+#. code:
+msgid "You can not remove the admin user as it is used internally for resources created by Hexya"
+msgstr ""
+
+#. help:Country.AddressFormat
+msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgstr ""
+
+#. code:
+msgid "You cannot create recursive Partner hierarchies."
+msgstr "Помилка! Не можна створювати рекурсивні категорії."
+
+#. code:
+msgid "You cannot deactivate the admin user."
+msgstr "Ви не можете вимкнути користувача адміністратора."
+
+#. code:
+msgid "You cannot deactivate the user you're currently logged in as."
+msgstr "Ви не можете вимкнути користувача, через якого ви ввійшли в систему."
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "ZIP"
+msgstr "Індекс"
+
+#. field:Company.Zip
+#. field:Bank.Zip
+#. field:Partner.Zip
+msgid "Zip"
+msgstr "Індекс"
+
+#. resource:base_view_company_form
+msgid "e.g. Global Business Solutions"
+msgstr "напр. Global Business Solutions"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mr."
+msgstr "напр. пан"
+
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "e.g. Sales Director"
+msgstr "напр. Комерційний директор"
+
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+msgid "e.g. www.hexya.io"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "internal note..."
+msgstr "внутрішня примітка..."
+

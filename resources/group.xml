@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hexya>
+    <data>
+
+        <!-- res.groups -->
+        <view id="base_view_groups_search" model="Group">
+            <search string="Groups">
+                <field name="Name" string="Group"/>
+            </search>
+        </view>
+
+        <view id="base_view_groups_tree" model="Group">
+            <tree string="Groups" create="false">
+                <field name="Name"/>
+            </tree>
+        </view>
+
+        <action id="base_action_res_groups" name="Groups" type="ir.actions.act_window" model="Group"
+                view_mode="tree"/>
+
+
+        <menuitem id="base_menu_action_groups" name="Groups" sequence="2" action="base_action_res_groups"
+                  parent="base_menu_users"/>
+
+        <action id="base_action_server_reload_groups" name="Reload Groups" type="ir.actions.server" model="Group"
+                method="ReloadGroups" src_model="Group"/>
+
+        <menuitem id="base_menu_action_reload_groups" name="Reload Groups" sequence="3" action="base_action_server_reload_groups"
+                  parent="base_menu_users"/>
+
+    </data>
+</hexya>

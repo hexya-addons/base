@@ -1,0 +1,1575 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. code:
+#. code:
+#. code:
+msgid "%s (copy)"
+msgstr "%s (コピー)"
+
+#. resource:base_view_partner_form
+msgid "(edit)"
+msgstr "(編集)"
+
+#. field:PartnerTitle.Shortcut
+msgid "Abbreviation"
+msgstr "略称"
+
+#. field:Company.Users
+msgid "Accepted Users"
+msgstr "受け入れられたユーザ"
+
+#. resource:base_view_users_form
+msgid "Access Rights"
+msgstr "アクセス権"
+
+#. field:BankAccount.Partner
+msgid "Account Holder"
+msgstr "口座保持者"
+
+#. field:BankAccount.Name
+msgid "Account Number"
+msgstr "口座番号"
+
+#. field:BankAccount.AccountType
+msgid "Account Type"
+msgstr "勘定科目タイプ"
+
+#. resource:base_view_company_form
+msgid "Accounting"
+msgstr "会計"
+
+#. field:Bank.Active
+#. field:Currency.Active
+#. field:PartnerCategory.Active
+#. field:Sequence.Active
+#. field:Lang.Active
+#. field:Partner.Active
+#. resource:base_view_currency_search
+#. resource:base_res_lang_search
+msgid "Active"
+msgstr "有効"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Address"
+msgstr "アドレス"
+
+#. field:Country.AddressFormat
+msgid "Address Format"
+msgstr ""
+
+#. resource:base_view_country_form
+msgid "Address format..."
+msgstr "アドレスのフォーマット..."
+
+#. help:CountryState.Name
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "国の行政区画。たとえば連邦、省、州。"
+
+#. selection:Currency.Position
+msgid "After Amount"
+msgstr "総計後"
+
+#. resource:base_view_users_form
+msgid "Allowed Companies"
+msgstr "許可された会社"
+
+#. resource:base_menu_translation_app
+msgid "Application Terms"
+msgstr "アプリケーション用語"
+
+#. resource:base_view_res_partner_filter
+msgid "Archived"
+msgstr "アーカイブ済"
+
+#. resource:base_view_attachment_form
+msgid "Attached To"
+msgstr "添付先"
+
+#. resource:base_view_attachment_search
+#. resource:base_action_attachment
+msgid "Attachment"
+msgstr "添付"
+
+#. field:Attachment.Name
+msgid "Attachment Name"
+msgstr "添付ファイル名"
+
+#. field:BankAccount.Bank
+#. resource:base_view_res_bank_form
+msgid "Bank"
+msgstr "銀行"
+
+#. field:Partner.Banks
+#. resource:base_view_partner_bank_tree
+#. resource:base_view_partner_bank_search
+#. resource:base_action_res_partner_bank_account_form
+msgid "Bank Accounts"
+msgstr "銀行口座"
+
+#. field:BankAccount.BankBIC
+msgid "Bank BIC"
+msgstr ""
+
+#. field:Bank.BIC
+msgid "Bank Identifier Cord"
+msgstr ""
+
+#. field:BankAccount.BankName
+#. resource:base_view_partner_bank_search
+msgid "Bank Name"
+msgstr "銀行名"
+
+#. resource:base_view_partner_bank_form
+msgid "Bank account"
+msgstr "銀行口座"
+
+#. resource:base_view_res_bank_tree
+#. resource:base_action_res_bank_form
+msgid "Banks"
+msgstr "銀行"
+
+#. field:Partner.Barcode
+msgid "Barcode"
+msgstr "バーコード"
+
+#. selection:Currency.Position
+msgid "Before Amount"
+msgstr "金額の前"
+
+#. selection:Attachment.Type
+#. resource:base_view_attachment_search
+msgid "Binary"
+msgstr "バイナリ"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form_simple_modif
+msgid "Cancel"
+msgstr "取消"
+
+#. code:
+msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. resource:base_action_res_users_my
+msgid "Change My Preferences"
+msgstr "設定の変更"
+
+#. resource:base_change_password_wizard_view
+#. resource:base_change_password_wizard_view
+#. resource:base_view_users_form
+#. resource:base_change_password_wizard_action
+msgid "Change Password"
+msgstr "パスワード変更"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Change password"
+msgstr "パスワード変更"
+
+#. resource:base_view_users_form
+msgid "Change the user password."
+msgstr "ユーザパスワードの変更"
+
+#. help:Partner.IsCompany
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "連絡先が会社の場合はチェックしてください。チェックしない場合は人と認識します。"
+
+#. help:Partner.Customer
+msgid "Check this box if this contact is a customer."
+msgstr "連絡先が顧客の場合はこのボックスをチェックします。"
+
+#. help:Partner.Supplier
+msgid ""
+"Check this box if this contact is a vendor.\n"
+"If it's not checked, purchase people will not see it when encoding a purchase order."
+msgstr ""
+
+#. help:Partner.Employee
+msgid "Check this box if this contact is an Employee."
+msgstr "この連絡先が従業員である場合はチェック。"
+
+#. field:Attachment.CheckSum
+msgid "Checksum/SHA1"
+msgstr "チェックサム/SHA1"
+
+#. field:Company.Children
+msgid "Child Companies"
+msgstr "子会社"
+
+#. field:Partner.Children
+msgid "Children"
+msgstr "子"
+
+#. field:PartnerCategory.Children
+msgid "Children Tags"
+msgstr ""
+
+#. field:Bank.City
+#. field:Company.City
+#. field:Partner.City
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "City"
+msgstr "市区町村"
+
+#. field:Partner.Color
+msgid "Color"
+msgstr "色"
+
+#. field:PartnerCategory.Color
+msgid "Color Index"
+msgstr "カラーインデクス"
+
+#. field:Partner.CommercialCompanyName
+msgid "Commercial Company Name"
+msgstr ""
+
+#. field:Partner.CommercialPartner
+msgid "Commercial Entity"
+msgstr "取引先"
+
+#. resource:base_view_res_bank_form
+msgid "Communication"
+msgstr "コミュニケーション"
+
+#. field:User.Companies
+#. resource:base_view_company_tree
+#. resource:base_action_res_company_form
+#. resource:base_company_normal_action_tree
+#. resource:base_view_res_partner_filter
+msgid "Companies"
+msgstr "会社"
+
+#. field:CurrencyRate.Company
+#. field:Sequence.Company
+#. field:Attachment.Company
+#. field:BankAccount.Company
+#. field:User.Company
+#. field:Partner.Company
+#. selection:Partner.CompanyType
+#. resource:base_view_attachment_search
+#. resource:base_view_company_form
+#. resource:base_view_partner_simple_form
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_form
+#. resource:base_view_users_search
+msgid "Company"
+msgstr "会社"
+
+#. field:Company.Name
+#. field:Partner.CompanyName
+msgid "Company Name"
+msgstr "会社名"
+
+#. field:Company.CompanyRegistry
+msgid "Company Registry"
+msgstr ""
+
+#. field:Partner.CompanyType
+msgid "Company Type"
+msgstr "会社タイプ"
+
+#. field:Partner.ContactAddress
+msgid "Complete Address"
+msgstr "完全な住所"
+
+#. resource:base_view_company_form
+#. resource:base_menu_reporting_config
+msgid "Configuration"
+msgstr "設定"
+
+#. selection:Partner.Type
+#. resource:base_view_partner_simple_form
+msgid "Contact"
+msgstr "連絡先"
+
+#. resource:base_view_partner_form
+msgid "Contact / Address"
+msgstr "連絡先/住所"
+
+#. resource:base_view_partner_form
+msgid "Contact Name"
+msgstr "連絡先名"
+
+#. resource:base_view_partner_category_form
+msgid "Contact Tag"
+msgstr "連絡先のタグ"
+
+#. resource:base_view_partner_category_list
+msgid "Contact Tags"
+msgstr "連絡先タグ"
+
+#. resource:base_action_partner_title_contact
+msgid "Contact Titles"
+msgstr "連絡先敬称"
+
+#. resource:base_view_partner_tree
+msgid "Contacts"
+msgstr "連絡先"
+
+#. resource:base_view_partner_form
+msgid "Contacts & Addresses"
+msgstr "連絡先 & アドレス"
+
+#. code:
+msgid "Couldn't create contact without email address!"
+msgstr "メールアドレスのない連絡先は作成できません！"
+
+#. field:CountryGroup.Countries
+#. resource:base_action_country
+msgid "Countries"
+msgstr "国"
+
+#. field:Bank.Country
+#. field:Company.Country
+#. field:CountryState.Country
+#. field:Partner.Country
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_tree
+#. resource:base_view_res_partner_filter
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Country"
+msgstr "国"
+
+#. field:Country.PhoneCode
+msgid "Country Calling Code"
+msgstr "国電話コード"
+
+#. field:Country.Code
+msgid "Country Code"
+msgstr "国コード"
+
+#. resource:base_view_country_group_tree
+#. resource:base_view_country_group_form
+msgid "Country Group"
+msgstr "国グループ"
+
+#. field:Country.CountryGroups
+#. resource:base_action_country_group
+msgid "Country Groups"
+msgstr "国グループ"
+
+#. field:Country.Name
+msgid "Country Name"
+msgstr "国名"
+
+#. resource:base_view_partner_form
+msgid "Create company"
+msgstr "会社の作成"
+
+#. resource:base_view_attachment_form
+msgid "Creation"
+msgstr "作成"
+
+#. resource:base_view_attachment_search
+msgid "Creation Month"
+msgstr "作成月"
+
+#. field:Partner.CreditLimit
+msgid "Credit Limit"
+msgstr "与信限度"
+
+#. resource:base_view_currency_search
+#. resource:base_view_currency_tree
+#. resource:base_action_currency_form
+msgid "Currencies"
+msgstr "通貨"
+
+#. field:Company.Currency
+#. field:CurrencyRate.Currency
+#. field:Currency.Name
+#. field:BankAccount.Currency
+#. field:Country.Currency
+#. resource:base_view_currency_search
+#. resource:base_view_currency_form
+msgid "Currency"
+msgstr "通貨"
+
+#. help:Currency.Name
+msgid "Currency Code [ISO 4217]"
+msgstr ""
+
+#. resource:base_view_currency_rate_form
+msgid "Currency Rate"
+msgstr "為替レート"
+
+#. resource:base_view_currency_rate_search
+#. resource:base_view_currency_rate_tree
+#. resource:base_act_view_currency_rates
+msgid "Currency Rates"
+msgstr "為替レート"
+
+#. help:Currency.Symbol
+msgid "Currency sign, to be used when printing amounts"
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Current Company"
+msgstr "現在の会社"
+
+#. field:Currency.Rate
+msgid "Current Rate"
+msgstr "現在レート"
+
+#. resource:base_sequence_view
+msgid "Current Year with Century: %(year)s"
+msgstr "世紀を含む現在年: %(year)s"
+
+#. resource:base_sequence_view
+msgid "Current Year without Century: %(y)s"
+msgstr "世紀なしの現在年: %(y)s"
+
+#. resource:base_menu_administration_shortcut
+msgid "Custom Shortcuts"
+msgstr "カスタムショートカット"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_customer_form
+#. resource:base_action_partner_form
+msgid "Customers"
+msgstr "顧客"
+
+#. resource:base_menu_board_root
+#. resource:base_menu_reporting_dashboard
+msgid "Dashboards"
+msgstr "ダッシュボード"
+
+#. field:Attachment.DBDatas
+msgid "Database Data"
+msgstr "データベースデータ"
+
+#. resource:base_menu_database_structure
+msgid "Database Structure"
+msgstr "データベース構造"
+
+#. field:CurrencyRate.Name
+#. field:Currency.Date
+#. field:Partner.Date
+#. resource:base_view_currency_rate_search
+msgid "Date"
+msgstr "日付"
+
+#. field:Lang.DateFormat
+msgid "Date Format"
+msgstr "日付書式"
+
+#. resource:base_sequence_view
+msgid "Day of the Week (0:Monday): %(weekday)s"
+msgstr "曜日 (0:月曜日): %(weekday)s"
+
+#. resource:base_sequence_view
+msgid "Day of the Year: %(doy)s"
+msgstr "年の通算日: %(doy)s"
+
+#. resource:base_sequence_view
+msgid "Day: %(day)s"
+msgstr "日: %(day)s"
+
+#. field:Currency.DecimalPlaces
+msgid "Decimal Places"
+msgstr ""
+
+#. field:Lang.DecimalPoint
+msgid "Decimal Separator"
+msgstr "小数区切り"
+
+#. field:Attachment.Description
+#. resource:base_view_attachment_form
+msgid "Description"
+msgstr "説明"
+
+#. help:Currency.Position
+msgid "Determines where the currency symbol should be placed after or before the amount."
+msgstr "通貨記号が金額の前後、どちらに置かれるべきなのかを決定します。"
+
+#. field:Lang.Direction
+msgid "Direction"
+msgstr "方向"
+
+#. resource:base_view_currency_form
+msgid "Display"
+msgstr "表示"
+
+#. help:Partner.PartnerShare
+msgid ""
+"Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
+"access or with a limited access created for sharing data."
+msgstr ""
+
+#. field:Bank.Email
+#. field:Company.Email
+#. field:Partner.Email
+msgid "Email"
+msgstr "Eメール"
+
+#. resource:base_view_users_form
+msgid "Email Address"
+msgstr "Eメールアドレス"
+
+#. field:Partner.EmailFormatted
+msgid "Email Formatted"
+msgstr ""
+
+#. resource:base_view_users_form_simple_modif
+msgid "Email Preferences"
+msgstr "Eメール設定"
+
+#. field:Partner.Employee
+msgid "Employee"
+msgstr "従業員"
+
+#. resource:base_action_partner_employee_form
+msgid "Employees"
+msgstr "従業員"
+
+#. code:
+msgid "Error ! You can not create recursive tags."
+msgstr "エラー！再帰的なタグを作成することはできません。"
+
+#. resource:base_res_lang_form
+msgid "Examples"
+msgstr "例"
+
+#. help:User.Share
+msgid "External user with limited access, created only for the purpose of sharing data."
+msgstr "データ共有の目的のためだけに作成されたアクセス制限のある外部ユーザ"
+
+#. field:Bank.Fax
+#. field:Company.Fax
+#. field:Partner.Fax
+msgid "Fax"
+msgstr "FAX"
+
+#. field:Bank.State
+msgid "Fed. State"
+msgstr "都道府県・州"
+
+#. resource:base_action_country_state
+msgid "Fed. States"
+msgstr "都道府県/州"
+
+#. field:Attachment.Datas
+msgid "File Content"
+msgstr "ファイル内容"
+
+#. field:Attachment.DatasFname
+msgid "File Name"
+msgstr "ファイル名"
+
+#. field:Attachment.FileSize
+msgid "File Size"
+msgstr "ファイルサイズ"
+
+#. resource:base_view_attachment_search
+msgid "Filter on my documents"
+msgstr "ドキュメントのフィルタ"
+
+#. help:Partner.EmailFormatted
+msgid "Formatted email address 'Name <email@domain>'"
+msgstr ""
+
+#. field:SequenceDateRange.DateFrom
+msgid "From"
+msgstr "開始日"
+
+#. resource:base_view_company_form
+msgid "General Information"
+msgstr "一般情報"
+
+#. resource:base_view_groups_search
+msgid "Group"
+msgstr "グループ"
+
+#. resource:base_view_attachment_search
+#. resource:base_view_res_partner_filter
+msgid "Group By"
+msgstr "グループ化"
+
+#. field:Group.GroupID
+msgid "Group ID"
+msgstr ""
+
+#. resource:base_view_country_group_form
+msgid "Group name"
+msgstr "グループ名"
+
+#. field:User.Groups
+#. field:ConfigParameter.Groups
+#. resource:base_view_groups_search
+#. resource:base_view_groups_tree
+#. resource:base_menu_action_groups
+#. resource:base_action_res_groups
+msgid "Groups"
+msgstr "グループ"
+
+#. help:Sequence.Padding
+msgid "Hexya will automatically adds some '0' on the left of the 'Next Number' to get the required padding size."
+msgstr ""
+
+#. resource:base_view_attachment_form
+msgid "History"
+msgstr "履歴"
+
+#. field:User.ActionID
+msgid "Home Action"
+msgstr "ホームアクション"
+
+#. resource:base_sequence_view
+msgid "Hour 00->12: %(h12)s"
+msgstr "時刻 00->12: %(h12)s"
+
+#. resource:base_sequence_view
+msgid "Hour 00->24: %(h24)s"
+msgstr "時刻 00->24: %(h24)s"
+
+#. field:UserChangePasswordWizardLine.ID
+#. field:Bank.ID
+#. field:Company.ID
+#. field:Group.ID
+#. field:UserChangePasswordWizard.ID
+#. field:CurrencyRate.ID
+#. field:Currency.ID
+#. field:PartnerCategory.ID
+#. field:Sequence.ID
+#. field:Attachment.ID
+#. field:BankAccount.ID
+#. field:ConfigSettings.ID
+#. field:CountryState.ID
+#. field:Translation.ID
+#. field:User.ID
+#. field:Lang.ID
+#. field:ModelMixin.ID
+#. field:PartnerTitle.ID
+#. field:SequenceDateRange.ID
+#. field:UserLog.ID
+#. field:ConfigParameter.ID
+#. field:CountryGroup.ID
+#. field:Country.ID
+#. field:Partner.ID
+msgid "ID"
+msgstr "ID"
+
+#. field:Lang.ISOCode
+msgid "ISO Code"
+msgstr "ISOコード"
+
+#. help:User.ActionID
+msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
+msgstr "指定された場合、このアクションは、標準のメニューに加えて、このユーザのログオン時に開かれます。"
+
+#. help:Partner.Lang
+msgid ""
+"If the selected language is loaded in the system, all documents related to\n"
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+
+#. field:Country.Image
+#. field:Partner.Image
+msgid "Image"
+msgstr "画像"
+
+#. field:Partner.ImageMedium
+msgid "Image Medium"
+msgstr ""
+
+#. field:Partner.ImageSmall
+msgid "Image Small"
+msgstr ""
+
+#. field:Sequence.Implementation
+msgid "Implementation"
+msgstr "付番方針"
+
+#. resource:base_menu_translation_export
+msgid "Import / Export"
+msgstr "インポート / エクスポート"
+
+#. resource:base_view_currency_search
+msgid "Inactive"
+msgstr "無効"
+
+#. field:Attachment.IndexContent
+#. resource:base_view_attachment_form
+msgid "Indexed Content"
+msgstr "索引内容"
+
+#. selection:Partner.CompanyType
+msgid "Individual"
+msgstr "個人"
+
+#. resource:base_view_partner_form
+msgid "Internal Notes"
+msgstr "内部注記"
+
+#. field:Partner.Ref
+msgid "Internal Reference"
+msgstr "内部参照"
+
+#. resource:base_view_partner_form
+msgid "Internal note..."
+msgstr "内部注記..."
+
+#. code:
+msgid "Invalid search criterion: password"
+msgstr ""
+
+#. selection:Partner.Type
+msgid "Invoice Address"
+msgstr "請求書住所"
+
+#. field:Partner.IsCompany
+msgid "Is Company"
+msgstr "会社"
+
+#. field:Partner.Customer
+msgid "Is a Customer"
+msgstr "顧客"
+
+#. field:Partner.Supplier
+msgid "Is a Vendor"
+msgstr "仕入先"
+
+#. field:Attachment.Public
+msgid "Is a public document"
+msgstr ""
+
+#. field:Partner.Function
+msgid "Job Position"
+msgstr "職位"
+
+#. help:User.Password
+msgid "Keep empty if you don't want the user to be able to connect on the system."
+msgstr "ユーザがシステムに接続できないようにしたい場合には、空のままにします。"
+
+#. field:ConfigParameter.Key
+msgid "Key"
+msgstr "キー"
+
+#. field:Partner.Lang
+#. resource:base_res_lang_search
+msgid "Language"
+msgstr "言語"
+
+#. resource:base_res_lang_form
+#. resource:base_res_lang_search
+#. resource:base_res_lang_tree
+#. resource:base_res_lang_act_window
+msgid "Languages"
+msgstr "言語"
+
+#. field:User.LoginDate
+msgid "Latest Connection"
+msgstr "最後の接続"
+
+#. selection:Lang.Direction
+msgid "Left-to-Right"
+msgstr "左から右"
+
+#. resource:base_sequence_view
+msgid "Legend (for prefix, suffix)"
+msgstr "凡例 (プレフィクス、サフィックス用)"
+
+#. resource:base_res_lang_form
+msgid "Legends for supported Date and Time Formats"
+msgstr "利用可能な日付・時刻書式の凡例"
+
+#. field:Lang.Code
+msgid "Locale Code"
+msgstr "ロケールコード"
+
+#. resource:base_view_users_form
+msgid "Localization"
+msgstr "ローカライズ"
+
+#. field:User.Login
+msgid "Login"
+msgstr "ログイン"
+
+#. field:Company.Logo
+msgid "Logo"
+msgstr "ロゴ"
+
+#. field:Company.LogoWeb
+msgid "Logo Web"
+msgstr ""
+
+#. field:SequenceDateRange.Sequence
+msgid "Main Sequence"
+msgstr "主順序"
+
+#. help:Partner.ImageMedium
+msgid ""
+"Medium-sized image of this contact. It is automatically\n"
+"resized as a 128x128px image, with aspect ratio preserved.\n"
+"Use this field in form views or some kanban views."
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Menus Customization"
+msgstr "メニューカスタマイズ"
+
+#. resource:base_view_users_form
+msgid "Messaging and Social"
+msgstr "メッセージおよびソーシャル"
+
+#. field:Attachment.MimeType
+msgid "Mime Type"
+msgstr "MIMEタイプ"
+
+#. resource:base_sequence_view
+msgid "Minute: %(min)s"
+msgstr "分: %(min)s"
+
+#. resource:base_view_partner_form
+msgid "Misc"
+msgstr "その他"
+
+#. field:Partner.Mobile
+msgid "Mobile"
+msgstr "携帯電話"
+
+#. resource:base_sequence_view
+msgid "Month: %(month)s"
+msgstr "月: %(month)s"
+
+#. resource:base_view_users_form
+msgid "Multi Companies"
+msgstr "複数会社"
+
+#. resource:base_view_attachment_search
+msgid "My Document(s)"
+msgstr "自分のドキュメント"
+
+#. resource:base_view_res_partner_filter
+msgid "My Partners"
+msgstr "自分の取引先"
+
+#. field:Bank.Name
+#. field:Group.Name
+#. field:Sequence.Name
+#. field:Lang.Name
+#. field:CountryGroup.Name
+#. field:Partner.Name
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_tree
+#. resource:base_view_partner_form
+msgid "Name"
+msgstr "名称"
+
+#. field:UserChangePasswordWizardLine.NewPassword
+msgid "New Password"
+msgstr "新しいパスワード"
+
+#. field:Sequence.NumberNext
+#. field:Sequence.NumberNextActual
+#. field:SequenceDateRange.NumberNext
+#. field:SequenceDateRange.NumberNextActual
+msgid "Next Number"
+msgstr "次の番号"
+
+#. help:Sequence.NumberNext
+#. help:SequenceDateRange.NumberNext
+msgid "Next number of this sequence"
+msgstr "この付番定義の次の番号"
+
+#. help:Sequence.NumberNextActual
+#. help:SequenceDateRange.NumberNextActual
+msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
+msgstr "使用される次の番号。この番号は頻繁に増加されるため、表示された値はすでに時代遅れかもしれません。"
+
+#. selection:Sequence.Implementation
+msgid "No Gap"
+msgstr ""
+
+#. field:Partner.Comment
+msgid "Notes"
+msgstr "ノート"
+
+#. field:User.CompaniesCount
+msgid "Number of Companies"
+msgstr "会社の数"
+
+#. code:
+msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
+msgstr ""
+
+#. code:
+msgid "Only administrators can change the settings"
+msgstr "管理者のみ設定変更が可能です。"
+
+#. code:
+msgid "Only administrators can execute this action."
+msgstr "管理者のみこのアクションを実行できます。"
+
+#. selection:Partner.Type
+msgid "Other Address"
+msgstr ""
+
+#. resource:base_action_partner_other_form
+msgid "Other Partners"
+msgstr "他の取引先"
+
+#. resource:base_view_attachment_search
+msgid "Owner"
+msgstr "オーナー"
+
+#. field:Partner.Parent
+msgid "Parent"
+msgstr "親"
+
+#. field:Company.Parent
+msgid "Parent Company"
+msgstr "親会社"
+
+#. field:Partner.ParentName
+msgid "Parent Name"
+msgstr ""
+
+#. field:PartnerCategory.Parent
+msgid "Parent Tag"
+msgstr ""
+
+#. field:Company.Partner
+#. resource:base_view_partner_address_form
+msgid "Partner"
+msgstr "取引先"
+
+#. resource:base_view_partner_title_tree
+#. resource:base_view_partner_title_form
+msgid "Partner Titles"
+msgstr "取引先タイトル"
+
+#. help:User.Partner
+msgid "Partner-related data of the user"
+msgstr "ユーザの取引先関連データ"
+
+#. field:PartnerCategory.Partners
+#. resource:base_view_partner_form
+msgid "Partners"
+msgstr "取引先"
+
+#. field:User.Password
+msgid "Password"
+msgstr "パスワード"
+
+#. resource:base_view_res_partner_filter
+msgid "Persons"
+msgstr "個人"
+
+#. field:Bank.Phone
+#. field:Company.Phone
+#. field:Partner.Phone
+msgid "Phone"
+msgstr "電話"
+
+#. code:
+msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
+msgstr "あなた自身のパスワードを変更をするには、パスワード変更ウィザード（ユーザ設定またはユーザメニューの中の）を利用して下さい。"
+
+#. resource:base_view_users_form
+msgid "Preferences"
+msgstr "個人設定"
+
+#. field:Sequence.Prefix
+msgid "Prefix"
+msgstr "プレフィクス"
+
+#. help:Sequence.Prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "順序のためのレコードのプレフィックス値"
+
+#. resource:base_view_currency_form
+msgid "Price Accuracy"
+msgstr "価格精度"
+
+#. resource:base_view_partner_form
+msgid "Purchase"
+msgstr "購買"
+
+#. field:CurrencyRate.Rate
+msgid "Rate"
+msgstr "レート"
+
+#. field:Currency.Rates
+msgid "Rates"
+msgstr "レート"
+
+#. field:User.Partner
+msgid "Related Partner"
+msgstr "関連取引先"
+
+#. resource:base_menu_action_reload_groups
+#. resource:base_action_server_reload_groups
+msgid "Reload Groups"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "Report Configuration"
+msgstr "レポート設定"
+
+#. field:Attachment.ResField
+msgid "Resource Field"
+msgstr "リソース項目"
+
+#. field:Attachment.ResID
+msgid "Resource ID"
+msgstr "リソースID"
+
+#. field:Attachment.ResModel
+msgid "Resource Model"
+msgstr "リソースモデル"
+
+#. field:Attachment.ResName
+msgid "Resource Name"
+msgstr "リソース名"
+
+#. selection:Lang.Direction
+msgid "Right-to-left"
+msgstr ""
+
+#. field:Currency.Rounding
+msgid "Rounding Factor"
+msgstr "丸め係数"
+
+#. resource:base_view_partner_form
+msgid "Sale"
+msgstr "販売"
+
+#. resource:base_view_partner_form
+msgid "Sales & Purchases"
+msgstr "販売 & 購買"
+
+#. field:Partner.User
+#. resource:base_view_res_partner_filter
+msgid "Salesperson"
+msgstr "販売担当者"
+
+#. field:BankAccount.SanitizedAccountNumber
+msgid "Sanitized Account Number"
+msgstr "サニタイズ済口座番号"
+
+#. resource:base_view_users_form_simple_modif
+msgid "Save"
+msgstr "保存"
+
+#. resource:base_view_res_partner_filter
+msgid "Search Partner"
+msgstr "取引先検索"
+
+#. resource:base_sequence_view
+msgid "Second: %(sec)s"
+msgstr "秒: %(sec)s"
+
+#. field:Lang.Grouping
+msgid "Separator Format"
+msgstr "区切り書式"
+
+#. field:BankAccount.Sequence
+#. resource:base_sequence_view
+#. resource:base_view_sequence_search
+msgid "Sequence"
+msgstr "付番"
+
+#. field:Sequence.Code
+msgid "Sequence Code"
+msgstr "付番コード"
+
+#. field:Sequence.Padding
+msgid "Sequence Size"
+msgstr "付番サイズ"
+
+#. resource:base_sequence_date_range_tree
+#. resource:base_sequence_view
+#. resource:base_sequence_view_tree
+#. resource:base_view_sequence_search
+#. resource:base_ir_sequence_form
+msgid "Sequences"
+msgstr "付番"
+
+#. resource:base_menu_sequences_identifiers
+msgid "Sequences & Identifiers"
+msgstr "付番とID"
+
+#. field:User.NewPassword
+msgid "Set Password"
+msgstr "パスワードのセット"
+
+#. resource:base_menu_administration
+msgid "Settings"
+msgstr "管理設定"
+
+#. field:Partner.PartnerShare
+msgid "Share Partner"
+msgstr "共有している取引先"
+
+#. field:User.Share
+msgid "Share User"
+msgstr "共有ユーザ"
+
+#. selection:Partner.Type
+msgid "Shipping Address"
+msgstr "お届け先の住所"
+
+#. resource:base_view_currency_search
+msgid "Show active currencies"
+msgstr "アクティブな通貨を表示"
+
+#. resource:base_view_currency_search
+msgid "Show inactive currencies"
+msgstr "アクティブでない通貨を表示"
+
+#. field:User.Signature
+msgid "Signature"
+msgstr "署名"
+
+#. help:Partner.ImageSmall
+msgid ""
+"Small-sized image of this contact. It is automatically\n"
+"resized as a 64x64px image, with aspect ratio preserved.\n"
+"Use this field anywhere a small image is required."
+msgstr ""
+
+#. help:Bank.BIC
+msgid "Sometimes called BIC or Swift."
+msgstr "時々、BICあるいはSwiftと呼ばれます。"
+
+#. code:
+msgid "Sorry, you are not allowed to access this document."
+msgstr "このドキュメントにアクセスする権限がありません。"
+
+#. help:User.NewPassword
+msgid ""
+"Specify a value only when creating a user or if you're\n"
+"changing the user's password, otherwise leave empty. After\n"
+"a change of password, the user has to login again."
+msgstr ""
+
+#. selection:Sequence.Implementation
+msgid "Standard"
+msgstr "標準"
+
+#. field:Company.State
+#. field:Partner.State
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_country_state_form
+#. resource:base_view_country_state_tree
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "State"
+msgstr "状態"
+
+#. field:CountryState.Code
+msgid "State Code"
+msgstr "都道府県・州コード"
+
+#. field:CountryState.Name
+msgid "State Name"
+msgstr "都道府県・州名"
+
+#. field:Country.States
+msgid "States"
+msgstr "状態"
+
+#. field:Sequence.NumberIncrement
+msgid "Step"
+msgstr "ステップ"
+
+#. field:Attachment.StoreFname
+msgid "Stored Filename"
+msgstr "格納ファイル名"
+
+#. field:Bank.Street
+#. field:Company.Street
+#. field:Partner.Street
+msgid "Street"
+msgstr "町名番地"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street 2..."
+msgstr "町名番地2…"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "Street..."
+msgstr "町名番地…"
+
+#. field:Bank.Street2
+#. field:Company.Street2
+#. field:Partner.Street2
+msgid "Street2"
+msgstr "町名番地2"
+
+#. field:Sequence.DateRanges
+msgid "Subsequences"
+msgstr "枝番"
+
+#. field:Sequence.Suffix
+msgid "Suffix"
+msgstr "サフィックス"
+
+#. help:Sequence.Suffix
+msgid "Suffix value of the record for the sequence"
+msgstr "順序のためのレコードのサフィックス値"
+
+#. field:Currency.Symbol
+msgid "Symbol"
+msgstr "記号"
+
+#. field:Currency.Position
+msgid "Symbol Position"
+msgstr "記号位置"
+
+#. field:Partner.VAT
+msgid "TIN"
+msgstr "付加価値税登録番号"
+
+#. resource:base_view_res_partner_filter
+msgid "Tag"
+msgstr "タグ"
+
+#. field:PartnerCategory.Name
+msgid "Tag Name"
+msgstr "タグ名"
+
+#. field:Company.Tagline
+msgid "Tagline"
+msgstr ""
+
+#. field:Partner.Categories
+msgid "Tags"
+msgstr "タグ"
+
+#. resource:base_view_partner_form
+msgid "Tags..."
+msgstr "タグ..."
+
+#. help:Partner.VAT
+msgid ""
+"Tax Identification Number.\n"
+"Fill it if the company is subjected to taxes.\n"
+"Used by the some of the legal statements."
+msgstr ""
+
+#. resource:base_menu_custom
+msgid "Technical"
+msgstr "技術設定"
+
+#. help:Country.Code
+msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
+msgstr ""
+
+#. help:Lang.Grouping
+msgid ""
+"The Separator Format should be like [,n] where 0 < n :starting from Unit digit.\"\n"
+"-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
+"[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
+"Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. help:PartnerCategory.Active
+msgid "The active field allows you to hide the category without removing it."
+msgstr "このアクティブな項目はその分類を削除することなく非表示にすることができます。"
+
+#. code:
+msgid "The chosen company is not in the allowed companies for this user"
+msgstr "選択された会社は、このユーザに許された会社ではありません。"
+
+#. help:User.Company
+msgid "The company this user is currently working for."
+msgstr "ユーザが現在働いている会社"
+
+#. help:Attachment.ResModel
+msgid "The database object this attachment will be attached to"
+msgstr ""
+
+#. help:Country.Name
+msgid "The full name of the country."
+msgstr "国のフルネーム"
+
+#. help:Partner.User
+msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr "この連絡先との連携を担当する内部ユーザ"
+
+#. help:Sequence.NumberIncrement
+msgid "The next number of the sequence will be incremented by this number"
+msgstr "順序の次の番号はこの数値だけ増加します。"
+
+#. help:Partner.TZ
+msgid ""
+"The partner's timezone, used to output proper date and time values\n"
+"inside printed reports. It is important to set a value for this field.\n"
+"You should use the same timezone that is otherwise used to pick and\n"
+"render date and time values: your computer's timezone."
+msgstr ""
+
+#. help:CurrencyRate.Rate
+#. help:Currency.Rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "レート1の通貨に対しての通貨レート"
+
+#. help:Attachment.ResID
+msgid "The record id this is attached to"
+msgstr ""
+
+#. help:CountryState.Code
+msgid "The state code in max. three chars."
+msgstr ""
+
+#. help:Lang.ISOCode
+msgid "This ISO code is the name of PO files to use for translations"
+msgstr ""
+
+#. help:Partner.Image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "このフィールドは、この連絡先のアバターとして使用するイメージを保持しています。最大1024x1024pxサイズです。"
+
+#. help:Lang.Code
+msgid "This field is used to set/get locales for user"
+msgstr "この項目はユーザのロケールを設定 / 取得するために使用されます。"
+
+#. field:Lang.ThousandsSep
+msgid "Thousands Separator"
+msgstr "千単位区切り"
+
+#. field:Lang.TimeFormat
+msgid "Time Format"
+msgstr "時刻書式"
+
+#. field:Partner.TZ
+msgid "Timezone"
+msgstr "タイムゾーン"
+
+#. field:Partner.TZOffset
+msgid "Timezone Offset"
+msgstr ""
+
+#. field:PartnerTitle.Name
+#. field:Partner.Title
+msgid "Title"
+msgstr "タイトル"
+
+#. field:SequenceDateRange.DateTo
+msgid "To"
+msgstr "終了日"
+
+#. field:Lang.Translatable
+#. resource:base_res_lang_search
+msgid "Translatable"
+msgstr "翻訳可"
+
+#. code:
+msgid "Translate"
+msgstr "翻訳可"
+
+#. resource:base_menu_translation
+msgid "Translations"
+msgstr "翻訳"
+
+#. code:
+msgid "Trying to create a security group"
+msgstr ""
+
+#. code:
+msgid "Trying to modify a security group"
+msgstr ""
+
+#. help:Sequence.Implementation
+msgid ""
+"Two sequence object implementations are offered: Standard and 'No gap'.\n"
+"The latter is slower than the former but forbids any\n"
+"gap in the sequence (while they are possible in the former)."
+msgstr ""
+
+#. field:Attachment.Type
+#. field:Partner.Type
+#. resource:base_view_attachment_search
+msgid "Type"
+msgstr "タイプ"
+
+#. selection:Attachment.Type
+#. field:Attachment.URL
+#. resource:base_view_attachment_search
+msgid "URL"
+msgstr "URL"
+
+#. resource:base_res_lang_tree
+msgid "Update Language Terms"
+msgstr "言語テーマアップデート"
+
+#. resource:base_res_lang_tree
+msgid "Update Terms"
+msgstr "規約の更新"
+
+#. field:Sequence.UseDateRange
+msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:User.Login
+msgid "Used to log into the system"
+msgstr "システムにログインするために使用します。"
+
+#. help:Partner.Type
+msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgstr "受発注のドキュメントの内容に応じて、自動的に正しいアドレスを選択するために使用されます。"
+
+#. field:UserChangePasswordWizardLine.User
+#. resource:base_view_users_search
+msgid "User"
+msgstr "ユーザ"
+
+#. resource:base_menu_user_interface
+msgid "User Interface"
+msgstr "ユーザインタフェース"
+
+#. field:UserChangePasswordWizardLine.UserLogin
+msgid "User Login"
+msgstr "ユーザログイン"
+
+#. field:User.Logs
+msgid "User log entries"
+msgstr "ユーザのログエントリ"
+
+#. field:UserChangePasswordWizard.Users
+#. field:Partner.Users
+#. resource:base_menu_users
+#. resource:base_change_password_wizard_user_tree_view
+#. resource:base_view_users_tree
+#. resource:base_view_users_form
+#. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
+#. resource:base_menu_action_users
+#. resource:base_action_res_users
+msgid "Users"
+msgstr "ユーザ"
+
+#. field:Company.VAT
+msgid "VAT"
+msgstr "VAT（Value Added Tax）"
+
+#. field:ConfigParameter.Value
+msgid "Value"
+msgstr "値"
+
+#. resource:base_view_res_partner_filter
+#. resource:base_action_partner_supplier_form
+msgid "Vendors"
+msgstr "仕入先"
+
+#. resource:base_view_currency_form
+msgid "View Rates"
+msgstr "レート参照"
+
+#. field:Company.Website
+#. field:Partner.Website
+msgid "Website"
+msgstr "ウェブサイト"
+
+#. help:Partner.Website
+msgid "Website of Partner or Company"
+msgstr "取引先または会社のウェブサイト"
+
+#. resource:base_sequence_view
+msgid "Week of the Year: %(woy)s"
+msgstr "年の通算週: %(woy)s"
+
+#. field:UserChangePasswordWizardLine.Wizard
+msgid "Wizard"
+msgstr "ウィザード"
+
+#. help:Attachment.Type
+msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
+msgstr "利用中のコンピュータから、もしくはインターネットのリンクをコピーペーストでファイルをアップロードすることができます。"
+
+#. code:
+msgid "You can not change the company as the partner/user has multiple users linked with different companies."
+msgstr ""
+
+#. code:
+msgid "You can not remove the admin user as it is used internally for resources created by Hexya"
+msgstr ""
+
+#. help:Country.AddressFormat
+msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgstr ""
+
+#. code:
+msgid "You cannot create recursive Partner hierarchies."
+msgstr "再帰的なパートナーの階層を作成することはできません。"
+
+#. code:
+msgid "You cannot deactivate the admin user."
+msgstr "管理者ユーザを無効にすることはできません。"
+
+#. code:
+msgid "You cannot deactivate the user you're currently logged in as."
+msgstr "現在ログインしているユーザを無効にすることはできません。"
+
+#. resource:base_view_res_bank_form
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "ZIP"
+msgstr "郵便番号"
+
+#. field:Bank.Zip
+#. field:Company.Zip
+#. field:Partner.Zip
+msgid "Zip"
+msgstr "郵便番号"
+
+#. resource:base_view_company_form
+msgid "e.g. Global Business Solutions"
+msgstr "例 国際商業解決会社"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mr."
+msgstr "例: Mr."
+
+#. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+msgid "e.g. Sales Director"
+msgstr "例：営業部長"
+
+#. resource:base_view_company_form
+#. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+msgid "e.g. www.hexya.io"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "internal note..."
+msgstr "内部注記..."
+
