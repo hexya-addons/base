@@ -10,6 +10,7 @@ services:
   - postgresql
 
 install:
+  - go install github.com/hexya-erp/hexya
   - npm install less -g
 
 before_script:
