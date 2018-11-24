@@ -1,10 +1,14 @@
 module github.com/hexya-addons/base
 
 require (
-	github.com/hexya-erp/hexya v0.0.0-20181123115539-76b9f9a41c24
-	github.com/juju/errors v0.0.0-20181118221551-089d3ea4e4d5 // indirect
+	github.com/go-sql-driver/mysql v1.4.1 // indirect
+	github.com/hexya-erp/hexya v0.0.0-20181124205225-fdbb1cf524f1
+	github.com/kr/pretty v0.1.0 // indirect
+	github.com/mattn/go-sqlite3 v1.10.0 // indirect
+	github.com/mitchellh/mapstructure v1.1.2 // indirect
 	github.com/smartystreets/goconvey v0.0.0-20181108003508-044398e4856c
+	github.com/spf13/cast v1.3.0 // indirect
+	github.com/spf13/pflag v1.0.3 // indirect
 	github.com/spf13/viper v1.2.1
-	github.com/ugorji/go/codec v0.0.0-20181120210156-7d13b37dbec6 // indirect
-	golang.org/x/sys v0.0.0-20181122145206-62eef0e2fa9b // indirect
+	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 )
