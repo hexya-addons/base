@@ -13,7 +13,7 @@ import (
 func init() {
 	h.ConfigSettings().DeclareTransientModel()
 
-	h.ConfigSettings().Methods().Copy().Extend("", func(rs h.ConfigSettingsSet, data *h.ConfigSettingsData, fieldsToReset ...models.FieldNamer) h.ConfigSettingsSet {
+	h.ConfigSettings().Methods().Copy().Extend("", func(rs h.ConfigSettingsSet, data *h.ConfigSettingsData) h.ConfigSettingsSet {
 		panic(rs.T("Cannot duplicate configuration"))
 	})
 

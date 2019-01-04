@@ -15,11 +15,10 @@ import (
 func TestUserAuthentication(t *testing.T) {
 	Convey("Testing User Authentication", t, func() {
 		models.SimulateInNewEnvironment(security.SuperUserID, func(env models.Environment) {
-			userJohn := h.User().Create(env, &h.UserData{
-				Name:     "John Smith",
-				Login:    "jsmith",
-				Password: "secret",
-			})
+			userJohn := h.User().Create(env, h.User().NewData().
+				SetName("John Smith").
+				SetLogin("jsmith").
+				SetPassword("secret"))
 			Convey("Correct user authentication", func() {
 				uid, err := h.User().NewSet(env).Authenticate("jsmith", "secret")
 				So(uid, ShouldEqual, userJohn.ID())

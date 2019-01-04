@@ -243,9 +243,7 @@ Use this field anywhere a small image is required.`},
 		`ComputeTZOffset computes the timezone offset`,
 		func(rs h.PartnerSet) *h.PartnerData {
 			// TODO Implement TZOffset
-			return &h.PartnerData{
-				TZOffset: "",
-			}
+			return h.Partner().NewData().SetTZOffset("")
 		})
 
 	partnerModel.Methods().ComputePartnerShare().DeclareMethod(
@@ -261,17 +259,13 @@ Use this field anywhere a small image is required.`},
 					break
 				}
 			}
-			return &h.PartnerData{
-				PartnerShare: partnerShare,
-			}
+			return h.Partner().NewData().SetPartnerShare(partnerShare)
 		})
 
 	partnerModel.Methods().ComputeContactAddress().DeclareMethod(
 		`ComputeContactAddress computes the contact's address according to the contact's country standards`,
 		func(rs h.PartnerSet) *h.PartnerData {
-			return &h.PartnerData{
-				ContactAddress: rs.DisplayAddress(false),
-			}
+			return h.Partner().NewData().SetContactAddress(rs.DisplayAddress(false))
 		})
 
 	partnerModel.Methods().ComputeCommercialPartner().DeclareMethod(
@@ -282,9 +276,7 @@ Use this field anywhere a small image is required.`},
 			if !rs.IsCompany() && !rs.Parent().IsEmpty() {
 				commercialPartner = rs.Parent().CommercialPartner()
 			}
-			return &h.PartnerData{
-				CommercialPartner: commercialPartner,
-			}
+			return h.Partner().NewData().SetCommercialPartner(commercialPartner)
 		})
 
 	partnerModel.Methods().ComputeCommercialCompanyName().DeclareMethod(
@@ -294,9 +286,7 @@ Use this field anywhere a small image is required.`},
 			if !rs.CommercialPartner().IsCompany() {
 				commPartnerName = rs.CompanyName()
 			}
-			return &h.PartnerData{
-				CommercialCompanyName: commPartnerName,
-			}
+			return h.Partner().NewData().SetCommercialCompanyName(commPartnerName)
 		})
 
 	partnerModel.Methods().GetDefaultImage().DeclareMethod(
@@ -350,19 +340,18 @@ Use this field anywhere a small image is required.`},
 		})
 
 	partnerModel.Methods().Copy().Extend("",
-		func(rs h.PartnerSet, overrides *h.PartnerData, fieldsToUnset ...models.FieldNamer) h.PartnerSet {
+		func(rs h.PartnerSet, overrides *h.PartnerData) h.PartnerSet {
 			rs.EnsureOne()
-			overrides.Name = rs.T("%s (copy)", rs.Name())
-			fieldsToUnset = append(fieldsToUnset, h.Partner().Name())
-			return rs.Super().Copy(overrides, fieldsToUnset...)
+			overrides.SetName(rs.T("%s (copy)", rs.Name()))
+			return rs.Super().Copy(overrides)
 		})
 
 	partnerModel.Methods().OnchangeParent().DeclareMethod(
 		`OnchangeParent updates the current partner data when its parent field
 		is modified`,
-		func(rs h.PartnerSet) (*h.PartnerData, []models.FieldNamer) {
+		func(rs h.PartnerSet) *h.PartnerData {
 			if rs.Parent().IsEmpty() || rs.Type() != "contact" {
-				return &h.PartnerData{}, []models.FieldNamer{}
+				return h.Partner().NewData()
 			}
 
 			var parentHasAddress bool
@@ -373,34 +362,30 @@ Use this field anywhere a small image is required.`},
 				}
 			}
 			if !parentHasAddress {
-				return &h.PartnerData{}, []models.FieldNamer{}
+				return h.Partner().NewData()
 			}
-			resMap := make(models.FieldMap)
+			res := h.Partner().NewData()
 			for _, addrField := range rs.AddressFields() {
-				resMap.Set(addrField.String(), rs.Parent().Get(addrField.String()), h.Partner().Underlying())
+				res.Set(addrField.String(), rs.Parent().Get(addrField.String()))
 			}
 
-			return rs.DataStruct(resMap)
+			return res
 		})
 
 	partnerModel.Methods().OnchangeEmail().DeclareMethod(
 		`OnchangeEmail updates the user Gravatar image`,
-		func(rs h.PartnerSet) (*h.PartnerData, []models.FieldNamer) {
+		func(rs h.PartnerSet) *h.PartnerData {
 			if rs.Image() != "" || rs.Email() == "" || rs.Env().Context().HasKey("no_gravatar") {
-				return &h.PartnerData{}, []models.FieldNamer{}
+				return h.Partner().NewData()
 			}
-			return &h.PartnerData{
-				Image: rs.GetGravatarImage(rs.Email()),
-			}, []models.FieldNamer{h.Partner().Image()}
+			return h.Partner().NewData().SetImage(rs.GetGravatarImage(rs.Email()))
 		})
 
 	partnerModel.Methods().ComputeEmailFormatted().DeclareMethod(
 		`ComputeEmailFormatted returns a 'Name <email@domain>' formatted string`,
 		func(rs h.PartnerSet) *h.PartnerData {
 			addr := mail.Address{Name: rs.Name(), Address: rs.Email()}
-			return &h.PartnerData{
-				EmailFormatted: addr.String(),
-			}
+			return h.Partner().NewData().SetEmailFormatted(addr.String())
 		})
 
 	partnerModel.Methods().ComputeCompanyType().DeclareMethod(
@@ -410,9 +395,7 @@ Use this field anywhere a small image is required.`},
 			if rs.IsCompany() {
 				companyType = "company"
 			}
-			return &h.PartnerData{
-				CompanyType: companyType,
-			}
+			return h.Partner().NewData().SetCompanyType(companyType)
 		})
 
 	partnerModel.Methods().InverseCompanyType().DeclareMethod(
@@ -423,12 +406,9 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().OnchangeCompanyType().DeclareMethod(
 		`OnchangeCompanyType updates the IsCompany field according to the selected type`,
-		func(rs h.PartnerSet) (*h.PartnerData, []models.FieldNamer) {
-			res := &h.PartnerData{
-				IsCompany: rs.CompanyType() == "company",
-			}
-			return res, []models.FieldNamer{h.Partner().IsCompany()}
-
+		func(rs h.PartnerSet) *h.PartnerData {
+			res := h.Partner().NewData().SetIsCompany(rs.CompanyType() == "company")
+			return res
 		})
 
 	partnerModel.Methods().UpdateFieldValues().DeclareMethod(
@@ -436,17 +416,17 @@ Use this field anywhere a small image is required.`},
 		this partner's values on the given fields. The other fields are left to their
 		Go default value. This method is used to update fields from a partner to its
 		relatives.`,
-		func(rs h.PartnerSet, fields ...models.FieldNamer) (*h.PartnerData, []models.FieldNamer) {
-			res := make(models.FieldMap)
+		func(rs h.PartnerSet, fields ...models.FieldNamer) *h.PartnerData {
+			res := h.Partner().NewData()
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
 			for _, f := range fields {
 				fJSON := h.Partner().JSONizeFieldName(f.String())
 				if fInfos[fJSON].Type == fieldtype.One2Many {
 					log.Panic(rs.T("One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"))
 				}
-				res[fJSON] = rs.Get(fJSON)
+				res.Set(fJSON, rs.Get(fJSON))
 			}
-			return rs.DataStruct(res)
+			return res
 		})
 
 	partnerModel.Methods().AddressFields().DeclareMethod(
@@ -454,28 +434,26 @@ Use this field anywhere a small image is required.`},
 		These are used to automate behaviours on contact addresses.`,
 		func(rs h.PartnerSet) []models.FieldNamer {
 			return []models.FieldNamer{
-				h.Partner().Street(), h.Partner().Street2(), h.Partner().Zip(),
-				h.Partner().City(), h.Partner().State(), h.Partner().Country(),
+				h.Partner().Fields().Street(), h.Partner().Fields().Street2(), h.Partner().Fields().Zip(),
+				h.Partner().Fields().City(), h.Partner().Fields().State(), h.Partner().Fields().Country(),
 			}
 		})
 
 	partnerModel.Methods().UpdateAddress().DeclareMethod(
 		`UpdateAddress updates this PartnerSet only with the address fields of
 		the given vals. Other values passed are discarded.`,
-		func(rs h.PartnerSet, vals *h.PartnerData, fieldsToReset ...models.FieldNamer) bool {
-			valsMap := vals.FieldMap(fieldsToReset...)
-			res := make(models.FieldMap)
+		func(rs h.PartnerSet, vals *h.PartnerData) bool {
+			res := h.Partner().NewData()
 			for _, addrField := range rs.AddressFields() {
-				fValue, _ := valsMap.Get(addrField.String(), h.Partner().Underlying())
-				if !typesutils.IsZero(fValue) {
-					res[addrField.String()], _ = vals.FieldMap(fieldsToReset...).Get(addrField.String(), h.Partner().Underlying())
+				fValue, ok := vals.Get(addrField.String())
+				if ok {
+					res.Set(addrField.String(), fValue)
 				}
 			}
-			if len(res) == 0 {
+			if len(res.Keys()) == 0 {
 				return false
 			}
-			wData, fields := rs.DataStruct(res)
-			return rs.WithContext("goto_super", true).Write(wData, fields...)
+			return rs.WithContext("goto_super", true).Write(res)
 		})
 
 	partnerModel.Methods().CommercialFields().DeclareMethod(
@@ -486,8 +464,8 @@ Use this field anywhere a small image is required.`},
         extended by inheriting classes.`,
 		func(rs h.PartnerSet) []models.FieldNamer {
 			return []models.FieldNamer{
-				h.Partner().VAT(),
-				h.Partner().CreditLimit(),
+				h.Partner().Fields().VAT(),
+				h.Partner().Fields().CreditLimit(),
 			}
 		})
 
@@ -498,14 +476,14 @@ Use this field anywhere a small image is required.`},
 			if rs.Equals(rs.CommercialPartner()) {
 				return false
 			}
-			values, fieldsToUnset := rs.CommercialPartner().UpdateFieldValues(rs.CommercialFields()...)
-			return rs.Write(values, fieldsToUnset...)
+			values := rs.CommercialPartner().UpdateFieldValues(rs.CommercialFields()...)
+			return rs.Write(values)
 		})
 
 	partnerModel.Methods().CommercialSyncToChildren().DeclareMethod(
 		`CommercialSyncToChildren handle sync of commercial fields to descendants`,
 		func(rs h.PartnerSet) bool {
-			partnerData, fieldsToUnset := rs.CommercialPartner().UpdateFieldValues(rs.CommercialFields()...)
+			partnerData := rs.CommercialPartner().UpdateFieldValues(rs.CommercialFields()...)
 			syncChildren := rs.Children().Filtered(func(rs h.PartnerSet) bool {
 				return !rs.IsCompany()
 			})
@@ -515,25 +493,23 @@ Use this field anywhere a small image is required.`},
 			for _, child := range syncChildren.Records() {
 				child.CommercialSyncToChildren()
 			}
-			partnerData.CommercialPartner = rs.CommercialPartner()
-			fieldsToUnset = append(fieldsToUnset, h.Partner().CommercialPartner())
-			return syncChildren.WithContext("hexya_force_compute_write", true).Write(partnerData, fieldsToUnset...)
+			partnerData.SetCommercialPartner(rs.CommercialPartner())
+			return syncChildren.WithContext("hexya_force_compute_write", true).Write(partnerData)
 		})
 
 	partnerModel.Methods().FieldsSync().DeclareMethod(
 		`FieldsSync syncs commercial fields and address fields from company and to children after create/update,
         just as if those were all modeled as fields.related to the parent`,
 		func(rs h.PartnerSet, vals *h.PartnerData, fieldsToUnset ...models.FieldNamer) {
-			values, fieldsToUnset := rs.DataStruct(vals.FieldMap(fieldsToUnset...))
 			// 1. From UPSTREAM: sync from parent
 			// 1a. Commercial fields: sync if parent changed
-			if !values.Parent.IsEmpty() {
+			if !vals.Parent().IsEmpty() {
 				rs.CommercialSyncFromCompany()
 			}
 			// 1b. Address fields: sync if parent or use_parent changed *and* both are now set
 			if !rs.Parent().IsEmpty() && rs.Type() == "contact" {
-				onchangePartnerData, fieldsToReset := rs.OnchangeParent()
-				rs.UpdateAddress(onchangePartnerData, fieldsToReset...)
+				onchangePartnerData := rs.OnchangeParent()
+				rs.UpdateAddress(onchangePartnerData)
 			}
 			// 2. To DOWNSTREAM: sync children
 			if rs.Children().IsEmpty() {
@@ -559,12 +535,11 @@ Use this field anywhere a small image is required.`},
 
 			}
 			// 2b. Address fields: sync if address changed
-			valsMap := vals.FieldMap(fieldsToUnset...)
 			for _, addrField := range rs.AddressFields() {
-				fValue, _ := valsMap.Get(addrField.String(), h.Partner().Underlying())
-				if !typesutils.IsZero(fValue) {
+				_, ok := vals.Get(addrField.String())
+				if ok {
 					contacts := rs.Children().Search(q.Partner().Type().Equals("contact"))
-					contacts.UpdateAddress(vals, fieldsToUnset...)
+					contacts.UpdateAddress(vals)
 					break
 				}
 			}
@@ -592,8 +567,8 @@ Use this field anywhere a small image is required.`},
 				}
 			}
 			if addressDefined && !parentAddressDefined {
-				partnerData, fieldsToUnset := rs.UpdateFieldValues(rs.AddressFields()...)
-				rs.Parent().UpdateAddress(partnerData, fieldsToUnset...)
+				partnerData := rs.UpdateFieldValues(rs.AddressFields()...)
+				rs.Parent().UpdateAddress(partnerData)
 			}
 		})
 
@@ -611,32 +586,32 @@ Use this field anywhere a small image is required.`},
 		})
 
 	partnerModel.Methods().Write().Extend("",
-		func(rs h.PartnerSet, vals *h.PartnerData, fieldsToUnset ...models.FieldNamer) bool {
+		func(rs h.PartnerSet, vals *h.PartnerData) bool {
 			if rs.Env().Context().HasKey("goto_super") {
-				return rs.Super().Write(vals, fieldsToUnset...)
+				return rs.Super().Write(vals)
 			}
-			values := rs.ResizeImageData(vals)
-			if values.Website != "" {
-				values.Website = rs.CleanWebsite(values.Website)
+			rs.ResizeImageData(vals)
+			if vals.Website() != "" {
+				vals.SetWebsite(rs.CleanWebsite(vals.Website()))
 			}
-			if !values.Parent.IsEmpty() {
-				values.CompanyName = ""
+			if !vals.Parent().IsEmpty() {
+				vals.SetCompanyName("")
 			}
 			// Partner must only allow to set the Company of a partner if it
 			// is the same as the Company of all users that inherit from this partner
 			// (this is to allow the code from User to write to the Partner!) or
 			// if setting the Company to nil (this is compatible with any user
 			// company)
-			if !values.Company.IsEmpty() {
+			if !vals.Company().IsEmpty() {
 				for _, partner := range rs.Records() {
 					for _, user := range partner.Users().Records() {
-						if !user.Company().Equals(values.Company) {
-							log.Panic(rs.T("You can not change the company as the partner/user has multiple users linked with different companies.", "company", values.Company.Name()))
+						if !user.Company().Equals(vals.Company()) {
+							log.Panic(rs.T("You can not change the company as the partner/user has multiple users linked with different companies.", "company", vals.Company().Name()))
 						}
 					}
 				}
 			}
-			res := rs.Super().Write(values, fieldsToUnset...)
+			res := rs.Super().Write(vals)
 			for _, partner := range rs.Records() {
 				for _, user := range partner.Users().Records() {
 					if user.HasGroup("base_group_user") {
@@ -644,43 +619,42 @@ Use this field anywhere a small image is required.`},
 						break
 					}
 				}
-				partner.FieldsSync(values, fieldsToUnset...)
+				partner.FieldsSync(vals)
 			}
 			return res
 		})
 
 	partnerModel.Methods().ResizeImageData().DeclareMethod(
-		`ResizeImageData returns the given data struct with images set for the different sizes.`,
-		func(set h.PartnerSet, data *h.PartnerData) *h.PartnerData {
+		`ResizeImageData updates the given data struct with images set for the different sizes.`,
+		func(set h.PartnerSet, data *h.PartnerData) {
 			switch {
-			case data.Image != "":
-				data.Image = b64image.Resize(data.Image, 1024, 1024, true)
-				data.ImageMedium = b64image.Resize(data.Image, 128, 128, false)
-				data.ImageSmall = b64image.Resize(data.Image, 64, 64, false)
-			case data.ImageMedium != "":
-				data.Image = b64image.Resize(data.ImageMedium, 1024, 1024, true)
-				data.ImageMedium = b64image.Resize(data.ImageMedium, 128, 128, true)
-				data.ImageSmall = b64image.Resize(data.ImageMedium, 64, 64, false)
-			case data.ImageSmall != "":
-				data.Image = b64image.Resize(data.ImageSmall, 1024, 1024, true)
-				data.ImageMedium = b64image.Resize(data.ImageSmall, 128, 128, true)
-				data.ImageSmall = b64image.Resize(data.ImageSmall, 64, 64, true)
+			case data.HasImage():
+				data.SetImage(b64image.Resize(data.Image(), 1024, 1024, true))
+				data.SetImageMedium(b64image.Resize(data.Image(), 128, 128, false))
+				data.SetImageSmall(b64image.Resize(data.Image(), 64, 64, false))
+			case data.HasImageMedium():
+				data.SetImage(b64image.Resize(data.ImageMedium(), 1024, 1024, true))
+				data.SetImageMedium(b64image.Resize(data.ImageMedium(), 128, 128, true))
+				data.SetImageSmall(b64image.Resize(data.ImageMedium(), 64, 64, false))
+			case data.HasImageSmall():
+				data.SetImage(b64image.Resize(data.ImageSmall(), 1024, 1024, true))
+				data.SetImageMedium(b64image.Resize(data.ImageSmall(), 128, 128, true))
+				data.SetImageSmall(b64image.Resize(data.ImageSmall(), 64, 64, true))
 			}
-			return data
 		})
 
 	partnerModel.Methods().Create().Extend("",
-		func(rs h.PartnerSet, vals *h.PartnerData, fieldsToReset ...models.FieldNamer) h.PartnerSet {
-			if vals.Website != "" {
-				vals.Website = rs.CleanWebsite(vals.Website)
+		func(rs h.PartnerSet, vals *h.PartnerData) h.PartnerSet {
+			if vals.HasWebsite() {
+				vals.SetWebsite(rs.CleanWebsite(vals.Website()))
 			}
-			if !vals.Parent.IsEmpty() {
-				vals.CompanyName = ""
+			if vals.HasParent() {
+				vals.SetCompanyName("")
 			}
-			if vals.Image == "" {
-				vals.Image = rs.GetDefaultImage(vals.Type, vals.IsCompany, vals.Parent)
+			if !vals.HasImage() {
+				vals.SetImage(rs.GetDefaultImage(vals.Type(), vals.IsCompany(), vals.Parent()))
 			}
-			vals = rs.ResizeImageData(vals)
+			rs.ResizeImageData(vals)
 			partner := rs.Super().Create(vals)
 			partner.FieldsSync(vals)
 			partner.HandleFirsrtContactCreation()
@@ -693,13 +667,13 @@ Use this field anywhere a small image is required.`},
 			rs.EnsureOne()
 			if rs.CompanyName() != "" {
 				// Create parent company
-				values, _ := rs.UpdateFieldValues(rs.AddressFields()...)
-				values.Name = rs.CompanyName()
-				values.IsCompany = true
+				values := rs.UpdateFieldValues(rs.AddressFields()...)
+				values.SetName(rs.CompanyName())
+				values.SetIsCompany(true)
 				newCompany := rs.Create(values)
 				// Set newCompany as my parent
 				rs.SetParent(newCompany)
-				rs.Children().Write(&h.PartnerData{Parent: newCompany}, h.Partner().Parent())
+				rs.Children().Write(h.Partner().NewData().SetParent(newCompany))
 			}
 			return true
 		})
@@ -741,7 +715,7 @@ Use this field anywhere a small image is required.`},
 				if name == "" {
 					switch rs.Type() {
 					case "invoice", "delivery", "other":
-						fInfo := rs.FieldGet(h.Partner().Type())
+						fInfo := rs.FieldGet(h.Partner().Fields().Type())
 						name = fInfo.Selection[rs.Type()]
 					}
 				}
@@ -813,10 +787,9 @@ Use this field anywhere a small image is required.`},
 			if email == "" {
 				email = rs.Env().Context().GetString("default_email")
 			}
-			partner := h.Partner().Create(rs.Env(), &h.PartnerData{
-				Name:  name,
-				Email: email,
-			})
+			partner := h.Partner().Create(rs.Env(), h.Partner().NewData().
+				SetName(name).
+				SetEmail(email))
 			return partner
 		})
 

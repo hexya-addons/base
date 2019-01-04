@@ -73,7 +73,7 @@ func init() {
 			if res == 0 {
 				res = 1.0
 			}
-			return &h.CurrencyData{Rate: res}
+			return h.Currency().NewData().SetRate(res)
 		})
 
 	currencyModel.Methods().ComputeDecimalPlaces().DeclareMethod(
@@ -83,7 +83,7 @@ func init() {
 			if rs.Rounding() > 0 && rs.Rounding() < 1 {
 				dp = int(math.Ceil(math.Log10(1 / rs.Rounding())))
 			}
-			return &h.CurrencyData{DecimalPlaces: dp}
+			return h.Currency().NewData().SetDecimalPlaces(dp)
 		})
 
 	currencyModel.Methods().ComputeDate().DeclareMethod(
@@ -93,7 +93,7 @@ func init() {
 			if rateLength := len(rs.Rates().Records()); rateLength > 0 {
 				lastDate = rs.Rates().Records()[rateLength-1].Name().ToDate()
 			}
-			return &h.CurrencyData{Date: lastDate}
+			return h.Currency().NewData().SetDate(lastDate)
 		})
 
 	currencyModel.Methods().Round().DeclareMethod(

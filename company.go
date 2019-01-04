@@ -74,34 +74,27 @@ func init() {
 	})
 
 	companyModel.Methods().Copy().Extend("",
-		func(rs h.CompanySet, overrides *h.CompanyData, fieldsToReset ...models.FieldNamer) h.CompanySet {
+		func(rs h.CompanySet, overrides *h.CompanyData) h.CompanySet {
 			rs.EnsureOne()
-			_, eName := overrides.Get(h.Company().Name(), fieldsToReset...)
-			_, ePartner := overrides.Get(h.Company().Partner(), fieldsToReset...)
-			if !eName && !ePartner {
+			if !overrides.HasName() && !overrides.HasPartner() {
 				copyPartner := rs.Partner().Copy(new(h.PartnerData))
-				overrides.Partner = copyPartner
-				overrides.Name = copyPartner.Name()
-				fieldsToReset = append(fieldsToReset, h.Company().Partner(), h.Company().Name())
+				overrides.SetPartner(copyPartner)
+				overrides.SetName(copyPartner.Name())
 			}
-			return rs.Super().Copy(overrides, fieldsToReset...)
+			return rs.Super().Copy(overrides)
 		})
 
 	companyModel.Methods().ComputeLogoWeb().DeclareMethod(
 		`ComputeLogoWeb returns a resized version of the company logo`,
 		func(rs h.CompanySet) *h.CompanyData {
-			res := h.CompanyData{
-				LogoWeb: b64image.Resize(rs.Logo(), 160, 0, true),
-			}
-			return &res
+			res := h.Company().NewData().SetLogoWeb(b64image.Resize(rs.Logo(), 160, 0, true))
+			return res
 		})
 
 	companyModel.Methods().OnChangeState().DeclareMethod(
 		`OnchangeState sets the country to the country of the state when you select one.`,
-		func(rs h.CompanySet) (*h.CompanyData, []models.FieldNamer) {
-			return &h.CompanyData{
-				Country: rs.State().Country(),
-			}, []models.FieldNamer{h.Company().Country()}
+		func(rs h.CompanySet) *h.CompanyData {
+			return h.Company().NewData().SetCountry(rs.State().Country())
 		})
 
 	companyModel.Methods().GetEuro().DeclareMethod(
@@ -112,16 +105,12 @@ func init() {
 
 	companyModel.Methods().OnChangeCountry().DeclareMethod(
 		`OnChangeCountry updates the currency of this company on a country change`,
-		func(rs h.CompanySet) (*h.CompanyData, []models.FieldNamer) {
+		func(rs h.CompanySet) *h.CompanyData {
 			if rs.Country().IsEmpty() {
 				userCurrency := CompanyGetUserCurrency(rs.Env()).(h.CurrencySet)
-				return &h.CompanyData{
-					Currency: userCurrency,
-				}, []models.FieldNamer{h.Company().Currency()}
+				return h.Company().NewData().SetCurrency(userCurrency)
 			}
-			return &h.CompanyData{
-				Currency: rs.Country().Currency(),
-			}, []models.FieldNamer{h.Company().Currency()}
+			return h.Company().NewData().SetCurrency(rs.Country().Currency())
 		})
 
 	companyModel.Methods().CompanyDefaultGet().DeclareMethod(
@@ -131,21 +120,20 @@ func init() {
 		})
 
 	companyModel.Methods().Create().Extend("",
-		func(rs h.CompanySet, data *h.CompanyData, fieldsToReset ...models.FieldNamer) h.CompanySet {
-			if !data.Partner.IsEmpty() {
+		func(rs h.CompanySet, data *h.CompanyData) h.CompanySet {
+			if !data.Partner().IsEmpty() {
 				return rs.Super().Create(data)
 			}
-			partner := h.Partner().Create(rs.Env(), &h.PartnerData{
-				Name:        data.Name,
-				CompanyType: "company",
-				Image:       data.Logo,
-				Customer:    false,
-				Email:       data.Email,
-				Phone:       data.Phone,
-				Website:     data.Website,
-				VAT:         data.VAT,
-			})
-			data.Partner = partner
+			partner := h.Partner().Create(rs.Env(), h.Partner().NewData().
+				SetName(data.Name()).
+				SetCompanyType("company").
+				SetImage(data.Logo()).
+				SetCustomer(false).
+				SetEmail(data.Email()).
+				SetPhone(data.Phone()).
+				SetWebsite(data.Website()).
+				SetVAT(data.VAT()))
+			data.SetPartner(partner)
 			company := rs.Super().Create(data)
 			partner.SetCompany(company)
 			return company

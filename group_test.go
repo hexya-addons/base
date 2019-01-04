@@ -41,11 +41,10 @@ func TestGroupLoading(t *testing.T) {
 			adminGrp = h.Group().Search(env, q.Group().GroupID().Equals(security.GroupAdminID))
 			everyoneGroup = h.Group().Search(env, q.Group().GroupID().Equals(security.GroupEveryoneID))
 			someGroup = h.Group().Search(env, q.Group().GroupID().Equals("some_group"))
-			user = h.User().Create(env, &h.UserData{
-				Name:   "Test User",
-				Login:  "test_user",
-				Groups: someGroup,
-			})
+			user = h.User().Create(env, h.User().NewData().
+				SetName("Test User").
+				SetLogin("test_user").
+				SetGroups(someGroup))
 			So(user.Groups().Ids(), ShouldHaveLength, 1)
 			So(user.Groups().Ids(), ShouldContain, someGroup.ID())
 			So(adminUser.Groups().Ids(), ShouldHaveLength, 2)

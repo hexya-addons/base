@@ -64,10 +64,9 @@ func init() {
 			param := rs.Model().Search(rs.Env(), q.ConfigParameter().Key().Equals(key))
 			if param.IsEmpty() {
 				if value != "" {
-					res = rs.Create(&h.ConfigParameterData{
-						Key:   key,
-						Value: value,
-					})
+					res = rs.Create(h.ConfigParameter().NewData().
+						SetKey(key).
+						SetValue(value))
 				}
 				return res
 			}

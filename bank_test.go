@@ -23,10 +23,9 @@ func TestSanitizedAccountNumber(t *testing.T) {
 				So(partner2.Len(), ShouldEqual, 1)
 				vals := h.BankAccount().Search(env, q.BankAccount().Name().Equals(accNumber))
 				So(vals.IsEmpty(), ShouldBeTrue)
-				bankAccount := h.BankAccount().Create(env, &h.BankAccountData{
-					Name:    accNumber,
-					Partner: partner2,
-				})
+				bankAccount := h.BankAccount().Create(env, h.BankAccount().NewData().
+					SetName(accNumber).
+					SetPartner(partner2))
 				vals = h.BankAccount().Search(env, q.BankAccount().Name().Equals(accNumber))
 				So(vals.Len(), ShouldEqual, 1)
 				So(vals.Equals(bankAccount), ShouldBeTrue)

@@ -57,12 +57,12 @@ func init() {
 	attachmentModel.Methods().ComputeResName().DeclareMethod(
 		`ComputeResName computes the display name of the ressource this document is attached to.`,
 		func(rs h.AttachmentSet) *h.AttachmentData {
-			var res h.AttachmentData
+			res := h.Attachment().NewData()
 			if rs.ResModel() != "" && rs.ResID() != 0 {
 				record := rs.Env().Pool(rs.ResModel()).Search(models.Registry.MustGet(rs.ResModel()).Field("ID").Equals(rs.ResID()))
-				res.ResName = record.Get("DisplayName").(string)
+				res.SetResName(record.Get("DisplayName").(string))
 			}
-			return &res
+			return res
 		})
 
 	attachmentModel.Methods().Storage().DeclareMethod(
@@ -243,9 +243,7 @@ func init() {
 			} else {
 				datas = rs.DBDatas()
 			}
-			return &h.AttachmentData{
-				Datas: datas,
-			}
+			return h.Attachment().NewData().SetDatas(datas)
 		})
 
 	attachmentModel.Methods().InverseDatas().DeclareMethod(
@@ -259,26 +257,20 @@ func init() {
 				}
 				binData = string(binBytes)
 			}
-			vals := &h.AttachmentData{
-				FileSize:     len(binData),
-				CheckSum:     rs.ComputeCheckSum(binData),
-				IndexContent: rs.Index(binData, rs.MimeType()),
-				DBDatas:      val,
-			}
+			vals := h.Attachment().NewData().
+				SetFileSize(len(binData)).
+				SetCheckSum(rs.ComputeCheckSum(binData)).
+				SetIndexContent(rs.Index(binData, rs.MimeType())).
+				SetDBDatas(val)
 			if val != "" && rs.Storage() != "db" {
 				// Save the file to the filestore
-				vals.StoreFname = rs.FileWrite(val, vals.CheckSum)
-				vals.DBDatas = ""
+				vals.SetStoreFname(rs.FileWrite(val, vals.CheckSum()))
+				vals.SetDBDatas("")
 			}
 			// take current location in filestore to possibly garbage-collect it
 			fName := rs.StoreFname()
 			// write as superuser, as user probably does not have write access
-			rs.Sudo().WithContext("attachment_set_datas", true).Write(vals,
-				h.Attachment().FileSize(),
-				h.Attachment().CheckSum(),
-				h.Attachment().IndexContent(),
-				h.Attachment().DBDatas(),
-				h.Attachment().StoreFname())
+			rs.Sudo().WithContext("attachment_set_datas", true).Write(vals)
 			if fName != "" {
 				rs.FileDelete(fName)
 			}
@@ -293,9 +285,9 @@ func init() {
 	attachmentModel.Methods().ComputeMimeType().DeclareMethod(
 		`ComputeMimeType of the given values`,
 		func(rs h.AttachmentSet, values *h.AttachmentData) string {
-			mimeType := values.MimeType
-			if mimeType == "" && values.Datas != "" {
-				mimeType = http.DetectContentType([]byte(values.Datas))
+			mimeType := values.MimeType()
+			if mimeType == "" && values.Datas() != "" {
+				mimeType = http.DetectContentType([]byte(values.Datas()))
 			}
 			if mimeType == "" {
 				mimeType = "application/octet-stream"
@@ -307,11 +299,11 @@ func init() {
 		`CheckContents updates the given values`,
 		func(rs h.AttachmentSet, values *h.AttachmentData) *h.AttachmentData {
 			res := *values
-			res.MimeType = rs.ComputeMimeType(values)
-			if strings.Contains(res.MimeType, "ht") || strings.Contains(res.MimeType, "xml") &&
+			res.SetMimeType(rs.ComputeMimeType(values))
+			if strings.Contains(res.MimeType(), "ht") || strings.Contains(res.MimeType(), "xml") &&
 				(!h.User().NewSet(rs.Env()).CurrentUser().IsAdmin() ||
 					rs.Env().Context().GetBool("attachments_mime_plainxml")) {
-				res.MimeType = "text/plain"
+				res.SetMimeType("text/plain")
 			}
 			return &res
 		})
@@ -341,7 +333,12 @@ func init() {
 			var requireEmployee bool
 			modelIds := make(map[string][]int64)
 			if !rs.IsEmpty() {
-				var attachs []h.AttachmentData
+				var attachs []struct {
+					ResModel  string
+					ResID     int64
+					CreateUID int64
+					Public    bool
+				}
 				rs.Env().Cr().Select(&attachs, "SELECT res_model, res_id, create_uid, public FROM attachment WHERE id IN (?)", rs.Ids())
 				for _, attach := range attachs {
 					if attach.Public && mode == "read" {
@@ -356,8 +353,8 @@ func init() {
 					modelIds[attach.ResModel] = append(modelIds[attach.ResModel], attach.ResID)
 				}
 			}
-			if values != nil && values.ResModel != "" && values.ResID != 0 {
-				modelIds[values.ResModel] = append(modelIds[values.ResModel], values.ResID)
+			if values != nil && values.ResModel() != "" && values.ResID() != 0 {
+				modelIds[values.ResModel()] = append(modelIds[values.ResModel()], values.ResID())
 			}
 
 			// check access rights on the records
@@ -406,10 +403,10 @@ func init() {
 			// the linked document.
 			modelAttachments := make(map[models.RecordRef][]int64)
 			rs.Load(
-				h.Attachment().ID().String(),
-				h.Attachment().ResModel().String(),
-				h.Attachment().ResID().String(),
-				h.Attachment().Public().String())
+				h.Attachment().Fields().ID().String(),
+				h.Attachment().Fields().ResModel().String(),
+				h.Attachment().Fields().ResID().String(),
+				h.Attachment().Fields().Public().String())
 			for _, attach := range rs.Records() {
 				if attach.ResModel() == "" || attach.Public() {
 					continue
@@ -444,23 +441,21 @@ func init() {
 		})
 
 	attachmentModel.Methods().Write().Extend("",
-		func(rs h.AttachmentSet, vals *h.AttachmentData, fieldsToReset ...models.FieldNamer) bool {
+		func(rs h.AttachmentSet, vals *h.AttachmentData) bool {
 			if rs.Env().Context().GetBool("attachment_set_datas") {
 				return rs.Super().Write(vals)
 			}
 			rs.Check("write", vals)
-			_, mtExists := vals.Get(h.Attachment().MimeType(), fieldsToReset...)
-			_, dtExists := vals.Get(h.Attachment().Datas(), fieldsToReset...)
-			if mtExists || dtExists {
+			if vals.HasMimeType() || vals.HasDatas() {
 				vals = rs.CheckContents(vals)
 			}
 			return rs.Super().Write(vals)
 		})
 
 	attachmentModel.Methods().Copy().Extend("",
-		func(rs h.AttachmentSet, overrides *h.AttachmentData, fieldsToReset ...models.FieldNamer) h.AttachmentSet {
+		func(rs h.AttachmentSet, overrides *h.AttachmentData) h.AttachmentSet {
 			rs.Check("write", nil)
-			return rs.Super().Copy(overrides, fieldsToReset...)
+			return rs.Super().Copy(overrides)
 		})
 
 	attachmentModel.Methods().Unlink().Extend("",
@@ -470,7 +465,7 @@ func init() {
 		})
 
 	attachmentModel.Methods().Create().Extend("",
-		func(rs h.AttachmentSet, vals *h.AttachmentData, fieldsToReset ...models.FieldNamer) h.AttachmentSet {
+		func(rs h.AttachmentSet, vals *h.AttachmentData) h.AttachmentSet {
 			vals = rs.CheckContents(vals)
 			rs.Check("write", vals)
 			return rs.Super().Create(vals)

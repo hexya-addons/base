@@ -25,10 +25,9 @@ func TestSequenceStandard(t *testing.T) {
 	Convey("Testing Standard Sequences", t, func() {
 		So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			Convey("Create a Sequence", func() {
-				seq := h.Sequence().Create(env, &h.SequenceData{
-					Code: "test_sequence_type",
-					Name: "Test sequence",
-				})
+				seq := h.Sequence().Create(env, h.Sequence().NewData().
+					SetCode("test_sequence_type").
+					SetName("Test sequence"))
 				So(seq.IsEmpty(), ShouldBeFalse)
 			})
 			Convey("Search for a sequence", func() {
@@ -57,11 +56,10 @@ func TestSequenceNoGap(t *testing.T) {
 	Convey("Testing No Gap sequences", t, func() {
 		So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			Convey("Create a no gap sequence", func() {
-				seq := h.Sequence().Create(env, &h.SequenceData{
-					Code:           "test_sequence_type_2",
-					Name:           "Test sequence",
-					Implementation: "no_gap",
-				})
+				seq := h.Sequence().Create(env, h.Sequence().NewData().
+					SetCode("test_sequence_type_2").
+					SetName("Test sequence").
+					SetImplementation("no_gap"))
 				So(seq.IsEmpty(), ShouldBeFalse)
 			})
 			Convey("Try to draw a number", func() {
@@ -86,16 +84,14 @@ func TestSequenceChangeImplementation(t *testing.T) {
 	Convey("Testing changing sequence implementations", t, func() {
 		So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			Convey("Create sequences", func() {
-				seq := h.Sequence().Create(env, &h.SequenceData{
-					Code: "test_sequence_type_3",
-					Name: "Test sequence",
-				})
+				seq := h.Sequence().Create(env, h.Sequence().NewData().
+					SetCode("test_sequence_type_3").
+					SetName("Test sequence"))
 				So(seq.IsEmpty(), ShouldBeFalse)
-				seq = h.Sequence().Create(env, &h.SequenceData{
-					Code:           "test_sequence_type_4",
-					Name:           "Test sequence",
-					Implementation: "no_gap",
-				})
+				seq = h.Sequence().Create(env, h.Sequence().NewData().
+					SetCode("test_sequence_type_4").
+					SetName("Test sequence").
+					SetImplementation("no_gap"))
 				So(seq.IsEmpty(), ShouldBeFalse)
 			})
 			Convey("Change implementation on sequences", func() {
@@ -117,10 +113,9 @@ func TestSequenceGenerate(t *testing.T) {
 	Convey("Create sequence objects and generate some values", t, func() {
 		So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			Convey("Create standard sequence", func() {
-				seq := h.Sequence().Create(env, &h.SequenceData{
-					Code: "test_sequence_type_5",
-					Name: "Test sequence",
-				})
+				seq := h.Sequence().Create(env, h.Sequence().NewData().
+					SetCode("test_sequence_type_5").
+					SetName("Test sequence"))
 				So(seq.IsEmpty(), ShouldBeFalse)
 			})
 			Convey("Read from standard sequence", func() {
@@ -130,11 +125,10 @@ func TestSequenceGenerate(t *testing.T) {
 				}
 			})
 			Convey("Create no gap sequence", func() {
-				seq := h.Sequence().Create(env, &h.SequenceData{
-					Code:           "test_sequence_type_6",
-					Name:           "Test sequence",
-					Implementation: "no_gap",
-				})
+				seq := h.Sequence().Create(env, h.Sequence().NewData().
+					SetCode("test_sequence_type_6").
+					SetName("Test sequence").
+					SetImplementation("no_gap"))
 				So(seq.IsEmpty(), ShouldBeFalse)
 			})
 			Convey("Read from no gap sequence", func() {
@@ -153,13 +147,12 @@ func TestSequenceInit(t *testing.T) {
 	Convey("Test whether the read method returns the right number_next value", t, func() {
 		So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			Convey("Create and read the sequence", func() {
-				seq := h.Sequence().Create(env, &h.SequenceData{
-					NumberNext:      1,
-					Padding:         4,
-					NumberIncrement: 1,
-					Implementation:  "standard",
-					Name:            "test-sequence-00",
-				})
+				seq := h.Sequence().Create(env, h.Sequence().NewData().
+					SetNumberNext(1).
+					SetPadding(4).
+					SetNumberIncrement(1).
+					SetImplementation("standard").
+					SetName("test-sequence-00"))
 				seq.NextByID()
 				seq.NextByID()
 				seq.NextByID()
@@ -177,11 +170,10 @@ func TestSequenceDateRangeStandard(t *testing.T) {
 	Convey("A few tests for a 'Standard' (i.e. PostgreSQL) sequence", t, func() {
 		So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			Convey("Create a sequence object with date ranges enabled", func() {
-				seq := h.Sequence().Create(env, &h.SequenceData{
-					Code:         "test_sequence_date_range",
-					Name:         "Test sequence",
-					UseDateRange: true,
-				})
+				seq := h.Sequence().Create(env, h.Sequence().NewData().
+					SetCode("test_sequence_date_range").
+					SetName("Test sequence").
+					SetUseDateRange(true))
 				So(seq.IsEmpty(), ShouldBeFalse)
 			})
 			Convey("Draw numbers to create a first subsequence then change its date range", func() {
@@ -222,12 +214,11 @@ func TestSequenceDateRangeNoGap(t *testing.T) {
 	Convey("A few tests for a 'no gap' sequence", t, func() {
 		So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			Convey("Create a sequence object with date ranges enabled", func() {
-				seq := h.Sequence().Create(env, &h.SequenceData{
-					Code:           "test_sequence_date_range_2",
-					Name:           "Test sequence",
-					UseDateRange:   true,
-					Implementation: "no_gap",
-				})
+				seq := h.Sequence().Create(env, h.Sequence().NewData().
+					SetCode("test_sequence_date_range_2").
+					SetName("Test sequence").
+					SetUseDateRange(true).
+					SetImplementation("no_gap"))
 				So(seq.IsEmpty(), ShouldBeFalse)
 			})
 			Convey("Draw numbers to create a first subsequence then change its date range", func() {
@@ -268,19 +259,17 @@ func TestSequenceDateRangeChangeImplementation(t *testing.T) {
 	Convey("Create sequence objects and change their 'implementation' field", t, func() {
 		So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			Convey("Try to create a sequence object", func() {
-				seq := h.Sequence().Create(env, &h.SequenceData{
-					Code:         "test_sequence_date_range_3",
-					Name:         "Test Sequence",
-					UseDateRange: true,
-				})
+				seq := h.Sequence().Create(env, h.Sequence().NewData().
+					SetCode("test_sequence_date_range_3").
+					SetName("Test Sequence").
+					SetUseDateRange(true))
 				So(seq.IsEmpty(), ShouldBeFalse)
 
-				seq = h.Sequence().Create(env, &h.SequenceData{
-					Code:           "test_sequence_date_range_4",
-					Name:           "Test Sequence",
-					UseDateRange:   true,
-					Implementation: "no_gap",
-				})
+				seq = h.Sequence().Create(env, h.Sequence().NewData().
+					SetCode("test_sequence_date_range_4").
+					SetName("Test Sequence").
+					SetUseDateRange(true).
+					SetImplementation("no_gap"))
 				So(seq.IsEmpty(), ShouldBeFalse)
 			})
 			Convey("Make some use of the sequences to create some subsequences", func() {

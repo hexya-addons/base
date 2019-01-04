@@ -34,11 +34,10 @@ func init() {
 				activeIds := env.Context().GetIntegerSlice("active_ids")
 				userLines := h.UserChangePasswordWizardLine().NewSet(env)
 				for _, user := range h.User().Search(env, q.User().ID().In(activeIds)).Records() {
-					ul := h.UserChangePasswordWizardLine().Create(env, &h.UserChangePasswordWizardLineData{
-						User:        user,
-						UserLogin:   user.Login(),
-						NewPassword: user.Password(),
-					})
+					ul := h.UserChangePasswordWizardLine().Create(env, h.UserChangePasswordWizardLine().NewData().
+						SetUser(user).
+						SetUserLogin(user.Login()).
+						SetNewPassword(user.Password()))
 					userLines = userLines.Union(ul)
 				}
 				return userLines
@@ -121,7 +120,7 @@ a change of password, the user has to login again.`},
 	userModel.Methods().ComputePassword().DeclareMethod(
 		`ComputePassword is a technical function for the new password mechanism. It always returns an empty string`,
 		func(rs h.UserSet) *h.UserData {
-			return &h.UserData{NewPassword: ""}
+			return h.User().NewData().SetNewPassword("")
 		})
 
 	userModel.Methods().InversePassword().DeclareMethod(
@@ -139,26 +138,22 @@ a change of password, the user has to login again.`},
 	userModel.Methods().ComputeShare().DeclareMethod(
 		`ComputeShare checks if this is a shared user`,
 		func(rs h.UserSet) *h.UserData {
-			return &h.UserData{
-				Share: !rs.HasGroup(GroupUser.ID),
-			}
+			return h.User().NewData().SetShare(!rs.HasGroup(GroupUser.ID))
 		})
 
 	userModel.Methods().ComputeCompaniesCount().DeclareMethod(
 		`ComputeCompaniesCount retrieves the number of companies in the system`,
 		func(rs h.UserSet) *h.UserData {
-			return &h.UserData{
-				CompaniesCount: h.Company().NewSet(rs.Env()).Sudo().SearchCount(),
-			}
+			return h.User().NewData().SetCompaniesCount(h.Company().NewSet(rs.Env()).Sudo().SearchCount())
 		})
 
 	userModel.Methods().OnchangeLogin().DeclareMethod(
 		`OnchangeLogin matches the email if the login is an email`,
-		func(rs h.UserSet) (*h.UserData, []models.FieldNamer) {
+		func(rs h.UserSet) *h.UserData {
 			if rs.Login() == "" || !emailutils.IsValidAddress(rs.Login()) {
-				return &h.UserData{}, []models.FieldNamer{}
+				return h.User().NewData()
 			}
-			return &h.UserData{Email: rs.Login()}, []models.FieldNamer{h.User().Email()}
+			return h.User().NewData().SetEmail(rs.Login())
 		})
 
 	userModel.Methods().CheckCompany().DeclareMethod(
@@ -207,7 +202,7 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().Create().Extend("",
-		func(rs h.UserSet, vals *h.UserData, fieldsToReset ...models.FieldNamer) h.UserSet {
+		func(rs h.UserSet, vals *h.UserData) h.UserSet {
 			user := rs.Super().Create(vals)
 			user.Partner().SetActive(user.Active())
 			if !user.Partner().Company().IsEmpty() {
@@ -217,8 +212,8 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().Write().Extend("",
-		func(rs h.UserSet, data *h.UserData, fieldsToUnset ...models.FieldNamer) bool {
-			if val, exists := data.Get(h.User().Active(), fieldsToUnset...); exists && !val.(bool) {
+		func(rs h.UserSet, data *h.UserData) bool {
+			if data.HasActive() && !data.Active() {
 				for _, user := range rs.Records() {
 					if user.ID() == security.SuperUserID {
 						log.Panic(rs.T("You cannot deactivate the admin user."))
@@ -231,32 +226,32 @@ a change of password, the user has to login again.`},
 			rSet := rs
 			if rs.ID() == rs.Env().Uid() {
 				var hasUnsafeFields bool
-				for key := range data.FieldsSet(fieldsToUnset...) {
+				for key := range data.Keys() {
 					if !rs.SelfWritableFields()[string(key)] {
 						hasUnsafeFields = true
 						break
 					}
 				}
 				if !hasUnsafeFields {
-					if comp, exists := data.Get(h.User().Company(), fieldsToUnset...); exists {
-						if comp.(h.CompanySet).Intersect(h.User().NewSet(rs.Env()).CurrentUser().Companies()).IsEmpty() {
-							data, fieldsToUnset = data.Remove(rs, h.User().Company(), fieldsToUnset...)
+					if data.HasCompany() {
+						if data.Company().Intersect(h.User().NewSet(rs.Env()).CurrentUser().Companies()).IsEmpty() {
+							data.UnsetCompany()
 						}
 					}
 					// safe fields only, so we write as super-user to bypass access rights
 					rSet = rs.Sudo()
 				}
 			}
-			res := rSet.Super().Write(data, fieldsToUnset...)
-			if _, ok := data.Get(h.User().Groups(), fieldsToUnset...); ok {
+			res := rSet.Super().Write(data)
+			if data.HasGroups() {
 				// We get groups before removing all memberships otherwise we might get stuck with permissions if we
 				// are modifying our own user memberships.
 				rs.SyncMemberships()
 			}
-			if comp, exists := data.Get(h.User().Company(), fieldsToUnset...); exists {
+			if data.HasCompany() {
 				for _, user := range rs.Records() {
 					// if partner is global we keep it that way
-					if !user.Partner().Company().Equals(comp.(h.CompanySet)) {
+					if !user.Partner().Company().Equals(data.Company()) {
 						user.Partner().SetCompany(user.Company())
 					}
 				}
@@ -290,20 +285,15 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().Copy().Extend("",
-		func(rs h.UserSet, overrides *h.UserData, fieldsToReset ...models.FieldNamer) h.UserSet {
+		func(rs h.UserSet, overrides *h.UserData) h.UserSet {
 			rs.EnsureOne()
-			_, eName := overrides.Get(h.User().Name(), fieldsToReset...)
-			_, ePartner := overrides.Get(h.User().Partner(), fieldsToReset...)
-			if !eName && !ePartner {
-				overrides.Name = rs.T("%s (copy)", rs.Name())
-				fieldsToReset = append(fieldsToReset, h.User().Name())
+			if !overrides.HasName() && !overrides.HasPartner() {
+				overrides.SetName(rs.T("%s (copy)", rs.Name()))
 			}
-			_, eLogin := overrides.Get(h.User().Login(), fieldsToReset...)
-			if !eLogin {
-				overrides.Login = rs.T("%s (copy)", rs.Login())
-				fieldsToReset = append(fieldsToReset, h.User().Login())
+			if !overrides.HasLogin() {
+				overrides.SetLogin(rs.T("%s (copy)", rs.Login()))
 			}
-			return rs.Super().Copy(overrides, fieldsToReset...)
+			return rs.Super().Copy(overrides)
 		})
 
 	userModel.Methods().ContextGet().DeclareMethod(

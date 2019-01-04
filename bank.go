@@ -86,17 +86,13 @@ func init() {
 	h.BankAccount().Methods().ComputeAccountType().DeclareMethod(
 		`ComputeAccountType computes the type of account from the account number`,
 		func(rs h.BankAccountSet) *h.BankAccountData {
-			return &h.BankAccountData{
-				AccountType: "bank",
-			}
+			return h.BankAccount().NewData().SetAccountType("bank")
 		})
 
 	h.BankAccount().Methods().ComputeSanitizedAccountNumber().DeclareMethod(
 		`ComputeSanitizedAccountNumber removes all spaces and invalid characters from account number`,
 		func(rs h.BankAccountSet) *h.BankAccountData {
-			return &h.BankAccountData{
-				SanitizedAccountNumber: sanitizeAccountNumber(rs.Name()),
-			}
+			return h.BankAccount().NewData().SetSanitizedAccountNumber(sanitizeAccountNumber(rs.Name()))
 		})
 
 	h.BankAccount().Methods().Search().Extend("",
@@ -113,7 +109,7 @@ func init() {
 				case string:
 					predicates[i].AlterArgument(sanitizeAccountNumber(arg))
 				}
-				predicates[i].AlterField(h.BankAccount().SanitizedAccountNumber())
+				predicates[i].AlterField(h.BankAccount().Fields().SanitizedAccountNumber())
 			}
 			return rs.Super().Search(cond)
 		})

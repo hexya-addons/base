@@ -18,7 +18,7 @@ func init() {
 	})
 
 	groupModel.Methods().Create().Extend("",
-		func(rs h.GroupSet, data *h.GroupData, fieldsToReset ...models.FieldNamer) h.GroupSet {
+		func(rs h.GroupSet, data *h.GroupData) h.GroupSet {
 			if rs.Env().Context().HasKey("GroupForceCreate") {
 				return rs.Super().Create(data)
 			}
@@ -27,7 +27,7 @@ func init() {
 		})
 
 	groupModel.Methods().Write().Extend("",
-		func(rs h.GroupSet, data *h.GroupData, fieldsToUnset ...models.FieldNamer) bool {
+		func(rs h.GroupSet, data *h.GroupData) bool {
 			log.Panic(rs.T("Trying to modify a security group"))
 			panic("Unreachable")
 		})
@@ -45,10 +45,9 @@ func init() {
 					// The group already exists in the database
 					continue
 				}
-				rs.WithContext("GroupForceCreate", true).Create(&h.GroupData{
-					GroupID: group.ID,
-					Name:    group.Name,
-				})
+				rs.WithContext("GroupForceCreate", true).Create(h.Group().NewData().
+					SetGroupID(group.ID).
+					SetName(group.Name))
 			}
 			// Remove unknown groups from database
 			h.Group().Search(rs.Env(), q.Group().GroupID().NotIn(existingGroupIds)).Unlink()

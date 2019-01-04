@@ -74,31 +74,28 @@ func TestPartners(t *testing.T) {
 				So(partners2.DisplayName(), ShouldEqual, "B Raoul chirurgiens-dentistes.fr")
 			})
 			Convey("Partner Address Sync", func() {
-				ghostStep := h.Partner().Create(env, &h.PartnerData{
-					Name:      "GhostStep",
-					IsCompany: true,
-					Street:    "Main Street, 10",
-					Phone:     "123456789",
-					Email:     "info@ghoststep.com",
-					VAT:       "BE0477472701",
-					Type:      "contact",
-				})
+				ghostStep := h.Partner().Create(env, h.Partner().NewData().
+					SetName("GhostStep").
+					SetIsCompany(true).
+					SetStreet("Main Street, 10").
+					SetPhone("123456789").
+					SetEmail("info@ghoststep.com").
+					SetVAT("BE0477472701").
+					SetType("contact"))
 				p1 := h.Partner().NewSet(env).NameCreate("Denis Bladesmith <denis.bladesmith@ghoststep.com>")
 				So(p1.Type(), ShouldEqual, "contact")
 				p1Phone := "123456789#34"
-				p1.Write(&h.PartnerData{
-					Phone:  p1Phone,
-					Parent: ghostStep,
-				})
+				p1.Write(h.Partner().NewData().
+					SetPhone(p1Phone).
+					SetParent(ghostStep))
 				So(p1.Street(), ShouldEqual, ghostStep.Street())
 				So(p1.Phone(), ShouldEqual, p1Phone)
 				So(p1.Type(), ShouldEqual, "contact")
 				So(p1.Email(), ShouldEqual, "denis.bladesmith@ghoststep.com")
 				p1Street := "Different street, 42"
-				p1.Write(&h.PartnerData{
-					Street: p1Street,
-					Type:   "invoice",
-				})
+				p1.Write(h.Partner().NewData().
+					SetStreet(p1Street).
+					SetType("invoice"))
 				So(p1.Street(), ShouldEqual, p1Street)
 				So(ghostStep.Street(), ShouldNotEqual, p1Street)
 				p1.SetType("contact")
@@ -120,56 +117,47 @@ func TestPartners(t *testing.T) {
 				So(ironShield.IsCompany(), ShouldBeFalse)
 				So(ironShield.Type(), ShouldEqual, "contact")
 				ironShield.SetType("contact")
-				p1 := h.Partner().Create(env, &h.PartnerData{
-					Name:   "Isen Hardearth",
-					Street: "Strongarm Avenue, 12",
-					Parent: ironShield,
-				})
+				p1 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Isen Hardearth").
+					SetStreet("Strongarm Avenue, 12").
+					SetParent(ironShield))
 				So(p1.Type(), ShouldEqual, "contact")
 				So(ironShield.Street(), ShouldEqual, p1.Street())
 			})
 			Convey("Partner AddressGet", func() {
 				elmTree := h.Partner().NewSet(env).NameCreate("ElmTree")
-				branch1 := h.Partner().Create(env, &h.PartnerData{
-					Name:      "Branch 1",
-					Parent:    elmTree,
-					IsCompany: true,
-				})
-				leaf10 := h.Partner().Create(env, &h.PartnerData{
-					Name:   "Leaf 10",
-					Parent: branch1,
-					Type:   "invoice",
-				})
-				branch11 := h.Partner().Create(env, &h.PartnerData{
-					Name:   "Branch 11",
-					Parent: branch1,
-					Type:   "other",
-				})
-				leaf111 := h.Partner().Create(env, &h.PartnerData{
-					Name:   "Leaf 111",
-					Parent: branch11,
-					Type:   "delivery",
-				})
+				branch1 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Branch 1").
+					SetParent(elmTree).
+					SetIsCompany(true))
+				leaf10 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Leaf 10").
+					SetParent(branch1).
+					SetType("invoice"))
+				branch11 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Branch 11").
+					SetParent(branch1).
+					SetType("other"))
+				leaf111 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Leaf 111").
+					SetParent(branch11).
+					SetType("delivery"))
 				branch11.SetIsCompany(false) // force IsCompany after creating 1rst child
-				branch2 := h.Partner().Create(env, &h.PartnerData{
-					Name:      "Branch 2",
-					Parent:    elmTree,
-					IsCompany: true,
-				})
-				leaf21 := h.Partner().Create(env, &h.PartnerData{
-					Name:   "Leaf 21",
-					Parent: branch2,
-					Type:   "delivery",
-				})
-				leaf22 := h.Partner().Create(env, &h.PartnerData{
-					Name:   "Leaf 22",
-					Parent: branch2,
-				})
-				leaf23 := h.Partner().Create(env, &h.PartnerData{
-					Name:   "Leaf 23",
-					Parent: branch2,
-					Type:   "contact",
-				})
+				branch2 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Branch 2").
+					SetParent(elmTree).
+					SetIsCompany(true))
+				leaf21 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Leaf 21").
+					SetParent(branch2).
+					SetType("delivery"))
+				leaf22 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Leaf 22").
+					SetParent(branch2))
+				leaf23 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Leaf 23").
+					SetParent(branch2).
+					SetType("contact"))
 
 				// go up, stop at branch1
 				leaf111Addr := leaf111.AddressGet([]string{"delivery", "invoice", "contact", "other"})
@@ -235,39 +223,32 @@ func TestPartners(t *testing.T) {
 				So(leaf111AddrC2["contact"].Equals(branch11), ShouldBeTrue)
 			})
 			Convey("Partner Commercial Sync", func() {
-				p0 := h.Partner().Create(env, &h.PartnerData{
-					Name:  "Sigurd Sunknife",
-					Email: "ssunknife@gmail.com",
-				})
-				sunhelm := h.Partner().Create(env, &h.PartnerData{
-					Name:      "Sunhelm",
-					IsCompany: true,
-					Street:    "Rainbow Street, 13",
-					Phone:     "1122334455",
-					Email:     "info@sunhelm.com",
-					VAT:       "BE0477472701",
-					Children: p0.Union(h.Partner().Create(env, &h.PartnerData{
-						Name:  "Alrik Greenthorn",
-						Email: "agr@sunhelm.com",
-					})),
-				})
-				p1 := h.Partner().Create(env, &h.PartnerData{
-					Name:   "Otto Blackwood",
-					Email:  "otto.blackwood@sunhelm.com",
-					Parent: sunhelm,
-				})
-				p11 := h.Partner().Create(env, &h.PartnerData{
-					Name:   "Gini Graywool",
-					Email:  "ggr@sunhelm.com",
-					Parent: p1,
-				})
+				p0 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Sigurd Sunknife").
+					SetEmail("ssunknife@gmail.com"))
+				sunhelm := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Sunhelm").
+					SetIsCompany(true).
+					SetStreet("Rainbow Street, 13").
+					SetPhone("1122334455").
+					SetEmail("info@sunhelm.com").
+					SetVAT("BE0477472701").
+					SetChildren(p0.Union(h.Partner().Create(env, h.Partner().NewData().
+						SetName("Alrik Greenthorn").
+						SetEmail("agr@sunhelm.com")))))
+				p1 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Otto Blackwood").
+					SetEmail("otto.blackwood@sunhelm.com").
+					SetParent(sunhelm))
+				p11 := h.Partner().Create(env, h.Partner().NewData().
+					SetName("Gini Graywool").
+					SetEmail("ggr@sunhelm.com").
+					SetParent(p1))
 				p2 := h.Partner().Search(env, q.Partner().Email().Equals("agr@sunhelm.com"))
-				sunhelm.Write(&h.PartnerData{
-					Children: sunhelm.Children().Union(h.Partner().Create(env, &h.PartnerData{
-						Name:  "Ulrik Greenthorn",
-						Email: "ugr@sunhelm.com",
-					})),
-				})
+				sunhelm.Write(h.Partner().NewData().
+					SetChildren(sunhelm.Children().Union(h.Partner().Create(env, h.Partner().NewData().
+						SetName("Ulrik Greenthorn").
+						SetEmail("ugr@sunhelm.com")))))
 				p3 := h.Partner().Search(env, q.Partner().Email().Equals("ugr@sunhelm.com"))
 
 				for _, p := range []h.PartnerSet{p0, p1, p11, p2, p3} {
@@ -288,11 +269,10 @@ func TestPartners(t *testing.T) {
 				}
 
 				// promote p1 to commercial entity
-				p1.Write(&h.PartnerData{
-					Parent:    sunhelm,
-					IsCompany: true,
-					Name:      "SunHelm Subsidiary",
-				})
+				p1.Write(h.Partner().NewData().
+					SetParent(sunhelm).
+					SetIsCompany(true).
+					SetName("SunHelm Subsidiary"))
 				So(p1.VAT(), ShouldEqual, p1VAT)
 				So(p1.CommercialPartner().Equals(p1), ShouldBeTrue)
 
@@ -348,33 +328,29 @@ func BenchmarkPartnersNameGetMethodCall(b *testing.B) {
 func TestAggregateRead(t *testing.T) {
 	Convey("Aggregate Read", t, func() {
 		So(models.SimulateInNewEnvironment(security.SuperUserID, func(env models.Environment) {
-			titleSir := h.PartnerTitle().Create(env, &h.PartnerTitleData{
-				Name: "Sir...",
-			})
-			titleLady := h.PartnerTitle().Create(env, &h.PartnerTitleData{
-				Name: "Lady...",
-			})
-			testUsers := []h.UserData{
-				{Name: "Alice", Login: "alice", Color: 1, Function: "Friend", Date: dates.ParseDate("2015-03-28"), Title: titleLady},
-				{Name: "Alice", Login: "alice2", Color: 0, Function: "Friend", Date: dates.ParseDate("2015-01-28"), Title: titleLady},
-				{Name: "Bob", Login: "bob", Color: 2, Function: "Friend", Date: dates.ParseDate("2015-03-02"), Title: titleSir},
-				{Name: "Eve", Login: "eve", Color: 3, Function: "Eavesdropper", Date: dates.ParseDate("2015-03-20"), Title: titleLady},
-				{Name: "Nab", Login: "nab", Color: -3, Function: "5$ Wrench", Date: dates.ParseDate("2014-09-10"), Title: titleSir},
-				{Name: "Nab", Login: "nab-she", Color: 6, Function: "5$ Wrench", Date: dates.ParseDate("2014-01-02"), Title: titleLady},
+			titleSir := h.PartnerTitle().Create(env, h.PartnerTitle().NewData().SetName("Sir..."))
+			titleLady := h.PartnerTitle().Create(env, h.PartnerTitle().NewData().SetName("Lady..."))
+			testUsers := []*h.UserData{
+				h.User().NewData().SetName("Alice").SetLogin("alice").SetColor(1).SetFunction("Friend").SetDate(dates.ParseDate("2015-03-28")).SetTitle(titleLady),
+				h.User().NewData().SetName("Alice").SetLogin("alice2").SetColor(0).SetFunction("Friend").SetDate(dates.ParseDate("2015-01-28")).SetTitle(titleLady),
+				h.User().NewData().SetName("Bob").SetLogin("bob").SetColor(2).SetFunction("Friend").SetDate(dates.ParseDate("2015-03-02")).SetTitle(titleSir),
+				h.User().NewData().SetName("Eve").SetLogin("eve").SetColor(3).SetFunction("Eavesdropper").SetDate(dates.ParseDate("2015-03-20")).SetTitle(titleLady),
+				h.User().NewData().SetName("Nab").SetLogin("nab").SetColor(-3).SetFunction("5$ Wrench").SetDate(dates.ParseDate("2014-09-10")).SetTitle(titleSir),
+				h.User().NewData().SetName("Nab").SetLogin("nabshe").SetColor(6).SetFunction("5$ Wrench").SetDate(dates.ParseDate("2014-01-02")).SetTitle(titleLady),
 			}
 
 			users := h.User().NewSet(env)
 			for _, vals := range testUsers {
-				users = users.Union(h.User().Create(env, &vals))
+				users = users.Union(h.User().Create(env, vals))
 			}
 			condition := q.User().ID().In(users.Ids())
 
 			Convey("Group on local char field without domain and without active_test (-> empty WHERE clause)", func() {
 				groupsData := h.User().NewSet(env).WithContext("active_test", false).
 					SearchAll().
-					GroupBy(h.User().Login()).
+					GroupBy(q.User().Login()).
 					OrderBy("login DESC").
-					Aggregates(h.User().Login())
+					Aggregates(q.User().Login())
 				So(len(groupsData), ShouldBeGreaterThan, 6)
 
 			})
@@ -382,83 +358,83 @@ func TestAggregateRead(t *testing.T) {
 			Convey("Group on local char field with limit", func() {
 				groupsData := h.User().NewSet(env).
 					Search(condition).
-					GroupBy(h.User().Login()).
+					GroupBy(q.User().Login()).
 					OrderBy("login DESC").
 					Limit(3).
 					Offset(3).
-					Aggregates(h.User().Login())
+					Aggregates(q.User().Login())
 				So(groupsData, ShouldHaveLength, 3)
-				So(groupsData[0].Values.Login, ShouldEqual, "bob")
-				So(groupsData[1].Values.Login, ShouldEqual, "alice2")
-				So(groupsData[2].Values.Login, ShouldEqual, "alice")
+				So(groupsData[0].Values.Login(), ShouldEqual, "bob")
+				So(groupsData[1].Values.Login(), ShouldEqual, "alice2")
+				So(groupsData[2].Values.Login(), ShouldEqual, "alice")
 			})
 
 			Convey("Group on inherited char field, aggregate on int field (second groupby ignored on purpose)", func() {
 				groupsData := h.User().NewSet(env).
 					Search(condition).
-					GroupBy(h.User().Function()).
-					Aggregates(h.User().Name(), h.User().Color(), h.User().Function())
+					GroupBy(q.User().Function()).
+					Aggregates(q.User().Name(), q.User().Color(), q.User().Function())
 				So(groupsData, ShouldHaveLength, 3)
-				So(groupsData[0].Values.Function, ShouldEqual, "5$ Wrench")
-				So(groupsData[1].Values.Function, ShouldEqual, "Eavesdropper")
-				So(groupsData[2].Values.Function, ShouldEqual, "Friend")
+				So(groupsData[0].Values.Function(), ShouldEqual, "5$ Wrench")
+				So(groupsData[1].Values.Function(), ShouldEqual, "Eavesdropper")
+				So(groupsData[2].Values.Function(), ShouldEqual, "Friend")
 				for _, gd := range groupsData {
-					So(gd.Values.Color, ShouldEqual, 3)
+					So(gd.Values.Color(), ShouldEqual, 3)
 				}
 			})
 			Convey("Group on inherited char field, reverse order", func() {
 				groupsData := h.User().NewSet(env).
 					Search(condition).
-					GroupBy(h.User().Name()).
+					GroupBy(q.User().Name()).
 					OrderBy("name DESC").
-					Aggregates(h.User().Name(), h.User().Color())
-				So(groupsData[0].Values.Name, ShouldEqual, "Nab")
-				So(groupsData[1].Values.Name, ShouldEqual, "Eve")
-				So(groupsData[2].Values.Name, ShouldEqual, "Bob")
-				So(groupsData[3].Values.Name, ShouldEqual, "Alice")
+					Aggregates(q.User().Name(), q.User().Color())
+				So(groupsData[0].Values.Name(), ShouldEqual, "Nab")
+				So(groupsData[1].Values.Name(), ShouldEqual, "Eve")
+				So(groupsData[2].Values.Name(), ShouldEqual, "Bob")
+				So(groupsData[3].Values.Name(), ShouldEqual, "Alice")
 
 			})
 
 			Convey("Group on int field, default ordering", func() {
 				groupsData := h.User().NewSet(env).
 					Search(condition).
-					GroupBy(h.User().Color()).
-					Aggregates(h.User().Color())
-				So(groupsData[0].Values.Color, ShouldEqual, -3)
-				So(groupsData[1].Values.Color, ShouldEqual, 0)
-				So(groupsData[2].Values.Color, ShouldEqual, 1)
-				So(groupsData[3].Values.Color, ShouldEqual, 2)
-				So(groupsData[4].Values.Color, ShouldEqual, 3)
-				So(groupsData[5].Values.Color, ShouldEqual, 6)
+					GroupBy(q.User().Color()).
+					Aggregates(q.User().Color())
+				So(groupsData[0].Values.Color(), ShouldEqual, -3)
+				So(groupsData[1].Values.Color(), ShouldEqual, 0)
+				So(groupsData[2].Values.Color(), ShouldEqual, 1)
+				So(groupsData[3].Values.Color(), ShouldEqual, 2)
+				So(groupsData[4].Values.Color(), ShouldEqual, 3)
+				So(groupsData[5].Values.Color(), ShouldEqual, 6)
 			})
 
 			Convey("Multi group, second level is int field, should still be summed in first level grouping", func() {
 				groupsData := h.User().NewSet(env).
 					Search(condition).
-					GroupBy(h.User().Name()).
+					GroupBy(q.User().Name()).
 					OrderBy("name DESC").
-					Aggregates(h.User().Name(), h.User().Color())
-				So(groupsData[0].Values.Name, ShouldEqual, "Nab")
-				So(groupsData[1].Values.Name, ShouldEqual, "Eve")
-				So(groupsData[2].Values.Name, ShouldEqual, "Bob")
-				So(groupsData[3].Values.Name, ShouldEqual, "Alice")
-				So(groupsData[0].Values.Color, ShouldEqual, 3)
-				So(groupsData[1].Values.Color, ShouldEqual, 3)
-				So(groupsData[2].Values.Color, ShouldEqual, 2)
-				So(groupsData[3].Values.Color, ShouldEqual, 1)
+					Aggregates(q.User().Name(), q.User().Color())
+				So(groupsData[0].Values.Name(), ShouldEqual, "Nab")
+				So(groupsData[1].Values.Name(), ShouldEqual, "Eve")
+				So(groupsData[2].Values.Name(), ShouldEqual, "Bob")
+				So(groupsData[3].Values.Name(), ShouldEqual, "Alice")
+				So(groupsData[0].Values.Color(), ShouldEqual, 3)
+				So(groupsData[1].Values.Color(), ShouldEqual, 3)
+				So(groupsData[2].Values.Color(), ShouldEqual, 2)
+				So(groupsData[3].Values.Color(), ShouldEqual, 1)
 			})
 
 			Convey("Group on inherited char field, multiple orders with directions", func() {
 				groupsData := h.User().NewSet(env).
 					Search(condition).
-					GroupBy(h.User().Name()).
+					GroupBy(q.User().Name()).
 					OrderBy("color DESC", "name").
-					Aggregates(h.User().Name(), h.User().Color())
+					Aggregates(q.User().Name(), q.User().Color())
 				So(groupsData, ShouldHaveLength, 4)
-				So(groupsData[0].Values.Name, ShouldEqual, "Eve")
-				So(groupsData[1].Values.Name, ShouldEqual, "Nab")
-				So(groupsData[2].Values.Name, ShouldEqual, "Bob")
-				So(groupsData[3].Values.Name, ShouldEqual, "Alice")
+				So(groupsData[0].Values.Name(), ShouldEqual, "Eve")
+				So(groupsData[1].Values.Name(), ShouldEqual, "Nab")
+				So(groupsData[2].Values.Name(), ShouldEqual, "Bob")
+				So(groupsData[3].Values.Name(), ShouldEqual, "Alice")
 				So(groupsData[0].Count, ShouldEqual, 1)
 				So(groupsData[1].Count, ShouldEqual, 2)
 				So(groupsData[2].Count, ShouldEqual, 1)
@@ -482,14 +458,14 @@ func TestAggregateRead(t *testing.T) {
 			Convey("Group on inherited many2one (res_partner.title), default order", func() {
 				groupsData := h.User().NewSet(env).
 					Search(condition).
-					GroupBy(h.User().Title()).
+					GroupBy(q.User().Title()).
 					OrderBy("Title.Name").
-					Aggregates(h.User().Function(), h.User().Color(), h.User().Title())
+					Aggregates(q.User().Function(), q.User().Color(), q.User().Title())
 				So(groupsData, ShouldHaveLength, 2)
-				So(groupsData[0].Values.Title.Equals(titleLady), ShouldBeTrue)
-				So(groupsData[1].Values.Title.Equals(titleSir), ShouldBeTrue)
-				So(groupsData[0].Values.Color, ShouldEqual, 10)
-				So(groupsData[1].Values.Color, ShouldEqual, -1)
+				So(groupsData[0].Values.Title().Equals(titleLady), ShouldBeTrue)
+				So(groupsData[1].Values.Title().Equals(titleSir), ShouldBeTrue)
+				So(groupsData[0].Values.Color(), ShouldEqual, 10)
+				So(groupsData[1].Values.Color(), ShouldEqual, -1)
 				So(groupsData[0].Count, ShouldEqual, 4)
 				So(groupsData[1].Count, ShouldEqual, 2)
 			})
@@ -497,14 +473,14 @@ func TestAggregateRead(t *testing.T) {
 			Convey("Group on inherited many2one (res_partner.title), reversed natural order", func() {
 				groupsData := h.User().NewSet(env).
 					Search(condition).
-					GroupBy(h.User().Title()).
+					GroupBy(q.User().Title()).
 					OrderBy("Title.Name DESC").
-					Aggregates(h.User().Function(), h.User().Color(), h.User().Title())
+					Aggregates(q.User().Function(), q.User().Color(), q.User().Title())
 				So(groupsData, ShouldHaveLength, 2)
-				So(groupsData[0].Values.Title.Equals(titleSir), ShouldBeTrue)
-				So(groupsData[1].Values.Title.Equals(titleLady), ShouldBeTrue)
-				So(groupsData[0].Values.Color, ShouldEqual, -1)
-				So(groupsData[1].Values.Color, ShouldEqual, 10)
+				So(groupsData[0].Values.Title().Equals(titleSir), ShouldBeTrue)
+				So(groupsData[1].Values.Title().Equals(titleLady), ShouldBeTrue)
+				So(groupsData[0].Values.Color(), ShouldEqual, -1)
+				So(groupsData[1].Values.Color(), ShouldEqual, 10)
 				So(groupsData[0].Count, ShouldEqual, 2)
 				So(groupsData[1].Count, ShouldEqual, 4)
 			})
@@ -512,14 +488,14 @@ func TestAggregateRead(t *testing.T) {
 			Convey("Group on inherited many2one (res_partner.title), multiple orders with m2o in second position", func() {
 				groupsData := h.User().NewSet(env).
 					Search(condition).
-					GroupBy(h.User().Title()).
+					GroupBy(q.User().Title()).
 					OrderBy("color DESC", "Title.Name DESC").
-					Aggregates(h.User().Function(), h.User().Color(), h.User().Title())
+					Aggregates(q.User().Function(), q.User().Color(), q.User().Title())
 				So(groupsData, ShouldHaveLength, 2)
-				So(groupsData[0].Values.Title.Equals(titleLady), ShouldBeTrue)
-				So(groupsData[1].Values.Title.Equals(titleSir), ShouldBeTrue)
-				So(groupsData[0].Values.Color, ShouldEqual, 10)
-				So(groupsData[1].Values.Color, ShouldEqual, -1)
+				So(groupsData[0].Values.Title().Equals(titleLady), ShouldBeTrue)
+				So(groupsData[1].Values.Title().Equals(titleSir), ShouldBeTrue)
+				So(groupsData[0].Values.Color(), ShouldEqual, 10)
+				So(groupsData[1].Values.Color(), ShouldEqual, -1)
 				So(groupsData[0].Count, ShouldEqual, 4)
 				So(groupsData[1].Count, ShouldEqual, 2)
 			})
@@ -527,14 +503,14 @@ func TestAggregateRead(t *testing.T) {
 			Convey("Group on inherited many2one (res_partner.title), ordered by other inherited field (color)", func() {
 				groupsData := h.User().NewSet(env).
 					Search(condition).
-					GroupBy(h.User().Title()).
+					GroupBy(q.User().Title()).
 					OrderBy("color").
-					Aggregates(h.User().Function(), h.User().Color(), h.User().Title())
+					Aggregates(q.User().Function(), q.User().Color(), q.User().Title())
 				So(groupsData, ShouldHaveLength, 2)
-				So(groupsData[0].Values.Title.Equals(titleSir), ShouldBeTrue)
-				So(groupsData[1].Values.Title.Equals(titleLady), ShouldBeTrue)
-				So(groupsData[0].Values.Color, ShouldEqual, -1)
-				So(groupsData[1].Values.Color, ShouldEqual, 10)
+				So(groupsData[0].Values.Title().Equals(titleSir), ShouldBeTrue)
+				So(groupsData[1].Values.Title().Equals(titleLady), ShouldBeTrue)
+				So(groupsData[0].Values.Color(), ShouldEqual, -1)
+				So(groupsData[1].Values.Color(), ShouldEqual, 10)
 				So(groupsData[0].Count, ShouldEqual, 2)
 				So(groupsData[1].Count, ShouldEqual, 4)
 			})
@@ -546,14 +522,12 @@ func TestPartnerRecursion(t *testing.T) {
 	Convey("Testing Partner Recursion", t, func() {
 		So(models.SimulateInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			p1 := h.Partner().NewSet(env).NameCreate("Elmtree")
-			p2 := h.Partner().Create(env, &h.PartnerData{
-				Name:   "Elmtree Child 1",
-				Parent: p1,
-			})
-			p3 := h.Partner().Create(env, &h.PartnerData{
-				Name:   "Elmtree Grand-Child 1.1",
-				Parent: p2,
-			})
+			p2 := h.Partner().Create(env, h.Partner().NewData().
+				SetName("Elmtree Child 1").
+				SetParent(p1))
+			p3 := h.Partner().Create(env, h.Partner().NewData().
+				SetName("Elmtree Grand-Child 1.1").
+				SetParent(p2))
 			Convey("Our initial data is OK", func() {
 				So(p3.CheckRecursion(), ShouldBeTrue)
 				So(p1.Union(p2).Union(p3).CheckRecursion(), ShouldBeTrue)
@@ -578,25 +552,11 @@ func TestPartnerRecursion(t *testing.T) {
 func TestParentStore(t *testing.T) {
 	Convey("Testing recursive queries", t, func() {
 		So(models.SimulateInNewEnvironment(security.SuperUserID, func(env models.Environment) {
-			root := h.PartnerCategory().Create(env, &h.PartnerCategoryData{
-				Name: "Root Category",
-			})
-			cat0 := h.PartnerCategory().Create(env, &h.PartnerCategoryData{
-				Name:   "Parent Category",
-				Parent: root,
-			})
-			cat1 := h.PartnerCategory().Create(env, &h.PartnerCategoryData{
-				Name:   "Child 1",
-				Parent: cat0,
-			})
-			cat2 := h.PartnerCategory().Create(env, &h.PartnerCategoryData{
-				Name:   "Child 2",
-				Parent: cat0,
-			})
-			h.PartnerCategory().Create(env, &h.PartnerCategoryData{
-				Name:   "Child 2-1",
-				Parent: cat2,
-			})
+			root := h.PartnerCategory().Create(env, h.PartnerCategory().NewData().SetName("Root Category"))
+			cat0 := h.PartnerCategory().Create(env, h.PartnerCategory().NewData().SetName("Parent Category").SetParent(root))
+			cat1 := h.PartnerCategory().Create(env, h.PartnerCategory().NewData().SetName("Child 1").SetParent(cat0))
+			cat2 := h.PartnerCategory().Create(env, h.PartnerCategory().NewData().SetName("Child 2").SetParent(cat0))
+			h.PartnerCategory().Create(env, h.PartnerCategory().NewData().SetName("Child 2-1").SetParent(cat2))
 			Convey("Duplicate the parent category and verify that the children have been duplicated too", func() {
 				newCat0 := cat0.Copy(nil)
 				newStruct := h.PartnerCategory().Search(env, q.PartnerCategory().Parent().ChildOf(newCat0))
@@ -616,7 +576,7 @@ func TestParentStore(t *testing.T) {
 			Convey("Duplicate the children then reassign them to the new parent (1st method).", func() {
 				newCat1 := cat1.Copy(nil)
 				newCat2 := cat2.Copy(nil)
-				newCat0 := cat0.Copy(nil, h.PartnerCategory().Children())
+				newCat0 := cat0.Copy(h.PartnerCategory().NewData().SetChildren(h.PartnerCategory().NewSet(env)))
 				So(newCat0.Children().IsEmpty(), ShouldBeTrue)
 				newCat1.Union(newCat2).SetParent(newCat0)
 				newStruct := h.PartnerCategory().Search(env, q.PartnerCategory().Parent().ChildOf(newCat0))
@@ -628,7 +588,7 @@ func TestParentStore(t *testing.T) {
 			Convey("Duplicate the children then reassign them to the new parent (2nd method).", func() {
 				newCat1 := cat1.Copy(nil)
 				newCat2 := cat2.Copy(nil)
-				newCat0 := cat0.Copy(&h.PartnerCategoryData{Children: newCat1.Union(newCat2)})
+				newCat0 := cat0.Copy(h.PartnerCategory().NewData().SetChildren(newCat1.Union(newCat2)))
 				newStruct := h.PartnerCategory().Search(env, q.PartnerCategory().Parent().ChildOf(newCat0))
 				So(newStruct.Len(), ShouldEqual, 3)
 				oldStruct := h.PartnerCategory().Search(env, q.PartnerCategory().Parent().ChildOf(cat0))

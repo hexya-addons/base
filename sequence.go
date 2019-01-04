@@ -72,9 +72,8 @@ gap in the sequence (while they are possible in the former).`},
 	h.Sequence().Methods().ComputeNumberNextActual().DeclareMethod(
 		`ComputeNumberNextActual returns the real next number for the sequence depending on the implementation`,
 		func(rs h.SequenceSet) *h.SequenceData {
-			var res h.SequenceData
-			res.NumberNextActual = rs.NumberNext()
-			return &res
+			res := h.Sequence().NewData().SetNumberNextActual(rs.NumberNext())
+			return res
 		})
 
 	h.Sequence().Methods().InverseNumberNextActual().DeclareMethod(
@@ -87,14 +86,14 @@ gap in the sequence (while they are possible in the former).`},
 		})
 
 	h.Sequence().Methods().Create().Extend("",
-		func(rs h.SequenceSet, vals *h.SequenceData, fieldsToReset ...models.FieldNamer) h.SequenceSet {
+		func(rs h.SequenceSet, vals *h.SequenceData) h.SequenceSet {
 			seq := rs.Super().Create(vals)
-			if vals.Implementation == "standard" || vals.Implementation == "" {
-				numberIncrement := vals.NumberIncrement
+			if !vals.HasImplementation() || vals.Implementation() == "standard" {
+				numberIncrement := vals.NumberIncrement()
 				if numberIncrement == 0 {
 					numberIncrement = 1
 				}
-				numberNext := vals.NumberNext
+				numberNext := vals.NumberNext()
 				if numberNext == 0 {
 					numberNext = 1
 				}
@@ -115,15 +114,15 @@ gap in the sequence (while they are possible in the former).`},
 		})
 
 	h.Sequence().Methods().Write().Extend("",
-		func(rs h.SequenceSet, data *h.SequenceData, fieldsToReset ...models.FieldNamer) bool {
-			newImplementation := data.Implementation
+		func(rs h.SequenceSet, data *h.SequenceData) bool {
+			newImplementation := data.Implementation()
 			for _, seq := range rs.Records() {
 				// 4 cases: we test the previous impl. against the new one.
-				i := data.NumberIncrement
+				i := data.NumberIncrement()
 				if i == 0 {
 					i = seq.NumberIncrement()
 				}
-				n := data.NumberNext
+				n := data.NumberNext()
 				if n == 0 {
 					n = seq.NumberNext()
 				}
@@ -132,7 +131,7 @@ gap in the sequence (while they are possible in the former).`},
 					if newImplementation == "standard" || newImplementation == "" {
 						// Implementation has NOT changed.
 						// Only change sequence if really requested.
-						if data.NumberNext != 0 || seq.NumberIncrement() != i {
+						if data.NumberNext() != 0 || seq.NumberIncrement() != i {
 							hexyaSeq.Alter(i, n)
 						}
 					} else {
@@ -153,7 +152,7 @@ gap in the sequence (while they are possible in the former).`},
 					models.CreateSequence(fmt.Sprintf("sequence_%03d_%03d", seq.ID(), subSeq.ID()), i, n)
 				}
 			}
-			return rs.Super().Write(data, fieldsToReset...)
+			return rs.Super().Write(data)
 		})
 
 	h.Sequence().Methods().NextDo().DeclareMethod(
@@ -251,11 +250,10 @@ gap in the sequence (while they are possible in the former).`},
 			if !dateRange.IsEmpty() {
 				dateTo = dateRange.DateTo().AddDate(0, 0, 1)
 			}
-			seqDateRange := h.SequenceDateRange().Create(rs.Env(), &h.SequenceDateRangeData{
-				DateFrom: dateFrom,
-				DateTo:   dateTo,
-				Sequence: rs,
-			})
+			seqDateRange := h.SequenceDateRange().Create(rs.Env(), h.SequenceDateRange().NewData().
+				SetDateFrom(dateFrom).
+				SetDateTo(dateTo).
+				SetSequence(rs))
 			return seqDateRange
 		})
 
@@ -337,9 +335,8 @@ gap in the sequence (while they are possible in the former).`},
 	h.SequenceDateRange().Methods().ComputeNumberNextActual().DeclareMethod(
 		`ComputeNumberNextActual returns the real next number for the sequence depending on the implementation`,
 		func(rs h.SequenceDateRangeSet) *h.SequenceDateRangeData {
-			var res h.SequenceDateRangeData
-			res.NumberNextActual = rs.NumberNext()
-			return &res
+			res := h.SequenceDateRange().NewData().SetNumberNextActual(rs.NumberNext())
+			return res
 		})
 
 	h.SequenceDateRange().Methods().InverseNumberNextActual().DeclareMethod(
@@ -362,11 +359,11 @@ gap in the sequence (while they are possible in the former).`},
 		})
 
 	h.SequenceDateRange().Methods().Create().Extend("",
-		func(rs h.SequenceDateRangeSet, data *h.SequenceDateRangeData, fieldsToReset ...models.FieldNamer) h.SequenceDateRangeSet {
+		func(rs h.SequenceDateRangeSet, data *h.SequenceDateRangeData) h.SequenceDateRangeSet {
 			seq := rs.Super().Create(data)
 			mainSeq := seq.Sequence()
 			if mainSeq.Implementation() == "standard" {
-				next := data.NumberNextActual
+				next := data.NumberNextActual()
 				if next == 0 {
 					next = 1
 				}
@@ -388,19 +385,19 @@ gap in the sequence (while they are possible in the former).`},
 		})
 
 	h.SequenceDateRange().Methods().Write().Extend("",
-		func(rs h.SequenceDateRangeSet, data *h.SequenceDateRangeData, fieldsToReset ...models.FieldNamer) bool {
-			if data.NumberNext != 0 {
+		func(rs h.SequenceDateRangeSet, data *h.SequenceDateRangeData) bool {
+			if data.NumberNext() != 0 {
 				seqToAlter := rs.Filtered(func(rs h.SequenceDateRangeSet) bool {
 					return rs.Sequence().Implementation() == "standard"
 				})
 				for _, rec := range seqToAlter.Records() {
 					hexyaSeq, exists := models.Registry.GetSequence(fmt.Sprintf("sequence_%03d_%03d", rec.Sequence().ID(), rec.ID()))
 					if exists {
-						hexyaSeq.Alter(data.NumberNext, 0)
+						hexyaSeq.Alter(data.NumberNext(), 0)
 					}
 				}
 			}
-			return rs.Super().Write(data, fieldsToReset...)
+			return rs.Super().Write(data)
 		})
 
 	h.SequenceDateRange().Methods().UpdateNoGap().DeclareMethod(
