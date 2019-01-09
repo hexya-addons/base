@@ -645,13 +645,13 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().Create().Extend("",
 		func(rs h.PartnerSet, vals *h.PartnerData) h.PartnerSet {
-			if vals.HasWebsite() {
+			if vals.Website() != "" {
 				vals.SetWebsite(rs.CleanWebsite(vals.Website()))
 			}
-			if vals.HasParent() {
+			if !vals.Parent().IsEmpty() {
 				vals.SetCompanyName("")
 			}
-			if !vals.HasImage() {
+			if vals.Image() == "" {
 				vals.SetImage(rs.GetDefaultImage(vals.Type(), vals.IsCompany(), vals.Parent()))
 			}
 			rs.ResizeImageData(vals)
