@@ -14,6 +14,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models/types/dates"
 	"github.com/hexya-erp/hexya/src/tools/nbutils"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -52,7 +53,7 @@ func init() {
 		`ComputeCurrentRate returns the current rate of this currency.
 		 If a 'date' key (type DateTime) is given in the context, then it is used to compute the rate,
 		 otherwise now is used.`,
-		func(rs h.CurrencySet) *h.CurrencyData {
+		func(rs m.CurrencySet) m.CurrencyData {
 			date := dates.Now()
 			if rs.Env().Context().HasKey("date") {
 				date = rs.Env().Context().GetDateTime("date")
@@ -78,7 +79,7 @@ func init() {
 
 	currencyModel.Methods().ComputeDecimalPlaces().DeclareMethod(
 		`ComputeDecimalPlaces returns the decimal place from the currency's rounding`,
-		func(rs h.CurrencySet) *h.CurrencyData {
+		func(rs m.CurrencySet) m.CurrencyData {
 			var dp int
 			if rs.Rounding() > 0 && rs.Rounding() < 1 {
 				dp = int(math.Ceil(math.Log10(1 / rs.Rounding())))
@@ -88,7 +89,7 @@ func init() {
 
 	currencyModel.Methods().ComputeDate().DeclareMethod(
 		`ComputeDate returns the date of the last rate of this currency`,
-		func(rs h.CurrencySet) *h.CurrencyData {
+		func(rs m.CurrencySet) m.CurrencyData {
 			var lastDate dates.Date
 			if rateLength := len(rs.Rates().Records()); rateLength > 0 {
 				lastDate = rs.Rates().Records()[rateLength-1].Name().ToDate()
@@ -98,7 +99,7 @@ func init() {
 
 	currencyModel.Methods().Round().DeclareMethod(
 		`Round returns the given amount rounded according to this currency rounding rules`,
-		func(rs h.CurrencySet, amount float64) float64 {
+		func(rs m.CurrencySet, amount float64) float64 {
 			return nbutils.Round(amount, math.Pow10(-rs.DecimalPlaces()))
 		})
 
@@ -118,7 +119,7 @@ func init() {
          However 0.006 and 0.002 are considered different (returns 1) because
          they respectively round to 0.01 and 0.0, even though 0.006-0.002 = 0.004
          which would be considered zero at 2 digits precision.`,
-		func(rs h.CurrencySet, amount1, amount2 float64) int8 {
+		func(rs m.CurrencySet, amount1, amount2 float64) int8 {
 			return nbutils.Compare(amount1, amount2, math.Pow10(-rs.DecimalPlaces()))
 		})
 
@@ -131,20 +132,20 @@ func init() {
 		round after computing the difference, while the latter will round
 		before, giving different results for e.g. 0.006 and 0.002 at 2
 		digits precision.`,
-		func(rs h.CurrencySet, amount float64) bool {
+		func(rs m.CurrencySet, amount float64) bool {
 			return nbutils.IsZero(amount, math.Pow10(-rs.DecimalPlaces()))
 		})
 
 	currencyModel.Methods().GetConversionRateTo().DeclareMethod(
 		`GetConversionRateTo returns the conversion rate from this currency to 'target' currency`,
-		func(rs h.CurrencySet, target h.CurrencySet) float64 {
+		func(rs m.CurrencySet, target m.CurrencySet) float64 {
 			return target.WithEnv(rs.Env()).Rate() / rs.Rate()
 		})
 
 	currencyModel.Methods().Compute().DeclareMethod(
 		`Compute converts 'amount' from this currency to 'targetCurrency'.
 		 The result is rounded to the 'target' currency if 'round' is true.`,
-		func(rs h.CurrencySet, amount float64, target h.CurrencySet, round bool) float64 {
+		func(rs m.CurrencySet, amount float64, target m.CurrencySet, round bool) float64 {
 			if rs.Equals(target) {
 				if round {
 					return rs.Round(amount)
@@ -164,7 +165,7 @@ func init() {
 
 		That function expects the number as first parameter	and the currency id as second parameter.
 		If the currency id parameter is false or undefined, the	company currency is used.`,
-		func(rs h.CurrencySet) string {
+		func(rs m.CurrencySet) string {
 			companyCurrency := h.User().Browse(rs.Env(), []int64{rs.Env().Uid()}).Company().Currency()
 			var function string
 			for _, currency := range h.Currency().NewSet(rs.Env()).SearchAll().Records() {
@@ -188,7 +189,7 @@ func init() {
 
 	currencyModel.Methods().SelectCompaniesRates().DeclareMethod(`
 		SelectCompaniesRates returns an SQL query to get the currency rates per companies.`,
-		func(rs h.CurrencySet) string {
+		func(rs m.CurrencySet) string {
 			return `
 			SELECT
                 r.currency_id,
@@ -206,7 +207,7 @@ func init() {
 		})
 
 	currencyModel.Methods().SearchByName().Extend("",
-		func(rs h.CurrencySet, name string, op operator.Operator, additionalCond q.CurrencyCondition, limit int) h.CurrencySet {
+		func(rs m.CurrencySet, name string, op operator.Operator, additionalCond q.CurrencyCondition, limit int) m.CurrencySet {
 			res := rs.Super().SearchByName(name, op, additionalCond, limit)
 			if res.IsEmpty() {
 				re, _ := regexp.Compile(CurrencyDisplayPattern)

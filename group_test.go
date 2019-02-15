@@ -9,6 +9,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 	. "github.com/smartystreets/goconvey/convey"
 )
@@ -16,8 +17,8 @@ import (
 func TestGroupLoading(t *testing.T) {
 	models.SimulateInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 		var (
-			adminUser, user                    h.UserSet
-			adminGrp, someGroup, everyoneGroup h.GroupSet
+			adminUser, user                    m.UserSet
+			adminGrp, someGroup, everyoneGroup m.GroupSet
 		)
 		Convey("Testing Group Loading", t, func() {
 			h.Group().NewSet(env).ReloadGroups()

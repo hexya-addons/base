@@ -7,6 +7,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -18,7 +19,7 @@ func init() {
 	})
 
 	groupModel.Methods().Create().Extend("",
-		func(rs h.GroupSet, data *h.GroupData) h.GroupSet {
+		func(rs m.GroupSet, data m.GroupData) m.GroupSet {
 			if rs.Env().Context().HasKey("GroupForceCreate") {
 				return rs.Super().Create(data)
 			}
@@ -27,7 +28,7 @@ func init() {
 		})
 
 	groupModel.Methods().Write().Extend("",
-		func(rs h.GroupSet, data *h.GroupData) bool {
+		func(rs m.GroupSet, data m.GroupData) bool {
 			log.Panic(rs.T("Trying to modify a security group"))
 			panic("Unreachable")
 		})
@@ -35,7 +36,7 @@ func init() {
 	groupModel.Methods().ReloadGroups().DeclareMethod(
 		`ReloadGroups populates the Group table with groups from the security.Registry
 		and refresh all memberships from the database to the security.Registry.`,
-		func(rs h.GroupSet) {
+		func(rs m.GroupSet) {
 			log.Debug("Reloading groups")
 			// Sync groups: registry => Database
 			var existingGroupIds []string

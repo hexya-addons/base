@@ -12,6 +12,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models/types"
 	"github.com/hexya-erp/hexya/src/models/types/dates"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -71,14 +72,14 @@ gap in the sequence (while they are possible in the former).`},
 
 	h.Sequence().Methods().ComputeNumberNextActual().DeclareMethod(
 		`ComputeNumberNextActual returns the real next number for the sequence depending on the implementation`,
-		func(rs h.SequenceSet) *h.SequenceData {
+		func(rs m.SequenceSet) m.SequenceData {
 			res := h.Sequence().NewData().SetNumberNextActual(rs.NumberNext())
 			return res
 		})
 
 	h.Sequence().Methods().InverseNumberNextActual().DeclareMethod(
 		`InverseNumberNextActual is the setter function for the NumberNextActual field`,
-		func(rs h.SequenceSet, value int64) {
+		func(rs m.SequenceSet, value int64) {
 			if value == 0 {
 				value = 1
 			}
@@ -86,7 +87,7 @@ gap in the sequence (while they are possible in the former).`},
 		})
 
 	h.Sequence().Methods().Create().Extend("",
-		func(rs h.SequenceSet, vals *h.SequenceData) h.SequenceSet {
+		func(rs m.SequenceSet, vals m.SequenceData) m.SequenceSet {
 			seq := rs.Super().Create(vals)
 			if !vals.HasImplementation() || vals.Implementation() == "standard" {
 				numberIncrement := vals.NumberIncrement()
@@ -103,7 +104,7 @@ gap in the sequence (while they are possible in the former).`},
 		})
 
 	h.Sequence().Methods().Unlink().Extend("",
-		func(rs h.SequenceSet) int64 {
+		func(rs m.SequenceSet) int64 {
 			for _, rec := range rs.Records() {
 				hexyaSeq, exists := models.Registry.GetSequence(fmt.Sprintf("sequence_%03d", rec.ID()))
 				if exists {
@@ -114,7 +115,7 @@ gap in the sequence (while they are possible in the former).`},
 		})
 
 	h.Sequence().Methods().Write().Extend("",
-		func(rs h.SequenceSet, data *h.SequenceData) bool {
+		func(rs m.SequenceSet, data m.SequenceData) bool {
 			newImplementation := data.Implementation()
 			for _, seq := range rs.Records() {
 				// 4 cases: we test the previous impl. against the new one.
@@ -157,7 +158,7 @@ gap in the sequence (while they are possible in the former).`},
 
 	h.Sequence().Methods().NextDo().DeclareMethod(
 		`NextDo returns the next sequence number formatted`,
-		func(rs h.SequenceSet) string {
+		func(rs m.SequenceSet) string {
 			rs.EnsureOne()
 			if rs.Implementation() == "standard" {
 				hexyaSeq := models.Registry.MustGetSequence(fmt.Sprintf("sequence_%03d", rs.ID()))
@@ -168,18 +169,18 @@ gap in the sequence (while they are possible in the former).`},
 
 	h.Sequence().Methods().UpdateNoGap().DeclareMethod(
 		`UpdateNoGap gets the next number of a "No Gap" sequence`,
-		func(rs h.SequenceSet) int64 {
+		func(rs m.SequenceSet) int64 {
 			rs.EnsureOne()
 			numberNext := rs.NumberNext()
 			rs.Env().Cr().Execute(`SELECT number_next FROM sequence WHERE id=? FOR UPDATE NOWAIT`, rs.ID())
 			rs.Env().Cr().Execute(`UPDATE sequence SET number_next=number_next + ? WHERE id=?`, rs.NumberIncrement(), rs.ID())
-			rs.InvalidateCache()
+			rs.Collection().InvalidateCache()
 			return numberNext
 		})
 
 	h.Sequence().Methods().GetNextChar().DeclareMethod(
 		`GetNextChar returns the given number formatted as per the sequence data`,
-		func(rs h.SequenceSet, numberNext int64) string {
+		func(rs m.SequenceSet, numberNext int64) string {
 			interpolate := func(format string, data map[string]string) string {
 				if format == "" {
 					return ""
@@ -227,7 +228,7 @@ gap in the sequence (while they are possible in the former).`},
 
 	h.Sequence().Methods().CreateDateRangeSeq().DeclareMethod(
 		`CreateDateRangeSeq creates the date range for the given date`,
-		func(rs h.SequenceSet, date dates.Date) h.SequenceDateRangeSet {
+		func(rs m.SequenceSet, date dates.Date) m.SequenceDateRangeSet {
 			rs.EnsureOne()
 			year := date.Year()
 			dateFrom := dates.ParseDate(fmt.Sprintf("%d-01-01", year))
@@ -259,7 +260,7 @@ gap in the sequence (while they are possible in the former).`},
 
 	h.Sequence().Methods().Next().DeclareMethod(
 		`Next returns the next number (formatted) in the preferred sequence in all the ones given in self`,
-		func(rs h.SequenceSet) string {
+		func(rs m.SequenceSet) string {
 			rs.EnsureOne()
 			if !rs.UseDateRange() {
 				return rs.NextDo()
@@ -282,7 +283,7 @@ gap in the sequence (while they are possible in the former).`},
 
 	h.Sequence().Methods().NextByID().DeclareMethod(
 		`NextByID draws an interpolated string using the specified sequence.`,
-		func(rs h.SequenceSet) string {
+		func(rs m.SequenceSet) string {
 			rs.CheckExecutionPermission(h.Sequence().Methods().Read().Underlying())
 			return rs.Next()
 		})
@@ -295,7 +296,7 @@ gap in the sequence (while they are possible in the former).`},
 		The context may contain a 'force_company' key with the ID of the company to
 		use instead of the user's current company for the sequence selection. 
 		A matching sequence for that specific company will get higher priority`,
-		func(rs h.SequenceSet, sequenceCode string) string {
+		func(rs m.SequenceSet, sequenceCode string) string {
 			rs.CheckExecutionPermission(h.Sequence().Methods().Read().Underlying())
 			companies := h.Company().NewSet(rs.Env()).SearchAll()
 			seqs := h.Sequence().Search(rs.Env(),
@@ -334,14 +335,14 @@ gap in the sequence (while they are possible in the former).`},
 
 	h.SequenceDateRange().Methods().ComputeNumberNextActual().DeclareMethod(
 		`ComputeNumberNextActual returns the real next number for the sequence depending on the implementation`,
-		func(rs h.SequenceDateRangeSet) *h.SequenceDateRangeData {
+		func(rs m.SequenceDateRangeSet) m.SequenceDateRangeData {
 			res := h.SequenceDateRange().NewData().SetNumberNextActual(rs.NumberNext())
 			return res
 		})
 
 	h.SequenceDateRange().Methods().InverseNumberNextActual().DeclareMethod(
 		`InverseNumberNextActual is the setter function for the NumberNextActual field`,
-		func(rs h.SequenceDateRangeSet, value int64) {
+		func(rs m.SequenceDateRangeSet, value int64) {
 			if value == 0 {
 				value = 1
 			}
@@ -350,7 +351,7 @@ gap in the sequence (while they are possible in the former).`},
 
 	h.SequenceDateRange().Methods().Next().DeclareMethod(
 		`Next returns the next number (formatted) of this sequence date range.`,
-		func(rs h.SequenceDateRangeSet) string {
+		func(rs m.SequenceDateRangeSet) string {
 			if rs.Sequence().Implementation() == "standard" {
 				hexyaSeq := models.Registry.MustGetSequence(fmt.Sprintf("sequence_%03d_%03d", rs.Sequence().ID(), rs.ID()))
 				return rs.Sequence().GetNextChar(hexyaSeq.NextValue())
@@ -359,7 +360,7 @@ gap in the sequence (while they are possible in the former).`},
 		})
 
 	h.SequenceDateRange().Methods().Create().Extend("",
-		func(rs h.SequenceDateRangeSet, data *h.SequenceDateRangeData) h.SequenceDateRangeSet {
+		func(rs m.SequenceDateRangeSet, data m.SequenceDateRangeData) m.SequenceDateRangeSet {
 			seq := rs.Super().Create(data)
 			mainSeq := seq.Sequence()
 			if mainSeq.Implementation() == "standard" {
@@ -374,7 +375,7 @@ gap in the sequence (while they are possible in the former).`},
 		})
 
 	h.SequenceDateRange().Methods().Unlink().Extend("",
-		func(rs h.SequenceDateRangeSet) int64 {
+		func(rs m.SequenceDateRangeSet) int64 {
 			for _, rec := range rs.Records() {
 				hexyaSeq, exists := models.Registry.GetSequence(fmt.Sprintf("sequence_%03d_%03d", rec.Sequence().ID(), rec.ID()))
 				if exists {
@@ -385,9 +386,9 @@ gap in the sequence (while they are possible in the former).`},
 		})
 
 	h.SequenceDateRange().Methods().Write().Extend("",
-		func(rs h.SequenceDateRangeSet, data *h.SequenceDateRangeData) bool {
+		func(rs m.SequenceDateRangeSet, data m.SequenceDateRangeData) bool {
 			if data.NumberNext() != 0 {
-				seqToAlter := rs.Filtered(func(rs h.SequenceDateRangeSet) bool {
+				seqToAlter := rs.Filtered(func(rs m.SequenceDateRangeSet) bool {
 					return rs.Sequence().Implementation() == "standard"
 				})
 				for _, rec := range seqToAlter.Records() {
@@ -402,12 +403,12 @@ gap in the sequence (while they are possible in the former).`},
 
 	h.SequenceDateRange().Methods().UpdateNoGap().DeclareMethod(
 		`UpdateNoGap gets the next number of a "No Gap" sequence`,
-		func(rs h.SequenceDateRangeSet) int64 {
+		func(rs m.SequenceDateRangeSet) int64 {
 			rs.EnsureOne()
 			numberNext := rs.NumberNext()
 			rs.Env().Cr().Execute(`SELECT number_next FROM sequence_date_range WHERE id=? FOR UPDATE NOWAIT`, rs.ID())
 			rs.Env().Cr().Execute(`UPDATE sequence_date_range SET number_next=number_next + ? WHERE id=?`, rs.Sequence().NumberIncrement(), rs.ID())
-			rs.InvalidateCache()
+			rs.Collection().InvalidateCache()
 			return numberNext
 		})
 

@@ -30,6 +30,7 @@ import (
 	"github.com/hexya-erp/hexya/src/tools/typesutils"
 	"github.com/hexya-erp/hexya/src/views"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -69,14 +70,14 @@ func init() {
 
 	partnerCategory.Methods().CheckParent().DeclareMethod(
 		`CheckParent checks if we have a recursion in the parent tree.`,
-		func(rs h.PartnerCategorySet) {
+		func(rs m.PartnerCategorySet) {
 			if !rs.CheckRecursion() {
 				log.Panic(rs.T("Error ! You can not create recursive tags."))
 			}
 		})
 
 	partnerCategory.Methods().NameGet().Extend("",
-		func(rs h.PartnerCategorySet) string {
+		func(rs m.PartnerCategorySet) string {
 			if rs.Env().Context().GetString("partner_category_display") == "short" {
 				return rs.Super().NameGet()
 			}
@@ -89,7 +90,7 @@ func init() {
 		})
 
 	partnerCategory.Methods().SearchByName().Extend("",
-		func(rs h.PartnerCategorySet, name string, op operator.Operator, additionalCond q.PartnerCategoryCondition, limit int) h.PartnerCategorySet {
+		func(rs m.PartnerCategorySet, name string, op operator.Operator, additionalCond q.PartnerCategoryCondition, limit int) m.PartnerCategorySet {
 			if name != "" {
 				tokens := strings.Split(name, " / ")
 				name = tokens[len(tokens)-1]
@@ -231,7 +232,7 @@ Use this field anywhere a small image is required.`},
 		"Contacts require a name.")
 
 	partnerModel.Methods().ComputeDisplayName().Extend("",
-		func(rs h.PartnerSet) models.FieldMap {
+		func(rs m.PartnerSet) models.FieldMap {
 			rSet := rs.
 				WithContext("show_address", false).
 				WithContext("show_address_only", false).
@@ -241,14 +242,14 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().ComputeTZOffset().DeclareMethod(
 		`ComputeTZOffset computes the timezone offset`,
-		func(rs h.PartnerSet) *h.PartnerData {
+		func(rs m.PartnerSet) m.PartnerData {
 			// TODO Implement TZOffset
 			return h.Partner().NewData().SetTZOffset("")
 		})
 
 	partnerModel.Methods().ComputePartnerShare().DeclareMethod(
 		`ComputePartnerShare computes the PartnerShare field`,
-		func(rs h.PartnerSet) *h.PartnerData {
+		func(rs m.PartnerSet) m.PartnerData {
 			var partnerShare bool
 			if rs.Users().IsEmpty() {
 				partnerShare = true
@@ -264,14 +265,14 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().ComputeContactAddress().DeclareMethod(
 		`ComputeContactAddress computes the contact's address according to the contact's country standards`,
-		func(rs h.PartnerSet) *h.PartnerData {
+		func(rs m.PartnerSet) m.PartnerData {
 			return h.Partner().NewData().SetContactAddress(rs.DisplayAddress(false))
 		})
 
 	partnerModel.Methods().ComputeCommercialPartner().DeclareMethod(
 		`ComputeCommercialPartner computes the commercial partner, which is the first company ancestor or the top
 		ancestor if none are companies`,
-		func(rs h.PartnerSet) *h.PartnerData {
+		func(rs m.PartnerSet) m.PartnerData {
 			commercialPartner := rs
 			if !rs.IsCompany() && !rs.Parent().IsEmpty() {
 				commercialPartner = rs.Parent().CommercialPartner()
@@ -281,7 +282,7 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().ComputeCommercialCompanyName().DeclareMethod(
 		`ComputeCommercialCompanyName returns the name of the commercial partner company`,
-		func(rs h.PartnerSet) *h.PartnerData {
+		func(rs m.PartnerSet) m.PartnerData {
 			commPartnerName := rs.CommercialPartner().Name()
 			if !rs.CommercialPartner().IsCompany() {
 				commPartnerName = rs.CompanyName()
@@ -291,7 +292,7 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().GetDefaultImage().DeclareMethod(
 		`GetDefaultImage returns a default image for the partner (base64 encoded)`,
-		func(rs h.PartnerSet, partnerType string, isCompany bool, Parent h.PartnerSet) string {
+		func(rs m.PartnerSet, partnerType string, isCompany bool, Parent m.PartnerSet) string {
 			if rs.Env().Context().HasKey("install_mode") {
 				return ""
 			}
@@ -333,14 +334,14 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().CheckParent().DeclareMethod(
 		`CheckParent checks for recursion in the partners parenthood`,
-		func(rs h.PartnerSet) {
+		func(rs m.PartnerSet) {
 			if !rs.CheckRecursion() {
 				log.Panic(rs.T("You cannot create recursive Partner hierarchies."))
 			}
 		})
 
 	partnerModel.Methods().Copy().Extend("",
-		func(rs h.PartnerSet, overrides *h.PartnerData) h.PartnerSet {
+		func(rs m.PartnerSet, overrides m.PartnerData) m.PartnerSet {
 			rs.EnsureOne()
 			overrides.SetName(rs.T("%s (copy)", rs.Name()))
 			return rs.Super().Copy(overrides)
@@ -349,7 +350,7 @@ Use this field anywhere a small image is required.`},
 	partnerModel.Methods().OnchangeParent().DeclareMethod(
 		`OnchangeParent updates the current partner data when its parent field
 		is modified`,
-		func(rs h.PartnerSet) *h.PartnerData {
+		func(rs m.PartnerSet) m.PartnerData {
 			if rs.Parent().IsEmpty() || rs.Type() != "contact" {
 				return h.Partner().NewData()
 			}
@@ -374,7 +375,7 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().OnchangeEmail().DeclareMethod(
 		`OnchangeEmail updates the user Gravatar image`,
-		func(rs h.PartnerSet) *h.PartnerData {
+		func(rs m.PartnerSet) m.PartnerData {
 			if rs.Image() != "" || rs.Email() == "" || rs.Env().Context().HasKey("no_gravatar") {
 				return h.Partner().NewData()
 			}
@@ -383,14 +384,14 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().ComputeEmailFormatted().DeclareMethod(
 		`ComputeEmailFormatted returns a 'Name <email@domain>' formatted string`,
-		func(rs h.PartnerSet) *h.PartnerData {
+		func(rs m.PartnerSet) m.PartnerData {
 			addr := mail.Address{Name: rs.Name(), Address: rs.Email()}
 			return h.Partner().NewData().SetEmailFormatted(addr.String())
 		})
 
 	partnerModel.Methods().ComputeCompanyType().DeclareMethod(
 		`ComputeIsCompany computes the IsCompany field from the selected CompanyType`,
-		func(rs h.PartnerSet) *h.PartnerData {
+		func(rs m.PartnerSet) m.PartnerData {
 			companyType := "person"
 			if rs.IsCompany() {
 				companyType = "company"
@@ -400,13 +401,13 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().InverseCompanyType().DeclareMethod(
 		`InverseCompanyType sets the IsCompany field according to the given CompanyType`,
-		func(rs h.PartnerSet, companyType string) {
+		func(rs m.PartnerSet, companyType string) {
 			rs.SetIsCompany(companyType == "company")
 		})
 
 	partnerModel.Methods().OnchangeCompanyType().DeclareMethod(
 		`OnchangeCompanyType updates the IsCompany field according to the selected type`,
-		func(rs h.PartnerSet) *h.PartnerData {
+		func(rs m.PartnerSet) m.PartnerData {
 			res := h.Partner().NewData().SetIsCompany(rs.CompanyType() == "company")
 			return res
 		})
@@ -416,7 +417,7 @@ Use this field anywhere a small image is required.`},
 		this partner's values on the given fields. The other fields are left to their
 		Go default value. This method is used to update fields from a partner to its
 		relatives.`,
-		func(rs h.PartnerSet, fields ...models.FieldNamer) *h.PartnerData {
+		func(rs m.PartnerSet, fields ...models.FieldNamer) m.PartnerData {
 			res := h.Partner().NewData()
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
 			for _, f := range fields {
@@ -432,7 +433,7 @@ Use this field anywhere a small image is required.`},
 	partnerModel.Methods().AddressFields().DeclareMethod(
 		`AddressFields returns the list of fields which are part of the address.
 		These are used to automate behaviours on contact addresses.`,
-		func(rs h.PartnerSet) []models.FieldNamer {
+		func(rs m.PartnerSet) []models.FieldNamer {
 			return []models.FieldNamer{
 				h.Partner().Fields().Street(), h.Partner().Fields().Street2(), h.Partner().Fields().Zip(),
 				h.Partner().Fields().City(), h.Partner().Fields().State(), h.Partner().Fields().Country(),
@@ -442,7 +443,7 @@ Use this field anywhere a small image is required.`},
 	partnerModel.Methods().UpdateAddress().DeclareMethod(
 		`UpdateAddress updates this PartnerSet only with the address fields of
 		the given vals. Other values passed are discarded.`,
-		func(rs h.PartnerSet, vals *h.PartnerData) bool {
+		func(rs m.PartnerSet, vals m.PartnerData) bool {
 			res := h.Partner().NewData()
 			for _, addrField := range rs.AddressFields() {
 				fValue, ok := vals.Get(addrField.String())
@@ -462,7 +463,7 @@ Use this field anywhere a small image is required.`},
         partners that aren't "commercial entities"" themselves, and will be
         delegated to the parent "commercial entity"". The list is meant to be
         extended by inheriting classes.`,
-		func(rs h.PartnerSet) []models.FieldNamer {
+		func(rs m.PartnerSet) []models.FieldNamer {
 			return []models.FieldNamer{
 				h.Partner().Fields().VAT(),
 				h.Partner().Fields().CreditLimit(),
@@ -472,7 +473,7 @@ Use this field anywhere a small image is required.`},
 	partnerModel.Methods().CommercialSyncFromCompany().DeclareMethod(
 		`CommercialSyncFromCompany handle sync of commercial fields when a new parent commercial entity is set,
         as if they were related fields.`,
-		func(rs h.PartnerSet) bool {
+		func(rs m.PartnerSet) bool {
 			if rs.Equals(rs.CommercialPartner()) {
 				return false
 			}
@@ -482,9 +483,9 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().CommercialSyncToChildren().DeclareMethod(
 		`CommercialSyncToChildren handle sync of commercial fields to descendants`,
-		func(rs h.PartnerSet) bool {
+		func(rs m.PartnerSet) bool {
 			partnerData := rs.CommercialPartner().UpdateFieldValues(rs.CommercialFields()...)
-			syncChildren := rs.Children().Filtered(func(rs h.PartnerSet) bool {
+			syncChildren := rs.Children().Filtered(func(rs m.PartnerSet) bool {
 				return !rs.IsCompany()
 			})
 			if syncChildren.IsEmpty() {
@@ -500,7 +501,7 @@ Use this field anywhere a small image is required.`},
 	partnerModel.Methods().FieldsSync().DeclareMethod(
 		`FieldsSync syncs commercial fields and address fields from company and to children after create/update,
         just as if those were all modeled as fields.related to the parent`,
-		func(rs h.PartnerSet, vals *h.PartnerData, fieldsToUnset ...models.FieldNamer) {
+		func(rs m.PartnerSet, vals m.PartnerData, fieldsToUnset ...models.FieldNamer) {
 			// 1. From UPSTREAM: sync from parent
 			// 1a. Commercial fields: sync if parent changed
 			if !vals.Parent().IsEmpty() {
@@ -524,7 +525,7 @@ Use this field anywhere a small image is required.`},
 					}
 				}
 			}
-			personChildren := rs.Children().Filtered(func(rs h.PartnerSet) bool {
+			personChildren := rs.Children().Filtered(func(rs m.PartnerSet) bool {
 				return !rs.IsCompany()
 			})
 			for _, child := range personChildren.Records() {
@@ -548,7 +549,7 @@ Use this field anywhere a small image is required.`},
 	partnerModel.Methods().HandleFirsrtContactCreation().DeclareMethod(
 		`HandleFirsrtContactCreation: on creation of first contact for a company (or root) that has no address,
 		assume contact address was meant to be company address`,
-		func(rs h.PartnerSet) {
+		func(rs m.PartnerSet) {
 			if !rs.Parent().IsCompany() && !rs.Parent().Parent().IsEmpty() {
 				// Our parent is not a company, nor a root contact
 				return
@@ -574,7 +575,7 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().CleanWebsite().DeclareMethod(
 		`CleanWebsite returns a cleaned website url including scheme.`,
-		func(rs h.PartnerSet, website string) string {
+		func(rs m.PartnerSet, website string) string {
 			websiteURL, err := url.Parse(website)
 			if err != nil {
 				log.Panic("Invalid URL for website", "URL", website)
@@ -586,7 +587,7 @@ Use this field anywhere a small image is required.`},
 		})
 
 	partnerModel.Methods().Write().Extend("",
-		func(rs h.PartnerSet, vals *h.PartnerData) bool {
+		func(rs m.PartnerSet, vals m.PartnerData) bool {
 			if rs.Env().Context().HasKey("goto_super") {
 				return rs.Super().Write(vals)
 			}
@@ -626,7 +627,7 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().ResizeImageData().DeclareMethod(
 		`ResizeImageData updates the given data struct with images set for the different sizes.`,
-		func(set h.PartnerSet, data *h.PartnerData) {
+		func(set m.PartnerSet, data m.PartnerData) {
 			switch {
 			case data.HasImage():
 				data.SetImage(b64image.Resize(data.Image(), 1024, 1024, true))
@@ -644,7 +645,7 @@ Use this field anywhere a small image is required.`},
 		})
 
 	partnerModel.Methods().Create().Extend("",
-		func(rs h.PartnerSet, vals *h.PartnerData) h.PartnerSet {
+		func(rs m.PartnerSet, vals m.PartnerData) m.PartnerSet {
 			if vals.Website() != "" {
 				vals.SetWebsite(rs.CleanWebsite(vals.Website()))
 			}
@@ -663,7 +664,7 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().CreateCompany().DeclareMethod(
 		`CreateCompany creates the parent company of this partner if it has been given a CompanyName.`,
-		func(rs h.PartnerSet) bool {
+		func(rs m.PartnerSet) bool {
 			rs.EnsureOne()
 			if rs.CompanyName() != "" {
 				// Create parent company
@@ -680,7 +681,7 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().OpenCommercialEntity().DeclareMethod(
 		`OpenCommercialEntity is a utility method used to add an "Open Company" button in partner views`,
-		func(rs h.PartnerSet) *actions.Action {
+		func(rs m.PartnerSet) *actions.Action {
 			rs.EnsureOne()
 			return &actions.Action{
 				Type:     actions.ActionActWindow,
@@ -694,7 +695,7 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().OpenParent().DeclareMethod(
 		`OpenParent is a utility method used to add an "Open Parent" button in partner views`,
-		func(rs h.PartnerSet) *actions.Action {
+		func(rs m.PartnerSet) *actions.Action {
 			rs.EnsureOne()
 			addressFormID := "base_view_partner_address_form"
 			return &actions.Action{
@@ -709,7 +710,7 @@ Use this field anywhere a small image is required.`},
 		})
 
 	partnerModel.Methods().NameGet().Extend("",
-		func(rs h.PartnerSet) string {
+		func(rs m.PartnerSet) string {
 			name := rs.Name()
 			if rs.CompanyName() != "" || !rs.Parent().IsEmpty() {
 				if name == "" {
@@ -741,7 +742,7 @@ Use this field anywhere a small image is required.`},
 		})
 
 	partnerModel.Methods().SearchByName().Extend("",
-		func(rs h.PartnerSet, name string, op operator.Operator, additionalCond q.PartnerCondition, limit int) h.PartnerSet {
+		func(rs m.PartnerSet, name string, op operator.Operator, additionalCond q.PartnerCondition, limit int) m.PartnerSet {
 			if name == "" {
 				return rs.Super().SearchByName(name, op, additionalCond, limit)
 			}
@@ -762,7 +763,7 @@ Use this field anywhere a small image is required.`},
 		Supported syntax:
             - 'Raoul <raoul@grosbedon.fr>': will find name and email address
             - otherwise: default, everything is set as the name (email is returned empty)`,
-		func(rs h.PartnerSet, email string) (string, string) {
+		func(rs m.PartnerSet, email string) (string, string) {
 			addr, err := mail.ParseAddress(email)
 			if err != nil {
 				return email, ""
@@ -776,7 +777,7 @@ Use this field anywhere a small image is required.`},
         If only an email address is received and that the regex cannot find
         a name, the name will have the email value.
         If 'force_email' key in context: must find the email address.`,
-		func(rs h.PartnerSet, name string) h.PartnerSet {
+		func(rs m.PartnerSet, name string) m.PartnerSet {
 			name, email := rs.ParsePartnerName(name)
 			if email == "" && rs.Env().Context().GetBool("force_email") {
 				panic(rs.T("Couldn't create contact without email address!"))
@@ -797,7 +798,7 @@ Use this field anywhere a small image is required.`},
 		`FindOrCreate finds a partner with the given 'email' or creates one.
 		The given string should contain at least one email,
                 e.g. "Raoul Grosbedon <r.g@grosbedon.fr>"`,
-		func(rs h.PartnerSet, email string) h.PartnerSet {
+		func(rs m.PartnerSet, email string) m.PartnerSet {
 			if _, emailParsed := rs.ParsePartnerName(email); emailParsed != "" {
 				email = emailParsed
 			}
@@ -811,7 +812,7 @@ Use this field anywhere a small image is required.`},
 	partnerModel.Methods().GetGravatarImage().DeclareMethod(
 		`GetGravatarImage returns the image from Gravatar associated with the given email.
 		Image is returned as a base64 encoded string.`,
-		func(rs h.PartnerSet, email string) string {
+		func(rs m.PartnerSet, email string) string {
 			emailHash := md5.Sum([]byte(strings.ToLower(email)))
 			gravatarURL := fmt.Sprintf("%s/%x?%s", gravatarBaseURL, emailHash, "d=404&s=128")
 			client := &http.Client{
@@ -836,18 +837,18 @@ Use this field anywhere a small image is required.`},
         provided partner itself if no type 'default' is found either.
 
 		Result map keys are the contact types, such as 'contact', 'delivery', etc.`,
-		func(rs h.PartnerSet, addrTypes []string) map[string]h.PartnerSet {
+		func(rs m.PartnerSet, addrTypes []string) map[string]m.PartnerSet {
 			atMap := make(map[string]bool)
 			for _, at := range addrTypes {
 				atMap[at] = true
 			}
 			atMap["contact"] = true
-			result := make(map[string]h.PartnerSet)
+			result := make(map[string]m.PartnerSet)
 			visited := make(map[int64]bool)
 			for _, partner := range rs.Records() {
 				currentPartner := partner
 				for !currentPartner.IsEmpty() {
-					toScan := []h.PartnerSet{currentPartner}
+					toScan := []m.PartnerSet{currentPartner}
 					for len(toScan) > 0 {
 						record := toScan[0]
 						toScan = toScan[1:]
@@ -887,7 +888,7 @@ Use this field anywhere a small image is required.`},
 	partnerModel.Methods().DisplayAddress().DeclareMethod(
 		`DisplayAddress builds and returns an address formatted accordingly to the
         standards of the country where it belongs.`,
-		func(rs h.PartnerSet, withoutCompany bool) string {
+		func(rs m.PartnerSet, withoutCompany bool) string {
 			addressFormat := rs.Country().AddressFormat()
 			if addressFormat == "" {
 				addressFormat = "{{ .Street }}\n{{ .Street2 }}\n{{ .City }} {{ .StateCode }} {{ .Zip }}\n{{ .CountryName}}"

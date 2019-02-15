@@ -12,6 +12,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models/types/dates"
 	"github.com/hexya-erp/hexya/src/tests"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 	. "github.com/smartystreets/goconvey/convey"
 )
@@ -251,20 +252,20 @@ func TestPartners(t *testing.T) {
 						SetEmail("ugr@sunhelm.com")))))
 				p3 := h.Partner().Search(env, q.Partner().Email().Equals("ugr@sunhelm.com"))
 
-				for _, p := range []h.PartnerSet{p0, p1, p11, p2, p3} {
+				for _, p := range []m.PartnerSet{p0, p1, p11, p2, p3} {
 					So(p.CommercialPartner().Equals(sunhelm), ShouldBeTrue)
 					So(p.VAT(), ShouldEqual, sunhelm.VAT())
 				}
 
 				sunhemlVAT := "BE0123456789"
 				sunhelm.SetVAT(sunhemlVAT)
-				for _, p := range []h.PartnerSet{p0, p1, p11, p2, p3} {
+				for _, p := range []m.PartnerSet{p0, p1, p11, p2, p3} {
 					So(p.VAT(), ShouldEqual, sunhemlVAT)
 				}
 
 				p1VAT := "BE0987654321"
 				p1.SetVAT(p1VAT)
-				for _, p := range []h.PartnerSet{p0, p11, p2, p3} {
+				for _, p := range []m.PartnerSet{p0, p11, p2, p3} {
 					So(p.VAT(), ShouldEqual, sunhemlVAT)
 				}
 
@@ -330,7 +331,7 @@ func TestAggregateRead(t *testing.T) {
 		So(models.SimulateInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 			titleSir := h.PartnerTitle().Create(env, h.PartnerTitle().NewData().SetName("Sir..."))
 			titleLady := h.PartnerTitle().Create(env, h.PartnerTitle().NewData().SetName("Lady..."))
-			testUsers := []*h.UserData{
+			testUsers := []m.UserData{
 				h.User().NewData().SetName("Alice").SetLogin("alice").SetColor(1).SetFunction("Friend").SetDate(dates.ParseDate("2015-03-28")).SetTitle(titleLady),
 				h.User().NewData().SetName("Alice").SetLogin("alice2").SetColor(0).SetFunction("Friend").SetDate(dates.ParseDate("2015-01-28")).SetTitle(titleLady),
 				h.User().NewData().SetName("Bob").SetLogin("bob").SetColor(2).SetFunction("Friend").SetDate(dates.ParseDate("2015-03-02")).SetTitle(titleSir),
@@ -364,9 +365,9 @@ func TestAggregateRead(t *testing.T) {
 					Offset(3).
 					Aggregates(q.User().Login())
 				So(groupsData, ShouldHaveLength, 3)
-				So(groupsData[0].Values.Login(), ShouldEqual, "bob")
-				So(groupsData[1].Values.Login(), ShouldEqual, "alice2")
-				So(groupsData[2].Values.Login(), ShouldEqual, "alice")
+				So(groupsData[0].Values().Login(), ShouldEqual, "bob")
+				So(groupsData[1].Values().Login(), ShouldEqual, "alice2")
+				So(groupsData[2].Values().Login(), ShouldEqual, "alice")
 			})
 
 			Convey("Group on inherited char field, aggregate on int field (second groupby ignored on purpose)", func() {
@@ -375,11 +376,11 @@ func TestAggregateRead(t *testing.T) {
 					GroupBy(q.User().Function()).
 					Aggregates(q.User().Name(), q.User().Color(), q.User().Function())
 				So(groupsData, ShouldHaveLength, 3)
-				So(groupsData[0].Values.Function(), ShouldEqual, "5$ Wrench")
-				So(groupsData[1].Values.Function(), ShouldEqual, "Eavesdropper")
-				So(groupsData[2].Values.Function(), ShouldEqual, "Friend")
+				So(groupsData[0].Values().Function(), ShouldEqual, "5$ Wrench")
+				So(groupsData[1].Values().Function(), ShouldEqual, "Eavesdropper")
+				So(groupsData[2].Values().Function(), ShouldEqual, "Friend")
 				for _, gd := range groupsData {
-					So(gd.Values.Color(), ShouldEqual, 3)
+					So(gd.Values().Color(), ShouldEqual, 3)
 				}
 			})
 			Convey("Group on inherited char field, reverse order", func() {
@@ -388,10 +389,10 @@ func TestAggregateRead(t *testing.T) {
 					GroupBy(q.User().Name()).
 					OrderBy("name DESC").
 					Aggregates(q.User().Name(), q.User().Color())
-				So(groupsData[0].Values.Name(), ShouldEqual, "Nab")
-				So(groupsData[1].Values.Name(), ShouldEqual, "Eve")
-				So(groupsData[2].Values.Name(), ShouldEqual, "Bob")
-				So(groupsData[3].Values.Name(), ShouldEqual, "Alice")
+				So(groupsData[0].Values().Name(), ShouldEqual, "Nab")
+				So(groupsData[1].Values().Name(), ShouldEqual, "Eve")
+				So(groupsData[2].Values().Name(), ShouldEqual, "Bob")
+				So(groupsData[3].Values().Name(), ShouldEqual, "Alice")
 
 			})
 
@@ -400,12 +401,12 @@ func TestAggregateRead(t *testing.T) {
 					Search(condition).
 					GroupBy(q.User().Color()).
 					Aggregates(q.User().Color())
-				So(groupsData[0].Values.Color(), ShouldEqual, -3)
-				So(groupsData[1].Values.Color(), ShouldEqual, 0)
-				So(groupsData[2].Values.Color(), ShouldEqual, 1)
-				So(groupsData[3].Values.Color(), ShouldEqual, 2)
-				So(groupsData[4].Values.Color(), ShouldEqual, 3)
-				So(groupsData[5].Values.Color(), ShouldEqual, 6)
+				So(groupsData[0].Values().Color(), ShouldEqual, -3)
+				So(groupsData[1].Values().Color(), ShouldEqual, 0)
+				So(groupsData[2].Values().Color(), ShouldEqual, 1)
+				So(groupsData[3].Values().Color(), ShouldEqual, 2)
+				So(groupsData[4].Values().Color(), ShouldEqual, 3)
+				So(groupsData[5].Values().Color(), ShouldEqual, 6)
 			})
 
 			Convey("Multi group, second level is int field, should still be summed in first level grouping", func() {
@@ -414,14 +415,14 @@ func TestAggregateRead(t *testing.T) {
 					GroupBy(q.User().Name()).
 					OrderBy("name DESC").
 					Aggregates(q.User().Name(), q.User().Color())
-				So(groupsData[0].Values.Name(), ShouldEqual, "Nab")
-				So(groupsData[1].Values.Name(), ShouldEqual, "Eve")
-				So(groupsData[2].Values.Name(), ShouldEqual, "Bob")
-				So(groupsData[3].Values.Name(), ShouldEqual, "Alice")
-				So(groupsData[0].Values.Color(), ShouldEqual, 3)
-				So(groupsData[1].Values.Color(), ShouldEqual, 3)
-				So(groupsData[2].Values.Color(), ShouldEqual, 2)
-				So(groupsData[3].Values.Color(), ShouldEqual, 1)
+				So(groupsData[0].Values().Name(), ShouldEqual, "Nab")
+				So(groupsData[1].Values().Name(), ShouldEqual, "Eve")
+				So(groupsData[2].Values().Name(), ShouldEqual, "Bob")
+				So(groupsData[3].Values().Name(), ShouldEqual, "Alice")
+				So(groupsData[0].Values().Color(), ShouldEqual, 3)
+				So(groupsData[1].Values().Color(), ShouldEqual, 3)
+				So(groupsData[2].Values().Color(), ShouldEqual, 2)
+				So(groupsData[3].Values().Color(), ShouldEqual, 1)
 			})
 
 			Convey("Group on inherited char field, multiple orders with directions", func() {
@@ -431,14 +432,14 @@ func TestAggregateRead(t *testing.T) {
 					OrderBy("color DESC", "name").
 					Aggregates(q.User().Name(), q.User().Color())
 				So(groupsData, ShouldHaveLength, 4)
-				So(groupsData[0].Values.Name(), ShouldEqual, "Eve")
-				So(groupsData[1].Values.Name(), ShouldEqual, "Nab")
-				So(groupsData[2].Values.Name(), ShouldEqual, "Bob")
-				So(groupsData[3].Values.Name(), ShouldEqual, "Alice")
-				So(groupsData[0].Count, ShouldEqual, 1)
-				So(groupsData[1].Count, ShouldEqual, 2)
-				So(groupsData[2].Count, ShouldEqual, 1)
-				So(groupsData[3].Count, ShouldEqual, 2)
+				So(groupsData[0].Values().Name(), ShouldEqual, "Eve")
+				So(groupsData[1].Values().Name(), ShouldEqual, "Nab")
+				So(groupsData[2].Values().Name(), ShouldEqual, "Bob")
+				So(groupsData[3].Values().Name(), ShouldEqual, "Alice")
+				So(groupsData[0].Count(), ShouldEqual, 1)
+				So(groupsData[1].Count(), ShouldEqual, 2)
+				So(groupsData[2].Count(), ShouldEqual, 1)
+				So(groupsData[3].Count(), ShouldEqual, 2)
 			})
 
 			Convey("Group on inherited date column (res_partner.date) -> Year-Month, default ordering", func() {
@@ -462,12 +463,12 @@ func TestAggregateRead(t *testing.T) {
 					OrderBy("Title.Name").
 					Aggregates(q.User().Function(), q.User().Color(), q.User().Title())
 				So(groupsData, ShouldHaveLength, 2)
-				So(groupsData[0].Values.Title().Equals(titleLady), ShouldBeTrue)
-				So(groupsData[1].Values.Title().Equals(titleSir), ShouldBeTrue)
-				So(groupsData[0].Values.Color(), ShouldEqual, 10)
-				So(groupsData[1].Values.Color(), ShouldEqual, -1)
-				So(groupsData[0].Count, ShouldEqual, 4)
-				So(groupsData[1].Count, ShouldEqual, 2)
+				So(groupsData[0].Values().Title().Equals(titleLady), ShouldBeTrue)
+				So(groupsData[1].Values().Title().Equals(titleSir), ShouldBeTrue)
+				So(groupsData[0].Values().Color(), ShouldEqual, 10)
+				So(groupsData[1].Values().Color(), ShouldEqual, -1)
+				So(groupsData[0].Count(), ShouldEqual, 4)
+				So(groupsData[1].Count(), ShouldEqual, 2)
 			})
 
 			Convey("Group on inherited many2one (res_partner.title), reversed natural order", func() {
@@ -477,12 +478,12 @@ func TestAggregateRead(t *testing.T) {
 					OrderBy("Title.Name DESC").
 					Aggregates(q.User().Function(), q.User().Color(), q.User().Title())
 				So(groupsData, ShouldHaveLength, 2)
-				So(groupsData[0].Values.Title().Equals(titleSir), ShouldBeTrue)
-				So(groupsData[1].Values.Title().Equals(titleLady), ShouldBeTrue)
-				So(groupsData[0].Values.Color(), ShouldEqual, -1)
-				So(groupsData[1].Values.Color(), ShouldEqual, 10)
-				So(groupsData[0].Count, ShouldEqual, 2)
-				So(groupsData[1].Count, ShouldEqual, 4)
+				So(groupsData[0].Values().Title().Equals(titleSir), ShouldBeTrue)
+				So(groupsData[1].Values().Title().Equals(titleLady), ShouldBeTrue)
+				So(groupsData[0].Values().Color(), ShouldEqual, -1)
+				So(groupsData[1].Values().Color(), ShouldEqual, 10)
+				So(groupsData[0].Count(), ShouldEqual, 2)
+				So(groupsData[1].Count(), ShouldEqual, 4)
 			})
 
 			Convey("Group on inherited many2one (res_partner.title), multiple orders with m2o in second position", func() {
@@ -492,12 +493,12 @@ func TestAggregateRead(t *testing.T) {
 					OrderBy("color DESC", "Title.Name DESC").
 					Aggregates(q.User().Function(), q.User().Color(), q.User().Title())
 				So(groupsData, ShouldHaveLength, 2)
-				So(groupsData[0].Values.Title().Equals(titleLady), ShouldBeTrue)
-				So(groupsData[1].Values.Title().Equals(titleSir), ShouldBeTrue)
-				So(groupsData[0].Values.Color(), ShouldEqual, 10)
-				So(groupsData[1].Values.Color(), ShouldEqual, -1)
-				So(groupsData[0].Count, ShouldEqual, 4)
-				So(groupsData[1].Count, ShouldEqual, 2)
+				So(groupsData[0].Values().Title().Equals(titleLady), ShouldBeTrue)
+				So(groupsData[1].Values().Title().Equals(titleSir), ShouldBeTrue)
+				So(groupsData[0].Values().Color(), ShouldEqual, 10)
+				So(groupsData[1].Values().Color(), ShouldEqual, -1)
+				So(groupsData[0].Count(), ShouldEqual, 4)
+				So(groupsData[1].Count(), ShouldEqual, 2)
 			})
 
 			Convey("Group on inherited many2one (res_partner.title), ordered by other inherited field (color)", func() {
@@ -507,12 +508,12 @@ func TestAggregateRead(t *testing.T) {
 					OrderBy("color").
 					Aggregates(q.User().Function(), q.User().Color(), q.User().Title())
 				So(groupsData, ShouldHaveLength, 2)
-				So(groupsData[0].Values.Title().Equals(titleSir), ShouldBeTrue)
-				So(groupsData[1].Values.Title().Equals(titleLady), ShouldBeTrue)
-				So(groupsData[0].Values.Color(), ShouldEqual, -1)
-				So(groupsData[1].Values.Color(), ShouldEqual, 10)
-				So(groupsData[0].Count, ShouldEqual, 2)
-				So(groupsData[1].Count, ShouldEqual, 4)
+				So(groupsData[0].Values().Title().Equals(titleSir), ShouldBeTrue)
+				So(groupsData[1].Values().Title().Equals(titleLady), ShouldBeTrue)
+				So(groupsData[0].Values().Color(), ShouldEqual, -1)
+				So(groupsData[1].Values().Color(), ShouldEqual, 10)
+				So(groupsData[0].Count(), ShouldEqual, 2)
+				So(groupsData[1].Count(), ShouldEqual, 4)
 			})
 		}), ShouldBeNil)
 	})

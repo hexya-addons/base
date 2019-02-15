@@ -11,6 +11,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models/types"
 	"github.com/hexya-erp/hexya/src/tools/emailutils"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -47,7 +48,7 @@ func init() {
 	cpWizard.Methods().ChangePasswordButton().DeclareMethod(
 		`ChangePasswordButton is called when the user clicks on 'Apply' button in the popup.
 		It updates the user's password.`,
-		func(rs h.UserChangePasswordWizardSet) {
+		func(rs m.UserChangePasswordWizardSet) {
 			for _, userLine := range rs.Users().Records() {
 				userLine.User().SetPassword(userLine.NewPassword())
 			}
@@ -100,7 +101,7 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().SelfReadableFields().DeclareMethod(
 		`SelfReadableFields returns the list of its own fields that a user can read.`,
-		func(rs h.UserSet) map[string]bool {
+		func(rs m.UserSet) map[string]bool {
 			return map[string]bool{
 				"Signature": true, "Company": true, "Login": true, "Email": true, "Name": true, "Image": true,
 				"ImageMedium": true, "ImageSmall": true, "Lang": true, "TZ": true, "TZOffset": true, "Groups": true,
@@ -110,7 +111,7 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().SelfWritableFields().DeclareMethod(
 		`SelfWritableFields returns the list of its own fields that a user can write.`,
-		func(rs h.UserSet) map[string]bool {
+		func(rs m.UserSet) map[string]bool {
 			return map[string]bool{
 				"Signature": true, "ActionID": true, "Company": true, "Email": true, "Name": true,
 				"Image": true, "ImageMedium": true, "ImageSmall": true, "Lang": true, "TZ": true,
@@ -119,13 +120,13 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().ComputePassword().DeclareMethod(
 		`ComputePassword is a technical function for the new password mechanism. It always returns an empty string`,
-		func(rs h.UserSet) *h.UserData {
+		func(rs m.UserSet) m.UserData {
 			return h.User().NewData().SetNewPassword("")
 		})
 
 	userModel.Methods().InversePassword().DeclareMethod(
 		`InversePassword is used in the new password mechanism.`,
-		func(rs h.UserSet, vals models.FieldMapper) {
+		func(rs m.UserSet, vals models.FieldMapper) {
 			if rs.NewPassword() == "" {
 				return
 			}
@@ -137,19 +138,19 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().ComputeShare().DeclareMethod(
 		`ComputeShare checks if this is a shared user`,
-		func(rs h.UserSet) *h.UserData {
+		func(rs m.UserSet) m.UserData {
 			return h.User().NewData().SetShare(!rs.HasGroup(GroupUser.ID))
 		})
 
 	userModel.Methods().ComputeCompaniesCount().DeclareMethod(
 		`ComputeCompaniesCount retrieves the number of companies in the system`,
-		func(rs h.UserSet) *h.UserData {
+		func(rs m.UserSet) m.UserData {
 			return h.User().NewData().SetCompaniesCount(h.Company().NewSet(rs.Env()).Sudo().SearchCount())
 		})
 
 	userModel.Methods().OnchangeLogin().DeclareMethod(
 		`OnchangeLogin matches the email if the login is an email`,
-		func(rs h.UserSet) *h.UserData {
+		func(rs m.UserSet) m.UserData {
 			if rs.Login() == "" || !emailutils.IsValidAddress(rs.Login()) {
 				return h.User().NewData()
 			}
@@ -158,14 +159,14 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().CheckCompany().DeclareMethod(
 		`CheckCompany checks that the user's company is one of its authorized companies`,
-		func(rs h.UserSet) {
+		func(rs m.UserSet) {
 			if rs.Company().Intersect(rs.Companies()).IsEmpty() {
 				log.Panic(rs.T("The chosen company is not in the allowed companies for this user"))
 			}
 		})
 
 	userModel.Methods().Read().Extend("",
-		func(rs h.UserSet, fields []string) []models.FieldMap {
+		func(rs m.UserSet, fields []string) []models.FieldMap {
 			rSet := rs
 			if len(fields) > 0 && rs.ID() == rs.Env().Uid() {
 				var hasUnsafeFields bool
@@ -194,7 +195,7 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().Search().Extend("",
-		func(rs h.UserSet, cond q.UserCondition) h.UserSet {
+		func(rs m.UserSet, cond q.UserCondition) m.UserSet {
 			if cond.HasField(h.User().Fields().Password()) {
 				log.Panic(rs.T("Invalid search criterion: password"))
 			}
@@ -202,7 +203,7 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().Create().Extend("",
-		func(rs h.UserSet, vals *h.UserData) h.UserSet {
+		func(rs m.UserSet, vals m.UserData) m.UserSet {
 			user := rs.Super().Create(vals)
 			user.Partner().SetActive(user.Active())
 			if !user.Partner().Company().IsEmpty() {
@@ -212,7 +213,7 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().Write().Extend("",
-		func(rs h.UserSet, data *h.UserData) bool {
+		func(rs m.UserSet, data m.UserData) bool {
 			if data.HasActive() && !data.Active() {
 				for _, user := range rs.Records() {
 					if user.ID() == security.SuperUserID {
@@ -260,7 +261,7 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().Unlink().Extend("",
-		func(rs h.UserSet) int64 {
+		func(rs m.UserSet) int64 {
 			for _, id := range rs.Ids() {
 				if id == security.SuperUserID {
 					log.Panic(rs.T("You can not remove the admin user as it is used internally for resources created by Hexya"))
@@ -270,11 +271,11 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().SearchByName().Extend("",
-		func(rs h.UserSet, name string, op operator.Operator, additionalCond q.UserCondition, limit int) h.UserSet {
+		func(rs m.UserSet, name string, op operator.Operator, additionalCond q.UserCondition, limit int) m.UserSet {
 			if name == "" {
 				return rs.Super().SearchByName(name, op, additionalCond, limit)
 			}
-			var users h.UserSet
+			var users m.UserSet
 			if op == operator.Equals || op == operator.IContains {
 				users = h.User().Search(rs.Env(), q.User().Login().Equals(name).AndCond(additionalCond)).Limit(limit)
 			}
@@ -285,7 +286,7 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().Copy().Extend("",
-		func(rs h.UserSet, overrides *h.UserData) h.UserSet {
+		func(rs m.UserSet, overrides m.UserData) m.UserSet {
 			rs.EnsureOne()
 			if !overrides.HasName() && !overrides.HasPartner() {
 				overrides.SetName(rs.T("%s (copy)", rs.Name()))
@@ -299,7 +300,7 @@ a change of password, the user has to login again.`},
 	userModel.Methods().ContextGet().DeclareMethod(
 		`UsersContextGet returns a context with the user's lang, tz and uid
 		This method must be called on a singleton.`,
-		func(rs h.UserSet) *types.Context {
+		func(rs m.UserSet) *types.Context {
 			rs.EnsureOne()
 			res := types.NewContext().
 				WithKey("lang", rs.Lang()).
@@ -311,22 +312,22 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().ActionGet().DeclareMethod(
 		`ActionGet returns the action for the preferences popup`,
-		func(rs h.UserSet) *actions.Action {
+		func(rs m.UserSet) *actions.Action {
 			return actions.Registry.GetById("base_action_res_users_my")
 		})
 
 	userModel.Methods().UpdateLastLogin().DeclareMethod(
 		`UpdateLastLogin updates the last login date of the user`,
-		func(rs h.UserSet) {
+		func(rs m.UserSet) {
 			// only create new records to avoid any side-effect on concurrent transactions
 			// extra records will be deleted by the periodical garbage collection
-			h.UserLog().Create(rs.Env(), &h.UserLogData{})
+			h.UserLog().Create(rs.Env(), h.UserLog().NewData())
 		})
 
 	userModel.Methods().CheckCredentials().DeclareMethod(
 		`CheckCredentials checks that the user defined by its login and secret is allowed to log in.
 		It returns the uid of the user on success and an error otherwise.`,
-		func(rs h.UserSet, login, secret string) (uid int64, err error) {
+		func(rs m.UserSet, login, secret string) (uid int64, err error) {
 			user := rs.Search(q.User().Login().Equals(login))
 			if user.Len() == 0 {
 				err = security.UserNotFoundError(login)
@@ -342,7 +343,7 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().Authenticate().DeclareMethod(
 		"Authenticate the user defined by login and secret",
-		func(rs h.UserSet, login, secret string) (uid int64, err error) {
+		func(rs m.UserSet, login, secret string) (uid int64, err error) {
 			uid, err = rs.CheckCredentials(login, secret)
 			if err != nil {
 				rs.UpdateLastLogin()
@@ -354,7 +355,7 @@ a change of password, the user has to login again.`},
 		`ChangePassword changes current user password. Old password must be provided explicitly
         to prevent hijacking an existing user session, or for cases where the cleartext
         password is not used to authenticate requests. It returns true or panics.`,
-		func(rs h.UserSet, oldPassword, newPassword string) bool {
+		func(rs m.UserSet, oldPassword, newPassword string) bool {
 			currentUser := h.User().NewSet(rs.Env()).CurrentUser()
 			uid, err := rs.CheckCredentials(currentUser.Login(), oldPassword)
 			if err != nil || rs.Env().Uid() != uid {
@@ -366,7 +367,7 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().PreferenceSave().DeclareMethod(
 		`PreferenceSave is called when validating the preferences popup`,
-		func(rs h.UserSet) *actions.Action {
+		func(rs m.UserSet) *actions.Action {
 			return &actions.Action{
 				Type: actions.ActionClient,
 				Tag:  "reload_context",
@@ -375,7 +376,7 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().PreferenceChangePassword().DeclareMethod(
 		`PreferenceChangePassword is called when clicking 'Change Password' in the preferences popup`,
-		func(rs h.UserSet) *actions.Action {
+		func(rs m.UserSet) *actions.Action {
 			return &actions.Action{
 				Type:   actions.ActionClient,
 				Tag:    "change_password",
@@ -387,7 +388,7 @@ a change of password, the user has to login again.`},
 		`HasGroup returns true if this user belongs to the group with the given ID.
 		If this method is called on an empty RecordSet, then it checks if the current
 		user belongs to the given group.`,
-		func(rs h.UserSet, groupID string) bool {
+		func(rs m.UserSet, groupID string) bool {
 			userID := rs.ID()
 			if userID == 0 {
 				userID = rs.Env().Uid()
@@ -398,21 +399,21 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().IsAdmin().DeclareMethod(
 		`IsAdmin returns true if this user is the administrator or member of the 'Access Rights' group`,
-		func(rs h.UserSet) bool {
+		func(rs m.UserSet) bool {
 			rs.EnsureOne()
 			return rs.IsSuperUser() || rs.HasGroup(GroupERPManager.ID)
 		})
 
 	userModel.Methods().IsSuperUser().DeclareMethod(
 		`IsSuperUser returns true if this user is the administrator`,
-		func(rs h.UserSet) bool {
+		func(rs m.UserSet) bool {
 			rs.EnsureOne()
 			return rs.ID() == security.SuperUserID
 		})
 
 	userModel.Methods().AddMandatoryGroups().DeclareMethod(
 		`AddMandatoryGroups adds the group Everyone to everybody and the admin group to the admin`,
-		func(rs h.UserSet) {
+		func(rs m.UserSet) {
 			for _, user := range rs.Records() {
 				dbGroupEveryone := h.Group().Search(rs.Env(), q.Group().GroupID().Equals(security.GroupEveryoneID))
 				dbGroupAdmin := h.Group().Search(rs.Env(), q.Group().GroupID().Equals(security.GroupAdminID))
@@ -430,7 +431,7 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().SyncMemberships().DeclareMethod(
 		`SyncMemberships synchronises the users memberships with the Hexya internal registry`,
-		func(rs h.UserSet) {
+		func(rs m.UserSet) {
 			for _, user := range rs.Records() {
 				if user.CheckGroupsSync() {
 					continue
@@ -447,7 +448,7 @@ a change of password, the user has to login again.`},
 	userModel.Methods().CheckGroupsSync().DeclareMethod(
 		`CheckGroupSync returns true if the groups in the internal registry match exactly
 		database groups of the given users. This method must be called on a singleton`,
-		func(rs h.UserSet) bool {
+		func(rs m.UserSet) bool {
 			rs.EnsureOne()
 		dbLoop:
 			for _, dbGroup := range rs.Groups().Records() {
@@ -472,19 +473,19 @@ a change of password, the user has to login again.`},
 
 	userModel.Methods().GetCompany().DeclareMethod(
 		`GetCompany returns the current user's company.`,
-		func(rs h.UserSet) h.CompanySet {
+		func(rs m.UserSet) m.CompanySet {
 			return h.User().NewSet(rs.Env()).CurrentUser().Company()
 		})
 
 	userModel.Methods().GetCompanyCurrency().DeclareMethod(
 		`GetCompanyCurrency returns the currency of the current user's company.`,
-		func(rs h.UserSet) h.CurrencySet {
+		func(rs m.UserSet) m.CurrencySet {
 			return h.User().NewSet(rs.Env()).CurrentUser().Company().Currency()
 		})
 
 	userModel.Methods().CurrentUser().DeclareMethod(
 		`CurrentUser returns a UserSet with the currently logged in user.`,
-		func(rs h.UserSet) h.UserSet {
+		func(rs m.UserSet) m.UserSet {
 			return h.User().Browse(rs.Env(), []int64{rs.Env().Uid()})
 		})
 

@@ -8,20 +8,21 @@ import (
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 )
 
 func init() {
 	h.ConfigSettings().DeclareTransientModel()
 
-	h.ConfigSettings().Methods().Copy().Extend("", func(rs h.ConfigSettingsSet, data *h.ConfigSettingsData) h.ConfigSettingsSet {
+	h.ConfigSettings().Methods().Copy().Extend("", func(rs m.ConfigSettingsSet, data m.ConfigSettingsData) m.ConfigSettingsSet {
 		panic(rs.T("Cannot duplicate configuration"))
 	})
 
 	h.ConfigSettings().Methods().DefaultGet().Extend("",
-		func(rs h.ConfigSettingsSet) models.FieldMap {
+		func(rs m.ConfigSettingsSet) models.FieldMap {
 			res := rs.Super().DefaultGet()
 			for fName := range rs.DefaultGet() {
-				if gm, ok := rs.Model().Methods().Get("GetDefault" + fName); ok {
+				if gm, ok := rs.Collection().Model().Methods().Get("GetDefault" + fName); ok {
 					res[fName] = gm.Call(rs.Collection())
 				}
 			}
@@ -30,13 +31,13 @@ func init() {
 
 	h.ConfigSettings().Methods().Execute().DeclareMethod(
 		`Execute this config settings wizard`,
-		func(rs h.ConfigSettingsSet) *actions.Action {
+		func(rs m.ConfigSettingsSet) *actions.Action {
 			rs.EnsureOne()
 			if rs.Env().Uid() != security.SuperUserID && h.User().NewSet(rs.Env()).CurrentUser().HasGroup("base_group_systeme") {
 				panic(rs.T("Only administrators can change the settings"))
 			}
 			for fName := range rs.DefaultGet() {
-				if sm, ok := rs.Model().Methods().Get("SetValue" + fName); ok {
+				if sm, ok := rs.Collection().Model().Methods().Get("SetValue" + fName); ok {
 					sm.Call(rs.Collection())
 				}
 			}
@@ -48,7 +49,7 @@ func init() {
 
 	h.ConfigSettings().Methods().Cancel().DeclareMethod(
 		`Cancel ignores the current record, and send the action to reopen the view`,
-		func(rs h.ConfigSettingsSet) *actions.Action {
+		func(rs m.ConfigSettingsSet) *actions.Action {
 			var action *actions.Action
 			for _, act := range actions.Registry.GetAll() {
 				if act.Type == actions.ActionActWindow && act.Model == rs.ModelName() {

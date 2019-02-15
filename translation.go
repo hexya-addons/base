@@ -10,13 +10,14 @@ import (
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/types"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 )
 
 func init() {
 	h.Translation().DeclareModel()
 	h.Translation().Methods().TranslateFields().DeclareMethod(
 		`TranslateFields opens the translation window for the given field`,
-		func(rs h.TranslationSet, modelName string, id int64, fieldName models.FieldName) *actions.Action {
+		func(rs m.TranslationSet, modelName string, id int64, fieldName models.FieldName) *actions.Action {
 			fi := models.Registry.MustGet(modelName).FieldsGet(fieldName)[fieldName.String()]
 			model := fmt.Sprintf("%sHexya%s", modelName, fi.Name)
 			return &actions.Action{

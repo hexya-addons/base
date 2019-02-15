@@ -11,6 +11,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/operator"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -34,7 +35,7 @@ func init() {
 		"City":    models.CharField{},
 		"State": models.Many2OneField{RelationModel: h.CountryState(), String: "Fed. State",
 			Filter: q.CountryState().Country().EqualsFunc(func(rs models.RecordSet) models.RecordSet {
-				bank := rs.(h.BankSet)
+				bank := rs.(m.BankSet)
 				return bank.Country()
 			})},
 		"Country": models.Many2OneField{RelationModel: h.Country()},
@@ -45,7 +46,7 @@ func init() {
 		"BIC":     models.CharField{String: "Bank Identifier Cord", Index: true, Help: "Sometimes called BIC or Swift."},
 	})
 	h.Bank().Methods().NameGet().Extend("",
-		func(rs h.BankSet) string {
+		func(rs m.BankSet) string {
 			res := rs.Name()
 			if rs.BIC() != "" {
 				res = fmt.Sprintf("%s - %s", res, rs.BIC())
@@ -54,7 +55,7 @@ func init() {
 		})
 
 	h.Bank().Methods().SearchByName().Extend("",
-		func(rs h.BankSet, name string, op operator.Operator, additionalCond q.BankCondition, limit int) h.BankSet {
+		func(rs m.BankSet, name string, op operator.Operator, additionalCond q.BankCondition, limit int) m.BankSet {
 			if name == "" {
 				return rs.Super().SearchByName(name, op, additionalCond, limit)
 			}
@@ -85,18 +86,18 @@ func init() {
 
 	h.BankAccount().Methods().ComputeAccountType().DeclareMethod(
 		`ComputeAccountType computes the type of account from the account number`,
-		func(rs h.BankAccountSet) *h.BankAccountData {
+		func(rs m.BankAccountSet) m.BankAccountData {
 			return h.BankAccount().NewData().SetAccountType("bank")
 		})
 
 	h.BankAccount().Methods().ComputeSanitizedAccountNumber().DeclareMethod(
 		`ComputeSanitizedAccountNumber removes all spaces and invalid characters from account number`,
-		func(rs h.BankAccountSet) *h.BankAccountData {
+		func(rs m.BankAccountSet) m.BankAccountData {
 			return h.BankAccount().NewData().SetSanitizedAccountNumber(sanitizeAccountNumber(rs.Name()))
 		})
 
 	h.BankAccount().Methods().Search().Extend("",
-		func(rs h.BankAccountSet, cond q.BankAccountCondition) h.BankAccountSet {
+		func(rs m.BankAccountSet, cond q.BankAccountCondition) m.BankAccountSet {
 			predicates := cond.PredicatesWithField(h.BankAccount().Fields().Name())
 			for i, pred := range predicates {
 				switch arg := pred.Argument().(type) {

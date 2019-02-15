@@ -6,6 +6,7 @@ package base
 import (
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -13,8 +14,8 @@ func init() {
 
 	h.ModelMixin().Methods().ToggleActive().DeclareMethod(
 		`ToggleActive toggles the Active field of this object if it exists.`,
-		func(rs h.BaseMixinSet) {
-			_, exists := rs.Model().Fields().Get("active")
+		func(rs m.BaseMixinSet) {
+			_, exists := rs.Collection().Model().Fields().Get("active")
 			if !exists {
 				return
 			}
@@ -26,8 +27,8 @@ func init() {
 		})
 
 	h.ModelMixin().Methods().Search().Extend("",
-		func(rs h.ModelMixinSet, cond q.ModelMixinCondition) h.ModelMixinSet {
-			activeField, exists := rs.Model().Fields().Get("active")
+		func(rs m.ModelMixinSet, cond q.ModelMixinCondition) m.ModelMixinSet {
+			activeField, exists := rs.Collection().Model().Fields().Get("active")
 			activeTest := !rs.Env().Context().HasKey("active_test") || rs.Env().Context().GetBool("active_test")
 			if !exists || !activeTest || cond.HasField(activeField) {
 				return rs.Super().Search(cond)
@@ -40,8 +41,8 @@ func init() {
 		})
 
 	h.ModelMixin().Methods().SearchAll().Extend("",
-		func(rs h.ModelMixinSet) h.ModelMixinSet {
-			_, exists := rs.Model().Fields().Get("active")
+		func(rs m.ModelMixinSet) m.ModelMixinSet {
+			_, exists := rs.Collection().Model().Fields().Get("active")
 			activeTest := !rs.Env().Context().HasKey("active_test") || !rs.Env().Context().GetBool("active_test")
 			if !exists || !activeTest {
 				return rs.Super().SearchAll()

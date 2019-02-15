@@ -10,6 +10,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models/operator"
 	"github.com/hexya-erp/hexya/src/tools/b64image"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -74,10 +75,10 @@ func init() {
 	})
 
 	companyModel.Methods().Copy().Extend("",
-		func(rs h.CompanySet, overrides *h.CompanyData) h.CompanySet {
+		func(rs m.CompanySet, overrides m.CompanyData) m.CompanySet {
 			rs.EnsureOne()
 			if !overrides.HasName() && !overrides.HasPartner() {
-				copyPartner := rs.Partner().Copy(new(h.PartnerData))
+				copyPartner := rs.Partner().Copy(nil)
 				overrides.SetPartner(copyPartner)
 				overrides.SetName(copyPartner.Name())
 			}
@@ -86,28 +87,28 @@ func init() {
 
 	companyModel.Methods().ComputeLogoWeb().DeclareMethod(
 		`ComputeLogoWeb returns a resized version of the company logo`,
-		func(rs h.CompanySet) *h.CompanyData {
+		func(rs m.CompanySet) m.CompanyData {
 			res := h.Company().NewData().SetLogoWeb(b64image.Resize(rs.Logo(), 160, 0, true))
 			return res
 		})
 
 	companyModel.Methods().OnChangeState().DeclareMethod(
 		`OnchangeState sets the country to the country of the state when you select one.`,
-		func(rs h.CompanySet) *h.CompanyData {
+		func(rs m.CompanySet) m.CompanyData {
 			return h.Company().NewData().SetCountry(rs.State().Country())
 		})
 
 	companyModel.Methods().GetEuro().DeclareMethod(
 		`GetEuro returns the currency with rate 1 (euro by default, unless changed by the user)`,
-		func(rs h.CompanySet) h.CurrencySet {
+		func(rs m.CompanySet) m.CurrencySet {
 			return h.CurrencyRate().Search(rs.Env(), q.CurrencyRate().Rate().Equals(1)).Limit(1).Currency()
 		})
 
 	companyModel.Methods().OnChangeCountry().DeclareMethod(
 		`OnChangeCountry updates the currency of this company on a country change`,
-		func(rs h.CompanySet) *h.CompanyData {
+		func(rs m.CompanySet) m.CompanyData {
 			if rs.Country().IsEmpty() {
-				userCurrency := CompanyGetUserCurrency(rs.Env()).(h.CurrencySet)
+				userCurrency := CompanyGetUserCurrency(rs.Env()).(m.CurrencySet)
 				return h.Company().NewData().SetCurrency(userCurrency)
 			}
 			return h.Company().NewData().SetCurrency(rs.Country().Currency())
@@ -115,12 +116,12 @@ func init() {
 
 	companyModel.Methods().CompanyDefaultGet().DeclareMethod(
 		`CompanyDefaultGet returns the default company (usually the user's company).`,
-		func(rs h.CompanySet) h.CompanySet {
+		func(rs m.CompanySet) m.CompanySet {
 			return h.User().NewSet(rs.Env()).GetCompany()
 		})
 
 	companyModel.Methods().Create().Extend("",
-		func(rs h.CompanySet, data *h.CompanyData) h.CompanySet {
+		func(rs m.CompanySet, data m.CompanyData) m.CompanySet {
 			if !data.Partner().IsEmpty() {
 				return rs.Super().Create(data)
 			}
@@ -141,12 +142,12 @@ func init() {
 
 	companyModel.Methods().CheckParent().DeclareMethod(
 		`CheckParent checks that there is no recursion in the company tree`,
-		func(rs h.CompanySet) {
+		func(rs m.CompanySet) {
 			rs.CheckRecursion()
 		})
 
 	companyModel.Methods().SearchByName().Extend("",
-		func(rs h.CompanySet, name string, op operator.Operator, additionalCond q.CompanyCondition, limit int) h.CompanySet {
+		func(rs m.CompanySet, name string, op operator.Operator, additionalCond q.CompanyCondition, limit int) m.CompanySet {
 			// We browse as superuser. Otherwise, the user would be able to
 			// select only the currently visible companies (according to rules,
 			// which are probably to allow to see the child companies) even if
