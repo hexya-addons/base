@@ -1,7 +1,12 @@
 module github.com/hexya-addons/base
 
+replace github.com/hexya-erp/hexya => /home/npiganeau/Progs/hexya/hexya
+
 require (
-	github.com/hexya-erp/hexya v0.0.7
-	github.com/smartystreets/goconvey v0.0.0-20181108003508-044398e4856c
+	github.com/hexya-erp/hexya v0.0.9
+	github.com/hexya-erp/pool v1.0.0
+	github.com/smartystreets/goconvey v0.0.0-20190306220146-200a235640ff
 	github.com/spf13/viper v1.3.1
 )
+
+replace github.com/hexya-erp/pool => /home/npiganeau/Progs/hexya/hexya-addons/base/pool
