@@ -48,6 +48,7 @@ github.com/hashicorp/hcl v1.0.0 h1:0Anlzjpi4vEasTeNFn2mLJgTSwt0+6sfsiTG8qcWGx4=
 github.com/hashicorp/hcl v1.0.0/go.mod h1:E5yfLk+7swimpb2L/Alb/PJmXilQ/rhwaUYs4T20WEQ=
 github.com/hexya-erp/hexya v0.0.7 h1:xrigCgyLWWlav4giXRJ8ZTE9JwE1KKuJPKJGTgGZqrQ=
 github.com/hexya-erp/hexya v0.0.7/go.mod h1:TPZ6GMpKNYP3bYlfT9aF/ouuM1vJzYhl+0lJxdb17Os=
+github.com/hexya-erp/hexya v0.0.9/go.mod h1:TPZ6GMpKNYP3bYlfT9aF/ouuM1vJzYhl+0lJxdb17Os=
 github.com/hexya-erp/pool v1.0.0 h1:4ddK7mLM+9A8Ebjp/r4BnvO2MH8uJqdb+OSAvJWUqFc=
 github.com/hexya-erp/pool v1.0.0/go.mod h1:18sZNrVGAnY2aJ/rIZsvvd9Jfi8yMjBi4Xogx8PjVXw=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
