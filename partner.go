@@ -232,7 +232,7 @@ Use this field anywhere a small image is required.`},
 		"Contacts require a name.")
 
 	partnerModel.Methods().ComputeDisplayName().Extend("",
-		func(rs m.PartnerSet) models.FieldMap {
+		func(rs m.PartnerSet) *models.ModelData {
 			rSet := rs.
 				WithContext("show_address", false).
 				WithContext("show_address_only", false).
