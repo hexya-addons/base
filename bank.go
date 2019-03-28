@@ -80,9 +80,7 @@ func init() {
 		"BankBIC":  models.CharField{Related: "Bank.BIC"},
 		"Sequence": models.IntegerField{},
 		"Currency": models.Many2OneField{RelationModel: h.Currency()},
-		"Company": models.Many2OneField{RelationModel: h.Company(), Required: true, Default: func(env models.Environment) interface{} {
-			return h.User().NewSet(env).CurrentUser().Company()
-		}},
+		"Company":  models.Many2OneField{RelationModel: h.Company()},
 	})
 	h.BankAccount().AddSQLConstraint("unique_number", "unique(sanitized_account_number, company_id)", "Account Number must be unique")
 
