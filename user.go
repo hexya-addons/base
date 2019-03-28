@@ -166,7 +166,7 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().Read().Extend("",
-		func(rs m.UserSet, fields []string) []models.FieldMap {
+		func(rs m.UserSet, fields []string) []models.RecordData {
 			rSet := rs
 			if len(fields) > 0 && rs.ID() == rs.Env().Uid() {
 				var hasUnsafeFields bool
@@ -183,9 +183,9 @@ a change of password, the user has to login again.`},
 			result := rSet.Super().Read(fields)
 			if !rs.CheckExecutionPermission(h.User().Methods().Write().Underlying(), true) {
 				for i, res := range result {
-					if res["id"] != rs.Env().Uid() {
-						if _, exists := res["password"]; exists {
-							result[i]["password"] = "********"
+					if id, _ := res.Underlying().Get("id"); id != rs.Env().Uid() {
+						if _, exists := res.Underlying().Get("password"); exists {
+							result[i].Underlying().Set("password", "********")
 						}
 					}
 				}
