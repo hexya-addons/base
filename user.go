@@ -183,8 +183,8 @@ a change of password, the user has to login again.`},
 			result := rSet.Super().Read(fields)
 			if !rs.CheckExecutionPermission(h.User().Methods().Write().Underlying(), true) {
 				for i, res := range result {
-					if id, _ := res.Underlying().Get("id"); id != rs.Env().Uid() {
-						if _, exists := res.Underlying().Get("password"); exists {
+					if res.Underlying().Get("id") != rs.Env().Uid() {
+						if res.Underlying().Has("password") {
 							result[i].Underlying().Set("password", "********")
 						}
 					}
