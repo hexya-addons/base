@@ -43,7 +43,7 @@ func init() {
 	h.ModelMixin().Methods().SearchAll().Extend("",
 		func(rs m.ModelMixinSet) m.ModelMixinSet {
 			_, exists := rs.Collection().Model().Fields().Get("active")
-			activeTest := !rs.Env().Context().HasKey("active_test") || !rs.Env().Context().GetBool("active_test")
+			activeTest := !rs.Env().Context().HasKey("active_test") || rs.Env().Context().GetBool("active_test")
 			if !exists || !activeTest {
 				return rs.Super().SearchAll()
 			}

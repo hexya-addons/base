@@ -5,7 +5,6 @@ package base
 
 import (
 	"github.com/hexya-erp/hexya/src/actions"
-	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/pool/h"
 	"github.com/hexya-erp/pool/m"
@@ -19,11 +18,11 @@ func init() {
 	})
 
 	h.ConfigSettings().Methods().DefaultGet().Extend("",
-		func(rs m.ConfigSettingsSet) models.FieldMap {
+		func(rs m.ConfigSettingsSet) m.ConfigSettingsData {
 			res := rs.Super().DefaultGet()
-			for fName := range rs.DefaultGet() {
-				if gm, ok := rs.Collection().Model().Methods().Get("GetDefault" + fName); ok {
-					res[fName] = gm.Call(rs.Collection())
+			for _, fName := range res.FieldNames() {
+				if gm, ok := rs.Collection().Model().Methods().Get("GetDefault" + fName.String()); ok {
+					res.Set(fName.String(), gm.Call(rs.Collection()))
 				}
 			}
 			return res
@@ -36,8 +35,8 @@ func init() {
 			if rs.Env().Uid() != security.SuperUserID && h.User().NewSet(rs.Env()).CurrentUser().HasGroup("base_group_systeme") {
 				panic(rs.T("Only administrators can change the settings"))
 			}
-			for fName := range rs.DefaultGet() {
-				if sm, ok := rs.Collection().Model().Methods().Get("SetValue" + fName); ok {
+			for fName := range rs.DefaultGet().FieldNames() {
+				if sm, ok := rs.Collection().Model().Methods().Get("SetValue" + string(fName)); ok {
 					sm.Call(rs.Collection())
 				}
 			}
