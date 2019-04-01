@@ -1,2 +1,2 @@
 ID,Name,IsCompany,Customer,Active
-base_main_company_partner,Your Company,true,false,true
+base_main_partner,Your Company,true,false,true
