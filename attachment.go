@@ -5,6 +5,7 @@ package base
 
 import (
 	"crypto/sha1"
+	"database/sql"
 	"encoding/base64"
 	"fmt"
 	"io/ioutil"
@@ -335,23 +336,23 @@ func init() {
 			modelIds := make(map[string][]int64)
 			if !rs.IsEmpty() {
 				var attachs []struct {
-					ResModel  string
-					ResID     int64
-					CreateUID int64
-					Public    bool
+					ResModel  sql.NullString `db:"res_model"`
+					ResID     sql.NullInt64  `db:"res_id"`
+					CreateUID sql.NullInt64  `db:"create_uid"`
+					Public    sql.NullBool
 				}
 				rs.Env().Cr().Select(&attachs, "SELECT res_model, res_id, create_uid, public FROM attachment WHERE id IN (?)", rs.Ids())
 				for _, attach := range attachs {
-					if attach.Public && mode == "read" {
+					if attach.Public.Bool && mode == "read" {
 						continue
 					}
-					if attach.ResModel == "" || attach.ResID == 0 {
-						if attach.CreateUID != rs.Env().Uid() {
+					if attach.ResModel.String == "" || attach.ResID.Int64 == 0 {
+						if attach.CreateUID.Int64 != rs.Env().Uid() {
 							requireEmployee = true
 						}
 						continue
 					}
-					modelIds[attach.ResModel] = append(modelIds[attach.ResModel], attach.ResID)
+					modelIds[attach.ResModel.String] = append(modelIds[attach.ResModel.String], attach.ResID.Int64)
 				}
 			}
 			if values != nil && values.ResModel() != "" && values.ResID() != 0 {

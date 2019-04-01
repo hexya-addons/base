@@ -24,7 +24,7 @@ func init() {
 	currencyRateModel := h.CurrencyRate().DeclareModel()
 	currencyRateModel.AddFields(map[string]models.FieldDefinition{
 		"Name": models.DateTimeField{String: "Date", Required: true, Index: true},
-		"Rate": models.FloatField{Digits: nbutils.Digits{Precision: 12, Scale: 6},
+		"Rate": models.FloatField{Digits: nbutils.Digits{Precision: 16, Scale: 6},
 			Help: "The rate of the currency to the currency of rate 1"},
 		"Currency": models.Many2OneField{RelationModel: h.Currency()},
 		"Company":  models.Many2OneField{RelationModel: h.Company()},
@@ -36,7 +36,7 @@ func init() {
 			Unique: true},
 		"Symbol": models.CharField{Help: "Currency sign, to be used when printing amounts", Size: 4},
 		"Rate": models.FloatField{String: "Current Rate",
-			Help: "The rate of the currency to the currency of rate 1", Digits: nbutils.Digits{Precision: 12, Scale: 6},
+			Help: "The rate of the currency to the currency of rate 1", Digits: nbutils.Digits{Precision: 16, Scale: 6},
 			Compute: h.Currency().Methods().ComputeCurrentRate(), Depends: []string{"Rates", "Rates.Rate"}},
 		"Rates": models.One2ManyField{RelationModel: h.CurrencyRate(), ReverseFK: "Currency"},
 		"Rounding": models.FloatField{String: "Rounding Factor", Digits: nbutils.Digits{Precision: 12,

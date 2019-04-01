@@ -232,7 +232,7 @@ Use this field anywhere a small image is required.`},
 		"Contacts require a name.")
 
 	partnerModel.Methods().ComputeDisplayName().Extend("",
-		func(rs m.PartnerSet) models.FieldMap {
+		func(rs m.PartnerSet) *models.ModelData {
 			rSet := rs.
 				WithContext("show_address", false).
 				WithContext("show_address_only", false).
@@ -446,9 +446,8 @@ Use this field anywhere a small image is required.`},
 		func(rs m.PartnerSet, vals m.PartnerData) bool {
 			res := h.Partner().NewData()
 			for _, addrField := range rs.AddressFields() {
-				fValue, ok := vals.Get(addrField.String())
-				if ok {
-					res.Set(addrField.String(), fValue)
+				if vals.Has(addrField.String()) {
+					res.Set(addrField.String(), vals.Get(addrField.String()))
 				}
 			}
 			if len(res.Keys()) == 0 {
@@ -537,8 +536,7 @@ Use this field anywhere a small image is required.`},
 			}
 			// 2b. Address fields: sync if address changed
 			for _, addrField := range rs.AddressFields() {
-				_, ok := vals.Get(addrField.String())
-				if ok {
+				if vals.Has(addrField.String()) {
 					contacts := rs.Children().Search(q.Partner().Type().Equals("contact"))
 					contacts.UpdateAddress(vals)
 					break
