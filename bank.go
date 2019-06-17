@@ -19,7 +19,7 @@ func sanitizeAccountNumber(accNumber string) string {
 	if accNumber == "" {
 		return ""
 	}
-	rg, _ := regexp.Compile("\\W+")
+	rg, _ := regexp.Compile(`\W+`)
 	san := rg.ReplaceAllString(accNumber, "")
 	san = strings.ToUpper(san)
 	return san
@@ -68,21 +68,38 @@ func init() {
 
 	h.BankAccount().DeclareModel()
 	h.BankAccount().AddFields(map[string]models.FieldDefinition{
-		"AccountType": models.CharField{Compute: h.BankAccount().Methods().ComputeAccountType(), Depends: []string{""}},
-		"Name":        models.CharField{String: "Account Number", Required: true},
-		"SanitizedAccountNumber": models.CharField{Compute: h.BankAccount().Methods().ComputeSanitizedAccountNumber(),
-			Stored: true, Depends: []string{"Name"}},
-		"Partner": models.Many2OneField{RelationModel: h.Partner(),
-			String: "Account Holder", OnDelete: models.Cascade, Index: true,
-			Filter: q.Partner().IsCompany().Equals(true).Or().Parent().IsNull()},
-		"Bank":     models.Many2OneField{RelationModel: h.Bank()},
-		"BankName": models.CharField{Related: "Bank.Name"},
-		"BankBIC":  models.CharField{Related: "Bank.BIC"},
+		"AccountType": models.CharField{
+			Compute: h.BankAccount().Methods().ComputeAccountType(),
+			Help:    "Bank account type, inferred from account number"},
+		"Name": models.CharField{
+			String:   "Account Number",
+			Required: true},
+		"SanitizedAccountNumber": models.CharField{
+			Compute:  h.BankAccount().Methods().ComputeSanitizedAccountNumber(),
+			Stored:   true,
+			ReadOnly: true,
+			Depends:  []string{"Name"}},
+		"Partner": models.Many2OneField{
+			RelationModel: h.Partner(),
+			String:        "Account Holder",
+			OnDelete:      models.Cascade,
+			Index:         true,
+			Filter:        q.Partner().IsCompany().Equals(true).Or().Parent().IsNull()},
+		"Bank": models.Many2OneField{
+			RelationModel: h.Bank()},
+		"BankName": models.CharField{
+			Related: "Bank.Name"},
+		"BankBIC": models.CharField{
+			Related: "Bank.BIC"},
 		"Sequence": models.IntegerField{},
-		"Currency": models.Many2OneField{RelationModel: h.Currency()},
-		"Company": models.Many2OneField{RelationModel: h.Company(), Required: true, Default: func(env models.Environment) interface{} {
-			return h.User().NewSet(env).CurrentUser().Company()
-		}},
+		"Currency": models.Many2OneField{
+			RelationModel: h.Currency()},
+		"Company": models.Many2OneField{
+			RelationModel: h.Company(),
+			Default: func(env models.Environment) interface{} {
+				return h.User().NewSet(env).CurrentUser().Company()
+			},
+			OnDelete: models.Cascade},
 	})
 	h.BankAccount().AddSQLConstraint("unique_number", "unique(sanitized_account_number, company_id)", "Account Number must be unique")
 
@@ -95,7 +112,9 @@ func init() {
 	h.BankAccount().Methods().ComputeSanitizedAccountNumber().DeclareMethod(
 		`ComputeSanitizedAccountNumber removes all spaces and invalid characters from account number`,
 		func(rs m.BankAccountSet) m.BankAccountData {
-			return h.BankAccount().NewData().SetSanitizedAccountNumber(sanitizeAccountNumber(rs.Name()))
+			number := sanitizeAccountNumber(rs.Name())
+			println(number)
+			return h.BankAccount().NewData().SetSanitizedAccountNumber(number)
 		})
 
 	h.BankAccount().Methods().Search().Extend("",

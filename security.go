@@ -64,8 +64,13 @@ func init() {
 	h.PartnerCategory().Methods().Load().AllowGroup(GroupUser)
 	h.PartnerCategory().Methods().AllowAllToGroup(GroupPartnerManager)
 
-	h.Bank().Methods().Load().AllowGroup(GroupUser)
+	h.BankAccount().Methods().Load().AllowGroup(GroupUser)
+	h.BankAccount().Methods().AllowAllToGroup(GroupPartnerManager)
+
+	h.Bank().Methods().AllowAllToGroup(GroupSystem)
 	h.Bank().Methods().AllowAllToGroup(GroupPartnerManager)
+	h.Bank().Methods().Load().AllowGroup(GroupUser)
 
 	h.Company().Methods().Load().AllowGroup(security.GroupEveryone, h.User().Methods().ContextGet())
+
 }
