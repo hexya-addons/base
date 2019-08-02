@@ -66,6 +66,16 @@ func init() {
 
 	h.Bank().Methods().Load().AllowGroup(GroupUser)
 	h.Bank().Methods().AllowAllToGroup(GroupPartnerManager)
+	h.Bank().Methods().AllowAllToGroup(GroupSystem)
 
-	h.Company().Methods().Load().AllowGroup(security.GroupEveryone, h.User().Methods().ContextGet())
+	h.BankAccount().Methods().Load().AllowGroup(GroupUser)
+	h.BankAccount().Methods().AllowAllToGroup(GroupPartnerManager)
+
+	h.Company().Methods().Load().AllowGroup(security.GroupEveryone)
+	h.Company().Methods().AllowAllToGroup(GroupERPManager)
+
+	h.Sequence().Methods().Load().AllowGroup(GroupUser)
+	h.Sequence().Methods().AllowAllToGroup(GroupSystem)
+	h.SequenceDateRange().Methods().Load().AllowGroup(GroupUser)
+	h.SequenceDateRange().Methods().AllowAllToGroup(GroupSystem)
 }

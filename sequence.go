@@ -187,7 +187,7 @@ gap in the sequence (while they are possible in the former).`},
 				}
 				res := format
 				for k, v := range data {
-					res = strings.Replace(res, fmt.Sprintf("%%(%s)", k), v, -1)
+					res = strings.Replace(res, fmt.Sprintf("%%(%s)s", k), v, -1)
 				}
 				return res
 			}
@@ -251,7 +251,7 @@ gap in the sequence (while they are possible in the former).`},
 			if !dateRange.IsEmpty() {
 				dateTo = dateRange.DateTo().AddDate(0, 0, 1)
 			}
-			seqDateRange := h.SequenceDateRange().Create(rs.Env(), h.SequenceDateRange().NewData().
+			seqDateRange := h.SequenceDateRange().NewSet(rs.Env()).Sudo().Create(h.SequenceDateRange().NewData().
 				SetDateFrom(dateFrom).
 				SetDateTo(dateTo).
 				SetSequence(rs))
