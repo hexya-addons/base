@@ -18,7 +18,7 @@ import (
 )
 
 func TestMain(m *testing.M) {
-	tests.RunTests(m, "base")
+	tests.RunTests(m, "base", nil)
 }
 
 var samples = [][3]string{
