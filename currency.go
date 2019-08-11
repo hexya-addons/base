@@ -51,12 +51,12 @@ func init() {
 
 	currencyModel.Methods().ComputeCurrentRate().DeclareMethod(
 		`ComputeCurrentRate returns the current rate of this currency.
-		 If a 'date' key (type DateTime) is given in the context, then it is used to compute the rate,
+		 If a 'date' key is given in the context, then it is used to compute the rate,
 		 otherwise now is used.`,
 		func(rs m.CurrencySet) m.CurrencyData {
 			date := dates.Now()
 			if rs.Env().Context().HasKey("date") {
-				date = rs.Env().Context().GetDateTime("date")
+				date = rs.Env().Context().GetDate("date").ToDateTime()
 			}
 			company := h.User().NewSet(rs.Env()).GetCompany()
 			if rs.Env().Context().HasKey("company_id") {
@@ -139,7 +139,8 @@ func init() {
 	currencyModel.Methods().GetConversionRateTo().DeclareMethod(
 		`GetConversionRateTo returns the conversion rate from this currency to 'target' currency`,
 		func(rs m.CurrencySet, target m.CurrencySet) float64 {
-			return target.WithEnv(rs.Env()).Rate() / rs.Rate()
+			fmt.Println("GCRT>", target.WithNewContext(rs.Env().Context()).Rate(), rs.Rate())
+			return target.WithNewContext(rs.Env().Context()).Rate() / rs.Rate()
 		})
 
 	currencyModel.Methods().Compute().DeclareMethod(
