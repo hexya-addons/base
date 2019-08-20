@@ -139,7 +139,6 @@ func init() {
 	currencyModel.Methods().GetConversionRateTo().DeclareMethod(
 		`GetConversionRateTo returns the conversion rate from this currency to 'target' currency`,
 		func(rs m.CurrencySet, target m.CurrencySet) float64 {
-			fmt.Println("GCRT>", target.WithNewContext(rs.Env().Context()).Rate(), rs.Rate())
 			return target.WithNewContext(rs.Env().Context()).Rate() / rs.Rate()
 		})
 

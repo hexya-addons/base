@@ -1,5 +1,6 @@
 "ID","Company","Currency","Name","Rate"
 "base_rateUSD","base_main_company","base_USD","2010-01-01 00:00:01","1.2834"
+"base_rateUSDbis","base_main_company","base_USD","2015-06-06 00:00:00","1.5289"
 "base_rateIDR","base_main_company","base_IDR","2010-01-01 00:00:00","11796.39"
 "base_rateLVL","base_main_company","base_LVL","2010-01-01 00:00:00","0.7086"
 "base_rateNOK","base_main_company","base_NOK","2010-01-01 00:00:00","7.8668"
