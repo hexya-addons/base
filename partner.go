@@ -322,7 +322,7 @@ Use this field anywhere a small image is required.`},
 				path := filepath.Join(server.ResourceDir, "static", "base", "src", "img", imgFileName)
 				content, err := ioutil.ReadFile(path)
 				if err != nil {
-					log.Warn("Missing ressource", "image", path)
+					log.Warn("error while loading ressource", "image", path, "error", err)
 				}
 				img = base64.StdEncoding.EncodeToString(content)
 				if colorize {
