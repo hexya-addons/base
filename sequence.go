@@ -90,15 +90,7 @@ gap in the sequence (while they are possible in the former).`},
 		func(rs m.SequenceSet, vals m.SequenceData) m.SequenceSet {
 			seq := rs.Super().Create(vals)
 			if !vals.HasImplementation() || vals.Implementation() == "standard" {
-				numberIncrement := vals.NumberIncrement()
-				if numberIncrement == 0 {
-					numberIncrement = 1
-				}
-				numberNext := vals.NumberNext()
-				if numberNext == 0 {
-					numberNext = 1
-				}
-				models.CreateSequence(fmt.Sprintf("sequence_%03d", seq.ID()), numberIncrement, numberNext)
+				models.CreateSequence(fmt.Sprintf("sequence_%03d", seq.ID()), seq.NumberIncrement(), seq.NumberNext())
 			}
 			return seq
 		})
