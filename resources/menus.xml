@@ -29,6 +29,7 @@
                   groups="base.group_no_one"/>
         <menuitem id="base_menu_user_interface" name="User Interface" parent="base_menu_custom"/>
         <menuitem id="base_menu_database_structure" name="Database Structure" parent="base_menu_custom"/>
+        <menuitem id="base_menu_automation" name="Automation" parent="base_menu_custom"/>
 
     </data>
 </hexya>

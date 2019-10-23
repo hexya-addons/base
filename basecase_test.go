@@ -38,6 +38,10 @@ func TestWithEnvironment(t *testing.T) {
 				partners := h.Partner().Search(env, q.Partner().Name().Equals("test_per_class_teardown_partner"))
 				So(partners.Len(), ShouldEqual, 1)
 			})
+			Convey("Deleted the created partner.", func() {
+				partners := h.Partner().Search(env, q.Partner().Name().Equals("test_per_class_teardown_partner"))
+				So(partners.Unlink(), ShouldEqual, 1)
+			})
 		}), ShouldBeNil)
 	})
 }

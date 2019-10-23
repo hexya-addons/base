@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hexya>
+    <data>
+
+        <view id="base_ir_cron_view" model="Cron">
+            <form string="Scheduled Actions">
+                <header>
+                    <button name="method_direct_trigger" type="object" string="Run Manually" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="user_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Information">
+                            <group col="4">
+                                <field name="interval_number"/>
+                                <field name="interval_type"/>
+                                <newline/>
+                                <field name="NextCall"/>
+                            </group>
+                        </page>
+                        <page string="Technical Data" groups="base_group_no_one">
+                            <group string="Action to Trigger">
+                                <field name="model"/>
+                                <field name="method"/>
+                                <field name="records_ids"/>
+                            </group>
+                            <label for="arguments"/>
+                            <field name="arguments"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </view>
+
+        <view id="base_ir_cron_view_tree" model="Cron">
+            <tree string="Scheduled Actions" decoration-muted="(not active)">
+                <field name="name"/>
+                <field name="NextCall"/>
+                <field name="interval_number"/>
+                <field name="interval_type"/>
+                <field name="user_id" invisible="1"/>
+                <field name="active"/>
+            </tree>
+        </view>
+
+        <view id="base_ir_cron_view_calendar" model="Cron" priority="2">
+            <calendar string="Scheduled Actions" date_start="next_call" color="user_id">
+                <field name="name"/>
+                <field name="user_id"/>
+            </calendar>
+        </view>
+
+        <view id="base_ir_cron_view_search" model="Cron">
+            <search string="Scheduled Actions">
+                <field name="name" string="Scheduled Action"/>
+                <field name="user_id"/>
+                <field name="next_call"/>
+                <field name="active"/>
+                <separator/>
+                <filter string="All" name="all" domain="['|', ('active', '=', False), ('active', '=', True)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="User" domain="[]" context="{'group_by':'user_id'}"/>
+                    <filter string="Execution" domain="[]" context="{'group_by':'next_call'}"/>
+                </group>
+            </search>
+        </view>
+
+        <action id="base_ir_cron_act" type="ir.actions.act_window" name="Scheduled Actions" model="Cron"
+                view_mode="tree,form,calendar" context='{"search_default_all": 1}' view_id="base_ir_cron_view_tree"/>
+
+        <menuitem id="base_menu_ir_cron_act" action="base_ir_cron_act" parent="base_menu_automation"/>
+
+    </data>
+</hexya>

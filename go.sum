@@ -40,6 +40,8 @@ github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5y
 github.com/golang/protobuf v1.3.1 h1:YF8+flBXS5eO826T4nzqPrxfhQThhXl0YzfuUPu4SBg=
 github.com/golang/protobuf v1.3.1/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/gomodule/redigo v2.0.0+incompatible/go.mod h1:B4C85qUVwatsJoIUNIfCRsp7qO0iAmpGFZ4EELWSbC4=
+github.com/google/uuid v1.1.1 h1:Gkbcsh/GbpXz7lPftLA3P6TYMwjCLYm83jiFQZF/3gY=
+github.com/google/uuid v1.1.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/gopherjs/gopherjs v0.0.0-20181017120253-0766667cb4d1 h1:EGx4pi6eqNxGaHF6qqu48+N2wcFQ5qg5FXgOdqsJ5d8=
 github.com/gopherjs/gopherjs v0.0.0-20181017120253-0766667cb4d1/go.mod h1:wJfORRmW1u3UXTncJ5qlYoELFm8eSnnEO6hX4iZ3EWY=
 github.com/gorilla/context v1.1.1 h1:AWwleXJkX/nhcU9bZSnZoi3h/qGYqQAGhq6zZe/aQW8=
@@ -55,6 +57,14 @@ github.com/hexya-erp/hexya v0.0.33 h1:cMsnr3dZUTY+l36yOBksYYL9b/hA3L+TyosfgI2tHW
 github.com/hexya-erp/hexya v0.0.33/go.mod h1:zBBxxDyorcYC+zUNEySKzeg+N+Q/FPQYOQh4aWXfRG0=
 github.com/hexya-erp/hexya v0.0.35 h1:A0zyNNvHD0u5onuiQbETgZyz+j/jYoKN2FfJCuHLpdA=
 github.com/hexya-erp/hexya v0.0.35/go.mod h1:zBBxxDyorcYC+zUNEySKzeg+N+Q/FPQYOQh4aWXfRG0=
+github.com/hexya-erp/hexya v0.0.38 h1:cGToQFwp8aTt9U5ooqvfqGQruQLV8zQS5q5DTiyoRow=
+github.com/hexya-erp/hexya v0.0.38/go.mod h1:gU3aan31zOrjlXsZVLXcpp3dQ9yAosGnO/vqbJulu4E=
+github.com/hexya-erp/hexya v0.0.39 h1:yWtkfs/NgWgCLX5akicWnSrxaFF7gUqXg7JcADh19UQ=
+github.com/hexya-erp/hexya v0.0.39/go.mod h1:gU3aan31zOrjlXsZVLXcpp3dQ9yAosGnO/vqbJulu4E=
+github.com/hexya-erp/hexya v0.0.40 h1:nBE9V6suc1kVsYoSs4rxln/UPhbT1y0PGS+vPIkLxmY=
+github.com/hexya-erp/hexya v0.0.40/go.mod h1:gU3aan31zOrjlXsZVLXcpp3dQ9yAosGnO/vqbJulu4E=
+github.com/hexya-erp/hexya v0.0.41 h1:56ZtidtmkVnL/e+Sjqq3in7nZdYqDKBofTqjbQ1Nd9k=
+github.com/hexya-erp/hexya v0.0.41/go.mod h1:gU3aan31zOrjlXsZVLXcpp3dQ9yAosGnO/vqbJulu4E=
 github.com/hexya-erp/pool v1.0.2 h1:T2XNgink3bnFK5I8ae2hyFGAI0e2AF/GUWVwe7q8d5Q=
 github.com/hexya-erp/pool v1.0.2/go.mod h1:DucbMZy2Dy4JSDgyYR8PIi8wgSmH1E6VV1dJE6WKRY8=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
