@@ -17,7 +17,7 @@ import (
 
 func dropSequence(sequence string) {
 	models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
-		h.Sequence().Search(env, q.Sequence().Code().Equals(sequence))
+		h.Sequence().Search(env, q.Sequence().Code().Equals(sequence)).Unlink()
 	})
 }
 
@@ -116,6 +116,7 @@ func TestSequenceGenerate(t *testing.T) {
 				seq := h.Sequence().Create(env, h.Sequence().NewData().
 					SetCode("test_sequence_type_5").
 					SetName("Test sequence"))
+				seq.SetNumberNext(1)
 				So(seq.IsEmpty(), ShouldBeFalse)
 			})
 			Convey("Read from standard sequence", func() {
@@ -129,6 +130,7 @@ func TestSequenceGenerate(t *testing.T) {
 					SetCode("test_sequence_type_6").
 					SetName("Test sequence").
 					SetImplementation("no_gap"))
+				seq.SetNumberNext(1)
 				So(seq.IsEmpty(), ShouldBeFalse)
 			})
 			Convey("Read from no gap sequence", func() {
