@@ -86,6 +86,18 @@ gap in the sequence (while they are possible in the former).`},
 			rs.SetNumberNext(value)
 		})
 
+	h.Sequence().Methods().AlterHexyaSequence().DeclareMethod(
+		`AlterHexyaSequence alters the DB sequence that backs this sequence`,
+		func(rs m.SequenceSet, numberIncrement int64, numberNext int64) {
+			rs.EnsureOne()
+			hexyaSeq, exists := models.Registry.GetSequence(fmt.Sprintf("sequence_%03d", rs.ID()))
+			if !exists {
+				// sequence is not created yet, we're inside create() so ignore it, will be set later
+				return
+			}
+			hexyaSeq.Alter(numberIncrement, numberNext)
+		})
+
 	h.Sequence().Methods().Create().Extend("",
 		func(rs m.SequenceSet, vals m.SequenceData) m.SequenceSet {
 			seq := rs.Super().Create(vals)
@@ -120,21 +132,26 @@ gap in the sequence (while they are possible in the former).`},
 					n = seq.NumberNext()
 				}
 				if seq.Implementation() == "standard" {
-					hexyaSeq := models.Registry.MustGetSequence(fmt.Sprintf("sequence_%03d", seq.ID()))
 					if newImplementation == "standard" || newImplementation == "" {
 						// Implementation has NOT changed.
 						// Only change sequence if really requested.
-						if data.NumberNext() != 0 || seq.NumberIncrement() != i {
-							hexyaSeq.Alter(i, n)
+						if data.NumberNext() != 0 {
+							seq.AlterHexyaSequence(0, n)
+						}
+						if seq.NumberIncrement() != i {
+							seq.AlterHexyaSequence(i, 0)
+							seq.DateRanges().AlterHexyaSequence(i, 0)
 						}
 					} else {
-						hexyaSeq.Drop()
+						if hexyaSeq, ok := models.Registry.GetSequence(fmt.Sprintf("sequence_%03d", seq.ID())); ok {
+							hexyaSeq.Drop()
+						}
 						for _, subSeq := range seq.DateRanges().Records() {
-							subHexyaSeq := models.Registry.MustGetSequence(fmt.Sprintf("sequence_%03d_%03d", seq.ID(), subSeq.ID()))
-							subHexyaSeq.Drop()
+							if subHexyaSeq, ok := models.Registry.GetSequence(fmt.Sprintf("sequence_%03d_%03d", seq.ID(), subSeq.ID())); ok {
+								subHexyaSeq.Drop()
+							}
 						}
 					}
-
 					continue
 				}
 				if newImplementation == "no_gap" || newImplementation == "" {
@@ -349,6 +366,19 @@ gap in the sequence (while they are possible in the former).`},
 				return rs.Sequence().GetNextChar(hexyaSeq.NextValue())
 			}
 			return rs.Sequence().GetNextChar(rs.UpdateNoGap())
+		})
+
+	h.SequenceDateRange().Methods().AlterHexyaSequence().DeclareMethod(
+		`AlterHexyaSequence alters the date range sequences in one go`,
+		func(rs m.SequenceDateRangeSet, numberIncrement int64, numberNext int64) {
+			for _, seq := range rs.Records() {
+				hexyaSeq, exists := models.Registry.GetSequence(fmt.Sprintf("sequence_%03d_%03d", seq.Sequence().ID(), seq.ID()))
+				if !exists {
+					// sequence is not created yet, we're inside create() so ignore it, will be set later
+					return
+				}
+				hexyaSeq.Alter(numberIncrement, numberNext)
+			}
 		})
 
 	h.SequenceDateRange().Methods().Create().Extend("",

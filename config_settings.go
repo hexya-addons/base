@@ -21,8 +21,8 @@ func init() {
 		func(rs m.ConfigSettingsSet) m.ConfigSettingsData {
 			res := rs.Super().DefaultGet()
 			for _, fName := range res.FieldNames() {
-				if gm, ok := rs.Collection().Model().Methods().Get("GetDefault" + fName.String()); ok {
-					res.Set(fName.String(), gm.Call(rs.Collection()))
+				if gm, ok := h.ConfigSettings().Methods().Get("GetDefault" + fName.Name()); ok {
+					res.Set(fName, gm.Call(rs.Collection()))
 				}
 			}
 			return res
