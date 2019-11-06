@@ -18,7 +18,7 @@ func init() {
 	h.Translation().Methods().TranslateFields().DeclareMethod(
 		`TranslateFields opens the translation window for the given field`,
 		func(rs m.TranslationSet, modelName string, id int64, fieldName models.FieldName) *actions.Action {
-			fi := models.Registry.MustGet(modelName).FieldsGet(fieldName)[fieldName.String()]
+			fi := models.Registry.MustGet(modelName).FieldsGet(fieldName)[fieldName.JSON()]
 			model := fmt.Sprintf("%sHexya%s", modelName, fi.Name)
 			return &actions.Action{
 				Name:     rs.T("Translate"),

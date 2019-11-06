@@ -51,7 +51,7 @@ func init() {
 	h.ConfigParameter().Methods().GetParam().DeclareMethod(
 		`GetParam retrieves the value for a given key. It returns defaultValue if the parameter is missing.`,
 		func(rs m.ConfigParameterSet, key string, defaultValue string) string {
-			param := rs.Env().Pool(rs.ModelName()).Search(q.ConfigParameter().Key().Equals(key).Condition).Limit(1).Wrap("ConfigParameter").(m.ConfigParameterSet).Load("Value")
+			param := h.ConfigParameter().Search(rs.Env(), q.ConfigParameter().Key().Equals(key)).Limit(1).Load(h.ConfigParameter().Fields().Value())
 			if param.Value() == "" {
 				return defaultValue
 			}

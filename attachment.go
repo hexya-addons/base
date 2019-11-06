@@ -61,8 +61,8 @@ func init() {
 		func(rs m.AttachmentSet) m.AttachmentData {
 			res := h.Attachment().NewData()
 			if rs.ResModel() != "" && rs.ResID() != 0 {
-				record := rs.Env().Pool(rs.ResModel()).Search(models.Registry.MustGet(rs.ResModel()).Field("ID").Equals(rs.ResID()))
-				res.SetResName(record.Get("DisplayName").(string))
+				record := rs.Env().Pool(rs.ResModel()).Search(models.Registry.MustGet(rs.ResModel()).Field(models.ID).Equals(rs.ResID()))
+				res.SetResName(record.Get(record.Model().FieldName("DisplayName")).(string))
 			}
 			return res
 		})
@@ -369,7 +369,7 @@ func init() {
 					continue
 				}
 				rModel := models.Registry.MustGet(resModel)
-				records := rs.Env().Pool(resModel).Search(rModel.Field("ID").In(resIds))
+				records := rs.Env().Pool(resModel).Search(rModel.Field(models.ID).In(resIds))
 				if records.Len() < len(resIds) {
 					requireEmployee = true
 				}
@@ -405,10 +405,10 @@ func init() {
 			// the linked document.
 			modelAttachments := make(map[models.RecordRef][]int64)
 			rs.Load(
-				h.Attachment().Fields().ID().String(),
-				h.Attachment().Fields().ResModel().String(),
-				h.Attachment().Fields().ResID().String(),
-				h.Attachment().Fields().Public().String())
+				h.Attachment().Fields().ID(),
+				h.Attachment().Fields().ResModel(),
+				h.Attachment().Fields().ResID(),
+				h.Attachment().Fields().Public())
 			for _, attach := range rs.Records() {
 				if attach.ResModel() == "" || attach.Public() {
 					continue
@@ -430,14 +430,14 @@ func init() {
 				if !rs.Env().Pool(rRef.ModelName).CheckExecutionPermission(rModel.Methods().MustGet("Load").Underlying(), true) {
 					continue
 				}
-				allowed := rs.Env().Pool(rRef.ModelName).Search(rModel.Field("ID").In(targets))
+				allowed := rs.Env().Pool(rRef.ModelName).Search(rModel.Field(models.ID).In(targets))
 				allowedIds = append(allowedIds, allowed.Ids()...)
 			}
 			return h.Attachment().Browse(rs.Env(), allowedIds)
 		})
 
 	attachmentModel.Methods().Load().Extend("",
-		func(rs m.AttachmentSet, fields ...string) m.AttachmentSet {
+		func(rs m.AttachmentSet, fields ...models.FieldName) m.AttachmentSet {
 			rs.Check("read", nil)
 			return rs.Super().Load(fields...)
 		})

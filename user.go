@@ -15,12 +15,12 @@ import (
 	"github.com/hexya-erp/pool/q"
 )
 
-// BaseAuthBackend is the authentication backend of the Base module
+// AuthBackend is the authentication backend of the Base module
 // Users are authenticated against the User model in the database
-type BaseAuthBackend struct{}
+type AuthBackend struct{}
 
 // Authenticate the user defined by login and secret.
-func (bab *BaseAuthBackend) Authenticate(login, secret string, context *types.Context) (uid int64, err error) {
+func (bab *AuthBackend) Authenticate(login, secret string, context *types.Context) (uid int64, err error) {
 	models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
 		uid, err = h.User().NewSet(env).WithNewContext(context).Authenticate(login, secret)
 	})
@@ -166,12 +166,12 @@ a change of password, the user has to login again.`},
 		})
 
 	userModel.Methods().Read().Extend("",
-		func(rs m.UserSet, fields []string) []models.RecordData {
+		func(rs m.UserSet, fields models.FieldNames) []models.RecordData {
 			rSet := rs
 			if len(fields) > 0 && rs.ID() == rs.Env().Uid() {
 				var hasUnsafeFields bool
 				for _, key := range fields {
-					if !rs.SelfReadableFields()[key] {
+					if !rs.SelfReadableFields()[key.Name()] {
 						hasUnsafeFields = true
 						break
 					}
@@ -183,9 +183,9 @@ a change of password, the user has to login again.`},
 			result := rSet.Super().Read(fields)
 			if !rs.CheckExecutionPermission(h.User().Methods().Write().Underlying(), true) {
 				for i, res := range result {
-					if res.Underlying().Get("id") != rs.Env().Uid() {
-						if res.Underlying().Has("password") {
-							result[i].Underlying().Set("password", "********")
+					if res.Underlying().Get(models.ID) != rs.Env().Uid() {
+						if res.Underlying().Has(h.User().Fields().Password()) {
+							result[i].Underlying().Set(h.User().Fields().Password(), "********")
 						}
 					}
 				}
@@ -275,7 +275,7 @@ a change of password, the user has to login again.`},
 			if name == "" {
 				return rs.Super().SearchByName(name, op, additionalCond, limit)
 			}
-			var users m.UserSet
+			users := h.User().NewSet(rs.Env())
 			if op == operator.Equals || op == operator.IContains {
 				users = h.User().Search(rs.Env(), q.User().Login().Equals(name).AndCond(additionalCond)).Limit(limit)
 			}
@@ -489,6 +489,6 @@ a change of password, the user has to login again.`},
 			return h.User().Browse(rs.Env(), []int64{rs.Env().Uid()})
 		})
 
-	security.AuthenticationRegistry.RegisterBackend(new(BaseAuthBackend))
+	security.AuthenticationRegistry.RegisterBackend(new(AuthBackend))
 
 }

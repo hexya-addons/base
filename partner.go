@@ -37,11 +37,13 @@ import (
 const gravatarBaseURL = "https://www.gravatar.com/avatar"
 
 var (
+	// WarningMessage gives the possible warning that can be applied to a partner.
 	WarningMessage = types.Selection{
 		"no-message": "No Message",
 		"warning":    "Warning",
 		"block":      "Blocking Message",
 	}
+	// WarningHelp is the help message for the Warning fields.
 	WarningHelp = `Selecting the "Warning" option will notify user with the message,
 Selecting "Blocking Message" will throw an exception with the message and block the flow.
 The Message has to be written in the next field.`
@@ -104,7 +106,9 @@ func init() {
 		"Date":  models.DateField{Index: true},
 		"Title": models.Many2OneField{RelationModel: h.PartnerTitle()},
 		"Parent": models.Many2OneField{RelationModel: h.Partner(), Index: true,
-			Constraint: h.Partner().Methods().CheckParent(), OnChange: h.Partner().Methods().OnchangeParent()},
+			Constraint: h.Partner().Methods().CheckParent(), OnChange: h.Partner().Methods().OnchangeParent(),
+			OnChangeWarning: h.Partner().Methods().OnchangeParentWarning(),
+		},
 		"ParentName": models.CharField{Related: "Parent.Name", ReadOnly: true},
 
 		"Children": models.One2ManyField{RelationModel: h.Partner(),
@@ -180,12 +184,13 @@ If it's not checked, purchase people will not see it when encoding a purchase or
 		"State": models.Many2OneField{RelationModel: h.CountryState(),
 			Filter: q.CountryState().Country().EqualsEval("country_id"), OnDelete: models.Restrict},
 		"Country": models.Many2OneField{RelationModel: h.Country(),
-			OnDelete: models.Restrict},
-		"Email":          models.CharField{OnChange: h.Partner().Methods().OnchangeEmail()},
-		"EmailFormatted": models.CharField{Compute: h.Partner().Methods().ComputeEmailFormatted(), Help: "Formatted email address 'Name <email@domain>'", Depends: []string{"Name", "Email"}},
-		"Phone":          models.CharField{},
-		"Fax":            models.CharField{},
-		"Mobile":         models.CharField{},
+			OnDelete: models.Restrict, OnChangeFilters: h.Partner().Methods().OnchangeCountryFilters()},
+		"Email": models.CharField{OnChange: h.Partner().Methods().OnchangeEmail()},
+		"EmailFormatted": models.CharField{Compute: h.Partner().Methods().ComputeEmailFormatted(),
+			Help: "Formatted email address 'Name <email@domain>'", Depends: []string{"Name", "Email"}},
+		"Phone":  models.CharField{},
+		"Fax":    models.CharField{},
+		"Mobile": models.CharField{},
 		"IsCompany": models.BooleanField{Default: models.DefaultValue(false),
 			Help: "Check if the contact is a company, otherwise it is a person"},
 		// CompanyType is only an interface field, do not use it in business logic
@@ -349,7 +354,7 @@ Use this field anywhere a small image is required.`},
 
 	partnerModel.Methods().OnchangeParent().DeclareMethod(
 		`OnchangeParent updates the current partner data when its parent field
-		is modified`,
+		is modified, in particular copies its parent's address.`,
 		func(rs m.PartnerSet) m.PartnerData {
 			if rs.Parent().IsEmpty() || rs.Type() != "contact" {
 				return h.Partner().NewData()
@@ -357,7 +362,7 @@ Use this field anywhere a small image is required.`},
 
 			var parentHasAddress bool
 			for _, addrField := range rs.AddressFields() {
-				if !typesutils.IsZero(rs.Parent().Get(addrField.String())) {
+				if !typesutils.IsZero(rs.Parent().Get(addrField)) {
 					parentHasAddress = true
 					break
 				}
@@ -367,9 +372,33 @@ Use this field anywhere a small image is required.`},
 			}
 			res := h.Partner().NewData()
 			for _, addrField := range rs.AddressFields() {
-				res.Set(addrField.String(), rs.Parent().Get(addrField.String()))
+				res.Set(addrField, rs.Parent().Get(addrField))
 			}
 
+			return res
+		})
+
+	partnerModel.Methods().OnchangeParentWarning().DeclareMethod(
+		`OnchangeParentWarning issues a warning when trying to change a contact to another parent company`,
+		func(rs m.PartnerSet) string {
+			origin, ok := rs.Env().Context().Get("hexya_onchange_origin").(m.PartnerData)
+			if ok && origin.Parent().IsNotEmpty() && !origin.Parent().Equals(rs.Parent()) {
+				return rs.T(`Changing the company of a contact should only be done if it
+was never correctly set. If an existing contact starts working for a new
+company then a new contact should be created under that new
+company. You can use the "Discard" button to abandon this change.`)
+			}
+			return ""
+		})
+
+	partnerModel.Methods().OnchangeCountryFilters().DeclareMethod(
+		`OnchangeCountryFilters sets the filters on state when country is modified`,
+		func(rs m.PartnerSet) map[models.FieldName]models.Conditioner {
+			res := make(map[models.FieldName]models.Conditioner)
+			res[h.Partner().Fields().State()] = q.CountryState().NewCondition()
+			if rs.Country().IsNotEmpty() {
+				res[h.Partner().Fields().State()] = q.CountryState().Country().Equals(rs.Country())
+			}
 			return res
 		})
 
@@ -417,15 +446,14 @@ Use this field anywhere a small image is required.`},
 		this partner's values on the given fields. The other fields are left to their
 		Go default value. This method is used to update fields from a partner to its
 		relatives.`,
-		func(rs m.PartnerSet, fields ...models.FieldNamer) m.PartnerData {
+		func(rs m.PartnerSet, fields ...models.FieldName) m.PartnerData {
 			res := h.Partner().NewData()
 			fInfos := rs.FieldsGet(models.FieldsGetArgs{})
 			for _, f := range fields {
-				fJSON := h.Partner().JSONizeFieldName(f.String())
-				if fInfos[fJSON].Type == fieldtype.One2Many {
+				if fInfos[f.JSON()].Type == fieldtype.One2Many {
 					log.Panic(rs.T("One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"))
 				}
-				res.Set(fJSON, rs.Get(fJSON))
+				res.Set(f, rs.Get(f))
 			}
 			return res
 		})
@@ -433,8 +461,8 @@ Use this field anywhere a small image is required.`},
 	partnerModel.Methods().AddressFields().DeclareMethod(
 		`AddressFields returns the list of fields which are part of the address.
 		These are used to automate behaviours on contact addresses.`,
-		func(rs m.PartnerSet) []models.FieldNamer {
-			return []models.FieldNamer{
+		func(rs m.PartnerSet) []models.FieldName {
+			return []models.FieldName{
 				h.Partner().Fields().Street(), h.Partner().Fields().Street2(), h.Partner().Fields().Zip(),
 				h.Partner().Fields().City(), h.Partner().Fields().State(), h.Partner().Fields().Country(),
 			}
@@ -446,8 +474,8 @@ Use this field anywhere a small image is required.`},
 		func(rs m.PartnerSet, vals m.PartnerData) bool {
 			res := h.Partner().NewData()
 			for _, addrField := range rs.AddressFields() {
-				if vals.Has(addrField.String()) {
-					res.Set(addrField.String(), vals.Get(addrField.String()))
+				if vals.Has(addrField) {
+					res.Set(addrField, vals.Get(addrField))
 				}
 			}
 			if len(res.Keys()) == 0 {
@@ -462,8 +490,8 @@ Use this field anywhere a small image is required.`},
         partners that aren't "commercial entities"" themselves, and will be
         delegated to the parent "commercial entity"". The list is meant to be
         extended by inheriting classes.`,
-		func(rs m.PartnerSet) []models.FieldNamer {
-			return []models.FieldNamer{
+		func(rs m.PartnerSet) []models.FieldName {
+			return []models.FieldName{
 				h.Partner().Fields().VAT(),
 				h.Partner().Fields().CreditLimit(),
 			}
@@ -500,7 +528,7 @@ Use this field anywhere a small image is required.`},
 	partnerModel.Methods().FieldsSync().DeclareMethod(
 		`FieldsSync syncs commercial fields and address fields from company and to children after create/update,
         just as if those were all modeled as fields.related to the parent`,
-		func(rs m.PartnerSet, vals m.PartnerData, fieldsToUnset ...models.FieldNamer) {
+		func(rs m.PartnerSet, vals m.PartnerData, fieldsToUnset ...models.FieldName) {
 			// 1. From UPSTREAM: sync from parent
 			// 1a. Commercial fields: sync if parent changed
 			if !vals.Parent().IsEmpty() {
@@ -518,7 +546,7 @@ Use this field anywhere a small image is required.`},
 			// 2a. Commercial Fields: sync if commercial entity
 			if rs.Equals(rs.CommercialPartner()) {
 				for _, commField := range rs.CommercialFields() {
-					if !typesutils.IsZero(rs.Get(commField.String())) {
+					if !typesutils.IsZero(rs.Get(commField)) {
 						rs.CommercialSyncToChildren()
 						break
 					}
@@ -536,7 +564,7 @@ Use this field anywhere a small image is required.`},
 			}
 			// 2b. Address fields: sync if address changed
 			for _, addrField := range rs.AddressFields() {
-				if vals.Has(addrField.String()) {
+				if vals.Has(addrField) {
 					contacts := rs.Children().Search(q.Partner().Type().Equals("contact"))
 					contacts.UpdateAddress(vals)
 					break
@@ -558,10 +586,10 @@ Use this field anywhere a small image is required.`},
 			}
 			var addressDefined, parentAddressDefined bool
 			for _, addrField := range rs.AddressFields() {
-				if !typesutils.IsZero(rs.Parent().Get(addrField.String())) {
+				if !typesutils.IsZero(rs.Parent().Get(addrField)) {
 					parentAddressDefined = true
 				}
-				if !typesutils.IsZero(rs.Get(addrField.String())) {
+				if !typesutils.IsZero(rs.Get(addrField)) {
 					addressDefined = true
 				}
 			}
@@ -576,7 +604,7 @@ Use this field anywhere a small image is required.`},
 		func(rs m.PartnerSet, website string) string {
 			websiteURL, err := url.Parse(website)
 			if err != nil {
-				log.Panic("Invalid URL for website", "URL", website)
+				panic(fmt.Errorf("invalid URL for website: %s. %s", website, err))
 			}
 			if websiteURL.Scheme == "" {
 				websiteURL.Scheme = "http"
@@ -817,7 +845,7 @@ Use this field anywhere a small image is required.`},
 				Timeout: 1 * time.Second,
 			}
 			resp, err := client.Get(gravatarURL)
-			if resp.StatusCode == http.StatusNotFound || err != nil {
+			if err != nil || resp.StatusCode == http.StatusNotFound {
 				return ""
 			}
 			img, err := ioutil.ReadAll(resp.Body)
