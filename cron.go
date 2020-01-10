@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/hexya-erp/hexya/src/models"
+	"github.com/hexya-erp/hexya/src/models/fields"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/hexya/src/models/types"
 	"github.com/hexya-erp/hexya/src/models/types/dates"
@@ -17,73 +18,76 @@ import (
 	"github.com/hexya-erp/pool/q"
 )
 
-func init() {
-	h.Cron().DeclareModel()
-	h.Cron().AddFields(map[string]models.FieldDefinition{
-		"Name": models.CharField{Required: true},
-		"User": models.Many2OneField{RelationModel: h.User(), Required: true, Default: func(env models.Environment) interface{} {
-			return h.User().NewSet(env).CurrentUser()
-		}},
-		"Active":         models.BooleanField{Default: models.DefaultValue(true)},
-		"IntervalNumber": models.IntegerField{Default: models.DefaultValue(1), Help: "Repeat every x.", GoType: new(int)},
-		"IntervalType": models.SelectionField{Selection: types.Selection{
-			"minutes": "Minutes",
-			"hours":   "Hours",
-			"days":    "Days",
-			"weeks":   "Weeks",
-			"months":  "Months",
-		}, String: "Interval Unit", Default: models.DefaultValue("months")},
-		"NextCall": models.DateTimeField{String: "Next Execution Date", Required: true, Default: models.DefaultValue(dates.Now()),
-			Help: "Next planned execution date for this job."},
-		"Model":  models.CharField{Required: true, Constraint: h.Cron().Methods().CheckParameters()},
-		"Method": models.CharField{Required: true, Constraint: h.Cron().Methods().CheckParameters()},
-		"RecordsIds": models.TextField{Default: models.DefaultValue("[]"), Constraint: h.Cron().Methods().CheckParameters(),
-			Help: `Use a JSON list format (e.g. [1, 2])`},
-		"Arguments": models.TextField{Default: models.DefaultValue("[]"), Constraint: h.Cron().Methods().CheckParameters(),
-			Help: `Use a JSON list format (e.g. [[1, 2], "My string value", true]).
+var fields_Cron = map[string]models.FieldDefinition{
+	"Name": fields.Char{Required: true},
+	"User": fields.Many2One{RelationModel: h.User(), Required: true, Default: func(env models.Environment) interface{} {
+		return h.User().NewSet(env).CurrentUser()
+	}},
+	"Active":         fields.Boolean{Default: models.DefaultValue(true)},
+	"IntervalNumber": fields.Integer{Default: models.DefaultValue(1), Help: "Repeat every x.", GoType: new(int)},
+	"IntervalType": fields.Selection{Selection: types.Selection{
+		"minutes": "Minutes",
+		"hours":   "Hours",
+		"days":    "Days",
+		"weeks":   "Weeks",
+		"months":  "Months",
+	}, String: "Interval Unit", Default: models.DefaultValue("months")},
+	"NextCall": fields.DateTime{String: "Next Execution Date", Required: true, Default: models.DefaultValue(dates.Now()),
+		Help: "Next planned execution date for this job."},
+	"Model":  fields.Char{Required: true, Constraint: h.Cron().Methods().CheckParameters()},
+	"Method": fields.Char{Required: true, Constraint: h.Cron().Methods().CheckParameters()},
+	"RecordsIds": fields.Text{Default: models.DefaultValue("[]"), Constraint: h.Cron().Methods().CheckParameters(),
+		Help: `Use a JSON list format (e.g. [1, 2])`},
+	"Arguments": fields.Text{Default: models.DefaultValue("[]"), Constraint: h.Cron().Methods().CheckParameters(),
+		Help: `Use a JSON list format (e.g. [[1, 2], "My string value", true]).
 For relation fields, pass the ID or the list of IDs`},
-	})
+}
 
-	h.Cron().Methods().CheckParameters().DeclareMethod(
-		`CheckParameters checks if model, method, record ids and arguments are correct`,
-		func(rs m.QueueJobSet) {
-			// Check model exists
-			relModel := models.Registry.MustGet(rs.Model())
-			// Check we can parse ids
-			var ids []int64
-			if err := json.Unmarshal([]byte(rs.RecordsIds()), &ids); err != nil {
-				panic(fmt.Errorf("unable to unmarshal RecordIds: %s", err))
-			}
-			// Check we can parse arguments
-			var arguments []interface{}
-			if err := json.Unmarshal([]byte(rs.Arguments()), &arguments); err != nil {
-				panic(fmt.Errorf("unable to unmarshal Arguments: %s", err))
-			}
-			// Check we have the right number of arguments
-			meth := relModel.Methods().MustGet(rs.Method())
-			if len(arguments) != meth.MethodType().NumIn()-1 {
-				panic(fmt.Errorf("wrong number of arguments given: expect %d arguments, received %v", meth.MethodType().NumIn()-1, arguments))
-			}
-		})
+// CheckParameters checks if model, method, record ids and arguments are correct
+func cron_CheckParameters(rs m.QueueJobSet) {
+	// Check model exists
+	relModel := models.Registry.MustGet(rs.Model())
+	// Check we can parse ids
+	var ids []int64
+	if err := json.Unmarshal([]byte(rs.RecordsIds()), &ids); err != nil {
+		panic(fmt.Errorf("unable to unmarshal RecordIds: %s", err))
+	}
+	// Check we can parse arguments
+	var arguments []interface{}
+	if err := json.Unmarshal([]byte(rs.Arguments()), &arguments); err != nil {
+		panic(fmt.Errorf("unable to unmarshal Arguments: %s", err))
+	}
+	// Check we have the right number of arguments
+	meth := relModel.Methods().MustGet(rs.Method())
+	if len(arguments) != meth.MethodType().NumIn()-1 {
+		panic(fmt.Errorf("wrong number of arguments given: expect %d arguments, received %v", meth.MethodType().NumIn()-1, arguments))
+	}
+}
 
-	h.Cron().Methods().FutureCallDate().DeclareMethod(
-		`GetFutureCall returns the DateTime of the call after NextCall.`,
-		func(rs m.CronSet) dates.DateTime {
-			var res dates.DateTime
-			switch rs.IntervalType() {
-			case "minutes":
-				res = rs.NextCall().Add(time.Duration(rs.IntervalNumber()) * time.Minute)
-			case "hours":
-				res = rs.NextCall().Add(time.Duration(rs.IntervalNumber()) * time.Hour)
-			case "days":
-				res = rs.NextCall().AddDate(0, 0, rs.IntervalNumber())
-			case "weeks":
-				res = rs.NextCall().AddWeeks(rs.IntervalNumber())
-			case "months":
-				res = rs.NextCall().AddDate(0, rs.IntervalNumber(), 0)
-			}
-			return res
-		})
+// GetFutureCall returns the DateTime of the call after NextCall.`,
+func cron_GetFutureCall(rs m.CronSet) dates.DateTime {
+	var res dates.DateTime
+	switch rs.IntervalType() {
+	case "minutes":
+		res = rs.NextCall().Add(time.Duration(rs.IntervalNumber()) * time.Minute)
+	case "hours":
+		res = rs.NextCall().Add(time.Duration(rs.IntervalNumber()) * time.Hour)
+	case "days":
+		res = rs.NextCall().AddDate(0, 0, rs.IntervalNumber())
+	case "weeks":
+		res = rs.NextCall().AddWeeks(rs.IntervalNumber())
+	case "months":
+		res = rs.NextCall().AddDate(0, rs.IntervalNumber(), 0)
+	}
+	return res
+}
+
+func init() {
+	models.NewModel("Cron")
+	h.Cron().AddFields(fields_Cron)
+
+	h.Cron().NewMethod("CheckParameters", cron_CheckParameters)
+	h.Cron().NewMethod("FutureCallDate", cron_GetFutureCall)
 
 	models.RegisterWorker(models.NewWorkerFunction(runCron, 30*time.Second))
 }
