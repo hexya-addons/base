@@ -274,9 +274,9 @@ func user_Copy(rs m.UserSet, overrides m.UserData) m.UserSet {
 	return rs.Super().Copy(overrides)
 }
 
-// UsersContextGet returns a context with the user's lang, tz and uid
+// ContextGet returns a context with the user's lang, tz and uid
 // This method must be called on a singleton.`,
-func user_UsersContextGet(rs m.UserSet) *types.Context {
+func user_ContextGet(rs m.UserSet) *types.Context {
 	rs.EnsureOne()
 	res := types.NewContext().
 		WithKey("lang", rs.Lang()).
@@ -288,7 +288,7 @@ func user_UsersContextGet(rs m.UserSet) *types.Context {
 
 // ActionGet returns the action for the preferences popup
 func user_ActionGet(rs m.UserSet) *actions.Action {
-	return actions.Registry.GetById("base_action_res_users_my")
+	return actions.Registry.GetByXMLId("base_action_res_users_my")
 }
 
 // UpdateLastLogin updates the last login date of the user
@@ -480,7 +480,7 @@ func init() {
 	h.User().Methods().Unlink().Extend(user_Unlink)
 	h.User().Methods().SearchByName().Extend(user_SearchByName)
 	h.User().Methods().Copy().Extend(user_Copy)
-	h.User().NewMethod("ContextGet", user_UsersContextGet)
+	h.User().NewMethod("ContextGet", user_ContextGet)
 	h.User().NewMethod("ActionGet", user_ActionGet)
 	h.User().NewMethod("UpdateLastLogin", user_UpdateLastLogin)
 	h.User().NewMethod("CheckCredentials", user_CheckCredentials)

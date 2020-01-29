@@ -450,7 +450,7 @@ func attachment_Create(rs m.AttachmentSet, vals m.AttachmentData) m.AttachmentSe
 
 // ActionGet returns the action for displaying attachments
 func attachment_ActionGet(_ m.AttachmentSet) *actions.Action {
-	return actions.Registry.GetById("base_action_attachment")
+	return actions.Registry.GetByXMLId("base_action_attachment")
 }
 
 func init() {
