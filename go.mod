@@ -11,8 +11,3 @@ require (
 	github.com/spf13/viper v1.5.0
 	google.golang.org/appengine v1.6.5 // indirect
 )
-
-replace (
-	github.com/hexya-erp/hexya => /home/npiganeau/Progs/hexya/hexya
-	github.com/hexya-erp/pool v1.0.2 => /home/npiganeau/Progs/hexya/hexya-addons/base/pool
-)
