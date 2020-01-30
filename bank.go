@@ -36,8 +36,9 @@ var fields_Bank = map[string]models.FieldDefinition{
 		Filter: q.CountryState().Country().EqualsFunc(func(rs models.RecordSet) models.RecordSet {
 			bank := rs.(m.BankSet)
 			return bank.Country()
-		})},
-	"Country": fields.Many2One{RelationModel: h.Country()},
+		}),
+		OnChange: h.Bank().Methods().OnchangeState()},
+	"Country": fields.Many2One{RelationModel: h.Country(), OnChange: h.Bank().Methods().OnchangeCountry()},
 	"Email":   fields.Char{},
 	"Phone":   fields.Char{},
 	"Fax":     fields.Char{},
@@ -62,6 +63,24 @@ func bank_SearchByName(rs m.BankSet, name string, op operator.Operator, addition
 		cond = cond.AndCond(additionalCond)
 	}
 	return h.Bank().Search(rs.Env(), cond).Limit(limit)
+}
+
+// OnchangeCountry updates the state field when country is changed
+func bank_OnchangeCountry(rs m.BankSet) m.BankData {
+	res := h.Bank().NewData()
+	if rs.Country().IsNotEmpty() && !rs.Country().Equals(rs.State().Country()) {
+		res.SetState(nil)
+	}
+	return res
+}
+
+// OnchangeState updates the country field when the state is changed
+func bank_OnchangeState(rs m.BankSet) m.BankData {
+	res := h.Bank().NewData()
+	if rs.State().Country().IsNotEmpty() {
+		res.SetCountry(rs.State().Country())
+	}
+	return res
 }
 
 var fields_BankAccount = map[string]models.FieldDefinition{
@@ -116,6 +135,8 @@ func init() {
 
 	h.Bank().Methods().NameGet().Extend(bank_NameGet)
 	h.Bank().Methods().SearchByName().Extend(bank_SearchByName)
+	h.Bank().NewMethod("OnchangeCountry", bank_OnchangeCountry)
+	h.Bank().NewMethod("OnchangeState", bank_OnchangeState)
 
 	models.NewModel("BankAccount")
 	h.BankAccount().AddFields(fields_BankAccount)
