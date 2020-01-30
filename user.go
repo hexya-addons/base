@@ -288,7 +288,7 @@ func user_ContextGet(rs m.UserSet) *types.Context {
 
 // ActionGet returns the action for the preferences popup
 func user_ActionGet(rs m.UserSet) *actions.Action {
-	return actions.Registry.GetByXMLId("base_action_res_users_my")
+	return actions.Registry.GetByXMLID("base_action_res_users_my")
 }
 
 // UpdateLastLogin updates the last login date of the user
@@ -375,6 +375,12 @@ func user_IsAdmin(rs m.UserSet) bool {
 func user_IsSuperUser(rs m.UserSet) bool {
 	rs.EnsureOne()
 	return rs.ID() == security.SuperUserID
+}
+
+// IsSystem returns true if this user is in the system group
+func user_IsSystem(rs m.UserSet) bool {
+	rs.EnsureOne()
+	return rs.HasGroup(GroupSystem.ID)
 }
 
 // AddMandatoryGroups adds the group Everyone to everybody and the admin group to the admin
@@ -491,6 +497,7 @@ func init() {
 	h.User().NewMethod("HasGroup", user_HasGroup)
 	h.User().NewMethod("IsAdmin", user_IsAdmin)
 	h.User().NewMethod("IsSuperUser", user_IsSuperUser)
+	h.User().NewMethod("IsSystem", user_IsSystem)
 	h.User().NewMethod("AddMandatoryGroups", user_AddMandatoryGroups)
 	h.User().NewMethod("SyncMemberships", user_SyncMemberships)
 	h.User().NewMethod("CheckGroupsSync", user_CheckGroupSync)

@@ -15,10 +15,10 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/google/uuid"
 	"github.com/hexya-erp/hexya/src/actions"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/fields"
-	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/hexya/src/models/types"
 	"github.com/hexya-erp/hexya/src/tools/strutils"
 	"github.com/hexya-erp/pool/h"
@@ -29,35 +29,37 @@ import (
 
 var fields_Attachment = map[string]models.FieldDefinition{
 	"Name":        fields.Char{String: "Attachment Name", Required: true},
-	"DatasFname":  fields.Char{String: "File Name"},
 	"Description": fields.Text{},
 	"ResName": fields.Char{String: "Resource Name",
 		Compute: h.Attachment().Methods().ComputeResName(), Stored: true, Depends: []string{"ResModel", "ResID"}},
 	"ResModel": fields.Char{String: "Resource Model", Help: "The database object this attachment will be attached to",
-		Index: true},
-	"ResField": fields.Char{String: "Resource Field", Index: true},
-	"ResID":    fields.Integer{String: "Resource ID", Help: "The record id this is attached to"},
+		Index: true, ReadOnly: true},
+	"ResField": fields.Char{String: "Resource Field", Index: true, ReadOnly: true},
+	"ResID": fields.Integer{String: "Resource ID", Help: "The record id this is attached to", Index: true,
+		ReadOnly: true},
 	"Company": fields.Many2One{RelationModel: h.Company(), Default: func(env models.Environment) interface{} {
 		return h.User().NewSet(env).CurrentUser().Company()
 	}},
-	"Type": fields.Selection{Selection: types.Selection{"binary": "Binary", "url": "URL"},
+	"Type": fields.Selection{Selection: types.Selection{"binary": "File", "url": "URL"},
 		Help: "You can either upload a file from your computer or copy/paste an internet link to your file."},
 	"URL":    fields.Char{Index: true, Size: 1024},
 	"Public": fields.Boolean{String: "Is a public document"},
 
+	"AccessToken": fields.Char{},
+
 	"Datas": fields.Binary{String: "File Content", Compute: h.Attachment().Methods().ComputeDatas(),
-		Inverse: h.Attachment().Methods().InverseDatas()},
+		Inverse: h.Attachment().Methods().InverseDatas(), Depends: []string{"StoreFname", "DBDatas"}},
 	"DBDatas":      fields.Char{String: "Database Data"},
 	"StoreFname":   fields.Char{String: "Stored Filename"},
 	"FileSize":     fields.Integer{GoType: new(int)},
-	"CheckSum":     fields.Char{String: "Checksum/SHA1", Size: 40, Index: true},
-	"MimeType":     fields.Char{},
-	"IndexContent": fields.Text{String: "Indexed Content"},
+	"CheckSum":     fields.Char{String: "Checksum/SHA1", Size: 40, Index: true, ReadOnly: true},
+	"MimeType":     fields.Char{ReadOnly: true},
+	"IndexContent": fields.Text{String: "Indexed Content", ReadOnly: true},
 }
 
 // ComputeResName computes the display name of the ressource this document is attached to.
 func attachment_ComputeResName(rs m.AttachmentSet) m.AttachmentData {
-	res := h.Attachment().NewData()
+	res := h.Attachment().NewData().SetResName("")
 	if rs.ResModel() != "" && rs.ResID() != 0 {
 		record := rs.Env().Pool(rs.ResModel()).Search(models.Registry.MustGet(rs.ResModel()).Field(models.ID).Equals(rs.ResID()))
 		res.SetResName(record.Get(record.Model().FieldName("DisplayName")).(string))
@@ -237,24 +239,7 @@ func attachment_ComputeDatas(rs m.AttachmentSet) m.AttachmentData {
 
 // InverseDatas stores the given data either in database or in file.
 func attachment_InverseDatas(rs m.AttachmentSet, val string) {
-	var binData string
-	if val != "" {
-		binBytes, err := base64.StdEncoding.DecodeString(val)
-		if err != nil {
-			log.Panic("Unable to decode attachment content", "error", err)
-		}
-		binData = string(binBytes)
-	}
-	vals := h.Attachment().NewData().
-		SetFileSize(len(binData)).
-		SetCheckSum(rs.ComputeCheckSum(binData)).
-		SetIndexContent(rs.Index(binData, rs.MimeType())).
-		SetDBDatas(val)
-	if val != "" && rs.Storage() != "db" {
-		// Save the file to the filestore
-		vals.SetStoreFname(rs.FileWrite(val, vals.CheckSum()))
-		vals.SetDBDatas("")
-	}
+	vals := rs.GetDatasRelatedValues(val, rs.MimeType())
 	// take current location in filestore to possibly garbage-collect it
 	fName := rs.StoreFname()
 	// write as superuser, as user probably does not have write access
@@ -262,6 +247,29 @@ func attachment_InverseDatas(rs m.AttachmentSet, val string) {
 	if fName != "" {
 		rs.FileDelete(fName)
 	}
+}
+
+// GetDatasRelatedValues compute the fields that depend on data
+func attachment_GetDatasRelatedValues(rs m.AttachmentSet, data string, mimeType string) m.AttachmentData {
+	var binData string
+	if data != "" {
+		binBytes, err := base64.StdEncoding.DecodeString(data)
+		if err != nil {
+			log.Panic("Unable to decode attachment content", "error", err)
+		}
+		binData = string(binBytes)
+	}
+	values := h.Attachment().NewData().
+		SetFileSize(len(binData)).
+		SetCheckSum(rs.ComputeCheckSum(binData)).
+		SetIndexContent(rs.Index(binData, mimeType)).
+		SetDBDatas(data)
+	if data != "" && rs.Storage() != "db" {
+		// Save the file to the filestore
+		values.SetStoreFname(rs.FileWrite(data, values.CheckSum()))
+		values.SetDBDatas("")
+	}
+	return values
 }
 
 // ComputeCheckSum computes the SHA1 checksum of the given data
@@ -285,9 +293,12 @@ func attachment_ComputeMimeType(_ m.AttachmentSet, values m.AttachmentData) stri
 func attachment_CheckContents(rs m.AttachmentSet, values m.AttachmentData) m.AttachmentData {
 	res := values
 	res.SetMimeType(rs.ComputeMimeType(values))
-	if strings.Contains(res.MimeType(), "ht") || strings.Contains(res.MimeType(), "xml") &&
-		(!h.User().NewSet(rs.Env()).CurrentUser().IsAdmin() ||
-			rs.Env().Context().GetBool("attachments_mime_plainxml")) {
+	user := h.User().NewSet(rs.Env()).CurrentUser()
+	if rs.Env().Context().HasKey("binary_field_real_user") {
+		user = h.User().BrowseOne(rs.Env(), rs.Env().Context().GetInteger("binary_field_real_user"))
+	}
+	xmlLike := strings.Contains(res.MimeType(), "ht") || strings.Contains(res.MimeType(), "xml")
+	if xmlLike && (!user.IsSystem() || rs.Env().Context().GetBool("attachments_mime_plainxml")) {
 		res.SetMimeType("text/plain")
 	}
 	return res
@@ -306,24 +317,65 @@ func attachment_Index(_ m.AttachmentSet, binData, fileType string) string {
 	return strings.Join(words, "\n")
 }
 
+// GetServingGroups returns groups allowed tp create and write serving attachments.
+//
+// An attachment record may be used as a fallback in the
+// http dispatch if its type field is set to "binary" and its url
+// field is set as the request's url. Only the groups returned by
+// this method are allowed to create and write on such records.
+func attachment_GetServingGroups(rs m.AttachmentSet) m.GroupSet {
+	return h.Group().Search(rs.Env(), q.Group().GroupID().Equals(GroupSystem.ID))
+}
+
+// CheckServingAttachment limits creation and modification of served attachments
+// to the members of the serving groups.
+func attachment_CheckServingAttachments(rs m.AttachmentSet) {
+	currentUser := h.User().NewSet(rs.Env()).CurrentUser()
+	if currentUser.IsAdmin() {
+		return
+	}
+attachmentLoop:
+	for _, attachment := range rs.Records() {
+		// restrict writing on attachments that could be served by the
+		// ir.http's dispatch exception handling.
+		if attachment.Type() != "binary" || attachment.URL() == "" {
+			continue
+		}
+		for _, group := range attachment.GetServingGroups().Records() {
+			if currentUser.HasGroup(group.GroupID()) {
+				continue attachmentLoop
+			}
+		}
+		panic(rs.T("Sorry, you are not allowed to write on this document"))
+	}
+}
+
 // Check restricts the access to an ir.attachment, according to referred model
 // In the 'document' module, it is overridden to relax this hard rule, since
 // more complex ones apply there.
 //
 // This method panics if the user does not have the access rights.
 func attachment_Check(rs m.AttachmentSet, mode string, values m.AttachmentData) {
+	currentUser := h.User().NewSet(rs.Env()).CurrentUser()
+	if currentUser.IsSuperUser() {
+		return
+	}
 	// collect the records to check (by model)
 	var requireEmployee bool
 	modelIds := make(map[string][]int64)
-	if !rs.IsEmpty() {
+	if rs.IsNotEmpty() {
 		var attachs []struct {
 			ResModel  sql.NullString `db:"res_model"`
 			ResID     sql.NullInt64  `db:"res_id"`
 			CreateUID sql.NullInt64  `db:"create_uid"`
 			Public    sql.NullBool
+			ResField  sql.NullString `db:"res_field"`
 		}
-		rs.Env().Cr().Select(&attachs, "SELECT res_model, res_id, create_uid, public FROM attachment WHERE id IN (?)", rs.Ids())
+		rs.Env().Cr().Select(&attachs, "SELECT res_model, res_id, create_uid, public, res_field FROM attachment WHERE id IN (?)", rs.Ids())
 		for _, attach := range attachs {
+			if attach.ResField.Valid && !currentUser.IsSystem() {
+				panic(rs.T("Sorry, you are not allowed to access this document."))
+			}
 			if attach.Public.Bool && mode == "read" {
 				continue
 			}
@@ -364,11 +416,49 @@ func attachment_Check(rs m.AttachmentSet, mode string, values m.AttachmentData) 
 		}
 	}
 	if requireEmployee {
-		currentUser := h.User().NewSet(rs.Env()).CurrentUser()
 		if !currentUser.IsAdmin() && !currentUser.HasGroup(GroupUser.ID) {
 			log.Panic(rs.T("Sorry, you are not allowed to access this document."))
 		}
 	}
+}
+
+// ReadGroupAllowedFields returns the fields by which a non-admin user is allowed to group by
+func attachment_ReadGroupAllowedFields(_ m.AttachmentSet) models.FieldNames {
+	return models.FieldNames{
+		h.Attachment().Fields().Type(),
+		h.Attachment().Fields().Company(),
+		h.Attachment().Fields().ResID(),
+		h.Attachment().Fields().CreateDate(),
+		h.Attachment().Fields().CreateUID(),
+		h.Attachment().Fields().Name(),
+		h.Attachment().Fields().MimeType(),
+		h.Attachment().Fields().ID(),
+		h.Attachment().Fields().URL(),
+		h.Attachment().Fields().ResField(),
+		h.Attachment().Fields().ResModel(),
+	}
+}
+
+func attachment_Aggregates(rs m.AttachmentSet, fields ...models.FieldName) []m.AttachmentGroupAggregateRow {
+	if len(fields) == 0 {
+		panic(rs.T("Sorry, you must provide fields to read on attachments"))
+	}
+	for _, f := range fields {
+		if strings.Contains(f.Name(), "(") || strings.Contains(f.JSON(), "(") {
+			panic(rs.T("Sorry, the syntax 'name:agg(field)' is not available for attachments"))
+		}
+		var inAlloaedFields bool
+		for _, af := range rs.ReadGroupAllowedFields() {
+			if af.Name() == f.Name() {
+				inAlloaedFields = true
+				break
+			}
+		}
+		if !inAlloaedFields && !h.User().NewSet(rs.Env()).CurrentUser().IsSystem() {
+			panic(rs.T("Sorry, you are not allowed to access these fields on attachments."))
+		}
+	}
+	return rs.Super().Aggregates(fields...)
 }
 
 func attachment_Search(rs m.AttachmentSet, cond q.AttachmentCondition) m.AttachmentSet {
@@ -377,7 +467,8 @@ func attachment_Search(rs m.AttachmentSet, cond q.AttachmentCondition) m.Attachm
 	if !hasResField {
 		cond = cond.And().ResField().IsNull()
 	}
-	if rs.Env().Uid() == security.SuperUserID {
+	if h.User().NewSet(rs.Env()).CurrentUser().IsSystem() {
+		// rules do not apply for the superuser
 		return rs.Super().Search(cond)
 	}
 	// For attachments, the permissions of the document they are attached to
@@ -426,6 +517,10 @@ func attachment_Write(rs m.AttachmentSet, vals m.AttachmentData) bool {
 		return rs.Super().Write(vals)
 	}
 	rs.Check("write", vals)
+	if !rs.Env().Context().GetBool("hexya_force_compute_write") {
+		vals.UnsetFileSize()
+		vals.UnsetCheckSum()
+	}
 	if vals.HasMimeType() || vals.HasDatas() {
 		vals = rs.CheckContents(vals)
 	}
@@ -438,23 +533,83 @@ func attachment_Copy(rs m.AttachmentSet, overrides m.AttachmentData) m.Attachmen
 }
 
 func attachment_Unlink(rs m.AttachmentSet) int64 {
+	if rs.IsEmpty() {
+		return 0
+	}
 	rs.Check("unlink", nil)
-	return rs.Super().Unlink()
+	// First delete in the database, *then* in the filesystem if the
+	// database allowed it. Helps avoid errors when concurrent transactions
+	// are deleting the same file, and some of the transactions are
+	// rolled back by PostgreSQL (due to concurrent updates detection).
+	toDelete := make(map[string]bool)
+	for _, attach := range rs.Records() {
+		toDelete[attach.StoreFname()] = true
+	}
+	res := rs.Super().Unlink()
+	for filePath := range toDelete {
+		rs.FileDelete(filePath)
+	}
+	return res
 }
 
 func attachment_Create(rs m.AttachmentSet, vals m.AttachmentData) m.AttachmentSet {
 	vals = rs.CheckContents(vals)
+	if !rs.Env().Context().GetBool("hexya_force_compute_write") {
+		vals.UnsetFileSize()
+		vals.UnsetCheckSum()
+	}
 	rs.Check("write", vals)
 	return rs.Super().Create(vals)
 }
 
+// PostAddCreate is called after an attachment is uploaded.
+// It can be overridden to implement specific behaviour after attachment creation.
+func attachment_PostAddCreate(_ m.AttachmentSet) {
+}
+
+// GenerateAccessToken generates and store a random access token for these attachments
+func attachment_GenerateAccessToken(rs m.AttachmentSet) []string {
+	var tokens []string
+	for _, attachment := range rs.Records() {
+		if attachment.AccessToken() != "" {
+			tokens = append(tokens, attachment.AccessToken())
+			continue
+		}
+		accessToken := rs.GenerateToken()
+		attachment.SetAccessToken(accessToken)
+		tokens = append(tokens, accessToken)
+	}
+	return tokens
+}
+
+// GenerateToken generates and return a single random accessToken.
+// Base implementation returns a UUID.
+func attachment_GenerateToken(_ m.AttachmentSet) string {
+	return uuid.New().String()
+}
+
 // ActionGet returns the action for displaying attachments
 func attachment_ActionGet(_ m.AttachmentSet) *actions.Action {
-	return actions.Registry.GetByXMLId("base_action_attachment")
+	return actions.Registry.GetByXMLID("base_action_attachment")
+}
+
+// GetServeAttachment returns the serve attachments
+func attachment_GetServeAttachment(rs m.AttachmentSet, url string, extraCond q.AttachmentCondition, extraFields models.FieldNames, orders []string) []models.RecordData {
+	cond := q.Attachment().Type().Equals("binary").And().URL().Equals(url).AndCond(extraCond)
+	fieldNames := append(extraFields, h.Attachment().Fields().LastUpdate(), h.Attachment().Fields().Datas(), h.Attachment().Fields().MimeType())
+	attachments := h.Attachment().Search(rs.Env(), cond).OrderBy(orders...)
+	return attachments.Read(fieldNames)
+}
+
+// GetAttachmentByKey returns the attachment with the given key
+func attachment_GetAttachmentByKey(rs m.AttachmentSet, key string, extraCond q.AttachmentCondition, orders []string) m.AttachmentSet {
+	cond := q.Attachment().HexyaExternalID().Equals(key).AndCond(extraCond)
+	return h.Attachment().Search(rs.Env(), cond).OrderBy(orders...)
 }
 
 func init() {
 	models.NewModel("Attachment")
+	h.Attachment().SetDefaultOrder("ID desc")
 	h.Attachment().AddFields(fields_Attachment)
 
 	h.Attachment().NewMethod("ComputeResName", attachment_ComputeResName)
@@ -470,16 +625,26 @@ func init() {
 	h.Attachment().NewMethod("FileGC", attachment_FileGC)
 	h.Attachment().NewMethod("ComputeDatas", attachment_ComputeDatas)
 	h.Attachment().NewMethod("InverseDatas", attachment_InverseDatas)
+	h.Attachment().NewMethod("GetDatasRelatedValues", attachment_GetDatasRelatedValues)
 	h.Attachment().NewMethod("ComputeCheckSum", attachment_ComputeCheckSum)
 	h.Attachment().NewMethod("ComputeMimeType", attachment_ComputeMimeType)
 	h.Attachment().NewMethod("CheckContents", attachment_CheckContents)
 	h.Attachment().NewMethod("Index", attachment_Index)
+	h.Attachment().NewMethod("GetServingGroups", attachment_GetServingGroups)
+	h.Attachment().NewMethod("CheckServingAttachments", attachment_CheckServingAttachments)
 	h.Attachment().NewMethod("Check", attachment_Check)
+	h.Attachment().NewMethod("ReadGroupAllowedFields", attachment_ReadGroupAllowedFields)
+	h.Attachment().Methods().Aggregates().Extend(attachment_Aggregates)
 	h.Attachment().Methods().Search().Extend(attachment_Search)
 	h.Attachment().Methods().Load().Extend(attachment_Load)
 	h.Attachment().Methods().Write().Extend(attachment_Write)
 	h.Attachment().Methods().Copy().Extend(attachment_Copy)
 	h.Attachment().Methods().Unlink().Extend(attachment_Unlink)
 	h.Attachment().Methods().Create().Extend(attachment_Create)
+	h.Attachment().NewMethod("PostAddCreate", attachment_PostAddCreate)
+	h.Attachment().NewMethod("GenerateAccessToken", attachment_GenerateAccessToken)
+	h.Attachment().NewMethod("GenerateToken", attachment_GenerateToken)
 	h.Attachment().NewMethod("ActionGet", attachment_ActionGet)
+	h.Attachment().NewMethod("GetServeAttachment", attachment_GetServeAttachment)
+	h.Attachment().NewMethod("GetAttachmentByKey", attachment_GetAttachmentByKey)
 }
