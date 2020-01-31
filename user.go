@@ -30,8 +30,8 @@ type AuthBackend struct{}
 
 // Authenticate the user defined by login and secret.
 func (bab *AuthBackend) Authenticate(login, secret string, context *types.Context) (uid int64, err error) {
-	models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
-		uid, err = h.User().NewSet(env).WithNewContext(context).Authenticate(login, secret)
+	err = models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
+		uid = h.User().NewSet(env).WithNewContext(context).Authenticate(login, secret)
 	})
 	return
 }
@@ -72,9 +72,9 @@ var fields_User = map[string]models.FieldDefinition{
 		OnDelete: models.Restrict, String: "Related Partner", Help: "Partner-related data of the user"},
 	"Login": fields.Char{Required: true, Unique: true, Help: "Used to log into the system",
 		OnChange: h.User().Methods().OnchangeLogin()},
-	"Password": fields.Char{Default: models.DefaultValue(""), NoCopy: true,
+	"Password": fields.Char{Default: models.DefaultValue(""), NoCopy: true, Stored: true,
 		Compute: h.User().Methods().ComputePassword(),
-		Inverse: h.User().Methods().InverseNewPassword(),
+		Inverse: h.User().Methods().InversePassword(),
 		Help:    "Keep empty if you don't want the user to be able to connect on the system."},
 	"NewPassword": fields.Char{String: "Set Password", Compute: h.User().Methods().ComputePassword(),
 		Inverse: h.User().Methods().InverseNewPassword(), Depends: []string{""},
@@ -165,7 +165,7 @@ func user_CheckCredentials(rs m.UserSet, pwd string) {
 		panic(security.UserNotFoundError("<UNKNOWN>"))
 	}
 	var pwdHash string
-	rs.Env().Cr().Get(&pwdHash, `SELECT COALESCE(password, '') FROM "users" WHERE id=?`, rs.CurrentUser().ID())
+	rs.Env().Cr().Get(&pwdHash, `SELECT COALESCE(password, '') FROM "user" WHERE id=?`, rs.CurrentUser().ID())
 	if pwdHash == "" || pwd == "" || !rs.CurrentUser().VerifyPassword(pwd, pwdHash) {
 		panic(security.InvalidCredentialsError(rs.CurrentUser().Login()))
 	}
@@ -446,21 +446,24 @@ func user_UpdateLastLogin(rs m.UserSet) {
 
 // GetLoginDomain returns the condition to find a user given its login.
 // Base implementation is simply q.User().Login().Equals(login).
-func user_GetLoginDomain(login string) q.UserCondition {
+func user_GetLoginDomain(_ m.UserSet, login string) q.UserCondition {
 	return q.User().Login().Equals(login)
 }
 
 // Authenticate the user defined by login and secret
-func user_Authenticate(rs m.UserSet, login string, secret string) (uid int64, err error) {
+func user_Authenticate(rs m.UserSet, login string, secret string) int64 {
 	if secret == "" {
-		return 0, security.InvalidCredentialsError(login)
+		panic(fmt.Errorf("empty password provided for login: %s", login))
 	}
-	user := h.User().Search(rs.Env(), rs.GetLoginDomain())
+	user := h.User().Search(rs.Env(), rs.GetLoginDomain(login))
+	if user.IsEmpty() {
+		panic(security.UserNotFoundError(login))
+	}
 	user = user.Sudo(user.ID())
 	user.CheckCredentials(secret)
 	user.UpdateLastLogin()
 	log.Info("login successful", "login", login, "user_id", user.ID())
-	return user.ID(), nil
+	return user.ID()
 }
 
 func user_GetSessionTokenFields(_ m.UserSet) models.FieldNames {

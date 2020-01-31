@@ -20,19 +20,17 @@ func TestUserAuthentication(t *testing.T) {
 				SetLogin("jsmith").
 				SetPassword("secret"))
 			Convey("Correct user authentication", func() {
-				uid, err := h.User().NewSet(env).Authenticate("jsmith", "secret")
+				uid := h.User().NewSet(env).Authenticate("jsmith", "secret")
 				So(uid, ShouldEqual, userJohn.ID())
-				So(err, ShouldBeNil)
 			})
 			Convey("Invalid credentials authentication", func() {
-				uid, err := h.User().NewSet(env).Authenticate("jsmith", "wrong-secret")
-				So(uid, ShouldEqual, 0)
-				So(err, ShouldHaveSameTypeAs, security.InvalidCredentialsError(""))
+				So(func() { h.User().NewSet(env).Authenticate("jsmith", "wrong-secret") }, ShouldPanicWith, security.InvalidCredentialsError("jsmith"))
 			})
 			Convey("Unknown user authentication", func() {
-				uid, err := h.User().NewSet(env).Authenticate("jsmith2", "wrong-secret")
-				So(uid, ShouldEqual, 0)
-				So(err, ShouldHaveSameTypeAs, security.UserNotFoundError(""))
+				So(func() { h.User().NewSet(env).Authenticate("jsmith2", "wrong-secret") }, ShouldPanicWith, security.UserNotFoundError("jsmith2"))
+			})
+			Convey("Empty passwords should fail too", func() {
+				So(func() { h.User().NewSet(env).Authenticate("jsmith2", "") }, ShouldPanic)
 			})
 		})
 	})
