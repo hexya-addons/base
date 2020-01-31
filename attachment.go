@@ -169,59 +169,48 @@ func attachment_FileGC(rs m.AttachmentSet) {
 	if rs.Storage() != "file" {
 		return
 	}
-	// Continue in a new transaction. The LOCK statement below must be the
-	// first one in the current transaction, otherwise the database snapshot
-	// used by it may not contain the most recent changes made to the table
-	// ir_attachment! Indeed, if concurrent transactions create attachments,
-	// the LOCK statement will wait until those concurrent transactions end.
-	// But this transaction will not see the new attachements if it has done
-	// other requests before the LOCK (like the method _storage() above).
-	models.ExecuteInNewEnvironment(rs.Env().Uid(), func(env models.Environment) {
-		env.Cr().Execute("LOCK ir_attachment IN SHARE MODE")
+	rSet := h.Attachment().NewSet(rs.Env())
 
-		rSet := h.Attachment().NewSet(env)
-
-		// retrieve the file names from the checklist
-		var checklist []string
-		err := filepath.Walk(rSet.FullPath("checklist"), func(path string, info os.FileInfo, err error) error {
-			if info.IsDir() {
-				return nil
-			}
-			fName := filepath.Join(filepath.Base(filepath.Dir(path)), info.Name())
-			checklist = append(checklist, fName)
+	// retrieve the file names from the checklist
+	var checklist []string
+	err := filepath.Walk(rSet.FullPath("checklist"), func(path string, info os.FileInfo, err error) error {
+		if info.IsDir() {
 			return nil
-		})
-		if err != nil {
-			log.Panic("Error while walking the checklist directory", "error", err)
 		}
-
-		// determine which files to keep among the checklist
-		var whitelistSlice []string
-		env.Cr().Select(&whitelistSlice, "SELECT DISTINCT store_fname FROM ir_attachment WHERE store_fname IN ?", checklist)
-		whitelist := make(map[string]bool)
-		for _, wl := range whitelistSlice {
-			whitelist[wl] = true
-		}
-
-		// remove garbage files, and clean up checklist
-		var removed int
-		for _, fName := range checklist {
-			if !whitelist[fName] {
-				err = os.Remove(rSet.FullPath(fName))
-				if err != nil {
-					log.Warn("Unable to FileGC", "file", rSet.FullPath(fName), "error", err)
-					continue
-				}
-				removed++
-			}
-			err = os.Remove(filepath.Join(rSet.FullPath("checklist"), fName))
-			if err != nil {
-				log.Warn("Unable to clean checklist dir", "file", fName, "error", err)
-			}
-		}
-
-		log.Info("Filestore garbage collected", "checked", len(checklist), "removed", removed)
+		fName := filepath.Join(filepath.Base(filepath.Dir(path)), info.Name())
+		checklist = append(checklist, fName)
+		return nil
 	})
+	if err != nil {
+		log.Panic("Error while walking the checklist directory", "error", err)
+	}
+
+	// determine which files to keep among the checklist
+	var whitelistSlice []string
+	rs.Env().Cr().Select(&whitelistSlice, "SELECT DISTINCT store_fname FROM ir_attachment WHERE store_fname IN ?", checklist)
+	whitelist := make(map[string]bool)
+	for _, wl := range whitelistSlice {
+		whitelist[wl] = true
+	}
+
+	// remove garbage files, and clean up checklist
+	var removed int
+	for _, fName := range checklist {
+		if !whitelist[fName] {
+			err = os.Remove(rSet.FullPath(fName))
+			if err != nil {
+				log.Warn("Unable to FileGC", "file", rSet.FullPath(fName), "error", err)
+				continue
+			}
+			removed++
+		}
+		err = os.Remove(filepath.Join(rSet.FullPath("checklist"), fName))
+		if err != nil {
+			log.Warn("Unable to clean checklist dir", "file", fName, "error", err)
+		}
+	}
+
+	log.Info("Filestore garbage collected", "checked", len(checklist), "removed", removed)
 
 }
 

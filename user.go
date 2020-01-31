@@ -4,13 +4,21 @@
 package base
 
 import (
+	"crypto/hmac"
+	"crypto/sha256"
+	"fmt"
+	"strings"
+
+	"github.com/hexya-addons/web/domains"
 	"github.com/hexya-erp/hexya/src/actions"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/fields"
 	"github.com/hexya-erp/hexya/src/models/operator"
 	"github.com/hexya-erp/hexya/src/models/security"
 	"github.com/hexya-erp/hexya/src/models/types"
+	"github.com/hexya-erp/hexya/src/models/types/dates"
 	"github.com/hexya-erp/hexya/src/tools/emailutils"
+	"github.com/hexya-erp/hexya/src/tools/password"
 	"github.com/hexya-erp/pool/h"
 	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
@@ -65,23 +73,30 @@ var fields_User = map[string]models.FieldDefinition{
 	"Login": fields.Char{Required: true, Unique: true, Help: "Used to log into the system",
 		OnChange: h.User().Methods().OnchangeLogin()},
 	"Password": fields.Char{Default: models.DefaultValue(""), NoCopy: true,
-		Help: "Keep empty if you don't want the user to be able to connect on the system."},
+		Compute: h.User().Methods().ComputePassword(),
+		Inverse: h.User().Methods().InverseNewPassword(),
+		Help:    "Keep empty if you don't want the user to be able to connect on the system."},
 	"NewPassword": fields.Char{String: "Set Password", Compute: h.User().Methods().ComputePassword(),
-		Inverse: h.User().Methods().InversePassword(), Depends: []string{""},
+		Inverse: h.User().Methods().InverseNewPassword(), Depends: []string{""},
 		Help: `Specify a value only when creating a user or if you're
 changing the user's password, otherwise leave empty. After
 a change of password, the user has to login again.`},
-	"Signature": fields.Text{}, // TODO Switch to HTML field when implemented in client
+	"Signature":     fields.Text{String: "Email Signature"}, // TODO Switch to HTML field when implemented in client
+	"Active":        fields.Boolean{Default: models.DefaultValue(true)},
+	"ActivePartner": fields.Boolean{Related: "Partner.Active", ReadOnly: true, String: "Partner Is Active"},
 	"ActionID": fields.Char{GoType: new(actions.ActionRef), String: "Home Action",
-		Help: "If specified, this action will be opened at log on for this user, in addition to the standard menu."},
+		Constraint: h.User().Methods().CheckActionID(),
+		Help:       "If specified, this action will be opened at log on for this user, in addition to the standard menu."},
 	"Groups": fields.Many2Many{RelationModel: h.Group(), JSON: "group_ids"},
 	"Logs": fields.One2Many{RelationModel: h.UserLog(), ReverseFK: "CreateUID", String: "User log entries",
 		JSON: "log_ids"},
-	"LoginDate": fields.DateTime{Related: "Logs.CreateDate", String: "Latest Connection"},
+	"LoginDate": fields.DateTime{Related: "Logs.CreateDate", String: "Latest authentication"},
 	"Share": fields.Boolean{Compute: h.User().Methods().ComputeShare(), Depends: []string{"Groups"},
 		String: "Share User", Stored: true, Help: "External user with limited access, created only for the purpose of sharing data."},
 	"CompaniesCount": fields.Integer{String: "Number of Companies",
 		Compute: h.User().Methods().ComputeCompaniesCount(), GoType: new(int)},
+	"TZOffset": fields.Char{Compute: h.User().Methods().ComputeTZOffset(), String: "Timezone Offset"},
+
 	"Company": fields.Many2One{RelationModel: h.Company(), Required: true, Default: func(env models.Environment) interface{} {
 		return h.Company().NewSet(env).CompanyDefaultGet()
 	}, Help: "The company this user is currently working for.", Constraint: h.User().Methods().CheckCompany()},
@@ -89,10 +104,12 @@ a change of password, the user has to login again.`},
 		Default: func(env models.Environment) interface{} {
 			return h.Company().NewSet(env).CompanyDefaultGet()
 		}, Constraint: h.User().Methods().CheckCompany()},
+	"GroupsCount": fields.Integer{String: "# Groups", Compute: h.User().Methods().ComputeAccessesCount(),
+		Help: "Number of groups that apply to the current user", GoType: new(int)},
 }
 
 // SelfReadableFields returns the list of its own fields that a user can read.
-func user_SelfReadableFields(rs m.UserSet) map[string]bool {
+func user_SelfReadableFields(_ m.UserSet) map[string]bool {
 	return map[string]bool{
 		"Signature": true, "Company": true, "Login": true, "Email": true, "Name": true, "Image": true,
 		"ImageMedium": true, "ImageSmall": true, "Lang": true, "TZ": true, "TZOffset": true, "Groups": true,
@@ -101,25 +118,80 @@ func user_SelfReadableFields(rs m.UserSet) map[string]bool {
 }
 
 // SelfWritableFields returns the list of its own fields that a user can write.
-func user_SelfWritableFields(rs m.UserSet) map[string]bool {
+func user_SelfWritableFields(_ m.UserSet) map[string]bool {
 	return map[string]bool{
 		"Signature": true, "ActionID": true, "Company": true, "Email": true, "Name": true,
 		"Image": true, "ImageMedium": true, "ImageSmall": true, "Lang": true, "TZ": true,
 	}
 }
 
-// ComputePassword is a technical function for the new password mechanism. It always returns an empty string
-func user_ComputePassword(rs m.UserSet) m.UserData {
-	return h.User().NewData().SetNewPassword("")
+// Init iterates over the database to encrypt plaintext passwords
+func user_Init(rs m.UserSet) {
+	type pwdStruct struct {
+		ID       int64
+		Password string
+	}
+	var res []pwdStruct
+	rs.Env().Cr().Select(&res, `
+        SELECT id, password FROM res_users
+        WHERE password IS NOT NULL
+          AND password !~ '^\$[^$]+\$[^$]+\$.'`)
+	for _, l := range res {
+		h.User().BrowseOne(rs.Env(), l.ID).SetPassword(l.Password)
+	}
 }
 
-// InversePassword is used in the new password mechanism.
-func user_InversePassword(rs m.UserSet, vals models.FieldMapper) {
-	if rs.NewPassword() == "" {
+// InversePassword is called when setting a new password
+func user_InversePassword(rs m.UserSet, value string) {
+	rs.Env().Cr().Execute(`UPDATE "user" SET password=? WHERE id=?`, rs.HashPassword(value), rs.ID())
+	rs.Collection().InvalidateCache()
+}
+
+// HashPassword returns the encrypted password hash for
+// the given password.
+//
+// Override this method and VerifyPassword to use specific hash function.
+func user_HashPassword(rs m.UserSet, pwd string) string {
+	hashedPwd, err := password.Hash(pwd)
+	if err != nil {
+		panic(fmt.Errorf(rs.T("error while hashing password: %s", err)))
+	}
+	return hashedPwd
+}
+
+// CheckCredentials panics if the given password is not the password of the current user
+func user_CheckCredentials(rs m.UserSet, pwd string) {
+	if rs.CurrentUser().IsEmpty() {
+		panic(security.UserNotFoundError("<UNKNOWN>"))
+	}
+	var pwdHash string
+	rs.Env().Cr().Get(&pwdHash, `SELECT COALESCE(password, '') FROM "users" WHERE id=?`, rs.CurrentUser().ID())
+	if pwdHash == "" || pwd == "" || !rs.CurrentUser().VerifyPassword(pwd, pwdHash) {
+		panic(security.InvalidCredentialsError(rs.CurrentUser().Login()))
+	}
+}
+
+// VerifyPassword returns true if the given pwd matches the given password hash.
+//
+// Override this method and HashPassword to use custom password hash function.
+func user_VerifyPassword(_ m.UserSet, pwd string, hash string) bool {
+	return password.Verify(pwd, hash)
+}
+
+// ComputePassword is a technical function for the new password mechanism. It always returns an empty string
+func user_ComputePassword(_ m.UserSet) m.UserData {
+	return h.User().NewData().
+		SetNewPassword("").
+		SetPassword("")
+}
+
+// InverseNewPassword is used in the new password mechanism.
+func user_InverseNewPassword(rs m.UserSet, value string) {
+	if value == "" {
 		return
 	}
 	if rs.ID() == rs.Env().Uid() {
-		log.Panic(rs.T("Please use the change password wizard (in User Preferences or User menu) to change your own password."))
+		panic(rs.T("Please use the change password wizard (in User Preferences or User menu) to change your own password."))
 	}
 	rs.SetPassword(rs.NewPassword())
 }
@@ -132,6 +204,23 @@ func user_ComputeShare(rs m.UserSet) m.UserData {
 // ComputeCompaniesCount retrieves the number of companies in the system
 func user_ComputeCompaniesCount(rs m.UserSet) m.UserData {
 	return h.User().NewData().SetCompaniesCount(h.Company().NewSet(rs.Env()).Sudo().SearchCount())
+}
+
+// ComputeTZOffset returns the number of hours between the user TZ and GMT
+func user_ComputeTZOffset(rs m.UserSet) m.UserData {
+	res := h.User().NewData()
+	dt, err := dates.Now().WithTimezone(rs.TZ())
+	if err != nil {
+		return res.SetTZOffset("+0000")
+	}
+	return res.SetTZOffset(dt.Format("-0700"))
+}
+
+// ComputeAccessCount computes counts for groups, rules and ACL for this user.
+func user_ComputeAccessesCount(rs m.UserSet) m.UserData {
+	res := h.User().NewData()
+	res.SetGroupsCount(rs.Groups().Len())
+	return res
 }
 
 // OnchangeLogin matches the email if the login is an email
@@ -147,6 +236,63 @@ func user_CheckCompany(rs m.UserSet) {
 	if rs.Company().Intersect(rs.Companies()).IsEmpty() {
 		log.Panic(rs.T("The chosen company is not in the allowed companies for this user"))
 	}
+}
+
+// CheckActionID checks that the user's home action is valid
+func user_CheckActionID(rs m.UserSet) {
+	actionOpenWebsite := actions.Registry.GetByXMLID("base_action_open_website")
+	if actionOpenWebsite != nil {
+		for _, rec := range rs.Records() {
+			if rec.ActionID().ID() == actionOpenWebsite.XMLID {
+				panic(rs.T("The \"App Switcher\" action cannot be selected as home action."))
+			}
+		}
+	}
+}
+
+// CheckOneUserType checks no users are both portal and users (same with public).
+// This could typically happen because of implied groups.
+func user_CheckOneUserType(rs m.UserSet) {
+	userTypeGroupIds := []string{GroupUser.ID, GroupPublic.ID, GroupPortal.ID}
+	dbGroups := h.Group().Search(rs.Env(), q.Group().GroupID().In(userTypeGroupIds))
+	if rs.HasMultipleGroups(dbGroups) {
+		panic(rs.T("The user cannot have more than one user types."))
+	}
+}
+
+// HasMultipleGroups returns true if at least one of these users belong to more
+// than one of the given groups
+func user_HasMultipleGroups(rs m.UserSet, groups m.GroupSet) bool {
+	if groups.Len() == 0 {
+		return false
+	}
+	args := []interface{}{groups.Ids()}
+
+	// default; we check ALL users (actually pretty efficient)
+	var whereClause string
+	if rs.Len() == 1 {
+		whereClause = "AND r.uid = ?"
+		args = append(args, rs.ID())
+	}
+	query := fmt.Sprintf(`
+SELECT 1 FROM "group_user_rel" WHERE EXISTS(
+	SELECT r.uid
+	FROM res_groups_users_rel r
+	WHERE r.gid IN (?) %s
+	GROUP BY r.uid HAVING COUNT(r.gid) > 1
+)`, whereClause)
+	var res bool
+	rs.Env().Cr().Get(&res, query, args)
+	return res
+}
+
+func user_ToggleActive(rs m.UserSet) {
+	for _, rec := range rs.Records() {
+		if !rec.Active() && !rec.Partner().Active() {
+			rs.Partner().ToggleActive()
+		}
+	}
+	rs.Super().ToggleActive()
 }
 
 func user_Read(rs m.UserSet, fields models.FieldNames) []models.RecordData {
@@ -287,7 +433,7 @@ func user_ContextGet(rs m.UserSet) *types.Context {
 }
 
 // ActionGet returns the action for the preferences popup
-func user_ActionGet(rs m.UserSet) *actions.Action {
+func user_ActionGet(_ m.UserSet) *actions.Action {
 	return actions.Registry.GetByXMLID("base_action_res_users_my")
 }
 
@@ -298,29 +444,51 @@ func user_UpdateLastLogin(rs m.UserSet) {
 	h.UserLog().Create(rs.Env(), h.UserLog().NewData())
 }
 
-// CheckCredentials checks that the user defined by its login and secret is allowed to log in.
-// It returns the uid of the user on success and an error otherwise.
-func user_CheckCredentials(rs m.UserSet, login, secret string) (uid int64, err error) {
-	user := rs.Search(q.User().Login().Equals(login))
-	if user.Len() == 0 {
-		err = security.UserNotFoundError(login)
-		return
-	}
-	if user.Password() == "" || user.Password() != secret {
-		err = security.InvalidCredentialsError(login)
-		return
-	}
-	uid = user.ID()
-	return
+// GetLoginDomain returns the condition to find a user given its login.
+// Base implementation is simply q.User().Login().Equals(login).
+func user_GetLoginDomain(login string) q.UserCondition {
+	return q.User().Login().Equals(login)
 }
 
 // Authenticate the user defined by login and secret
-func user_Authenticate(rs m.UserSet, login, secret string) (uid int64, err error) {
-	uid, err = rs.CheckCredentials(login, secret)
-	if err != nil {
-		rs.UpdateLastLogin()
+func user_Authenticate(rs m.UserSet, login string, secret string) (uid int64, err error) {
+	if secret == "" {
+		return 0, security.InvalidCredentialsError(login)
 	}
-	return
+	user := h.User().Search(rs.Env(), rs.GetLoginDomain())
+	user = user.Sudo(user.ID())
+	user.CheckCredentials(secret)
+	user.UpdateLastLogin()
+	log.Info("login successful", "login", login, "user_id", user.ID())
+	return user.ID(), nil
+}
+
+func user_GetSessionTokenFields(_ m.UserSet) models.FieldNames {
+	return models.FieldNames{
+		h.User().Fields().ID(),
+		h.User().Fields().Login(),
+		h.User().Fields().Password(),
+		h.User().Fields().Active(),
+	}
+}
+
+// ComputeSessionToken computes a session token for this user and given session ID.
+func user_ComputeSessionToken(rs m.UserSet, sid string) string {
+	sessionFields := strings.Join(rs.GetSessionTokenFields().JSON(), ", ")
+	query := fmt.Sprintf(`
+SELECT %s, (SELECT value FROM "config_parameter" WHERE key='database.secret'))
+FROM "user"
+WHERE id=?`, sessionFields)
+	var res [][]interface{}
+	rs.Env().Cr().Select(&res, query, rs.ID())
+	if len(res) != 1 {
+		return ""
+	}
+	// generate HMAC key
+	key := []byte(fmt.Sprintf("%v", res[0]))
+	hm := hmac.New(sha256.New, key)
+	// hmac the session ID
+	return fmt.Sprintf("%x", hm.Sum([]byte(sid)))
 }
 
 // ChangePassword changes current user password. Old password must be provided explicitly
@@ -328,16 +496,16 @@ func user_Authenticate(rs m.UserSet, login, secret string) (uid int64, err error
 // password is not used to authenticate requests. It returns true or panics.
 func user_ChangePassword(rs m.UserSet, oldPassword, newPassword string) bool {
 	currentUser := h.User().NewSet(rs.Env()).CurrentUser()
-	uid, err := rs.CheckCredentials(currentUser.Login(), oldPassword)
-	if err != nil || rs.Env().Uid() != uid {
-		log.Panic("Invalid password", "user", currentUser.Login(), "uid", uid)
+	currentUser.CheckCredentials(oldPassword)
+	if newPassword == "" {
+		panic(rs.T("Setting empty passwords is not allowed for security reasons!"))
 	}
 	currentUser.SetPassword(newPassword)
 	return true
 }
 
 // PreferenceSave is called when validating the preferences popup
-func user_PreferenceSave(rs m.UserSet) *actions.Action {
+func user_PreferenceSave(_ m.UserSet) *actions.Action {
 	return &actions.Action{
 		Type: actions.ActionClient,
 		Tag:  "reload_context",
@@ -345,7 +513,7 @@ func user_PreferenceSave(rs m.UserSet) *actions.Action {
 }
 
 // PreferenceChangePassword is called when clicking 'Change Password' in the preferences popup
-func user_PreferenceChangePassword(rs m.UserSet) *actions.Action {
+func user_PreferenceChangePassword(_ m.UserSet) *actions.Action {
 	return &actions.Action{
 		Type:   actions.ActionClient,
 		Tag:    "change_password",
@@ -365,6 +533,34 @@ func user_HasGroup(rs m.UserSet, groupID string) bool {
 	return security.Registry.HasMembership(userID, group)
 }
 
+// ActionShowGroups returns an action to list the groups this user belongs to
+func user_ActionShowGroups(rs m.UserSet) *actions.Action {
+	rs.EnsureOne()
+	return &actions.Action{
+		Name:     rs.T("Groups"),
+		ViewMode: "tree,form",
+		Model:    "Group",
+		Type:     actions.ActionActWindow,
+		Context: types.NewContext().
+			WithKey("create", false).
+			WithKey("delete", false),
+		Domain: domains.Domain(q.Group().ID().In(rs.Groups().Ids()).Serialize()).String(),
+		Target: "current",
+	}
+}
+
+// IsPublic returns true if this user is a public user (from website)
+func user_IsPublic(rs m.UserSet) bool {
+	rs.EnsureOne()
+	return rs.HasGroup(GroupPublic.ID)
+}
+
+// IsSystem returns true if this user is in the system group
+func user_IsSystem(rs m.UserSet) bool {
+	rs.EnsureOne()
+	return rs.HasGroup(GroupSystem.ID)
+}
+
 // IsAdmin returns true if this user is the administrator or member of the 'Access Rights' group
 func user_IsAdmin(rs m.UserSet) bool {
 	rs.EnsureOne()
@@ -375,12 +571,6 @@ func user_IsAdmin(rs m.UserSet) bool {
 func user_IsSuperUser(rs m.UserSet) bool {
 	rs.EnsureOne()
 	return rs.ID() == security.SuperUserID
-}
-
-// IsSystem returns true if this user is in the system group
-func user_IsSystem(rs m.UserSet) bool {
-	rs.EnsureOne()
-	return rs.HasGroup(GroupSystem.ID)
 }
 
 // AddMandatoryGroups adds the group Everyone to everybody and the admin group to the admin
@@ -471,14 +661,25 @@ func init() {
 	h.User().SetDefaultOrder("Login")
 	h.User().AddFields(fields_User)
 
+	h.User().NewMethod("Init", user_Init)
 	h.User().NewMethod("SelfReadableFields", user_SelfReadableFields)
 	h.User().NewMethod("SelfWritableFields", user_SelfWritableFields)
 	h.User().NewMethod("ComputePassword", user_ComputePassword)
 	h.User().NewMethod("InversePassword", user_InversePassword)
+	h.User().NewMethod("InverseNewPassword", user_InverseNewPassword)
+	h.User().NewMethod("HashPassword", user_HashPassword)
+	h.User().NewMethod("CheckCredentials", user_CheckCredentials)
+	h.User().NewMethod("VerifyPassword", user_VerifyPassword)
 	h.User().NewMethod("ComputeShare", user_ComputeShare)
 	h.User().NewMethod("ComputeCompaniesCount", user_ComputeCompaniesCount)
+	h.User().NewMethod("ComputeTZOffset", user_ComputeTZOffset)
+	h.User().NewMethod("ComputeAccessesCount", user_ComputeAccessesCount)
 	h.User().NewMethod("OnchangeLogin", user_OnchangeLogin)
 	h.User().NewMethod("CheckCompany", user_CheckCompany)
+	h.User().NewMethod("CheckActionID", user_CheckActionID)
+	h.User().NewMethod("CheckOneUserType", user_CheckOneUserType)
+	h.User().NewMethod("HasMultipleGroups", user_HasMultipleGroups)
+	h.User().Methods().ToggleActive().Extend(user_ToggleActive)
 	h.User().Methods().Read().Extend(user_Read)
 	h.User().Methods().Search().Extend(user_Search)
 	h.User().Methods().Create().Extend(user_Create)
@@ -489,15 +690,19 @@ func init() {
 	h.User().NewMethod("ContextGet", user_ContextGet)
 	h.User().NewMethod("ActionGet", user_ActionGet)
 	h.User().NewMethod("UpdateLastLogin", user_UpdateLastLogin)
-	h.User().NewMethod("CheckCredentials", user_CheckCredentials)
+	h.User().NewMethod("GetLoginDomain", user_GetLoginDomain)
 	h.User().NewMethod("Authenticate", user_Authenticate)
+	h.User().NewMethod("GetSessionTokenFields", user_GetSessionTokenFields)
+	h.User().NewMethod("ComputeSessionToken", user_ComputeSessionToken)
+	h.User().NewMethod("ActionShowGroups", user_ActionShowGroups)
 	h.User().NewMethod("ChangePassword", user_ChangePassword)
 	h.User().NewMethod("PreferenceSave", user_PreferenceSave)
 	h.User().NewMethod("PreferenceChangePassword", user_PreferenceChangePassword)
 	h.User().NewMethod("HasGroup", user_HasGroup)
+	h.User().NewMethod("IsPublic", user_IsPublic)
+	h.User().NewMethod("IsSystem", user_IsSystem)
 	h.User().NewMethod("IsAdmin", user_IsAdmin)
 	h.User().NewMethod("IsSuperUser", user_IsSuperUser)
-	h.User().NewMethod("IsSystem", user_IsSystem)
 	h.User().NewMethod("AddMandatoryGroups", user_AddMandatoryGroups)
 	h.User().NewMethod("SyncMemberships", user_SyncMemberships)
 	h.User().NewMethod("CheckGroupsSync", user_CheckGroupSync)
