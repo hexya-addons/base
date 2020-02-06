@@ -74,8 +74,8 @@ var fields_User = map[string]models.FieldDefinition{
 		OnChange: h.User().Methods().OnchangeLogin()},
 	"Password": fields.Char{Default: models.DefaultValue(""), NoCopy: true, Stored: true,
 		Compute: h.User().Methods().ComputePassword(),
-		Inverse: h.User().Methods().InversePassword(),
-		Help:    "Keep empty if you don't want the user to be able to connect on the system."},
+		Inverse: h.User().Methods().InversePassword(), Depends: []string{""},
+		Help: "Keep empty if you don't want the user to be able to connect on the system."},
 	"NewPassword": fields.Char{String: "Set Password", Compute: h.User().Methods().ComputePassword(),
 		Inverse: h.User().Methods().InverseNewPassword(), Depends: []string{""},
 		Help: `Specify a value only when creating a user or if you're
@@ -133,7 +133,7 @@ func user_Init(rs m.UserSet) {
 	}
 	var res []pwdStruct
 	rs.Env().Cr().Select(&res, `
-        SELECT id, password FROM res_users
+        SELECT id, password FROM "user"
         WHERE password IS NOT NULL
           AND password !~ '^\$[^$]+\$[^$]+\$.'`)
 	for _, l := range res {

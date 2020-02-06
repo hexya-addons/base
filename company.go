@@ -4,11 +4,15 @@
 package base
 
 import (
+	"encoding/base64"
 	"fmt"
+	"io/ioutil"
+	"path/filepath"
 
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/fields"
 	"github.com/hexya-erp/hexya/src/models/operator"
+	"github.com/hexya-erp/hexya/src/server"
 	"github.com/hexya-erp/hexya/src/tools/b64image"
 	"github.com/hexya-erp/pool/h"
 	"github.com/hexya-erp/pool/m"
@@ -44,14 +48,15 @@ func CompanyGetUserCurrency(env models.Environment) interface{} {
 var fields_Company = map[string]models.FieldDefinition{
 	"Name": fields.Char{String: "Company Name", Size: 128, Required: true,
 		Related: "Partner.Name", Unique: true},
+	"Sequence": fields.Integer{Default: models.DefaultValue(10),
+		Help: "Used to order Companies in the company switcher"},
 	"Parent": fields.Many2One{RelationModel: h.Company(),
 		String: "Parent Company", Index: true, Constraint: h.Company().Methods().CheckParent()},
 	"Children": fields.One2Many{RelationModel: h.Company(),
 		ReverseFK: "Parent", String: "Child Companies"},
 	"Partner": fields.Many2One{RelationModel: h.Partner(),
 		Required: true, Index: true},
-	"Tagline": fields.Char{},
-	"Logo":    fields.Binary{Related: "Partner.Image"},
+	"Logo": fields.Binary{Related: "Partner.Image"},
 	"LogoWeb": fields.Binary{Compute: h.Company().Methods().ComputeLogoWeb(),
 		Stored: true, Depends: []string{"Partner", "Partner.Image"}},
 	"Currency": fields.Many2One{RelationModel: h.Currency(),
@@ -67,10 +72,14 @@ var fields_Company = map[string]models.FieldDefinition{
 		Related: "Partner.Country", OnChange: h.Company().Methods().OnChangeCountry()},
 	"Email":           fields.Char{Related: "Partner.Email"},
 	"Phone":           fields.Char{Related: "Partner.Phone"},
-	"Fax":             fields.Char{Related: "Partner.Fax"},
 	"Website":         fields.Char{Related: "Partner.Website"},
 	"VAT":             fields.Char{Related: "Partner.VAT"},
 	"CompanyRegistry": fields.Char{Size: 64},
+	"Favicon": fields.Binary{String: "Company Favicon", Default: func(env models.Environment) interface{} {
+		fileName := filepath.Join(server.ResourceDir, "static", "web", "src", "img", "favicon.ico")
+		imgData, _ := ioutil.ReadFile(fileName)
+		return base64.StdEncoding.EncodeToString(imgData)
+	}, Help: `This field holds the image used to display a favicon for a given company.`},
 }
 
 func company_Copy(rs m.CompanySet, overrides m.CompanyData) m.CompanySet {
@@ -121,7 +130,6 @@ func company_Create(rs m.CompanySet, data m.CompanyData) m.CompanySet {
 		SetName(data.Name()).
 		SetCompanyType("company").
 		SetImage(data.Logo()).
-		SetCustomer(false).
 		SetEmail(data.Email()).
 		SetPhone(data.Phone()).
 		SetWebsite(data.Website()).

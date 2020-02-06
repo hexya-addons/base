@@ -41,9 +41,8 @@ var fields_Bank = map[string]models.FieldDefinition{
 	"Country": fields.Many2One{RelationModel: h.Country(), OnChange: h.Bank().Methods().OnchangeCountry()},
 	"Email":   fields.Char{},
 	"Phone":   fields.Char{},
-	"Fax":     fields.Char{},
 	"Active":  fields.Boolean{Default: models.DefaultValue(true)},
-	"BIC":     fields.Char{String: "Bank Identifier Cord", Index: true, Help: "Sometimes called BIC or Swift."},
+	"BIC":     fields.Char{String: "Bank Identifier Code", Index: true, Help: "Sometimes called BIC or Swift."},
 }
 
 func bank_NameGet(rs m.BankSet) string {

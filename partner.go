@@ -26,13 +26,16 @@ import (
 	"github.com/hexya-erp/hexya/src/models/fieldtype"
 	"github.com/hexya-erp/hexya/src/models/operator"
 	"github.com/hexya-erp/hexya/src/models/types"
+	"github.com/hexya-erp/hexya/src/models/types/dates"
 	"github.com/hexya-erp/hexya/src/server"
 	"github.com/hexya-erp/hexya/src/tools/b64image"
+	"github.com/hexya-erp/hexya/src/tools/nbutils"
 	"github.com/hexya-erp/hexya/src/tools/typesutils"
 	"github.com/hexya-erp/hexya/src/views"
 	"github.com/hexya-erp/pool/h"
 	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
+	"github.com/spf13/viper"
 )
 
 const gravatarBaseURL = "https://www.gravatar.com/avatar"
@@ -122,6 +125,7 @@ var fields_Partner = map[string]models.FieldDefinition{
 		},
 		Help: `If the selected language is loaded in the system, all documents related to
 this contact will be printed in this language. If not, it will be English.`},
+	"ActiveLangCount": fields.Integer{Compute: h.Partner().Methods().ComputeActiveLangCount(), GoType: new(int)},
 	"TZ": fields.Char{
 		String: "Timezone",
 		Default: func(env models.Environment) interface{} {
@@ -140,6 +144,9 @@ render date and time values: your computer's timezone.`},
 	"VAT": fields.Char{String: "TIN", Help: `Tax Identification Number.
 Fill it if the company is subjected to taxes.
 Used by the some of the legal statements.`},
+	"SameVATPartner": fields.Many2One{String: "Partner with same Tax ID",
+		RelationModel: h.Partner(),
+		Compute:       h.Partner().Methods().ComputeSameVATPartner()},
 	"Banks": fields.One2Many{
 		String: "Bank Accounts", RelationModel: h.BankAccount(), ReverseFK: "Partner"},
 	"Website": fields.Char{
@@ -147,28 +154,25 @@ Used by the some of the legal statements.`},
 	"Comment": fields.Char{
 		String: "Notes"},
 	"Categories": fields.Many2Many{
-		RelationModel: h.PartnerCategory(), String: "Tags",
+		RelationModel: h.PartnerCategory(), String: "Tags", JSON: "category_ids",
 		Default: func(env models.Environment) interface{} {
 			return h.PartnerCategory().Browse(env, []int64{env.Context().GetInteger("category_id")})
 		}},
 	"CreditLimit": fields.Float{},
 	"Barcode":     fields.Char{},
 	"Active":      fields.Boolean{Required: true, Default: models.DefaultValue(true)},
-	"Customer": fields.Boolean{String: "Is a Customer", Default: models.DefaultValue(true),
-		Help: "Check this box if this contact is a customer."},
-	"Supplier": fields.Boolean{String: "Is a Vendor",
-		Help: `Check this box if this contact is a vendor.
-If it's not checked, purchase people will not see it when encoding a purchase order.`},
-	"Employee": fields.Boolean{Help: "Check this box if this contact is an Employee."},
-	"Function": fields.Char{String: "Job Position"},
+	"Employee":    fields.Boolean{Help: "Check this box if this contact is an Employee."},
+	"Function":    fields.Char{String: "Job Position"},
 	"Type": fields.Selection{
 		Selection: types.Selection{
 			"contact":  "Contact",
 			"invoice":  "Invoice Address",
 			"delivery": "Shipping Address",
-			"other":    "Other Address"},
+			"other":    "Other Address",
+			"private":  "Private Address"},
 		Default: models.DefaultValue("contact"), Required: true,
-		Help: "Used to select automatically the right address according to the context in sales and purchases documents.",
+		Help: `Used to select automatically the right address according to the context in sales and purchases documents. 
+Private addresses are only visible by authorized users.`,
 	},
 	"Street":  fields.Char{},
 	"Street2": fields.Char{},
@@ -178,14 +182,16 @@ If it's not checked, purchase people will not see it when encoding a purchase or
 		Filter: q.CountryState().Country().EqualsEval("country_id"), OnDelete: models.Restrict},
 	"Country": fields.Many2One{RelationModel: h.Country(),
 		OnDelete: models.Restrict, OnChangeFilters: h.Partner().Methods().OnchangeCountryFilters()},
-	"Email": fields.Char{OnChange: h.Partner().Methods().OnchangeEmail()},
+	"Latitude":  fields.Float{String: "Geo Latitude", Digits: nbutils.Digits{Precision: 16, Scale: 5}},
+	"Longitude": fields.Float{String: "Geo Longitude", Digits: nbutils.Digits{Precision: 16, Scale: 5}},
+	"Email":     fields.Char{OnChange: h.Partner().Methods().OnchangeEmail()},
 	"EmailFormatted": fields.Char{Compute: h.Partner().Methods().ComputeEmailFormatted(),
 		Help: "Formatted email address 'Name <email@domain>'", Depends: []string{"Name", "Email"}},
 	"Phone":  fields.Char{},
-	"Fax":    fields.Char{},
 	"Mobile": fields.Char{},
 	"IsCompany": fields.Boolean{Default: models.DefaultValue(false),
 		Help: "Check if the contact is a company, otherwise it is a person"},
+	"Industry": fields.Many2One{RelationModel: h.PartnerIndustry()},
 	// CompanyType is only an interface field, do not use it in business logic
 	"CompanyType": fields.Selection{
 		Selection: types.Selection{"person": "Individual", "company": "Company"},
@@ -195,7 +201,7 @@ If it's not checked, purchase people will not see it when encoding a purchase or
 		Default:  models.DefaultValue("person")},
 	"Company": fields.Many2One{RelationModel: h.Company()},
 	"Color":   fields.Integer{},
-	"Users":   fields.One2Many{RelationModel: h.User(), ReverseFK: "Partner"},
+	"Users":   fields.One2Many{RelationModel: h.User(), ReverseFK: "Partner", JSON: "user_ids"},
 	"PartnerShare": fields.Boolean{String: "Share Partner",
 		Compute: h.Partner().Methods().ComputePartnerShare(), Stored: true, Depends: []string{"Users", "Users.Share"},
 		Help: `Either customer (no user), either shared user. Indicated the current partner is a customer without
@@ -227,14 +233,25 @@ func partner_ComputeDisplayName(rs m.PartnerSet) *models.ModelData {
 	rSet := rs.
 		WithContext("show_address", false).
 		WithContext("show_address_only", false).
-		WithContext("show_email", false)
+		WithContext("show_email", false).
+		WithContext("html_format", false).
+		WithContext("show_vat", false)
 	return rSet.Super().ComputeDisplayName()
+}
+
+// ComputeActiveLangCount returns the number of installed languages
+func partner_ComputeActiveLangCount(_ m.PartnerSet) m.PartnerData {
+	return h.Partner().NewData().SetActiveLangCount(len(viper.GetStringSlice("Server.Languages")))
 }
 
 // ComputeTZOffset computes the timezone offset
 func partner_ComputeTZOffset(rs m.PartnerSet) m.PartnerData {
-	// TODO Implement TZOffset
-	return h.Partner().NewData().SetTZOffset("")
+	res := h.Partner().NewData()
+	dt, err := dates.Now().WithTimezone(rs.TZ())
+	if err != nil {
+		return res.SetTZOffset("+0000")
+	}
+	return res.SetTZOffset(dt.Format("-0700"))
 }
 
 // ComputePartnerShare computes the PartnerShare field
@@ -250,6 +267,17 @@ func partner_ComputePartnerShare(rs m.PartnerSet) m.PartnerData {
 		}
 	}
 	return h.Partner().NewData().SetPartnerShare(partnerShare)
+}
+
+// ComputeSameVATPartner searches for a partner not linked to this one, but with the same VAT.
+func partner_ComputeSameVATPartner(rs m.PartnerSet) m.PartnerData {
+	res := h.Partner().NewData()
+	if rs.VAT() == "" || rs.Parent().IsNotEmpty() {
+		return res
+	}
+	cond := q.Partner().VAT().Equals(rs.VAT()).And().ID().NotEquals(rs.ID()).AndNot().ID().ChildOf(rs.ID())
+	res.SetSameVATPartner(h.Partner().Search(rs.Env(), cond))
+	return res
 }
 
 // ComputeContactAddress computes the contact's address according to the contact's country standards
@@ -429,7 +457,7 @@ func partner_UpdateFieldValues(rs m.PartnerSet, fields ...models.FieldName) m.Pa
 
 // AddressFields returns the list of fields which are part of the address.
 // These are used to automate behaviours on contact addresses.
-func partner_AddressFields(rs m.PartnerSet) []models.FieldName {
+func partner_AddressFields(_ m.PartnerSet) []models.FieldName {
 	return []models.FieldName{
 		h.Partner().Fields().Street(), h.Partner().Fields().Street2(), h.Partner().Fields().Zip(),
 		h.Partner().Fields().City(), h.Partner().Fields().State(), h.Partner().Fields().Country(),
@@ -456,7 +484,7 @@ func partner_UpdateAddress(rs m.PartnerSet, vals m.PartnerData) bool {
 // partners that aren't "commercial entities"" themselves, and will be
 // delegated to the parent "commercial entity"". The list is meant to be
 // extended by inheriting classes.
-func partner_CommercialFields(rs m.PartnerSet) []models.FieldName {
+func partner_CommercialFields(_ m.PartnerSet) []models.FieldName {
 	return []models.FieldName{
 		h.Partner().Fields().VAT(),
 		h.Partner().Fields().CreditLimit(),
@@ -491,7 +519,7 @@ func partner_CommercialSyncToChildren(rs m.PartnerSet) bool {
 
 // FieldsSync syncs commercial fields and address fields from company and to children after create/update,
 // just as if those were all modeled as fields.related to the parent
-func partner_FieldsSync(rs m.PartnerSet, vals m.PartnerData, fieldsToUnset ...models.FieldName) {
+func partner_FieldsSync(rs m.PartnerSet, vals m.PartnerData) {
 	// 1. From UPSTREAM: sync from parent
 	// 1a. Commercial fields: sync if parent changed
 	if !vals.Parent().IsEmpty() {
@@ -562,7 +590,7 @@ func partner_HandleFirsrtContactCreation(rs m.PartnerSet) {
 }
 
 // CleanWebsite returns a cleaned website url including scheme.
-func partner_CleanWebsite(rs m.PartnerSet, website string) string {
+func partner_CleanWebsite(_ m.PartnerSet, website string) string {
 	websiteURL, err := url.Parse(website)
 	if err != nil {
 		panic(fmt.Errorf("invalid URL for website: %s. %s", website, err))
@@ -577,7 +605,6 @@ func partner_Write(rs m.PartnerSet, vals m.PartnerData) bool {
 	if rs.Env().Context().HasKey("goto_super") {
 		return rs.Super().Write(vals)
 	}
-	rs.ResizeImageData(vals)
 	if vals.Website() != "" {
 		vals.SetWebsite(rs.CleanWebsite(vals.Website()))
 	}
@@ -611,24 +638,6 @@ func partner_Write(rs m.PartnerSet, vals m.PartnerData) bool {
 	return res
 }
 
-// ResizeImageData updates the given data struct with images set for the different sizes.
-func partner_ResizeImageData(set m.PartnerSet, data m.PartnerData) {
-	switch {
-	case data.HasImage():
-		data.SetImage(b64image.Resize(data.Image(), 1024, 1024, true))
-		data.SetImageMedium(b64image.Resize(data.Image(), 128, 128, false))
-		data.SetImageSmall(b64image.Resize(data.Image(), 64, 64, false))
-	case data.HasImageMedium():
-		data.SetImage(b64image.Resize(data.ImageMedium(), 1024, 1024, true))
-		data.SetImageMedium(b64image.Resize(data.ImageMedium(), 128, 128, true))
-		data.SetImageSmall(b64image.Resize(data.ImageMedium(), 64, 64, false))
-	case data.HasImageSmall():
-		data.SetImage(b64image.Resize(data.ImageSmall(), 1024, 1024, true))
-		data.SetImageMedium(b64image.Resize(data.ImageSmall(), 128, 128, true))
-		data.SetImageSmall(b64image.Resize(data.ImageSmall(), 64, 64, true))
-	}
-}
-
 func partner_Create(rs m.PartnerSet, vals m.PartnerData) m.PartnerSet {
 	if vals.Website() != "" {
 		vals.SetWebsite(rs.CleanWebsite(vals.Website()))
@@ -639,7 +648,6 @@ func partner_Create(rs m.PartnerSet, vals m.PartnerData) m.PartnerSet {
 	if vals.Image() == "" {
 		vals.SetImage(rs.GetDefaultImage(vals.Type(), vals.IsCompany(), vals.Parent()))
 	}
-	rs.ResizeImageData(vals)
 	partner := rs.Super().Create(vals)
 	partner.FieldsSync(vals)
 	partner.HandleFirsrtContactCreation()
@@ -741,7 +749,7 @@ func partner_SearchByName(rs m.PartnerSet, name string, op operator.Operator, ad
 // Supported syntax:
 //   - 'Raoul <raoul@grosbedon.fr>': will find name and email address
 //   - otherwise: default, everything is set as the name (email is returned empty)
-func partner_ParsePartnerName(rs m.PartnerSet, email string) (string, string) {
+func partner_ParsePartnerName(_ m.PartnerSet, email string) (string, string) {
 	addr, err := mail.ParseAddress(email)
 	if err != nil {
 		return email, ""
@@ -787,7 +795,7 @@ func partner_FindOrCreate(rs m.PartnerSet, email string) m.PartnerSet {
 
 // GetGravatarImage returns the image from Gravatar associated with the given email.
 // Image is returned as a base64 encoded string.
-func partner_GetGravatarImage(rs m.PartnerSet, email string) string {
+func partner_GetGravatarImage(_ m.PartnerSet, email string) string {
 	emailHash := md5.Sum([]byte(strings.ToLower(email)))
 	gravatarURL := fmt.Sprintf("%s/%x?%s", gravatarBaseURL, emailHash, "d=404&s=128")
 	client := &http.Client{
@@ -877,6 +885,9 @@ func partner_DisplayAddress(rs m.PartnerSet, withoutCompany bool) string {
 		CountryName: rs.Country().Name(),
 		CompanyName: rs.CommercialCompanyName(),
 	}
+	if withoutCompany {
+		data.CompanyName = ""
+	}
 	if data.CompanyName != "" {
 		addressFormat = "{{ .CompanyName }}\n" + addressFormat
 	}
@@ -887,6 +898,12 @@ func partner_DisplayAddress(rs m.PartnerSet, withoutCompany bool) string {
 		log.Panic("Error while parsing address", "format", addressFormat, "data", data)
 	}
 	return buf.String()
+}
+
+var fields_PartnerIndustry = map[string]models.FieldDefinition{
+	"Name":     fields.Char{Translate: true},
+	"FullName": fields.Char{Translate: true},
+	"Active":   fields.Boolean{Default: models.DefaultValue(true)},
 }
 
 func init() {
@@ -902,16 +919,22 @@ func init() {
 	h.PartnerCategory().Methods().SearchByName().Extend(partnerCategory_SearchByName)
 
 	models.NewModel("Partner")
+	h.Partner().InheritModel(h.ImageMixin())
+	h.Partner().SetDefaultOrder("DisplayName")
 
 	h.Partner().AddFields(fields_Partner)
-	h.Partner().Fields().DisplayName().SetDepends([]string{"IsCompany", "Name", "Parent.Name", "Type", "CompanyName"})
+	h.Partner().Fields().DisplayName().
+		SetStored(true).
+		SetDepends([]string{"IsCompany", "Name", "Parent.Name", "Type", "CompanyName"})
 	h.Partner().AddSQLConstraint("check_name",
 		"CHECK( (type='contact' AND name IS NOT NULL) or (type != 'contact') )",
 		"Contacts require a name.")
 
 	h.Partner().Methods().ComputeDisplayName().Extend(partner_ComputeDisplayName)
+	h.Partner().NewMethod("ComputeActiveLangCount", partner_ComputeActiveLangCount)
 	h.Partner().NewMethod("ComputeTZOffset", partner_ComputeTZOffset)
 	h.Partner().NewMethod("ComputePartnerShare", partner_ComputePartnerShare)
+	h.Partner().NewMethod("ComputeSameVATPartner", partner_ComputeSameVATPartner)
 	h.Partner().NewMethod("ComputeContactAddress", partner_ComputeContactAddress)
 	h.Partner().NewMethod("ComputeCommercialPartner", partner_ComputeCommercialPartner)
 	h.Partner().NewMethod("ComputeCommercialCompanyName", partner_ComputeCommercialCompanyName)
@@ -936,7 +959,6 @@ func init() {
 	h.Partner().NewMethod("HandleFirsrtContactCreation", partner_HandleFirsrtContactCreation)
 	h.Partner().NewMethod("CleanWebsite", partner_CleanWebsite)
 	h.Partner().Methods().Write().Extend(partner_Write)
-	h.Partner().NewMethod("ResizeImageData", partner_ResizeImageData)
 	h.Partner().Methods().Create().Extend(partner_Create)
 	h.Partner().NewMethod("CreateCompany", partner_CreateCompany)
 	h.Partner().NewMethod("OpenCommercialEntity", partner_OpenCommercialEntity)
@@ -949,4 +971,7 @@ func init() {
 	h.Partner().NewMethod("GetGravatarImage", partner_GetGravatarImage)
 	h.Partner().NewMethod("AddressGet", partner_AddressGet)
 	h.Partner().NewMethod("DisplayAddress", partner_DisplayAddress)
+
+	models.NewModel("PartnerIndustry")
+	h.PartnerIndustry().AddFields(fields_PartnerIndustry)
 }
