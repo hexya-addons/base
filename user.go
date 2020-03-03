@@ -6,10 +6,10 @@ package base
 import (
 	"crypto/hmac"
 	"crypto/sha256"
+	"encoding/json"
 	"fmt"
 	"strings"
 
-	"github.com/hexya-addons/web/domains"
 	"github.com/hexya-erp/hexya/src/actions"
 	"github.com/hexya-erp/hexya/src/models"
 	"github.com/hexya-erp/hexya/src/models/fields"
@@ -539,6 +539,10 @@ func user_HasGroup(rs m.UserSet, groupID string) bool {
 // ActionShowGroups returns an action to list the groups this user belongs to
 func user_ActionShowGroups(rs m.UserSet) *actions.Action {
 	rs.EnsureOne()
+	dom, err := json.Marshal(q.Group().ID().In(rs.Groups().Ids()).Serialize())
+	if err != nil {
+		panic("unable to serialize condition")
+	}
 	return &actions.Action{
 		Name:     rs.T("Groups"),
 		ViewMode: "tree,form",
@@ -547,7 +551,7 @@ func user_ActionShowGroups(rs m.UserSet) *actions.Action {
 		Context: types.NewContext().
 			WithKey("create", false).
 			WithKey("delete", false),
-		Domain: domains.Domain(q.Group().ID().In(rs.Groups().Ids()).Serialize()).String(),
+		Domain: string(dom),
 		Target: "current",
 	}
 }
