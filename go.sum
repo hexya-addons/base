@@ -103,6 +103,7 @@ github.com/hexya-erp/hexya v0.0.43 h1:kSMrjGkM9szmG4hA2v57S+PK8YJUOEAF5cFHVp/L8f
 github.com/hexya-erp/hexya v0.0.43/go.mod h1:m9VIHmuJ1DiP861y2f35/yhafUlxSvFyzvOBN+R+HUA=
 github.com/hexya-erp/hexya v0.1.0-pre2 h1:rPmDP30zgpBmBg9vAJAOgUcbOPM60uCX1EIbEqe7iP0=
 github.com/hexya-erp/hexya v0.1.0-pre2/go.mod h1:5VwTpp1nXreWjyDzUm+H+fBy4yQu3xUgygdONk15H/I=
+github.com/hexya-erp/hexya v0.1.0-pre3/go.mod h1:tyLgrWGACmueoP6cEm5jTJkQexER25JCsrCMQAxDR9E=
 github.com/hexya-erp/pool v1.0.2 h1:T2XNgink3bnFK5I8ae2hyFGAI0e2AF/GUWVwe7q8d5Q=
 github.com/hexya-erp/pool v1.0.2/go.mod h1:DucbMZy2Dy4JSDgyYR8PIi8wgSmH1E6VV1dJE6WKRY8=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=

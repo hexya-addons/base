@@ -5,7 +5,7 @@ go 1.13
 require (
 	github.com/google/uuid v1.1.1
 	github.com/hexya-addons/web v0.0.43
-	github.com/hexya-erp/hexya v0.1.0-pre2
+	github.com/hexya-erp/hexya v0.1.0-pre3
 	github.com/hexya-erp/pool v1.0.2
 	github.com/smartystreets/goconvey v0.0.0-20190306220146-200a235640ff
 	github.com/spf13/viper v1.5.0
