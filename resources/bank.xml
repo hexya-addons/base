@@ -4,31 +4,34 @@
 
         <view id="base_view_res_bank_form" model="Bank">
             <form string="Bank">
-                <group col="4">
-                    <field name="name"/>
-                    <field name="bic"/>
-                </group>
-                <group>
-                    <group string="Address">
-                        <label for="street" string="Address"/>
-                        <div class="o_address_format">
-                            <field name="street" placeholder="Street..." class="o_address_street"/>
-                            <field name="street2" placeholder="Street 2..." class="o_address_street"/>
-                            <field name="city" placeholder="City" class="o_address_city"/>
-                            <field name="State" class="o_address_state" placeholder="State"
-                                   options='{"no_open": True}'/>
-                            <field name="zip" placeholder="ZIP" class="o_address_zip"/>
-                            <field name="Country" placeholder="Country" class="o_address_country"
-                                   options='{"no_open": True, "no_create": True}'/>
-                        </div>
+                <sheet>
+                    <widget name="web_ribbon" text="Archived" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <group name="bank_details" col="4">
+                        <field name="name"/>
+                        <field name="bic"/>
                     </group>
-                    <group string="Communication">
-                        <field name="phone"/>
-                        <field name="fax"/>
-                        <field name="email" widget="email"/>
-                        <field name="active"/>
+                    <group>
+                        <group name="address_details">
+                            <label for="street" string="Bank Address"/>
+                            <div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_street"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="city" placeholder="City" class="o_address_city"/>
+                                <field name="State" class="o_address_state" placeholder="State"
+                                       options='{"no_open": True}'/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                <field name="Country" placeholder="Country" class="o_address_country"
+                                       options='{"no_open": True, "no_create": True}'/>
+                            </div>
+                        </group>
+                        <group name="communication_details">
+                            <field name="phone"/>
+                            <field name="email" widget="email"/>
+                            <field name="active" invisible="1"/>
+                        </group>
                     </group>
-                </group>
+                </sheet>
             </form>
         </view>
 
@@ -40,7 +43,16 @@
             </tree>
         </view>
 
-        <action id="base_action_res_bank_form" type="ir.actions.act_window" model="Bank" name="Banks" view_mode="tree,form">
+        <view id="base_res_bank_view_search" model="Bank">
+            <search string="Search Bank">
+                <field name="name"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </view>
+
+        <action id="base_action_res_bank_form" type="ir.actions.act_window" model="Bank" name="Banks"
+                view_mode="tree,form">
             <help>
                 <p class="oe_view_nocontent_create">
                     Click to create a new bank.
@@ -53,12 +65,14 @@
 
         <view id="base_view_partner_bank_form" model="BankAccount">
             <form string="Bank account">
-                <group col="4">
-                    <field name="name"/>
-                    <field name="partner_id"/>
-                    <field name="bank_id"/>
-                    <field name="currency_id" groups="base_group_multi_currency" options="{'no_create': True}"/>
-                    <field name="company_id" groups="base_group_multi_company" options="{'no_create': True}"/>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="bank_id"/>
+                        <field name="currency_id" groups="base_group_multi_currency" options="{'no_create': True}"/>
+                        <field name="company_id" groups="base_group_multi_company" options="{'no_create': True}"/>
+                    </group>
                 </group>
             </form>
         </view>

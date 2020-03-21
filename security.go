@@ -47,6 +47,9 @@ func init() {
 	h.User().Methods().HasGroup().AllowGroup(security.GroupEveryone)
 	h.User().Methods().AllowAllToGroup(GroupERPManager)
 
+	h.UserLog().Methods().Load().AllowGroup(security.GroupEveryone)
+	h.UserLog().Methods().Create().AllowGroup(security.GroupEveryone)
+
 	h.CurrencyRate().Methods().Load().AllowGroup(security.GroupEveryone)
 	h.CurrencyRate().Methods().AllowAllToGroup(GroupSystem)
 

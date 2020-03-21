@@ -13,8 +13,6 @@
                         <group>
                             <field name="type"/>
                             <field name="datas" filename="datas_fname" attrs="{'invisible':[('type','=','url')]}"/>
-                            <field name="datas_fname" invisible="1" attrs="{'invisible':[('type','=','url')]}"
-                                   class="oe_inline oe_right"/>
                             <field name="url" widget="url" attrs="{'invisible':[('type','=','binary')]}"/>
                             <field name="mime_type" groups="base_group_no_one"/>
                         </group>
@@ -49,7 +47,6 @@
         <view id="base_view_attachment_tree" model="Attachment">
             <tree>
                 <field name="name"/>
-                <field name="datas_fname"/>
                 <field name="res_model"/>
                 <field name="res_field"/>
                 <field name="res_id"/>
@@ -65,13 +62,13 @@
                 <field name="name" filter_domain="['|', ('name','ilike',self), ('datas_fname','ilike',self)]"
                        string="Attachment"/>
                 <field name="create_date"/>
-                <filter string="URL" domain="[('type','=','url')]"/>
-                <filter string="Binary" domain="[('type','=','binary')]"/>
-                <separator/>
                 <filter name="my_documents_filter"
                         string="My Document(s)"
                         domain="[('create_uid','=',uid)]"
                         help="Filter on my documents"/>
+                <filter name="url_filter" string="URL" domain="[('type','=','url')]"/>
+                <filter name="binary_filter" string="Binary" domain="[('type','=','binary')]"/>
+                <separator/>
                 <field name="create_uid"/>
                 <field name="type"/>
                 <group expand="0" string="Group By">

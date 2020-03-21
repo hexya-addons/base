@@ -43,37 +43,50 @@
         <view id="base_view_users_form" model="User">
             <form string="Users">
                 <header>
-                    <button string="Change Password" type="action" name="base_change_password_wizard_action"
-                            help="Change the user password."/>
                 </header>
                 <sheet>
-                    <field name="ID" invisible="1"/>
+                    <field name="id" invisible="1"/>
                     <div class="oe_button_box" name="button_box">
-                        <button name="ToggleActive" type="object" class="oe_stat_button" icon="fa-check">
-                            <field name="Active" widget="boolean_button" options='{"terminology": "active"}'/>
+                        <button name="action_show_groups" type="object" groups="base_group_no_one" class="oe_stat_button" icon="fa-users">
+                            <field string="Groups" name="groups_count" widget="statinfo"/>
                         </button>
                     </div>
-                    <field name="Image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium"}'/>
+                    <widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <field name="active_partner" required="0" readonly="1" invisible="1"/>
+                    <div class="alert alert-info text-center o_form_header"
+                         attrs="{'invisible': [
+                                '|', '|',
+                                '&amp;', ('active', '=', True), ('active_partner', '=', True),
+                                '&amp;', ('active', '=', False), ('active_partner', '=', False),
+                                '&amp;', ('active', '=', True), ('active_partner', '=', False)
+                            ]}"
+                         role="alert">
+                        <a class="close" data-dismiss="alert" href="#">x</a>
+                        <div>
+                            <strong>The contact linked to this user is still active</strong>
+                        </div>
+                        <div>You can archive the contact
+                            <field name="partner_id" required="0" readonly="1"/>
+                        </div>
+                    </div>
+                    <field name="image_1920" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
                     <div class="oe_title">
-                        <label for="Name" class="oe_edit_only"/>
-                        <h1>
-                            <field name="Name" required="1"/>
-                        </h1>
-                        <field name="Email" invisible="1"/>
-                        <label for="Login" class="oe_edit_only" string="Email Address"/>
-                        <h2>
-                            <field name="Login" on_change="on_change_login(login)"/>
-                        </h2>
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" required="1"/></h1>
+                        <field name="email" invisible="1"/>
+                        <label for="login" class="oe_edit_only" string="Email Address"/>
+                        <h2><field name="login"/></h2>
                         <group>
-                            <field name="Partner" readonly="1" groups="base_group_no_one"
-                                   attrs='{"invisible": [["id", "=", false]]}'/>
+                            <field name="partner_id" readonly="1" required="0" groups="base_group_no_one"
+                                   attrs="{'invisible': [('id', '=', False)]}"/>
                         </group>
                     </div>
                     <notebook colspan="4">
                         <page name="access_rights" string="Access Rights">
-                            <group string="Multi Companies" groups="base_group_light_multi_company">
-                                <field string="Allowed Companies" name="Companies" widget="many2many_tags"/>
-                                <field string="Current Company" name="Company" context="{'user_preference': 0}"/>
+                            <group string="Multi Companies" attrs="{'invisible': [('companies_count', '&lt;=', 1)]}">
+                                <field string="Allowed Companies" name="company_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                                <field string="Default Company" name="company_id" context="{'user_preference': 0}"/>
+                                <field string="Companies count" name="companies_count" invisible="1"/>
                             </group>
                             <label for="Groups"/>
                             <field name="Groups" widget="many2many_tags"/>
@@ -81,17 +94,26 @@
                         <page string="Preferences">
                             <group>
                                 <group string="Localization" name="preferences">
-                                    <field name="Lang"/>
-                                    <field name="TZ" widget="timezone_mismatch"
-                                           options="{'tz_offset_field': 'tz_offset'}"/>
-                                    <field name="TZOffset" invisible="1"/>
+                                    <field name="active" invisible="1"/>
+                                    <label for="lang" />
+                                    <div class="o_row">
+                                        <field name="lang"/>
+                                        <button
+                                                type="action"
+                                                name="base_res_lang_act_window"
+                                                class="btn-sm btn-link mb4 fa fa-globe"
+                                                aria-label="More languages"
+                                                title="More languages"/>
+                                    </div>
+                                    <field name="tz" widget="timezone_mismatch" options="{'tz_offset_field': 'tz_offset'}" />
+                                    <field name="tz_offset" invisible="1"/>
                                 </group>
-                                <group string="Menus Customization"><!-- groups="base_group_no_one">-->
-                                    <field name="ActionID"/>
+                                <group string="Menus Customization" groups="base_group_no_one">
+                                    <field name="action_id"/>
                                 </group>
                             </group>
-                            <group string="Messaging and Social" name="messaging">
-                                <field name="Signature"/>
+                            <group name="messaging">
+                                <field name="signature"/>
                             </group>
                         </page>
                     </notebook>

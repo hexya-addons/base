@@ -2,9 +2,6 @@
 <hexya>
     <data>
 
-        <!--<report id="preview_rml_report" model="res.company" name="preview.report" menu="False"-->
-        <!--rml="base/report/preview_report.rml" string="Preview RML Report"/>-->
-
         <view id="base_view_company_form" model="Company">
             <form string="Company">
                 <sheet>
@@ -14,10 +11,6 @@
                         <h1>
                             <field name="name" class="oe_inline"/>
                         </h1>
-                        <label for="tagline" class="oe_edit_only"/>
-                        <h3>
-                            <field name="tagline" placeholder="e.g. Global Business Solutions"/>
-                        </h3>
                     </div>
                     <notebook colspan="4">
                         <page string="General Information">
@@ -30,33 +23,27 @@
                                         <field name="street2" placeholder="Street 2..." class="o_address_street"/>
                                         <field name="city" placeholder="City" class="o_address_city"/>
                                         <field name="state_id" class="o_address_state" placeholder="State"
-                                               options='{"no_open": True}' on_change="onchange_state(state_id)"/>
+                                               options='{"no_open": True}'/>
                                         <field name="zip" placeholder="ZIP" class="o_address_zip"/>
                                         <field name="country_id" placeholder="Country" class="o_address_country"
-                                               options='{"no_open": True}'
-                                               on_change="on_change_country(country_id)"/>
+                                               options='{"no_open": True}'/>
                                     </div>
-                                    <field name="website" widget="url" placeholder="e.g. www.hexya.io"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                    <field name="website" widget="url" placeholder="e.g. https://www.hexya.io"/>
                                 </group>
                                 <group>
-                                    <field name="phone"/>
-                                    <field name="fax"/>
-                                    <field name="email"/>
                                     <field name="vat"/>
                                     <field name="company_registry"/>
+                                    <field name="currency_id" options="{'no_create': True, 'no_open': True}"
+                                           id="company_currency" context='{"active_test": False}'/>
                                     <field name="parent_id" groups="base_group_multi_company"/>
+                                    <field name="sequence" invisible="1"/>
+                                    <field name="favicon" widget="image" class="float-left oe_avatar"
+                                           groups="base_group_no_one"/>
                                 </group>
+                                <group name="social_media"/>
                             </group>
-                        </page>
-                        <page name="configuration" string="Configuration">
-                            <group>
-                                <group name="account_grp" string="Accounting">
-                                    <field name="currency_id"/>
-                                </group>
-                            </group>
-                        </page>
-                        <page name="report" string="Report Configuration">
-
                         </page>
                     </notebook>
                 </sheet>
@@ -65,15 +52,61 @@
 
         <view id="base_view_company_tree" model="Company" field_parent="Children">
             <tree string="Companies">
+                <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="partner_id"/>
             </tree>
         </view>
 
+        <view id="base_res_company_kanban" model="Company">
+            <kanban>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div t-attf-class="#{!selection_mode ? 'text-center' : ''}">
+                                <i class="fa fa-building" role="img" aria-label="Enterprise" title="Enterprise"></i>
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+                            </div>
+                            <hr class="mt4 mb4"/>
+                            <div class="row" t-if="!selection_mode">
+                                <div t-if="record.email.value" class="col-6 text-center">
+                                    <strong>Email:</strong>
+                                </div>
+                                <div t-if="record.phone.value" class="col-6 text-center">
+                                    <strong>Phone</strong>
+                                </div>
+                                <div t-if="record.email.value" class="col-6 text-center">
+                                    <field name="email"/>
+                                </div>
+                                <div t-if="record.phone.value" class="col-6 text-center">
+                                    <field name="phone"/>
+                                </div>
+                            </div>
+                            <div t-else="">
+                                <div t-if="record.email.value">
+                                    <strong>Email:</strong>
+                                    <field name="email"/>
+                                </div>
+                                <div t-if="record.phone.value">
+                                    <strong>Phone:</strong>
+                                    <field name="phone"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </view>
+
         <action id="base_company_normal_action_tree" type="ir.actions.act_window" model="Company" name="Companies"
                 view_type="tree" view_mode="tree,form" src_model="Company" domain="[('id','=',active_id)]"/>
 
-        <action id="base_action_res_company_form" type="ir.actions.act_window" model="Company" view_mode="tree,form"
+        <action id="base_action_res_company_form" type="ir.actions.act_window" model="Company" view_mode="tree,kanban,form"
                 name="Companies">
             <help>Create and manage the companies that will be managed by Hexya from here. Shops or
                 subsidiaries can be created and maintained from here.
