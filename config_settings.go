@@ -11,7 +11,7 @@ import (
 	"github.com/hexya-erp/pool/m"
 )
 
-func configSettings_Copy(rs m.ConfigSettingsSet, data m.ConfigSettingsData) m.ConfigSettingsSet {
+func configSettings_Copy(rs m.ConfigSettingsSet, _ m.ConfigSettingsData) m.ConfigSettingsSet {
 	panic(rs.T("Cannot duplicate configuration"))
 }
 
@@ -31,8 +31,8 @@ func configSettings_Execute(rs m.ConfigSettingsSet) *actions.Action {
 	if rs.Env().Uid() != security.SuperUserID && h.User().NewSet(rs.Env()).CurrentUser().HasGroup("base_group_systeme") {
 		panic(rs.T("Only administrators can change the settings"))
 	}
-	for fName := range rs.DefaultGet().FieldNames() {
-		if sm, ok := rs.Collection().Model().Methods().Get("SetValue" + string(fName)); ok {
+	for _, fName := range rs.DefaultGet().FieldNames() {
+		if sm, ok := rs.Collection().Model().Methods().Get("SetValue" + fName.Name()); ok {
 			sm.Call(rs.Collection())
 		}
 	}

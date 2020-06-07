@@ -579,7 +579,7 @@ func attachment_GenerateToken(_ m.AttachmentSet) string {
 
 // ActionGet returns the action for displaying attachments
 func attachment_ActionGet(_ m.AttachmentSet) *actions.Action {
-	return actions.Registry.GetByXMLID("base_action_attachment")
+	return actions.Registry.MustGetByXMLID("base_action_attachment")
 }
 
 // GetServeAttachment returns the serve attachments
