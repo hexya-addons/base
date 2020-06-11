@@ -27,9 +27,11 @@
 
         <menuitem id="base_menu_custom" name="Technical" parent="base_menu_administration" sequence="110"
                   groups="base.group_no_one"/>
-        <menuitem id="base_menu_user_interface" name="User Interface" parent="base_menu_custom"/>
-        <menuitem id="base_menu_database_structure" name="Database Structure" parent="base_menu_custom"/>
-        <menuitem id="base_menu_automation" name="Automation" parent="base_menu_custom"/>
+        <menuitem id="base_menu_user_interface" name="User Interface" parent="base_menu_custom" sequence="10"/>
+        <menuitem id="base_menu_database_structure" name="Database Structure" parent="base_menu_custom" sequence="20"/>
+        <menuitem id="base_menu_automation" name="Automation" parent="base_menu_custom" sequence="40"/>
+
+        <action id="base_action_open_website" type="ir.actions.act_url" name="Home Menu" target="self" url="/web"/>
 
     </data>
 </hexya>

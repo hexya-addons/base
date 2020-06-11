@@ -240,7 +240,7 @@ func user_CheckCompany(rs m.UserSet) {
 
 // CheckActionID checks that the user's home action is valid
 func user_CheckActionID(rs m.UserSet) {
-	actionOpenWebsite := actions.Registry.GetByXMLID("base_action_open_website")
+	actionOpenWebsite := actions.Registry.MustGetByXMLID("base_action_open_website")
 	if actionOpenWebsite != nil {
 		for _, rec := range rs.Records() {
 			if rec.ActionID().ID() == actionOpenWebsite.XMLID {
@@ -353,8 +353,8 @@ func user_Write(rs m.UserSet, data m.UserData) bool {
 	rSet := rs
 	if rs.ID() == rs.Env().Uid() {
 		var hasUnsafeFields bool
-		for key := range data.Keys() {
-			if !rs.SelfWritableFields()[string(key)] {
+		for _, key := range data.Keys() {
+			if !rs.SelfWritableFields()[key] {
 				hasUnsafeFields = true
 				break
 			}
@@ -434,7 +434,7 @@ func user_ContextGet(rs m.UserSet) *types.Context {
 
 // ActionGet returns the action for the preferences popup
 func user_ActionGet(_ m.UserSet) *actions.Action {
-	return actions.Registry.GetByXMLID("base_action_res_users_my")
+	return actions.Registry.MustGetByXMLID("base_action_res_users_my")
 }
 
 // UpdateLastLogin updates the last login date of the user

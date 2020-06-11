@@ -11,7 +11,7 @@ import (
 )
 
 // ToggleActive toggles the Active field of this object if it exists.
-func modelMixin_ToggleActive(rs m.BaseMixinSet) {
+func modelMixin_ToggleActive(rs m.ModelMixinSet) {
 	activeField, exists := rs.Collection().Model().Fields().Get("active")
 	if !exists {
 		return
@@ -21,6 +21,30 @@ func modelMixin_ToggleActive(rs m.BaseMixinSet) {
 	} else {
 		rs.Set(activeField, true)
 	}
+}
+
+// ActionArchive sets Active=false on a recordset, by calling ToggleActive to take the
+// corresponding actions according to the model
+func modelMixin_ActionArchive(rs m.ModelMixinSet) {
+	activeField, exists := rs.Collection().Model().Fields().Get("active")
+	if !exists {
+		return
+	}
+	rs.Filtered(func(r m.ModelMixinSet) bool {
+		return r.Get(activeField).(bool)
+	}).ToggleActive()
+}
+
+// ActionUnarchive sets Active=true on a recordset, by calling ToggleActive to take the
+// corresponding actions according to the model
+func modelMixin_ActionUnarchive(rs m.ModelMixinSet) {
+	activeField, exists := rs.Collection().Model().Fields().Get("active")
+	if !exists {
+		return
+	}
+	rs.Filtered(func(r m.ModelMixinSet) bool {
+		return !r.Get(activeField).(bool)
+	}).ToggleActive()
 }
 
 func modelMixin_Search(rs m.ModelMixinSet, cond q.ModelMixinCondition) m.ModelMixinSet {
@@ -49,8 +73,9 @@ func modelMixin_SearchAll(rs m.ModelMixinSet) m.ModelMixinSet {
 }
 
 func init() {
-
 	h.ModelMixin().NewMethod("ToggleActive", modelMixin_ToggleActive)
+	h.ModelMixin().NewMethod("ActionArchive", modelMixin_ActionArchive)
+	h.ModelMixin().NewMethod("ActionUnarchive", modelMixin_ActionUnarchive)
 	h.ModelMixin().Methods().Search().Extend(modelMixin_Search)
 	h.ModelMixin().Methods().SearchAll().Extend(modelMixin_SearchAll)
 }
