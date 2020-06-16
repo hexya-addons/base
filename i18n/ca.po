@@ -282,7 +282,7 @@ msgstr "Nom d'empresa"
 
 #. field:Company.CompanyRegistry
 msgid "Company Registry"
-msgstr ""
+msgstr "Registre de l'Empresa"
 
 #. field:Partner.CompanyType
 msgid "Company Type"
@@ -489,7 +489,7 @@ msgstr "Dia: %(day)s"
 
 #. field:Currency.DecimalPlaces
 msgid "Decimal Places"
-msgstr ""
+msgstr "Xifres Decimals"
 
 #. field:Lang.DecimalPoint
 msgid "Decimal Separator"
@@ -813,7 +813,7 @@ msgstr "Logo"
 
 #. field:Company.LogoWeb
 msgid "Logo Web"
-msgstr ""
+msgstr "Logo"
 
 #. field:SequenceDateRange.Sequence
 msgid "Main Sequence"

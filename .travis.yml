@@ -12,7 +12,7 @@ services:
 
 install:
   - go install github.com/hexya-erp/hexya
-  - npm install less -g
+  - npm install sass -g
 
 before_script:
   - hexya generate -t .

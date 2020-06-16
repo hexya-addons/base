@@ -282,7 +282,7 @@ msgstr "Επωνυμία Εταιρίας"
 
 #. field:Company.CompanyRegistry
 msgid "Company Registry"
-msgstr ""
+msgstr "Μητρώο Εταιρίας"
 
 #. field:Partner.CompanyType
 msgid "Company Type"
@@ -813,7 +813,7 @@ msgstr "Λογότυπο"
 
 #. field:Company.LogoWeb
 msgid "Logo Web"
-msgstr ""
+msgstr "Λογότυπο Web"
 
 #. field:SequenceDateRange.Sequence
 msgid "Main Sequence"

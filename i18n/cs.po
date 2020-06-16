@@ -282,7 +282,7 @@ msgstr "Název firmy"
 
 #. field:Company.CompanyRegistry
 msgid "Company Registry"
-msgstr ""
+msgstr "Obchodní rejstřík"
 
 #. field:Partner.CompanyType
 msgid "Company Type"
@@ -489,7 +489,7 @@ msgstr "Den: %(day)s"
 
 #. field:Currency.DecimalPlaces
 msgid "Decimal Places"
-msgstr ""
+msgstr "Desetinná místa"
 
 #. field:Lang.DecimalPoint
 msgid "Decimal Separator"
@@ -813,7 +813,7 @@ msgstr "Logo"
 
 #. field:Company.LogoWeb
 msgid "Logo Web"
-msgstr ""
+msgstr "Logo Webu"
 
 #. field:SequenceDateRange.Sequence
 msgid "Main Sequence"
@@ -832,7 +832,7 @@ msgstr "Přizpůsobení nabídek"
 
 #. resource:base_view_users_form
 msgid "Messaging and Social"
-msgstr ""
+msgstr "Zprávy a sociální sítě"
 
 #. field:Attachment.MimeType
 msgid "Mime Type"
@@ -1122,7 +1122,7 @@ msgstr "Nastavení"
 
 #. field:Partner.PartnerShare
 msgid "Share Partner"
-msgstr ""
+msgstr "Sdílet partnera"
 
 #. field:User.Share
 msgid "Share User"
@@ -1134,11 +1134,11 @@ msgstr ""
 
 #. resource:base_view_currency_search
 msgid "Show active currencies"
-msgstr ""
+msgstr "Zobrazit aktivní měny"
 
 #. resource:base_view_currency_search
 msgid "Show inactive currencies"
-msgstr ""
+msgstr "Zobrazit neaktivní měny"
 
 #. field:User.Signature
 msgid "Signature"
@@ -1196,7 +1196,7 @@ msgstr "Stavy"
 
 #. field:Sequence.NumberIncrement
 msgid "Step"
-msgstr ""
+msgstr "Krok"
 
 #. field:Attachment.StoreFname
 msgid "Stored Filename"
@@ -1260,7 +1260,7 @@ msgstr "Značka"
 
 #. field:PartnerCategory.Name
 msgid "Tag Name"
-msgstr ""
+msgstr "Název značky"
 
 #. field:Company.Tagline
 msgid "Tagline"

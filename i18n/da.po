@@ -312,7 +312,7 @@ msgstr "Kontaktnavn"
 
 #. resource:base_view_partner_category_form
 msgid "Contact Tag"
-msgstr ""
+msgstr "Kontakt tag"
 
 #. resource:base_view_partner_category_list
 msgid "Contact Tags"
@@ -909,7 +909,7 @@ msgstr "Noter"
 
 #. field:User.CompaniesCount
 msgid "Number of Companies"
-msgstr ""
+msgstr "Antal virksomheder"
 
 #. code:
 msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
@@ -963,7 +963,7 @@ msgstr "Aktør titler"
 
 #. help:User.Partner
 msgid "Partner-related data of the user"
-msgstr ""
+msgstr "Partner-relaterede data fra brugeren"
 
 #. field:PartnerCategory.Partners
 #. resource:base_view_partner_form
@@ -1084,7 +1084,7 @@ msgstr "Sekund: %(sec)s"
 
 #. field:Lang.Grouping
 msgid "Separator Format"
-msgstr ""
+msgstr "Separator-format"
 
 #. field:BankAccount.Sequence
 #. resource:base_sequence_view
@@ -1114,7 +1114,7 @@ msgstr "Nummerserier og identer"
 
 #. field:User.NewPassword
 msgid "Set Password"
-msgstr ""
+msgstr "Sæt kodeord"
 
 #. resource:base_menu_administration
 msgid "Settings"
@@ -1134,11 +1134,11 @@ msgstr "Leveringsadresse"
 
 #. resource:base_view_currency_search
 msgid "Show active currencies"
-msgstr ""
+msgstr "Vis aktive valutaer"
 
 #. resource:base_view_currency_search
 msgid "Show inactive currencies"
-msgstr ""
+msgstr "Vis inaktiver valutaer"
 
 #. field:User.Signature
 msgid "Signature"
@@ -1232,7 +1232,7 @@ msgstr "Gade2"
 
 #. field:Sequence.DateRanges
 msgid "Subsequences"
-msgstr ""
+msgstr "Undersekvenser"
 
 #. field:Sequence.Suffix
 msgid "Suffix"
@@ -1352,7 +1352,7 @@ msgstr ""
 
 #. help:Partner.Image
 msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
-msgstr ""
+msgstr "Dette felt indeholder billedet brugt som avatar for denne kontakt, begrænset til 1024x1024 billedpunkter"
 
 #. help:Lang.Code
 msgid "This field is used to set/get locales for user"
@@ -1425,7 +1425,7 @@ msgstr "URL"
 
 #. resource:base_res_lang_tree
 msgid "Update Language Terms"
-msgstr ""
+msgstr "Opdatér termer"
 
 #. resource:base_res_lang_tree
 msgid "Update Terms"
@@ -1509,7 +1509,7 @@ msgstr "Guide"
 
 #. help:Attachment.Type
 msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
-msgstr ""
+msgstr "Du kan enten overføre en fil fra din computer eller kopiere/indsætte en internethenvisning i din fil."
 
 #. code:
 msgid "You can not change the company as the partner/user has multiple users linked with different companies."

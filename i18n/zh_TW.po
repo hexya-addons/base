@@ -12,15 +12,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 
+#. field:User.GroupsCount
+msgid "# Groups"
+msgstr ""
+
 #. code:
 #. code:
 #. code:
 msgid "%s (copy)"
 msgstr "%s (副本)"
-
-#. resource:base_view_partner_form
-msgid "(edit)"
-msgstr "(編輯)"
 
 #. field:PartnerTitle.Shortcut
 msgid "Abbreviation"
@@ -34,6 +34,10 @@ msgstr "接受的使用者"
 msgid "Access Rights"
 msgstr "訪問權"
 
+#. field:Attachment.AccessToken
+msgid "Access Token"
+msgstr "訪問指示物"
+
 #. field:BankAccount.Partner
 msgid "Account Holder"
 msgstr "帳戶持有人"
@@ -46,27 +50,34 @@ msgstr "帳戶號碼"
 msgid "Account Type"
 msgstr "科目類型"
 
-#. resource:base_view_company_form
-msgid "Accounting"
-msgstr "會計"
+#. resource:base_ir_cron_view
+msgid "Action to Trigger"
+msgstr ""
 
 #. field:Bank.Active
-#. field:Currency.Active
-#. field:PartnerCategory.Active
-#. field:Sequence.Active
 #. field:Lang.Active
+#. field:PartnerCategory.Active
 #. field:Partner.Active
+#. field:User.Active
+#. field:Cron.Active
+#. field:Currency.Active
+#. field:PartnerIndustry.Active
+#. field:Sequence.Active
 #. resource:base_view_currency_search
 #. resource:base_res_lang_search
 msgid "Active"
 msgstr "有效"
 
-#. resource:base_view_res_bank_form
-#. resource:base_view_res_bank_form
+#. field:Partner.ActiveLangCount
+#. field:User.ActiveLangCount
+msgid "Active Lang Count"
+msgstr ""
+
 #. resource:base_view_company_form
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
 #. resource:base_view_partner_address_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Address"
 msgstr "地址"
 
@@ -82,9 +93,17 @@ msgstr "地址格式..."
 msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
 msgstr "管理國家或地區的分類。"
 
+#. selection:Country.NamePosition
+msgid "After Address"
+msgstr "地址後"
+
 #. selection:Currency.Position
 msgid "After Amount"
 msgstr "金額後面"
+
+#. resource:base_ir_cron_view_search
+msgid "All"
+msgstr "全部"
 
 #. resource:base_view_users_form
 msgid "Allowed Companies"
@@ -94,9 +113,15 @@ msgstr "允許的公司"
 msgid "Application Terms"
 msgstr "應用程序術語"
 
+#. resource:base_res_bank_view_search
 #. resource:base_view_res_partner_filter
 msgid "Archived"
 msgstr "已存檔"
+
+#. field:QueueJob.Arguments
+#. field:Cron.Arguments
+msgid "Arguments"
+msgstr ""
 
 #. resource:base_view_attachment_form
 msgid "Attached To"
@@ -111,25 +136,35 @@ msgstr "附件"
 msgid "Attachment Name"
 msgstr "附件名稱"
 
+#. resource:base_menu_automation
+msgid "Automation"
+msgstr "自動化"
+
 #. field:BankAccount.Bank
 #. resource:base_view_res_bank_form
 msgid "Bank"
 msgstr "銀行"
 
 #. field:Partner.Banks
+#. field:User.Banks
 #. resource:base_view_partner_bank_tree
 #. resource:base_view_partner_bank_search
 #. resource:base_action_res_partner_bank_account_form
+#. resource:base_res_partner_view_form_private
 msgid "Bank Accounts"
 msgstr "銀行帳戶"
+
+#. resource:base_view_res_bank_form
+msgid "Bank Address"
+msgstr ""
 
 #. field:BankAccount.BankBIC
 msgid "Bank BIC"
 msgstr ""
 
 #. field:Bank.BIC
-msgid "Bank Identifier Cord"
-msgstr ""
+msgid "Bank Identifier Code"
+msgstr "銀行識別代碼"
 
 #. field:BankAccount.BankName
 #. resource:base_view_partner_bank_search
@@ -146,20 +181,24 @@ msgid "Banks"
 msgstr "銀行"
 
 #. field:Partner.Barcode
+#. field:User.Barcode
 msgid "Barcode"
 msgstr "條碼"
+
+#. selection:Country.NamePosition
+msgid "Before Address"
+msgstr "地址前"
 
 #. selection:Currency.Position
 msgid "Before Amount"
 msgstr "金額前面"
 
-#. selection:Attachment.Type
 #. resource:base_view_attachment_search
 msgid "Binary"
 msgstr "二進制數據"
 
-#. resource:base_view_users_form_simple_modif
 #. resource:base_change_password_wizard_view
+#. resource:base_view_users_form_simple_modif
 msgid "Cancel"
 msgstr "取消"
 
@@ -167,11 +206,14 @@ msgstr "取消"
 msgid "Cannot duplicate configuration"
 msgstr ""
 
+#. field:QueueChannel.Capacity
+msgid "Capacity"
+msgstr ""
+
 #. resource:base_action_res_users_my
 msgid "Change My Preferences"
 msgstr "更改我的個人資料"
 
-#. resource:base_view_users_form
 #. resource:base_change_password_wizard_view
 #. resource:base_change_password_wizard_view
 #. resource:base_change_password_wizard_action
@@ -182,25 +224,32 @@ msgstr "更改密碼"
 msgid "Change password"
 msgstr "更改密碼"
 
-#. resource:base_view_users_form
-msgid "Change the user password."
-msgstr "修改使用者密碼。"
+#. code:
+msgid ""
+"Changing the company of a contact should only be done if it\n"
+"was never correctly set. If an existing contact starts working for a new\n"
+"company then a new contact should be created under that new\n"
+"company. You can use the \"Discard\" button to abandon this change."
+msgstr ""
+
+#. field:QueueJob.Channel
+#. resource:base_view_queue_job_search
+msgid "Channel"
+msgstr ""
+
+#. resource:base_view_queue_job_channel_tree
+#. resource:base_view_queue_job_channel_search
+#. resource:base_action_queue_job_channel
+msgid "Channels"
+msgstr ""
 
 #. help:Partner.IsCompany
+#. help:User.IsCompany
 msgid "Check if the contact is a company, otherwise it is a person"
 msgstr "若客戶性質屬公司客戶請打勾，個人客戶請勿勾選。"
 
-#. help:Partner.Customer
-msgid "Check this box if this contact is a customer."
-msgstr "當該聯繫人為一客戶時於此設定"
-
-#. help:Partner.Supplier
-msgid ""
-"Check this box if this contact is a vendor.\n"
-"If it's not checked, purchase people will not see it when encoding a purchase order."
-msgstr ""
-
 #. help:Partner.Employee
+#. help:User.Employee
 msgid "Check this box if this contact is an Employee."
 msgstr "勾選此項 如果 這個 聯繫人 是 一個 員工."
 
@@ -213,6 +262,7 @@ msgid "Child Companies"
 msgstr "下級公司"
 
 #. field:Partner.Children
+#. field:User.Children
 msgid "Children"
 msgstr "下級"
 
@@ -220,18 +270,22 @@ msgstr "下級"
 msgid "Children Tags"
 msgstr ""
 
-#. field:Bank.City
 #. field:Company.City
+#. field:Bank.City
 #. field:Partner.City
+#. field:User.City
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
 #. resource:base_view_partner_address_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "City"
 msgstr "城市"
 
 #. field:Partner.Color
+#. field:User.Color
 msgid "Color"
 msgstr "顏色"
 
@@ -240,16 +294,14 @@ msgid "Color Index"
 msgstr "顏色索引"
 
 #. field:Partner.CommercialCompanyName
+#. field:User.CommercialCompanyName
 msgid "Commercial Company Name"
 msgstr ""
 
 #. field:Partner.CommercialPartner
+#. field:User.CommercialPartner
 msgid "Commercial Entity"
 msgstr "商業實體"
-
-#. resource:base_view_res_bank_form
-msgid "Communication"
-msgstr "聯絡方式"
 
 #. field:User.Companies
 #. resource:base_view_company_tree
@@ -259,45 +311,55 @@ msgstr "聯絡方式"
 msgid "Companies"
 msgstr "公司"
 
-#. field:Attachment.Company
+#. resource:base_view_users_form
+msgid "Companies count"
+msgstr "公司個數"
+
 #. field:BankAccount.Company
-#. field:CurrencyRate.Company
-#. field:Sequence.Company
-#. field:User.Company
 #. field:Partner.Company
 #. selection:Partner.CompanyType
+#. field:QueueJob.Company
+#. selection:User.CompanyType
+#. field:User.Company
+#. field:Attachment.Company
+#. field:CurrencyRate.Company
+#. field:Sequence.Company
 #. resource:base_view_attachment_search
 #. resource:base_view_company_form
+#. resource:base_view_partner_simple_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 #. resource:base_view_res_partner_filter
-#. resource:base_view_partner_simple_form
 #. resource:base_view_users_search
 msgid "Company"
 msgstr "公司"
 
+#. field:Company.Favicon
+msgid "Company Favicon"
+msgstr ""
+
 #. field:Company.Name
 #. field:Partner.CompanyName
+#. field:User.CompanyName
 msgid "Company Name"
 msgstr "公司名稱"
 
 #. field:Company.CompanyRegistry
 msgid "Company Registry"
-msgstr ""
+msgstr "公司註冊"
 
 #. field:Partner.CompanyType
+#. field:User.CompanyType
 msgid "Company Type"
 msgstr "公司類別"
 
 #. field:Partner.ContactAddress
+#. field:User.ContactAddress
 msgid "Complete Address"
 msgstr "完整地址"
 
-#. resource:base_view_company_form
-#. resource:base_menu_reporting_config
-msgid "Configuration"
-msgstr "配置"
-
 #. selection:Partner.Type
+#. selection:User.Type
 #. resource:base_view_partner_simple_form
 msgid "Contact"
 msgstr "聯繫人"
@@ -318,9 +380,9 @@ msgstr "聯繫人標籤"
 msgid "Contact Tags"
 msgstr "聯繫人標籤"
 
-#. resource:base_action_partner_title_contact
+#. resource:base_action_partner_Title_contact
 msgid "Contact Titles"
-msgstr "聯繫人稱謂"
+msgstr "聯絡人稱謂"
 
 #. resource:base_view_partner_tree
 msgid "Contacts"
@@ -339,16 +401,19 @@ msgstr "不能建立沒有電子信件地址的聯繫人！"
 msgid "Countries"
 msgstr "國家"
 
-#. field:Bank.Country
 #. field:Company.Country
-#. field:CountryState.Country
+#. field:Bank.Country
 #. field:Partner.Country
+#. field:User.Country
+#. field:CountryState.Country
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
 #. resource:base_view_country_tree
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
 #. resource:base_view_partner_address_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 #. resource:base_view_res_partner_filter
 msgid "Country"
 msgstr "國家"
@@ -375,10 +440,6 @@ msgstr "國家分組"
 msgid "Country Name"
 msgstr "國家名稱"
 
-#. resource:base_view_partner_form
-msgid "Create company"
-msgstr "創建公司"
-
 #. resource:base_view_attachment_form
 msgid "Creation"
 msgstr "創建"
@@ -388,6 +449,7 @@ msgid "Creation Month"
 msgstr "創建月份"
 
 #. field:Partner.CreditLimit
+#. field:User.CreditLimit
 msgid "Credit Limit"
 msgstr "信用額度"
 
@@ -399,9 +461,9 @@ msgstr "幣別"
 
 #. field:Company.Currency
 #. field:BankAccount.Currency
-#. field:CurrencyRate.Currency
-#. field:Currency.Name
 #. field:Country.Currency
+#. field:Currency.Name
+#. field:CurrencyRate.Currency
 #. resource:base_view_currency_search
 #. resource:base_view_currency_form
 msgid "Currency"
@@ -425,10 +487,6 @@ msgstr "貨幣比率"
 msgid "Currency sign, to be used when printing amounts"
 msgstr ""
 
-#. resource:base_view_users_form
-msgid "Current Company"
-msgstr "當前公司"
-
 #. field:Currency.Rate
 msgid "Current Rate"
 msgstr "當前比率"
@@ -441,20 +499,26 @@ msgstr "4 位數字表示的當前年份：%(year)s"
 msgid "Current Year without Century: %(y)s"
 msgstr "兩位數的當前年份：%(y)s"
 
+#. field:QueueJob.Retry
+msgid "Current try"
+msgstr ""
+
+#. resource:base_view_queue_job_form
+msgid "Current try / max. retries"
+msgstr ""
+
 #. resource:base_menu_administration_shortcut
 msgid "Custom Shortcuts"
 msgstr "自定義快捷方式"
 
-#. resource:base_view_res_partner_filter
-#. resource:base_action_partner_customer_form
+#. field:Country.NamePosition
+msgid "Customer Name Position"
+msgstr "客戶姓名位置"
+
 #. resource:base_action_partner_form
+#. resource:base_action_partner_customer_form
 msgid "Customers"
 msgstr "客戶"
-
-#. resource:base_menu_board_root
-#. resource:base_menu_reporting_dashboard
-msgid "Dashboards"
-msgstr "儀表板"
 
 #. field:Attachment.DBDatas
 msgid "Database Data"
@@ -464,16 +528,29 @@ msgstr "數據庫數據"
 msgid "Database Structure"
 msgstr "數據庫結構"
 
-#. field:CurrencyRate.Name
-#. field:Currency.Date
 #. field:Partner.Date
+#. field:User.Date
+#. field:Currency.Date
+#. field:CurrencyRate.Name
 #. resource:base_view_currency_rate_search
 msgid "Date"
 msgstr "日期"
 
+#. field:QueueJob.DateDone
+msgid "Date Done"
+msgstr ""
+
+#. field:QueueJob.DateEnqueued
+msgid "Date Enqueued"
+msgstr ""
+
 #. field:Lang.DateFormat
 msgid "Date Format"
 msgstr "日期格式"
+
+#. field:QueueJob.DateStarted
+msgid "Date Started"
+msgstr ""
 
 #. resource:base_sequence_view
 msgid "Day of the Week (0:Monday): %(weekday)s"
@@ -487,13 +564,21 @@ msgstr "年內天數：%(doy)s"
 msgid "Day: %(day)s"
 msgstr "日：%(day)s"
 
+#. selection:Cron.IntervalType
+msgid "Days"
+msgstr "天"
+
 #. field:Currency.DecimalPlaces
 msgid "Decimal Places"
-msgstr ""
+msgstr "小數點位置"
 
 #. field:Lang.DecimalPoint
 msgid "Decimal Separator"
 msgstr "小數分割符"
+
+#. resource:base_view_users_form
+msgid "Default Company"
+msgstr ""
 
 #. field:Attachment.Description
 #. resource:base_view_attachment_form
@@ -504,23 +589,37 @@ msgstr "說明"
 msgid "Determines where the currency symbol should be placed after or before the amount."
 msgstr "指定貨幣符的位置，放在總額的前面還是後面"
 
+#. help:Country.NamePosition
+msgid "Determines where the customer/company name should be placed, i.e. after or before the address."
+msgstr "確定客戶/公司名稱應的放置位置，即在地址之後或之前。"
+
 #. field:Lang.Direction
 msgid "Direction"
 msgstr "方向"
+
+#. resource:base_config_settings_view_form
+msgid "Discard"
+msgstr "放棄"
 
 #. resource:base_view_currency_form
 msgid "Display"
 msgstr "顯示"
 
+#. resource:base_view_queue_job_search
+msgid "Done"
+msgstr "完成"
+
 #. help:Partner.PartnerShare
+#. help:User.PartnerShare
 msgid ""
 "Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
 "access or with a limited access created for sharing data."
 msgstr ""
 
-#. field:Bank.Email
 #. field:Company.Email
+#. field:Bank.Email
 #. field:Partner.Email
+#. field:User.Email
 msgid "Email"
 msgstr "Email"
 
@@ -529,6 +628,7 @@ msgid "Email Address"
 msgstr "Email地址"
 
 #. field:Partner.EmailFormatted
+#. field:User.EmailFormatted
 msgid "Email Formatted"
 msgstr ""
 
@@ -536,13 +636,22 @@ msgstr ""
 msgid "Email Preferences"
 msgstr "Email首選項"
 
+#. field:User.Signature
+msgid "Email Signature"
+msgstr "簽名"
+
 #. field:Partner.Employee
+#. field:User.Employee
 msgid "Employee"
 msgstr "員工"
 
 #. resource:base_action_partner_employee_form
 msgid "Employees"
 msgstr "員工"
+
+#. resource:base_view_queue_job_search
+msgid "Enqueued"
+msgstr ""
 
 #. code:
 msgid "Error ! You can not create recursive tags."
@@ -552,15 +661,78 @@ msgstr "錯誤！不可以創建遞歸選單"
 msgid "Examples"
 msgstr "例子"
 
+#. field:QueueJob.ExcInfo
+msgid "Exception Info"
+msgstr ""
+
+#. resource:base_view_queue_job_form
+msgid "Exception Information"
+msgstr ""
+
+#. field:QueueJob.ExecuteBeforeJobs
+msgid "Execute Before Jobs"
+msgstr ""
+
+#. field:QueueJob.ExecuteAfterJob
+#. field:QueueJob.ETA
+msgid "Execute only after"
+msgstr ""
+
+#. help:QueueJob.ExecuteAfterJob
+msgid "Execute the current job only after this one has been correctly executed"
+msgstr ""
+
+#. resource:base_ir_cron_view_search
+msgid "Execution"
+msgstr "執行"
+
+#. field:CountryGroup.HexyaExternalID
+#. field:Company.HexyaExternalID
+#. field:SequenceDateRange.HexyaExternalID
+#. field:Translation.HexyaExternalID
+#. field:UserLog.HexyaExternalID
+#. field:Bank.HexyaExternalID
+#. field:BankAccount.HexyaExternalID
+#. field:QueueChannel.HexyaExternalID
+#. field:ConfigParameter.HexyaExternalID
+#. field:Cron.HexyaExternalID
+#. field:Currency.HexyaExternalID
+#. field:PartnerTitle.HexyaExternalID
+#. field:PartnerIndustry.HexyaExternalID
+#. field:CountryState.HexyaExternalID
+#. field:CurrencyRate.HexyaExternalID
+#. field:Group.HexyaExternalID
+#. field:Sequence.HexyaExternalID
+msgid "External ID"
+msgstr "外部 ID"
+
+#. field:CountryGroup.HexyaVersion
+#. field:Company.HexyaVersion
+#. field:SequenceDateRange.HexyaVersion
+#. field:Translation.HexyaVersion
+#. field:UserLog.HexyaVersion
+#. field:Bank.HexyaVersion
+#. field:BankAccount.HexyaVersion
+#. field:QueueChannel.HexyaVersion
+#. field:ConfigParameter.HexyaVersion
+#. field:Cron.HexyaVersion
+#. field:Currency.HexyaVersion
+#. field:PartnerTitle.HexyaVersion
+#. field:PartnerIndustry.HexyaVersion
+#. field:CountryState.HexyaVersion
+#. field:CurrencyRate.HexyaVersion
+#. field:Group.HexyaVersion
+#. field:Sequence.HexyaVersion
+msgid "External Version"
+msgstr ""
+
 #. help:User.Share
 msgid "External user with limited access, created only for the purpose of sharing data."
 msgstr "創建您只用來共享數據的有限訪問外部使用者。"
 
-#. field:Bank.Fax
-#. field:Company.Fax
-#. field:Partner.Fax
-msgid "Fax"
-msgstr "傳真"
+#. resource:base_view_queue_job_search
+msgid "Failed"
+msgstr ""
 
 #. field:Bank.State
 msgid "Fed. State"
@@ -570,13 +742,13 @@ msgstr "省/州"
 msgid "Fed. States"
 msgstr "省/州"
 
+#. selection:Attachment.Type
+msgid "File"
+msgstr "文件"
+
 #. field:Attachment.Datas
 msgid "File Content"
 msgstr "文件內容"
-
-#. field:Attachment.DatasFname
-msgid "File Name"
-msgstr "檔案名稱"
 
 #. field:Attachment.FileSize
 msgid "File Size"
@@ -587,6 +759,7 @@ msgid "Filter on my documents"
 msgstr "篩選我的文件"
 
 #. help:Partner.EmailFormatted
+#. help:User.EmailFormatted
 msgid "Formatted email address 'Name <email@domain>'"
 msgstr ""
 
@@ -594,16 +767,32 @@ msgstr ""
 msgid "From"
 msgstr "從"
 
+#. field:PartnerIndustry.FullName
+msgid "Full Name"
+msgstr "完整名稱"
+
 #. resource:base_view_company_form
 msgid "General Information"
 msgstr "通用信息"
+
+#. field:Partner.Latitude
+#. field:User.Latitude
+msgid "Geo Latitude"
+msgstr ""
+
+#. field:Partner.Longitude
+#. field:User.Longitude
+msgid "Geo Longitude"
+msgstr ""
 
 #. resource:base_view_groups_search
 msgid "Group"
 msgstr "群組"
 
 #. resource:base_view_attachment_search
+#. resource:base_ir_cron_view_search
 #. resource:base_view_res_partner_filter
+#. resource:base_view_queue_job_search
 msgid "Group By"
 msgstr "分組"
 
@@ -621,6 +810,8 @@ msgstr "組名"
 #. resource:base_view_groups_tree
 #. resource:base_menu_action_groups
 #. resource:base_action_res_groups
+#. resource:base_view_users_form
+#. code:
 msgid "Groups"
 msgstr "群組"
 
@@ -636,6 +827,10 @@ msgstr "歷史"
 msgid "Home Action"
 msgstr "主頁動作"
 
+#. resource:base_action_open_website
+msgid "Home Menu"
+msgstr "主頁選單"
+
 #. resource:base_sequence_view
 msgid "Hour 00->12: %(h12)s"
 msgstr "小時 00->12: %(h12)s"
@@ -644,30 +839,38 @@ msgstr "小時 00->12: %(h12)s"
 msgid "Hour 00->24: %(h24)s"
 msgstr "小時 00->24: %(h24)s"
 
-#. field:Bank.ID
+#. selection:Cron.IntervalType
+msgid "Hours"
+msgstr "小時"
+
+#. field:CountryGroup.ID
 #. field:Company.ID
-#. field:Group.ID
+#. field:SequenceDateRange.ID
+#. field:Translation.ID
+#. field:UserLog.ID
+#. field:Bank.ID
+#. field:BankAccount.ID
 #. field:UserChangePasswordWizard.ID
 #. field:UserChangePasswordWizardLine.ID
+#. field:Lang.ID
+#. field:PartnerCategory.ID
+#. field:Partner.ID
+#. field:QueueJob.ID
+#. field:User.ID
 #. field:Attachment.ID
-#. field:BankAccount.ID
+#. field:Country.ID
 #. field:ConfigSettings.ID
+#. field:ImageMixin.ID
+#. field:QueueChannel.ID
+#. field:ConfigParameter.ID
+#. field:Cron.ID
+#. field:Currency.ID
+#. field:PartnerTitle.ID
+#. field:PartnerIndustry.ID
 #. field:CountryState.ID
 #. field:CurrencyRate.ID
-#. field:Currency.ID
-#. field:PartnerCategory.ID
+#. field:Group.ID
 #. field:Sequence.ID
-#. field:Translation.ID
-#. field:User.ID
-#. field:Lang.ID
-#. field:ModelMixin.ID
-#. field:PartnerTitle.ID
-#. field:ConfigParameter.ID
-#. field:CountryGroup.ID
-#. field:Country.ID
-#. field:Partner.ID
-#. field:SequenceDateRange.ID
-#. field:UserLog.ID
 msgid "ID"
 msgstr "ID"
 
@@ -680,21 +883,40 @@ msgid "If specified, this action will be opened at log on for this user, in addi
 msgstr "如果指定的話，這個動作將在該使用者帳號登錄後與標準的選單一起執行。就是說登錄第一畫面將看到指定的選單頁面。"
 
 #. help:Partner.Lang
+#. help:User.Lang
 msgid ""
 "If the selected language is loaded in the system, all documents related to\n"
 "this contact will be printed in this language. If not, it will be English."
 msgstr ""
 
-#. field:Country.Image
+#. field:Partner.Image512
+#. field:Partner.Image128
+#. field:Partner.Image1920
+#. field:Partner.Image1024
+#. field:Partner.Image256
 #. field:Partner.Image
+#. field:User.Image1920
+#. field:User.Image128
+#. field:User.Image
+#. field:User.Image512
+#. field:User.Image1024
+#. field:User.Image256
+#. field:Country.Image
+#. field:ImageMixin.Image1024
+#. field:ImageMixin.Image512
+#. field:ImageMixin.Image256
+#. field:ImageMixin.Image128
+#. field:ImageMixin.Image1920
 msgid "Image"
 msgstr "圖像"
 
 #. field:Partner.ImageMedium
+#. field:User.ImageMedium
 msgid "Image Medium"
 msgstr ""
 
 #. field:Partner.ImageSmall
+#. field:User.ImageSmall
 msgid "Image Small"
 msgstr ""
 
@@ -716,14 +938,33 @@ msgid "Indexed Content"
 msgstr "已索引的內容"
 
 #. selection:Partner.CompanyType
+#. selection:User.CompanyType
 msgid "Individual"
 msgstr "個人"
+
+#. resource:base_view_res_partner_filter
+msgid "Individuals"
+msgstr "個人"
+
+#. field:Partner.Industry
+#. field:User.Industry
+msgid "Industry"
+msgstr "行業/產業"
+
+#. resource:base_ir_cron_view
+msgid "Information"
+msgstr "信息"
+
+#. field:Country.AddressViewID
+msgid "Input View"
+msgstr "輸入視圖"
 
 #. resource:base_view_partner_form
 msgid "Internal Notes"
 msgstr "內部備註"
 
 #. field:Partner.Ref
+#. field:User.Ref
 msgid "Internal Reference"
 msgstr "內部參考"
 
@@ -731,56 +972,72 @@ msgstr "內部參考"
 msgid "Internal note..."
 msgstr "內部備註"
 
+#. resource:base_view_partner_form
+msgid "Internal notes..."
+msgstr ""
+
+#. field:Cron.IntervalNumber
+msgid "Interval Number"
+msgstr "次數"
+
+#. field:Cron.IntervalType
+msgid "Interval Unit"
+msgstr "間隔單位"
+
 #. code:
 msgid "Invalid search criterion: password"
 msgstr ""
 
 #. selection:Partner.Type
+#. selection:User.Type
 msgid "Invoice Address"
 msgstr "發票地址"
 
 #. field:Partner.IsCompany
+#. field:User.IsCompany
 msgid "Is Company"
 msgstr "是公司"
-
-#. field:Partner.Customer
-msgid "Is a Customer"
-msgstr "是客戶"
-
-#. field:Partner.Supplier
-msgid "Is a Vendor"
-msgstr "供應商"
 
 #. field:Attachment.Public
 msgid "Is a public document"
 msgstr ""
 
 #. field:Partner.Function
+#. field:User.Function
 msgid "Job Position"
 msgstr "工作職缺"
+
+#. resource:base_view_queue_job_form
+#. resource:base_view_queue_job_tree
+#. resource:base_view_queue_job_search
+#. resource:base_action_queue_job
+msgid "Jobs"
+msgstr ""
 
 #. help:User.Password
 msgid "Keep empty if you don't want the user to be able to connect on the system."
 msgstr "如果不希望使用者連接到系統，則不勾選"
 
 #. field:ConfigParameter.Key
+#. resource:base_view_ir_config_search
 msgid "Key"
 msgstr "鍵"
 
 #. field:Partner.Lang
+#. field:User.Lang
 #. resource:base_res_lang_search
 msgid "Language"
 msgstr "語言"
 
+#. resource:base_res_lang_search
 #. resource:base_res_lang_tree
 #. resource:base_res_lang_form
-#. resource:base_res_lang_search
 #. resource:base_res_lang_act_window
 msgid "Languages"
 msgstr "語言"
 
 #. field:User.LoginDate
-msgid "Latest Connection"
+msgid "Latest authentication"
 msgstr "最近連接時間"
 
 #. selection:Lang.Direction
@@ -794,6 +1051,10 @@ msgstr "圖例（前綴，後綴）"
 #. resource:base_res_lang_form
 msgid "Legends for supported Date and Time Formats"
 msgstr "日期與時間格式圖例"
+
+#. help:QueueJob.ExecuteBeforeJobs
+msgid "List of jobs that will be executed after the current one"
+msgstr ""
 
 #. field:Lang.Code
 msgid "Locale Code"
@@ -813,13 +1074,18 @@ msgstr "商標logo"
 
 #. field:Company.LogoWeb
 msgid "Logo Web"
-msgstr ""
+msgstr "網頁徽標"
 
 #. field:SequenceDateRange.Sequence
 msgid "Main Sequence"
 msgstr "主序列"
 
+#. field:QueueJob.MaxRetries
+msgid "Max Retries"
+msgstr ""
+
 #. help:Partner.ImageMedium
+#. help:User.ImageMedium
 msgid ""
 "Medium-sized image of this contact. It is automatically\n"
 "resized as a 128x128px image, with aspect ratio preserved.\n"
@@ -830,9 +1096,10 @@ msgstr ""
 msgid "Menus Customization"
 msgstr "選單定制"
 
-#. resource:base_view_users_form
-msgid "Messaging and Social"
-msgstr "消息與社交"
+#. field:QueueJob.Method
+#. field:Cron.Method
+msgid "Method"
+msgstr ""
 
 #. field:Attachment.MimeType
 msgid "Mime Type"
@@ -842,17 +1109,31 @@ msgstr "MIME 類型"
 msgid "Minute: %(min)s"
 msgstr "分鐘: %(min)s"
 
+#. selection:Cron.IntervalType
+msgid "Minutes"
+msgstr "分鐘"
+
 #. resource:base_view_partner_form
 msgid "Misc"
 msgstr "雜項"
 
 #. field:Partner.Mobile
+#. field:User.Mobile
 msgid "Mobile"
 msgstr "手機"
+
+#. field:QueueJob.Model
+#. field:Cron.Model
+msgid "Model"
+msgstr "模型"
 
 #. resource:base_sequence_view
 msgid "Month: %(month)s"
 msgstr "月：%(month)s"
+
+#. selection:Cron.IntervalType
+msgid "Months"
+msgstr "月"
 
 #. resource:base_view_users_form
 msgid "Multi Companies"
@@ -862,19 +1143,21 @@ msgstr "多公司"
 msgid "My Document(s)"
 msgstr "我的單據"
 
-#. resource:base_view_res_partner_filter
-msgid "My Partners"
-msgstr "我的業務夥伴"
-
+#. field:CountryGroup.Name
 #. field:Bank.Name
+#. field:Lang.Name
+#. field:Partner.Name
+#. field:QueueJob.Name
+#. field:User.Name
+#. field:QueueChannel.Name
+#. field:Cron.Name
+#. field:PartnerIndustry.Name
 #. field:Group.Name
 #. field:Sequence.Name
-#. field:Lang.Name
-#. field:CountryGroup.Name
-#. field:Partner.Name
+#. resource:base_view_partner_simple_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 #. resource:base_view_partner_tree
-#. resource:base_view_partner_simple_form
 msgid "Name"
 msgstr "名字"
 
@@ -882,34 +1165,47 @@ msgstr "名字"
 msgid "New Password"
 msgstr "新密碼"
 
-#. field:Sequence.NumberNextActual
-#. field:Sequence.NumberNext
+#. field:Cron.NextCall
+msgid "Next Execution Date"
+msgstr "下一執行日期"
+
 #. field:SequenceDateRange.NumberNext
 #. field:SequenceDateRange.NumberNextActual
+#. field:Sequence.NumberNext
+#. field:Sequence.NumberNextActual
 msgid "Next Number"
 msgstr "下一號碼"
 
-#. help:Sequence.NumberNext
 #. help:SequenceDateRange.NumberNext
+#. help:Sequence.NumberNext
 msgid "Next number of this sequence"
 msgstr "本序列的下一號碼"
 
-#. help:Sequence.NumberNextActual
 #. help:SequenceDateRange.NumberNextActual
+#. help:Sequence.NumberNextActual
 msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
 msgstr "下一個編號將被使用。這個編號經常增加，所以顯示的值可能已經被廢棄"
+
+#. help:Cron.NextCall
+msgid "Next planned execution date for this job."
+msgstr "此任務的下一次計劃的執行日期"
 
 #. selection:Sequence.Implementation
 msgid "No Gap"
 msgstr ""
 
 #. field:Partner.Comment
+#. field:User.Comment
 msgid "Notes"
 msgstr "備註"
 
 #. field:User.CompaniesCount
 msgid "Number of Companies"
 msgstr "公司數量"
+
+#. help:User.GroupsCount
+msgid "Number of groups that apply to the current user"
+msgstr ""
 
 #. code:
 msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
@@ -924,6 +1220,7 @@ msgid "Only administrators can execute this action."
 msgstr "只有系統管理員可以執行此動作"
 
 #. selection:Partner.Type
+#. selection:User.Type
 msgid "Other Address"
 msgstr ""
 
@@ -935,7 +1232,12 @@ msgstr "其它業務夥伴"
 msgid "Owner"
 msgstr "所有者"
 
+#. resource:base_menu_ir_property
+msgid "Parameters"
+msgstr "參數"
+
 #. field:Partner.Parent
+#. field:User.Parent
 msgid "Parent"
 msgstr "上級"
 
@@ -944,6 +1246,7 @@ msgid "Parent Company"
 msgstr "上級公司"
 
 #. field:Partner.ParentName
+#. field:User.ParentName
 msgid "Parent Name"
 msgstr ""
 
@@ -956,16 +1259,26 @@ msgstr ""
 msgid "Partner"
 msgstr "合作夥伴"
 
-#. resource:base_view_partner_title_tree
-#. resource:base_view_partner_title_form
+#. field:User.ActivePartner
+msgid "Partner Is Active"
+msgstr ""
+
+#. resource:base_view_partner_Title_tree
+#. resource:base_view_partner_Title_form
 msgid "Partner Titles"
 msgstr "業務夥伴稱謂"
+
+#. field:Partner.SameVATPartner
+#. field:User.SameVATPartner
+msgid "Partner with same Tax ID"
+msgstr ""
 
 #. help:User.Partner
 msgid "Partner-related data of the user"
 msgstr "使用者之業務夥伴的相關數據。"
 
 #. field:PartnerCategory.Partners
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 msgid "Partners"
 msgstr "合作夥伴"
@@ -974,13 +1287,14 @@ msgstr "合作夥伴"
 msgid "Password"
 msgstr "密碼"
 
-#. resource:base_view_res_partner_filter
-msgid "Persons"
-msgstr "個人"
+#. resource:base_view_queue_job_search
+msgid "Pending"
+msgstr ""
 
-#. field:Bank.Phone
 #. field:Company.Phone
+#. field:Bank.Phone
 #. field:Partner.Phone
+#. field:User.Phone
 msgid "Phone"
 msgstr "電話"
 
@@ -1004,9 +1318,26 @@ msgstr "序列記錄的前綴"
 msgid "Price Accuracy"
 msgstr "價格準確性"
 
+#. field:QueueJob.Priority
+msgid "Priority"
+msgstr "優先級"
+
+#. selection:Partner.Type
+#. selection:User.Type
+msgid "Private Address"
+msgstr "家庭住址"
+
+#. resource:base_res_partner_view_form_private
+msgid "Private Address Form"
+msgstr "私人地址表單"
+
 #. resource:base_view_partner_form
 msgid "Purchase"
 msgstr "採購"
+
+#. resource:base_menu_queue
+msgid "Queue"
+msgstr ""
 
 #. field:CurrencyRate.Rate
 msgid "Rate"
@@ -1015,6 +1346,19 @@ msgstr "比率"
 #. field:Currency.Rates
 msgid "Rates"
 msgstr "比率"
+
+#. field:QueueJob.RecordsIds
+#. field:Cron.RecordsIds
+msgid "Records Ids"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "Reference"
+msgstr "參照"
+
+#. resource:base_view_queue_job_form
+msgid "Related"
+msgstr ""
 
 #. field:User.Partner
 msgid "Related Partner"
@@ -1025,9 +1369,13 @@ msgstr "相關的業務夥伴"
 msgid "Reload Groups"
 msgstr ""
 
-#. resource:base_view_company_form
-msgid "Report Configuration"
-msgstr "報表配置"
+#. help:Cron.IntervalNumber
+msgid "Repeat every x."
+msgstr "重複每"
+
+#. resource:base_view_queue_job_form
+msgid "Requeue Job"
+msgstr ""
 
 #. field:Attachment.ResField
 msgid "Resource Field"
@@ -1045,6 +1393,11 @@ msgstr "資源模型"
 msgid "Resource Name"
 msgstr "資源名稱"
 
+#. field:QueueJob.Result
+#. resource:base_view_queue_job_form
+msgid "Result"
+msgstr ""
+
 #. selection:Lang.Direction
 msgid "Right-to-left"
 msgstr ""
@@ -1053,15 +1406,20 @@ msgstr ""
 msgid "Rounding Factor"
 msgstr "捨入係數"
 
+#. resource:base_ir_cron_view
+msgid "Run Manually"
+msgstr "手動運行"
+
 #. resource:base_view_partner_form
-msgid "Sale"
+msgid "Sales"
 msgstr "銷售"
 
 #. resource:base_view_partner_form
-msgid "Sales & Purchases"
-msgstr "銷售與採購"
+msgid "Sales & Purchase"
+msgstr ""
 
 #. field:Partner.User
+#. field:User.User
 #. resource:base_view_res_partner_filter
 msgid "Salesperson"
 msgstr "業務員"
@@ -1070,13 +1428,34 @@ msgstr "業務員"
 msgid "Sanitized Account Number"
 msgstr "核對銀行帳號"
 
+#. resource:base_config_settings_view_form
 #. resource:base_view_users_form_simple_modif
 msgid "Save"
 msgstr "保存"
 
+#. resource:base_ir_cron_view_search
+msgid "Scheduled Action"
+msgstr "安排的動作"
+
+#. resource:base_ir_cron_view
+#. resource:base_ir_cron_view_tree
+#. resource:base_ir_cron_view_calendar
+#. resource:base_ir_cron_view_search
+#. resource:base_ir_cron_act
+msgid "Scheduled Actions"
+msgstr "安排的動作"
+
+#. resource:base_res_bank_view_search
+msgid "Search Bank"
+msgstr ""
+
 #. resource:base_view_res_partner_filter
 msgid "Search Partner"
 msgstr "搜索業務夥伴"
+
+#. resource:base_config_settings_view_form
+msgid "Search..."
+msgstr "搜尋..."
 
 #. resource:base_sequence_view
 msgid "Second: %(sec)s"
@@ -1086,6 +1465,7 @@ msgstr "秒：%(sec)s"
 msgid "Separator Format"
 msgstr "分割符格式"
 
+#. field:Company.Sequence
 #. field:BankAccount.Sequence
 #. resource:base_sequence_view
 #. resource:base_view_sequence_search
@@ -1116,11 +1496,22 @@ msgstr "序列與標識符"
 msgid "Set Password"
 msgstr "設定密碼"
 
+#. resource:base_view_queue_job_form
+msgid "Set to 'Done'"
+msgstr ""
+
+#. code:
+msgid "Setting empty passwords is not allowed for security reasons!"
+msgstr "根據安全考慮，不允許設定空密碼！"
+
+#. resource:base_config_settings_view_form
+#. resource:base_config_setting_act_window
 #. resource:base_menu_administration
 msgid "Settings"
 msgstr "設定"
 
 #. field:Partner.PartnerShare
+#. field:User.PartnerShare
 msgid "Share Partner"
 msgstr "共享合作夥伴"
 
@@ -1129,6 +1520,7 @@ msgid "Share User"
 msgstr "共享使用者"
 
 #. selection:Partner.Type
+#. selection:User.Type
 msgid "Shipping Address"
 msgstr "送貨地址"
 
@@ -1140,11 +1532,8 @@ msgstr "顯示有效的貨幣"
 msgid "Show inactive currencies"
 msgstr "顯示無效的貨幣"
 
-#. field:User.Signature
-msgid "Signature"
-msgstr "簽名"
-
 #. help:Partner.ImageSmall
+#. help:User.ImageSmall
 msgid ""
 "Small-sized image of this contact. It is automatically\n"
 "resized as a 64x64px image, with aspect ratio preserved.\n"
@@ -1156,8 +1545,25 @@ msgid "Sometimes called BIC or Swift."
 msgstr "有時也叫 BIC 或 Swift。"
 
 #. code:
+msgid "Sorry, the syntax 'name:agg(field)' is not available for attachments"
+msgstr ""
+
+#. code:
+msgid "Sorry, you are not allowed to access these fields on attachments."
+msgstr ""
+
+#. code:
+#. code:
 msgid "Sorry, you are not allowed to access this document."
 msgstr "對不起，您沒有訪問此文件的權限。"
+
+#. code:
+msgid "Sorry, you are not allowed to write on this document"
+msgstr ""
+
+#. code:
+msgid "Sorry, you must provide fields to read on attachments"
+msgstr ""
 
 #. help:User.NewPassword
 msgid ""
@@ -1170,15 +1576,24 @@ msgstr ""
 msgid "Standard"
 msgstr "標準"
 
+#. resource:base_view_queue_job_search
+msgid "Started"
+msgstr ""
+
 #. field:Company.State
 #. field:Partner.State
+#. field:QueueJob.State
+#. field:User.State
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
-#. resource:base_view_country_state_tree
 #. resource:base_view_country_state_form
+#. resource:base_view_country_state_tree
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
 #. resource:base_view_partner_address_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
+#. resource:base_view_queue_job_search
 msgid "State"
 msgstr "狀態"
 
@@ -1202,31 +1617,37 @@ msgstr "步"
 msgid "Stored Filename"
 msgstr "存儲的文件名"
 
-#. field:Bank.Street
 #. field:Company.Street
+#. field:Bank.Street
 #. field:Partner.Street
+#. field:User.Street
 msgid "Street"
 msgstr "街道"
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
 #. resource:base_view_partner_address_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Street 2..."
 msgstr "街道2..."
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
 #. resource:base_view_partner_address_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Street..."
 msgstr "街道..."
 
-#. field:Bank.Street2
 #. field:Company.Street2
+#. field:Bank.Street2
 #. field:Partner.Street2
+#. field:User.Street2
 msgid "Street2"
 msgstr "街道 2"
 
@@ -1250,7 +1671,19 @@ msgstr "貨幣符號"
 msgid "Symbol Position"
 msgstr "符號位置"
 
+#. resource:base_view_ir_config_list
+#. resource:base_view_ir_config_form
+#. resource:base_ir_config_menu
+#. resource:base_ir_config_list_action
+msgid "System Parameters"
+msgstr "系統參數"
+
+#. resource:base_view_ir_config_search
+msgid "System Properties"
+msgstr "系統屬性"
+
 #. field:Partner.VAT
+#. field:User.VAT
 msgid "TIN"
 msgstr "稅務登記證號碼"
 
@@ -1262,11 +1695,8 @@ msgstr "標籤"
 msgid "Tag Name"
 msgstr "標籤名"
 
-#. field:Company.Tagline
-msgid "Tagline"
-msgstr ""
-
 #. field:Partner.Categories
+#. field:User.Categories
 msgid "Tags"
 msgstr "標籤"
 
@@ -1275,6 +1705,7 @@ msgid "Tags..."
 msgstr "標籤..."
 
 #. help:Partner.VAT
+#. help:User.VAT
 msgid ""
 "Tax Identification Number.\n"
 "Fill it if the company is subjected to taxes.\n"
@@ -1284,6 +1715,10 @@ msgstr ""
 #. resource:base_menu_custom
 msgid "Technical"
 msgstr "技術"
+
+#. resource:base_ir_cron_view
+msgid "Technical Data"
+msgstr "技術數據"
 
 #. help:Country.Code
 msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
@@ -1295,6 +1730,10 @@ msgid ""
 "-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
 "[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
 "Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. code:
+msgid "The \\\"App Switcher\\\" action cannot be selected as home action."
 msgstr ""
 
 #. help:PartnerCategory.Active
@@ -1318,14 +1757,22 @@ msgid "The full name of the country."
 msgstr "國家全名。"
 
 #. help:Partner.User
+#. help:User.User
 msgid "The internal user that is in charge of communicating with this contact if any."
 msgstr "如果存在此銷售員，則通過該人員內部帳號與該客戶溝通對話溝通。"
+
+#. help:QueueJob.MaxRetries
+msgid ""
+"The job will fail if the number of tries reach the max. retries.\n"
+"Retries are infinite when equals zero."
+msgstr ""
 
 #. help:Sequence.NumberIncrement
 msgid "The next number of the sequence will be incremented by this number"
 msgstr "下一序列將以此數增加"
 
 #. help:Partner.TZ
+#. help:User.TZ
 msgid ""
 "The partner's timezone, used to output proper date and time values\n"
 "inside printed reports. It is important to set a value for this field.\n"
@@ -1333,8 +1780,8 @@ msgid ""
 "render date and time values: your computer's timezone."
 msgstr ""
 
-#. help:CurrencyRate.Rate
 #. help:Currency.Rate
+#. help:CurrencyRate.Rate
 msgid "The rate of the currency to the currency of rate 1"
 msgstr "幣別到其他幣別的比率為 1"
 
@@ -1346,13 +1793,22 @@ msgstr ""
 msgid "The state code in max. three chars."
 msgstr ""
 
+#. code:
+msgid "The user cannot have more than one user types."
+msgstr ""
+
 #. help:Lang.ISOCode
 msgid "This ISO code is the name of PO files to use for translations"
 msgstr ""
 
 #. help:Partner.Image
+#. help:User.Image
 msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
 msgstr "該字段保存的圖像用作聯繫人的頭像，限制為1024x1024px"
+
+#. help:Company.Favicon
+msgid "This field holds the image used to display a favicon for a given company."
+msgstr ""
 
 #. help:Lang.Code
 msgid "This field is used to set/get locales for user"
@@ -1367,15 +1823,18 @@ msgid "Time Format"
 msgstr "時間格式"
 
 #. field:Partner.TZ
+#. field:User.TZ
 msgid "Timezone"
 msgstr "時區"
 
 #. field:Partner.TZOffset
+#. field:User.TZOffset
 msgid "Timezone Offset"
 msgstr ""
 
-#. field:PartnerTitle.Name
 #. field:Partner.Title
+#. field:User.Title
+#. field:PartnerTitle.Name
 msgid "Title"
 msgstr "稱謂"
 
@@ -1411,14 +1870,15 @@ msgid ""
 "gap in the sequence (while they are possible in the former)."
 msgstr ""
 
-#. field:Attachment.Type
 #. field:Partner.Type
+#. field:User.Type
+#. field:Attachment.Type
 #. resource:base_view_attachment_search
 msgid "Type"
 msgstr "類型"
 
-#. selection:Attachment.Type
 #. field:Attachment.URL
+#. selection:Attachment.Type
 #. resource:base_view_attachment_search
 msgid "URL"
 msgstr "URL"
@@ -1431,19 +1891,53 @@ msgstr "更新語言術語"
 msgid "Update Terms"
 msgstr "更新術語"
 
+#. help:QueueJob.RecordsIds
+#. help:Cron.RecordsIds
+msgid "Use a JSON list format (e.g. [1, 2])"
+msgstr ""
+
+#. help:QueueJob.Arguments
+#. help:Cron.Arguments
+msgid ""
+"Use a JSON list format (e.g. [[1, 2], \"My string value\", true]).\n"
+"For relation fields, pass the ID or the list of IDs"
+msgstr ""
+
 #. field:Sequence.UseDateRange
 msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:Country.VATLabel
+msgid "Use this field if you want to change vat label."
+msgstr "如果想更改增值稅標籤，請使用此字段。"
+
+#. help:Country.AddressViewID
+msgid ""
+"Use this field if you want to replace the usual way to encode a complete address.\n"
+"Note that the address_format field is used to modify the way to display addresses\n"
+"(in reports for example), while this field is used to modify the input form for\n"
+"addresses."
 msgstr ""
 
 #. help:User.Login
 msgid "Used to log into the system"
 msgstr "使用者登錄入系統"
 
+#. help:Company.Sequence
+msgid "Used to order Companies in the company switcher"
+msgstr "用於在公司切換器中對公司進行排序"
+
 #. help:Partner.Type
-msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+#. help:User.Type
+msgid ""
+"Used to select automatically the right address according to the context in sales and purchases documents. \n"
+"Private addresses are only visible by authorized users."
 msgstr "用於通過銷售與採購單據上下文來自動選擇正確的地址。"
 
 #. field:UserChangePasswordWizardLine.User
+#. field:QueueJob.User
+#. field:Cron.User
+#. resource:base_ir_cron_view_search
 #. resource:base_view_users_search
 msgid "User"
 msgstr "使用者"
@@ -1462,12 +1956,13 @@ msgstr "使用者登錄記錄"
 
 #. field:UserChangePasswordWizard.Users
 #. field:Partner.Users
+#. field:User.Users
 #. resource:base_menu_users
+#. resource:base_change_password_wizard_user_tree_view
+#. resource:base_view_users_tree
 #. resource:base_view_users_form
 #. resource:base_view_users_search
 #. resource:base_view_users_form_simple_modif
-#. resource:base_change_password_wizard_user_tree_view
-#. resource:base_view_users_tree
 #. resource:base_menu_action_users
 #. resource:base_action_res_users
 msgid "Users"
@@ -1477,11 +1972,14 @@ msgstr "使用者"
 msgid "VAT"
 msgstr "統一編號"
 
+#. field:Country.VATLabel
+msgid "VAT Label"
+msgstr ""
+
 #. field:ConfigParameter.Value
 msgid "Value"
 msgstr "值"
 
-#. resource:base_view_res_partner_filter
 #. resource:base_action_partner_supplier_form
 msgid "Vendors"
 msgstr "供應商"
@@ -1492,16 +1990,22 @@ msgstr "查看比率"
 
 #. field:Company.Website
 #. field:Partner.Website
+#. field:User.Website
 msgid "Website"
 msgstr "網站"
 
 #. help:Partner.Website
+#. help:User.Website
 msgid "Website of Partner or Company"
 msgstr "業務夥伴或公司的網站"
 
 #. resource:base_sequence_view
 msgid "Week of the Year: %(woy)s"
 msgstr "本年第%(woy)s周"
+
+#. selection:Cron.IntervalType
+msgid "Weeks"
+msgstr "周"
 
 #. field:UserChangePasswordWizardLine.Wizard
 msgid "Wizard"
@@ -1520,7 +2024,14 @@ msgid "You can not remove the admin user as it is used internally for resources 
 msgstr ""
 
 #. help:Country.AddressFormat
-msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgid ""
+"You can state here the usual format to use for the addresses belonging to this country.\n"
+"You can use Go-style string pattern with all the fields of the address \n"
+"(for example, use '{{ .Street }}' to display the field 'Street') plus\n"
+"{{ .StateName }}: the name of the state\n"
+"{{ .StateCode }}: the code of the state\n"
+"{{ .CountryName }}: the name of the country\n"
+"{{ .CountryCode }}: the code of the country\n"
 msgstr ""
 
 #. code:
@@ -1537,39 +2048,54 @@ msgstr "不能禁用您當前正在使用的使用者。"
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
 #. resource:base_view_partner_address_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "ZIP"
-msgstr "ZIP"
+msgstr "郵編"
 
-#. field:Bank.Zip
 #. field:Company.Zip
+#. field:Bank.Zip
 #. field:Partner.Zip
+#. field:User.Zip
 msgid "Zip"
 msgstr "郵政編碼"
 
-#. resource:base_view_company_form
-msgid "e.g. Global Business Solutions"
-msgstr "例如：全球商業解決方案"
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
+msgid "e.g. BE0477472701"
+msgstr "舉例: BE0477472701"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mister"
+msgstr ""
 
 #. resource:base_view_partner_form
 msgid "e.g. Mr."
 msgstr "例如：先生"
 
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
 #. resource:base_view_partner_simple_form
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
 msgid "e.g. Sales Director"
 msgstr "例如：銷售總監"
 
-#. resource:base_view_company_form
 #. resource:base_view_partner_address_form
-#. resource:base_view_partner_form
-msgid "e.g. www.hexya.io"
+msgid "e.g. https//www.hexya.io"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "e.g. https://www.hexya.io"
 msgstr ""
 
 #. resource:base_view_partner_form
-msgid "internal note..."
-msgstr "內部備註..."
+msgid "e.g. https://www.odoo.com"
+msgstr "例如：https://www.odoo.com"
+
+#. code:
+msgid "error while hashing password: %s"
+msgstr ""
 

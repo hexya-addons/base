@@ -161,7 +161,7 @@ msgstr ""
 #. resource:base_change_password_wizard_view
 #. resource:base_view_users_form_simple_modif
 msgid "Cancel"
-msgstr ""
+msgstr "Strika"
 
 #. code:
 msgid "Cannot duplicate configuration"

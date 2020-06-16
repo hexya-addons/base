@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hexya>
+    <data>
+
+        <view model="ConfigParameter" id="base_view_ir_config_search">
+            <search string="System Properties">
+                <field name="key" string="Key"/>
+                <field name="value"/>
+            </search>
+        </view>
+
+        <view model="ConfigParameter" id="base_view_ir_config_list">
+            <tree string="System Parameters">
+                <field name="key"/>
+                <field name="value"/>
+            </tree>
+        </view>
+
+        <view model="ConfigParameter" id="base_view_ir_config_form">
+            <form string="System Parameters">
+                <sheet>
+                    <group>
+                        <field name="key"/>
+                        <field name="value"/>
+                    </group>
+                </sheet>
+            </form>
+        </view>
+
+        <action name="System Parameters" model="ConfigParameter" id="base_ir_config_list_action"
+                type="ir.actions.act_window" view_mode="tree,form"/>
+
+        <menuitem id="base_ir_config_menu" name="System Parameters" parent="base_menu_ir_property"
+                  action="base_ir_config_list_action"/>
+
+    </data>
+</hexya>

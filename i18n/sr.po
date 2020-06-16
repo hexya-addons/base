@@ -245,7 +245,7 @@ msgstr ""
 
 #. field:Partner.CommercialPartner
 msgid "Commercial Entity"
-msgstr ""
+msgstr "Правно лице"
 
 #. resource:base_view_res_bank_form
 msgid "Communication"
@@ -1072,7 +1072,7 @@ msgstr ""
 
 #. resource:base_view_users_form_simple_modif
 msgid "Save"
-msgstr ""
+msgstr "Сачувај"
 
 #. resource:base_view_res_partner_filter
 msgid "Search Partner"

@@ -25,7 +25,7 @@ func group_Create(rs m.GroupSet, data m.GroupData) m.GroupSet {
 	panic("Unreachable")
 }
 
-func group_Write(rs m.GroupSet, data m.GroupData) bool {
+func group_Write(rs m.GroupSet, _ m.GroupData) bool {
 	log.Panic(rs.T("Trying to modify a security group"))
 	panic("Unreachable")
 }
@@ -37,14 +37,14 @@ func group_ReloadGroups(rs m.GroupSet) {
 	// Sync groups: registry => Database
 	var existingGroupIds []string
 	for _, group := range security.Registry.AllGroups() {
-		existingGroupIds = append(existingGroupIds, group.ID)
-		if !h.Group().Search(rs.Env(), q.Group().GroupID().Equals(group.ID)).IsEmpty() {
+		existingGroupIds = append(existingGroupIds, group.ID())
+		if !h.Group().Search(rs.Env(), q.Group().GroupID().Equals(group.ID())).IsEmpty() {
 			// The group already exists in the database
 			continue
 		}
 		rs.WithContext("GroupForceCreate", true).Create(h.Group().NewData().
-			SetGroupID(group.ID).
-			SetName(group.Name))
+			SetGroupID(group.ID()).
+			SetName(group.Name()))
 	}
 	// Remove unknown groups from database
 	h.Group().Search(rs.Env(), q.Group().GroupID().NotIn(existingGroupIds)).Unlink()

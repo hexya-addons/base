@@ -29,6 +29,7 @@
                   groups="base.group_no_one"/>
         <menuitem id="base_menu_user_interface" name="User Interface" parent="base_menu_custom" sequence="10"/>
         <menuitem id="base_menu_database_structure" name="Database Structure" parent="base_menu_custom" sequence="20"/>
+        <menuitem id="base_menu_ir_property" name="Parameters" parent="base_menu_custom" sequence="24"/>
         <menuitem id="base_menu_automation" name="Automation" parent="base_menu_custom" sequence="40"/>
 
         <action id="base_action_open_website" type="ir.actions.act_url" name="Home Menu" target="self" url="/web"/>
