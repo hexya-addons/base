@@ -36,7 +36,7 @@ msgstr "Tilgangsrettigheter"
 
 #. field:BankAccount.Partner
 msgid "Account Holder"
-msgstr ""
+msgstr "Kontoeier"
 
 #. field:BankAccount.Name
 msgid "Account Number"
@@ -282,7 +282,7 @@ msgstr "Firmanavn"
 
 #. field:Company.CompanyRegistry
 msgid "Company Registry"
-msgstr ""
+msgstr "Firmaregister"
 
 #. field:Partner.CompanyType
 msgid "Company Type"
@@ -489,7 +489,7 @@ msgstr "Dag: %(day)s"
 
 #. field:Currency.DecimalPlaces
 msgid "Decimal Places"
-msgstr ""
+msgstr "Desimalplasser"
 
 #. field:Lang.DecimalPoint
 msgid "Decimal Separator"
@@ -813,7 +813,7 @@ msgstr "Logo"
 
 #. field:Company.LogoWeb
 msgid "Logo Web"
-msgstr ""
+msgstr "Logo for nettsted"
 
 #. field:SequenceDateRange.Sequence
 msgid "Main Sequence"

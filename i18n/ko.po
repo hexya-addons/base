@@ -36,7 +36,7 @@ msgstr "접근 권한"
 
 #. field:BankAccount.Partner
 msgid "Account Holder"
-msgstr ""
+msgstr "계정 소유자"
 
 #. field:BankAccount.Name
 msgid "Account Number"
@@ -206,7 +206,7 @@ msgstr "직원 연락처인 경우 확인란을 선택하십시오."
 
 #. field:Attachment.CheckSum
 msgid "Checksum/SHA1"
-msgstr ""
+msgstr "체크섬/SHA1"
 
 #. field:Company.Children
 msgid "Child Companies"
@@ -282,11 +282,11 @@ msgstr "회사명"
 
 #. field:Company.CompanyRegistry
 msgid "Company Registry"
-msgstr ""
+msgstr "법인등록번호"
 
 #. field:Partner.CompanyType
 msgid "Company Type"
-msgstr ""
+msgstr "회사 유형"
 
 #. field:Partner.ContactAddress
 msgid "Complete Address"
@@ -304,7 +304,7 @@ msgstr "연락처"
 
 #. resource:base_view_partner_form
 msgid "Contact / Address"
-msgstr ""
+msgstr "연락처 / 주소"
 
 #. resource:base_view_partner_form
 msgid "Contact Name"
@@ -312,11 +312,11 @@ msgstr "연락처 이름"
 
 #. resource:base_view_partner_category_form
 msgid "Contact Tag"
-msgstr ""
+msgstr "문의 테그"
 
 #. resource:base_view_partner_category_list
 msgid "Contact Tags"
-msgstr ""
+msgstr "문의 테그"
 
 #. resource:base_action_partner_title_contact
 msgid "Contact Titles"
@@ -328,7 +328,7 @@ msgstr "연락처"
 
 #. resource:base_view_partner_form
 msgid "Contacts & Addresses"
-msgstr ""
+msgstr "연락처와 주소록"
 
 #. code:
 msgid "Couldn't create contact without email address!"
@@ -355,7 +355,7 @@ msgstr "국가"
 
 #. field:Country.PhoneCode
 msgid "Country Calling Code"
-msgstr ""
+msgstr "국가 호출 코드"
 
 #. field:Country.Code
 msgid "Country Code"
@@ -419,7 +419,7 @@ msgstr "환율"
 #. resource:base_view_currency_rate_tree
 #. resource:base_act_view_currency_rates
 msgid "Currency Rates"
-msgstr ""
+msgstr "환율"
 
 #. help:Currency.Symbol
 msgid "Currency sign, to be used when printing amounts"
@@ -427,7 +427,7 @@ msgstr ""
 
 #. resource:base_view_users_form
 msgid "Current Company"
-msgstr ""
+msgstr "현재 회사"
 
 #. field:Currency.Rate
 msgid "Current Rate"
@@ -489,7 +489,7 @@ msgstr "일 : %(day)s"
 
 #. field:Currency.DecimalPlaces
 msgid "Decimal Places"
-msgstr ""
+msgstr "소수점 영역"
 
 #. field:Lang.DecimalPoint
 msgid "Decimal Separator"
@@ -502,7 +502,7 @@ msgstr "설명"
 
 #. help:Currency.Position
 msgid "Determines where the currency symbol should be placed after or before the amount."
-msgstr ""
+msgstr "통화 기호를 배치 할 위치를 금액 앞 또는 뒤로 결정합니다."
 
 #. field:Lang.Direction
 msgid "Direction"
@@ -534,7 +534,7 @@ msgstr ""
 
 #. resource:base_view_users_form_simple_modif
 msgid "Email Preferences"
-msgstr ""
+msgstr "이메일 환경 설정"
 
 #. field:Partner.Employee
 msgid "Employee"
@@ -554,7 +554,7 @@ msgstr "예제"
 
 #. help:User.Share
 msgid "External user with limited access, created only for the purpose of sharing data."
-msgstr ""
+msgstr "제한된 사용 권한을 가진 외부 사용자. 데이터 공유 목적으로만 생성됩니다."
 
 #. field:Partner.Fax
 #. field:Bank.Fax
@@ -564,15 +564,15 @@ msgstr "팩스"
 
 #. field:Bank.State
 msgid "Fed. State"
-msgstr ""
+msgstr "주/도"
 
 #. resource:base_action_country_state
 msgid "Fed. States"
-msgstr ""
+msgstr "주/도"
 
 #. field:Attachment.Datas
 msgid "File Content"
-msgstr ""
+msgstr "파일 컨텐츠"
 
 #. field:Attachment.DatasFname
 msgid "File Name"
@@ -580,11 +580,11 @@ msgstr "파일명"
 
 #. field:Attachment.FileSize
 msgid "File Size"
-msgstr ""
+msgstr "파일 크기"
 
 #. resource:base_view_attachment_search
 msgid "Filter on my documents"
-msgstr ""
+msgstr "내 문서 필터링"
 
 #. help:Partner.EmailFormatted
 msgid "Formatted email address 'Name <email@domain>'"
@@ -613,7 +613,7 @@ msgstr ""
 
 #. resource:base_view_country_group_form
 msgid "Group name"
-msgstr ""
+msgstr "그룹명"
 
 #. field:ConfigParameter.Groups
 #. field:User.Groups
@@ -634,7 +634,7 @@ msgstr "기록"
 
 #. field:User.ActionID
 msgid "Home Action"
-msgstr ""
+msgstr "홈 작업"
 
 #. resource:base_sequence_view
 msgid "Hour 00->12: %(h12)s"
@@ -673,11 +673,11 @@ msgstr "ID"
 
 #. field:Lang.ISOCode
 msgid "ISO Code"
-msgstr ""
+msgstr "ISO 코드"
 
 #. help:User.ActionID
 msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
-msgstr ""
+msgstr "이 작업을 지정한 경우 표준 메뉴 외에 이 사용자가 로그온 시 이 작업이 열립니다."
 
 #. help:Partner.Lang
 msgid ""
@@ -700,7 +700,7 @@ msgstr ""
 
 #. field:Sequence.Implementation
 msgid "Implementation"
-msgstr ""
+msgstr "구현"
 
 #. resource:base_menu_translation_export
 msgid "Import / Export"
@@ -713,11 +713,11 @@ msgstr "비활성"
 #. field:Attachment.IndexContent
 #. resource:base_view_attachment_form
 msgid "Indexed Content"
-msgstr ""
+msgstr "색인화된 콘텐츠"
 
 #. selection:Partner.CompanyType
 msgid "Individual"
-msgstr ""
+msgstr "개인"
 
 #. resource:base_view_partner_form
 msgid "Internal Notes"
@@ -729,7 +729,7 @@ msgstr "내부 참조"
 
 #. resource:base_view_partner_form
 msgid "Internal note..."
-msgstr ""
+msgstr "내부 노트..."
 
 #. code:
 msgid "Invalid search criterion: password"
@@ -745,11 +745,11 @@ msgstr "회사입니까?"
 
 #. field:Partner.Customer
 msgid "Is a Customer"
-msgstr ""
+msgstr "고객 여부"
 
 #. field:Partner.Supplier
 msgid "Is a Vendor"
-msgstr ""
+msgstr "공급업체 여부"
 
 #. field:Attachment.Public
 msgid "Is a public document"
@@ -761,7 +761,7 @@ msgstr "직무 영역"
 
 #. help:User.Password
 msgid "Keep empty if you don't want the user to be able to connect on the system."
-msgstr ""
+msgstr "사용자가 시스템에 연결하는 것을 원하지 않으면 체크하지 마십시오."
 
 #. field:ConfigParameter.Key
 msgid "Key"
@@ -785,19 +785,19 @@ msgstr "최근 접속"
 
 #. selection:Lang.Direction
 msgid "Left-to-Right"
-msgstr ""
+msgstr "왼쪽에서 오른쪽으로"
 
 #. resource:base_sequence_view
 msgid "Legend (for prefix, suffix)"
-msgstr ""
+msgstr "범례(접두사, 접미사용)"
 
 #. resource:base_res_lang_form
 msgid "Legends for supported Date and Time Formats"
-msgstr ""
+msgstr "지원되는 날짜 및 시간 형식에 대한 규칙"
 
 #. field:Lang.Code
 msgid "Locale Code"
-msgstr ""
+msgstr "로케일 코드"
 
 #. resource:base_view_users_form
 msgid "Localization"
@@ -813,11 +813,11 @@ msgstr "로고"
 
 #. field:Company.LogoWeb
 msgid "Logo Web"
-msgstr ""
+msgstr "웹 로고"
 
 #. field:SequenceDateRange.Sequence
 msgid "Main Sequence"
-msgstr ""
+msgstr "주요 순서"
 
 #. help:Partner.ImageMedium
 msgid ""
@@ -828,15 +828,15 @@ msgstr ""
 
 #. resource:base_view_users_form
 msgid "Menus Customization"
-msgstr ""
+msgstr "메뉴 사용자 정의"
 
 #. resource:base_view_users_form
 msgid "Messaging and Social"
-msgstr ""
+msgstr "메시징과 소셜 미디어"
 
 #. field:Attachment.MimeType
 msgid "Mime Type"
-msgstr ""
+msgstr "MIME 유형"
 
 #. resource:base_sequence_view
 msgid "Minute: %(min)s"
@@ -856,11 +856,11 @@ msgstr ""
 
 #. resource:base_view_users_form
 msgid "Multi Companies"
-msgstr ""
+msgstr "복수 회사"
 
 #. resource:base_view_attachment_search
 msgid "My Document(s)"
-msgstr ""
+msgstr "내 문서()"
 
 #. resource:base_view_res_partner_filter
 msgid "My Partners"
@@ -892,12 +892,12 @@ msgstr "다음 번호"
 #. help:SequenceDateRange.NumberNext
 #. help:Sequence.NumberNext
 msgid "Next number of this sequence"
-msgstr ""
+msgstr "이 시퀀스의 다음 번호"
 
 #. help:SequenceDateRange.NumberNextActual
 #. help:Sequence.NumberNextActual
 msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
-msgstr ""
+msgstr "사용할 다음 번호. 이 숫자는 자주 증가하므로 표시된 값이 이미 사용되지 않을 수 있음"
 
 #. selection:Sequence.Implementation
 msgid "No Gap"
@@ -909,7 +909,7 @@ msgstr "노트"
 
 #. field:User.CompaniesCount
 msgid "Number of Companies"
-msgstr ""
+msgstr "회사 갯수"
 
 #. code:
 msgid "One2Many fields cannot be synchronized as part of 'commercial_fields' or 'address fields'"
@@ -921,7 +921,7 @@ msgstr "관리자만 설정을 변경할 수 있습니다"
 
 #. code:
 msgid "Only administrators can execute this action."
-msgstr ""
+msgstr "관리자만 이 작업을 실행할 수 있습니다."
 
 #. selection:Partner.Type
 msgid "Other Address"
@@ -929,7 +929,7 @@ msgstr ""
 
 #. resource:base_action_partner_other_form
 msgid "Other Partners"
-msgstr ""
+msgstr "기타 협력사"
 
 #. resource:base_view_attachment_search
 msgid "Owner"
@@ -959,11 +959,11 @@ msgstr "파트너"
 #. resource:base_view_partner_title_form
 #. resource:base_view_partner_title_tree
 msgid "Partner Titles"
-msgstr ""
+msgstr "협력사 제목"
 
 #. help:User.Partner
 msgid "Partner-related data of the user"
-msgstr ""
+msgstr "사용자의 협력사 관련 데이터"
 
 #. field:PartnerCategory.Partners
 #. resource:base_view_partner_form
@@ -986,7 +986,7 @@ msgstr "전화"
 
 #. code:
 msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
-msgstr ""
+msgstr "암호를 변경하려면 암호 변경 마법사(사용자 프로필 또는 사용자 메뉴에서)를 사용하십시오."
 
 #. resource:base_view_users_form
 msgid "Preferences"
@@ -994,15 +994,15 @@ msgstr "환경 설정"
 
 #. field:Sequence.Prefix
 msgid "Prefix"
-msgstr ""
+msgstr "접두사"
 
 #. help:Sequence.Prefix
 msgid "Prefix value of the record for the sequence"
-msgstr ""
+msgstr "시퀀스 레코드 접두사 값"
 
 #. resource:base_view_currency_form
 msgid "Price Accuracy"
-msgstr ""
+msgstr "가격 정확도"
 
 #. resource:base_view_partner_form
 msgid "Purchase"
@@ -1010,11 +1010,11 @@ msgstr "구매"
 
 #. field:CurrencyRate.Rate
 msgid "Rate"
-msgstr ""
+msgstr "비율"
 
 #. field:Currency.Rates
 msgid "Rates"
-msgstr ""
+msgstr "비율"
 
 #. field:User.Partner
 msgid "Related Partner"
@@ -1031,7 +1031,7 @@ msgstr "보고서 환경 설정"
 
 #. field:Attachment.ResField
 msgid "Resource Field"
-msgstr ""
+msgstr "자원 필드"
 
 #. field:Attachment.ResID
 msgid "Resource ID"
@@ -1039,7 +1039,7 @@ msgstr "리소스 ID"
 
 #. field:Attachment.ResModel
 msgid "Resource Model"
-msgstr ""
+msgstr "자원 모델"
 
 #. field:Attachment.ResName
 msgid "Resource Name"
@@ -1051,7 +1051,7 @@ msgstr ""
 
 #. field:Currency.Rounding
 msgid "Rounding Factor"
-msgstr ""
+msgstr "반올림 요소"
 
 #. resource:base_view_partner_form
 msgid "Sale"
@@ -1059,7 +1059,7 @@ msgstr "판매"
 
 #. resource:base_view_partner_form
 msgid "Sales & Purchases"
-msgstr ""
+msgstr "판매 및 구매"
 
 #. field:Partner.User
 #. resource:base_view_res_partner_filter
@@ -1068,7 +1068,7 @@ msgstr "영업사원"
 
 #. field:BankAccount.SanitizedAccountNumber
 msgid "Sanitized Account Number"
-msgstr ""
+msgstr "확인된 은행 계좌 번호"
 
 #. resource:base_view_users_form_simple_modif
 msgid "Save"
@@ -1076,7 +1076,7 @@ msgstr "저장"
 
 #. resource:base_view_res_partner_filter
 msgid "Search Partner"
-msgstr ""
+msgstr "협력사 검색"
 
 #. resource:base_sequence_view
 msgid "Second: %(sec)s"
@@ -1084,7 +1084,7 @@ msgstr ""
 
 #. field:Lang.Grouping
 msgid "Separator Format"
-msgstr ""
+msgstr "구분 기호 형식"
 
 #. field:BankAccount.Sequence
 #. resource:base_sequence_view
@@ -1094,11 +1094,11 @@ msgstr "순서"
 
 #. field:Sequence.Code
 msgid "Sequence Code"
-msgstr ""
+msgstr "시퀀스 코드"
 
 #. field:Sequence.Padding
 msgid "Sequence Size"
-msgstr ""
+msgstr "시퀀스 크기"
 
 #. resource:base_sequence_date_range_tree
 #. resource:base_sequence_view
@@ -1106,15 +1106,15 @@ msgstr ""
 #. resource:base_view_sequence_search
 #. resource:base_ir_sequence_form
 msgid "Sequences"
-msgstr ""
+msgstr "시퀀스"
 
 #. resource:base_menu_sequences_identifiers
 msgid "Sequences & Identifiers"
-msgstr ""
+msgstr "시퀀스 및 식별자"
 
 #. field:User.NewPassword
 msgid "Set Password"
-msgstr ""
+msgstr "비밀번호 설정"
 
 #. resource:base_menu_administration
 msgid "Settings"
@@ -1122,11 +1122,11 @@ msgstr "설정"
 
 #. field:Partner.PartnerShare
 msgid "Share Partner"
-msgstr ""
+msgstr "공유 협력사"
 
 #. field:User.Share
 msgid "Share User"
-msgstr ""
+msgstr "공유 사용자"
 
 #. selection:Partner.Type
 msgid "Shipping Address"
@@ -1134,11 +1134,11 @@ msgstr "배송 주소"
 
 #. resource:base_view_currency_search
 msgid "Show active currencies"
-msgstr ""
+msgstr "활성 통화 표시"
 
 #. resource:base_view_currency_search
 msgid "Show inactive currencies"
-msgstr ""
+msgstr "비활성 통화 표시"
 
 #. field:User.Signature
 msgid "Signature"
@@ -1153,11 +1153,11 @@ msgstr ""
 
 #. help:Bank.BIC
 msgid "Sometimes called BIC or Swift."
-msgstr ""
+msgstr "BIC 또는 Swift라고도 합니다."
 
 #. code:
 msgid "Sorry, you are not allowed to access this document."
-msgstr ""
+msgstr "죄송합니다. 이 문서를 사용할 수 있는 권한이 없습니다."
 
 #. help:User.NewPassword
 msgid ""
@@ -1184,11 +1184,11 @@ msgstr "주/도"
 
 #. field:CountryState.Code
 msgid "State Code"
-msgstr ""
+msgstr "시/도 코드"
 
 #. field:CountryState.Name
 msgid "State Name"
-msgstr ""
+msgstr "시/도 이름"
 
 #. field:Country.States
 msgid "States"
@@ -1196,11 +1196,11 @@ msgstr "상태"
 
 #. field:Sequence.NumberIncrement
 msgid "Step"
-msgstr ""
+msgstr "단계"
 
 #. field:Attachment.StoreFname
 msgid "Stored Filename"
-msgstr ""
+msgstr "저장된 파일 이름"
 
 #. field:Partner.Street
 #. field:Bank.Street
@@ -1232,7 +1232,7 @@ msgstr "도로명+건물번호 2"
 
 #. field:Sequence.DateRanges
 msgid "Subsequences"
-msgstr ""
+msgstr "하위 시퀀스"
 
 #. field:Sequence.Suffix
 msgid "Suffix"
@@ -1240,15 +1240,15 @@ msgstr "접미사"
 
 #. help:Sequence.Suffix
 msgid "Suffix value of the record for the sequence"
-msgstr ""
+msgstr "시퀀스 레코드 접미사 값"
 
 #. field:Currency.Symbol
 msgid "Symbol"
-msgstr ""
+msgstr "통화 기호"
 
 #. field:Currency.Position
 msgid "Symbol Position"
-msgstr ""
+msgstr "통화 기호 위치"
 
 #. field:Partner.VAT
 msgid "TIN"
@@ -1299,11 +1299,11 @@ msgstr ""
 
 #. help:PartnerCategory.Active
 msgid "The active field allows you to hide the category without removing it."
-msgstr ""
+msgstr "활성 필드를 사용하면 범주를 제거하지 않고 숨길 수 있습니다."
 
 #. code:
 msgid "The chosen company is not in the allowed companies for this user"
-msgstr ""
+msgstr "선택한 회사는 이 사용자에게 허용된 회사가 아닙니다"
 
 #. help:User.Company
 msgid "The company this user is currently working for."
@@ -1315,7 +1315,7 @@ msgstr ""
 
 #. help:Country.Name
 msgid "The full name of the country."
-msgstr ""
+msgstr "국가 이름."
 
 #. help:Partner.User
 msgid "The internal user that is in charge of communicating with this contact if any."
@@ -1323,7 +1323,7 @@ msgstr ""
 
 #. help:Sequence.NumberIncrement
 msgid "The next number of the sequence will be incremented by this number"
-msgstr ""
+msgstr "다음 숫자가 이 숫자만큼 증가합니다."
 
 #. help:Partner.TZ
 msgid ""
@@ -1336,7 +1336,7 @@ msgstr ""
 #. help:CurrencyRate.Rate
 #. help:Currency.Rate
 msgid "The rate of the currency to the currency of rate 1"
-msgstr ""
+msgstr "환율과 환율의 비율 1"
 
 #. help:Attachment.ResID
 msgid "The record id this is attached to"
@@ -1352,19 +1352,19 @@ msgstr ""
 
 #. help:Partner.Image
 msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
-msgstr ""
+msgstr "이 입력란에 저장된 이미지는 연락처의 아바타로 사용되며 1024x1024 픽셀로 제한됩니다."
 
 #. help:Lang.Code
 msgid "This field is used to set/get locales for user"
-msgstr ""
+msgstr "이 필드는 사용자에 대한 로컬 설정을 설정하거나 가져 오는 데 사용됩니다."
 
 #. field:Lang.ThousandsSep
 msgid "Thousands Separator"
-msgstr ""
+msgstr "천 단위 구분 기호"
 
 #. field:Lang.TimeFormat
 msgid "Time Format"
-msgstr ""
+msgstr "시간 형식"
 
 #. field:Partner.TZ
 msgid "Timezone"
@@ -1386,7 +1386,7 @@ msgstr "받는 사람"
 #. field:Lang.Translatable
 #. resource:base_res_lang_search
 msgid "Translatable"
-msgstr ""
+msgstr "번역 가능"
 
 #. code:
 msgid "Translate"
@@ -1425,11 +1425,11 @@ msgstr "URL"
 
 #. resource:base_res_lang_tree
 msgid "Update Language Terms"
-msgstr ""
+msgstr "언어 용어 업데이트"
 
 #. resource:base_res_lang_tree
 msgid "Update Terms"
-msgstr ""
+msgstr "용어 업데이트"
 
 #. field:Sequence.UseDateRange
 msgid "Use subsequences per Date Range"
@@ -1450,7 +1450,7 @@ msgstr "사용자"
 
 #. resource:base_menu_user_interface
 msgid "User Interface"
-msgstr ""
+msgstr "사용자 인터페이스"
 
 #. field:UserChangePasswordWizardLine.UserLogin
 msgid "User Login"
@@ -1458,7 +1458,7 @@ msgstr "사용자 로그인"
 
 #. field:User.Logs
 msgid "User log entries"
-msgstr ""
+msgstr "사용자 로그인 기록"
 
 #. field:Partner.Users
 #. field:UserChangePasswordWizard.Users
@@ -1509,7 +1509,7 @@ msgstr "마법사"
 
 #. help:Attachment.Type
 msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
-msgstr ""
+msgstr "컴퓨터에서 파일을 업로드하거나 인터넷 링크를 복사하여 파일에 붙여 넣을 수 있습니다."
 
 #. code:
 msgid "You can not change the company as the partner/user has multiple users linked with different companies."
@@ -1525,7 +1525,7 @@ msgstr ""
 
 #. code:
 msgid "You cannot create recursive Partner hierarchies."
-msgstr ""
+msgstr "재귀적 파트너 계층은 만들 수 없습니다."
 
 #. code:
 msgid "You cannot deactivate the admin user."
@@ -1533,7 +1533,7 @@ msgstr ""
 
 #. code:
 msgid "You cannot deactivate the user you're currently logged in as."
-msgstr ""
+msgstr "현재 사용중인 사용자를 비활성화 할 수 없습니다."
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
@@ -1551,17 +1551,17 @@ msgstr "우편번호"
 
 #. resource:base_view_company_form
 msgid "e.g. Global Business Solutions"
-msgstr ""
+msgstr "예 : 글로벌 비지니스 솔루션"
 
 #. resource:base_view_partner_form
 msgid "e.g. Mr."
-msgstr ""
+msgstr "예 : Mr."
 
 #. resource:base_view_partner_simple_form
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
 msgid "e.g. Sales Director"
-msgstr ""
+msgstr "예 : 영업 이사"
 
 #. resource:base_view_company_form
 #. resource:base_view_partner_address_form
@@ -1571,5 +1571,5 @@ msgstr ""
 
 #. resource:base_view_partner_form
 msgid "internal note..."
-msgstr ""
+msgstr "내부 메모..."
 

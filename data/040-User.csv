@@ -1,2 +1,3 @@
 ID,Name,Active,Company,Companies,Login,Password,Function,Lang,ActionID,ImageSmall,ImageMedium,Image
 base_admin,Administrator,true,base_main_company,base_main_company,admin,admin,IT Manager,en_US,base_action_res_users,img/partner_root-image.jpg,img/partner_root-image.jpg,img/partner_root-image.jpg
+base_default_user,Default User Template,false,base_main_company,base_main_company,default,,,,,,,

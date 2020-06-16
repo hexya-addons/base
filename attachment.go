@@ -313,7 +313,7 @@ func attachment_Index(_ m.AttachmentSet, binData, fileType string) string {
 // field is set as the request's url. Only the groups returned by
 // this method are allowed to create and write on such records.
 func attachment_GetServingGroups(rs m.AttachmentSet) m.GroupSet {
-	return h.Group().Search(rs.Env(), q.Group().GroupID().Equals(GroupSystem.ID))
+	return h.Group().Search(rs.Env(), q.Group().GroupID().Equals(GroupSystem.ID()))
 }
 
 // CheckServingAttachment limits creation and modification of served attachments
@@ -405,7 +405,7 @@ func attachment_Check(rs m.AttachmentSet, mode string, values m.AttachmentData) 
 		}
 	}
 	if requireEmployee {
-		if !currentUser.IsAdmin() && !currentUser.HasGroup(GroupUser.ID) {
+		if !currentUser.IsAdmin() && !currentUser.HasGroup(GroupUser.ID()) {
 			log.Panic(rs.T("Sorry, you are not allowed to access this document."))
 		}
 	}

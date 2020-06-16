@@ -198,7 +198,7 @@ func user_InverseNewPassword(rs m.UserSet, value string) {
 
 // ComputeShare checks if this is a shared user
 func user_ComputeShare(rs m.UserSet) m.UserData {
-	return h.User().NewData().SetShare(!rs.HasGroup(GroupUser.ID))
+	return h.User().NewData().SetShare(!rs.HasGroup(GroupUser.ID()))
 }
 
 // ComputeCompaniesCount retrieves the number of companies in the system
@@ -253,7 +253,7 @@ func user_CheckActionID(rs m.UserSet) {
 // CheckOneUserType checks no users are both portal and users (same with public).
 // This could typically happen because of implied groups.
 func user_CheckOneUserType(rs m.UserSet) {
-	userTypeGroupIds := []string{GroupUser.ID, GroupPublic.ID, GroupPortal.ID}
+	userTypeGroupIds := []string{GroupUser.ID(), GroupPublic.ID(), GroupPortal.ID()}
 	dbGroups := h.Group().Search(rs.Env(), q.Group().GroupID().In(userTypeGroupIds))
 	if rs.HasMultipleGroups(dbGroups) {
 		panic(rs.T("The user cannot have more than one user types."))
@@ -559,19 +559,19 @@ func user_ActionShowGroups(rs m.UserSet) *actions.Action {
 // IsPublic returns true if this user is a public user (from website)
 func user_IsPublic(rs m.UserSet) bool {
 	rs.EnsureOne()
-	return rs.HasGroup(GroupPublic.ID)
+	return rs.HasGroup(GroupPublic.ID())
 }
 
 // IsSystem returns true if this user is in the system group
 func user_IsSystem(rs m.UserSet) bool {
 	rs.EnsureOne()
-	return rs.HasGroup(GroupSystem.ID)
+	return rs.HasGroup(GroupSystem.ID())
 }
 
 // IsAdmin returns true if this user is the administrator or member of the 'Access Rights' group
 func user_IsAdmin(rs m.UserSet) bool {
 	rs.EnsureOne()
-	return rs.IsSuperUser() || rs.HasGroup(GroupERPManager.ID)
+	return rs.IsSuperUser() || rs.HasGroup(GroupERPManager.ID())
 }
 
 // IsSuperUser returns true if this user is the administrator
@@ -619,7 +619,7 @@ func user_CheckGroupSync(rs m.UserSet) bool {
 dbLoop:
 	for _, dbGroup := range rs.Groups().Records() {
 		for grp := range security.Registry.UserGroups(rs.ID()) {
-			if grp.ID == dbGroup.GroupID() {
+			if grp.ID() == dbGroup.GroupID() {
 				continue dbLoop
 			}
 		}
@@ -628,7 +628,7 @@ dbLoop:
 rLoop:
 	for grp := range security.Registry.UserGroups(rs.ID()) {
 		for _, dbGroup := range rs.Groups().Records() {
-			if grp.ID == dbGroup.GroupID() {
+			if grp.ID() == dbGroup.GroupID() {
 				continue rLoop
 			}
 		}

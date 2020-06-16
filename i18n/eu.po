@@ -24,11 +24,11 @@ msgstr ""
 
 #. field:PartnerTitle.Shortcut
 msgid "Abbreviation"
-msgstr ""
+msgstr "Laburdura"
 
 #. field:Company.Users
 msgid "Accepted Users"
-msgstr ""
+msgstr "Onartutako erabiltzaileak"
 
 #. resource:base_view_users_form
 msgid "Access Rights"
@@ -36,7 +36,7 @@ msgstr "Sarbidea"
 
 #. field:BankAccount.Partner
 msgid "Account Holder"
-msgstr ""
+msgstr "Kontuaren jabea"
 
 #. field:BankAccount.Name
 msgid "Account Number"
@@ -76,7 +76,7 @@ msgstr ""
 
 #. resource:base_view_country_form
 msgid "Address format..."
-msgstr ""
+msgstr "Helbidearen formatua..."
 
 #. help:CountryState.Name
 msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
@@ -88,7 +88,7 @@ msgstr ""
 
 #. resource:base_view_users_form
 msgid "Allowed Companies"
-msgstr ""
+msgstr "Baimendutako Konpainiak"
 
 #. resource:base_menu_translation_app
 msgid "Application Terms"
@@ -138,12 +138,12 @@ msgstr "Bankoaren Izena"
 
 #. resource:base_view_partner_bank_form
 msgid "Bank account"
-msgstr ""
+msgstr "Bankuko kontua"
 
 #. resource:base_view_res_bank_tree
 #. resource:base_action_res_bank_form
 msgid "Banks"
-msgstr ""
+msgstr "Bankuak"
 
 #. field:Partner.Barcode
 msgid "Barcode"
@@ -169,7 +169,7 @@ msgstr ""
 
 #. resource:base_action_res_users_my
 msgid "Change My Preferences"
-msgstr ""
+msgstr "Nire hobespenak aldatu"
 
 #. resource:base_change_password_wizard_view
 #. resource:base_change_password_wizard_view
@@ -202,7 +202,7 @@ msgstr ""
 
 #. help:Partner.Employee
 msgid "Check this box if this contact is an Employee."
-msgstr ""
+msgstr "Aukeratu kutxatxo hau kontaktua langile bat bada."
 
 #. field:Attachment.CheckSum
 msgid "Checksum/SHA1"
@@ -290,7 +290,7 @@ msgstr ""
 
 #. field:Partner.ContactAddress
 msgid "Complete Address"
-msgstr ""
+msgstr "Helbide osoa"
 
 #. resource:base_view_company_form
 #. resource:base_menu_reporting_config
@@ -304,7 +304,7 @@ msgstr "Kontaktua"
 
 #. resource:base_view_partner_form
 msgid "Contact / Address"
-msgstr ""
+msgstr "Kontaktua / Helbidea"
 
 #. resource:base_view_partner_form
 msgid "Contact Name"
@@ -312,15 +312,15 @@ msgstr "Kontaktuaren Izena"
 
 #. resource:base_view_partner_category_form
 msgid "Contact Tag"
-msgstr ""
+msgstr "Harremanetarako etiketa"
 
 #. resource:base_view_partner_category_list
 msgid "Contact Tags"
-msgstr ""
+msgstr "Kontaktu Etiketak"
 
 #. resource:base_action_partner_title_contact
 msgid "Contact Titles"
-msgstr ""
+msgstr "Kontaktu Izenburuak"
 
 #. resource:base_view_partner_tree
 msgid "Contacts"
@@ -328,7 +328,7 @@ msgstr "Kontaktuak"
 
 #. resource:base_view_partner_form
 msgid "Contacts & Addresses"
-msgstr ""
+msgstr "Kontaktuak & Helbideak"
 
 #. code:
 msgid "Couldn't create contact without email address!"
@@ -337,7 +337,7 @@ msgstr ""
 #. field:CountryGroup.Countries
 #. resource:base_action_country
 msgid "Countries"
-msgstr ""
+msgstr "Herrialdeak"
 
 #. field:Partner.Country
 #. field:Bank.Country
@@ -419,7 +419,7 @@ msgstr "Moneta tasa"
 #. resource:base_view_currency_rate_search
 #. resource:base_act_view_currency_rates
 msgid "Currency Rates"
-msgstr ""
+msgstr "Moneta tasak"
 
 #. help:Currency.Symbol
 msgid "Currency sign, to be used when printing amounts"
@@ -427,11 +427,11 @@ msgstr ""
 
 #. resource:base_view_users_form
 msgid "Current Company"
-msgstr ""
+msgstr "Egungo Konpainia"
 
 #. field:Currency.Rate
 msgid "Current Rate"
-msgstr ""
+msgstr "Egungo tasa"
 
 #. resource:base_sequence_view
 msgid "Current Year with Century: %(year)s"
@@ -454,7 +454,7 @@ msgstr "Kidea"
 #. resource:base_menu_board_root
 #. resource:base_menu_reporting_dashboard
 msgid "Dashboards"
-msgstr ""
+msgstr "Aginte-mahaiak"
 
 #. field:Attachment.DBDatas
 msgid "Database Data"
@@ -473,7 +473,7 @@ msgstr "Data"
 
 #. field:Lang.DateFormat
 msgid "Date Format"
-msgstr ""
+msgstr "Dataren formatua"
 
 #. resource:base_sequence_view
 msgid "Day of the Week (0:Monday): %(weekday)s"
@@ -506,11 +506,11 @@ msgstr ""
 
 #. field:Lang.Direction
 msgid "Direction"
-msgstr ""
+msgstr "Helbidea"
 
 #. resource:base_view_currency_form
 msgid "Display"
-msgstr ""
+msgstr "Erakutsi"
 
 #. help:Partner.PartnerShare
 msgid ""
@@ -534,7 +534,7 @@ msgstr ""
 
 #. resource:base_view_users_form_simple_modif
 msgid "Email Preferences"
-msgstr ""
+msgstr "Eposta hobespenak"
 
 #. field:Partner.Employee
 msgid "Employee"
@@ -721,7 +721,7 @@ msgstr "Bakarkako"
 
 #. resource:base_view_partner_form
 msgid "Internal Notes"
-msgstr ""
+msgstr "Barne oharrak"
 
 #. field:Partner.Ref
 msgid "Internal Reference"
@@ -741,11 +741,11 @@ msgstr "Fakturazio helbidea"
 
 #. field:Partner.IsCompany
 msgid "Is Company"
-msgstr ""
+msgstr "Konpainia da"
 
 #. field:Partner.Customer
 msgid "Is a Customer"
-msgstr ""
+msgstr "Bezeroa bat da"
 
 #. field:Partner.Supplier
 msgid "Is a Vendor"
@@ -797,11 +797,11 @@ msgstr ""
 
 #. field:Lang.Code
 msgid "Locale Code"
-msgstr ""
+msgstr "Lekuko kodea"
 
 #. resource:base_view_users_form
 msgid "Localization"
-msgstr ""
+msgstr "Kokapena"
 
 #. field:User.Login
 msgid "Login"
@@ -828,7 +828,7 @@ msgstr ""
 
 #. resource:base_view_users_form
 msgid "Menus Customization"
-msgstr ""
+msgstr "Menuen pertsonalizazioa"
 
 #. resource:base_view_users_form
 msgid "Messaging and Social"
@@ -856,7 +856,7 @@ msgstr "Hilabetea: %(month)s"
 
 #. resource:base_view_users_form
 msgid "Multi Companies"
-msgstr ""
+msgstr "Konpainia anitzak"
 
 #. resource:base_view_attachment_search
 msgid "My Document(s)"
@@ -917,11 +917,11 @@ msgstr ""
 
 #. code:
 msgid "Only administrators can change the settings"
-msgstr ""
+msgstr "Administratzaileek soilik aldatu ditzakete ezarpenak"
 
 #. code:
 msgid "Only administrators can execute this action."
-msgstr ""
+msgstr "Administradoreek soilik exekuta dezakete ekintza hau."
 
 #. selection:Partner.Type
 msgid "Other Address"
@@ -941,7 +941,7 @@ msgstr ""
 
 #. field:Company.Parent
 msgid "Parent Company"
-msgstr ""
+msgstr "Konpainia Gurasoa"
 
 #. field:Partner.ParentName
 msgid "Parent Name"
@@ -1010,11 +1010,11 @@ msgstr "Erosketak"
 
 #. field:CurrencyRate.Rate
 msgid "Rate"
-msgstr ""
+msgstr "Ratioa"
 
 #. field:Currency.Rates
 msgid "Rates"
-msgstr ""
+msgstr "Ratioak"
 
 #. field:User.Partner
 msgid "Related Partner"
@@ -1031,7 +1031,7 @@ msgstr "Txostenaren konfigurazioa"
 
 #. field:Attachment.ResField
 msgid "Resource Field"
-msgstr ""
+msgstr "Baliabide eremua"
 
 #. field:Attachment.ResID
 msgid "Resource ID"
@@ -1059,7 +1059,7 @@ msgstr "Salmenta"
 
 #. resource:base_view_partner_form
 msgid "Sales & Purchases"
-msgstr ""
+msgstr "Salmentak & Erosketak"
 
 #. field:Partner.User
 #. resource:base_view_res_partner_filter
@@ -1076,7 +1076,7 @@ msgstr "Gorde"
 
 #. resource:base_view_res_partner_filter
 msgid "Search Partner"
-msgstr ""
+msgstr "Bilatu kidea"
 
 #. resource:base_sequence_view
 msgid "Second: %(sec)s"
@@ -1134,7 +1134,7 @@ msgstr "Bidaltzeko helbidea "
 
 #. resource:base_view_currency_search
 msgid "Show active currencies"
-msgstr ""
+msgstr "Erakutsi diru aktiboak"
 
 #. resource:base_view_currency_search
 msgid "Show inactive currencies"
@@ -1214,7 +1214,7 @@ msgstr "Kalea"
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
 msgid "Street 2..."
-msgstr ""
+msgstr "Kalea 2..."
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
@@ -1236,7 +1236,7 @@ msgstr ""
 
 #. field:Sequence.Suffix
 msgid "Suffix"
-msgstr ""
+msgstr "Atzizkia"
 
 #. help:Sequence.Suffix
 msgid "Suffix value of the record for the sequence"
@@ -1260,7 +1260,7 @@ msgstr "Etiketa"
 
 #. field:PartnerCategory.Name
 msgid "Tag Name"
-msgstr ""
+msgstr "Etiketaren izena"
 
 #. field:Company.Tagline
 msgid "Tagline"
@@ -1381,7 +1381,7 @@ msgstr "Titulua"
 
 #. field:SequenceDateRange.DateTo
 msgid "To"
-msgstr ""
+msgstr "Nora"
 
 #. field:Lang.Translatable
 #. resource:base_res_lang_search
@@ -1429,7 +1429,7 @@ msgstr ""
 
 #. resource:base_res_lang_tree
 msgid "Update Terms"
-msgstr ""
+msgstr "Baldintzak eguneratu"
 
 #. field:Sequence.UseDateRange
 msgid "Use subsequences per Date Range"
@@ -1454,7 +1454,7 @@ msgstr ""
 
 #. field:UserChangePasswordWizardLine.UserLogin
 msgid "User Login"
-msgstr ""
+msgstr "Erabiltzailearen login-a"
 
 #. field:User.Logs
 msgid "User log entries"
@@ -1475,7 +1475,7 @@ msgstr "Erabiltzaileak"
 
 #. field:Company.VAT
 msgid "VAT"
-msgstr ""
+msgstr "IFZ"
 
 #. field:ConfigParameter.Value
 msgid "Value"

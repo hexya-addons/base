@@ -32,15 +32,15 @@ msgstr ""
 
 #. resource:base_view_users_form
 msgid "Access Rights"
-msgstr ""
+msgstr "அணுகல் உரிமைகள்"
 
 #. field:BankAccount.Partner
 msgid "Account Holder"
-msgstr ""
+msgstr "கணக்கு வைத்திருப்பவர்"
 
 #. field:BankAccount.Name
 msgid "Account Number"
-msgstr ""
+msgstr "கணக்கு எண்"
 
 #. field:BankAccount.AccountType
 msgid "Account Type"
@@ -59,7 +59,7 @@ msgstr "கணக்கு"
 #. resource:base_view_currency_search
 #. resource:base_res_lang_search
 msgid "Active"
-msgstr ""
+msgstr "செயலில்"
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_res_bank_form
@@ -68,7 +68,7 @@ msgstr ""
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
 msgid "Address"
-msgstr ""
+msgstr "முகவரி"
 
 #. field:Country.AddressFormat
 msgid "Address Format"
@@ -96,7 +96,7 @@ msgstr ""
 
 #. resource:base_view_res_partner_filter
 msgid "Archived"
-msgstr ""
+msgstr "காப்பகப்படுத்தியவை"
 
 #. resource:base_view_attachment_form
 msgid "Attached To"
@@ -105,7 +105,7 @@ msgstr ""
 #. resource:base_view_attachment_search
 #. resource:base_action_attachment
 msgid "Attachment"
-msgstr ""
+msgstr "இணைப்பு"
 
 #. field:Attachment.Name
 msgid "Attachment Name"
@@ -114,14 +114,14 @@ msgstr ""
 #. field:BankAccount.Bank
 #. resource:base_view_res_bank_form
 msgid "Bank"
-msgstr ""
+msgstr "வங்கி"
 
 #. field:Partner.Banks
 #. resource:base_view_partner_bank_tree
 #. resource:base_view_partner_bank_search
 #. resource:base_action_res_partner_bank_account_form
 msgid "Bank Accounts"
-msgstr ""
+msgstr "வங்கி கணக்குகள்"
 
 #. field:BankAccount.BankBIC
 msgid "Bank BIC"
@@ -143,7 +143,7 @@ msgstr ""
 #. resource:base_view_res_bank_tree
 #. resource:base_action_res_bank_form
 msgid "Banks"
-msgstr ""
+msgstr "வங்கிகள்"
 
 #. field:Partner.Barcode
 msgid "Barcode"
@@ -229,7 +229,7 @@ msgstr ""
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
 msgid "City"
-msgstr ""
+msgstr "பெருநகரம்"
 
 #. field:Partner.Color
 msgid "Color"
@@ -237,7 +237,7 @@ msgstr ""
 
 #. field:PartnerCategory.Color
 msgid "Color Index"
-msgstr ""
+msgstr "வண்ண குறியீட்டு"
 
 #. field:Partner.CommercialCompanyName
 msgid "Commercial Company Name"
@@ -249,7 +249,7 @@ msgstr ""
 
 #. resource:base_view_res_bank_form
 msgid "Communication"
-msgstr ""
+msgstr "தொடர்பாடல்"
 
 #. field:User.Companies
 #. resource:base_view_company_tree
@@ -278,7 +278,7 @@ msgstr "நிறுவனம்"
 #. field:Partner.CompanyName
 #. field:Company.Name
 msgid "Company Name"
-msgstr ""
+msgstr "நிறுவனத்தின் பெயர்"
 
 #. field:Company.CompanyRegistry
 msgid "Company Registry"
@@ -295,7 +295,7 @@ msgstr ""
 #. resource:base_view_company_form
 #. resource:base_menu_reporting_config
 msgid "Configuration"
-msgstr ""
+msgstr "கட்டமைப்பு"
 
 #. selection:Partner.Type
 #. resource:base_view_partner_simple_form
@@ -308,7 +308,7 @@ msgstr ""
 
 #. resource:base_view_partner_form
 msgid "Contact Name"
-msgstr ""
+msgstr "தொடர்பு பெயர்"
 
 #. resource:base_view_partner_category_form
 msgid "Contact Tag"
@@ -316,15 +316,15 @@ msgstr ""
 
 #. resource:base_view_partner_category_list
 msgid "Contact Tags"
-msgstr ""
+msgstr "தொடர்பு குறிச்சொற்கள்"
 
 #. resource:base_action_partner_title_contact
 msgid "Contact Titles"
-msgstr ""
+msgstr "தலைப்புகள் தொடர்பு கொள்ளவும்"
 
 #. resource:base_view_partner_tree
 msgid "Contacts"
-msgstr ""
+msgstr "தொடர்புகள்"
 
 #. resource:base_view_partner_form
 msgid "Contacts & Addresses"
@@ -337,7 +337,7 @@ msgstr ""
 #. field:CountryGroup.Countries
 #. resource:base_action_country
 msgid "Countries"
-msgstr ""
+msgstr "நாடுகள்"
 
 #. field:CountryState.Country
 #. field:Partner.Country
@@ -359,12 +359,12 @@ msgstr ""
 
 #. field:Country.Code
 msgid "Country Code"
-msgstr ""
+msgstr "நாட்டின் குறியீடு"
 
 #. resource:base_view_country_group_tree
 #. resource:base_view_country_group_form
 msgid "Country Group"
-msgstr ""
+msgstr "நாடு குழு"
 
 #. field:Country.CountryGroups
 #. resource:base_action_country_group
@@ -449,7 +449,7 @@ msgstr ""
 #. resource:base_action_partner_customer_form
 #. resource:base_action_partner_form
 msgid "Customers"
-msgstr ""
+msgstr "வாடிக்கையாளர்கள்"
 
 #. resource:base_menu_board_root
 #. resource:base_menu_reporting_dashboard
@@ -538,7 +538,7 @@ msgstr ""
 
 #. field:Partner.Employee
 msgid "Employee"
-msgstr ""
+msgstr "பணியாளர்"
 
 #. resource:base_action_partner_employee_form
 msgid "Employees"
@@ -568,7 +568,7 @@ msgstr ""
 
 #. resource:base_action_country_state
 msgid "Fed. States"
-msgstr ""
+msgstr "ஃபெட். மாநிலங்களில்"
 
 #. field:Attachment.Datas
 msgid "File Content"
@@ -576,7 +576,7 @@ msgstr ""
 
 #. field:Attachment.DatasFname
 msgid "File Name"
-msgstr ""
+msgstr "கோப்பு பெயர்"
 
 #. field:Attachment.FileSize
 msgid "File Size"
@@ -600,12 +600,12 @@ msgstr ""
 
 #. resource:base_view_groups_search
 msgid "Group"
-msgstr ""
+msgstr "குழு"
 
 #. resource:base_view_attachment_search
 #. resource:base_view_res_partner_filter
 msgid "Group By"
-msgstr ""
+msgstr "மூலம் குழு"
 
 #. field:Group.GroupID
 msgid "Group ID"
@@ -721,7 +721,7 @@ msgstr ""
 
 #. resource:base_view_partner_form
 msgid "Internal Notes"
-msgstr ""
+msgstr "உள் குறிப்புகள்"
 
 #. field:Partner.Ref
 msgid "Internal Reference"
@@ -745,7 +745,7 @@ msgstr ""
 
 #. field:Partner.Customer
 msgid "Is a Customer"
-msgstr ""
+msgstr "ஒரு வாடிக்கையாளர்"
 
 #. field:Partner.Supplier
 msgid "Is a Vendor"
@@ -757,7 +757,7 @@ msgstr ""
 
 #. field:Partner.Function
 msgid "Job Position"
-msgstr ""
+msgstr "வேலை நிலை"
 
 #. help:User.Password
 msgid "Keep empty if you don't want the user to be able to connect on the system."
@@ -770,7 +770,7 @@ msgstr ""
 #. field:Partner.Lang
 #. resource:base_res_lang_search
 msgid "Language"
-msgstr ""
+msgstr "மொழி"
 
 #. resource:base_res_lang_search
 #. resource:base_res_lang_tree
@@ -801,7 +801,7 @@ msgstr ""
 
 #. resource:base_view_users_form
 msgid "Localization"
-msgstr ""
+msgstr "மொழிப்பெயர்ப்பு"
 
 #. field:User.Login
 msgid "Login"
@@ -809,7 +809,7 @@ msgstr ""
 
 #. field:Company.Logo
 msgid "Logo"
-msgstr ""
+msgstr "சின்னம்"
 
 #. field:Company.LogoWeb
 msgid "Logo Web"
@@ -844,11 +844,11 @@ msgstr ""
 
 #. resource:base_view_partner_form
 msgid "Misc"
-msgstr ""
+msgstr "மற்றவை"
 
 #. field:Partner.Mobile
 msgid "Mobile"
-msgstr ""
+msgstr "மொபைல்"
 
 #. resource:base_sequence_view
 msgid "Month: %(month)s"
@@ -887,7 +887,7 @@ msgstr ""
 #. field:SequenceDateRange.NumberNext
 #. field:SequenceDateRange.NumberNextActual
 msgid "Next Number"
-msgstr ""
+msgstr "அடுத்த எண்"
 
 #. help:Sequence.NumberNext
 #. help:SequenceDateRange.NumberNext
@@ -905,7 +905,7 @@ msgstr ""
 
 #. field:Partner.Comment
 msgid "Notes"
-msgstr ""
+msgstr "குறிப்புக்கள்"
 
 #. field:User.CompaniesCount
 msgid "Number of Companies"
@@ -933,7 +933,7 @@ msgstr ""
 
 #. resource:base_view_attachment_search
 msgid "Owner"
-msgstr ""
+msgstr "உரிமையாளர்"
 
 #. field:Partner.Parent
 msgid "Parent"
@@ -963,7 +963,7 @@ msgstr ""
 
 #. help:User.Partner
 msgid "Partner-related data of the user"
-msgstr ""
+msgstr "பயனர் கூட்டாளர் தொடர்பான தரவு"
 
 #. field:PartnerCategory.Partners
 #. resource:base_view_partner_form
@@ -972,7 +972,7 @@ msgstr "கூட்டாளிகள்"
 
 #. field:User.Password
 msgid "Password"
-msgstr ""
+msgstr "கடவுச்சொல்"
 
 #. resource:base_view_res_partner_filter
 msgid "Persons"
@@ -982,7 +982,7 @@ msgstr ""
 #. field:Company.Phone
 #. field:Bank.Phone
 msgid "Phone"
-msgstr ""
+msgstr "தொலைபேசி"
 
 #. code:
 msgid "Please use the change password wizard (in User Preferences or User menu) to change your own password."
@@ -1006,7 +1006,7 @@ msgstr ""
 
 #. resource:base_view_partner_form
 msgid "Purchase"
-msgstr ""
+msgstr "கொள்முதல்"
 
 #. field:CurrencyRate.Rate
 msgid "Rate"
@@ -1064,7 +1064,7 @@ msgstr ""
 #. field:Partner.User
 #. resource:base_view_res_partner_filter
 msgid "Salesperson"
-msgstr ""
+msgstr "விற்பனையாளர்"
 
 #. field:BankAccount.SanitizedAccountNumber
 msgid "Sanitized Account Number"
@@ -1072,7 +1072,7 @@ msgstr ""
 
 #. resource:base_view_users_form_simple_modif
 msgid "Save"
-msgstr ""
+msgstr "சேமி"
 
 #. resource:base_view_res_partner_filter
 msgid "Search Partner"
@@ -1118,7 +1118,7 @@ msgstr ""
 
 #. resource:base_menu_administration
 msgid "Settings"
-msgstr ""
+msgstr "அமைப்புகள்"
 
 #. field:Partner.PartnerShare
 msgid "Share Partner"
@@ -1142,7 +1142,7 @@ msgstr ""
 
 #. field:User.Signature
 msgid "Signature"
-msgstr ""
+msgstr "கையொப்பம்"
 
 #. help:Partner.ImageSmall
 msgid ""
@@ -1168,7 +1168,7 @@ msgstr ""
 
 #. selection:Sequence.Implementation
 msgid "Standard"
-msgstr ""
+msgstr "தரநிலை"
 
 #. field:Partner.State
 #. field:Company.State
@@ -1180,7 +1180,7 @@ msgstr ""
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
 msgid "State"
-msgstr ""
+msgstr "நிலை"
 
 #. field:CountryState.Code
 msgid "State Code"
@@ -1206,7 +1206,7 @@ msgstr ""
 #. field:Company.Street
 #. field:Bank.Street
 msgid "Street"
-msgstr ""
+msgstr "தெரு"
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
@@ -1214,7 +1214,7 @@ msgstr ""
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
 msgid "Street 2..."
-msgstr ""
+msgstr "தெரு 2 ..."
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
@@ -1222,13 +1222,13 @@ msgstr ""
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
 msgid "Street..."
-msgstr ""
+msgstr "தெரு"
 
 #. field:Partner.Street2
 #. field:Company.Street2
 #. field:Bank.Street2
 msgid "Street2"
-msgstr ""
+msgstr "தெரு 2"
 
 #. field:Sequence.DateRanges
 msgid "Subsequences"
@@ -1256,7 +1256,7 @@ msgstr ""
 
 #. resource:base_view_res_partner_filter
 msgid "Tag"
-msgstr ""
+msgstr "டேக்"
 
 #. field:PartnerCategory.Name
 msgid "Tag Name"
@@ -1268,7 +1268,7 @@ msgstr ""
 
 #. field:Partner.Categories
 msgid "Tags"
-msgstr ""
+msgstr "மேற்கோள்கள்"
 
 #. resource:base_view_partner_form
 msgid "Tags..."
@@ -1377,7 +1377,7 @@ msgstr ""
 #. field:PartnerTitle.Name
 #. field:Partner.Title
 msgid "Title"
-msgstr ""
+msgstr "தலைப்பு"
 
 #. field:SequenceDateRange.DateTo
 msgid "To"
@@ -1437,7 +1437,7 @@ msgstr ""
 
 #. help:User.Login
 msgid "Used to log into the system"
-msgstr ""
+msgstr "கணினியில் உள்நுழைய பயன்படுத்தப்பட்டது"
 
 #. help:Partner.Type
 msgid "Used to select automatically the right address according to the context in sales and purchases documents."
@@ -1454,7 +1454,7 @@ msgstr ""
 
 #. field:UserChangePasswordWizardLine.UserLogin
 msgid "User Login"
-msgstr ""
+msgstr "பயனர் உள்நுழைவு"
 
 #. field:User.Logs
 msgid "User log entries"
@@ -1475,7 +1475,7 @@ msgstr "பயனர்கள்"
 
 #. field:Company.VAT
 msgid "VAT"
-msgstr ""
+msgstr "வாட்"
 
 #. field:ConfigParameter.Value
 msgid "Value"
@@ -1493,7 +1493,7 @@ msgstr ""
 #. field:Partner.Website
 #. field:Company.Website
 msgid "Website"
-msgstr ""
+msgstr "இணையதளம்"
 
 #. help:Partner.Website
 msgid "Website of Partner or Company"
@@ -1541,13 +1541,13 @@ msgstr ""
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
 msgid "ZIP"
-msgstr ""
+msgstr "ஜிப்"
 
 #. field:Partner.Zip
 #. field:Company.Zip
 #. field:Bank.Zip
 msgid "Zip"
-msgstr ""
+msgstr "zip"
 
 #. resource:base_view_company_form
 msgid "e.g. Global Business Solutions"

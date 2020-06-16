@@ -12,15 +12,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 
+#. field:User.GroupsCount
+msgid "# Groups"
+msgstr ""
+
 #. code:
 #. code:
 #. code:
 msgid "%s (copy)"
 msgstr "%s (kopija)"
-
-#. resource:base_view_partner_form
-msgid "(edit)"
-msgstr ""
 
 #. field:PartnerTitle.Shortcut
 msgid "Abbreviation"
@@ -34,9 +34,13 @@ msgstr "Sprejeti uporabniki"
 msgid "Access Rights"
 msgstr "Pravice dostopa"
 
+#. field:Attachment.AccessToken
+msgid "Access Token"
+msgstr "Dostopni žeton"
+
 #. field:BankAccount.Partner
 msgid "Account Holder"
-msgstr ""
+msgstr "Imetnik računa"
 
 #. field:BankAccount.Name
 msgid "Account Number"
@@ -46,27 +50,34 @@ msgstr "Številka računa"
 msgid "Account Type"
 msgstr "Vrsta konta"
 
-#. resource:base_view_company_form
-msgid "Accounting"
-msgstr "Knjigovodstvo"
+#. resource:base_ir_cron_view
+msgid "Action to Trigger"
+msgstr ""
 
-#. field:Lang.Active
-#. field:Partner.Active
-#. field:Bank.Active
+#. field:PartnerIndustry.Active
+#. field:Cron.Active
 #. field:Currency.Active
-#. field:PartnerCategory.Active
 #. field:Sequence.Active
+#. field:Bank.Active
+#. field:User.Active
+#. field:Lang.Active
+#. field:PartnerCategory.Active
+#. field:Partner.Active
 #. resource:base_view_currency_search
 #. resource:base_res_lang_search
 msgid "Active"
 msgstr "Aktivno"
 
-#. resource:base_view_res_bank_form
-#. resource:base_view_res_bank_form
+#. field:User.ActiveLangCount
+#. field:Partner.ActiveLangCount
+msgid "Active Lang Count"
+msgstr ""
+
 #. resource:base_view_company_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Address"
 msgstr "Naslov"
 
@@ -82,9 +93,17 @@ msgstr "Format naslova..."
 msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
 msgstr "Administrativne enote države. Primer: zvezna država, kanton, ..."
 
+#. selection:Country.NamePosition
+msgid "After Address"
+msgstr "Za naslovom"
+
 #. selection:Currency.Position
 msgid "After Amount"
 msgstr "Ostali znesek"
+
+#. resource:base_ir_cron_view_search
+msgid "All"
+msgstr "Vse"
 
 #. resource:base_view_users_form
 msgid "Allowed Companies"
@@ -94,9 +113,15 @@ msgstr "Dovoljena podjetja"
 msgid "Application Terms"
 msgstr "Izrazi aplikacije"
 
+#. resource:base_res_bank_view_search
 #. resource:base_view_res_partner_filter
 msgid "Archived"
 msgstr "Arhivirano"
+
+#. field:Cron.Arguments
+#. field:QueueJob.Arguments
+msgid "Arguments"
+msgstr ""
 
 #. resource:base_view_attachment_form
 msgid "Attached To"
@@ -111,25 +136,35 @@ msgstr "Priponka"
 msgid "Attachment Name"
 msgstr "Naziv priponke"
 
+#. resource:base_menu_automation
+msgid "Automation"
+msgstr "Avtomatizacija"
+
 #. field:BankAccount.Bank
 #. resource:base_view_res_bank_form
 msgid "Bank"
 msgstr "Banka"
 
+#. field:User.Banks
 #. field:Partner.Banks
-#. resource:base_view_partner_bank_tree
 #. resource:base_view_partner_bank_search
+#. resource:base_view_partner_bank_tree
 #. resource:base_action_res_partner_bank_account_form
+#. resource:base_res_partner_view_form_private
 msgid "Bank Accounts"
 msgstr "Bančni računi"
+
+#. resource:base_view_res_bank_form
+msgid "Bank Address"
+msgstr ""
 
 #. field:BankAccount.BankBIC
 msgid "Bank BIC"
 msgstr ""
 
 #. field:Bank.BIC
-msgid "Bank Identifier Cord"
-msgstr ""
+msgid "Bank Identifier Code"
+msgstr "Identifikacijska oznaka banke 'BIC'"
 
 #. field:BankAccount.BankName
 #. resource:base_view_partner_bank_search
@@ -145,26 +180,34 @@ msgstr "Bančni račun"
 msgid "Banks"
 msgstr "Banke"
 
+#. field:User.Barcode
 #. field:Partner.Barcode
 msgid "Barcode"
 msgstr "Črtna koda"
+
+#. selection:Country.NamePosition
+msgid "Before Address"
+msgstr "Pred naslovom"
 
 #. selection:Currency.Position
 msgid "Before Amount"
 msgstr "Predhodni znesek"
 
-#. selection:Attachment.Type
 #. resource:base_view_attachment_search
 msgid "Binary"
 msgstr "Binarno"
 
-#. resource:base_view_users_form_simple_modif
 #. resource:base_change_password_wizard_view
+#. resource:base_view_users_form_simple_modif
 msgid "Cancel"
 msgstr "Prekliči"
 
 #. code:
 msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. field:QueueChannel.Capacity
+msgid "Capacity"
 msgstr ""
 
 #. resource:base_action_res_users_my
@@ -173,7 +216,6 @@ msgstr "Spremeni moje nastavitve"
 
 #. resource:base_change_password_wizard_view
 #. resource:base_change_password_wizard_view
-#. resource:base_view_users_form
 #. resource:base_change_password_wizard_action
 msgid "Change Password"
 msgstr "Spremeni geslo"
@@ -182,24 +224,31 @@ msgstr "Spremeni geslo"
 msgid "Change password"
 msgstr "Spremeni geslo"
 
-#. resource:base_view_users_form
-msgid "Change the user password."
-msgstr "Spremeni geslo uporabnika"
+#. code:
+msgid ""
+"Changing the company of a contact should only be done if it\n"
+"was never correctly set. If an existing contact starts working for a new\n"
+"company then a new contact should be created under that new\n"
+"company. You can use the \"Discard\" button to abandon this change."
+msgstr ""
 
+#. field:QueueJob.Channel
+#. resource:base_view_queue_job_search
+msgid "Channel"
+msgstr ""
+
+#. resource:base_view_queue_job_channel_tree
+#. resource:base_view_queue_job_channel_search
+#. resource:base_action_queue_job_channel
+msgid "Channels"
+msgstr ""
+
+#. help:User.IsCompany
 #. help:Partner.IsCompany
 msgid "Check if the contact is a company, otherwise it is a person"
 msgstr "Označite, če je ta stik družba, v nasprotnem primeru je oseba"
 
-#. help:Partner.Customer
-msgid "Check this box if this contact is a customer."
-msgstr "Označite, če je ta stik kupec."
-
-#. help:Partner.Supplier
-msgid ""
-"Check this box if this contact is a vendor.\n"
-"If it's not checked, purchase people will not see it when encoding a purchase order."
-msgstr ""
-
+#. help:User.Employee
 #. help:Partner.Employee
 msgid "Check this box if this contact is an Employee."
 msgstr "Označite, če je ta stik delojemalec."
@@ -212,6 +261,7 @@ msgstr ""
 msgid "Child Companies"
 msgstr "Podrejene družbe"
 
+#. field:User.Children
 #. field:Partner.Children
 msgid "Children"
 msgstr "Podrejeno"
@@ -220,17 +270,21 @@ msgstr "Podrejeno"
 msgid "Children Tags"
 msgstr ""
 
-#. field:Partner.City
-#. field:Bank.City
 #. field:Company.City
+#. field:Bank.City
+#. field:User.City
+#. field:Partner.City
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "City"
 msgstr "Kraj"
 
+#. field:User.Color
 #. field:Partner.Color
 msgid "Color"
 msgstr "Barva"
@@ -239,64 +293,72 @@ msgstr "Barva"
 msgid "Color Index"
 msgstr "Barvni indeks"
 
+#. field:User.CommercialCompanyName
 #. field:Partner.CommercialCompanyName
 msgid "Commercial Company Name"
 msgstr ""
 
+#. field:User.CommercialPartner
 #. field:Partner.CommercialPartner
 msgid "Commercial Entity"
 msgstr "Poslovni subjekt"
 
-#. resource:base_view_res_bank_form
-msgid "Communication"
-msgstr "Komunikacija"
-
 #. field:User.Companies
 #. resource:base_view_company_tree
-#. resource:base_action_res_company_form
 #. resource:base_company_normal_action_tree
+#. resource:base_action_res_company_form
 #. resource:base_view_res_partner_filter
 msgid "Companies"
 msgstr "Družbe"
 
-#. selection:Partner.CompanyType
-#. field:Partner.Company
+#. resource:base_view_users_form
+msgid "Companies count"
+msgstr "Število družb"
+
 #. field:Attachment.Company
-#. field:BankAccount.Company
 #. field:CurrencyRate.Company
 #. field:Sequence.Company
+#. field:BankAccount.Company
 #. field:User.Company
+#. selection:User.CompanyType
+#. field:Partner.Company
+#. selection:Partner.CompanyType
+#. field:QueueJob.Company
 #. resource:base_view_attachment_search
 #. resource:base_view_company_form
-#. resource:base_view_partner_form
+#. resource:view_partner_short_form
 #. resource:base_view_res_partner_filter
 #. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
 #. resource:base_view_users_search
 msgid "Company"
 msgstr "Družba"
 
-#. field:Partner.CompanyName
+#. field:Company.Favicon
+msgid "Company Favicon"
+msgstr ""
+
 #. field:Company.Name
+#. field:User.CompanyName
+#. field:Partner.CompanyName
 msgid "Company Name"
 msgstr "Naziv družbe"
 
 #. field:Company.CompanyRegistry
 msgid "Company Registry"
-msgstr ""
+msgstr "Matična številka družbe"
 
+#. field:User.CompanyType
 #. field:Partner.CompanyType
 msgid "Company Type"
-msgstr ""
+msgstr "Tip družbe"
 
+#. field:User.ContactAddress
 #. field:Partner.ContactAddress
 msgid "Complete Address"
 msgstr "Poln naslov"
 
-#. resource:base_view_company_form
-#. resource:base_menu_reporting_config
-msgid "Configuration"
-msgstr "Nastavitve"
-
+#. selection:User.Type
 #. selection:Partner.Type
 #. resource:base_view_partner_simple_form
 msgid "Contact"
@@ -304,7 +366,7 @@ msgstr "Stik"
 
 #. resource:base_view_partner_form
 msgid "Contact / Address"
-msgstr ""
+msgstr "Stik / Naslov"
 
 #. resource:base_view_partner_form
 msgid "Contact Name"
@@ -312,13 +374,13 @@ msgstr "Ime stika"
 
 #. resource:base_view_partner_category_form
 msgid "Contact Tag"
-msgstr ""
+msgstr "Oznaka stika"
 
 #. resource:base_view_partner_category_list
 msgid "Contact Tags"
-msgstr ""
+msgstr "Oznake stika"
 
-#. resource:base_action_partner_title_contact
+#. resource:base_action_partner_Title_contact
 msgid "Contact Titles"
 msgstr "Naziv stika"
 
@@ -328,7 +390,7 @@ msgstr "Stiki"
 
 #. resource:base_view_partner_form
 msgid "Contacts & Addresses"
-msgstr ""
+msgstr "Stiki in naslovi"
 
 #. code:
 msgid "Couldn't create contact without email address!"
@@ -339,30 +401,33 @@ msgstr "Stika brez e-poštnega naslova ni mogoče ustvariti!"
 msgid "Countries"
 msgstr "Države"
 
-#. field:Partner.Country
-#. field:Bank.Country
-#. field:Company.Country
 #. field:CountryState.Country
+#. field:Company.Country
+#. field:Bank.Country
+#. field:User.Country
+#. field:Partner.Country
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
 #. resource:base_view_country_tree
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:view_partner_short_form
 #. resource:base_view_res_partner_filter
 #. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Country"
 msgstr "Država"
 
 #. field:Country.PhoneCode
 msgid "Country Calling Code"
-msgstr ""
+msgstr "Klicna koda države"
 
 #. field:Country.Code
 msgid "Country Code"
 msgstr "Koda države"
 
-#. resource:base_view_country_group_form
 #. resource:base_view_country_group_tree
+#. resource:base_view_country_group_form
 msgid "Country Group"
 msgstr "Skupina držav"
 
@@ -375,10 +440,6 @@ msgstr "Skupine držav"
 msgid "Country Name"
 msgstr "Naziv države"
 
-#. resource:base_view_partner_form
-msgid "Create company"
-msgstr ""
-
 #. resource:base_view_attachment_form
 msgid "Creation"
 msgstr "Ustvarjeno"
@@ -387,6 +448,7 @@ msgstr "Ustvarjeno"
 msgid "Creation Month"
 msgstr "Mesec nastanka"
 
+#. field:User.CreditLimit
 #. field:Partner.CreditLimit
 msgid "Credit Limit"
 msgstr "Kreditni limit"
@@ -398,12 +460,12 @@ msgid "Currencies"
 msgstr "Valute"
 
 #. field:Country.Currency
+#. field:Currency.Name
+#. field:CurrencyRate.Currency
 #. field:Company.Currency
 #. field:BankAccount.Currency
-#. field:CurrencyRate.Currency
-#. field:Currency.Name
-#. resource:base_view_currency_search
 #. resource:base_view_currency_form
+#. resource:base_view_currency_search
 msgid "Currency"
 msgstr "Valuta"
 
@@ -419,14 +481,10 @@ msgstr "Tečaj valute"
 #. resource:base_view_currency_rate_tree
 #. resource:base_act_view_currency_rates
 msgid "Currency Rates"
-msgstr ""
+msgstr "Menjalni tečaji "
 
 #. help:Currency.Symbol
 msgid "Currency sign, to be used when printing amounts"
-msgstr ""
-
-#. resource:base_view_users_form
-msgid "Current Company"
 msgstr ""
 
 #. field:Currency.Rate
@@ -441,20 +499,26 @@ msgstr "Trenutno leto s stoletji: %(year)s"
 msgid "Current Year without Century: %(y)s"
 msgstr "Trenutno leto brez stoletja: %(y)s"
 
+#. field:QueueJob.Retry
+msgid "Current try"
+msgstr ""
+
+#. resource:base_view_queue_job_form
+msgid "Current try / max. retries"
+msgstr ""
+
 #. resource:base_menu_administration_shortcut
 msgid "Custom Shortcuts"
 msgstr "Prilagojene bližnjice"
 
-#. resource:base_view_res_partner_filter
+#. field:Country.NamePosition
+msgid "Customer Name Position"
+msgstr "Položaj imena stranke"
+
 #. resource:base_action_partner_form
 #. resource:base_action_partner_customer_form
 msgid "Customers"
 msgstr "Kupci"
-
-#. resource:base_menu_board_root
-#. resource:base_menu_reporting_dashboard
-msgid "Dashboards"
-msgstr "Nadzorne  plošče"
 
 #. field:Attachment.DBDatas
 msgid "Database Data"
@@ -464,16 +528,29 @@ msgstr "Podatki podatkovne zbirke"
 msgid "Database Structure"
 msgstr "Struktura podatkovne baze"
 
-#. field:Partner.Date
-#. field:CurrencyRate.Name
 #. field:Currency.Date
+#. field:CurrencyRate.Name
+#. field:User.Date
+#. field:Partner.Date
 #. resource:base_view_currency_rate_search
 msgid "Date"
 msgstr "Datum"
 
+#. field:QueueJob.DateDone
+msgid "Date Done"
+msgstr ""
+
+#. field:QueueJob.DateEnqueued
+msgid "Date Enqueued"
+msgstr ""
+
 #. field:Lang.DateFormat
 msgid "Date Format"
 msgstr "Oblika datuma"
+
+#. field:QueueJob.DateStarted
+msgid "Date Started"
+msgstr ""
 
 #. resource:base_sequence_view
 msgid "Day of the Week (0:Monday): %(weekday)s"
@@ -487,13 +564,21 @@ msgstr "Dan v letu:%(doy)s"
 msgid "Day: %(day)s"
 msgstr "Dan: %(day)s"
 
+#. selection:Cron.IntervalType
+msgid "Days"
+msgstr "Dni"
+
 #. field:Currency.DecimalPlaces
 msgid "Decimal Places"
-msgstr ""
+msgstr "Decimalna mesta"
 
 #. field:Lang.DecimalPoint
 msgid "Decimal Separator"
 msgstr "Decimalno ločilo"
+
+#. resource:base_view_users_form
+msgid "Default Company"
+msgstr ""
 
 #. field:Attachment.Description
 #. resource:base_view_attachment_form
@@ -504,23 +589,37 @@ msgstr "Opis"
 msgid "Determines where the currency symbol should be placed after or before the amount."
 msgstr "Mesto simbola za valuto (pred ali za zneskom)"
 
+#. help:Country.NamePosition
+msgid "Determines where the customer/company name should be placed, i.e. after or before the address."
+msgstr ""
+
 #. field:Lang.Direction
 msgid "Direction"
 msgstr "Smer"
+
+#. resource:base_config_settings_view_form
+msgid "Discard"
+msgstr "Opusti"
 
 #. resource:base_view_currency_form
 msgid "Display"
 msgstr "Prikaz"
 
+#. resource:base_view_queue_job_search
+msgid "Done"
+msgstr "Opravljeno"
+
+#. help:User.PartnerShare
 #. help:Partner.PartnerShare
 msgid ""
 "Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
 "access or with a limited access created for sharing data."
 msgstr ""
 
-#. field:Partner.Email
-#. field:Bank.Email
 #. field:Company.Email
+#. field:Bank.Email
+#. field:User.Email
+#. field:Partner.Email
 msgid "Email"
 msgstr "E-pošta"
 
@@ -528,6 +627,7 @@ msgstr "E-pošta"
 msgid "Email Address"
 msgstr "E-poštni naslov"
 
+#. field:User.EmailFormatted
 #. field:Partner.EmailFormatted
 msgid "Email Formatted"
 msgstr ""
@@ -536,6 +636,11 @@ msgstr ""
 msgid "Email Preferences"
 msgstr "Nastavitve e-pošte"
 
+#. field:User.Signature
+msgid "Email Signature"
+msgstr "Podpis"
+
+#. field:User.Employee
 #. field:Partner.Employee
 msgid "Employee"
 msgstr "Kader"
@@ -543,6 +648,10 @@ msgstr "Kader"
 #. resource:base_action_partner_employee_form
 msgid "Employees"
 msgstr "Kadri"
+
+#. resource:base_view_queue_job_search
+msgid "Enqueued"
+msgstr ""
 
 #. code:
 msgid "Error ! You can not create recursive tags."
@@ -552,15 +661,78 @@ msgstr ""
 msgid "Examples"
 msgstr "Primeri"
 
+#. field:QueueJob.ExcInfo
+msgid "Exception Info"
+msgstr ""
+
+#. resource:base_view_queue_job_form
+msgid "Exception Information"
+msgstr ""
+
+#. field:QueueJob.ExecuteBeforeJobs
+msgid "Execute Before Jobs"
+msgstr ""
+
+#. field:QueueJob.ExecuteAfterJob
+#. field:QueueJob.ETA
+msgid "Execute only after"
+msgstr ""
+
+#. help:QueueJob.ExecuteAfterJob
+msgid "Execute the current job only after this one has been correctly executed"
+msgstr ""
+
+#. resource:base_ir_cron_view_search
+msgid "Execution"
+msgstr "Izvedba"
+
+#. field:QueueChannel.HexyaExternalID
+#. field:PartnerIndustry.HexyaExternalID
+#. field:ConfigParameter.HexyaExternalID
+#. field:Cron.HexyaExternalID
+#. field:Currency.HexyaExternalID
+#. field:PartnerTitle.HexyaExternalID
+#. field:CountryState.HexyaExternalID
+#. field:CurrencyRate.HexyaExternalID
+#. field:Group.HexyaExternalID
+#. field:Sequence.HexyaExternalID
+#. field:CountryGroup.HexyaExternalID
+#. field:Company.HexyaExternalID
+#. field:SequenceDateRange.HexyaExternalID
+#. field:Translation.HexyaExternalID
+#. field:UserLog.HexyaExternalID
+#. field:Bank.HexyaExternalID
+#. field:BankAccount.HexyaExternalID
+msgid "External ID"
+msgstr "Zunanji ID"
+
+#. field:QueueChannel.HexyaVersion
+#. field:PartnerIndustry.HexyaVersion
+#. field:ConfigParameter.HexyaVersion
+#. field:Cron.HexyaVersion
+#. field:Currency.HexyaVersion
+#. field:PartnerTitle.HexyaVersion
+#. field:CountryState.HexyaVersion
+#. field:CurrencyRate.HexyaVersion
+#. field:Group.HexyaVersion
+#. field:Sequence.HexyaVersion
+#. field:CountryGroup.HexyaVersion
+#. field:Company.HexyaVersion
+#. field:SequenceDateRange.HexyaVersion
+#. field:Translation.HexyaVersion
+#. field:UserLog.HexyaVersion
+#. field:Bank.HexyaVersion
+#. field:BankAccount.HexyaVersion
+msgid "External Version"
+msgstr ""
+
 #. help:User.Share
 msgid "External user with limited access, created only for the purpose of sharing data."
 msgstr "Zunanji uporabnik z omejenim dostopom, ustvarjen le za namen deljenja podatkov."
 
-#. field:Partner.Fax
-#. field:Bank.Fax
-#. field:Company.Fax
-msgid "Fax"
-msgstr "Faks"
+#. resource:base_view_queue_job_search
+msgid "Failed"
+msgstr ""
 
 #. field:Bank.State
 msgid "Fed. State"
@@ -570,13 +742,13 @@ msgstr "Zvezna država"
 msgid "Fed. States"
 msgstr "Zvezne države"
 
+#. selection:Attachment.Type
+msgid "File"
+msgstr "Datoteka"
+
 #. field:Attachment.Datas
 msgid "File Content"
 msgstr "Vsebina datoteke"
-
-#. field:Attachment.DatasFname
-msgid "File Name"
-msgstr "Naziv datoteke"
 
 #. field:Attachment.FileSize
 msgid "File Size"
@@ -586,6 +758,7 @@ msgstr "Velikost datoteke"
 msgid "Filter on my documents"
 msgstr "Filter na mojih dokumentih"
 
+#. help:User.EmailFormatted
 #. help:Partner.EmailFormatted
 msgid "Formatted email address 'Name <email@domain>'"
 msgstr ""
@@ -594,16 +767,32 @@ msgstr ""
 msgid "From"
 msgstr "Od"
 
+#. field:PartnerIndustry.FullName
+msgid "Full Name"
+msgstr "Polno ime"
+
 #. resource:base_view_company_form
 msgid "General Information"
 msgstr "Splošni podatki"
+
+#. field:User.Latitude
+#. field:Partner.Latitude
+msgid "Geo Latitude"
+msgstr ""
+
+#. field:User.Longitude
+#. field:Partner.Longitude
+msgid "Geo Longitude"
+msgstr ""
 
 #. resource:base_view_groups_search
 msgid "Group"
 msgstr "Združevanje"
 
 #. resource:base_view_attachment_search
+#. resource:base_ir_cron_view_search
 #. resource:base_view_res_partner_filter
+#. resource:base_view_queue_job_search
 msgid "Group By"
 msgstr "Združi po"
 
@@ -613,14 +802,16 @@ msgstr ""
 
 #. resource:base_view_country_group_form
 msgid "Group name"
-msgstr ""
+msgstr "Naziv skupine"
 
 #. field:ConfigParameter.Groups
 #. field:User.Groups
-#. resource:base_view_groups_tree
 #. resource:base_view_groups_search
+#. resource:base_view_groups_tree
 #. resource:base_menu_action_groups
 #. resource:base_action_res_groups
+#. resource:base_view_users_form
+#. code:
 msgid "Groups"
 msgstr "Skupine"
 
@@ -636,6 +827,10 @@ msgstr "Zgodovina"
 msgid "Home Action"
 msgstr "Domače dejanje"
 
+#. resource:base_action_open_website
+msgid "Home Menu"
+msgstr ""
+
 #. resource:base_sequence_view
 msgid "Hour 00->12: %(h12)s"
 msgstr "Ura 00->12: %(h12)s"
@@ -644,30 +839,38 @@ msgstr "Ura 00->12: %(h12)s"
 msgid "Hour 00->24: %(h24)s"
 msgstr "Ur 00-> 24: 5(h24)s"
 
-#. field:Lang.ID
-#. field:ModelMixin.ID
-#. field:PartnerTitle.ID
-#. field:ConfigParameter.ID
-#. field:CountryGroup.ID
-#. field:Country.ID
-#. field:Partner.ID
-#. field:SequenceDateRange.ID
-#. field:UserLog.ID
-#. field:Bank.ID
-#. field:Company.ID
-#. field:Group.ID
-#. field:UserChangePasswordWizard.ID
-#. field:UserChangePasswordWizardLine.ID
+#. selection:Cron.IntervalType
+msgid "Hours"
+msgstr "Ure"
+
 #. field:Attachment.ID
-#. field:BankAccount.ID
+#. field:Country.ID
 #. field:ConfigSettings.ID
+#. field:ImageMixin.ID
+#. field:QueueChannel.ID
+#. field:PartnerIndustry.ID
+#. field:ConfigParameter.ID
+#. field:Cron.ID
+#. field:Currency.ID
+#. field:PartnerTitle.ID
 #. field:CountryState.ID
 #. field:CurrencyRate.ID
-#. field:Currency.ID
-#. field:PartnerCategory.ID
+#. field:Group.ID
 #. field:Sequence.ID
+#. field:CountryGroup.ID
+#. field:Company.ID
+#. field:SequenceDateRange.ID
 #. field:Translation.ID
+#. field:UserLog.ID
+#. field:UserChangePasswordWizardLine.ID
+#. field:Bank.ID
+#. field:BankAccount.ID
+#. field:UserChangePasswordWizard.ID
 #. field:User.ID
+#. field:Lang.ID
+#. field:PartnerCategory.ID
+#. field:Partner.ID
+#. field:QueueJob.ID
 msgid "ID"
 msgstr "ID"
 
@@ -679,6 +882,7 @@ msgstr "ISO koda"
 msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
 msgstr "Če je določeno, to dejanje odpre dnevnik zabeležb za tega uporabnika kot dodatke običajnemu meniju."
 
+#. help:User.Lang
 #. help:Partner.Lang
 msgid ""
 "If the selected language is loaded in the system, all documents related to\n"
@@ -686,14 +890,32 @@ msgid ""
 msgstr ""
 
 #. field:Country.Image
+#. field:ImageMixin.Image1920
+#. field:ImageMixin.Image1024
+#. field:ImageMixin.Image512
+#. field:ImageMixin.Image256
+#. field:ImageMixin.Image128
+#. field:User.Image512
+#. field:User.Image
+#. field:User.Image1024
+#. field:User.Image256
+#. field:User.Image1920
+#. field:User.Image128
+#. field:Partner.Image256
 #. field:Partner.Image
+#. field:Partner.Image512
+#. field:Partner.Image128
+#. field:Partner.Image1920
+#. field:Partner.Image1024
 msgid "Image"
 msgstr "Slika"
 
+#. field:User.ImageMedium
 #. field:Partner.ImageMedium
 msgid "Image Medium"
 msgstr ""
 
+#. field:User.ImageSmall
 #. field:Partner.ImageSmall
 msgid "Image Small"
 msgstr ""
@@ -715,72 +937,107 @@ msgstr "Neaktivno"
 msgid "Indexed Content"
 msgstr "Indeksirana vsebina"
 
+#. selection:User.CompanyType
 #. selection:Partner.CompanyType
 msgid "Individual"
+msgstr "Posameznik"
+
+#. resource:base_view_res_partner_filter
+msgid "Individuals"
+msgstr "Posamezniki"
+
+#. field:User.Industry
+#. field:Partner.Industry
+msgid "Industry"
+msgstr "Panoga"
+
+#. resource:base_ir_cron_view
+msgid "Information"
+msgstr "Informacije"
+
+#. field:Country.AddressViewID
+msgid "Input View"
 msgstr ""
 
 #. resource:base_view_partner_form
 msgid "Internal Notes"
 msgstr "Interne opombe"
 
+#. field:User.Ref
 #. field:Partner.Ref
 msgid "Internal Reference"
 msgstr "Interni sklic"
 
 #. resource:base_view_partner_form
 msgid "Internal note..."
+msgstr "Interna opomba..."
+
+#. resource:base_view_partner_form
+msgid "Internal notes..."
 msgstr ""
+
+#. field:Cron.IntervalNumber
+msgid "Interval Number"
+msgstr "Številka intervala"
+
+#. field:Cron.IntervalType
+msgid "Interval Unit"
+msgstr "Enota intervala"
 
 #. code:
 msgid "Invalid search criterion: password"
 msgstr ""
 
+#. selection:User.Type
 #. selection:Partner.Type
 msgid "Invoice Address"
 msgstr "Naslov za račun"
 
+#. field:User.IsCompany
 #. field:Partner.IsCompany
 msgid "Is Company"
 msgstr "Je družba"
-
-#. field:Partner.Customer
-msgid "Is a Customer"
-msgstr ""
-
-#. field:Partner.Supplier
-msgid "Is a Vendor"
-msgstr ""
 
 #. field:Attachment.Public
 msgid "Is a public document"
 msgstr ""
 
+#. field:User.Function
 #. field:Partner.Function
 msgid "Job Position"
 msgstr "Delovno mesto"
+
+#. resource:base_view_queue_job_search
+#. resource:base_view_queue_job_form
+#. resource:base_view_queue_job_tree
+#. resource:base_action_queue_job
+msgid "Jobs"
+msgstr ""
 
 #. help:User.Password
 msgid "Keep empty if you don't want the user to be able to connect on the system."
 msgstr ""
 
 #. field:ConfigParameter.Key
+#. resource:base_view_ir_config_search
 msgid "Key"
 msgstr "Ključ"
 
+#. field:User.Lang
 #. field:Partner.Lang
 #. resource:base_res_lang_search
 msgid "Language"
 msgstr "Jezik"
 
+#. resource:base_res_lang_tree
 #. resource:base_res_lang_form
 #. resource:base_res_lang_search
-#. resource:base_res_lang_tree
 #. resource:base_res_lang_act_window
 msgid "Languages"
 msgstr "Jeziki"
 
 #. field:User.LoginDate
-msgid "Latest Connection"
+msgid "Latest authentication"
 msgstr "Zadnja povezava"
 
 #. selection:Lang.Direction
@@ -793,6 +1050,10 @@ msgstr "Legenda (za predpone, pripone)"
 
 #. resource:base_res_lang_form
 msgid "Legends for supported Date and Time Formats"
+msgstr "Legende za podprte formate datuma in časa"
+
+#. help:QueueJob.ExecuteBeforeJobs
+msgid "List of jobs that will be executed after the current one"
 msgstr ""
 
 #. field:Lang.Code
@@ -813,12 +1074,17 @@ msgstr "Logotip"
 
 #. field:Company.LogoWeb
 msgid "Logo Web"
-msgstr ""
+msgstr "Spletni logotip"
 
 #. field:SequenceDateRange.Sequence
 msgid "Main Sequence"
 msgstr "Glavno zaporedje"
 
+#. field:QueueJob.MaxRetries
+msgid "Max Retries"
+msgstr ""
+
+#. help:User.ImageMedium
 #. help:Partner.ImageMedium
 msgid ""
 "Medium-sized image of this contact. It is automatically\n"
@@ -830,9 +1096,10 @@ msgstr ""
 msgid "Menus Customization"
 msgstr "Prilagajanje menijev"
 
-#. resource:base_view_users_form
-msgid "Messaging and Social"
-msgstr "Sporočanje in socialne mreže"
+#. field:Cron.Method
+#. field:QueueJob.Method
+msgid "Method"
+msgstr ""
 
 #. field:Attachment.MimeType
 msgid "Mime Type"
@@ -842,17 +1109,31 @@ msgstr "MIME tip"
 msgid "Minute: %(min)s"
 msgstr "Minuta: %(min)s"
 
+#. selection:Cron.IntervalType
+msgid "Minutes"
+msgstr "Minute"
+
 #. resource:base_view_partner_form
 msgid "Misc"
 msgstr "Razno"
 
+#. field:User.Mobile
 #. field:Partner.Mobile
 msgid "Mobile"
 msgstr "Mobilni telefon"
 
+#. field:Cron.Model
+#. field:QueueJob.Model
+msgid "Model"
+msgstr "Model"
+
 #. resource:base_sequence_view
 msgid "Month: %(month)s"
 msgstr "Mesec: %(month)s"
+
+#. selection:Cron.IntervalType
+msgid "Months"
+msgstr "Meseci"
 
 #. resource:base_view_users_form
 msgid "Multi Companies"
@@ -862,19 +1143,21 @@ msgstr "Več družb"
 msgid "My Document(s)"
 msgstr "Moji dokumenti"
 
-#. resource:base_view_res_partner_filter
-msgid "My Partners"
-msgstr "Moji partnerji"
-
-#. field:Lang.Name
-#. field:CountryGroup.Name
-#. field:Partner.Name
-#. field:Bank.Name
+#. field:QueueChannel.Name
+#. field:PartnerIndustry.Name
+#. field:Cron.Name
 #. field:Group.Name
 #. field:Sequence.Name
-#. resource:base_view_partner_form
+#. field:CountryGroup.Name
+#. field:Bank.Name
+#. field:User.Name
+#. field:Lang.Name
+#. field:Partner.Name
+#. field:QueueJob.Name
+#. resource:view_partner_short_form
 #. resource:base_view_partner_tree
 #. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
 msgid "Name"
 msgstr "Naziv"
 
@@ -882,33 +1165,46 @@ msgstr "Naziv"
 msgid "New Password"
 msgstr "Novo geslo"
 
-#. field:SequenceDateRange.NumberNextActual
-#. field:SequenceDateRange.NumberNext
+#. field:Cron.NextCall
+msgid "Next Execution Date"
+msgstr "Naslednji datum izvršbe"
+
 #. field:Sequence.NumberNext
 #. field:Sequence.NumberNextActual
+#. field:SequenceDateRange.NumberNext
+#. field:SequenceDateRange.NumberNextActual
 msgid "Next Number"
 msgstr "Naslednja številka"
 
-#. help:SequenceDateRange.NumberNext
 #. help:Sequence.NumberNext
+#. help:SequenceDateRange.NumberNext
 msgid "Next number of this sequence"
 msgstr "Naslednja številka tega zaporedja"
 
-#. help:SequenceDateRange.NumberNextActual
 #. help:Sequence.NumberNextActual
+#. help:SequenceDateRange.NumberNextActual
 msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
 msgstr "Naslednja številka, ki bo uporabljena. Ta številka se lahko pogosto povečuje, tako, da je lahko prikazana vrednost že zastarela."
+
+#. help:Cron.NextCall
+msgid "Next planned execution date for this job."
+msgstr "Naslednja načrtovana izvršba za to nalogo."
 
 #. selection:Sequence.Implementation
 msgid "No Gap"
 msgstr ""
 
+#. field:User.Comment
 #. field:Partner.Comment
 msgid "Notes"
 msgstr "Beležke"
 
 #. field:User.CompaniesCount
 msgid "Number of Companies"
+msgstr "Število družb"
+
+#. help:User.GroupsCount
+msgid "Number of groups that apply to the current user"
 msgstr ""
 
 #. code:
@@ -923,6 +1219,7 @@ msgstr "Le administratorji lahko spremenijo nastavitve"
 msgid "Only administrators can execute this action."
 msgstr "To dejanje lahko izvedejo le administratorji."
 
+#. selection:User.Type
 #. selection:Partner.Type
 msgid "Other Address"
 msgstr ""
@@ -935,6 +1232,11 @@ msgstr "Drugi partnerji"
 msgid "Owner"
 msgstr "Lastnik"
 
+#. resource:base_menu_ir_property
+msgid "Parameters"
+msgstr "Parametri"
+
+#. field:User.Parent
 #. field:Partner.Parent
 msgid "Parent"
 msgstr "Nadrejeni"
@@ -943,6 +1245,7 @@ msgstr "Nadrejeni"
 msgid "Parent Company"
 msgstr "Nadrejena družba"
 
+#. field:User.ParentName
 #. field:Partner.ParentName
 msgid "Parent Name"
 msgstr ""
@@ -956,16 +1259,26 @@ msgstr ""
 msgid "Partner"
 msgstr "Partner"
 
-#. resource:base_view_partner_title_tree
-#. resource:base_view_partner_title_form
+#. field:User.ActivePartner
+msgid "Partner Is Active"
+msgstr ""
+
+#. resource:base_view_partner_Title_tree
+#. resource:base_view_partner_Title_form
 msgid "Partner Titles"
 msgstr "Nazivi partnerja"
+
+#. field:User.SameVATPartner
+#. field:Partner.SameVATPartner
+msgid "Partner with same Tax ID"
+msgstr ""
 
 #. help:User.Partner
 msgid "Partner-related data of the user"
 msgstr "Podatki uporabnika v povezavi s partnerjem"
 
 #. field:PartnerCategory.Partners
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 msgid "Partners"
 msgstr "Partnerji"
@@ -974,13 +1287,14 @@ msgstr "Partnerji"
 msgid "Password"
 msgstr "Geslo"
 
-#. resource:base_view_res_partner_filter
-msgid "Persons"
-msgstr "Osebe"
+#. resource:base_view_queue_job_search
+msgid "Pending"
+msgstr ""
 
-#. field:Partner.Phone
-#. field:Bank.Phone
 #. field:Company.Phone
+#. field:Bank.Phone
+#. field:User.Phone
+#. field:Partner.Phone
 msgid "Phone"
 msgstr "Telefon"
 
@@ -1004,9 +1318,26 @@ msgstr "Predpona zapisa zaporedja"
 msgid "Price Accuracy"
 msgstr "Natančnost cene"
 
+#. field:QueueJob.Priority
+msgid "Priority"
+msgstr "Prioriteta"
+
+#. selection:User.Type
+#. selection:Partner.Type
+msgid "Private Address"
+msgstr "Privatni naslov"
+
+#. resource:base_res_partner_view_form_private
+msgid "Private Address Form"
+msgstr "Obrazec za zasebni naslovov"
+
 #. resource:base_view_partner_form
 msgid "Purchase"
 msgstr "Nabava"
+
+#. resource:base_menu_queue
+msgid "Queue"
+msgstr ""
 
 #. field:CurrencyRate.Rate
 msgid "Rate"
@@ -1015,6 +1346,19 @@ msgstr "Tečaj"
 #. field:Currency.Rates
 msgid "Rates"
 msgstr "Tečaji"
+
+#. field:Cron.RecordsIds
+#. field:QueueJob.RecordsIds
+msgid "Records Ids"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "Reference"
+msgstr "Sklic"
+
+#. resource:base_view_queue_job_form
+msgid "Related"
+msgstr ""
 
 #. field:User.Partner
 msgid "Related Partner"
@@ -1025,13 +1369,17 @@ msgstr "Povezani partner"
 msgid "Reload Groups"
 msgstr ""
 
-#. resource:base_view_company_form
-msgid "Report Configuration"
-msgstr "Nastavitve poročila"
+#. help:Cron.IntervalNumber
+msgid "Repeat every x."
+msgstr "Ponovi vsakih x."
+
+#. resource:base_view_queue_job_form
+msgid "Requeue Job"
+msgstr ""
 
 #. field:Attachment.ResField
 msgid "Resource Field"
-msgstr ""
+msgstr "Polje vira"
 
 #. field:Attachment.ResID
 msgid "Resource ID"
@@ -1045,6 +1393,11 @@ msgstr "Izvorni model"
 msgid "Resource Name"
 msgstr "Naziv vira"
 
+#. field:QueueJob.Result
+#. resource:base_view_queue_job_form
+msgid "Result"
+msgstr ""
+
 #. selection:Lang.Direction
 msgid "Right-to-left"
 msgstr ""
@@ -1053,14 +1406,19 @@ msgstr ""
 msgid "Rounding Factor"
 msgstr "Faktor zaokroževanja"
 
+#. resource:base_ir_cron_view
+msgid "Run Manually"
+msgstr "Zaženi ročno"
+
 #. resource:base_view_partner_form
-msgid "Sale"
+msgid "Sales"
 msgstr "Prodaja"
 
 #. resource:base_view_partner_form
-msgid "Sales & Purchases"
-msgstr "Prodaja in nabava"
+msgid "Sales & Purchase"
+msgstr ""
 
+#. field:User.User
 #. field:Partner.User
 #. resource:base_view_res_partner_filter
 msgid "Salesperson"
@@ -1070,13 +1428,34 @@ msgstr "Prodajalec"
 msgid "Sanitized Account Number"
 msgstr ""
 
+#. resource:base_config_settings_view_form
 #. resource:base_view_users_form_simple_modif
 msgid "Save"
 msgstr "Shrani"
 
+#. resource:base_ir_cron_view_search
+msgid "Scheduled Action"
+msgstr "Planirano dejanje"
+
+#. resource:base_ir_cron_view
+#. resource:base_ir_cron_view_tree
+#. resource:base_ir_cron_view_calendar
+#. resource:base_ir_cron_view_search
+#. resource:base_ir_cron_act
+msgid "Scheduled Actions"
+msgstr "Planirana dejanja"
+
+#. resource:base_res_bank_view_search
+msgid "Search Bank"
+msgstr ""
+
 #. resource:base_view_res_partner_filter
 msgid "Search Partner"
 msgstr "Iskanje partnerja"
+
+#. resource:base_config_settings_view_form
+msgid "Search..."
+msgstr "Iskanje..."
 
 #. resource:base_sequence_view
 msgid "Second: %(sec)s"
@@ -1086,6 +1465,7 @@ msgstr "Sekunda: %(sec)"
 msgid "Separator Format"
 msgstr "Oblika ločila"
 
+#. field:Company.Sequence
 #. field:BankAccount.Sequence
 #. resource:base_sequence_view
 #. resource:base_view_sequence_search
@@ -1094,11 +1474,11 @@ msgstr "Zaporedje"
 
 #. field:Sequence.Code
 msgid "Sequence Code"
-msgstr ""
+msgstr "Koda zaporedja"
 
 #. field:Sequence.Padding
 msgid "Sequence Size"
-msgstr ""
+msgstr "Velikost zaporedja"
 
 #. resource:base_sequence_date_range_tree
 #. resource:base_sequence_view
@@ -1116,34 +1496,43 @@ msgstr "Zaporedja in identifikatorji"
 msgid "Set Password"
 msgstr "Nastavitev gesla"
 
+#. resource:base_view_queue_job_form
+msgid "Set to 'Done'"
+msgstr ""
+
+#. code:
+msgid "Setting empty passwords is not allowed for security reasons!"
+msgstr "Nastavitev praznega gesla ni dovoljena zaradi varnostnih razlogov!"
+
+#. resource:base_config_settings_view_form
+#. resource:base_config_setting_act_window
 #. resource:base_menu_administration
 msgid "Settings"
 msgstr "Nastavitve"
 
+#. field:User.PartnerShare
 #. field:Partner.PartnerShare
 msgid "Share Partner"
-msgstr ""
+msgstr "Daj partnerja v souporabo"
 
 #. field:User.Share
 msgid "Share User"
 msgstr "So-uporabnik"
 
+#. selection:User.Type
 #. selection:Partner.Type
 msgid "Shipping Address"
 msgstr ""
 
 #. resource:base_view_currency_search
 msgid "Show active currencies"
-msgstr ""
+msgstr "Pokaži aktivne valute"
 
 #. resource:base_view_currency_search
 msgid "Show inactive currencies"
 msgstr ""
 
-#. field:User.Signature
-msgid "Signature"
-msgstr "Podpis"
-
+#. help:User.ImageSmall
 #. help:Partner.ImageSmall
 msgid ""
 "Small-sized image of this contact. It is automatically\n"
@@ -1156,8 +1545,25 @@ msgid "Sometimes called BIC or Swift."
 msgstr "Včasih imenovano BIC ali SWIFT."
 
 #. code:
+msgid "Sorry, the syntax 'name:agg(field)' is not available for attachments"
+msgstr ""
+
+#. code:
+msgid "Sorry, you are not allowed to access these fields on attachments."
+msgstr ""
+
+#. code:
+#. code:
 msgid "Sorry, you are not allowed to access this document."
 msgstr "Nimate dovoljenja za dostop do tega dokumenta"
+
+#. code:
+msgid "Sorry, you are not allowed to write on this document"
+msgstr ""
+
+#. code:
+msgid "Sorry, you must provide fields to read on attachments"
+msgstr ""
 
 #. help:User.NewPassword
 msgid ""
@@ -1170,15 +1576,24 @@ msgstr ""
 msgid "Standard"
 msgstr "Običajno"
 
-#. field:Partner.State
+#. resource:base_view_queue_job_search
+msgid "Started"
+msgstr ""
+
 #. field:Company.State
+#. field:User.State
+#. field:Partner.State
+#. field:QueueJob.State
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
-#. resource:base_view_country_state_tree
 #. resource:base_view_country_state_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:base_view_country_state_tree
+#. resource:view_partner_short_form
 #. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
+#. resource:base_view_queue_job_search
 msgid "State"
 msgstr "Regija"
 
@@ -1196,43 +1611,49 @@ msgstr "Pokrajine"
 
 #. field:Sequence.NumberIncrement
 msgid "Step"
-msgstr ""
+msgstr "Korak"
 
 #. field:Attachment.StoreFname
 msgid "Stored Filename"
 msgstr "Naziv shranjene datoteke"
 
-#. field:Partner.Street
-#. field:Bank.Street
 #. field:Company.Street
+#. field:Bank.Street
+#. field:User.Street
+#. field:Partner.Street
 msgid "Street"
 msgstr "Ulica"
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Street 2..."
-msgstr ""
+msgstr "Ulica 2..."
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Street..."
 msgstr "Ulica..."
 
-#. field:Partner.Street2
-#. field:Bank.Street2
 #. field:Company.Street2
+#. field:Bank.Street2
+#. field:User.Street2
+#. field:Partner.Street2
 msgid "Street2"
 msgstr "Ulica 2"
 
 #. field:Sequence.DateRanges
 msgid "Subsequences"
-msgstr ""
+msgstr "Posledice"
 
 #. field:Sequence.Suffix
 msgid "Suffix"
@@ -1250,6 +1671,18 @@ msgstr "Simbol"
 msgid "Symbol Position"
 msgstr "Pozicija simbola"
 
+#. resource:base_view_ir_config_list
+#. resource:base_view_ir_config_form
+#. resource:base_ir_config_menu
+#. resource:base_ir_config_list_action
+msgid "System Parameters"
+msgstr "Sistemski parametri"
+
+#. resource:base_view_ir_config_search
+msgid "System Properties"
+msgstr "Sistemske lastnosti"
+
+#. field:User.VAT
 #. field:Partner.VAT
 msgid "TIN"
 msgstr "DŠ"
@@ -1262,10 +1695,7 @@ msgstr "Ključna beseda"
 msgid "Tag Name"
 msgstr "Naziv oznake"
 
-#. field:Company.Tagline
-msgid "Tagline"
-msgstr ""
-
+#. field:User.Categories
 #. field:Partner.Categories
 msgid "Tags"
 msgstr "Ključne besede"
@@ -1274,6 +1704,7 @@ msgstr "Ključne besede"
 msgid "Tags..."
 msgstr "Ključne besede..."
 
+#. help:User.VAT
 #. help:Partner.VAT
 msgid ""
 "Tax Identification Number.\n"
@@ -1285,6 +1716,10 @@ msgstr ""
 msgid "Technical"
 msgstr "Tehnično"
 
+#. resource:base_ir_cron_view
+msgid "Technical Data"
+msgstr "Tehnični podatki"
+
 #. help:Country.Code
 msgid "The ISO country code in two chars.\\nYou can use this field for quick search."
 msgstr ""
@@ -1295,6 +1730,10 @@ msgid ""
 "-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
 "[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
 "Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. code:
+msgid "The \\\"App Switcher\\\" action cannot be selected as home action."
 msgstr ""
 
 #. help:PartnerCategory.Active
@@ -1317,14 +1756,22 @@ msgstr ""
 msgid "The full name of the country."
 msgstr "Polni naziv države"
 
+#. help:User.User
 #. help:Partner.User
 msgid "The internal user that is in charge of communicating with this contact if any."
 msgstr "Sodelavec odgovoren za komunikacijo s tem stikom."
+
+#. help:QueueJob.MaxRetries
+msgid ""
+"The job will fail if the number of tries reach the max. retries.\n"
+"Retries are infinite when equals zero."
+msgstr ""
 
 #. help:Sequence.NumberIncrement
 msgid "The next number of the sequence will be incremented by this number"
 msgstr "Naslednje število zaporedja bo to število povečalo za to številko"
 
+#. help:User.TZ
 #. help:Partner.TZ
 msgid ""
 "The partner's timezone, used to output proper date and time values\n"
@@ -1333,8 +1780,8 @@ msgid ""
 "render date and time values: your computer's timezone."
 msgstr ""
 
-#. help:CurrencyRate.Rate
 #. help:Currency.Rate
+#. help:CurrencyRate.Rate
 msgid "The rate of the currency to the currency of rate 1"
 msgstr "Tečaj valute v primerjavi z valuto, katerega tečaj je enak 1"
 
@@ -1346,13 +1793,22 @@ msgstr ""
 msgid "The state code in max. three chars."
 msgstr ""
 
+#. code:
+msgid "The user cannot have more than one user types."
+msgstr ""
+
 #. help:Lang.ISOCode
 msgid "This ISO code is the name of PO files to use for translations"
 msgstr ""
 
+#. help:User.Image
 #. help:Partner.Image
 msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
 msgstr "To polju zajema sliko uporabljeno za 'avatar' tega stika, omejeno na 1024x1024px"
+
+#. help:Company.Favicon
+msgid "This field holds the image used to display a favicon for a given company."
+msgstr ""
 
 #. help:Lang.Code
 msgid "This field is used to set/get locales for user"
@@ -1366,15 +1822,18 @@ msgstr "Ločilo tisočic"
 msgid "Time Format"
 msgstr "Oblika zapisa časa"
 
+#. field:User.TZ
 #. field:Partner.TZ
 msgid "Timezone"
 msgstr "Časovni pas"
 
+#. field:User.TZOffset
 #. field:Partner.TZOffset
 msgid "Timezone Offset"
 msgstr ""
 
 #. field:PartnerTitle.Name
+#. field:User.Title
 #. field:Partner.Title
 msgid "Title"
 msgstr "Naziv"
@@ -1411,39 +1870,74 @@ msgid ""
 "gap in the sequence (while they are possible in the former)."
 msgstr ""
 
-#. field:Partner.Type
 #. field:Attachment.Type
+#. field:User.Type
+#. field:Partner.Type
 #. resource:base_view_attachment_search
 msgid "Type"
 msgstr "Tip"
 
-#. selection:Attachment.Type
 #. field:Attachment.URL
+#. selection:Attachment.Type
 #. resource:base_view_attachment_search
 msgid "URL"
 msgstr "URL"
 
 #. resource:base_res_lang_tree
 msgid "Update Language Terms"
-msgstr ""
+msgstr "Posodobite jezikovne izraze"
 
 #. resource:base_res_lang_tree
 msgid "Update Terms"
 msgstr "Posodobitev izrazov"
 
+#. help:Cron.RecordsIds
+#. help:QueueJob.RecordsIds
+msgid "Use a JSON list format (e.g. [1, 2])"
+msgstr ""
+
+#. help:Cron.Arguments
+#. help:QueueJob.Arguments
+msgid ""
+"Use a JSON list format (e.g. [[1, 2], \"My string value\", true]).\n"
+"For relation fields, pass the ID or the list of IDs"
+msgstr ""
+
 #. field:Sequence.UseDateRange
 msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:Country.VATLabel
+msgid "Use this field if you want to change vat label."
+msgstr "To polje uporabite, če želite spremeniti DDV oznako."
+
+#. help:Country.AddressViewID
+msgid ""
+"Use this field if you want to replace the usual way to encode a complete address.\n"
+"Note that the address_format field is used to modify the way to display addresses\n"
+"(in reports for example), while this field is used to modify the input form for\n"
+"addresses."
 msgstr ""
 
 #. help:User.Login
 msgid "Used to log into the system"
 msgstr "Uporablja se za  prijavo v sistem"
 
+#. help:Company.Sequence
+msgid "Used to order Companies in the company switcher"
+msgstr ""
+
+#. help:User.Type
 #. help:Partner.Type
-msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+msgid ""
+"Used to select automatically the right address according to the context in sales and purchases documents. \n"
+"Private addresses are only visible by authorized users."
 msgstr "Uporabljeno za samodejno izbiro pravega naslova, glede na kontekst v prodajnih in nabavnih dokumentih."
 
+#. field:Cron.User
 #. field:UserChangePasswordWizardLine.User
+#. field:QueueJob.User
+#. resource:base_ir_cron_view_search
 #. resource:base_view_users_search
 msgid "User"
 msgstr "Uporabnik"
@@ -1460,14 +1954,15 @@ msgstr "Prijava uporabnika"
 msgid "User log entries"
 msgstr ""
 
-#. field:Partner.Users
 #. field:UserChangePasswordWizard.Users
+#. field:User.Users
+#. field:Partner.Users
 #. resource:base_menu_users
-#. resource:base_view_users_form_simple_modif
 #. resource:base_change_password_wizard_user_tree_view
 #. resource:base_view_users_tree
 #. resource:base_view_users_form
 #. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
 #. resource:base_menu_action_users
 #. resource:base_action_res_users
 msgid "Users"
@@ -1477,11 +1972,14 @@ msgstr "Uporabniki"
 msgid "VAT"
 msgstr "DDV"
 
+#. field:Country.VATLabel
+msgid "VAT Label"
+msgstr ""
+
 #. field:ConfigParameter.Value
 msgid "Value"
 msgstr "Vrednost"
 
-#. resource:base_view_res_partner_filter
 #. resource:base_action_partner_supplier_form
 msgid "Vendors"
 msgstr "Prodajalci"
@@ -1490,11 +1988,13 @@ msgstr "Prodajalci"
 msgid "View Rates"
 msgstr ""
 
-#. field:Partner.Website
 #. field:Company.Website
+#. field:User.Website
+#. field:Partner.Website
 msgid "Website"
 msgstr "Spletna stran"
 
+#. help:User.Website
 #. help:Partner.Website
 msgid "Website of Partner or Company"
 msgstr "Spletna stran partnerja"
@@ -1503,13 +2003,17 @@ msgstr "Spletna stran partnerja"
 msgid "Week of the Year: %(woy)s"
 msgstr "Teden v letu: %(woy)s"
 
+#. selection:Cron.IntervalType
+msgid "Weeks"
+msgstr "Tedni"
+
 #. field:UserChangePasswordWizardLine.Wizard
 msgid "Wizard"
 msgstr "Čarovnik"
 
 #. help:Attachment.Type
 msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
-msgstr ""
+msgstr "Datoteko lahko naložite iz svojega računalnika ali pa kopirate/prilepite internetno povezavo do datoteke."
 
 #. code:
 msgid "You can not change the company as the partner/user has multiple users linked with different companies."
@@ -1520,7 +2024,14 @@ msgid "You can not remove the admin user as it is used internally for resources 
 msgstr ""
 
 #. help:Country.AddressFormat
-msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgid ""
+"You can state here the usual format to use for the addresses belonging to this country.\n"
+"You can use Go-style string pattern with all the fields of the address \n"
+"(for example, use '{{ .Street }}' to display the field 'Street') plus\n"
+"{{ .StateName }}: the name of the state\n"
+"{{ .StateCode }}: the code of the state\n"
+"{{ .CountryName }}: the name of the country\n"
+"{{ .CountryCode }}: the code of the country\n"
 msgstr ""
 
 #. code:
@@ -1537,39 +2048,54 @@ msgstr ""
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_address_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "ZIP"
 msgstr "Poštna številka"
 
-#. field:Partner.Zip
-#. field:Bank.Zip
 #. field:Company.Zip
+#. field:Bank.Zip
+#. field:User.Zip
+#. field:Partner.Zip
 msgid "Zip"
 msgstr "Poštna št."
 
-#. resource:base_view_company_form
-msgid "e.g. Global Business Solutions"
-msgstr "npr. Global Business Solutions"
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
+msgid "e.g. BE0477472701"
+msgstr "npr. BE0477472701"
+
+#. resource:base_view_partner_form
+msgid "e.g. Mister"
+msgstr ""
 
 #. resource:base_view_partner_form
 msgid "e.g. Mr."
-msgstr ""
+msgstr "npr. g."
 
-#. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_simple_form
+#. resource:base_view_partner_form
+#. resource:base_view_partner_form
 msgid "e.g. Sales Director"
 msgstr "npr. Vodja prodaje"
 
-#. resource:base_view_company_form
-#. resource:base_view_partner_form
 #. resource:base_view_partner_address_form
-msgid "e.g. www.hexya.io"
+msgid "e.g. https//www.hexya.io"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "e.g. https://www.hexya.io"
 msgstr ""
 
 #. resource:base_view_partner_form
-msgid "internal note..."
+msgid "e.g. https://www.odoo.com"
+msgstr "npr. https://www.odoo.com"
+
+#. code:
+msgid "error while hashing password: %s"
 msgstr ""
 

@@ -12,14 +12,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 
+#. resource:base_menu_action_attachment
+#. resource:base_menu_action_res_company_form
+#. resource:base_menu_ir_cron_act
+#. resource:base_menu_res_lang_act_window
+#. resource:base_action_partner_category_form
+#. resource:base_menu_queue_job
+#. resource:base_menu_queue_job_channel
+#. resource:base_menu_ir_sequence_form
+msgid ""
+msgstr ""
+
+#. field:User.GroupsCount
+msgid "# Groups"
+msgstr ""
+
 #. code:
 #. code:
 #. code:
 msgid "%s (copy)"
-msgstr ""
-
-#. resource:base_view_partner_form
-msgid "(edit)"
 msgstr ""
 
 #. field:PartnerTitle.Shortcut
@@ -34,6 +45,10 @@ msgstr ""
 msgid "Access Rights"
 msgstr ""
 
+#. field:Attachment.AccessToken
+msgid "Access Token"
+msgstr ""
+
 #. field:BankAccount.Partner
 msgid "Account Holder"
 msgstr ""
@@ -46,27 +61,34 @@ msgstr ""
 msgid "Account Type"
 msgstr ""
 
-#. resource:base_view_company_form
-msgid "Accounting"
+#. resource:base_ir_cron_view
+msgid "Action to Trigger"
 msgstr ""
 
-#. field:Bank.Active
+#. field:PartnerIndustry.Active
+#. field:Cron.Active
 #. field:Currency.Active
-#. field:PartnerCategory.Active
 #. field:Sequence.Active
+#. field:Bank.Active
+#. field:User.Active
 #. field:Lang.Active
+#. field:PartnerCategory.Active
 #. field:Partner.Active
 #. resource:base_view_currency_search
 #. resource:base_res_lang_search
 msgid "Active"
 msgstr ""
 
-#. resource:base_view_res_bank_form
-#. resource:base_view_res_bank_form
+#. field:User.ActiveLangCount
+#. field:Partner.ActiveLangCount
+msgid "Active Lang Count"
+msgstr ""
+
 #. resource:base_view_company_form
 #. resource:base_view_partner_address_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
-#. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Address"
 msgstr ""
 
@@ -82,8 +104,16 @@ msgstr ""
 msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
 msgstr ""
 
+#. selection:Country.NamePosition
+msgid "After Address"
+msgstr ""
+
 #. selection:Currency.Position
 msgid "After Amount"
+msgstr ""
+
+#. resource:base_ir_cron_view_search
+msgid "All"
 msgstr ""
 
 #. resource:base_view_users_form
@@ -94,8 +124,14 @@ msgstr ""
 msgid "Application Terms"
 msgstr ""
 
+#. resource:base_res_bank_view_search
 #. resource:base_view_res_partner_filter
 msgid "Archived"
+msgstr ""
+
+#. field:Cron.Arguments
+#. field:QueueJob.Arguments
+msgid "Arguments"
 msgstr ""
 
 #. resource:base_view_attachment_form
@@ -111,16 +147,26 @@ msgstr ""
 msgid "Attachment Name"
 msgstr ""
 
+#. resource:base_menu_automation
+msgid "Automation"
+msgstr ""
+
 #. field:BankAccount.Bank
 #. resource:base_view_res_bank_form
 msgid "Bank"
 msgstr ""
 
+#. field:User.Banks
 #. field:Partner.Banks
 #. resource:base_view_partner_bank_tree
 #. resource:base_view_partner_bank_search
 #. resource:base_action_res_partner_bank_account_form
+#. resource:base_res_partner_view_form_private
 msgid "Bank Accounts"
+msgstr ""
+
+#. resource:base_view_res_bank_form
+msgid "Bank Address"
 msgstr ""
 
 #. field:BankAccount.BankBIC
@@ -128,7 +174,7 @@ msgid "Bank BIC"
 msgstr ""
 
 #. field:Bank.BIC
-msgid "Bank Identifier Cord"
+msgid "Bank Identifier Code"
 msgstr ""
 
 #. field:BankAccount.BankName
@@ -145,26 +191,34 @@ msgstr ""
 msgid "Banks"
 msgstr ""
 
+#. field:User.Barcode
 #. field:Partner.Barcode
 msgid "Barcode"
+msgstr ""
+
+#. selection:Country.NamePosition
+msgid "Before Address"
 msgstr ""
 
 #. selection:Currency.Position
 msgid "Before Amount"
 msgstr ""
 
-#. selection:Attachment.Type
 #. resource:base_view_attachment_search
 msgid "Binary"
 msgstr ""
 
-#. resource:base_change_password_wizard_view
 #. resource:base_view_users_form_simple_modif
+#. resource:base_change_password_wizard_view
 msgid "Cancel"
-msgstr "Cancel"
+msgstr ""
 
 #. code:
 msgid "Cannot duplicate configuration"
+msgstr ""
+
+#. field:QueueChannel.Capacity
+msgid "Capacity"
 msgstr ""
 
 #. resource:base_action_res_users_my
@@ -173,33 +227,39 @@ msgstr ""
 
 #. resource:base_change_password_wizard_view
 #. resource:base_change_password_wizard_view
-#. resource:base_view_users_form
 #. resource:base_change_password_wizard_action
 msgid "Change Password"
-msgstr "Change Password"
+msgstr ""
 
 #. resource:base_view_users_form_simple_modif
 msgid "Change password"
 msgstr ""
 
-#. resource:base_view_users_form
-msgid "Change the user password."
+#. code:
+msgid ""
+"Changing the company of a contact should only be done if it\n"
+"was never correctly set. If an existing contact starts working for a new\n"
+"company then a new contact should be created under that new\n"
+"company. You can use the \"Discard\" button to abandon this change."
 msgstr ""
 
+#. field:QueueJob.Channel
+#. resource:base_view_queue_job_search
+msgid "Channel"
+msgstr ""
+
+#. resource:base_view_queue_job_channel_tree
+#. resource:base_view_queue_job_channel_search
+#. resource:base_action_queue_job_channel
+msgid "Channels"
+msgstr ""
+
+#. help:User.IsCompany
 #. help:Partner.IsCompany
 msgid "Check if the contact is a company, otherwise it is a person"
 msgstr ""
 
-#. help:Partner.Customer
-msgid "Check this box if this contact is a customer."
-msgstr ""
-
-#. help:Partner.Supplier
-msgid ""
-"Check this box if this contact is a vendor.\n"
-"If it's not checked, purchase people will not see it when encoding a purchase order."
-msgstr ""
-
+#. help:User.Employee
 #. help:Partner.Employee
 msgid "Check this box if this contact is an Employee."
 msgstr ""
@@ -212,6 +272,7 @@ msgstr ""
 msgid "Child Companies"
 msgstr ""
 
+#. field:User.Children
 #. field:Partner.Children
 msgid "Children"
 msgstr ""
@@ -220,17 +281,21 @@ msgstr ""
 msgid "Children Tags"
 msgstr ""
 
-#. field:Bank.City
 #. field:Company.City
+#. field:Bank.City
+#. field:User.City
 #. field:Partner.City
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
 #. resource:base_view_partner_address_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "City"
 msgstr ""
 
+#. field:User.Color
 #. field:Partner.Color
 msgid "Color"
 msgstr ""
@@ -239,16 +304,14 @@ msgstr ""
 msgid "Color Index"
 msgstr ""
 
+#. field:User.CommercialCompanyName
 #. field:Partner.CommercialCompanyName
 msgid "Commercial Company Name"
 msgstr ""
 
+#. field:User.CommercialPartner
 #. field:Partner.CommercialPartner
 msgid "Commercial Entity"
-msgstr ""
-
-#. resource:base_view_res_bank_form
-msgid "Communication"
 msgstr ""
 
 #. field:User.Companies
@@ -259,23 +322,35 @@ msgstr ""
 msgid "Companies"
 msgstr ""
 
-#. field:CurrencyRate.Company
+#. resource:base_view_users_form
+msgid "Companies count"
+msgstr ""
+
 #. field:Sequence.Company
-#. field:Attachment.Company
+#. field:CurrencyRate.Company
 #. field:BankAccount.Company
+#. field:QueueJob.Company
+#. selection:User.CompanyType
 #. field:User.Company
-#. selection:Partner.CompanyType
 #. field:Partner.Company
+#. selection:Partner.CompanyType
+#. field:Attachment.Company
 #. resource:base_view_attachment_search
 #. resource:base_view_company_form
-#. resource:base_view_res_partner_filter
 #. resource:base_view_partner_simple_form
+#. resource:view_partner_short_form
+#. resource:base_view_res_partner_filter
 #. resource:base_view_partner_form
 #. resource:base_view_users_search
 msgid "Company"
 msgstr ""
 
+#. field:Company.Favicon
+msgid "Company Favicon"
+msgstr ""
+
 #. field:Company.Name
+#. field:User.CompanyName
 #. field:Partner.CompanyName
 msgid "Company Name"
 msgstr ""
@@ -284,19 +359,17 @@ msgstr ""
 msgid "Company Registry"
 msgstr ""
 
+#. field:User.CompanyType
 #. field:Partner.CompanyType
 msgid "Company Type"
 msgstr ""
 
+#. field:User.ContactAddress
 #. field:Partner.ContactAddress
 msgid "Complete Address"
 msgstr ""
 
-#. resource:base_view_company_form
-#. resource:base_menu_reporting_config
-msgid "Configuration"
-msgstr ""
-
+#. selection:User.Type
 #. selection:Partner.Type
 #. resource:base_view_partner_simple_form
 msgid "Contact"
@@ -318,7 +391,7 @@ msgstr ""
 msgid "Contact Tags"
 msgstr ""
 
-#. resource:base_action_partner_title_contact
+#. resource:base_action_partner_Title_contact
 msgid "Contact Titles"
 msgstr ""
 
@@ -339,17 +412,20 @@ msgstr ""
 msgid "Countries"
 msgstr ""
 
-#. field:Bank.Country
-#. field:Company.Country
 #. field:CountryState.Country
+#. field:Company.Country
+#. field:Bank.Country
+#. field:User.Country
 #. field:Partner.Country
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
 #. resource:base_view_country_tree
-#. resource:base_view_res_partner_filter
 #. resource:base_view_partner_address_form
+#. resource:view_partner_short_form
+#. resource:base_view_res_partner_filter
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Country"
 msgstr ""
 
@@ -375,10 +451,6 @@ msgstr ""
 msgid "Country Name"
 msgstr ""
 
-#. resource:base_view_partner_form
-msgid "Create company"
-msgstr ""
-
 #. resource:base_view_attachment_form
 msgid "Creation"
 msgstr ""
@@ -387,6 +459,7 @@ msgstr ""
 msgid "Creation Month"
 msgstr ""
 
+#. field:User.CreditLimit
 #. field:Partner.CreditLimit
 msgid "Credit Limit"
 msgstr ""
@@ -397,9 +470,9 @@ msgstr ""
 msgid "Currencies"
 msgstr ""
 
-#. field:Company.Currency
-#. field:CurrencyRate.Currency
 #. field:Currency.Name
+#. field:CurrencyRate.Currency
+#. field:Company.Currency
 #. field:BankAccount.Currency
 #. field:Country.Currency
 #. resource:base_view_currency_search
@@ -425,10 +498,6 @@ msgstr ""
 msgid "Currency sign, to be used when printing amounts"
 msgstr ""
 
-#. resource:base_view_users_form
-msgid "Current Company"
-msgstr ""
-
 #. field:Currency.Rate
 msgid "Current Rate"
 msgstr ""
@@ -441,19 +510,25 @@ msgstr ""
 msgid "Current Year without Century: %(y)s"
 msgstr ""
 
+#. field:QueueJob.Retry
+msgid "Current try"
+msgstr ""
+
+#. resource:base_view_queue_job_form
+msgid "Current try / max. retries"
+msgstr ""
+
 #. resource:base_menu_administration_shortcut
 msgid "Custom Shortcuts"
 msgstr ""
 
-#. resource:base_view_res_partner_filter
-#. resource:base_action_partner_form
-#. resource:base_action_partner_customer_form
-msgid "Customers"
+#. field:Country.NamePosition
+msgid "Customer Name Position"
 msgstr ""
 
-#. resource:base_menu_reporting_dashboard
-#. resource:base_menu_board_root
-msgid "Dashboards"
+#. resource:base_action_partner_customer_form
+#. resource:base_action_partner_form
+msgid "Customers"
 msgstr ""
 
 #. field:Attachment.DBDatas
@@ -464,15 +539,28 @@ msgstr ""
 msgid "Database Structure"
 msgstr ""
 
-#. field:CurrencyRate.Name
 #. field:Currency.Date
+#. field:CurrencyRate.Name
+#. field:User.Date
 #. field:Partner.Date
 #. resource:base_view_currency_rate_search
 msgid "Date"
 msgstr "Date"
 
+#. field:QueueJob.DateDone
+msgid "Date Done"
+msgstr ""
+
+#. field:QueueJob.DateEnqueued
+msgid "Date Enqueued"
+msgstr ""
+
 #. field:Lang.DateFormat
 msgid "Date Format"
+msgstr ""
+
+#. field:QueueJob.DateStarted
+msgid "Date Started"
 msgstr ""
 
 #. resource:base_sequence_view
@@ -487,12 +575,20 @@ msgstr ""
 msgid "Day: %(day)s"
 msgstr ""
 
+#. selection:Cron.IntervalType
+msgid "Days"
+msgstr ""
+
 #. field:Currency.DecimalPlaces
 msgid "Decimal Places"
 msgstr ""
 
 #. field:Lang.DecimalPoint
 msgid "Decimal Separator"
+msgstr ""
+
+#. resource:base_view_users_form
+msgid "Default Company"
 msgstr ""
 
 #. field:Attachment.Description
@@ -504,22 +600,36 @@ msgstr "Description"
 msgid "Determines where the currency symbol should be placed after or before the amount."
 msgstr ""
 
+#. help:Country.NamePosition
+msgid "Determines where the customer/company name should be placed, i.e. after or before the address."
+msgstr ""
+
 #. field:Lang.Direction
 msgid "Direction"
+msgstr ""
+
+#. resource:base_config_settings_view_form
+msgid "Discard"
 msgstr ""
 
 #. resource:base_view_currency_form
 msgid "Display"
 msgstr ""
 
+#. resource:base_view_queue_job_search
+msgid "Done"
+msgstr ""
+
+#. help:User.PartnerShare
 #. help:Partner.PartnerShare
 msgid ""
 "Either customer (no user), either shared user. Indicated the current partner is a customer without\n"
 "access or with a limited access created for sharing data."
 msgstr ""
 
-#. field:Bank.Email
 #. field:Company.Email
+#. field:Bank.Email
+#. field:User.Email
 #. field:Partner.Email
 msgid "Email"
 msgstr ""
@@ -528,6 +638,7 @@ msgstr ""
 msgid "Email Address"
 msgstr ""
 
+#. field:User.EmailFormatted
 #. field:Partner.EmailFormatted
 msgid "Email Formatted"
 msgstr ""
@@ -536,12 +647,21 @@ msgstr ""
 msgid "Email Preferences"
 msgstr ""
 
+#. field:User.Signature
+msgid "Email Signature"
+msgstr ""
+
+#. field:User.Employee
 #. field:Partner.Employee
 msgid "Employee"
 msgstr "Employee"
 
 #. resource:base_action_partner_employee_form
 msgid "Employees"
+msgstr ""
+
+#. resource:base_view_queue_job_search
+msgid "Enqueued"
 msgstr ""
 
 #. code:
@@ -552,14 +672,77 @@ msgstr ""
 msgid "Examples"
 msgstr ""
 
+#. field:QueueJob.ExcInfo
+msgid "Exception Info"
+msgstr ""
+
+#. resource:base_view_queue_job_form
+msgid "Exception Information"
+msgstr ""
+
+#. field:QueueJob.ExecuteBeforeJobs
+msgid "Execute Before Jobs"
+msgstr ""
+
+#. field:QueueJob.ExecuteAfterJob
+#. field:QueueJob.ETA
+msgid "Execute only after"
+msgstr ""
+
+#. help:QueueJob.ExecuteAfterJob
+msgid "Execute the current job only after this one has been correctly executed"
+msgstr ""
+
+#. resource:base_ir_cron_view_search
+msgid "Execution"
+msgstr ""
+
+#. field:QueueChannel.HexyaExternalID
+#. field:PartnerTitle.HexyaExternalID
+#. field:PartnerIndustry.HexyaExternalID
+#. field:ConfigParameter.HexyaExternalID
+#. field:Cron.HexyaExternalID
+#. field:Currency.HexyaExternalID
+#. field:Sequence.HexyaExternalID
+#. field:CountryState.HexyaExternalID
+#. field:CurrencyRate.HexyaExternalID
+#. field:Group.HexyaExternalID
+#. field:CountryGroup.HexyaExternalID
+#. field:UserLog.HexyaExternalID
+#. field:Company.HexyaExternalID
+#. field:SequenceDateRange.HexyaExternalID
+#. field:Translation.HexyaExternalID
+#. field:Bank.HexyaExternalID
+#. field:BankAccount.HexyaExternalID
+msgid "External ID"
+msgstr ""
+
+#. field:QueueChannel.HexyaVersion
+#. field:PartnerTitle.HexyaVersion
+#. field:PartnerIndustry.HexyaVersion
+#. field:ConfigParameter.HexyaVersion
+#. field:Cron.HexyaVersion
+#. field:Currency.HexyaVersion
+#. field:Sequence.HexyaVersion
+#. field:CountryState.HexyaVersion
+#. field:CurrencyRate.HexyaVersion
+#. field:Group.HexyaVersion
+#. field:CountryGroup.HexyaVersion
+#. field:UserLog.HexyaVersion
+#. field:Company.HexyaVersion
+#. field:SequenceDateRange.HexyaVersion
+#. field:Translation.HexyaVersion
+#. field:Bank.HexyaVersion
+#. field:BankAccount.HexyaVersion
+msgid "External Version"
+msgstr ""
+
 #. help:User.Share
 msgid "External user with limited access, created only for the purpose of sharing data."
 msgstr ""
 
-#. field:Bank.Fax
-#. field:Company.Fax
-#. field:Partner.Fax
-msgid "Fax"
+#. resource:base_view_queue_job_search
+msgid "Failed"
 msgstr ""
 
 #. field:Bank.State
@@ -570,12 +753,12 @@ msgstr ""
 msgid "Fed. States"
 msgstr ""
 
-#. field:Attachment.Datas
-msgid "File Content"
+#. selection:Attachment.Type
+msgid "File"
 msgstr ""
 
-#. field:Attachment.DatasFname
-msgid "File Name"
+#. field:Attachment.Datas
+msgid "File Content"
 msgstr ""
 
 #. field:Attachment.FileSize
@@ -586,6 +769,7 @@ msgstr ""
 msgid "Filter on my documents"
 msgstr ""
 
+#. help:User.EmailFormatted
 #. help:Partner.EmailFormatted
 msgid "Formatted email address 'Name <email@domain>'"
 msgstr ""
@@ -594,8 +778,22 @@ msgstr ""
 msgid "From"
 msgstr ""
 
+#. field:PartnerIndustry.FullName
+msgid "Full Name"
+msgstr ""
+
 #. resource:base_view_company_form
 msgid "General Information"
+msgstr ""
+
+#. field:User.Latitude
+#. field:Partner.Latitude
+msgid "Geo Latitude"
+msgstr ""
+
+#. field:User.Longitude
+#. field:Partner.Longitude
+msgid "Geo Longitude"
 msgstr ""
 
 #. resource:base_view_groups_search
@@ -603,7 +801,9 @@ msgid "Group"
 msgstr ""
 
 #. resource:base_view_attachment_search
+#. resource:base_ir_cron_view_search
 #. resource:base_view_res_partner_filter
+#. resource:base_view_queue_job_search
 msgid "Group By"
 msgstr ""
 
@@ -615,12 +815,14 @@ msgstr ""
 msgid "Group name"
 msgstr ""
 
-#. field:User.Groups
 #. field:ConfigParameter.Groups
+#. field:User.Groups
 #. resource:base_view_groups_search
 #. resource:base_view_groups_tree
 #. resource:base_menu_action_groups
 #. resource:base_action_res_groups
+#. resource:base_view_users_form
+#. code:
 msgid "Groups"
 msgstr ""
 
@@ -636,6 +838,10 @@ msgstr ""
 msgid "Home Action"
 msgstr ""
 
+#. resource:base_action_open_website
+msgid "Home Menu"
+msgstr ""
+
 #. resource:base_sequence_view
 msgid "Hour 00->12: %(h12)s"
 msgstr ""
@@ -644,30 +850,38 @@ msgstr ""
 msgid "Hour 00->24: %(h24)s"
 msgstr ""
 
+#. selection:Cron.IntervalType
+msgid "Hours"
+msgstr ""
+
+#. field:ConfigSettings.ID
+#. field:ImageMixin.ID
+#. field:QueueChannel.ID
+#. field:PartnerTitle.ID
+#. field:PartnerIndustry.ID
+#. field:ConfigParameter.ID
+#. field:Cron.ID
+#. field:Currency.ID
+#. field:Sequence.ID
+#. field:CountryState.ID
+#. field:CurrencyRate.ID
 #. field:Group.ID
+#. field:CountryGroup.ID
+#. field:UserLog.ID
+#. field:Company.ID
+#. field:SequenceDateRange.ID
+#. field:Translation.ID
 #. field:UserChangePasswordWizard.ID
 #. field:UserChangePasswordWizardLine.ID
 #. field:Bank.ID
-#. field:Company.ID
-#. field:ConfigSettings.ID
-#. field:CountryState.ID
-#. field:CurrencyRate.ID
-#. field:Currency.ID
-#. field:PartnerCategory.ID
-#. field:Sequence.ID
-#. field:Attachment.ID
 #. field:BankAccount.ID
-#. field:Translation.ID
+#. field:QueueJob.ID
 #. field:User.ID
-#. field:PartnerTitle.ID
 #. field:Lang.ID
-#. field:ModelMixin.ID
-#. field:Country.ID
+#. field:PartnerCategory.ID
 #. field:Partner.ID
-#. field:SequenceDateRange.ID
-#. field:UserLog.ID
-#. field:ConfigParameter.ID
-#. field:CountryGroup.ID
+#. field:Attachment.ID
+#. field:Country.ID
 msgid "ID"
 msgstr "ID"
 
@@ -679,21 +893,40 @@ msgstr ""
 msgid "If specified, this action will be opened at log on for this user, in addition to the standard menu."
 msgstr ""
 
+#. help:User.Lang
 #. help:Partner.Lang
 msgid ""
 "If the selected language is loaded in the system, all documents related to\n"
 "this contact will be printed in this language. If not, it will be English."
 msgstr ""
 
-#. field:Country.Image
+#. field:ImageMixin.Image256
+#. field:ImageMixin.Image128
+#. field:ImageMixin.Image1920
+#. field:ImageMixin.Image1024
+#. field:ImageMixin.Image512
+#. field:User.Image512
+#. field:User.Image
+#. field:User.Image1024
+#. field:User.Image256
+#. field:User.Image1920
+#. field:User.Image128
+#. field:Partner.Image128
+#. field:Partner.Image1920
+#. field:Partner.Image1024
+#. field:Partner.Image256
 #. field:Partner.Image
+#. field:Partner.Image512
+#. field:Country.Image
 msgid "Image"
 msgstr "Image"
 
+#. field:User.ImageMedium
 #. field:Partner.ImageMedium
 msgid "Image Medium"
 msgstr ""
 
+#. field:User.ImageSmall
 #. field:Partner.ImageSmall
 msgid "Image Small"
 msgstr ""
@@ -715,14 +948,33 @@ msgstr ""
 msgid "Indexed Content"
 msgstr ""
 
+#. selection:User.CompanyType
 #. selection:Partner.CompanyType
 msgid "Individual"
+msgstr ""
+
+#. resource:base_view_res_partner_filter
+msgid "Individuals"
+msgstr ""
+
+#. field:User.Industry
+#. field:Partner.Industry
+msgid "Industry"
+msgstr ""
+
+#. resource:base_ir_cron_view
+msgid "Information"
+msgstr ""
+
+#. field:Country.AddressViewID
+msgid "Input View"
 msgstr ""
 
 #. resource:base_view_partner_form
 msgid "Internal Notes"
 msgstr ""
 
+#. field:User.Ref
 #. field:Partner.Ref
 msgid "Internal Reference"
 msgstr ""
@@ -731,32 +983,46 @@ msgstr ""
 msgid "Internal note..."
 msgstr ""
 
+#. resource:base_view_partner_form
+msgid "Internal notes..."
+msgstr ""
+
+#. field:Cron.IntervalNumber
+msgid "Interval Number"
+msgstr ""
+
+#. field:Cron.IntervalType
+msgid "Interval Unit"
+msgstr ""
+
 #. code:
 msgid "Invalid search criterion: password"
 msgstr ""
 
+#. selection:User.Type
 #. selection:Partner.Type
 msgid "Invoice Address"
 msgstr ""
 
+#. field:User.IsCompany
 #. field:Partner.IsCompany
 msgid "Is Company"
-msgstr ""
-
-#. field:Partner.Customer
-msgid "Is a Customer"
-msgstr ""
-
-#. field:Partner.Supplier
-msgid "Is a Vendor"
 msgstr ""
 
 #. field:Attachment.Public
 msgid "Is a public document"
 msgstr ""
 
+#. field:User.Function
 #. field:Partner.Function
 msgid "Job Position"
+msgstr ""
+
+#. resource:base_view_queue_job_tree
+#. resource:base_view_queue_job_search
+#. resource:base_view_queue_job_form
+#. resource:base_action_queue_job
+msgid "Jobs"
 msgstr ""
 
 #. help:User.Password
@@ -764,9 +1030,11 @@ msgid "Keep empty if you don't want the user to be able to connect on the system
 msgstr ""
 
 #. field:ConfigParameter.Key
+#. resource:base_view_ir_config_search
 msgid "Key"
 msgstr ""
 
+#. field:User.Lang
 #. field:Partner.Lang
 #. resource:base_res_lang_search
 msgid "Language"
@@ -777,10 +1045,10 @@ msgstr ""
 #. resource:base_res_lang_search
 #. resource:base_res_lang_act_window
 msgid "Languages"
-msgstr "Languages"
+msgstr ""
 
 #. field:User.LoginDate
-msgid "Latest Connection"
+msgid "Latest authentication"
 msgstr ""
 
 #. selection:Lang.Direction
@@ -793,6 +1061,10 @@ msgstr ""
 
 #. resource:base_res_lang_form
 msgid "Legends for supported Date and Time Formats"
+msgstr ""
+
+#. help:QueueJob.ExecuteBeforeJobs
+msgid "List of jobs that will be executed after the current one"
 msgstr ""
 
 #. field:Lang.Code
@@ -819,6 +1091,11 @@ msgstr ""
 msgid "Main Sequence"
 msgstr ""
 
+#. field:QueueJob.MaxRetries
+msgid "Max Retries"
+msgstr ""
+
+#. help:User.ImageMedium
 #. help:Partner.ImageMedium
 msgid ""
 "Medium-sized image of this contact. It is automatically\n"
@@ -830,8 +1107,9 @@ msgstr ""
 msgid "Menus Customization"
 msgstr ""
 
-#. resource:base_view_users_form
-msgid "Messaging and Social"
+#. field:Cron.Method
+#. field:QueueJob.Method
+msgid "Method"
 msgstr ""
 
 #. field:Attachment.MimeType
@@ -842,16 +1120,30 @@ msgstr ""
 msgid "Minute: %(min)s"
 msgstr ""
 
+#. selection:Cron.IntervalType
+msgid "Minutes"
+msgstr ""
+
 #. resource:base_view_partner_form
 msgid "Misc"
 msgstr ""
 
+#. field:User.Mobile
 #. field:Partner.Mobile
 msgid "Mobile"
 msgstr ""
 
+#. field:Cron.Model
+#. field:QueueJob.Model
+msgid "Model"
+msgstr ""
+
 #. resource:base_sequence_view
 msgid "Month: %(month)s"
+msgstr ""
+
+#. selection:Cron.IntervalType
+msgid "Months"
 msgstr ""
 
 #. resource:base_view_users_form
@@ -862,19 +1154,21 @@ msgstr ""
 msgid "My Document(s)"
 msgstr ""
 
-#. resource:base_view_res_partner_filter
-msgid "My Partners"
-msgstr ""
-
-#. field:Group.Name
-#. field:Bank.Name
+#. field:QueueChannel.Name
+#. field:PartnerIndustry.Name
+#. field:Cron.Name
 #. field:Sequence.Name
+#. field:Group.Name
+#. field:CountryGroup.Name
+#. field:Bank.Name
+#. field:QueueJob.Name
+#. field:User.Name
 #. field:Lang.Name
 #. field:Partner.Name
-#. field:CountryGroup.Name
 #. resource:base_view_partner_simple_form
-#. resource:base_view_partner_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_tree
+#. resource:base_view_partner_form
 msgid "Name"
 msgstr "Name"
 
@@ -882,8 +1176,12 @@ msgstr "Name"
 msgid "New Password"
 msgstr ""
 
-#. field:Sequence.NumberNextActual
+#. field:Cron.NextCall
+msgid "Next Execution Date"
+msgstr ""
+
 #. field:Sequence.NumberNext
+#. field:Sequence.NumberNextActual
 #. field:SequenceDateRange.NumberNext
 #. field:SequenceDateRange.NumberNextActual
 msgid "Next Number"
@@ -899,16 +1197,25 @@ msgstr ""
 msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
 msgstr ""
 
+#. help:Cron.NextCall
+msgid "Next planned execution date for this job."
+msgstr ""
+
 #. selection:Sequence.Implementation
 msgid "No Gap"
 msgstr ""
 
+#. field:User.Comment
 #. field:Partner.Comment
 msgid "Notes"
 msgstr ""
 
 #. field:User.CompaniesCount
 msgid "Number of Companies"
+msgstr ""
+
+#. help:User.GroupsCount
+msgid "Number of groups that apply to the current user"
 msgstr ""
 
 #. code:
@@ -923,6 +1230,7 @@ msgstr ""
 msgid "Only administrators can execute this action."
 msgstr ""
 
+#. selection:User.Type
 #. selection:Partner.Type
 msgid "Other Address"
 msgstr ""
@@ -935,6 +1243,11 @@ msgstr ""
 msgid "Owner"
 msgstr ""
 
+#. resource:base_menu_ir_property
+msgid "Parameters"
+msgstr ""
+
+#. field:User.Parent
 #. field:Partner.Parent
 msgid "Parent"
 msgstr ""
@@ -943,6 +1256,7 @@ msgstr ""
 msgid "Parent Company"
 msgstr ""
 
+#. field:User.ParentName
 #. field:Partner.ParentName
 msgid "Parent Name"
 msgstr ""
@@ -956,9 +1270,18 @@ msgstr ""
 msgid "Partner"
 msgstr ""
 
-#. resource:base_view_partner_title_form
-#. resource:base_view_partner_title_tree
+#. field:User.ActivePartner
+msgid "Partner Is Active"
+msgstr ""
+
+#. resource:base_view_partner_Title_tree
+#. resource:base_view_partner_Title_form
 msgid "Partner Titles"
+msgstr ""
+
+#. field:User.SameVATPartner
+#. field:Partner.SameVATPartner
+msgid "Partner with same Tax ID"
 msgstr ""
 
 #. help:User.Partner
@@ -966,6 +1289,7 @@ msgid "Partner-related data of the user"
 msgstr ""
 
 #. field:PartnerCategory.Partners
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 msgid "Partners"
 msgstr ""
@@ -974,12 +1298,13 @@ msgstr ""
 msgid "Password"
 msgstr "Password"
 
-#. resource:base_view_res_partner_filter
-msgid "Persons"
+#. resource:base_view_queue_job_search
+msgid "Pending"
 msgstr ""
 
-#. field:Bank.Phone
 #. field:Company.Phone
+#. field:Bank.Phone
+#. field:User.Phone
 #. field:Partner.Phone
 msgid "Phone"
 msgstr ""
@@ -990,7 +1315,7 @@ msgstr ""
 
 #. resource:base_view_users_form
 msgid "Preferences"
-msgstr "Preferences"
+msgstr ""
 
 #. field:Sequence.Prefix
 msgid "Prefix"
@@ -1004,8 +1329,25 @@ msgstr ""
 msgid "Price Accuracy"
 msgstr ""
 
+#. field:QueueJob.Priority
+msgid "Priority"
+msgstr ""
+
+#. selection:User.Type
+#. selection:Partner.Type
+msgid "Private Address"
+msgstr ""
+
+#. resource:base_res_partner_view_form_private
+msgid "Private Address Form"
+msgstr ""
+
 #. resource:base_view_partner_form
 msgid "Purchase"
+msgstr ""
+
+#. resource:base_menu_queue
+msgid "Queue"
 msgstr ""
 
 #. field:CurrencyRate.Rate
@@ -1014,6 +1356,19 @@ msgstr ""
 
 #. field:Currency.Rates
 msgid "Rates"
+msgstr ""
+
+#. field:Cron.RecordsIds
+#. field:QueueJob.RecordsIds
+msgid "Records Ids"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "Reference"
+msgstr ""
+
+#. resource:base_view_queue_job_form
+msgid "Related"
 msgstr ""
 
 #. field:User.Partner
@@ -1025,8 +1380,12 @@ msgstr ""
 msgid "Reload Groups"
 msgstr ""
 
-#. resource:base_view_company_form
-msgid "Report Configuration"
+#. help:Cron.IntervalNumber
+msgid "Repeat every x."
+msgstr ""
+
+#. resource:base_view_queue_job_form
+msgid "Requeue Job"
 msgstr ""
 
 #. field:Attachment.ResField
@@ -1045,6 +1404,11 @@ msgstr ""
 msgid "Resource Name"
 msgstr ""
 
+#. field:QueueJob.Result
+#. resource:base_view_queue_job_form
+msgid "Result"
+msgstr ""
+
 #. selection:Lang.Direction
 msgid "Right-to-left"
 msgstr ""
@@ -1053,14 +1417,19 @@ msgstr ""
 msgid "Rounding Factor"
 msgstr ""
 
-#. resource:base_view_partner_form
-msgid "Sale"
+#. resource:base_ir_cron_view
+msgid "Run Manually"
 msgstr ""
 
 #. resource:base_view_partner_form
-msgid "Sales & Purchases"
+msgid "Sales"
 msgstr ""
 
+#. resource:base_view_partner_form
+msgid "Sales & Purchase"
+msgstr ""
+
+#. field:User.User
 #. field:Partner.User
 #. resource:base_view_res_partner_filter
 msgid "Salesperson"
@@ -1070,12 +1439,33 @@ msgstr ""
 msgid "Sanitized Account Number"
 msgstr ""
 
+#. resource:base_config_settings_view_form
 #. resource:base_view_users_form_simple_modif
 msgid "Save"
-msgstr "Save"
+msgstr ""
+
+#. resource:base_ir_cron_view_search
+msgid "Scheduled Action"
+msgstr ""
+
+#. resource:base_ir_cron_view
+#. resource:base_ir_cron_view_tree
+#. resource:base_ir_cron_view_calendar
+#. resource:base_ir_cron_view_search
+#. resource:base_ir_cron_act
+msgid "Scheduled Actions"
+msgstr ""
+
+#. resource:base_res_bank_view_search
+msgid "Search Bank"
+msgstr ""
 
 #. resource:base_view_res_partner_filter
 msgid "Search Partner"
+msgstr ""
+
+#. resource:base_config_settings_view_form
+msgid "Search..."
 msgstr ""
 
 #. resource:base_sequence_view
@@ -1086,6 +1476,7 @@ msgstr ""
 msgid "Separator Format"
 msgstr ""
 
+#. field:Company.Sequence
 #. field:BankAccount.Sequence
 #. resource:base_sequence_view
 #. resource:base_view_sequence_search
@@ -1116,10 +1507,21 @@ msgstr ""
 msgid "Set Password"
 msgstr ""
 
+#. resource:base_view_queue_job_form
+msgid "Set to 'Done'"
+msgstr ""
+
+#. code:
+msgid "Setting empty passwords is not allowed for security reasons!"
+msgstr ""
+
+#. resource:base_config_settings_view_form
+#. resource:base_config_setting_act_window
 #. resource:base_menu_administration
 msgid "Settings"
 msgstr ""
 
+#. field:User.PartnerShare
 #. field:Partner.PartnerShare
 msgid "Share Partner"
 msgstr ""
@@ -1128,6 +1530,7 @@ msgstr ""
 msgid "Share User"
 msgstr ""
 
+#. selection:User.Type
 #. selection:Partner.Type
 msgid "Shipping Address"
 msgstr ""
@@ -1140,10 +1543,7 @@ msgstr ""
 msgid "Show inactive currencies"
 msgstr ""
 
-#. field:User.Signature
-msgid "Signature"
-msgstr ""
-
+#. help:User.ImageSmall
 #. help:Partner.ImageSmall
 msgid ""
 "Small-sized image of this contact. It is automatically\n"
@@ -1156,7 +1556,24 @@ msgid "Sometimes called BIC or Swift."
 msgstr ""
 
 #. code:
+msgid "Sorry, the syntax 'name:agg(field)' is not available for attachments"
+msgstr ""
+
+#. code:
+msgid "Sorry, you are not allowed to access these fields on attachments."
+msgstr ""
+
+#. code:
+#. code:
 msgid "Sorry, you are not allowed to access this document."
+msgstr ""
+
+#. code:
+msgid "Sorry, you are not allowed to write on this document"
+msgstr ""
+
+#. code:
+msgid "Sorry, you must provide fields to read on attachments"
 msgstr ""
 
 #. help:User.NewPassword
@@ -1170,15 +1587,24 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
+#. resource:base_view_queue_job_search
+msgid "Started"
+msgstr ""
+
 #. field:Company.State
+#. field:QueueJob.State
+#. field:User.State
 #. field:Partner.State
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
 #. resource:base_view_country_state_form
 #. resource:base_view_country_state_tree
 #. resource:base_view_partner_address_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
+#. resource:base_view_queue_job_search
 msgid "State"
 msgstr ""
 
@@ -1202,8 +1628,9 @@ msgstr ""
 msgid "Stored Filename"
 msgstr ""
 
-#. field:Bank.Street
 #. field:Company.Street
+#. field:Bank.Street
+#. field:User.Street
 #. field:Partner.Street
 msgid "Street"
 msgstr ""
@@ -1211,21 +1638,26 @@ msgstr ""
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
 #. resource:base_view_partner_address_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Street 2..."
 msgstr ""
 
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
 #. resource:base_view_partner_address_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "Street..."
 msgstr ""
 
-#. field:Bank.Street2
 #. field:Company.Street2
+#. field:Bank.Street2
+#. field:User.Street2
 #. field:Partner.Street2
 msgid "Street2"
 msgstr ""
@@ -1250,6 +1682,18 @@ msgstr ""
 msgid "Symbol Position"
 msgstr ""
 
+#. resource:base_view_ir_config_list
+#. resource:base_view_ir_config_form
+#. resource:base_ir_config_menu
+#. resource:base_ir_config_list_action
+msgid "System Parameters"
+msgstr ""
+
+#. resource:base_view_ir_config_search
+msgid "System Properties"
+msgstr ""
+
+#. field:User.VAT
 #. field:Partner.VAT
 msgid "TIN"
 msgstr ""
@@ -1262,10 +1706,7 @@ msgstr ""
 msgid "Tag Name"
 msgstr ""
 
-#. field:Company.Tagline
-msgid "Tagline"
-msgstr ""
-
+#. field:User.Categories
 #. field:Partner.Categories
 msgid "Tags"
 msgstr ""
@@ -1274,6 +1715,7 @@ msgstr ""
 msgid "Tags..."
 msgstr ""
 
+#. help:User.VAT
 #. help:Partner.VAT
 msgid ""
 "Tax Identification Number.\n"
@@ -1283,6 +1725,10 @@ msgstr ""
 
 #. resource:base_menu_custom
 msgid "Technical"
+msgstr ""
+
+#. resource:base_ir_cron_view
+msgid "Technical Data"
 msgstr ""
 
 #. help:Country.Code
@@ -1295,6 +1741,10 @@ msgid ""
 "-1 will end the separation. e.g. [3,2,-1] will represent 106500 to be 1,06,500\"\n"
 "[1,2,-1] will represent it to be 106,50,0;[3] will represent it as 106,500.\"\n"
 "Provided ',' as the thousand separator in each case."
+msgstr ""
+
+#. code:
+msgid "The \\\"App Switcher\\\" action cannot be selected as home action."
 msgstr ""
 
 #. help:PartnerCategory.Active
@@ -1317,14 +1767,22 @@ msgstr ""
 msgid "The full name of the country."
 msgstr ""
 
+#. help:User.User
 #. help:Partner.User
 msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr ""
+
+#. help:QueueJob.MaxRetries
+msgid ""
+"The job will fail if the number of tries reach the max. retries.\n"
+"Retries are infinite when equals zero."
 msgstr ""
 
 #. help:Sequence.NumberIncrement
 msgid "The next number of the sequence will be incremented by this number"
 msgstr ""
 
+#. help:User.TZ
 #. help:Partner.TZ
 msgid ""
 "The partner's timezone, used to output proper date and time values\n"
@@ -1333,8 +1791,8 @@ msgid ""
 "render date and time values: your computer's timezone."
 msgstr ""
 
-#. help:CurrencyRate.Rate
 #. help:Currency.Rate
+#. help:CurrencyRate.Rate
 msgid "The rate of the currency to the currency of rate 1"
 msgstr ""
 
@@ -1346,12 +1804,21 @@ msgstr ""
 msgid "The state code in max. three chars."
 msgstr ""
 
+#. code:
+msgid "The user cannot have more than one user types."
+msgstr ""
+
 #. help:Lang.ISOCode
 msgid "This ISO code is the name of PO files to use for translations"
 msgstr ""
 
+#. help:User.Image
 #. help:Partner.Image
 msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr ""
+
+#. help:Company.Favicon
+msgid "This field holds the image used to display a favicon for a given company."
 msgstr ""
 
 #. help:Lang.Code
@@ -1366,15 +1833,18 @@ msgstr ""
 msgid "Time Format"
 msgstr ""
 
+#. field:User.TZ
 #. field:Partner.TZ
 msgid "Timezone"
 msgstr ""
 
+#. field:User.TZOffset
 #. field:Partner.TZOffset
 msgid "Timezone Offset"
 msgstr ""
 
 #. field:PartnerTitle.Name
+#. field:User.Title
 #. field:Partner.Title
 msgid "Title"
 msgstr ""
@@ -1411,8 +1881,9 @@ msgid ""
 "gap in the sequence (while they are possible in the former)."
 msgstr ""
 
-#. field:Attachment.Type
+#. field:User.Type
 #. field:Partner.Type
+#. field:Attachment.Type
 #. resource:base_view_attachment_search
 msgid "Type"
 msgstr ""
@@ -1431,19 +1902,53 @@ msgstr ""
 msgid "Update Terms"
 msgstr ""
 
+#. help:Cron.RecordsIds
+#. help:QueueJob.RecordsIds
+msgid "Use a JSON list format (e.g. [1, 2])"
+msgstr ""
+
+#. help:Cron.Arguments
+#. help:QueueJob.Arguments
+msgid ""
+"Use a JSON list format (e.g. [[1, 2], \"My string value\", true]).\n"
+"For relation fields, pass the ID or the list of IDs"
+msgstr ""
+
 #. field:Sequence.UseDateRange
 msgid "Use subsequences per Date Range"
+msgstr ""
+
+#. help:Country.VATLabel
+msgid "Use this field if you want to change vat label."
+msgstr ""
+
+#. help:Country.AddressViewID
+msgid ""
+"Use this field if you want to replace the usual way to encode a complete address.\n"
+"Note that the address_format field is used to modify the way to display addresses\n"
+"(in reports for example), while this field is used to modify the input form for\n"
+"addresses."
 msgstr ""
 
 #. help:User.Login
 msgid "Used to log into the system"
 msgstr ""
 
-#. help:Partner.Type
-msgid "Used to select automatically the right address according to the context in sales and purchases documents."
+#. help:Company.Sequence
+msgid "Used to order Companies in the company switcher"
 msgstr ""
 
+#. help:User.Type
+#. help:Partner.Type
+msgid ""
+"Used to select automatically the right address according to the context in sales and purchases documents. \n"
+"Private addresses are only visible by authorized users."
+msgstr ""
+
+#. field:Cron.User
 #. field:UserChangePasswordWizardLine.User
+#. field:QueueJob.User
+#. resource:base_ir_cron_view_search
 #. resource:base_view_users_search
 msgid "User"
 msgstr "User"
@@ -1461,13 +1966,14 @@ msgid "User log entries"
 msgstr ""
 
 #. field:UserChangePasswordWizard.Users
+#. field:User.Users
 #. field:Partner.Users
 #. resource:base_menu_users
+#. resource:base_view_users_search
+#. resource:base_view_users_form_simple_modif
 #. resource:base_change_password_wizard_user_tree_view
 #. resource:base_view_users_tree
 #. resource:base_view_users_form
-#. resource:base_view_users_search
-#. resource:base_view_users_form_simple_modif
 #. resource:base_menu_action_users
 #. resource:base_action_res_users
 msgid "Users"
@@ -1477,11 +1983,14 @@ msgstr ""
 msgid "VAT"
 msgstr ""
 
+#. field:Country.VATLabel
+msgid "VAT Label"
+msgstr ""
+
 #. field:ConfigParameter.Value
 msgid "Value"
 msgstr ""
 
-#. resource:base_view_res_partner_filter
 #. resource:base_action_partner_supplier_form
 msgid "Vendors"
 msgstr ""
@@ -1491,16 +2000,22 @@ msgid "View Rates"
 msgstr ""
 
 #. field:Company.Website
+#. field:User.Website
 #. field:Partner.Website
 msgid "Website"
 msgstr ""
 
+#. help:User.Website
 #. help:Partner.Website
 msgid "Website of Partner or Company"
 msgstr ""
 
 #. resource:base_sequence_view
 msgid "Week of the Year: %(woy)s"
+msgstr ""
+
+#. selection:Cron.IntervalType
+msgid "Weeks"
 msgstr ""
 
 #. field:UserChangePasswordWizardLine.Wizard
@@ -1520,7 +2035,14 @@ msgid "You can not remove the admin user as it is used internally for resources 
 msgstr ""
 
 #. help:Country.AddressFormat
-msgid "You can state here the usual format to use for the addresses belonging to this country."
+msgid ""
+"You can state here the usual format to use for the addresses belonging to this country.\n"
+"You can use Go-style string pattern with all the fields of the address \n"
+"(for example, use '{{ .Street }}' to display the field 'Street') plus\n"
+"{{ .StateName }}: the name of the state\n"
+"{{ .StateCode }}: the code of the state\n"
+"{{ .CountryName }}: the name of the country\n"
+"{{ .CountryCode }}: the code of the country\n"
 msgstr ""
 
 #. code:
@@ -1538,19 +2060,27 @@ msgstr ""
 #. resource:base_view_res_bank_form
 #. resource:base_view_company_form
 #. resource:base_view_partner_address_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
+#. resource:base_res_partner_view_form_private
 msgid "ZIP"
 msgstr ""
 
-#. field:Bank.Zip
 #. field:Company.Zip
+#. field:Bank.Zip
+#. field:User.Zip
 #. field:Partner.Zip
 msgid "Zip"
 msgstr ""
 
-#. resource:base_view_company_form
-msgid "e.g. Global Business Solutions"
+#. resource:view_partner_short_form
+#. resource:base_view_partner_form
+msgid "e.g. BE0477472701"
+msgstr ""
+
+#. resource:base_view_partner_form
+msgid "e.g. Mister"
 msgstr ""
 
 #. resource:base_view_partner_form
@@ -1558,18 +2088,25 @@ msgid "e.g. Mr."
 msgstr ""
 
 #. resource:base_view_partner_simple_form
+#. resource:view_partner_short_form
 #. resource:base_view_partner_form
 #. resource:base_view_partner_form
 msgid "e.g. Sales Director"
 msgstr ""
 
-#. resource:base_view_company_form
 #. resource:base_view_partner_address_form
-#. resource:base_view_partner_form
-msgid "e.g. www.hexya.io"
+msgid "e.g. https//www.hexya.io"
+msgstr ""
+
+#. resource:base_view_company_form
+msgid "e.g. https://www.hexya.io"
 msgstr ""
 
 #. resource:base_view_partner_form
-msgid "internal note..."
+msgid "e.g. https://www.odoo.com"
+msgstr ""
+
+#. code:
+msgid "error while hashing password: %s"
 msgstr ""
 
