@@ -1,0 +1,2 @@
+ID,Name,User,Active,IntervalNumber,IntervalType,Model,Method
+base_cron_base_gc,Base: Auto-vacuum internal data,base_admin,true,1,days,AutoVacuum,PowerOn
