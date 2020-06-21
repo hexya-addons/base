@@ -236,7 +236,8 @@ func TestWorkerQueueAndCron(t *testing.T) {
 	Convey("Testing cron jobs", t, func() {
 		Convey("Setup tests", func() {
 			So(models.ExecuteInNewEnvironment(security.SuperUserID, func(env models.Environment) {
-				So(h.Cron().NewSet(env).SearchAll().IsEmpty(), ShouldBeTrue)
+				So(h.Cron().NewSet(env).SearchAll().Len(), ShouldEqual, 1)
+				So(h.Cron().NewSet(env).SearchAll().HexyaExternalID(), ShouldEqual, "base_cron_base_gc")
 				asusID = h.Partner().NewSet(env).GetRecord("base_res_partner_1").ID()
 			}), ShouldBeNil)
 		})
